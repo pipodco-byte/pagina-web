@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import data from '../../public/data.json';
 import '../../assets/scss/astro-ecommerce.scss';
-import Navbar from '../components/navbar';
+import PipodNavbar from '../components/pipodNavbar';
 import ComplexNavbar from '../components/complexNavbar';
 import ComplexNavbarDark from '../components/complexNavbarDark';
 import Footer from '../components/footer';
@@ -77,7 +77,7 @@ data.orders.forEach((order) => {
 
 <Layout title="Astro Ecommerce">
 	<main>
-    <Navbar />
+    <PipodNavbar />
     <div class="container mt-5">
       <h3>Product Lists</h3>
       <p>Components and blocks for Product Lists</p>
