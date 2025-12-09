@@ -1,9 +1,78 @@
-import contentful from 'contentful';
-
-const client = contentful.createClient({
-  space: import.meta.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN || '',
-});
+// Mock data - Inventario ficticio de iPhones y MacBooks
+const mockProductos = [
+  {
+    sys: { id: '1' },
+    fields: {
+      nombre: 'iPhone 15 Pro Max',
+      slug: 'iphone-15-pro-max',
+      descripcion: 'El iPhone más avanzado con pantalla Super Retina XDR y chip A17 Pro',
+      precio: 4999000,
+      sku: 'IPHONE-15-PM-256',
+      imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
+      enStock: true,
+    },
+  },
+  {
+    sys: { id: '2' },
+    fields: {
+      nombre: 'iPhone 15',
+      slug: 'iphone-15',
+      descripcion: 'iPhone 15 con chip A16 Bionic y cámara mejorada',
+      precio: 3299000,
+      sku: 'IPHONE-15-128',
+      imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
+      enStock: true,
+    },
+  },
+  {
+    sys: { id: '3' },
+    fields: {
+      nombre: 'MacBook Pro 16" M3 Max',
+      slug: 'macbook-pro-16-m3-max',
+      descripcion: 'MacBook Pro con chip M3 Max, 36GB RAM y 512GB SSD',
+      precio: 8999000,
+      sku: 'MBP-16-M3MAX-512',
+      imagenes: [{ fields: { file: { url: 'MacBook_Pro_14-in_Space_Black_Pure_Front_Screen__USEN_dba9e232-238a-454c-b1d2-76d00adc5385_1500x.webp.jpeg' } } }],
+      enStock: true,
+    },
+  },
+  {
+    sys: { id: '4' },
+    fields: {
+      nombre: 'MacBook Air 15" M2',
+      slug: 'macbook-air-15-m2',
+      descripcion: 'MacBook Air ultradelgada con chip M2 y batería de 18 horas',
+      precio: 4499000,
+      sku: 'MBA-15-M2-256',
+      imagenes: [{ fields: { file: { url: 'MacBook_Pro_14-in_Space_Black_Pure_Front_Screen__USEN_dba9e232-238a-454c-b1d2-76d00adc5385_1500x.webp.jpeg' } } }],
+      enStock: true,
+    },
+  },
+  {
+    sys: { id: '5' },
+    fields: {
+      nombre: 'iPhone 15 Pro',
+      slug: 'iphone-15-pro',
+      descripcion: 'iPhone 15 Pro con titanio y cámara de 48MP',
+      precio: 4299000,
+      sku: 'IPHONE-15-PRO-256',
+      imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
+      enStock: true,
+    },
+  },
+  {
+    sys: { id: '6' },
+    fields: {
+      nombre: 'MacBook Pro 14" M3',
+      slug: 'macbook-pro-14-m3',
+      descripcion: 'MacBook Pro 14" con chip M3 y pantalla Liquid Retina XDR',
+      precio: 6999000,
+      sku: 'MBP-14-M3-512',
+      imagenes: [{ fields: { file: { url: 'MacBook_Pro_14-in_Space_Black_Pure_Front_Screen__USEN_dba9e232-238a-454c-b1d2-76d00adc5385_1500x.webp.jpeg' } } }],
+      enStock: false,
+    },
+  },
+];
 
 export interface Producto {
   id: string;
@@ -15,7 +84,6 @@ export interface Producto {
   imagenes: any[];
   categoria?: any;
   enStock: boolean;
-  // Campos adicionales para compatibilidad con el template
   thumb_src?: string;
   thumb_alt?: string;
   title?: string;
@@ -29,11 +97,7 @@ export interface Producto {
 
 export async function getProductos(): Promise<Producto[]> {
   try {
-    const entries = await client.getEntries({
-      content_type: 'producto',
-    });
-
-    return entries.items.map((item: any) => {
+    return mockProductos.map((item: any) => {
       const imagen = item.fields.imagenes?.[0]?.fields?.file?.url;
       return {
         id: item.sys.id,
@@ -45,8 +109,7 @@ export async function getProductos(): Promise<Producto[]> {
         imagenes: item.fields.imagenes || [],
         categoria: item.fields.categoria,
         enStock: item.fields.enStock ?? true,
-        // Mapeo para compatibilidad con el template
-        thumb_src: imagen ? `https:${imagen}` : '/images/product1.jpg',
+        thumb_src: `images/${imagen}`,
         thumb_alt: item.fields.nombre,
         title: item.fields.nombre,
         description: item.fields.descripcion,
@@ -58,22 +121,16 @@ export async function getProductos(): Promise<Producto[]> {
       };
     });
   } catch (error) {
-    console.error('Error fetching productos from Contentful:', error);
+    console.error('Error fetching productos:', error);
     return [];
   }
 }
 
 export async function getProductoPorSlug(slug: string): Promise<Producto | null> {
   try {
-    const entries = await client.getEntries({
-      content_type: 'producto',
-      'fields.slug': slug,
-      limit: 1,
-    });
+    const item = mockProductos.find((p: any) => p.fields.slug === slug);
+    if (!item) return null;
 
-    if (entries.items.length === 0) return null;
-
-    const item = entries.items[0];
     const imagen = item.fields.imagenes?.[0]?.fields?.file?.url;
     
     return {
@@ -86,7 +143,7 @@ export async function getProductoPorSlug(slug: string): Promise<Producto | null>
       imagenes: item.fields.imagenes || [],
       categoria: item.fields.categoria,
       enStock: item.fields.enStock ?? true,
-      thumb_src: imagen ? `https:${imagen}` : '/images/product1.jpg',
+      thumb_src: `images/${imagen}`,
       thumb_alt: item.fields.nombre,
       title: item.fields.nombre,
       description: item.fields.descripcion,
@@ -97,7 +154,7 @@ export async function getProductoPorSlug(slug: string): Promise<Producto | null>
       reviews: 117,
     };
   } catch (error) {
-    console.error('Error fetching producto from Contentful:', error);
+    console.error('Error fetching producto:', error);
     return null;
   }
 }

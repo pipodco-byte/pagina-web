@@ -5,7 +5,9 @@ const PipodNavbar = () => {
         <div className="d-flex justify-content-center w-100">
           <nav aria-label="breadcrumb">
             <div className="d-flex align-items-center justify-content-center gap-5">
-              <span className="text-dark text-lg font-weight-bold">Pipod</span>
+              <a href="/" className="nav-link p-0">
+                <span className="text-dark text-lg font-weight-bold">Pipod</span>
+              </a>
               <a href="/productos" className="nav-link p-0">
                 Todo
               </a>

@@ -1,386 +1,309 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import data from '../../public/data.json';
 import '../../assets/scss/astro-ecommerce.scss';
 import PipodNavbar from '../components/pipodNavbar';
-import ComplexNavbar from '../components/complexNavbar';
-import ComplexNavbarDark from '../components/complexNavbarDark';
 import Footer from '../components/footer';
-import ComplexFooter from '../components/complexFooter';
 import CardProduct from '../components/products/cardProduct';
-import CardCategory from '../components/products/cardCategory';
-import ProductOverviewGrid from '../components/products/productOverviewGrid';
-import ProductOverviewGallery from '../components/products/productOverviewGallery';
-import ShoppingCart from '../components/cart/shoppingCart';
-import ShoppingCart2 from '../components/cart/shoppingCart2';
-import ProductQuickview from '../components/products/productQuickview';
-import ProductQuickview2 from '../components/products/productQuickview2';
-import ProductFeature from '../components/products/productFeature';
-import ProductFeature2 from '../components/products/productFeature2';
-import CategoryFilters from '../components/products/categoryFilters';
-import TestimonialsFade from '../components/promo/testimonialsFade';
-import PromoSectionLarge from '../components/promo/promoSectionLarge';
-import CheckoutOrderSummary from '../components/checkout/checkoutOrderSummary';
-import CheckoutMultiStep from '../components/checkout/checkoutMultiStep';
-import ReviewSimple from '../components/reviews/reviewSimple';
-import ReviewSummaryChart from '../components/reviews/reviewSummaryChart';
-import OrderSummaries from '../components/order/orderSummaries';
-import OrderHistory from '../components/order/orderHistory';
-import IncentiveLarge from '../components/incentives/incentiveLarge';
 import IncentiveCols from '../components/incentives/incentiveCols';
+import TestimonialsFade from '../components/promo/testimonialsFade';
+import { getProductos } from '../lib/contentful';
 
-let cartItems = [];
-data.shoppingCart.map(id => 
-  data.products.filter(x => x.id == id).map(x => cartItems.push(x))
-)
-let cartItems2 = [];
-data.shoppingCart2.map(id => 
-  data.products.filter(x => x.id == id).map(x => cartItems2.push(x))
-)
-
-// filter reviews with ID 01
-let productReviews = data.reviews.filter(x => x.productID == "01");
-
-let orderProducts = [];
-
-data.orders[0].products.forEach(productDetails => {
-  data.products.forEach(product => {
-    if (product.id == productDetails.id) {
-      orderProducts.push(product);
-    }
-  });
-})
-
-let orderHistoryProducts = new Set();
-
-data.orders.forEach((order) => {
-  order.products.forEach(productDetails => {
-    data.products.forEach(product => {
-      if (product.id == productDetails.id) {
-        orderHistoryProducts.add(product);
-      }
-    });
-  })
-})
-
+const productos = await getProductos();
+const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'));
+const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'));
 ---
 
-<script>
-  function toggleHeart(e) {
-    e.target.classList.toggle('fas');
-    e.target.classList.toggle('far');
-    e.target.classList.toggle('text-danger');
-  }
-  
-  document.getElementById('heart1').addEventListener("click", toggleHeart);
-</script>
-
-<Layout title="Astro Ecommerce">
-	<main>
+<Layout title="Pipod - Servicio Técnico Apple Especializado">
+  <main style="padding-bottom: 80px;">
     <PipodNavbar />
-    <div class="container mt-5">
-      <h3>Product Lists</h3>
-      <p>Components and blocks for Product Lists</p>
-      <div class="row mt-5">
-        {data.products.map(product => 
-          <div class="col-md-6 col-lg-3">
-            <CardProduct 
-              thumb_src = {product.thumb_src}
-              thumb_alt = {product.thumb_alt}
-              color = {product.color}
-              colors = {product.colors}
-              title = {product.title}
-              description = {product.description}
-              price = {product.price}
-              position = "center"
-            />
-          </div>
-        )}        
-      </div>
-
-      <h3>Product Lists</h3>
-      <p>Cards with full details</p>
-      <div class="row">
-        {data.products.map(product => 
-          <div class="col-md-6 col-lg-3">
-            <CardProduct 
-              thumb_src = {product.thumb_src}
-              thumb_alt = {product.thumb_alt}
-              color = {product.color}
-              colors = {product.colors}
-              title = {product.title}
-              description = {product.description}
-              price = {product.price}
-              position = "left"
-            />
-          </div>
-        )}        
-      </div>
-
-      <div class="row mb-8">
-        <div class="d-block text-center mb-5">
-          <h3>Shop by category</h3>
-          <a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
-        </div>
-        {data.categories.slice(0, 4).map(category => 
-          <div class="col-md-6 col-lg-3">
-            <CardCategory
-              thumb_src = {category.thumb_src}
-              title = {category.title}
-              collection = {category.collection}
-            />
-          </div>
-        )}
-      </div>
-
-      <div class="row mb-5">
-        <div class="d-block text-center mb-5">
-          <h3>Shop by category</h3>
-          <a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
-        </div>
-        <div class="col-md-6">
-          <CardCategory
-            classList = "h-100"
-            cta = ""
-            thumb_src = {data.categories[4].thumb_src}
-            title = {data.categories[4].title}
-          />
-        </div>
-        <div class="col-md-6">
-          <div class="mb-4">
-            <CardCategory
-              classList = ""
-              cta = ""
-              thumb_src = {data.categories[5].thumb_src}
-              title = {data.categories[5].title}
-            />
-          </div>
-          <div class="">
-            <CardCategory
-              classList = ""
-              cta = ""
-              thumb_src = {data.categories[6].thumb_src}
-              title = {data.categories[6].title}
-            />
-          </div>
-        </div>
-      </div>
-
-
-      <div class="my-10">
-        <h3>Product Overview</h3>
-        <p class="mb-5">With image grid</p>
-
-        <ProductOverviewGrid  
-          colors={data.products[0].colors}
-          images={data.products[0].images}
-          title={data.products[0].title}
-          full_description={data.products[0].full_description}
-          price={data.products[0].price}
-          highlights={data.products[0].highlights}
-          details={data.products[0].details}
-          rating={data.products[0].rating}
-          reviews={data.products[0].reviews}
-          sizes={data.products[0].sizes}
-        />
-      </div>
-
-      <div class="my-5">
-        <h3>Product Overview</h3>
-        <p class="mb-5">Product Overviews with image gallery and expandable details</p>
-
-        <ProductOverviewGallery 
-          colors={data.products[1].colors} 
-          images={data.products[1].images}
-          title={data.products[1].title}
-          full_description={data.products[1].full_description}
-          price={data.products[1].price}
-          rating={data.products[1].rating}
-          reviews={data.products[1].reviews}
-          data={data.products[1].data}
-        />
-      </div>
-
-
-      <div class="my-10">
-        <ShoppingCart
-          products = {cartItems}
-        />
-      </div>
-
-      <div class="my-10">
-        <ShoppingCart2
-          products = {cartItems2}
-        />
-      </div>
-
-      <div class="my-10">
-        <h3>Category filters</h3>
-        <p class="mb-5">With inline actions and expandable sidebar filters</p>
-        <CategoryFilters 
-          title="Our products"
-        />
-      </div>
-
-      <div class="my-10">
-        <h3>Product Quickviewers</h3>
-        <p class="mb-5">With color selector, size selector, and details link</p>
-
-        <ProductQuickview 
-          colors={data.products[0].colors}
-          thumb_src={data.products[0].thumb_src}
-          title={data.products[0].title}
-          price={data.products[0].price}
-          rating={data.products[0].rating}
-          reviews={data.products[0].reviews}
-          sizes={data.products[0].sizes}
-          images={data.products[0].images}
-        />
-
-        <h3 class="mt-7">Product Quickviewers</h3>
-        <p class="mb-5">With large size selector</p>
-        <ProductQuickview2 
-          colors={data.products[1].colors}
-          thumb_src="/images/mirror.png"
-          title="Sofa"
-          price={data.products[1].price}
-          rating={data.products[1].rating}
-          reviews={data.products[1].reviews}
-        />
-      </div>
-
-      <div class="my-10">
-        <ProductFeature
-          title={data.products[0].title}
-          images={data.products[2].images}
-          full_description={data.products[0].full_description}
-          featuresDetails={data.products[0].featuresDetails}
-        />
-      </div>
-
-      <div class="my-10">
-        <ProductFeature2
-          title={data.products[0].title}
-          full_description={data.products[0].full_description}
-          images={data.products[2].images}
-          data={data.products[2].data}
-        />
-      </div>
-
-      <div class="my-10">
-        <h3 class="mt-5">Complex Navbar White</h3>
-        <a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
-        <br/><br/>
-        <ComplexNavbar />
-        <div class="row mt-4">
-          {data.products.map(product => 
-            <div class="col-12 col-md-6 col-lg-3">
-              <CardProduct
-                thumb_src = {product.thumb_src}
-                thumb_alt = {product.thumb_alt}
-                title = {product.title}
-                price={product.price}
-              />
+    
+    <!-- Hero Carousel Section -->
+    <section class="position-relative overflow-hidden">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="bg-gradient-primary text-white py-20">
+              <div class="container text-center">
+                <h1 class="display-4 font-weight-bold mb-4">Servicio Técnico Especializado Apple en Bogotá</h1>
+                <p class="lead mb-6">Diagnóstico preciso y repuestos de calidad</p>
+                <a href="/contacto" class="btn btn-white btn-lg px-6 py-3">AGENDA TU CITA</a>
+              </div>
             </div>
-          )}        
-        </div>
-
-        <h3 class="mt-5">Complex Navbar Dark</h3>
-        <a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
-        <br/><br/>
-        <ComplexNavbarDark />
-        <div class="row mt-4">
-          {data.products.map(product => 
-            <div class="col-12 col-md-6 col-lg-3">
-              <CardProduct
-                thumb_src = {product.thumb_src}
-                thumb_alt = {product.thumb_alt}
-                title = {product.title}
-                price={product.price}
-              />
+          </div>
+          <div class="carousel-item">
+            <div class="bg-gradient-success text-white py-20">
+              <div class="container text-center">
+                <h1 class="display-4 font-weight-bold mb-4">¡50% de Descuento en Mantenimiento MacBook!</h1>
+                <p class="lead mb-6">Usa código Pipod20Web</p>
+                <a href="/contacto" class="btn btn-white btn-lg px-6 py-3">Agenda Ahora</a>
+              </div>
             </div>
-          )}        
+          </div>
+          <div class="carousel-item">
+            <div class="bg-gradient-info text-white py-20">
+              <div class="container text-center">
+                <h1 class="display-4 font-weight-bold mb-4">Plan Retoma</h1>
+                <p class="lead mb-6">Cambia tu viejo equipo por uno nuevo</p>
+                <a href="/productos?categoria=plan-retoma" class="btn btn-white btn-lg px-6 py-3">Saber Más</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="my-10">
-        <h3>Simple Footer</h3>
-        <Footer />
-
-        <h3 class="mt-8">Complex Footer</h3>
-        <ComplexFooter />
-      </div>
-
-      <div class="my-10">
-        <h3 class="mt-5">Promo Sections</h3>
-        <p class="text-body">Full-width with background image and large content</p>
-        <TestimonialsFade 
-          pageHeaderBgImg={"https://images.unsplash.com/photo-1534802046520-4f27db7f3ae5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2729&q=80"} 
-          pageHeaderMinVh="50vh"
-        />
-      </div>
-
-      <div class="my-10">
-        <h3 class="mt-5">Promo Sections</h3>
-        <p class="text-body">With fading background image and testimonials</p>
-        <PromoSectionLarge 
-          title={data.products[0].title}
-          full_description="The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you believe in, if you were the only one who believed it?"  
-          pageHeaderBgImg={"https://images.unsplash.com/photo-1525904097878-94fb15835963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"} 
-          pageHeaderMinVh="50vh"
-          pageHeaderRadius="1rem"
-        />
-      </div>
-
-      <div class="my-10">
-        <h3>Checkout Forms</h3>
-        <p>Split with order summary</p>
-        <CheckoutOrderSummary 
-          products = {cartItems}
-        />
-      </div>
-
-      <div class="my-10">
-        <h3>Checkout Forms</h3>
-        <p>SWith order summary sidebar</p>
-        <CheckoutMultiStep
-          products = {cartItems2}
-        />
-      </div>
-
-      <div class="my-10">
-        <h3 class="mt-5">Product reviews</h3>
-        <p class="text-body">Simple with avatars</p>
-        <ReviewSimple reviews = {data.reviews}/>
-      </div>
-
-      <div class="my-10">
-        <h3 class="mt-5">Product reviews</h3>
-        <p class="text-body">With summary chart</p>
-        <ReviewSummaryChart reviews = {productReviews}/>
-      </div>
-
-      <div class="my-10">
-        <h3 class="mt-5">Order Summaries</h3>
-        <p class="text-body">With order summary sidebar</p>
-        <OrderSummaries order={data.orders[0]} products={orderProducts} />
-      </div>
-
-      <div class="my-10">
-        <OrderHistory orders = {data.orders} products={orderHistoryProducts} />
-      </div>
-
-      <div class="my-10">
-        <IncentiveLarge />
-      </div>
-
-      <div class="my-10">
-        <h3 class="mt-5">Features</h3>
-        <p class="text-body">3-column with illustrations and header</p>
-        <IncentiveCols />
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
       
-      <Footer />
+      <!-- Trust Bar -->
+      <div class="bg-light py-3">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-4">
+              <span class="text-muted">✓ 15+ Años de Experiencia</span>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted">✓ Repuestos Originales</span>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted">✓ Garantía Certificada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Category Navigation -->
+    <section class="py-12">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">¿Qué equipo necesita ayuda?</h2>
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=iphone" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">📱</div>
+                  <h6 class="card-title">iPhone</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=macbook" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">💻</div>
+                  <h6 class="card-title">MacBook</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=imac" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">🖥️</div>
+                  <h6 class="card-title">iMac</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=ipad" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">📱</div>
+                  <h6 class="card-title">iPad</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=watch" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">⌚</div>
+                  <h6 class="card-title">Apple Watch</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Services (3 Pillars) -->
+    <section class="py-12 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-6">
+            <div class="card h-100 shadow">
+              <div class="card-body text-center p-6">
+                <div class="mb-4">🔧</div>
+                <h4 class="card-title">Reparación de Equipos</h4>
+                <p class="card-text">Diagnóstico rápido y garantía en todas nuestras reparaciones</p>
+                <a href="/servicio-tecnico" class="btn btn-primary">AGENDA</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-6">
+            <div class="card h-100 shadow">
+              <div class="card-body text-center p-6">
+                <div class="mb-4">🔄</div>
+                <h4 class="card-title">Plan Retoma</h4>
+                <p class="card-text">Cambia lo viejo por lo nuevo con nuestro plan de intercambio</p>
+                <a href="/productos?categoria=plan-retoma" class="btn btn-primary">Saber Más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-6">
+            <div class="card h-100 shadow">
+              <div class="card-body text-center p-6">
+                <div class="mb-4">🛍️</div>
+                <h4 class="card-title">Accesorios</h4>
+                <p class="card-text">Accesorios originales y compatibles para todos tus dispositivos</p>
+                <a href="/productos?categoria=accesorios" class="btn btn-primary">IR A TIENDA</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products (iPhones) -->
+    <section class="py-12">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">Los iPhones más Populares</h2>
+        <div class="row">
+          {iphones.map(producto => (
+            <div class="col-md-6 col-lg-3 mb-4">
+              <CardProduct 
+                thumb_src={producto.thumb_src}
+                thumb_alt={producto.thumb_alt}
+                color={producto.color}
+                colors={producto.colors}
+                title={producto.title}
+                description={producto.description}
+                price={producto.price}
+                position="center"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods Banner -->
+    <section class="py-8 bg-light">
+      <div class="container">
+        <div class="text-center">
+          <h5 class="mb-4">Pagos 100% Seguros</h5>
+          <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+            <span class="badge bg-primary p-2">Bold</span>
+            <span class="badge bg-success p-2">PSE</span>
+            <span class="badge bg-info p-2">Visa</span>
+            <span class="badge bg-warning p-2">Mastercard</span>
+            <span class="badge bg-danger p-2">American Express</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products (MacBooks) -->
+    <section class="py-12">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">Laptops Potentes (MacBooks)</h2>
+        <div class="row">
+          {macbooks.map(producto => (
+            <div class="col-md-6 col-lg-3 mb-4">
+              <CardProduct 
+                thumb_src={producto.thumb_src}
+                thumb_alt={producto.thumb_alt}
+                color={producto.color}
+                colors={producto.colors}
+                title={producto.title}
+                description={producto.description}
+                price={producto.price}
+                position="center"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof (Testimonials) -->
+    <TestimonialsFade 
+      pageHeaderBgImg="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      pageHeaderMinVh="40vh"
+    />
+
+    <!-- Why Choose Us (Differentiators) -->
+    <IncentiveCols />
+
+    <!-- Blog/News Section -->
+    <section class="py-12 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">Noticias y Consejos de Expertos Apple</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Cómo mantener tu iPhone en perfecto estado</h5>
+                <p class="card-text text-muted">Consejos prácticos para prolongar la vida útil de tu dispositivo...</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">MacBook: Rendimiento y productividad</h5>
+                <p class="card-text text-muted">Descubre cómo optimizar tu MacBook para máximo rendimiento...</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Reparaciones comunes en equipos Apple</h5>
+                <p class="card-text text-muted">Conoce las reparaciones más frecuentes y cómo prevenirlas...</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky CTA (Mobile) -->
+    <div class="fixed-bottom d-block d-lg-none bg-primary p-3" style="z-index: 1030;">
+      <div class="container">
+        <a href="/contacto" class="btn btn-white w-100 font-weight-bold">
+          AGENDA TU CITA
+        </a>
+      </div>
     </div>
-	</main>
+
+    <Footer />
+  </main>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselEl = document.getElementById('heroCarousel');
+    if (carouselEl) {
+      let currentIndex = 0;
+      const items = carouselEl.querySelectorAll('.carousel-item');
+      
+      setInterval(() => {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % items.length;
+        items[currentIndex].classList.add('active');
+      }, 5000);
+    }
+  });
+</script>
