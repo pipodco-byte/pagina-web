@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/footer';
+import CardProduct from '../components/products/cardProduct';
+import IncentiveCols from '../components/incentives/incentiveCols';
+import TestimonialsFade from '../components/promo/testimonialsFade';
+import { getProductos } from '../lib/contentful';
+
+const productos = await getProductos();
+const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'));
+const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'));
+---
+
+<Layout title="Pipod - Servicio Técnico Apple Especializado">
+  <main style="padding-bottom: 80px;">
+    <PipodNavbar />
+    
+    <!-- Hero Carousel Section -->
+    <section class="position-relative overflow-hidden">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="bg-gradient-primary text-white py-20">
+              <div class="container text-center">
+                <h1 class="display-4 font-weight-bold mb-4">Servicio Técnico Especializado Apple en Bogotá</h1>
+                <p class="lead mb-6">Diagnóstico preciso y repuestos de calidad</p>
+                <a href="/contacto" class="btn btn-white btn-lg px-6 py-3">AGENDA TU CITA</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="bg-gradient-success text-white py-20">
+              <div class="container text-center">
+                <h1 class="display-4 font-weight-bold mb-4">¡50% de Descuento en Mantenimiento MacBook!</h1>
+                <p class="lead mb-6">Usa código Pipod20Web</p>
+                <a href="/contacto" class="btn btn-white btn-lg px-6 py-3">Agenda Ahora</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="bg-gradient-info text-white py-20">
+              <div class="container text-center">
+                <h1 class="display-4 font-weight-bold mb-4">Plan Retoma</h1>
+                <p class="lead mb-6">Cambia tu viejo equipo por uno nuevo</p>
+                <a href="/productos?categoria=plan-retoma" class="btn btn-white btn-lg px-6 py-3">Saber Más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+      
+      <!-- Trust Bar -->
+      <div class="bg-light py-3">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-4">
+              <span class="text-muted">✓ 15+ Años de Experiencia</span>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted">✓ Repuestos Originales</span>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted">✓ Garantía Certificada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Category Navigation -->
+    <section class="py-12">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">¿Qué equipo necesita ayuda?</h2>
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=iphone" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">📱</div>
+                  <h6 class="card-title">iPhone</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=macbook" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">💻</div>
+                  <h6 class="card-title">MacBook</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=imac" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">🖥️</div>
+                  <h6 class="card-title">iMac</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=ipad" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">📱</div>
+                  <h6 class="card-title">iPad</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-2 mb-4">
+            <a href="/productos?categoria=watch" class="text-decoration-none">
+              <div class="card text-center h-100 shadow-sm">
+                <div class="card-body py-4">
+                  <div class="mb-3">⌚</div>
+                  <h6 class="card-title">Apple Watch</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Services (3 Pillars) -->
+    <section class="py-12 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-6">
+            <div class="card h-100 shadow">
+              <div class="card-body text-center p-6">
+                <div class="mb-4">🔧</div>
+                <h4 class="card-title">Reparación de Equipos</h4>
+                <p class="card-text">Diagnóstico rápido y garantía en todas nuestras reparaciones</p>
+                <a href="/servicio-tecnico" class="btn btn-primary">AGENDA</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-6">
+            <div class="card h-100 shadow">
+              <div class="card-body text-center p-6">
+                <div class="mb-4">🔄</div>
+                <h4 class="card-title">Plan Retoma</h4>
+                <p class="card-text">Cambia lo viejo por lo nuevo con nuestro plan de intercambio</p>
+                <a href="/productos?categoria=plan-retoma" class="btn btn-primary">Saber Más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-6">
+            <div class="card h-100 shadow">
+              <div class="card-body text-center p-6">
+                <div class="mb-4">🛍️</div>
+                <h4 class="card-title">Accesorios</h4>
+                <p class="card-text">Accesorios originales y compatibles para todos tus dispositivos</p>
+                <a href="/productos?categoria=accesorios" class="btn btn-primary">IR A TIENDA</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products (iPhones) -->
+    <section class="py-12">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">Los iPhones más Populares</h2>
+        <div class="row">
+          {iphones.map(producto => (
+            <div class="col-md-6 col-lg-3 mb-4">
+              <CardProduct 
+                thumb_src={producto.thumb_src}
+                thumb_alt={producto.thumb_alt}
+                color={producto.color}
+                colors={producto.colors}
+                title={producto.title}
+                description={producto.description}
+                price={producto.price}
+                position="center"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods Banner -->
+    <section class="py-8 bg-light">
+      <div class="container">
+        <div class="text-center">
+          <h5 class="mb-4">Pagos 100% Seguros</h5>
+          <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+            <span class="badge bg-primary p-2">Bold</span>
+            <span class="badge bg-success p-2">PSE</span>
+            <span class="badge bg-info p-2">Visa</span>
+            <span class="badge bg-warning p-2">Mastercard</span>
+            <span class="badge bg-danger p-2">American Express</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products (MacBooks) -->
+    <section class="py-12">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">Laptops Potentes (MacBooks)</h2>
+        <div class="row">
+          {macbooks.map(producto => (
+            <div class="col-md-6 col-lg-3 mb-4">
+              <CardProduct 
+                thumb_src={producto.thumb_src}
+                thumb_alt={producto.thumb_alt}
+                color={producto.color}
+                colors={producto.colors}
+                title={producto.title}
+                description={producto.description}
+                price={producto.price}
+                position="center"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof (Testimonials) -->
+    <TestimonialsFade 
+      pageHeaderBgImg="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      pageHeaderMinVh="40vh"
+    />
+
+    <!-- Why Choose Us (Differentiators) -->
+    <IncentiveCols />
+
+    <!-- Blog/News Section -->
+    <section class="py-12 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8 display-6">Noticias y Consejos de Expertos Apple</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Cómo mantener tu iPhone en perfecto estado</h5>
+                <p class="card-text text-muted">Consejos prácticos para prolongar la vida útil de tu dispositivo...</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">MacBook: Rendimiento y productividad</h5>
+                <p class="card-text text-muted">Descubre cómo optimizar tu MacBook para máximo rendimiento...</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Reparaciones comunes en equipos Apple</h5>
+                <p class="card-text text-muted">Conoce las reparaciones más frecuentes y cómo prevenirlas...</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky CTA (Mobile) -->
+    <div class="fixed-bottom d-block d-lg-none bg-primary p-3" style="z-index: 1030;">
+      <div class="container">
+        <a href="/contacto" class="btn btn-white w-100 font-weight-bold">
+          AGENDA TU CITA
+        </a>
+      </div>
+    </div>
+
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselEl = document.getElementById('heroCarousel');
+    if (carouselEl) {
+      let currentIndex = 0;
+      const items = carouselEl.querySelectorAll('.carousel-item');
+      
+      setInterval(() => {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % items.length;
+        items[currentIndex].classList.add('active');
+      }, 5000);
+    }
+  });
+</script>

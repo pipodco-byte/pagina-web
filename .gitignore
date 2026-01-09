@@ -1,7 +1,10 @@
+Gemfile.lock
 node_modules/
-dist/
-.env
+/node_modules
+*.zip
+build-product/
 .DS_Store
-.vscode/
-.idea/
-astro-ecommerce/
+dist/
+package-lock.json
+.astro/
+.env
