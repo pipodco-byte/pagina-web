@@ -6,6 +6,7 @@ import Footer from '../components/footer';
 import CardProduct from '../components/products/cardProduct';
 import IncentiveCols from '../components/incentives/incentiveCols';
 import TestimonialsFade from '../components/promo/testimonialsFade';
+import Stats from '../components/stats/Stats.astro';
 import { getProductos } from '../lib/contentful';
 
 const productos = await getProductos();
@@ -55,82 +56,6 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
         <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
           <span class="carousel-control-next-icon"></span>
         </button>
-      </div>
-      
-      <!-- Trust Bar -->
-      <div class="bg-light py-3">
-        <div class="container">
-          <div class="row text-center">
-            <div class="col-md-4">
-              <span class="text-muted">✓ 15+ Años de Experiencia</span>
-            </div>
-            <div class="col-md-4">
-              <span class="text-muted">✓ Repuestos Originales</span>
-            </div>
-            <div class="col-md-4">
-              <span class="text-muted">✓ Garantía Certificada</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quick Category Navigation -->
-    <section class="py-12">
-      <div class="container">
-        <h2 class="text-center mb-8 display-6">¿Qué equipo necesita ayuda?</h2>
-        <div class="row justify-content-center">
-          <div class="col-6 col-md-2 mb-4">
-            <a href="/productos?categoria=iphone" class="text-decoration-none">
-              <div class="card text-center h-100 shadow-sm">
-                <div class="card-body py-4">
-                  <div class="mb-3">📱</div>
-                  <h6 class="card-title">iPhone</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-md-2 mb-4">
-            <a href="/productos?categoria=macbook" class="text-decoration-none">
-              <div class="card text-center h-100 shadow-sm">
-                <div class="card-body py-4">
-                  <div class="mb-3">💻</div>
-                  <h6 class="card-title">MacBook</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-md-2 mb-4">
-            <a href="/productos?categoria=imac" class="text-decoration-none">
-              <div class="card text-center h-100 shadow-sm">
-                <div class="card-body py-4">
-                  <div class="mb-3">🖥️</div>
-                  <h6 class="card-title">iMac</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-md-2 mb-4">
-            <a href="/productos?categoria=ipad" class="text-decoration-none">
-              <div class="card text-center h-100 shadow-sm">
-                <div class="card-body py-4">
-                  <div class="mb-3">📱</div>
-                  <h6 class="card-title">iPad</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-md-2 mb-4">
-            <a href="/productos?categoria=watch" class="text-decoration-none">
-              <div class="card text-center h-100 shadow-sm">
-                <div class="card-body py-4">
-                  <div class="mb-3">⌚</div>
-                  <h6 class="card-title">Apple Watch</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -242,6 +167,9 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
     <!-- Why Choose Us (Differentiators) -->
     <IncentiveCols />
+
+    <!-- Stats Section -->
+    <Stats />
 
     <!-- Blog/News Section -->
     <section class="py-12 bg-light">

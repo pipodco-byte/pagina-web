@@ -1,0 +1,62 @@
+---
+/* Componente de Estadísticas Refinado para Pipod */
+---
+
+<section class="stats-section py-5">
+  <div class="container py-4">
+    <div class="row text-center g-5">
+      
+      <div class="col-md-4">
+        <div class="stat-box">
+          <h2 class="stat-number">15 años</h2>
+          <p class="stat-text">En el mercado</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-box">
+          <h2 class="stat-number">3600+</h2>
+          <p class="stat-text">Equipos reparados</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-box">
+          <h2 class="stat-number">2500+</h2>
+          <p class="stat-text">Clientes satisfechos</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Fondo oscuro profundo como el de la imagen */
+  .stats-section {
+    background-color: #121212; 
+    color: #ffffff;
+  }
+
+  /* Estilo exacto para los números */
+  .stat-number {
+    font-size: clamp(3rem, 5vw, 4.5rem); /* Se ajusta según el tamaño de pantalla */
+    font-weight: 700;
+    letter-spacing: -3px; /* Esto es lo que le da el look pro */
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  /* Estilo exacto para el texto inferior */
+  .stat-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7); /* Blanco suavizado/grisáceo */
+    letter-spacing: 0.5px;
+  }
+
+  /* Opcional: Si quieres que se vea más limpio, usa una fuente sans-serif moderna */
+  :root {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+</style>
