@@ -1,0 +1,17 @@
+{
+  "name": "pipod-ecommerce",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.0.0",
+    "contentful": "^10.6.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "tailwindcss": "^3.4.0"
+  }
+}
