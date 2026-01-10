@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../../assets/scss/astro-ecommerce.scss';
-import PipodNavbar from '../components/pipodNavbar';
+import PipodNavbar from '../components/pipodNavbar.astro';
 import Footer from '../components/footer';
 import CardProduct from '../components/products/cardProduct';
 import IncentiveCols from '../components/incentives/incentiveCols';
@@ -119,22 +119,91 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
         </div>
       </div>
     </section>
-
     <!-- Payment Methods Banner -->
-    <section class="py-8 bg-light">
+    <section class="payment-section py-5">
       <div class="container">
-        <div class="text-center">
-          <h5 class="mb-4">Pagos 100% Seguros</h5>
-          <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
-            <span class="badge bg-primary p-2">Bold</span>
-            <span class="badge bg-success p-2">PSE</span>
-            <span class="badge bg-info p-2">Visa</span>
-            <span class="badge bg-warning p-2">Mastercard</span>
-            <span class="badge bg-danger p-2">American Express</span>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 text-center mb-5">
+            <span class="trust-badge">Pagos procesados por tecnología de punta</span>
+          </div>
+          
+          <div class="payment-grid">
+            <div class="payment-item">
+              <img src="https://bold.co/assets/img/bold-logo.svg" alt="Bold" class="logo-real bold">
+            </div>
+
+            <div class="payment-item">
+              <img src="https://www.pse.com.co/wps/wcm/connect/6014603e-1084-48f1-a3f2-89262174620a/logo-pse.svg?MOD=AJPERES" alt="PSE" class="logo-real pse">
+            </div>
+
+            <div class="payment-item">
+              <img src="https://cdn.simpleicons.org/visa/white" alt="Visa" class="logo-real">
+            </div>
+
+            <div class="payment-item">
+              <img src="https://cdn.simpleicons.org/mastercard/white" alt="Mastercard" class="logo-real">
+            </div>
+
+            <div class="payment-item">
+              <img src="https://cdn.simpleicons.org/americanexpress/white" alt="Amex" class="logo-real">
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <style>
+      .payment-section {
+        background-color: #000;
+        padding: 60px 0;
+      }
+
+      .trust-badge {
+        color: rgba(255, 255, 255, 0.4);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 4px;
+        font-weight: 600;
+      }
+
+      .payment-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+
+      .logo-real {
+        height: 30px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.4;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        object-fit: contain;
+      }
+
+      .logo-real.pse {
+        height: 48px;
+      }
+
+      .logo-real.bold {
+        height: 24px;
+      }
+
+      .payment-item:hover .logo-real {
+        opacity: 1;
+        filter: brightness(1) invert(0);
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 768px) {
+        .payment-grid { gap: 2rem; }
+        .logo-real { height: 22px; }
+        .logo-real.pse { height: 35px; }
+      }
+    </style>
+
 
     <!-- Featured Products (MacBooks) -->
     <section class="py-12">
