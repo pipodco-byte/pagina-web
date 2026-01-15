@@ -8,6 +8,7 @@ import CardProduct from '../components/products/cardProduct';
 import IncentiveCols from '../components/incentives/incentiveCols';
 import TestimonialsFade from '../components/promo/testimonialsFade';
 import Stats from '../components/stats/Stats.astro';
+import BlogSection from '../components/reviews/blogSection.jsx';
 import { getProductos } from '../lib/contentful';
 
 const productos = await getProductos();
@@ -255,40 +256,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     <Stats />
 
     <!-- Blog/News Section -->
-    <section class="py-12 bg-light">
-      <div class="container">
-        <h2 class="text-center mb-8 display-6">Noticias y Consejos de Expertos Apple</h2>
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">Cómo mantener tu iPhone en perfecto estado</h5>
-                <p class="card-text text-muted">Consejos prácticos para prolongar la vida útil de tu dispositivo...</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">MacBook: Rendimiento y productividad</h5>
-                <p class="card-text text-muted">Descubre cómo optimizar tu MacBook para máximo rendimiento...</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">Reparaciones comunes en equipos Apple</h5>
-                <p class="card-text text-muted">Conoce las reparaciones más frecuentes y cómo prevenirlas...</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <BlogSection client:load />
 
     <!-- Sticky CTA (Mobile) -->
   <div class="fixed-bottom d-md-none" style="z-index: 1030; padding: 20px;">
