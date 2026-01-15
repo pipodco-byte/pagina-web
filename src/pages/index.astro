@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../../assets/scss/astro-ecommerce.scss';
-import PipodNavbar from '../components/pipodNavbar.astro';
-import Footer from '../components/footer';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+import FloatingContact from '../layouts/floatingContact';
 import CardProduct from '../components/products/cardProduct';
 import IncentiveCols from '../components/incentives/incentiveCols';
 import TestimonialsFade from '../components/promo/testimonialsFade';
@@ -290,14 +291,29 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     </section>
 
     <!-- Sticky CTA (Mobile) -->
-    <div class="fixed-bottom d-block d-lg-none bg-primary p-3" style="z-index: 1030;">
-      <div class="container">
-        <a href="/contacto" class="btn btn-white w-100 font-weight-bold">
-          AGENDA TU CITA
-        </a>
-      </div>
-    </div>
+  <div class="fixed-bottom d-md-none" style="z-index: 1030; padding: 20px;">
+  <a href="https://wa.me/573124813094" 
+     style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFFFFF; 
+      color: #000000;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-transform: uppercase;
+     ">
+     <i class="bi bi-whatsapp" style="margin-right: 10px; font-size: 18px; color: #25D366;"></i>
+     Agendar Servicio Técnico
+  </a>
+</div>
 
+    <FloatingContact />
     <Footer />
   </main>
 </Layout>
