@@ -135,4 +135,8 @@ export default function BlogSection() {
       `}} />
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> develop
