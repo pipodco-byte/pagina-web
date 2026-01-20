@@ -3,20 +3,38 @@ CSS
 /* Se mantiene igual que la versión anterior, solo cambia el color del icono */
 
 .pipod-bento-dark {
-  background-color: #1B1B1B; /* Secondary */
-  border-radius: 32px;
+  background-color: #FFFFFF; /* Blanco para tarjeta */
+  border-radius: 40px;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #2E2E2E; /* Custom1 */
+  border: 1px solid #E8E8E8; /* Borde gris claro */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .pipod-bento-dark:hover {
   border-color: #3A506B; /* Custom2: Azul solo en el borde al hacer hover */
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+/* SECCIÓN SERVICE CARDS */
+.service-cards-section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+.service-cards-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  margin-bottom: 16px !important;
 }
 
 /* ZONA VISUAL (40%) */
@@ -27,6 +45,7 @@ CSS
   align-items: center;
   justify-content: center;
   padding: 0;
+  border-radius: 40px 40px 0 0;
 }
 
 .bento-img-dark {
@@ -34,17 +53,17 @@ CSS
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
   transition: transform 0.6s ease;
 }
 
 .pipod-bento-dark:hover .bento-img-dark {
-  transform: scale(1.1) rotate(-2deg);
+  /* Sin animación */
 }
 
 /* ZONA DE CONTENIDO (60%) */
 .bento-content-dark {
-  padding: 30px;
+  padding: 28px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -60,23 +79,23 @@ CSS
 /* --- CAMBIO AQUÍ: ICONO BLANCO --- */
 .bento-icon-accent {
   font-size: 1.5rem;
-  color: #F2F2F2; /* Emphasis: Usamos tu blanco/gris claro de la paleta */
+  color: #3A506B; /* Azul oscuro para contraste */
 }
 /* -------------------------------- */
 
 .bento-title-dark {
-  color: #F2F2F2; /* Emphasis */
-  font-size: 1.4rem;
+  color: #1B1B1B; /* Texto oscuro */
+  font-size: 1.2rem;
   font-weight: 800;
   margin: 0;
   letter-spacing: -0.03em;
 }
 
 .bento-text-dark {
-  color: #6E6E6E; /* DimGrey */
+  color: #666666; /* Gris medio para descripción */
   font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 25px;
+  line-height: 1.5;
+  margin-bottom: 16px;
 }
 
 /* ACCIÓN */
@@ -86,7 +105,7 @@ CSS
 
 .bento-link-dark {
   text-decoration: none;
-  color: #F2F2F2; /* Emphasis */
+  color: #3A506B; /* Azul */
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.1em;
@@ -102,7 +121,7 @@ CSS
 }
 
 .bento-link-dark:hover {
-  color: #3A506B; /* Custom2: El azul aparece solo en la interacción */
+  color: #1B1B1B; /* Oscuro en hover */
 }
 
 .bento-link-dark:hover .bento-arrow {

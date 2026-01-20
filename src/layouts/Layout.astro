@@ -13,7 +13,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700"
       rel="stylesheet"
     />
 		<meta name="generator" content={Astro.generator} />
@@ -46,8 +46,36 @@ const { title } = Astro.props;
   </script>
 </html>
 <style is:global>
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  /* 1. Eliminamos cualquier rastro de padding en el body que bloquee la animación */
+  body { 
+    padding-top: 0 !important; 
+    margin: 0 !important;
+  }
+
+  /* 2. Ajuste Maestro para el Hero de PIPOD */
+  /* Usamos ID (#) para tener la máxima prioridad sobre las clases de Bootstrap */
+  #bento-hero-section {
+    display: block !important;
+    /* Este es el aire real que verás entre el Navbar y tus títulos */
+    padding-top: 140px !important; 
+    padding-bottom: 60px !important;
+    /* Esto asegura que el fondo ocupe todo el espacio pero el contenido baje */
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Mantenemos el Navbar flotante para que la animación detecte el scroll */
+  .navbar.fixed-top {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 991px) {
+    #bento-hero-section {
+      padding-top: 100px !important;
+    }
+  }
 </style>
