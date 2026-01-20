@@ -5,6 +5,7 @@ import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
 import CardProduct from '../components/products/cardProduct';
+import ServiceBentoDark from '../components/ServiceCard';
 import IncentiveCols from '../components/incentives/incentiveCols';
 import ReviewWall from '../components/promo/reviewWall.jsx';
 import BlogSection from '../components/reviews/blogSection';
@@ -62,62 +63,66 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     </section>
 
     <!-- Core Services (3 Pillars) -->
-    <section class="py-12 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-6">
-            <div class="card h-100 shadow">
-              <div class="card-body text-center p-6">
-                <div class="mb-4">🔧</div>
-                <h4 class="card-title">Reparación de Equipos</h4>
-                <p class="card-text">Diagnóstico rápido y garantía en todas nuestras reparaciones</p>
-                <a href="/servicio-tecnico" class="btn btn-primary">AGENDA</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-6">
-            <div class="card h-100 shadow">
-              <div class="card-body text-center p-6">
-                <div class="mb-4">🔄</div>
-                <h4 class="card-title">Plan Retoma</h4>
-                <p class="card-text">Cambia lo viejo por lo nuevo con nuestro plan de intercambio</p>
-                <a href="/productos?categoria=plan-retoma" class="btn btn-primary">Saber Más</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-6">
-            <div class="card h-100 shadow">
-              <div class="card-body text-center p-6">
-                <div class="mb-4">🛍️</div>
-                <h4 class="card-title">Accesorios</h4>
-                <p class="card-text">Accesorios originales y compatibles para todos tus dispositivos</p>
-                <a href="/productos?categoria=accesorios" class="btn btn-primary">IR A TIENDA</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Products (iPhones) -->
-<section class="py-24" style="background-color: #F8F9FA;">
-  <div class="container">
-    <div class="mb-12">
-      <h2 class="display-5 fw-bold text-black">iPhone. <span class="text-muted">Elige tu nivel.</span></h2>
-    </div>
-
+<section class="py-24" style="background-color: #000000;"> <div class="container">
     <div class="row g-4">
-      {iphones.map(iphone => (
-        <div class="col-md-6 col-lg-3">
-          <CardProduct 
-            {...iphone} 
-            client:load 
-          />
-        </div>
-      ))}
+      <div class="col-md-4">
+        <ServiceBentoDark 
+          image_src="/images/tech/internal-iphone.png" /* Recuerda usar tus PNGs */
+          icon_name="bi-tools" /* Icono clásico de herramientas */
+          title="Reparación de Equipos"
+          description="Diagnóstico rápido y garantía en todas nuestras reparaciones"
+          buttonText="AGENDA"
+          link="/servicio-tecnico"
+          client:load
+        />
+      </div>
+
+      <div class="col-md-4">
+        <ServiceBentoDark 
+          image_src="/images/tech/iphone-swap.png"
+          icon_name="bi-arrow-repeat" /* Icono clásico de repetir/ciclo */
+          title="Plan Retoma"
+          description="Cambia lo viejo por lo nuevo con nuestro plan de intercambio"
+          buttonText="Saber Más"
+          link="/productos?categoria=plan-retoma"
+          client:load
+        />
+      </div>
+
+      <div class="col-md-4">
+        <ServiceBentoDark 
+          image_src="/images/tech/magsafe-accessories.png"
+          icon_name="bi-bag-check" /* Icono clásico de bolsa de compra */
+          title="Accesorios"
+          description="Accesorios originales y compatibles para todos tus dispositivos"
+          buttonText="IR A TIENDA"
+          link="/productos?categoria=accesorios"
+          client:load
+        />
+      </div>
     </div>
   </div>
 </section>
+
+    <!-- Featured Products (iPhones) -->
+    <section class="py-24" style="background-color: #F8F9FA;">
+      <div class="container">
+        <div class="mb-12">
+          <h2 class="display-5 fw-bold text-black">iPhone. <span class="text-muted">Elige tu nivel.</span></h2>
+        </div>
+
+        <div class="row g-4">
+          {iphones.map(iphone => (
+            <div class="col-md-6 col-lg-3">
+              <CardProduct 
+                {...iphone} 
+                client:load 
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
     <!-- Payment Methods Banner -->
     <section class="payment-section">
@@ -217,7 +222,6 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
       }
     </style>
 
-
     <!-- Featured Products (MacBooks) -->
     <section class="py-12">
       <div class="container">
@@ -258,27 +262,27 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     <BlogSection client:load />
 
     <!-- Sticky CTA (Mobile) -->
-  <div class="fixed-bottom d-md-none" style="z-index: 1030; padding: 20px;">
-  <a href="https://wa.me/573124813094" 
-     style="
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #FFFFFF; 
-      color: #000000;
-      text-decoration: none;
-      padding: 16px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 1px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      text-transform: uppercase;
-     ">
-     <i class="bi bi-whatsapp" style="margin-right: 10px; font-size: 18px; color: #25D366;"></i>
-     Agendar Servicio Técnico
-  </a>
-</div>
+    <div class="fixed-bottom d-md-none" style="z-index: 1030; padding: 20px;">
+      <a href="https://wa.me/573124813094" 
+         style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #FFFFFF; 
+          color: #000000;
+          text-decoration: none;
+          padding: 16px;
+          border-radius: 12px;
+          font-weight: 800;
+          font-size: 14px;
+          letter-spacing: 1px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          text-transform: uppercase;
+         ">
+         <i class="bi bi-whatsapp" style="margin-right: 10px; font-size: 18px; color: #25D366;"></i>
+         Agendar Servicio Técnico
+      </a>
+    </div>
 
     <FloatingContact client:load />
     <Footer client:load />

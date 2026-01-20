@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const isOpen = () => {
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours();
+  const min = now.getMinutes();
+  const time = hour * 60 + min;
+  
+  if (day === 0 || day === 6) return false;
+  return time >= 10 * 60 && time < 19 * 60;
+};
 
 export default function Footer() {
+  const [open, setOpen] = useState(false);
+  
+  useEffect(() => {
+    setOpen(isOpen());
+  }, []);
   return (
     <footer className="footer-pipod">
       {/* Iconos de Bootstrap */}
@@ -64,11 +80,11 @@ export default function Footer() {
             <div className="visit-box-premium">
               <div className="visit-entry">
                 <i className="bi bi-geo-alt"></i>
-                <span>Cra. 13a #79-52, Chapinero, Bogotá</span>
+                <a href="https://www.google.com/maps/search/Cra.+13a+%2379-52,+Chapinero,+Bogotá" target="_blank" rel="noopener noreferrer" style={{color: '#F2F2F2', textDecoration: 'none', cursor: 'pointer'}}>Cra. 13a #79-52, Chapinero, Bogotá</a>
               </div>
               <div className="visit-entry">
                 <i className="bi bi-clock"></i>
-                <span>Lun - Sáb: 10:00 AM - 7:00 PM</span>
+                <span>{open ? <span style={{color: '#F2F2F2'}}>Abierto ahora</span> : 'Cerrado'} • Lun - Sáb: 10:00 AM - 7:00 PM</span>
               </div>
               <div className="visit-entry highlight-wa">
                 <i className="bi bi-whatsapp"></i>

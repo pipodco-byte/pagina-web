@@ -1,0 +1,109 @@
+CSS
+/* serviceBentoDark.css */
+/* Se mantiene igual que la versión anterior, solo cambia el color del icono */
+
+.pipod-bento-dark {
+  background-color: #1B1B1B; /* Secondary */
+  border-radius: 32px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #2E2E2E; /* Custom1 */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pipod-bento-dark:hover {
+  border-color: #3A506B; /* Custom2: Azul solo en el borde al hacer hover */
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ZONA VISUAL (40%) */
+.bento-visual-zone {
+  background-color: #000000; /* Primary */
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.bento-img-dark {
+  max-width: 85%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  transition: transform 0.6s ease;
+}
+
+.pipod-bento-dark:hover .bento-img-dark {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* ZONA DE CONTENIDO (60%) */
+.bento-content-dark {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-header-dark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+/* --- CAMBIO AQUÍ: ICONO BLANCO --- */
+.bento-icon-accent {
+  font-size: 1.5rem;
+  color: #F2F2F2; /* Emphasis: Usamos tu blanco/gris claro de la paleta */
+}
+/* -------------------------------- */
+
+.bento-title-dark {
+  color: #F2F2F2; /* Emphasis */
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.bento-text-dark {
+  color: #6E6E6E; /* DimGrey */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ACCIÓN */
+.bento-action-dark {
+  margin-top: auto;
+}
+
+.bento-link-dark {
+  text-decoration: none;
+  color: #F2F2F2; /* Emphasis */
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.bento-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.bento-link-dark:hover {
+  color: #3A506B; /* Custom2: El azul aparece solo en la interacción */
+}
+
+.bento-link-dark:hover .bento-arrow {
+  transform: translateX(8px);
+}
