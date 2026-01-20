@@ -17,9 +17,9 @@ export default function Footer() {
             </p>
             <div className="social-links-grid">
               <a href="https://wa.me/573124813094" target="_blank" className="social-icon-item"><i className="bi bi-whatsapp"></i></a>
-              <a href="#" target="_blank" className="social-icon-item"><i className="bi bi-instagram"></i></a>
-              <a href="#" target="_blank" className="social-icon-item"><i className="bi bi-tiktok"></i></a>
-              <a href="#" target="_blank" className="social-icon-item"><i className="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/pipod.co" target="_blank" className="social-icon-item"><i className="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@pipodstore" target="_blank" className="social-icon-item"><i className="bi bi-tiktok"></i></a>
+              <a href="https://www.facebook.com/pipod.co" target="_blank" className="social-icon-item"><i className="bi bi-facebook"></i></a>
             </div>
           </div>
 
@@ -49,6 +49,7 @@ export default function Footer() {
           <div className="col-lg-2 col-md-4 col-12">
             <h6 className="column-title">CENTRO DE AYUDA</h6>
             <ul className="footer-nav-list">
+              <li><a href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4" target="_blank" rel="noopener noreferrer">Déjanos una reseña</a></li>
               <li><a href="#">Preguntas Frecuentes</a></li>
               <li><a href="#">Contáctanos</a></li>
               <li><a href="#">Devoluciones</a></li>
@@ -71,7 +72,7 @@ export default function Footer() {
               </div>
               <div className="visit-entry highlight-wa">
                 <i className="bi bi-whatsapp"></i>
-                <span>WhatsApp: 312 481 3094</span>
+                <a href="https://wa.me/573124813094" target="_blank" rel="noreferrer" style={{color: '#25D366', textDecoration: 'none', fontWeight: 700}}>WhatsApp: 312 481 3094</a>
               </div>
             </div>
           </div>

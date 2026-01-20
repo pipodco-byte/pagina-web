@@ -1,0 +1,172 @@
+/* PALETA PIPOD: Primary #000, Custom2 #3A506B, Cultured #F5F7F9, DimGrey #6E6E6E */
+
+.pipod-card-premium {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 20px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid #EDEDED;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pipod-card-premium:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  transform: translateY(-8px);
+}
+
+/* DISPLAY */
+.product-display {
+  position: relative;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #FBFBFB; /* Sutil contraste interno */
+  border-radius: 18px;
+}
+
+.img-hero {
+  max-width: 80%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+
+.pipod-card-premium:hover .img-hero {
+  transform: scale(1.05);
+}
+
+/* ETIQUETAS (STACK) */
+.badge-stack {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pipod-badge, .discount-badge {
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.badge-nuevo { background-color: #000000; }
+.badge-seminuevo { background-color: #3A506B; }
+.badge-repotenciado { background-color: #2E2E2E; }
+
+/* ICONOS LATERALES */
+.actions-side {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icon-btn {
+  background: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  color: #1B1B1B;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background-color: #F8F9FA;
+  color: #3A506B;
+}
+
+.btn-whatsapp:hover {
+  color: #25D366 !important;
+}
+
+/* PRECIO Y RATING */
+.price-rating-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.price-now {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #000;
+  display: block;
+  line-height: 1;
+}
+
+.price-before {
+  font-size: 0.85rem;
+  color: #D32F2F; /* Rojo de oferta */
+  text-decoration: line-through;
+}
+
+.rating-block {
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #F8F9FA;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.rating-block i { color: #FFB800; }
+
+/* TEXTOS */
+.title-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.description-text {
+  font-size: 0.85rem;
+  color: #6E6E6E;
+  margin-bottom: 15px;
+}
+
+/* INFO TÉCNICA USADOS */
+.tech-specs-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #F8F9FA;
+  border-radius: 12px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3A506B;
+}
+
+.color-footer {
+  border-top: 1px solid #F0F0F0;
+  padding-top: 15px;
+  margin-top: auto;
+}

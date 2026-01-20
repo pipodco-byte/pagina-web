@@ -18,7 +18,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
 <Layout title="Pipod - Servicio Técnico Apple Especializado">
   <main style="padding-bottom: 80px;">
-    <PipodNavbar />
+    <PipodNavbar client:load />
     
     <!-- Hero Carousel Section -->
     <section class="position-relative overflow-hidden">
@@ -100,27 +100,25 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     </section>
 
     <!-- Featured Products (iPhones) -->
-    <section class="py-12">
-      <div class="container">
-        <h2 class="text-center mb-8 display-6">Los iPhones más Populares</h2>
-        <div class="row">
-          {iphones.map(producto => (
-            <div class="col-md-6 col-lg-3 mb-4">
-              <CardProduct 
-                thumb_src={producto.thumb_src}
-                thumb_alt={producto.thumb_alt}
-                color={producto.color}
-                colors={producto.colors}
-                title={producto.title}
-                description={producto.description}
-                price={producto.price}
-                position="center"
-              />
-            </div>
-          ))}
+<section class="py-24" style="background-color: #F8F9FA;">
+  <div class="container">
+    <div class="mb-12">
+      <h2 class="display-5 fw-bold text-black">iPhone. <span class="text-muted">Elige tu nivel.</span></h2>
+    </div>
+
+    <div class="row g-4">
+      {iphones.map(iphone => (
+        <div class="col-md-6 col-lg-3">
+          <CardProduct 
+            {...iphone} 
+            client:load 
+          />
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
+
     <!-- Payment Methods Banner -->
     <section class="payment-section">
       <div class="container text-center">
@@ -236,6 +234,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
                 description={producto.description}
                 price={producto.price}
                 position="center"
+                client:load
               />
             </div>
           ))}
@@ -282,7 +281,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 </div>
 
     <FloatingContact client:load />
-    <Footer />
+    <Footer client:load />
   </main>
 </Layout>
 

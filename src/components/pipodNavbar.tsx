@@ -31,7 +31,7 @@ const PipodNavbar = () => {
 
         {/* Botón CTA */}
         <div className="nav-actions">
-          <a href="/cotizar" className="btn-premium">Cotizar servicio</a>
+          <a href="https://wa.me/573124813094" target="_blank" rel="noopener noreferrer" className="btn-premium">Cotizar servicio</a>
         </div>
       </div>
     </nav>
