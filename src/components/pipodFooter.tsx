@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const isOpen = () => {
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours();
+  const min = now.getMinutes();
+  const time = hour * 60 + min;
+  
+  if (day === 0 || day === 6) return false;
+  return time >= 10 * 60 && time < 19 * 60;
+};
 
 export default function Footer() {
+  const [open, setOpen] = useState(false);
+  
+  useEffect(() => {
+    setOpen(isOpen());
+  }, []);
   return (
     <footer className="footer-pipod">
       {/* Iconos de Bootstrap */}
@@ -17,9 +33,9 @@ export default function Footer() {
             </p>
             <div className="social-links-grid">
               <a href="https://wa.me/573124813094" target="_blank" className="social-icon-item"><i className="bi bi-whatsapp"></i></a>
-              <a href="#" target="_blank" className="social-icon-item"><i className="bi bi-instagram"></i></a>
-              <a href="#" target="_blank" className="social-icon-item"><i className="bi bi-tiktok"></i></a>
-              <a href="#" target="_blank" className="social-icon-item"><i className="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/pipod.co" target="_blank" className="social-icon-item"><i className="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@pipodstore" target="_blank" className="social-icon-item"><i className="bi bi-tiktok"></i></a>
+              <a href="https://www.facebook.com/pipod.co" target="_blank" className="social-icon-item"><i className="bi bi-facebook"></i></a>
             </div>
           </div>
 
@@ -49,6 +65,7 @@ export default function Footer() {
           <div className="col-lg-2 col-md-4 col-12">
             <h6 className="column-title">CENTRO DE AYUDA</h6>
             <ul className="footer-nav-list">
+              <li><a href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4" target="_blank" rel="noopener noreferrer">Déjanos una reseña</a></li>
               <li><a href="#">Preguntas Frecuentes</a></li>
               <li><a href="#">Contáctanos</a></li>
               <li><a href="#">Devoluciones</a></li>
@@ -63,15 +80,15 @@ export default function Footer() {
             <div className="visit-box-premium">
               <div className="visit-entry">
                 <i className="bi bi-geo-alt"></i>
-                <span>Cra. 13a #79-52, Chapinero, Bogotá</span>
+                <a href="https://www.google.com/maps/search/Cra.+13a+%2379-52,+Chapinero,+Bogotá" target="_blank" rel="noopener noreferrer" style={{color: '#F2F2F2', textDecoration: 'none', cursor: 'pointer'}}>Cra. 13a #79-52, Chapinero, Bogotá</a>
               </div>
               <div className="visit-entry">
                 <i className="bi bi-clock"></i>
-                <span>Lun - Sáb: 10:00 AM - 7:00 PM</span>
+                <span>{open ? <span style={{color: '#F2F2F2'}}>Abierto ahora</span> : 'Cerrado'} • Lun - Sáb: 10:00 AM - 7:00 PM</span>
               </div>
               <div className="visit-entry highlight-wa">
                 <i className="bi bi-whatsapp"></i>
-                <span>WhatsApp: 312 481 3094</span>
+                <a href="https://wa.me/573124813094" target="_blank" rel="noreferrer" style={{color: '#25D366', textDecoration: 'none', fontWeight: 700}}>WhatsApp: 312 481 3094</a>
               </div>
             </div>
           </div>

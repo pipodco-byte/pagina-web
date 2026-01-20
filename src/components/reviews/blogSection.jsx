@@ -22,9 +22,8 @@ export default function BlogSection() {
   return (
     <section className="blog-section-white">
       <div className="container">
-        <div className="header-container text-center mb-5">
-          <span className="blog-subtitle">Blog</span>
-          <h2 className="blog-main-title">Expertos en Apple</h2>
+        <div className="header-container mb-5" style={{textAlign: 'left'}}>
+          <h2 style={{fontFamily: "'Inter', sans-serif", fontSize: '2rem', fontWeight: '700', color: '#000000', margin: '0', letterSpacing: '-0.02em', textTransform: 'uppercase'}}>Expertos en Apple</h2>
         </div>
 
         <div className="row">

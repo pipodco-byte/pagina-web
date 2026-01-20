@@ -22,7 +22,7 @@ const FloatingContact = () => {
         <a href="https://wa.me/573124813094" target="_blank" rel="noreferrer" className="float-btn whatsapp" title="WhatsApp">
           <i className="bi bi-whatsapp"></i>
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="float-btn instagram" title="Instagram">
+        <a href="https://instagram.com/pipod.co" target="_blank" rel="noreferrer" className="float-btn instagram" title="Instagram">
           <i className="bi bi-instagram"></i>
         </a>
         <button onClick={toggleMenu} className="float-btn close-btn">
