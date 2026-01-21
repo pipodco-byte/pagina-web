@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="col-lg-3 col-md-12">
             <h3 className="footer-brand">PIPOD</h3>
             <p className="footer-brand-text">
-              Más de 15 años elevando el estándar de servicio Apple en Colombia. Expertos en soluciones de alta complejidad.
+             Más de 15 años comprometidos con servicio técnico de Apple en Colombia. 
             </p>
             <div className="social-links-grid">
               <a href="https://wa.me/573124813094" target="_blank" className="social-icon-item"><i className="bi bi-whatsapp"></i></a>
