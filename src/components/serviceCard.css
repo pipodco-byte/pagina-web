@@ -1,22 +1,22 @@
-CSS
-/* serviceBentoDark.css */
-/* Se mantiene igual que la versión anterior, solo cambia el color del icono */
+/* serviceBentoDark.css / serviceCard.css */
 
 .pipod-bento-dark {
-  background-color: #FFFFFF; /* Blanco para tarjeta */
-  border-radius: 40px;
-  overflow: hidden;
+  background-color: #FFFFFF;
+  /* Radio de 40px para el look de Gema */
+  border-radius: 40px !important;
+  /* VITAL: Corta las esquinas de la imagen para que sigan el círculo */
+  overflow: hidden !important;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #E8E8E8; /* Borde gris claro */
+  border: 1px solid #E8E8E8;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .pipod-bento-dark:hover {
-  border-color: #3A506B; /* Custom2: Azul solo en el borde al hacer hover */
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  border-color: #3A506B;
+  transform: translateY(-8px) scale(1.02); /* Reducido a 1.02 para que no sea tan agresivo */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
 }
 
 /* SECCIÓN SERVICE CARDS */
@@ -31,10 +31,8 @@ CSS
   font-weight: 700;
   color: #000000;
   text-align: left;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 8px;
-  margin-bottom: 16px !important;
+  /* Estilo solicitado a la izquierda sin subrayado gigante */
+  margin-bottom: 24px !important;
 }
 
 /* ZONA VISUAL (40%) */
@@ -45,7 +43,9 @@ CSS
   align-items: center;
   justify-content: center;
   padding: 0;
-  border-radius: 40px 40px 0 0;
+  /* Redondeamos la zona de la imagen también */
+  border-radius: 40px 40px 0 0 !important;
+  overflow: hidden !important;
 }
 
 .bento-img-dark {
@@ -53,17 +53,15 @@ CSS
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  /* Forzamos que la imagen misma sea redonda en el tope */
+  border-radius: 40px 40px 0 0 !important;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
   transition: transform 0.6s ease;
 }
 
-.pipod-bento-dark:hover .bento-img-dark {
-  /* Sin animación */
-}
-
 /* ZONA DE CONTENIDO (60%) */
 .bento-content-dark {
-  padding: 28px;
+  padding: 32px; /* Un poco más de aire para la gema */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -76,54 +74,53 @@ CSS
   margin-bottom: 15px;
 }
 
-/* --- CAMBIO AQUÍ: ICONO BLANCO --- */
 .bento-icon-accent {
   font-size: 1.5rem;
-  color: #3A506B; /* Azul oscuro para contraste */
+  color: #3A506B; 
 }
-/* -------------------------------- */
 
 .bento-title-dark {
-  color: #1B1B1B; /* Texto oscuro */
-  font-size: 1.2rem;
-  font-weight: 800;
+  color: #1B1B1B;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
   margin: 0;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .bento-text-dark {
-  color: #666666; /* Gris medio para descripción */
+  color: #666666;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-/* ACCIÓN */
+/* ACCIÓN (BOTÓN REDONDO) */
 .bento-action-dark {
   margin-top: auto;
 }
 
 .bento-link-dark {
   text-decoration: none;
-  color: #3A506B; /* Azul */
+  color: #3A506B;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   transition: all 0.3s;
+  /* Convertimos el link en algo que parezca un botón sutil */
+  padding: 8px 0;
 }
 
 .bento-arrow {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: transform 0.3s ease;
 }
 
-.bento-link-dark:hover {
-  color: #1B1B1B; /* Oscuro en hover */
-}
-
 .bento-link-dark:hover .bento-arrow {
-  transform: translateX(8px);
+  transform: translateX(6px);
 }

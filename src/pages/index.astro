@@ -30,7 +30,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
       
       <div class="col-lg-4 d-flex flex-column gap-3">
         <div class="p-4 d-flex flex-column justify-content-between shadow-sm" 
-             style="background: linear-gradient(135deg, #F5F7F9 0%, #E3E9ED 100%); border-radius: 24px; min-height: 220px; background-image: url('/images/Servicotecnivoheader.jpg'); background-size: cover; background-position: center;">
+             style="background: linear-gradient(135deg, #F5F7F9 0%, #E3E9ED 100%); border-radius: 24px; min-height: 220px; background-image: url('/images/appleblack.jpg'); background-size: cover; background-position: center;">
           <div>
             <span style="font-family: 'PT Mono'; font-size: 0.7rem; letter-spacing: 2px; color: #6E6E6E;">DIAGNÓSTICO EXPERTO</span>
             <h3 style="font-family: 'Inter'; font-weight: 700; margin-top: 8px; color: #FFF; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">SERVICIO TÉCNICO</h3>
@@ -40,11 +40,11 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
         </div>
 
         <div class="p-4 d-flex flex-column justify-content-between shadow-sm" 
-             style="background: #1B1B1B; border-radius: 24px; min-height: 220px; color: #FFF; background-image: url('/images/trade-in.jpg'); background-size: cover; background-position: center 30%;">
+             style="background: #1B1B1B; border-radius: 24px; min-height: 220px; color: #FFF; background-image: url('/images/accesorios phone.jpg'); background-size: cover; background-position: center 30%;">
           <div>
-            <span style="font-family: 'PT Mono'; font-size: 0.7rem; letter-spacing: 2px; color: #6E6E6E;">ORIGINAL ONLY</span>
-            <h3 style="font-family: 'Inter'; font-weight: 700; margin-top: 8px; color: #FFF; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">ACCESORIOS</h3>
-            <p style="font-family: 'Noto Sans'; font-size: 0.9rem; color: #FFF; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Lo mejor para tu ecosistema Apple.</p>
+            <span style="font-family: 'PT Mono'; font-size: 0.7rem; letter-spacing: 2px; color: #000000;">ORIGINAL ONLY</span>
+            <h3 style="font-family: 'Inter'; font-weight: 700; margin-top: 8px; color: #000000; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">ACCESORIOS</h3>
+            <p style="font-family: 'Noto Sans'; font-size: 0.9rem; color: #000000; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Lo mejor para tu ecosistema Apple.</p>
           </div>
           <a href="#" style="font-family: 'Inter'; font-weight: 700; font-size: 0.8rem; text-decoration: none; color: #FFF;">IR A TIENDA →</a>
         </div>
@@ -54,7 +54,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
         <div id="heroBentoCarousel" class="carousel slide h-100 shadow-sm" data-bs-ride="carousel" style="border-radius: 24px; overflow: hidden;">
           <div class="carousel-inner h-100">
             
-            <div class="carousel-item active h-100" style="background-image: url('/images/nueva1.jpg'); background-size: cover; background-position: center; min-height: 460px;">
+            <div class="carousel-item active h-100" style="background-image: url('/images/appleblack.jpg'); background-size: cover; background-position: center; min-height: 460px;">
               <div class="d-flex align-items-center h-100 p-5" style="background: rgba(0,0,0,0.3);">
                 <div class="w-100 text-start">
                   <span style="font-family: 'PT Mono'; font-size: 0.75rem; letter-spacing: 3px; color: #FFF;">EXPERTOS APPLE</span>
@@ -67,19 +67,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
               </div>
             </div>
 
-            <div class="carousel-item h-100" style="background-image: url('/images/airpromo.jpg'); background-size: cover; background-position: center; min-height: 460px;">
-              <div class="d-flex align-items-center h-100 p-5" style="background: rgba(0,0,0,0.3);">
-                <div class="w-100 text-start">
-                  <span style="font-family: 'PT Mono'; font-size: 0.75rem; letter-spacing: 3px; color: #FFF;">PROMO AIRE</span>
-                  <h1 style="font-family: 'Inter'; font-size: 2.8rem; font-weight: 700; margin-top: 10px; line-height: 1.1; color: #FFF;">
-                    MANTENIMIENTO <br> PREVENTIVO
-                  </h1>
-                  <p class="mt-3" style="font-family: 'Noto Sans'; font-size: 1.1rem; color: #FFF;">Extiende la vida útil de tu equipo.</p>
-                  <a href="#" class="btn btn-light mt-4 px-4 py-2" style="border-radius: 50px; font-family: 'Inter'; font-weight: 600;">Agendar →</a>
-                </div>
-              </div>
-            </div>
-
+           
             <div class="carousel-item h-100" style="background-image: url('/images/promo phone.jpg'); background-size: cover; background-position: center; min-height: 460px;">
               <div class="d-flex align-items-center h-100 p-5" style="background: rgba(0,0,0,0.3);">
                 <div class="w-100 text-start">
@@ -122,6 +110,8 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 </section>
 
 
+<!-- Stats Section -->
+    <Stats />
 
 
     <!-- Core Services (3 Pillars) -->
@@ -173,6 +163,10 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
   </div>
 </section>
 
+ <!-- Why Choose Us (Differentiators) -->
+    <IncentiveCols />
+
+
     <!-- Featured Products (iPhones) -->
     <section class="py-24" style="background-color: #F8F9FA;">
       <div class="container">
@@ -196,8 +190,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     <!-- Payment Methods Banner -->
     <section class="payment-section">
       <div class="container text-center">
-        <span class="trust-badge">Tecnología de pago segura</span>
-        
+              
         <div class="payment-wrapper">
           <div class="payment-grid">
             <div class="payment-item">
@@ -321,12 +314,8 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
       pageHeaderMinVh="40vh"
     />
 
-    <!-- Why Choose Us (Differentiators) -->
-    <IncentiveCols />
-
-    <!-- Stats Section -->
-    <Stats />
-
+   
+    
     <!-- Blog/News Section -->
     <BlogSection client:load />
 
