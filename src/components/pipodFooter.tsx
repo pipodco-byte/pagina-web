@@ -17,19 +17,20 @@ export default function Footer() {
   useEffect(() => {
     setOpen(isOpen());
   }, []);
+
   return (
     <footer className="footer-pipod">
       {/* Iconos de Bootstrap */}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
       
       <div className="container">
-        <div className="row mb-5 gy-5">
+        <div className="row mb-4 gy-5">
           
           {/* Columna 1: PIPOD */}
           <div className="col-lg-3 col-md-12">
             <h3 className="footer-brand">PIPOD</h3>
             <p className="footer-brand-text">
-              Más de 10 años elevando el estándar de servicio Apple en Colombia. Expertos en soluciones de alta complejidad.
+             Más de 15 años comprometidos con servicio técnico de Apple en Colombia. 
             </p>
             <div className="social-links-grid">
               <a href="https://wa.me/573124813094" target="_blank" className="social-icon-item"><i className="bi bi-whatsapp"></i></a>
@@ -55,7 +56,7 @@ export default function Footer() {
             <h6 className="column-title">SERVICIOS</h6>
             <ul className="footer-nav-list">
               <li><a href="#">Servicio Técnico</a></li>
-              <li><a href="#" className="highlight-service"><strong>Diagnóstico Gratuito</strong></a></li>
+              <li><a href="https://wa.me/573124813094" target="_blank" className="highlight-service"><strong>Diagnóstico Gratuito</strong></a></li>
               <li><a href="#">Plan Retoma PIPOD</a></li>
               <li><a href="#">Garantía Real</a></li>
             </ul>
@@ -74,27 +75,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Columna 5: VISÍTANOS (Con Iconos y Jerarquía) */}
+          {/* Columna 5: VISÍTANOS */}
           <div className="col-lg-3 col-md-12">
             <h6 className="column-title">VISÍTANOS</h6>
             <div className="visit-box-premium">
               <div className="visit-entry">
                 <i className="bi bi-geo-alt"></i>
-                <a href="https://www.google.com/maps/search/Cra.+13a+%2379-52,+Chapinero,+Bogotá" target="_blank" rel="noopener noreferrer" style={{color: '#F2F2F2', textDecoration: 'none', cursor: 'pointer'}}>Cra. 13a #79-52, Chapinero, Bogotá</a>
+                <a href="https://www.google.com/maps/search/Cra.+13a+%2379-52,+Chapinero,+Bogotá" target="_blank" rel="noopener noreferrer" style={{color: '#F2F2F2', textDecoration: 'none'}}>Cra. 13a #79-52, Chapinero, Bogotá</a>
               </div>
               <div className="visit-entry">
                 <i className="bi bi-clock"></i>
-                <span>{open ? <span style={{color: '#F2F2F2'}}>Abierto ahora</span> : 'Cerrado'} • Lun - Sáb: 10:00 AM - 7:00 PM</span>
+                <span>{open ? <span style={{color: '#FFFFFF', fontWeight: 700}}>Abierto ahora</span> : <span style={{fontWeight: 700}}>Cerrado</span>} • Lun - Sáb: 10:00 AM - 7:00 PM</span>
               </div>
               <div className="visit-entry highlight-wa">
                 <i className="bi bi-whatsapp"></i>
-                <a href="https://wa.me/573124813094" target="_blank" rel="noreferrer" style={{color: '#25D366', textDecoration: 'none', fontWeight: 700}}>WhatsApp: 312 481 3094</a>
+                <span><span style={{color: '#25D366', fontWeight: 700}}>WhatsApp:</span> <span style={{color: '#FFFFFF', fontWeight: 700}}>+57 312 481 3094</span></span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Ecosistema Apple Bar */}
+        {/* Ecosistema Apple Bar - COMPACTADA */}
         <div className="ecosystem-section">
           <p className="ecosystem-text">
             <span className="devices">iPhone • iPad • Mac • MacBook • iMac • Apple Watch</span>
@@ -104,16 +105,16 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Franja Final Copyright (REGLA OBLIGATORIA RESALTADA) */}
+      {/* Franja Final Copyright - SIN ESPACIO SOBRANTE */}
       <div className="bottom-credit-bar">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9 col-md-12 text-center text-lg-start">
               <p className="copyright-mandatory">
-                © 2026 <strong>PIPOD</strong>. Todos los derechos reservados. <span className="text-divider">|</span> <span className="exp-highlight">Más de 10 años de experiencia en Colombia.</span>
+                © 2026 <strong>PIPOD</strong>. Todos los derechos reservados. <span className="text-divider">|</span> <span className="exp-highlight">Más de 15 años de experiencia en Colombia.</span>
               </p>
             </div>
-            <div className="col-lg-3 col-md-12 text-center text-lg-end mt-3 mt-lg-0">
+            <div className="col-lg-3 col-md-12 text-center text-lg-end mt-2 mt-lg-0">
               <span className="premium-tag">PREMIUM SERVICE</span>
             </div>
           </div>
@@ -122,9 +123,9 @@ export default function Footer() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .footer-pipod {
-          background-color: #000000;
-          color: #F2F2F2;
-          padding: 100px 0 0 0;
+          background-color: #1F1F1F;
+          color: #FFFFFF;
+          padding: 80px 0 0 0;
           font-family: 'Inter', sans-serif;
         }
 
@@ -133,93 +134,75 @@ export default function Footer() {
           font-size: 32px;
           letter-spacing: -1.5px;
           color: #FFFFFF;
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
 
         .footer-brand-text {
-          color: #6E6E6E;
-          font-size: 15px;
+          color: #B0B0B0;
+          font-size: 14px;
           line-height: 1.6;
           max-width: 280px;
         }
 
-        .social-links-grid { display: flex; gap: 20px; margin-top: 30px; }
-        .social-icon-item { color: #E0E0E0; font-size: 30px; transition: 0.3s; }
-        .social-icon-item:hover { color: #FFFFFF; transform: translateY(-5px); }
+        .social-links-grid { display: flex; gap: 18px; margin-top: 25px; }
+        .social-icon-item { color: #FFFFFF; font-size: 24px; transition: 0.3s; }
+        .social-icon-item:hover { transform: translateY(-3px); opacity: 0.8; }
 
         .column-title {
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 800;
-          letter-spacing: 2.5px;
-          color: #FFFFFF;
-          margin-bottom: 35px;
+          letter-spacing: 2px;
+          color: #888888;
+          margin-bottom: 25px;
         }
 
         .footer-nav-list { list-style: none; padding: 0; }
-        .footer-nav-list li { margin-bottom: 15px; }
+        .footer-nav-list li { margin-bottom: 12px; }
         .footer-nav-list a {
-          color: #6E6E6E;
+          color: #FFFFFF;
           text-decoration: none;
-          font-size: 16px;
+          font-size: 15px;
           transition: 0.3s;
         }
-        .footer-nav-list a:hover { color: #FFFFFF; }
+        .footer-nav-list a:hover { opacity: 0.7; }
 
-        .highlight-service {
-          color: #FFFFFF !important;
-          font-weight: 700 !important;
-        }
-        .highlight-service:hover { color: #E0E0E0 !important; }
-
-        /* Estilo Visítanos con Iconos */
-        .visit-box-premium { display: flex; flex-direction: column; gap: 22px; }
-        .visit-entry { display: flex; align-items: flex-start; gap: 12px; color: #6E6E6E; font-size: 16px; line-height: 1.4; }
-        .visit-entry i { color: #F2F2F2; font-size: 18px; }
-        .highlight-wa { color: #FFFFFF; font-weight: 700; }
-        .highlight-wa i { color: #25D366; }
-
+        .visit-box-premium { display: flex; flex-direction: column; gap: 18px; }
+        .visit-entry { display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size: 15px; }
+        
         /* Ecosistema Bar */
         .ecosystem-section {
-          margin-top: 80px;
-          padding: 50px 0;
+          margin-top: 60px;
+          padding: 30px 0;
           border-top: 1px solid rgba(255, 255, 255, 0.1);
           text-align: center;
         }
-        .ecosystem-text { font-size: 15px; letter-spacing: 1px; }
-        .devices { color: #FFFFFF; font-weight: 300; letter-spacing: 2.5px; }
-        .divider { color: #3A506B; margin: 0 20px; font-weight: 800; }
-        .skills { color: #6E6E6E; font-weight: 500; }
+        .ecosystem-text { font-size: 14px; margin-bottom: 0; }
+        .devices { font-weight: 800; letter-spacing: 1.5px; }
+        .divider { color: #3A506B; margin: 0 15px; font-weight: 900; }
 
-        /* Franja Inferior: RESALTADO MÁXIMO */
+        /* Franja Inferior - AJUSTE FINAL */
         .bottom-credit-bar {
-          background-color: #1B1B1B;
-          padding: 35px 0;
+          background-color: #1F1f1f;
+          padding: 20px 0; /* Padding reducido para eliminar el vacío */
           border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         .copyright-mandatory { 
-          font-size: 14px; 
-          color: #999999; 
-          margin-bottom: 0;
-          letter-spacing: 0.5px;
-        }
-        .copyright-mandatory strong { color: #E0E0E0; }
-        .text-divider { color: #3A506B; margin: 0 10px; font-weight: 900; }
-        .exp-highlight { 
+          font-size: 13px; 
           color: #FFFFFF; 
-          font-weight: 600;
+          margin-bottom: 0;
         }
-
         .premium-tag {
-          font-size: 12px;
-          letter-spacing: 7px;
-          color: #FFFFFF;
+          font-size: 11px;
+          letter-spacing: 5px;
+          color: #F2f2f2;
           font-weight: 800;
+          line-height: 1; /* Elimina espacio debajo de las letras */
         }
 
         @media (max-width: 991px) {
-          .copyright-mandatory { font-size: 12px; }
-          .text-divider { display: none; }
-          .exp-highlight { display: block; margin-top: 8px; }
+          .footer-pipod { padding-top: 60px; }
+          .ecosystem-section { margin-top: 40px; padding: 20px 10px; }
+          .bottom-credit-bar { padding: 25px 0; }
         }
       `}} />
     </footer>

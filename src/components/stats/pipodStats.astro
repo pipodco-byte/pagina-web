@@ -1,9 +1,5 @@
----
-/* Componente de Estadísticas Pipod - Versión de Alto Contraste */
----
-
 <section class="stats-section">
-  <div class="container">
+  <div class="stats-container">
     <div class="stats-grid">
       
       <div class="stat-item">
@@ -14,7 +10,7 @@
         <p class="stat-text">En el mercado</p>
       </div>
 
-      <div class="stat-item separator">
+      <div class="stat-item">
         <div class="number-wrapper">
           <h2 class="stat-number" data-target="3600">0</h2>
           <span class="stat-suffix">+</span>
@@ -35,7 +31,6 @@
 </section>
 
 <script>
-  const observerOptions = { threshold: 0.5 };
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -56,77 +51,82 @@
         statsObserver.unobserve(target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.5 });
   document.querySelectorAll('.stat-number').forEach(stat => statsObserver.observe(stat));
 </script>
 
 <style>
   .stats-section {
-    background-color: #000;
-    padding: 100px 0;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #000; /* Negro para alinearse con Payment */
+    height: 119px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .stats-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    /* Ajustado a 80px para alinear con los logos de Payment */
+    padding: 0 80px; 
   }
 
   .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1100px;
-    margin: 0 auto;
+    display: flex;
+    /* Esta distribución asegura que los extremos coincidan con los logos */
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
   }
 
   .stat-item {
-    text-align: center;
-    padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 15px;
   }
+
+  /* Forzamos alineación a los bordes */
+  .stat-item:first-child { justify-content: flex-start; }
+  .stat-item:last-child { justify-content: flex-end; }
 
   .number-wrapper {
     display: flex;
     align-items: baseline;
-    justify-content: center;
-    margin-bottom: 10px;
   }
 
-  /* NÚMERO: Blanco sólido, sin degradados raros */
   .stat-number {
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: 2.5rem; 
     font-weight: 800;
-    letter-spacing: -3px;
-    line-height: 1;
+    letter-spacing: -1px;
+    font-family: 'Inter', sans-serif;
     color: #ffffff;
     margin: 0;
   }
 
-  /* SUFIJO: Más claro y con espacio corregido */
   .stat-suffix {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.8); /* Mucho más brillante que antes */
-    margin-left: 18px; /* El espacio que querías */
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 8px;
+    text-transform: uppercase;
   }
 
-  /* TEXTO INFERIOR: Legible y limpio */
   .stat-text {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
     margin: 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
-  /* Separadores sutiles pero visibles */
-  .separator {
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  @media (max-width: 768px) {
-    .stats-grid { grid-template-columns: 1fr; }
-    .separator {
-      border-left: none; border-right: none;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    .stat-number { font-size: 5rem; }
+  @media (max-width: 991px) {
+    .stats-section { height: auto; padding: 40px 0; }
+    .stats-grid { flex-direction: column; gap: 30px; }
+    .stat-item { flex-direction: column; align-items: center; }
   }
 </style>
