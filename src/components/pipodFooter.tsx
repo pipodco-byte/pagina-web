@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="col-lg-3 col-md-12">
             <h3 className="footer-brand">PIPOD</h3>
             <p className="footer-brand-text">
-              Más de 10 años elevando el estándar de servicio Apple en Colombia. Expertos en soluciones de alta complejidad.
+              Más de 15 años elevando el estándar de servicio Apple en Colombia. Expertos en soluciones de alta complejidad.
             </p>
             <div className="social-links-grid">
               <a href="https://wa.me/573124813094" target="_blank" className="social-icon-item"><i className="bi bi-whatsapp"></i></a>
@@ -84,11 +84,11 @@ export default function Footer() {
               </div>
               <div className="visit-entry">
                 <i className="bi bi-clock"></i>
-                <span>{open ? <span style={{color: '#F2F2F2'}}>Abierto ahora</span> : 'Cerrado'} • Lun - Sáb: 10:00 AM - 7:00 PM</span>
+                <span>{open ? <span style={{color: '#FFFFFF', fontWeight: 700}}>Abierto ahora</span> : <span style={{fontWeight: 700}}>Cerrado</span>} • Lun - Sáb: 10:00 AM - 7:00 PM</span>
               </div>
               <div className="visit-entry highlight-wa">
                 <i className="bi bi-whatsapp"></i>
-                <a href="https://wa.me/573124813094" target="_blank" rel="noreferrer" style={{color: '#25D366', textDecoration: 'none', fontWeight: 700}}>WhatsApp: 312 481 3094</a>
+                <span><span style={{color: '#25D366', fontWeight: 700}}>WhatsApp:</span> <span style={{color: '#FFFFFF', fontWeight: 700}}>+57 312   481 3094</span></span>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Footer() {
           <div className="row align-items-center">
             <div className="col-lg-9 col-md-12 text-center text-lg-start">
               <p className="copyright-mandatory">
-                © 2026 <strong>PIPOD</strong>. Todos los derechos reservados. <span className="text-divider">|</span> <span className="exp-highlight">Más de 10 años de experiencia en Colombia.</span>
+                © 2026 <strong>PIPOD</strong>. Todos los derechos reservados. <span className="text-divider">|</span> <span className="exp-highlight">Más de 15 años de experiencia en Colombia.</span>
               </p>
             </div>
             <div className="col-lg-3 col-md-12 text-center text-lg-end mt-3 mt-lg-0">
@@ -122,8 +122,8 @@ export default function Footer() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .footer-pipod {
-          background-color: #000000;
-          color: #F2F2F2;
+          background-color: #1F1F1F;
+          color: #FFFFFF;
           padding: 100px 0 0 0;
           font-family: 'Inter', sans-serif;
         }
@@ -137,28 +137,28 @@ export default function Footer() {
         }
 
         .footer-brand-text {
-          color: #6E6E6E;
+          color: #FFFFFF;
           font-size: 15px;
           line-height: 1.6;
           max-width: 280px;
         }
 
         .social-links-grid { display: flex; gap: 20px; margin-top: 30px; }
-        .social-icon-item { color: #E0E0E0; font-size: 30px; transition: 0.3s; }
+        .social-icon-item { color: #FFFFFF; font-size: 30px; transition: 0.3s; }
         .social-icon-item:hover { color: #FFFFFF; transform: translateY(-5px); }
 
         .column-title {
           font-size: 13px;
           font-weight: 800;
           letter-spacing: 2.5px;
-          color: #FFFFFF;
+          color: #F2F2F2;
           margin-bottom: 35px;
         }
 
         .footer-nav-list { list-style: none; padding: 0; }
         .footer-nav-list li { margin-bottom: 15px; }
         .footer-nav-list a {
-          color: #6E6E6E;
+          color: #FFFFFF;
           text-decoration: none;
           font-size: 16px;
           transition: 0.3s;
@@ -173,7 +173,7 @@ export default function Footer() {
 
         /* Estilo Visítanos con Iconos */
         .visit-box-premium { display: flex; flex-direction: column; gap: 22px; }
-        .visit-entry { display: flex; align-items: flex-start; gap: 12px; color: #6E6E6E; font-size: 16px; line-height: 1.4; }
+        .visit-entry { display: flex; align-items: flex-start; gap: 12px; color: #FFFFFF; font-size: 16px; line-height: 1.4; }
         .visit-entry i { color: #F2F2F2; font-size: 18px; }
         .highlight-wa { color: #FFFFFF; font-weight: 700; }
         .highlight-wa i { color: #25D366; }
@@ -186,23 +186,23 @@ export default function Footer() {
           text-align: center;
         }
         .ecosystem-text { font-size: 15px; letter-spacing: 1px; }
-        .devices { color: #FFFFFF; font-weight: 300; letter-spacing: 2.5px; }
+        .devices { color: #FFFFFF; font-weight: 800; letter-spacing: 2.5px; }
         .divider { color: #3A506B; margin: 0 20px; font-weight: 800; }
-        .skills { color: #6E6E6E; font-weight: 500; }
+        .skills { color: #FFFFFF; font-weight: 500; }
 
         /* Franja Inferior: RESALTADO MÁXIMO */
         .bottom-credit-bar {
-          background-color: #1B1B1B;
+          background-color: #1F1F1F;
           padding: 35px 0;
           border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         .copyright-mandatory { 
           font-size: 14px; 
-          color: #999999; 
+          color: #FFFFFF; 
           margin-bottom: 0;
           letter-spacing: 0.5px;
         }
-        .copyright-mandatory strong { color: #E0E0E0; }
+        .copyright-mandatory strong { color: #FFFFFF; }
         .text-divider { color: #3A506B; margin: 0 10px; font-weight: 900; }
         .exp-highlight { 
           color: #FFFFFF; 
@@ -220,6 +220,10 @@ export default function Footer() {
           .copyright-mandatory { font-size: 12px; }
           .text-divider { display: none; }
           .exp-highlight { display: block; margin-top: 8px; }
+        }
+        
+        body {
+          background-color: #1F1F1F !important;
         }
       `}} />
     </footer>
