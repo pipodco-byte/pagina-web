@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ReviewWall() {
+export default function PipodGoogleReviews() {
   const reviews = [
     {
       name: "Wilson Vega",
@@ -55,7 +55,7 @@ export default function ReviewWall() {
       name: "Mario Bonilla",
       date: "Hace 2 años",
       text: "Atención rápida honesta, y profesional. Realmente saben de dispositivos Apple.",
-      image: "/images/mario.jpg", // <--- AHORA SÍ LEE LA DE MARIO
+      image: "/images/mario.jpg", 
       initial: "M",
       bg: "#F3E8FD",
       color: "#7E57C2",
@@ -78,10 +78,10 @@ export default function ReviewWall() {
               ))}
             </div>
             <span className="reviews-text">
-              37 reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1"/>
+              40 reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1"/>
             </span>
           </div>
-          <a href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4" target="_blank" className="btn-google-blue">
+          <a href="https://g.page/r/CRgj2kSrZTO4EBM/review" target="_blank" className="btn-google-blue">
             Déjanos una reseña
           </a>
         </div>

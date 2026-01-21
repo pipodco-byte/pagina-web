@@ -56,7 +56,7 @@ export default function Footer() {
             <h6 className="column-title">SERVICIOS</h6>
             <ul className="footer-nav-list">
               <li><a href="#">Servicio Técnico</a></li>
-              <li><a href="#" className="highlight-service"><strong>Diagnóstico Gratuito</strong></a></li>
+              <li><a href="https://wa.me/573124813094" target="_blank" className="highlight-service"><strong>Diagnóstico Gratuito</strong></a></li>
               <li><a href="#">Plan Retoma PIPOD</a></li>
               <li><a href="#">Garantía Real</a></li>
             </ul>
