@@ -84,24 +84,94 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
 
     <!-- Featured Products (iPhones) -->
-    <section class="py-24" style="background-color: #F8F9FA;">
-      <div class="container">
-        <div class="mb-12">
-          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; text-align: left; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">iPhone</h2>
-        </div>
 
-        <div class="row g-4">
-          {iphones.map(iphone => (
-            <div class="col-md-6 col-lg-3">
-              <CardProduct 
+<section class="products-section">
+  <div class="container">
+    <div class="header-container">
+      <h2 class="section-title">iPhone</h2>
+    </div>
+
+    <div class="row g-4">
+      {iphones.map(iphone => (
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+          <div class="card-wrapper">
+             <CardProduct 
                 {...iphone} 
                 client:load 
               />
-            </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  /* 1. SECCIÓN: Reducimos el exceso de aire superior (py-24 era demasiado) */
+  .products-section {
+    background-color: #F8F9FA;
+    padding: 80px 0; /* Unificado: 80px arriba y abajo */
+  }
+
+  .header-container {
+    margin-bottom: 40px; /* Separación constante con las cards */
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  /* 2. EL TRUCO PARA EQUILIBRAR LA CARD: 
+     Forzamos el espaciado interno mediante el wrapper si la card está descompensada */
+  
+  .card-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  /* Seleccionamos la card generada dentro del componente */
+  .card-wrapper > div, 
+  .card-wrapper article {
+    width: 100%;
+    /* Ajustamos los paddings internos para quitar peso de arriba y darlo abajo */
+    padding-top: 20px !important;    /* Menos espacio arriba */
+    padding-bottom: 30px !important; /* Más espacio abajo para el footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+  }
+
+  .card-wrapper:hover > div {
+    transform: translateY(-5px);
+  }
+
+  /* 3. IMAGEN: Aseguramos que la imagen no tenga un margen superior propio */
+  .card-wrapper img {
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+    object-fit: contain;
+  }
+
+  /* Responsivo para móviles */
+  @media (max-width: 768px) {
+    .products-section {
+      padding: 50px 0;
+    }
+    .section-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>
 
     <!-- Payment Methods Banner -->
  <section class="payment-section">
@@ -210,28 +280,95 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 </style>
 
     <!-- Featured Products (MacBooks) -->
-    <section class="py-12">
-      <div class="container">
-        <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; text-align: left; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">MacBooks</h2>
-        <div class="row">
-          {macbooks.map(producto => (
-            <div class="col-md-6 col-lg-3 mb-4">
-              <CardProduct 
-                thumb_src={producto.thumb_src}
-                thumb_alt={producto.thumb_alt}
-                color={producto.color}
-                colors={producto.colors}
-                title={producto.title}
-                description={producto.description}
-                price={producto.price}
-                position="center"
-                client:load
-              />
-            </div>
-          ))}
+    <section class="macbooks-section">
+  <div class="container">
+    <div class="header-container">
+      <h2 class="section-title">MacBooks</h2>
+    </div>
+
+    <div class="row g-4">
+      {macbooks.map(producto => (
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+          <div class="card-wrapper">
+            <CardProduct 
+              thumb_src={producto.thumb_src}
+              thumb_alt={producto.thumb_alt}
+              color={producto.color}
+              colors={producto.colors}
+              title={producto.title}
+              description={producto.description}
+              price={producto.price}
+              position="center"
+              client:load
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  /* Unificamos el estilo de la sección para evitar desequilibrios */
+  .macbooks-section {
+    background-color: #F8F9FA;
+    padding: 80px 0; /* Padding equilibrado */
+  }
+
+  .header-container {
+    margin-bottom: 40px; /* Espacio constante entre título y cards */
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  /* Ajuste de la Card para MacBooks */
+  .card-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  /* Corregimos el espacio interno (Padding) para que no pese arriba */
+  .card-wrapper > div, 
+  .card-wrapper article {
+    width: 100%;
+    /* Balanceamos: Menos arriba (20px) para que la Mac suba, más abajo (32px) para el precio */
+    padding: 20px 24px 32px 24px !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+  }
+
+  .card-wrapper:hover > div {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  }
+
+  /* Aseguramos que la imagen de la MacBook esté centrada y tenga aire */
+  .card-wrapper img {
+    margin-top: 15px !important;
+    margin-bottom: 25px !important;
+    max-height: 180px; /* Altura controlada para laptops */
+    object-fit: contain;
+  }
+
+  @media (max-width: 991px) {
+    .macbooks-section { padding: 60px 0; }
+    .section-title { font-size: 1.7rem; }
+  }
+</style>
+
 
     <!-- Social Proof (Testimonials) -->
     <ReviewWall
