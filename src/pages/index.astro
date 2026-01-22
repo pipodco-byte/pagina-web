@@ -7,6 +7,14 @@ import FloatingContact from '../layouts/floatingContact';
 import CardProduct from '../components/products/cardProduct';
 import ServiceBentoDark from '../components/serviceCard';
 import IncentiveCols from '../components/incentives/incentiveCols';
+import IncentiveShort from '../components/incentives/incentiveShort';
+import IncentiveShortB from '../components/incentives/incentivceShortB';
+import IncentiveShortBlackB from '../components/incentives/incentiveShortBlackB';
+import IncentiveOJONOSE from '../components/incentives/incentiveOJONOSE';
+import IncentiveOJO from '../components/incentives/ojo.tampoco';
+import IncentivePenultimo from '../components/incentives/penultimo';
+import IncentiveTransparente from '../components/incentives/trasparente';
+import IncentiveUltimo from '../components/incentives/ultimo';
 import ReviewWall from '../components/promo/pipodGoogleReviews.jsx';
 import BlogSection from '../components/reviews/blogSection';
 import Stats from '../components/stats/pipodStats.astro';
@@ -81,6 +89,11 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
  <!-- Why Choose Us (Differentiators) -->
     <IncentiveCols />
+    <IncentiveShort client:load />
+    <IncentiveShortB client:load />
+    <IncentiveShortBlackB client:load />
+    <IncentivePenultimo client:load />
+    <IncentiveUltimo client:load />
 
 
     <!-- Featured Products (iPhones) -->
