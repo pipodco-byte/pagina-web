@@ -6,15 +6,10 @@ import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
 import CardProduct from '../components/products/cardProduct';
 import ServiceBentoDark from '../components/serviceCard';
-import IncentiveCols from '../components/incentives/incentiveCols';
-import IncentiveShort from '../components/incentives/incentiveShort';
-import IncentiveShortB from '../components/incentives/incentivceShortB';
+import IncentiveCol from '../components/incentives/incentiveCol';
+import IncentiveShortBlackA from '../components/incentives/incentiveShortBlackA';
 import IncentiveShortBlackB from '../components/incentives/incentiveShortBlackB';
-import IncentiveOJONOSE from '../components/incentives/incentiveOJONOSE';
-import IncentiveOJO from '../components/incentives/ojo.tampoco';
-import IncentivePenultimo from '../components/incentives/penultimo';
-import IncentiveTransparente from '../components/incentives/trasparente';
-import IncentiveUltimo from '../components/incentives/ultimo';
+import IncentiveShortWhite from '../components/incentives/incentiveShortWhite';
 import ReviewWall from '../components/promo/pipodGoogleReviews.jsx';
 import BlogSection from '../components/reviews/blogSection';
 import Stats from '../components/stats/pipodStats.astro';
@@ -39,7 +34,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
 
     <!-- Core Services (3 Pillars) -->
-<section class="py-5 service-cards-section" style="background-color: #F5F5F5; border-top: 1px solid #E0E0E0;"> 
+<section class="py-5 service-cards-section" style="background-color: #FFFFFF; border-top: 1px solid #E0E0E0;"> 
   <div class="container">
     <div class="mb-4 text-start">
       <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
@@ -88,12 +83,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 </section>
 
  <!-- Why Choose Us (Differentiators) -->
-    <IncentiveCols />
-    <IncentiveShort client:load />
-    <IncentiveShortB client:load />
-    <IncentiveShortBlackB client:load />
-    <IncentivePenultimo client:load />
-    <IncentiveUltimo client:load />
+    <IncentiveShortBlackA client:load />
 
 
     <!-- Featured Products (iPhones) -->
@@ -122,7 +112,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 <style is:global>
   /* 1. SECCIÓN: Reducimos el exceso de aire superior (py-24 era demasiado) */
   .products-section {
-    background-color: #F8F9FA;
+    background-color: #FFFFFF;
     padding: 80px 0; /* Unificado: 80px arriba y abajo */
   }
 
@@ -324,7 +314,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 <style is:global>
   /* Unificamos el estilo de la sección para evitar desequilibrios */
   .macbooks-section {
-    background-color: #F8F9FA;
+    background-color: #FFFFFF;
     padding: 80px 0; /* Padding equilibrado */
   }
 

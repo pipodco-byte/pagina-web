@@ -9,18 +9,18 @@ export default function IncentiveGemaInformativo() {
     },
     { 
       icon: "bi-patch-check", 
-      title: "Especialistas", 
-      subtitle: "APPLE CERTIFIED" 
+      title: "Especialistas APPLE", 
+      subtitle: "15 años en el mercado" 
     },
     { 
       icon: "bi-lightning-charge", 
-      title: "Reparación", 
-      subtitle: "ÁGIL Y SEGURA" 
+      title: "Reparación ÁGIL", 
+      subtitle: "CALIDAD GARANTIZADA" 
     },
     { 
       icon: "bi-people", 
-      title: "Trato", 
-      subtitle: "HUMANO" 
+      title: "Trato humano", 
+      subtitle: "CLARIDAD Y ACOMPAÑAMIENTO" 
     }
   ];
 
@@ -46,8 +46,8 @@ export default function IncentiveGemaInformativo() {
           height: 119px;
           display: flex;
           align-items: center;
-          border-top: 1px solid rgba(0,0,0,0.08);
-          border-bottom: 1px solid rgba(0,0,0,0.08);
+          border-top: 1px solid rgba(0,0,0,0.06);
+          border-bottom: 1px solid rgba(0,0,0,0.06);
           font-family: 'Inter', sans-serif;
           overflow: hidden;
         }
@@ -66,38 +66,51 @@ export default function IncentiveGemaInformativo() {
           display: flex;
           align-items: center;
           gap: 15px;
+          /* Transición suave para la elevación */
+          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+          cursor: default;
+        }
+
+        /* Micro-interacción: Elevación sutil */
+        .gema-item-ultimo:hover {
+          transform: translateY(-5px);
         }
 
         .gema-icon-ultimo i {
-          font-size: 28px;
+          font-size: 32px;
           color: #3A506B !important;
-          opacity: 1 !important;
           display: flex;
           align-items: center;
+          transition: transform 0.3s ease;
+        }
+
+        /* El icono también reacciona un poco al hover */
+        .gema-item-ultimo:hover .gema-icon-ultimo i {
+          transform: scale(1.05);
         }
 
         .gema-content-ultimo {
           display: flex;
           flex-direction: column;
-          line-height: 1.1;
+          line-height: 1.0;
         }
 
         .gema-title-ultimo {
-          font-weight: 800;
+          font-weight: 900;
           font-size: 14px;
           color: #000000 !important;
           text-transform: uppercase;
-          letter-spacing: 0.5px;
-          opacity: 1 !important;
+          letter-spacing: 0.8px;
+          -webkit-font-smoothing: antialiased;
         }
 
         .gema-subtitle-ultimo {
           font-weight: 500;
-          font-size: 11px;
-          color: #6E6E6E !important;
+          font-size: 13px;
+          color: rgba(0, 0, 0, 0.6) !important;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          opacity: 1 !important;
+          letter-spacing: 0.5px;
+          margin-top: 3px;
         }
 
         @media (max-width: 1100px) {
@@ -106,14 +119,15 @@ export default function IncentiveGemaInformativo() {
         }
 
         @media (max-width: 991px) {
-          .pipod-gema-informativo-ultimo { height: auto; padding: 45px 0; }
+          .pipod-gema-informativo-ultimo { height: auto; padding: 50px 0; }
           .container-gema-ultimo { 
             flex-direction: column; 
-            gap: 30px; 
+            gap: 35px; 
             padding: 0 30px;
             align-items: flex-start;
           }
           .gema-subtitle-ultimo { display: block; }
+          .gema-item-ultimo:hover { transform: none; } /* Desactivado en móvil para evitar saltos */
         }
       `}} />
     </section>
