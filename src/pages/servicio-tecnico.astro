@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceHero from '../components/service/ServiceHero.astro';
+import ServiceStats from '../components/service/ServiceStats.astro';
+import DeviceBento from '../components/service/DeviceBento.astro';
+import BateriasCatalog from '../components/service/BateriasCatalog.astro';
+import PantallasCatalog from '../components/service/PantallasCatalog.astro';
+import MantenimientoCatalog from '../components/service/MantenimientoCatalog.astro';
+import OtrasReparaciones from '../components/service/OtrasReparaciones.astro';
+import ProtocoloPipod from '../components/service/ProtocoloPipod.astro';
+import TransparencyModule from '../components/service/TransparencyModule.astro';
+import GoogleReviews from '../components/service/GoogleReviews.astro';
+import StickyWhatsApp from '../components/service/StickyWhatsApp';
+import Footer from '../components/pipodFooter';
+import PipodNavbar from '../components/pipodNavbar';
+import '../../assets/scss/astro-ecommerce.scss';
+
+// SEO Metas
+const title = "Servicio Técnico Apple Bogotá | Baterías y Pantallas | PIPOD";
+const description = "Especialistas en baterías y pantallas Apple. 2,000+ baterías reemplazadas. Express 2h para iPhone. Garantía 12 meses. Bogotá.";
+---
+
+<Layout title={title}>
+  <PipodNavbar client:load />
+  
+  <main>
+    <ServiceHero />
+    <ServiceStats />
+    <DeviceBento />
+    <BateriasCatalog />
+    <PantallasCatalog />
+    <MantenimientoCatalog />
+    <OtrasReparaciones />
+    <ProtocoloPipod />
+    <TransparencyModule />
+    <GoogleReviews />
+  </main>
+
+  <StickyWhatsApp client:load />
+  <Footer client:load />
+</Layout>
+
+<style is:global>
+  /* Reset y tipografía global */
+  body { 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
+  }
+  
+  .text-gradient { 
+    background: linear-gradient(90deg, #3A506B, #000); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+  }
+
+  .mono {
+    font-family: 'PT Mono', monospace;
+  }
+
+  .bg-light {
+    background-color: #F5F5F5 !important;
+  }
+
+  .rounded-4 {
+    border-radius: 20px;
+  }
+</style>

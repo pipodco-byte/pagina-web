@@ -1,0 +1,84 @@
+---
+// Estructura Gema: 1440px x 119px - Data-driven 2025
+---
+
+<section class="gema-stats-bar">
+  <div class="gema-wrapper">
+    <div class="stat-node">
+      <span class="val">11 AÑOS</span>
+      <span class="lab">TRAYECTORIA APPLE</span>
+    </div>
+    <div class="stat-node">
+      <span class="val">2,000+</span>
+      <span class="lab">BATERÍAS REEMPLAZADAS</span>
+    </div>
+    <div class="stat-node">
+      <span class="val">98%</span>
+      <span class="lab">SATISFACCIÓN TÉCNICA</span>
+    </div>
+    <div class="stat-node">
+      <span class="val text-blue">2H</span>
+      <span class="lab">EXPRESS IPHONE</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gema-stats-bar { 
+    width: 100%; 
+    background: #000; 
+    height: 119px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+  .gema-wrapper { 
+    width: 100%; 
+    max-width: 1440px; 
+    padding: 0 80px; 
+    display: flex; 
+    justify-content: space-between; 
+  }
+  
+  .stat-node { 
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  .val { 
+    color: #fff; 
+    font-size: 1.4rem; 
+    font-weight: 800; 
+    font-family: 'Inter', sans-serif; 
+  }
+  
+  .lab { 
+    color: rgba(255,255,255,0.5); 
+    font-size: 0.65rem; 
+    font-family: 'PT Mono', monospace; 
+    margin-top: 4px; 
+    letter-spacing: 1px;
+  }
+  
+  .text-blue { 
+    color: #3A506B !important; 
+  }
+
+  @media (max-width: 768px) {
+    .gema-stats-bar {
+      height: auto;
+      padding: 40px 0;
+    }
+    
+    .gema-wrapper {
+      padding: 0 20px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .val {
+      font-size: 1.1rem;
+    }
+  }
+</style>

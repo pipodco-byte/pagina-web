@@ -1,0 +1,122 @@
+---
+// Grid de dispositivos - MacBook promocionado como co-línea 1
+---
+
+<section id="prices" class="py-5">
+  <div class="container">
+    <h2 class="display-6 fw-bold mb-5 text-center">¿Qué equipo vamos a recuperar hoy?</h2>
+    
+    <div class="row g-4">
+      <!-- iPhone -->
+      <div class="col-md-6 col-lg-3">
+        <div class="bento-card bg-light p-5 h-100">
+          <span class="badge bg-dark rounded-pill mb-3">MÁS SOLICITADO</span>
+          <h3 class="h4 fw-bold">iPhone</h3>
+          <p class="small opacity-75 mb-3">+1,700 reparaciones</p>
+          <p class="small">Batería, pantalla, board | Express 2h</p>
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cambiar%20bater%C3%ADa%20iPhone" class="btn-pill-dark d-inline-block mt-3">Agendar</a>
+        </div>
+      </div>
+
+      <!-- MacBook PROMOCIONADO -->
+      <div class="col-md-6 col-lg-3">
+        <div class="bento-card bg-blue text-white p-5 h-100 border-2" style="border-color: #3A506B;">
+          <span class="badge bg-light text-dark rounded-pill mb-3">ESPECIALISTAS</span>
+          <h3 class="h4 fw-bold">MacBook/iMac</h3>
+          <p class="small mb-3">M1 · M2 · M3 · M4</p>
+          <p class="small">SSD, Logic Board, Pantalla Retina</p>
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20diagn%C3%B3stico%20MacBook" class="btn-pill-light d-inline-block mt-3">Diagnóstico Gratis</a>
+        </div>
+      </div>
+
+      <!-- iPad -->
+      <div class="col-md-6 col-lg-3">
+        <div class="bento-card bg-light p-5 h-100">
+          <h3 class="h4 fw-bold">iPad</h3>
+          <p class="small opacity-75 mb-3">Cambio de cristal y batería</p>
+          <p class="small">Cristal: $65k | Batería: $45k</p>
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20reparaci%C3%B3n%20iPad" class="btn-pill-dark d-inline-block mt-3">Agendar</a>
+        </div>
+      </div>
+
+      <!-- Apple Watch -->
+      <div class="col-md-6 col-lg-3">
+        <div class="bento-card bg-light p-5 h-100">
+          <h3 class="h4 fw-bold">Apple Watch</h3>
+          <p class="small opacity-75 mb-3">Soporte Series & Ultra</p>
+          <p class="small">Batería: $28k | Cristal: $42k</p>
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20reparaci%C3%B3n%20Apple%20Watch" class="btn-pill-dark d-inline-block mt-3">Agendar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bento-card { 
+    border-radius: 28px; 
+    transition: transform 0.3s ease; 
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  }
+  
+  .bg-light {
+    background-color: #F5F5F5 !important;
+  }
+  
+  .bg-blue { 
+    background-color: #3A506B; 
+  }
+  
+  .mono { 
+    font-family: 'PT Mono', monospace; 
+    font-size: 0.6rem; 
+    color: #888;
+    letter-spacing: 1px;
+  }
+  
+  .btn-pill-light { 
+    background: #fff; 
+    color: #000; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 700;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  
+  .btn-pill-light:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .btn-pill-dark {
+    background: #000;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-pill-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 768px) {
+    .bento-card {
+      border-radius: 20px;
+    }
+    
+    .d-flex {
+      flex-direction: column;
+      gap: 20px !important;
+    }
+  }
+</style>
