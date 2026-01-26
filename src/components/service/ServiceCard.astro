@@ -1,0 +1,176 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  specs: Array<{ label: string; value: string; highlight?: boolean }>;
+  checklist: string[];
+  buttons: Array<{ text: string; href: string; variant?: 'primary' | 'outline'; ariaLabel: string }>;
+  note?: string;
+}
+
+const { icon, title, specs, checklist, buttons, note } = Astro.props;
+---
+
+<div class="pipod-service-card">
+  <div class="pipod-service-icon"><i class={`bi ${icon}`}></i></div>
+  <h3 class="pipod-service-title">{title}</h3>
+  
+  {specs.map(spec => (
+    <div class="pipod-spec-row">
+      <span class="pipod-spec-label">{spec.label}</span>
+      <span class={`pipod-spec-value ${spec.highlight ? 'pipod-highlight' : ''}`}>
+        {spec.value}
+      </span>
+    </div>
+  ))}
+
+  <ul class="pipod-checklist">
+    {checklist.map(item => (
+      <li>{item}</li>
+    ))}
+  </ul>
+
+  {note && <p class="pipod-service-note">{note}</p>}
+
+  <div class={`pipod-button-group ${buttons.length > 1 ? 'pipod-multi-button' : ''}`}>
+    {buttons.map(btn => (
+      <a 
+        href={btn.href}
+        class={`pipod-btn ${btn.variant === 'outline' ? 'pipod-btn-outline' : 'pipod-btn-primary'}`}
+        aria-label={btn.ariaLabel}
+      >
+        {btn.text}
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .pipod-service-card {
+    background: #F5F5F5;
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pipod-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  }
+
+  .pipod-service-icon {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    line-height: 1;
+    color: #000000;
+  }
+
+  .pipod-service-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+    color: #000000;
+    letter-spacing: -0.01em;
+  }
+
+  .pipod-spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .pipod-spec-label {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #888;
+  }
+
+  .pipod-spec-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000000;
+  }
+
+  .pipod-highlight {
+    color: #000000 !important;
+    font-weight: 700;
+  }
+
+  .pipod-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+  }
+
+  .pipod-checklist li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #000000 !important;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .pipod-service-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #6E6E6E;
+    margin: 24px 0;
+    line-height: 1.5;
+  }
+
+  .pipod-button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+  }
+
+  .pipod-multi-button {
+    flex-direction: column;
+  }
+
+  .pipod-btn {
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pipod-btn-primary {
+    background: #1F1F1F;
+    color: #FFFFFF;
+  }
+
+  .pipod-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(31, 31, 31, 0.3);
+  }
+
+  .pipod-btn-outline {
+    background: transparent;
+    color: #1F1F1F;
+    border: 1.5px solid #1F1F1F;
+    padding: 12px 26px;
+    font-size: 0.9rem;
+  }
+
+  .pipod-btn-outline:hover {
+    background: #1F1F1F;
+    color: #FFFFFF;
+  }
+</style>
