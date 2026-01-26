@@ -1,0 +1,154 @@
+<section class="banner-section hardware">
+  <div class="banner-wrapper">
+    <div class="banner-grid">
+      
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">196</h2>
+          <span class="banner-suffix">DISCOS/RAM</span>
+        </div>
+        <p class="banner-text">Mejorados</p>
+        <p class="banner-subtext">6.3% del negocio</p>
+      </div>
+
+      <div class="banner-divider"></div>
+
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">174</h2>
+          <span class="banner-suffix">BOARDS</span>
+        </div>
+        <p class="banner-text">Reparados</p>
+        <p class="banner-subtext">5.6% del negocio</p>
+      </div>
+
+      <div class="banner-divider"></div>
+
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">162</h2>
+          <span class="banner-suffix">MOJADOS</span>
+        </div>
+        <p class="banner-text">Recuperados</p>
+        <p class="banner-subtext">Humedad no es fin</p>
+      </div>
+
+      <div class="banner-divider"></div>
+
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">12.6<span class="percent">%</span></h2>
+          <span class="banner-suffix">SALVADOS</span>
+        </div>
+        <p class="banner-text">Recuperación</p>
+        <p class="banner-subtext">Hardware salvado</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .banner-section {
+    height: 160px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .banner-section.hardware {
+    background-color: #D32F2F;
+  }
+
+  .banner-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .banner-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .banner-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .number-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .banner-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .percent {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .banner-suffix {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .banner-text {
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-subtext {
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 991px) {
+    .banner-section {
+      height: auto;
+      padding: 40px 0;
+    }
+    .banner-grid {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .banner-divider {
+      display: none;
+    }
+  }
+</style>

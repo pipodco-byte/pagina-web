@@ -7,12 +7,18 @@ import BateriasCatalog from '../components/service/BateriasCatalog.astro';
 import PantallasCatalog from '../components/service/PantallasCatalog.astro';
 import MantenimientoCatalog from '../components/service/MantenimientoCatalog.astro';
 import OtrasReparaciones from '../components/service/OtrasReparaciones.astro';
+import PaymentBanner from '../components/service/PaymentBanner.astro';
+import HistoricoBanner from '../components/service/HistoricoBanner.astro';
+import BateriasBanner from '../components/service/BateriasBanner.astro';
+import PantallasBanner from '../components/service/PantallasBanner.astro';
+import HardwareBanner from '../components/service/HardwareBanner.astro';
 import ProtocoloPipod from '../components/service/ProtocoloPipod.astro';
 import TransparencyModule from '../components/service/TransparencyModule.astro';
 import GoogleReviews from '../components/service/GoogleReviews.astro';
 import StickyWhatsApp from '../components/service/StickyWhatsApp';
 import Footer from '../components/pipodFooter';
 import PipodNavbar from '../components/pipodNavbar';
+import Stats from '../components/stats/pipodStats.astro';
 import '../../assets/scss/astro-ecommerce.scss';
 
 // SEO Metas
@@ -25,12 +31,18 @@ const description = "Especialistas en bater√≠as y pantallas Apple. 2,000+ bater√
   
   <main>
     <ServiceHero />
+    <Stats />
     <ServiceStats />
     <DeviceBento />
     <BateriasCatalog />
     <PantallasCatalog />
     <MantenimientoCatalog />
     <OtrasReparaciones />
+    <PaymentBanner />
+    <HistoricoBanner />
+    <BateriasBanner />
+    <PantallasBanner />
+    <HardwareBanner />
     <ProtocoloPipod />
     <TransparencyModule />
     <GoogleReviews />

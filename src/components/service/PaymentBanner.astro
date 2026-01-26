@@ -1,0 +1,100 @@
+<section class="payment-section">
+  <div class="container-fluid">
+    <div class="payment-wrapper">
+      <div class="payment-grid">
+        
+        <div class="payment-item">
+          <img src="https://checkout.bold.co/library/assets/bold-logos/bold-dark.svg" alt="Bold" class="logo-bold">
+        </div>
+
+        <div class="payment-item">
+          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/pse.svg" alt="PSE" class="logo-img pse">
+        </div>
+
+        <div class="payment-item">
+          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/visa.svg" alt="Visa" class="logo-img">
+        </div>
+
+        <div class="payment-item">
+          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/mastercard.svg" alt="Mastercard" class="logo-img">
+        </div>
+
+        <div class="payment-item">
+          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/amex.svg" alt="Amex" class="logo-img">
+        </div>
+
+        <div class="payment-item">
+          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/nequi.svg" alt="Nequi" class="logo-img">
+        </div>
+
+        <div class="payment-item">
+          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/bancolombia.svg" alt="Bancolombia" class="logo-img">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .payment-section {
+    background-color: #000;
+    height: 119px; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .payment-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .payment-grid {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  .logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .logo-bold {
+    height: 28px;
+    width: auto;
+    transition: all 0.4s ease;
+  }
+
+  .logo-img.pse {
+    height: 52px;
+  }
+
+  .payment-item:hover .logo-img, 
+  .payment-item:hover .logo-bold {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.1));
+  }
+
+  @media (max-width: 991px) {
+    .payment-section {
+      height: auto;
+      padding: 40px 0;
+    }
+    .payment-grid {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+</style>

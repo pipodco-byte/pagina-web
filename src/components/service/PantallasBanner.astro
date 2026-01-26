@@ -1,0 +1,165 @@
+<section class="banner-section pantallas">
+  <div class="banner-wrapper">
+    <div class="banner-grid">
+      
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">1,098</h2>
+          <span class="banner-suffix">PANTALLAS</span>
+        </div>
+        <p class="banner-text">Reparadas</p>
+        <p class="banner-subtext">Histórico 2010-2025</p>
+      </div>
+
+      <div class="banner-divider"></div>
+
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">35.4<span class="percent">%</span></h2>
+          <span class="banner-suffix">DEL NEGOCIO</span>
+        </div>
+        <p class="banner-text">Servicio #1</p>
+        <p class="banner-subtext">Principal generador</p>
+      </div>
+
+      <div class="banner-divider"></div>
+
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">756</h2>
+          <span class="banner-suffix">iPHONE</span>
+        </div>
+        <p class="banner-text">68.9%</p>
+        <p class="banner-subtext">Mayoría de reparaciones</p>
+      </div>
+
+      <div class="banner-divider"></div>
+
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">244</h2>
+          <span class="banner-suffix">MAC</span>
+        </div>
+        <p class="banner-text">22.2%</p>
+        <p class="banner-subtext">Crecimiento notable</p>
+      </div>
+
+      <div class="banner-divider"></div>
+
+      <div class="banner-item">
+        <div class="number-wrapper">
+          <h2 class="banner-number">98</h2>
+          <span class="banner-suffix">iPAD</span>
+        </div>
+        <p class="banner-text">8.9%</p>
+        <p class="banner-subtext">Segmento complementario</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .banner-section {
+    height: 160px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .banner-section.pantallas {
+    background-color: #3A506B;
+  }
+
+  .banner-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .banner-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .banner-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .number-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .banner-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .percent {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .banner-suffix {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .banner-text {
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-subtext {
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 991px) {
+    .banner-section {
+      height: auto;
+      padding: 40px 0;
+    }
+    .banner-grid {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .banner-divider {
+      display: none;
+    }
+  }
+</style>
