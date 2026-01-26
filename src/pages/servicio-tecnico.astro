@@ -15,7 +15,7 @@ import HardwareBanner from '../components/service/HardwareBanner.astro';
 import ProtocoloPipod from '../components/service/ProtocoloPipod.astro';
 import TransparencyModule from '../components/service/TransparencyModule.astro';
 import GoogleReviews from '../components/service/GoogleReviews.astro';
-import StickyWhatsApp from '../components/service/StickyWhatsApp';
+import FloatingContact from '../layouts/floatingContact';
 import Footer from '../components/pipodFooter';
 import PipodNavbar from '../components/pipodNavbar';
 import Stats from '../components/stats/pipodStats.astro';
@@ -48,7 +48,7 @@ const description = "Especialistas en bater√≠as y pantallas Apple. 2,000+ bater√
     <GoogleReviews />
   </main>
 
-  <StickyWhatsApp client:load />
+  <FloatingContact client:load />
   <Footer client:load />
 </Layout>
 
