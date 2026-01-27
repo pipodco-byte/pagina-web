@@ -1,9 +1,10 @@
 ---
 export interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description || ''} />
 		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link
       href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700"
@@ -19,6 +21,9 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
     <link rel="canonical" href="https://www.creative-tim.com/astro/" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -26,9 +31,6 @@ const { title } = Astro.props;
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NKDMSK6');</script>
     <!-- End Google Tag Manager -->
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
 	</head>
 	<body>
     <!-- Google Tag Manager (noscript) -->
@@ -46,24 +48,25 @@ const { title } = Astro.props;
   </script>
 </html>
 <style is:global>
-  /* 1. Eliminamos cualquier rastro de padding en el body que bloquee la animación */
+  :root {
+    --bs-font-sans-serif: 'Inter', sans-serif;
+  }
+
   body { 
     padding-top: 0 !important; 
     margin: 0 !important;
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F5F7;
+    overflow-x: hidden;
   }
 
-  /* 2. Ajuste Maestro para el Hero de PIPOD */
-  /* Usamos ID (#) para tener la máxima prioridad sobre las clases de Bootstrap */
   #bento-hero-section {
     display: block !important;
-    /* Este es el aire real que verás entre el Navbar y tus títulos */
     padding-top: 140px !important; 
     padding-bottom: 60px !important;
-    /* Esto asegura que el fondo ocupe todo el espacio pero el contenido baje */
     box-sizing: border-box !important;
   }
 
-  /* 3. Mantenemos el Navbar flotante para que la animación detecte el scroll */
   .navbar.fixed-top {
     position: fixed !important;
     top: 0;
@@ -71,6 +74,129 @@ const { title } = Astro.props;
     left: 0;
     z-index: 1030;
     transition: all 0.3s ease;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .fw-black {
+    font-weight: 900;
+  }
+
+  .tracking-widest {
+    letter-spacing: 0.4em;
+  }
+
+  .tracking-wide {
+    letter-spacing: 0.2em;
+  }
+
+  .badge-pill {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+  }
+
+  .video-wrapper {
+    aspect-ratio: 16/9;
+  }
+
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .parallax-target {
+    transition: transform 0.1s ease-out;
+  }
+
+  .btn-primary {
+    background: #0066CC;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
+  }
+
+  @keyframes shimmerWord {
+    0%, 100% { color: #1D1D1F; }
+    20%, 50% { color: #0066CC; }
+  }
+
+  .shimmer-word {
+    animation: shimmerWord 5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+
+  @keyframes shimmerText {
+    0% { background-position: -200%; }
+    100% { background-position: 200%; }
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #F9FAFB 0%, #3B82F6 50%, #F9FAFB 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmerText 4s linear infinite;
+  }
+
+  .benefit-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+  }
+
+  .benefit-card .icon-box {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .benefit-card:hover .icon-box {
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  .checklist-item {
+    transition: transform 0.3s;
+  }
+
+  .checklist-item:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .hover-white:hover {
+    color: white !important;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .spin-icon {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
   }
 
   @media (max-width: 991px) {

@@ -1,0 +1,367 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BENEFITS, STEPS, CHECKLIST, PRODUCTS, FAQS } from '../data/constants';
+import NewsletterForm from '../components/retoma/retoma.jsx';
+import Footer from '../components/pipodFooter';
+import PipodNavbar from '../components/pipodNavbar';
+
+const iconMap = {
+  Lightbulb: 'bi-lightbulb',
+  Heart: 'bi-heart',
+  Leaf: 'bi-recycle',
+  Send: 'bi-send',
+  HardDrive: 'bi-hdd',
+  Lock: 'bi-lock',
+  Smartphone: 'bi-phone',
+  Zap: 'bi-lightning-charge',
+  FileText: 'bi-file-text',
+  HelpCircle: 'bi-question-circle'
+};
+---
+
+<Layout title="Pipod - Plan Retoma de Dispositivos Apple" description="Entrega tu dispositivo Apple usado (iPhone, MacBook, iMac, Apple Watch) y recibe crédito para comprar equipo nuevo o reacondicionado.">
+
+  <PipodNavbar client:load />
+
+  <!-- HERO SECTION -->
+  <section class="hero-section d-flex align-items-center position-relative overflow-hidden">
+    <div class="container py-5 mt-5">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 hero-content">
+          <!-- Badge -->
+          <div class="badge-pill mb-4 d-inline-flex align-items-center">
+            <i class="bi bi-stars me-2 text-info spin-icon"></i>
+            <span class="fw-semibold tracking-wider text-dark" style="font-size: 0.75rem;">PLAN RETOMA 2025</span>
+          </div>
+          
+          <!-- Title with Parallax hook class -->
+          <h1 class="display-1 fw-black text-gradient mb-4 parallax-target" data-speed="0.5">
+            Renueva tu<br/>equipo
+          </h1>
+          
+          <p class="lead text-secondary fw-light mb-5 parallax-target" data-speed="0.3" style="max-width: 600px;">
+            El Plan Retoma de Pipod te permite entregar tu dispositivo Apple usado (iPhone, Macbook, iMac, SmartWatch) y recibir un descuento por la compra de un equipo nuevo o reacondicionado. Aplicable para clientes particulares y empresas.
+          </p>
+          
+          <div class="d-flex gap-3 flex-column flex-sm-row">
+            <button class="btn btn-primary btn-lg rounded-4 px-5 py-3 fw-bold shadow-lg hover-scale">
+              Agendar Cita
+            </button>
+            <button class="btn btn-outline-info btn-lg rounded-4 px-4 py-3 fw-semibold hover-scale">
+              Ver proceso
+            </button>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="video-wrapper rounded-4 overflow-hidden shadow-lg animate-fade-in-right">
+             <iframe src="https://player.vimeo.com/video/732211917?background=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="products-section py-5 bg-white">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        {PRODUCTS.map((product, i) => (
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <div class="product-card py-4" style={`--delay: ${i * 0.4}s`}>
+              <h3 class="display-6 fw-bold shimmer-word">{product.label}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section id="beneficios" class="benefits-section py-5 bg-dark text-white">
+    <div class="container py-5">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 pe-lg-5">
+          <span class="text-uppercase fw-black tracking-widest text-secondary" style="font-size: 10px;">APROVECHA TU EQUIPO USADO</span>
+          <h2 class="display-3 fw-black mb-4 mt-2 shimmer-text">Beneficios</h2>
+          <p class="text-secondary lead">El Plan Retoma de Pipod te permite renovar tu equipo con beneficios económicos y ambientales. Obtén el mejor valor por tu dispositivo usado y contribuye a un futuro más sostenible.</p>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="row g-4">
+            {BENEFITS.map((item, idx) => {
+              const iconClass = iconMap[item.icon.name] || 'bi-star';
+              return (
+                <div class="col-md-6">
+                  <div class="benefit-card h-100 p-4 rounded-4 text-center hover-up">
+                    <div class="icon-box mb-3 mx-auto rounded-3 d-flex align-items-center justify-content-center">
+                      <i class={`bi ${iconMap[item.icon.name]} fs-1 text-white`}></i>
+                    </div>
+                    <h4 class="fw-bold mb-2">{item.title}</h4>
+                    <p class="text-secondary small">{item.desc}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS SECTION -->
+  <section id="como-funciona" class="steps-section py-5 bg-white position-relative">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="display-3 fw-black text-gradient">Tres pasos un nuevo equipo</h2>
+      </div>
+      
+      <div class="row g-5">
+        {STEPS.map((step) => (
+          <div class="col-md-4">
+            <div class="step-card text-center group hover-up">
+              <div class="step-number display-1 fw-black text-gradient mb-3">{step.number}</div>
+              <h3 class="h2 fw-black text-dark mb-3">{step.title}</h3>
+              <p class="text-secondary">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST SECTION -->
+  <section id="recomendaciones" class="checklist-section py-5 bg-black">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span class="text-uppercase fw-black tracking-widest text-secondary" style="font-size: 10px;">RECOMENDACIONES</span>
+        <h2 class="display-4 fw-black text-white mt-3">Antes de entregar tu equipo, asegúrate de</h2>
+      </div>
+
+      <div class="row g-4">
+        {CHECKLIST.map((item) => (
+          <div class="col-md-6">
+            <div class="d-flex align-items-start gap-3 p-3 rounded-3 checklist-item hover-scale-sm">
+              <div class="icon-wrapper text-primary fs-3">
+                 <i class={`bi ${iconMap[item.icon.name]}`}></i>
+              </div>
+              <div>
+                <h4 class="h5 fw-bold text-white">{item.title}</h4>
+                <p class="text-secondary mb-0 small">{item.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="faq-section py-5 bg-white">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span class="text-uppercase fw-bold tracking-widest text-secondary d-block mb-2" style="font-size: 10px;">Dudas</span>
+        <h2 class="display-4 fw-black mb-2">Preguntas Frecuentes</h2>
+        <p class="text-uppercase tracking-wide text-muted small">Todo sobre el Plan Retoma</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="accordion accordion-flush" id="faqAccordion">
+            {FAQS.map((faq, idx) => (
+              <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm bg-light">
+                <h2 class="accordion-header" id={`heading${idx}`}>
+                  <button class="accordion-button collapsed fw-bold text-dark bg-transparent shadow-none py-4" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${idx}`} aria-expanded="false" aria-controls={`collapse${idx}`}>
+                    <i class="bi bi-question-circle text-primary me-3"></i>
+                    {faq.q}
+                  </button>
+                </h2>
+                <div id={`collapse${idx}`} class="accordion-collapse collapse" aria-labelledby={`heading${idx}`} data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-secondary pb-4 pt-0 ps-5 ms-3">
+                    {faq.a}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA (Newsletter) -->
+  <section class="footer-cta py-5 bg-black text-center">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h3 class="display-5 fw-bold text-white mb-3">Mantente Informado</h3>
+          <p class="text-secondary mb-4">Recibe ofertas exclusivas del Plan Retoma y novedades sobre dispositivos Apple.<br/><span class="small text-uppercase tracking-wide text-muted">Sin spam, solo valor</span></p>
+          
+          <!-- ISLA REACT -->
+          <NewsletterForm client:visible />
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer client:load />
+
+</Layout>
+
+<style lang="scss">
+$primary-color: #0066CC;
+$gradient-start: #3B82F6;
+$gradient-end: #06B6D4;
+$bg-dark: #121212;
+$text-light: #F9FAFB;
+
+:root {
+  --bs-font-sans-serif: 'Inter', sans-serif;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F5F5F7;
+  overflow-x: hidden;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.tracking-widest {
+  letter-spacing: 0.4em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.2em;
+}
+
+.badge-pill {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.video-wrapper {
+  aspect-ratio: 16/9;
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.parallax-target {
+  transition: transform 0.1s ease-out;
+}
+
+.btn-primary {
+  background: $primary-color;
+  border: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
+  }
+}
+
+@keyframes shimmerWord {
+  0%, 100% { color: #1D1D1F; }
+  20%, 50% { color: $primary-color; }
+}
+
+.shimmer-word {
+  animation: shimmerWord 5s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes shimmerText {
+  0% { background-position: -200%; }
+  100% { background-position: 200%; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #F9FAFB 0%, $gradient-start 50%, #F9FAFB 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmerText 4s linear infinite;
+}
+
+.benefit-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  
+  .icon-box {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255,255,255,0.05);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    .icon-box {
+      transform: rotate(15deg) scale(1.1);
+    }
+  }
+}
+
+.checklist-item {
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.footer-cta {
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: $gradient-start;
+  }
+  .input-group {
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
+    border-radius: 0; 
+  }
+}
+
+.hover-white:hover {
+  color: white !important;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.spin-icon {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+</style>

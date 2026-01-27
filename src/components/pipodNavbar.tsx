@@ -22,7 +22,7 @@ const PipodNavbar = () => {
         {/* Menú Centrado - Orden: Servicio, Retoma, Tienda, Accesorios, Contacto, Blog */}
         <ul className="nav-links">
           <li><a href="/servicio-tecnico" className="nav-item">Servicio Técnico</a></li>
-          <li><a href="/retoma" className="nav-item">Plan Retoma</a></li>
+          <li><a href="/plan-retoma" className="nav-item">Plan Retoma</a></li>
           <li><a href="/tienda" className="nav-item">Tienda</a></li>
           <li><a href="/accesorios" className="nav-item">Accesorios</a></li>
           <li><a href="/contacto" className="nav-item">Contacto</a></li>
