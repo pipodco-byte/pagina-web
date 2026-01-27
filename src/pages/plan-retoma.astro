@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { BENEFITS, STEPS, CHECKLIST, PRODUCTS, FAQS } from '../data/constants';
+import { BENEFITS, STEPS, CHECKLIST, FAQS } from '../data/constants';
 import NewsletterForm from '../components/retoma/retoma.jsx';
 import Footer from '../components/pipodFooter';
 import PipodNavbar from '../components/pipodNavbar';
 import RetomaStats from '../components/retoma/RetomaStats.astro';
 import RetomaTrustBadges from '../components/retoma/RetomaTrustBadges';
+import RetomaProducts from '../components/retoma/RetomaProducts.astro';
 import RetomaComparison from '../components/retoma/RetomaComparison.astro';
 
 const iconMap = {
@@ -27,35 +28,35 @@ const iconMap = {
   <PipodNavbar client:load />
 
   <!-- HERO SECTION -->
-  <section class="hero-section d-flex align-items-center position-relative overflow-hidden">
-    <div class="container py-5 mt-5">
+  <div class="q1-banner">
+    <div class="container d-flex justify-content-center align-items-center gap-3">
+      <span class="mono-text">✓ PLAN RETOMA ACTIVO • VALORACIÓN EN 30 MINUTOS</span>
+      <a href="https://wa.me/573124813094" class="btn-pill-light py-1 px-3">Agendar Ahora</a>
+    </div>
+  </div>
+
+  <section class="hero-section">
+    <div class="container py-5">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6 hero-content">
-          <div class="badge-pill mb-4 d-inline-flex align-items-center">
-            <i class="bi bi-stars me-2 text-info spin-icon"></i>
-            <span class="fw-semibold tracking-wider text-dark" style="font-size: 0.75rem;">PLAN RETOMA 2025</span>
-          </div>
+          <div class="tech-tag mb-4">[ PLAN RETOMA 2026 ]</div>
           
-          <h1 class="display-1 fw-black text-gradient mb-4 parallax-target" data-speed="0.5">
-            Renueva tu<br/>equipo
+          <h1 class="display-2 fw-bold mb-4">
+            Renueva tu<br/><span class="text-blue">equipo</span>
           </h1>
           
-          <p class="lead text-secondary fw-light mb-5 parallax-target" data-speed="0.3" style="max-width: 600px;">
+          <p class="lead mb-5" style="max-width: 600px;">
             El Plan Retoma de Pipod te permite entregar tu dispositivo Apple usado (iPhone, Macbook, iMac, SmartWatch) y recibir un descuento por la compra de un equipo nuevo o reacondicionado. Aplicable para clientes particulares y empresas.
           </p>
           
-          <div class="d-flex gap-3 flex-column flex-sm-row">
-            <button class="btn btn-primary btn-lg rounded-4 px-5 py-3 fw-bold shadow-lg hover-scale">
-              Agendar Cita
-            </button>
-            <button class="btn btn-outline-info btn-lg rounded-4 px-4 py-3 fw-semibold hover-scale">
-              Ver proceso
-            </button>
+          <div class="d-flex gap-3">
+            <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20información%20sobre%20el%20Plan%20Retoma." class="btn-pill-dark">Agendar Cita</a>
+            <a href="#como-funciona" class="btn-pill-outline">Ver proceso</a>
           </div>
         </div>
         
         <div class="col-lg-6">
-          <div class="video-wrapper rounded-4 overflow-hidden shadow-lg animate-fade-in-right">
+          <div class="video-wrapper rounded-4 overflow-hidden shadow-lg">
              <iframe src="https://player.vimeo.com/video/732211917?background=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
           </div>
         </div>
@@ -64,28 +65,16 @@ const iconMap = {
   </section>
 
   <!-- PRODUCTS SECTION -->
-  <section class="products-section py-5 bg-white">
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-        {PRODUCTS.map((product, i) => (
-          <div class="col-6 col-md-4 col-lg-2 text-center">
-            <div class="product-card py-4" style={`--delay: ${i * 0.4}s`}>
-              <h3 class="display-6 fw-bold shimmer-word">{product.label}</h3>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <RetomaProducts />
 
-  <!-- STATS SECTION - MEJORA #1 -->
+  <!-- STATS SECTION -->
   <RetomaStats />
 
-  <!-- TRUST BADGES SECTION - MEJORA #2 -->
+  <!-- TRUST BADGES SECTION -->
   <RetomaTrustBadges client:load />
 
   <!-- BENEFITS SECTION -->
-  <section id="beneficios" class="benefits-section py-5 bg-dark text-white">
+  <section id="beneficios" class="benefits-section">
     <div class="container py-5">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6 pe-lg-5">
@@ -99,7 +88,7 @@ const iconMap = {
             {BENEFITS.map((item, idx) => {
               return (
                 <div class="col-md-6">
-                  <div class="benefit-card h-100 p-4 rounded-4 text-center hover-up">
+                  <div class="benefit-card h-100 p-4 rounded-4 text-center">
                     <div class="icon-box mb-3 mx-auto rounded-3 d-flex align-items-center justify-content-center">
                       <i class={`bi ${iconMap[item.icon.name]} fs-1 text-white`}></i>
                     </div>
@@ -116,16 +105,18 @@ const iconMap = {
   </section>
 
   <!-- STEPS SECTION -->
-  <section id="como-funciona" class="steps-section py-5 bg-white position-relative">
-    <div class="container py-5">
-      <div class="text-center mb-5">
-        <h2 class="display-3 fw-black text-gradient">Tres pasos un nuevo equipo</h2>
+  <section id="como-funciona" class="steps-section" style="background-color: #FFFFFF; border-top: 1px solid #E0E0E0; padding: 80px 0;">
+    <div class="container">
+      <div class="mb-4 text-center">
+        <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
+          Tres pasos un nuevo equipo
+        </h2>
       </div>
       
-      <div class="row g-5">
+      <div class="row g-5 mt-4">
         {STEPS.map((step) => (
           <div class="col-md-4">
-            <div class="step-card text-center group hover-up">
+            <div class="step-card text-center">
               <div class="step-number display-1 fw-black text-gradient mb-3">{step.number}</div>
               <h3 class="h2 fw-black text-dark mb-3">{step.title}</h3>
               <p class="text-secondary">{step.desc}</p>
@@ -136,11 +127,11 @@ const iconMap = {
     </div>
   </section>
 
-  <!-- COMPARISON TABLE - MEJORA #5 -->
+  <!-- COMPARISON TABLE -->
   <RetomaComparison />
 
   <!-- CHECKLIST SECTION -->
-  <section id="recomendaciones" class="checklist-section py-5 bg-black">
+  <section id="recomendaciones" class="checklist-section">
     <div class="container py-5">
       <div class="text-center mb-5">
         <span class="text-uppercase fw-black tracking-widest text-secondary" style="font-size: 10px;">RECOMENDACIONES</span>
@@ -150,7 +141,7 @@ const iconMap = {
       <div class="row g-4">
         {CHECKLIST.map((item) => (
           <div class="col-md-6">
-            <div class="d-flex align-items-start gap-3 p-3 rounded-3 checklist-item hover-scale-sm">
+            <div class="d-flex align-items-start gap-3 p-3 rounded-3 checklist-item">
               <div class="icon-wrapper text-primary fs-3">
                  <i class={`bi ${iconMap[item.icon.name]}`}></i>
               </div>
@@ -166,11 +157,11 @@ const iconMap = {
   </section>
 
   <!-- FAQ SECTION -->
-  <section id="faq" class="faq-section py-5 bg-white">
-    <div class="container py-5">
+  <section id="faq" class="faq-section" style="background-color: #FFFFFF; border-top: 1px solid #E0E0E0; padding: 80px 0;">
+    <div class="container">
       <div class="text-center mb-5">
         <span class="text-uppercase fw-bold tracking-widest text-secondary d-block mb-2" style="font-size: 10px;">Dudas</span>
-        <h2 class="display-4 fw-black mb-2">Preguntas Frecuentes</h2>
+        <h2 class="display-4 fw-black mb-2" style="color: #000000;">Preguntas Frecuentes</h2>
         <p class="text-uppercase tracking-wide text-muted small">Todo sobre el Plan Retoma</p>
       </div>
 
@@ -198,7 +189,7 @@ const iconMap = {
     </div>
   </section>
 
-  <!-- PAYMENT METHODS BANNER - MEJORA #7 -->
+  <!-- PAYMENT METHODS BANNER -->
   <section class="payment-section">
     <div class="container-fluid">
       <div class="payment-wrapper">
@@ -256,224 +247,299 @@ const iconMap = {
 
 </Layout>
 
-<style lang="scss">
-$primary-color: #0066CC;
-$gradient-start: #3B82F6;
-$gradient-end: #06B6D4;
-$bg-dark: #121212;
-$text-light: #F9FAFB;
+<style is:global>
+  /* TIPOGRAFÍA EXACTA DE HOME */
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F5F7;
+    overflow-x: hidden;
+  }
 
-:root {
-  --bs-font-sans-serif: 'Inter', sans-serif;
-}
+  /* HERO SECTION */
+  .q1-banner { 
+    background: #3A506B; 
+    color: white; 
+    padding: 12px 0; 
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .hero-section { 
+    padding: 80px 0 60px; 
+    background: #fff; 
+    margin-top: 2rem;
+  }
+  
+  .tech-tag { 
+    font-family: 'PT Mono', monospace; 
+    font-size: 0.7rem; 
+    color: #666; 
+    letter-spacing: 2px; 
+  }
+  
+  .text-blue { 
+    color: #3A506B; 
+  }
+  
+  .mono-text { 
+    font-family: 'PT Mono', monospace; 
+  }
+  
+  .video-wrapper {
+    aspect-ratio: 16/9;
+  }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #F5F5F7;
-  overflow-x: hidden;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.fw-black {
-  font-weight: 900;
-}
-
-.tracking-widest {
-  letter-spacing: 0.4em;
-}
-
-.tracking-wide {
-  letter-spacing: 0.2em;
-}
-
-.badge-pill {
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-}
-
-.video-wrapper {
-  aspect-ratio: 16/9;
-  iframe {
+  .video-wrapper iframe {
     width: 100%;
     height: 100%;
     border: none;
   }
-}
-
-.parallax-target {
-  transition: transform 0.1s ease-out;
-}
-
-.btn-primary {
-  background: $primary-color;
-  border: none;
-  transition: all 0.3s ease;
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
-  }
-}
-
-@keyframes shimmerWord {
-  0%, 100% { color: #1D1D1F; }
-  20%, 50% { color: $primary-color; }
-}
-
-.shimmer-word {
-  animation: shimmerWord 5s ease-in-out infinite;
-  animation-delay: var(--delay, 0s);
-}
-
-@keyframes shimmerText {
-  0% { background-position: -200%; }
-  100% { background-position: 200%; }
-}
-
-.shimmer-text {
-  background: linear-gradient(90deg, #F9FAFB 0%, $gradient-start 50%, #F9FAFB 100%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmerText 4s linear infinite;
-}
-
-.benefit-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
   
-  .icon-box {
+  .btn-pill-dark { 
+    background: #000; 
+    color: #fff; 
+    padding: 14px 40px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-pill-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  
+  .btn-pill-outline { 
+    border: 1.5px solid #000; 
+    color: #000; 
+    padding: 14px 40px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-pill-outline:hover {
+    background: #000;
+    color: #fff;
+  }
+  
+  .btn-pill-light { 
+    background: #fff; 
+    color: #3A506B; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 0.75rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-pill-light:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  /* PRODUCTS SECTION - ESTILOS INLINE COMO HOME */
+
+  /* BENEFITS SECTION */
+  .benefits-section {
+    background: #121212;
+    color: #FFFFFF;
+    padding: 80px 0;
+  }
+
+  .benefit-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  }
+
+  .benefit-card .icon-box {
     width: 64px;
     height: 64px;
     background-color: rgba(255,255,255,0.05);
     transition: transform 0.3s ease;
   }
 
-  &:hover {
+  .benefit-card:hover {
     transform: translateY(-10px);
-    .icon-box {
-      transform: rotate(15deg) scale(1.1);
-    }
   }
-}
 
-.checklist-item {
-  transition: transform 0.3s;
-  &:hover {
+  .benefit-card:hover .icon-box {
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  /* STEPS SECTION - ESTILOS INLINE COMO HOME */
+  .step-card {
+    transition: transform 0.3s ease;
+  }
+
+  .step-card .step-number {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .step-card:hover {
+    transform: translateY(-15px);
+  }
+
+  /* CHECKLIST SECTION */
+  .checklist-section {
+    background: #000000;
+    color: #FFFFFF;
+    padding: 80px 0;
+  }
+
+  .checklist-item {
+    transition: transform 0.3s;
+  }
+
+  .checklist-item:hover {
     transform: scale(1.02);
     background-color: rgba(255, 255, 255, 0.05);
   }
-}
 
-.payment-section {
-  background-color: #000;
-  height: 119px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.payment-wrapper {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 80px;
-}
-
-.payment-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: nowrap;
-}
-
-.logo-img {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.logo-bold {
-  height: 28px;
-  width: auto;
-  transition: all 0.4s ease;
-}
-
-.logo-img.pse {
-  height: 52px;
-}
-
-.payment-item:hover .logo-img,
-.payment-item:hover .logo-bold {
-  transform: translateY(-5px);
-  filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.1));
-}
-
-.footer-cta {
-  input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+  /* FAQ SECTION - ESTILOS INLINE COMO HOME */
+  .accordion-item {
+    background: #F9F9F9;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
   }
-  .form-control:focus {
-    box-shadow: none;
-    border-color: $gradient-start;
+
+  .accordion-item:hover {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
   }
-  .input-group {
-    background-color: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 1rem;
-    overflow: hidden;
-  }
-  .btn-primary {
-    background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
-    border-radius: 0; 
-  }
-}
 
-.hover-white:hover {
-  color: white !important;
-}
-
-.hover-scale:hover {
-  transform: scale(1.05);
-}
-
-.hover-up:hover {
-  transform: translateY(-15px);
-}
-
-.spin-icon {
-  animation: spin 3s linear infinite;
-}
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-
-@media (max-width: 991px) {
+  /* PAYMENT SECTION - EXACTO COMO HOME */
   .payment-section {
-    height: auto;
-    padding: 40px 0;
+    background-color: #000;
+    height: 119px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  .payment-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
   .payment-grid {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
   }
-}
+
+  .logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .logo-bold {
+    height: 28px;
+    width: auto;
+    transition: all 0.4s ease;
+  }
+
+  .logo-img.pse {
+    height: 52px;
+  }
+
+  .payment-item:hover .logo-img,
+  .payment-item:hover .logo-bold {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.1));
+  }
+
+  /* UTILITIES */
+  .fw-black {
+    font-weight: 900;
+  }
+
+  .tracking-widest {
+    letter-spacing: 0.4em;
+  }
+
+  .tracking-wide {
+    letter-spacing: 0.2em;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .spin-icon {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes shimmerWord {
+    0%, 100% { color: #1D1D1F; }
+    20%, 50% { color: #0066CC; }
+  }
+
+  .shimmer-word {
+    animation: shimmerWord 5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+
+  @keyframes shimmerText {
+    0% { background-position: -200%; }
+    100% { background-position: 200%; }
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #F9FAFB 0%, #3B82F6 50%, #F9FAFB 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmerText 4s linear infinite;
+  }
+
+  /* RESPONSIVE - MISMO QUE HOME */
+  @media (max-width: 768px) {
+    .products-section,
+    .steps-section,
+    .faq-section {
+      padding: 50px 0 !important;
+    }
+
+    .benefits-section,
+    .checklist-section {
+      padding: 50px 0;
+    }
+
+    .payment-section {
+      height: auto;
+      padding: 40px 0;
+    }
+
+    .payment-grid {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
 </style>
