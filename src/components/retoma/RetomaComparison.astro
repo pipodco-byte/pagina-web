@@ -1,0 +1,234 @@
+---
+const comparisons = [
+  {
+    criteria: 'Tiempo de venta',
+    pipod: '30 minutos',
+    particular: '2-4 semanas',
+    mercadolibre: '1-3 semanas'
+  },
+  {
+    criteria: 'Seguridad',
+    pipod: 'Garantizada',
+    particular: 'Riesgo alto',
+    mercadolibre: 'Riesgo medio'
+  },
+  {
+    criteria: 'Valoración',
+    pipod: 'Profesional',
+    particular: 'Negociable',
+    mercadolibre: 'Variable'
+  },
+  {
+    criteria: 'Garantía en compra',
+    pipod: '12 meses',
+    particular: 'Sin garantía',
+    mercadolibre: 'Limitada'
+  },
+  {
+    criteria: 'Proceso',
+    pipod: 'Sin complicaciones',
+    particular: 'Complejo',
+    mercadolibre: 'Moderado'
+  }
+];
+---
+
+<section class="comparison-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-label">COMPARACIÓN</span>
+      <h2 class="section-title mt-3">¿Por qué elegir Plan Retoma?</h2>
+      <p class="section-subtitle">Compara y decide con información clara</p>
+    </div>
+
+    <div class="comparison-table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th class="criteria-header">Criterio</th>
+            <th class="pipod-header">Plan Retoma Pipod</th>
+            <th>Venta Particular</th>
+            <th>Mercado Libre</th>
+          </tr>
+        </thead>
+        <tbody>
+          {comparisons.map((row) => (
+            <tr>
+              <td class="criteria-cell">{row.criteria}</td>
+              <td class="pipod-cell">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                {row.pipod}
+              </td>
+              <td class="regular-cell">{row.particular}</td>
+              <td class="regular-cell">{row.mercadolibre}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-5">
+      <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold">
+        Comenzar ahora
+      </button>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+$primary: #0066CC;
+$accent: #3A506B;
+$dark: #1F1F1F;
+$light: #F5F5F7;
+$white: #FFFFFF;
+$success: #10B981;
+$border: #E0E0E0;
+
+.comparison-section {
+  background: $white;
+  padding: 80px 0;
+  border-top: 1px solid $border;
+
+  .section-label {
+    font-size: 0.625rem;
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    color: $accent;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    color: $dark;
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: $accent;
+    margin-top: 1rem;
+  }
+
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 3rem 0;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: $white;
+    border-radius: 24px;
+    overflow: hidden;
+
+    thead {
+      background: $light;
+
+      th {
+        padding: 1.5rem 2rem;
+        text-align: left;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: $dark;
+        border-bottom: 2px solid $border;
+
+        &.pipod-header {
+          background: linear-gradient(135deg, $primary 0%, #06B6D4 100%);
+          color: $white;
+          position: relative;
+
+          &::after {
+            content: '⭐ RECOMENDADO';
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-size: 0.625rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: rgba($primary, 0.02);
+        }
+
+        &:not(:last-child) td {
+          border-bottom: 1px solid $border;
+        }
+      }
+
+      td {
+        padding: 1.5rem 2rem;
+        font-size: 1rem;
+        color: $dark;
+
+        &.criteria-cell {
+          font-weight: 600;
+          color: $accent;
+        }
+
+        &.pipod-cell {
+          background: rgba($primary, 0.05);
+          font-weight: 600;
+          color: $primary;
+
+          i {
+            color: $success;
+          }
+        }
+
+        &.regular-cell {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .btn-primary {
+    background: $primary;
+    border: none;
+    color: $white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba($primary, 0.3);
+
+    &:hover {
+      background: darken($primary, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($primary, 0.4);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-section {
+    padding: 50px 0;
+
+    .comparison-table {
+      font-size: 0.875rem;
+
+      thead th,
+      tbody td {
+        padding: 1rem;
+      }
+
+      thead th.pipod-header::after {
+        display: none;
+      }
+    }
+  }
+}
+</style>

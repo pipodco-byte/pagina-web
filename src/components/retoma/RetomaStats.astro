@@ -1,0 +1,137 @@
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stats-grid">
+      
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="15">0</h2>
+          <span class="stat-suffix">años</span>
+        </div>
+        <p class="stat-text">De experiencia</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="10000">0</h2>
+          <span class="stat-suffix">+</span>
+        </div>
+        <p class="stat-text">Equipos retomados</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="98">0</h2>
+          <span class="stat-suffix">%</span>
+        </div>
+        <p class="stat-text">Satisfacción</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="30">0</h2>
+          <span class="stat-suffix">min</span>
+        </div>
+        <p class="stat-text">Valoración</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        const targetValue = parseInt(target.getAttribute('data-target'));
+        let current = 0;
+        const increment = targetValue / 100;
+        const updateCount = () => {
+          if (current < targetValue) {
+            current += increment;
+            target.innerText = Math.ceil(current);
+            setTimeout(updateCount, 15);
+          } else {
+            target.innerText = targetValue;
+          }
+        };
+        updateCount();
+        statsObserver.unobserve(target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-number').forEach(stat => statsObserver.observe(stat));
+</script>
+
+<style>
+  .stats-section {
+    background-color: #000;
+    height: 119px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .stats-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .stats-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 15px;
+  }
+
+  .stat-item:first-child { justify-content: flex-start; }
+  .stat-item:last-child { justify-content: flex-end; }
+
+  .number-wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .stat-suffix {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 8px;
+    text-transform: uppercase;
+  }
+
+  .stat-text {
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 991px) {
+    .stats-section { height: auto; padding: 40px 0; }
+    .stats-grid { flex-direction: column; gap: 30px; }
+    .stat-item { flex-direction: column; align-items: center; }
+  }
+</style>
