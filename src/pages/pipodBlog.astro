@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+import BlogSection from '../components/reviews/blogSection';
+import FloatingContact from '../layouts/floatingContact';
+import '../../assets/scss/astro-ecommerce.scss';
+
+const title = "Blog Pipod - Expertos en Apple";
+const description = "Artículos, tips y guías sobre reparación, mantenimiento y optimización de equipos Apple.";
+---
+
+<Layout title={title} description={description}>
+  <PipodNavbar client:load />
+  
+  <main style="padding-top: 120px;">
+    {/* HERO SECTION */}
+    <section style="background: linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 100%); padding: 80px 0; margin-top: 2rem;">
+      <div class="container">
+        <div class="text-center">
+          <h1 style="font-family: 'Inter', sans-serif; font-size: 3rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
+            Blog Pipod
+          </h1>
+          <p style="font-size: 1.25rem; color: #666; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Artículos, tips y guías sobre reparación, mantenimiento y optimización de equipos Apple
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* BLOG SECTION */}
+    <BlogSection client:load />
+
+    {/* CTA SECTION */}
+    <section style="background: #000000; color: #FFFFFF; padding: 80px 0; text-align: center;">
+      <div class="container">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">¿Tienes una pregunta?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #CCCCCC;">
+          Contáctanos y nuestros expertos te ayudarán
+        </p>
+        <a href="https://wa.me/573124813094" target="_blank" style="background: #FFFFFF; color: #000000; padding: 14px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FloatingContact client:load />
+  <Footer client:load />
+</Layout>
+
+<style is:global>
+  body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 768px) {
+    main h1 {
+      font-size: 2rem !important;
+    }
+  }
+</style>

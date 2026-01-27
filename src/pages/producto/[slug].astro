@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PipodNavbar from '../../components/pipodNavbar';
+import Footer from '../../components/pipodFooter';
+import ProductOverviewGrid from '../../components/products/productOverviewGrid';
+import CardProduct from '../../components/products/cardProduct';
+import { getProductos, getProductoPorSlug } from '../../lib/contentful';
+import '../../../assets/scss/astro-ecommerce.scss';
+
+export async function getStaticPaths() {
+  const productos = await getProductos();
+  return productos.map(producto => ({
+    params: { slug: producto.slug },
+    props: { producto }
+  }));
+}
+
+const { slug } = Astro.params;
+const producto = await getProductoPorSlug(slug);
+const todosProductos = await getProductos();
+const productosRelacionados = todosProductos.filter(p => p.slug !== slug).slice(0, 4);
+
+if (!producto) {
+  return Astro.redirect('/tienda-pipod');
+}
+
+const images = [
+  { src: producto.thumb_src || '', alt: producto.nombre },
+  { src: producto.thumb_src || '', alt: producto.nombre },
+  { src: producto.thumb_src || '', alt: producto.nombre },
+  { src: producto.thumb_src || '', alt: producto.nombre }
+];
+---
+
+<Layout title={`${producto.nombre} - Pipod`} description={producto.descripcion}>
+  <PipodNavbar client:load />
+  
+  <main style="padding-top: 120px;">
+    <div class="container mt-5">
+      <ProductOverviewGrid 
+        title={producto.nombre}
+        colors={producto.colors || ['blue', 'gray', 'black']}
+        images={images}
+        full_description={producto.descripcion}
+        price={producto.precio}
+        highlights={[
+          `Condición: ${producto.condicion}`,
+          `SKU: ${producto.sku}`,
+          `Stock: ${producto.enStock ? 'Disponible' : 'Agotado'}`
+        ]}
+        details={`Producto ${producto.condicion} de alta calidad. Garantía Pipod incluida.`}
+        rating={producto.rating || 4}
+        reviews={producto.reviews || 117}
+        sizes={new Map()}
+      />
+
+      <hr class="dark horizontal my-5" />
+
+      <div class="row">
+        <h5 class="mb-4">Productos Relacionados</h5>
+        {productosRelacionados.map(prod => (
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <CardProduct 
+              thumb_src={prod.thumb_src}
+              thumb_alt={prod.thumb_alt}
+              color={prod.color}
+              colors={prod.colors}
+              title={prod.title}
+              description={prod.description}
+              price={prod.price}
+              oldPrice={prod.oldPrice}
+              condition={prod.condition}
+              rating={prod.rating}
+              batteryHealth={prod.batteryHealth}
+              slug={prod.slug}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <Footer client:load />
+  </main>
+</Layout>
+
+<style is:global>
+  body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+</style>

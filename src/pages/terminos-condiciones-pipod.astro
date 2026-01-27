@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+import FloatingContact from '../layouts/floatingContact';
+import '../../assets/scss/astro-ecommerce.scss';
+
+const title = "Términos y Condiciones - Pipod";
+const description = "Términos y condiciones generales de Pipod. Lee nuestras políticas de venta, servicio técnico y plan retoma.";
+
+const sections = [
+  { id: 'general', title: 'General', subsections: ['introduccion', 'terminos-generales', 'politica-privacidad'] },
+  { id: 'comprar', title: 'Comprar', subsections: ['equipos-nuevos', 'equipos-usados', 'devoluciones'] },
+  { id: 'vender', title: 'Vender (Plan Retoma)', subsections: ['como-funciona', 'criterios-aceptacion', 'borrado-datos'] },
+  { id: 'servicio', title: 'Servicio Técnico', subsections: ['recepcion-equipos', 'diagnostico', 'garantia-reparacion', 'proteccion-datos', 'retiro-abandono', 'verificacion-imei'] }
+];
+---
+
+<Layout title={title} description={description}>
+  <PipodNavbar client:load />
+  
+  <main style="padding-top: 120px;">
+    <div style="display: grid; grid-template-columns: 250px 1fr 250px; gap: 40px; max-width: 1400px; margin: 0 auto; padding: 40px 20px;">
+      
+      {/* SIDEBAR IZQUIERDO */}
+      <aside style="background: #F5F5F7; padding: 20px; border-radius: 8px; height: fit-content; position: sticky; top: 140px;">
+        <h3 style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: #666; margin-bottom: 20px;">Navegación</h3>
+        <nav>
+          {sections.map(section => (
+            <div key={section.id} style="margin-bottom: 20px;">
+              <a href={`#${section.id}`} style="font-weight: 600; color: #000; text-decoration: none; display: block; margin-bottom: 8px; font-size: 0.95rem;">
+                {section.title}
+              </a>
+              <ul style="list-style: none; padding-left: 12px; margin: 0;">
+                {section.subsections.map(sub => (
+                  <li key={sub} style="margin-bottom: 6px;">
+                    <a href={`#${sub}`} style="color: #666; text-decoration: none; font-size: 0.85rem;">
+                      {sub.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      </aside>
+
+      {/* CONTENIDO PRINCIPAL */}
+      <article style="background: #FFFFFF; padding: 40px; border-radius: 8px;">
+        <div style="margin-bottom: 30px;">
+          <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Home / Términos y Condiciones</p>
+          <h1 style="font-size: 2.5rem; font-weight: 700; color: #000; margin: 0;">Términos y Condiciones Pipod</h1>
+        </div>
+
+        {/* GENERAL */}
+        <section id="general" style="margin-bottom: 50px;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">General</h2>
+          
+          <h3 id="introduccion" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Introducción</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Bienvenido a Pipod. Estos términos y condiciones rigen el uso de nuestros servicios de venta, reparación y retoma de equipos Apple. Al utilizar nuestros servicios, aceptas estos términos en su totalidad.</p>
+
+          <h3 id="terminos-generales" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Términos Generales</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Pipod es una empresa especializada en la venta, reparación y retoma de equipos Apple. Todos nuestros servicios están sujetos a disponibilidad y a las políticas descritas en este documento.</p>
+
+          <h3 id="politica-privacidad" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Política de Privacidad</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Protegemos tus datos personales. No compartimos información con terceros sin tu consentimiento, excepto cuando es requerido por ley.</p>
+        </section>
+
+        {/* COMPRAR */}
+        <section id="comprar" style="margin-bottom: 50px;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">Comprar</h2>
+          
+          <h3 id="equipos-nuevos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Equipos Nuevos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Los equipos nuevos incluyen garantía oficial de Apple. Verificamos que todos los productos sean auténticos antes de la venta.</p>
+
+          <h3 id="equipos-usados" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Equipos Usados</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Los equipos usados se clasifican por grado estético (A, B, C). Garantizamos salud de batería mínima del 80% en todos los dispositivos.</p>
+
+          <h3 id="devoluciones" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Devoluciones</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Tienes 30 días para devolver tu compra sin preguntas. Aplica la ley de retracto de compra colombiana.</p>
+        </section>
+
+        {/* VENDER */}
+        <section id="vender" style="margin-bottom: 50px;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">Vender (Plan Retoma)</h2>
+          
+          <h3 id="como-funciona" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">¿Cómo Funciona?</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">1. Cotización gratuita en 30 minutos. 2. Envío asegurado a nuestras instalaciones. 3. Pago inmediato una vez verificado el equipo.</p>
+
+          <h3 id="criterios-aceptacion" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Criterios de Aceptación</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Aceptamos equipos sin iCloud bloqueado, no reportados y en condiciones funcionales. Rechazamos equipos con daño físico severo.</p>
+
+          <h3 id="borrado-datos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Borrado de Datos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Es responsabilidad del usuario borrar todos sus datos antes de enviar el equipo. Pipod no se responsabiliza por pérdida de información.</p>
+        </section>
+
+        {/* SERVICIO TÉCNICO */}
+        <section id="servicio" style="margin-bottom: 50px;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">Servicio Técnico</h2>
+          
+          <h3 id="recepcion-equipos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Recepción de Equipos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Al dejar su equipo en nuestro centro de servicio técnico, usted, como cliente, acepta y se compromete a cumplir los siguientes términos y condiciones. Todos los procedimientos técnicos, incluso los más simples, pueden tardar al menos una hora y media.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">En reparaciones complejas, Pipod.co se comunicará con el cliente para indicar tiempos adicionales o decisiones importantes. Los costos de reparación pueden variar respecto a la cotización inicial según la revisión en laboratorio. El cliente deberá aprobar cualquier incremento antes de iniciar la intervención.</p>
+
+          <h3 id="diagnostico" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Diagnóstico</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Durante la revisión pueden encontrarse daños internos no visibles o no reportados por el cliente. Estos serán informados y pueden modificar el presupuesto o la viabilidad de la reparación.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Algunos diagnósticos requieren retirar sellos o bandas de seguridad del fabricante. El cliente acepta esta intervención y libera de responsabilidad a Pipod.co por la pérdida de garantías oficiales, siempre que el equipo esté aún dentro de su garantía original.</p>
+
+          <h3 id="garantia-reparacion" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Garantía de Reparación</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Plazos de garantía:</strong></p>
+          <ul style="color: #444; line-height: 1.8; margin-bottom: 15px; margin-left: 20px;">
+            <li>Pantallas: 15 días de garantía. No debe presentar humedad, golpes o fracturas internas.</li>
+            <li>Baterías: 6 meses de garantía. No deben estar infladas, sobrecargadas, manipuladas ni con sellos violados.</li>
+          </ul>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Cobertura:</strong> La garantía se aplica únicamente a la pieza o servicio reparado. No cubre problemas de software ni desconocimiento en su uso. Está limitada a un máximo de tres incidentes por el mismo problema.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Causas que invalidan la garantía:</strong></p>
+          <ul style="color: #444; line-height: 1.8; margin-bottom: 15px; margin-left: 20px;">
+            <li>Contacto con líquidos (detectado por sensores internos).</li>
+            <li>Cualquier daño físico (golpes, rayones, fracturas, etc.).</li>
+            <li>Manipulación o reparación previa por técnicos no certificados.</li>
+          </ul>
+
+          <h3 id="proteccion-datos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Protección de Información y Datos Personales</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Privacidad de la información dentro del equipo:</strong> El cliente es responsable de realizar copias de seguridad de su información antes de entregar el equipo. Pipod.co no se hace responsable por pérdida, daño o alteración de archivos, datos o programas. Durante cualquier reparación, intervención o limpieza puede perderse total o parcialmente la información y/o programas instalados en el equipo.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Datos personales del cliente:</strong> Pipod.co recolecta y utiliza datos personales (nombre, dirección, teléfono, correo electrónico) únicamente para la prestación del servicio técnico. En caso necesario, y solo para verificación de calidad o encuestas de satisfacción, estos datos podrán ser compartidos con terceros aliados, conforme a la Ley 1581 de 2012 de protección de datos personales en Colombia.</p>
+
+          <h3 id="retiro-abandono" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Retiro y Abandono de Equipos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Si después de 90 días desde la fecha prevista de entrega el cliente no ha retirado el equipo ni ha establecido contacto, se considerará equipo abandonado y Pipod.co podrá disponer de él sin derecho a reclamo o indemnización.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">La entrega se realizará únicamente contra presentación de la orden de servicio original. En caso de pérdida de esta orden, el cliente deberá pagar una multa de $10.000 COP y presentar fotocopia de la cédula del titular registrado.</p>
+
+          <h3 id="verificacion-imei" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Verificación de IMEI y Propiedad</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">El IMEI del equipo será verificado en www.imeicolombia.com.co a la fecha de ingreso. Si en el futuro aparece reportado, será responsabilidad exclusiva del cliente. Para hacer efectiva una garantía, Pipod.co podrá solicitar factura de compra o documentos que acrediten la propiedad del equipo.</p>
+        </section>
+
+        <div style="background: #F5F5F7; padding: 20px; border-radius: 8px; margin-top: 40px;">
+          <p style="color: #666; font-size: 0.9rem; margin: 0;">Última actualización: Enero 2025. Para preguntas, contáctanos por WhatsApp.</p>
+        </div>
+      </article>
+
+      {/* TABLA DE CONTENIDOS (TOC) */}
+      <aside style="background: #F5F5F7; padding: 20px; border-radius: 8px; height: fit-content; position: sticky; top: 140px;">
+        <h3 style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: #666; margin-bottom: 20px;">En esta página</h3>
+        <nav>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            {sections.map(section => (
+              <li key={section.id} style="margin-bottom: 12px;">
+                <a href={`#${section.id}`} style="color: #000; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                  {section.title}
+                </a>
+                <ul style="list-style: none; padding-left: 12px; margin-top: 6px;">
+                  {section.subsections.map(sub => (
+                    <li key={sub} style="margin-bottom: 4px;">
+                      <a href={`#${sub}`} style="color: #666; text-decoration: none; font-size: 0.85rem;">
+                        {sub.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </main>
+
+  <FloatingContact client:load />
+  <Footer client:load />
+</Layout>
+
+<style is:global>
+  body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 1024px) {
+    main > div {
+      grid-template-columns: 1fr !important;
+    }
+    aside {
+      display: none !important;
+    }
+  }
+</style>

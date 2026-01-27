@@ -70,7 +70,7 @@ export default function Footer() {
               <li><a href="#">Preguntas Frecuentes</a></li>
               <li><a href="#">Contáctanos</a></li>
               <li><a href="#">Devoluciones</a></li>
-              <li><a href="#">Términos y Condiciones</a></li>
+              <li><a href="/terminos-condiciones-pipod">Términos y Condiciones</a></li>
               <li><a href="#">SIC (Portal Consumidor)</a></li>
             </ul>
           </div>

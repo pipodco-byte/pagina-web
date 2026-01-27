@@ -67,7 +67,7 @@ export default function ProductOverview({
             {(sizes.size != 0) && 
               <ProductSizes sizes={sizes}/>
             }
-            <button className="btn btn-dark btn-lg" type="submit">Add to cart</button>
+            <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20me%20interesa%20el%20producto%20${title}%20a%20%24${price.toLocaleString()}" className="btn btn-dark btn-lg" target="_blank">Consultar por WhatsApp</a>
           </form>
         </div>
       </div>

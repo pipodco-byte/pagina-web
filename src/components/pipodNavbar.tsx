@@ -26,7 +26,7 @@ const PipodNavbar = () => {
           <li><a href="/tienda-pipod" className="nav-item">Tienda</a></li>
           <li><a href="/accesorios" className="nav-item">Accesorios</a></li>
           <li><a href="/contacto" className="nav-item">Contacto</a></li>
-          <li><a href="/blog" className="nav-item">Blog</a></li>
+          <li><a href="/pipod-blog" className="nav-item">Blog</a></li>
         </ul>
 
         {/* Botón CTA */}
