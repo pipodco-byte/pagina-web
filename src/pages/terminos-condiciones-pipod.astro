@@ -9,8 +9,11 @@ const title = "Términos y Condiciones - Pipod";
 const description = "Términos y condiciones generales de Pipod. Lee nuestras políticas de venta, servicio técnico y plan retoma.";
 
 const sections = [
-  { id: 'general', title: 'General', subsections: ['introduccion', 'terminos-generales', 'politica-privacidad'] },
-  { id: 'comprar', title: 'Comprar', subsections: ['equipos-nuevos', 'equipos-usados', 'devoluciones'] },
+  { id: 'general', title: 'General', subsections: ['introduccion', 'terminos-generales'] },
+  { id: 'privacidad', title: 'Privacidad', subsections: ['info-recopilada', 'uso-informacion', 'datos-sensibles', 'compartir-info', 'seguridad-datos', 'tus-derechos', 'retencion-datos'] },
+  { id: 'comprar', title: 'Comprar', subsections: ['equipos-nuevos', 'equipos-usados', 'devoluciones-proceso', 'reembolsos', 'excepciones-devolucion'] },
+  { id: 'envios', title: 'Envíos', subsections: ['cobertura-envios', 'opciones-envio', 'domicilio', 'aseguramiento', 'seguimiento', 'problemas-envios', 'envio-gratis'] },
+  { id: 'garantia', title: 'Garantía', subsections: ['garantia-nuevos', 'garantia-usados', 'garantia-servicio', 'no-cubre', 'reclamar-garantia', 'abandonos', 'garantia-extendida', 'responsabilidad-datos'] },
   { id: 'vender', title: 'Vender (Plan Retoma)', subsections: ['como-funciona', 'criterios-aceptacion', 'borrado-datos'] },
   { id: 'servicio', title: 'Servicio Técnico', subsections: ['recepcion-equipos', 'diagnostico', 'garantia-reparacion', 'proteccion-datos', 'retiro-abandono', 'verificacion-imei'] }
 ];
@@ -21,7 +24,6 @@ const sections = [
   
   <main style="padding-top: 120px;">
     <div style="display: grid; grid-template-columns: 250px 1fr 250px; gap: 40px; max-width: 1400px; margin: 0 auto; padding: 40px 20px;">
-      
       {/* SIDEBAR IZQUIERDO */}
       <aside style="background: #F5F5F7; padding: 20px; border-radius: 8px; height: fit-content; position: sticky; top: 140px;">
         <h3 style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: #666; margin-bottom: 20px;">Navegación</h3>
@@ -61,9 +63,34 @@ const sections = [
 
           <h3 id="terminos-generales" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Términos Generales</h3>
           <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Pipod es una empresa especializada en la venta, reparación y retoma de equipos Apple. Todos nuestros servicios están sujetos a disponibilidad y a las políticas descritas en este documento.</p>
+        </section>
 
-          <h3 id="politica-privacidad" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Política de Privacidad</h3>
-          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Protegemos tus datos personales. No compartimos información con terceros sin tu consentimiento, excepto cuando es requerido por ley.</p>
+        {/* PRIVACIDAD */}
+        <section id="privacidad" style="margin-bottom: 50px;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">Política de Privacidad</h2>
+          
+          <h3 id="info-recopilada" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Información que Recopilamos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Información Personal:</strong> Nombre, email, teléfono, dirección, cédula (para retoma), información de pago.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Información de Dispositivos:</strong> IMEI, número de serie, modelo, estado físico y funcional, historial de reparaciones.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Información Técnica:</strong> Dirección IP, tipo de navegador, cookies, datos de ubicación (con consentimiento).</p>
+
+          <h3 id="uso-informacion" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Uso de la Información</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Utilizamos tu información para procesar compras, retomas y servicios técnicos; enviar confirmaciones; verificar identidad; prevenir fraude; mejorar servicios; enviar promociones (con consentimiento); cumplir obligaciones legales dominicanas.</p>
+
+          <h3 id="datos-sensibles" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Protección de Datos Sensibles</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">IMEI y números de serie se verifican contra bases de datos de equipos reportados. Datos de identificación se almacenan encriptados. No almacenamos contraseñas de iCloud/Google, solo verificamos estado de bloqueo.</p>
+
+          <h3 id="compartir-info" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Compartir Información</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">No vendemos tu información. Solo compartimos con proveedores de envío, procesadores de pago, autoridades dominicanas (si lo requiere la ley), y socios técnicos bajo acuerdos de confidencialidad.</p>
+
+          <h3 id="seguridad-datos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Seguridad de Datos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Implementamos encriptación SSL/TLS, almacenamiento seguro en servidores protegidos, acceso restringido, y auditorías de seguridad regulares.</p>
+
+          <h3 id="tus-derechos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Tus Derechos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Tienes derecho a acceder, corregir, eliminar tus datos, optar por no recibir marketing, y revocar consentimientos. Contacta a privacidad@pipod.com</p>
+
+          <h3 id="retencion-datos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Retención de Datos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Retenemos información durante el tiempo necesario para cumplir obligaciones legales (mínimo 5 años), resolver disputas, y mantener registros de garantía y servicio técnico.</p>
         </section>
 
         {/* COMPRAR */}
@@ -71,13 +98,75 @@ const sections = [
           <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">Comprar</h2>
           
           <h3 id="equipos-nuevos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Equipos Nuevos</h3>
-          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Los equipos nuevos incluyen garantía oficial de Apple. Verificamos que todos los productos sean auténticos antes de la venta.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Los equipos nuevos incluyen garantía oficial de Apple (1 año) + 6 meses de garantía Pipod. Garantía de batería 80% mínima durante 1 año. Verificamos autenticidad antes de venta.</p>
 
           <h3 id="equipos-usados" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Equipos Usados</h3>
-          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Los equipos usados se clasifican por grado estético (A, B, C). Garantizamos salud de batería mínima del 80% en todos los dispositivos.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Grado A:</strong> Impecable, sin daños visibles - 6 meses garantía. <strong>Grado B:</strong> Desgaste cosmético menor - 3 meses garantía. <strong>Grado C:</strong> Desgaste visible, funcional - 30 días garantía.</p>
 
-          <h3 id="devoluciones" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Devoluciones</h3>
-          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Tienes 30 días para devolver tu compra sin preguntas. Aplica la ley de retracto de compra colombiana.</p>
+          <h3 id="devoluciones-proceso" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Proceso de Devoluciones</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Derecho de Retracto:</strong> 7 días calendario desde recepción (ley dominicana). <strong>Condiciones:</strong> Equipo en condición original, con accesorios, sin daños, caja original, comprobante de compra.</p>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Proceso:</strong> 1) Contacta soporte@pipod.com. 2) Inspección en 3-5 días. 3) Aprobación y reembolso en 5-7 días.</p>
+
+          <h3 id="reembolsos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Reembolsos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">100% si está en condición original. 80-90% si hay desgaste cosmético menor (usados). 0% si hay daños causados por cliente. Cliente cubre envío de devolución (Pipod cubre ambos si es defecto nuestro).</p>
+
+          <h3 id="excepciones-devolucion" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Excepciones - No Aplica Devolución</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Servicios técnicos completados, daño físico por cliente, productos personalizados, accesorios abiertos/usados, compras en promociones "No Retornable", equipos con iCloud/Google bloqueado (a menos que sea error nuestro).</p>
+        </section>
+
+        {/* ENVÍOS */}
+        <section id="envios" style="margin-bottom: 50px;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">Envíos y Domicilios</h2>
+          
+          <h3 id="cobertura-envios" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Cobertura de Envíos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Zona Metropolitana:</strong> 24-48 horas. <strong>Ciudades Principales:</strong> 2-3 días hábiles. <strong>Zonas Remotas:</strong> 3-5 días hábiles. <strong>Islas:</strong> Consultar disponibilidad.</p>
+
+          <h3 id="opciones-envio" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Opciones de Envío</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Estándar:</strong> RD$150-300, 2-5 días. <strong>Express:</strong> RD$400-600, 24-48 horas + seguimiento en tiempo real. <strong>Retiro en Tienda:</strong> Gratis, 24 horas (Santo Domingo, Santiago).</p>
+
+          <h3 id="domicilio" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Servicio de Domicilio</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Recepción de equipos para retoma, servicio técnico a domicilio (Zona Metropolitana), entrega con firma. Costo: RD$200-500 según zona.</p>
+
+          <h3 id="aseguramiento" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Aseguramiento de Mercancía</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Embalaje premium con cajas reforzadas y espuma protectora. Seguro incluido hasta 100% del valor. Rastreo con número de seguimiento. Pipod responsable por daños durante envío.</p>
+
+          <h3 id="seguimiento" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Seguimiento de Pedidos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Actualizaciones por email, SMS, WhatsApp y panel de cliente en sitio web.</p>
+
+          <h3 id="problemas-envios" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Problemas con Envíos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Dañado:</strong> Reporta en 24 horas, reemplazo o reembolso. <strong>Perdido:</strong> Investigación con transportista, reembolso después de 10 días. <strong>Dirección Incorrecta:</strong> Notifica antes de entrega, redirigimos sin costo.</p>
+
+          <h3 id="envio-gratis" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Envío Gratis</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Compras mayores a RD$5,000, retiro en tienda, devoluciones por defecto nuestro, clientes VIP.</p>
+        </section>
+
+        {/* GARANTÍA */}
+        <section id="garantia" style="margin-bottom: 50px;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 20px;">Política de Garantía</h2>
+          
+          <h3 id="garantia-nuevos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Garantía de Equipos Nuevos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Garantía Oficial Apple 1 año + Garantía Pipod 6 meses adicionales + Cobertura de batería 80% mínimo durante 1 año.</p>
+
+          <h3 id="garantia-usados" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Garantía de Equipos Usados</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Grado A:</strong> 6 meses. <strong>Grado B:</strong> 3 meses. <strong>Grado C:</strong> 30 días. Cubre defectos de hardware, no daño físico por usuario.</p>
+
+          <h3 id="garantia-servicio" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Garantía de Servicio Técnico</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Pantalla:</strong> 3 meses. <strong>Batería:</strong> 6 meses. <strong>Cámara:</strong> 3 meses. <strong>Botones/Conectores:</strong> 3 meses. <strong>Software:</strong> 1 mes. <strong>Carcasa:</strong> 1 mes.</p>
+
+          <h3 id="no-cubre" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Qué NO Cubre la Garantía</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Daño físico por caídas/golpes, daño por agua/líquidos, desgaste normal, reparaciones no autorizadas, pérdida de datos, cambios de software/jailbreak, daño por sobrecarga, equipos con serial alterado o reportados.</p>
+
+          <h3 id="reclamar-garantia" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Cómo Reclamar Garantía</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">1) Contacta garantia@pipod.com con foto y número de serie. 2) Diagnóstico de nuestro equipo. 3) Si es aprobado, reparamos o reemplazamos sin costo. 4) Enviamos con seguimiento.</p>
+
+          <h3 id="abandonos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Política de Abandonos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>30 días:</strong> Recordatorio. <strong>60 días:</strong> Segundo recordatorio + cargo RD$50/día. <strong>90 días:</strong> Equipo considerado abandonado, Pipod puede venderlo o donar. <strong>Después de 90 días:</strong> Sin responsabilidad de Pipod.</p>
+
+          <h3 id="garantia-extendida" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Garantía Extendida (Opcional)</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;"><strong>Plan Plus (1 año):</strong> RD$500 - Cobertura hardware. <strong>Plan Premium (2 años):</strong> RD$900 - Incluye accidentes y agua. <strong>Plan VIP (3 años):</strong> RD$1,200 - Cobertura total + reemplazo si irreparable.</p>
+
+          <h3 id="responsabilidad-datos" style="font-size: 1.3rem; font-weight: 600; color: #000; margin-top: 30px; margin-bottom: 15px;">Responsabilidad por Datos</h3>
+          <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Pipod no es responsable por pérdida de datos, acceso a información personal, o cambios en configuraciones. Realiza backup antes de enviar equipo a reparación.</p>
         </section>
 
         {/* VENDER */}
@@ -133,7 +222,9 @@ const sections = [
         </section>
 
         <div style="background: #F5F5F7; padding: 20px; border-radius: 8px; margin-top: 40px;">
-          <p style="color: #666; font-size: 0.9rem; margin: 0;">Última actualización: Enero 2025. Para preguntas, contáctanos por WhatsApp.</p>
+          <p style="color: #666; font-size: 0.9rem; margin: 0 0 8px 0;"><strong>Contacto para Soporte:</strong></p>
+          <p style="color: #666; font-size: 0.9rem; margin: 0 0 4px 0;">Email: soporte@pipod.com | Garantía: garantia@pipod.com | Privacidad: privacidad@pipod.com</p>
+          <p style="color: #666; font-size: 0.9rem; margin: 0;">Última actualización: Enero 2025</p>
         </div>
       </article>
 
