@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+import CardProduct from '../components/products/cardProduct';
+import StoreFilters from '../components/products/StoreFilters';
+import { getProductos } from '../lib/contentful';
+
+const productos = await getProductos();
+---
+
+<Layout title="Tienda Pipod - Productos Apple">
+  <PipodNavbar client:load />
+  
+  <main style="padding-top: 120px;">
+    <div class="container mt-5">
+      {/* HEADER */}
+      <div class="text-center mb-5">
+        <h1 class="display-4 font-weight-bold">Tienda Pipod</h1>
+        <p class="lead text-muted">Descubre nuestra selección de productos Apple nuevos, seminuevos y repotenciados</p>
+      </div>
+
+      {/* LAYOUT 2 COLUMNAS: FILTROS + PRODUCTOS */}
+      {productos.length > 0 ? (
+        <div class="row">
+          {/* COLUMNA IZQUIERDA: FILTROS */}
+          <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+            <StoreFilters client:load />
+          </div>
+
+          {/* COLUMNA DERECHA: PRODUCTOS */}
+          <div class="col-12 col-lg-9">
+            <div class="row g-4">
+              {productos.map(producto => (
+                <div class="col-12 col-md-6 col-lg-4">
+                  <CardProduct 
+                    thumb_src={producto.thumb_src}
+                    thumb_alt={producto.thumb_alt}
+                    color={producto.color}
+                    colors={producto.colors}
+                    title={producto.title}
+                    description={producto.description}
+                    price={producto.price}
+                    oldPrice={producto.oldPrice}
+                    condition={producto.condition}
+                    rating={producto.rating}
+                    batteryHealth={producto.batteryHealth}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div class="text-center py-5">
+          <h3 class="text-muted">No hay productos disponibles</h3>
+          <p>Configura tu espacio de Contentful y agrega productos</p>
+          <a href="https://www.contentful.com" target="_blank" class="btn btn-primary mt-3">
+            Ir a Contentful
+          </a>
+        </div>
+      )}
+    </div>
+
+    <Footer client:load />
+  </main>
+</Layout>
+
+<style is:global>
+  body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 991px) {
+    .col-lg-3 {
+      margin-bottom: 2rem;
+    }
+  }
+</style>
