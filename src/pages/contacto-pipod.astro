@@ -14,31 +14,35 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
   <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">
+    {/* BANNER SUPERIOR */}
+    <div style="background: #3A506B; color: white; padding: 12px 0; font-size: 0.8rem; letter-spacing: 0.5px; text-align: center;">
+      <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <span style="font-family: 'PT Mono', monospace;">✓ 15,422 DISPOSITIVOS RESCATADOS • DESDE 2009</span>
+        <a href="https://wa.me/573124813094" style="background: #fff; color: #3A506B; padding: 6px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.75rem; transition: all 0.3s ease;">Contactar Ahora</a>
+      </div>
+    </div>
+
     {/* HERO */}
-    <section style="background: linear-gradient(135deg, #000 0%, #1a1a1a 100%); padding: 80px 20px; text-align: center; color: #fff;">
+    <section style="padding: 100px 20px 60px; background: #fff; text-align: center;">
       <div style="max-width: 900px; margin: 0 auto;">
-        <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 20px;">Reparamos lo que otros dan por perdido</h1>
-        <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 30px;">Más de 15,422 dispositivos Apple rescatados en Bogotá bajo una premisa simple: transparencia total y soluciones reales, no reemplazos innecesarios.</p>
-        <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; display: inline-block; margin-bottom: 30px;">
-          <p style="font-size: 1.5rem; font-weight: 700; margin: 0;">15,422 dispositivos Apple</p>
-          <p style="font-size: 0.9rem; color: #ccc; margin: 5px 0 0 0;">que no terminaron en la basura | Desde 2009</p>
+        <div style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #666; letter-spacing: 2px; margin-bottom: 24px;">[ SERVICIO TÉCNICO APPLE CHAPINERO ]</div>
+        <h1 style="font-family: 'Inter', sans-serif; font-size: 3.5rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.03em; line-height: 1.1;">Reparamos lo que otros<br/><span style="color: #3A506B;">dan por perdido.</span></h1>
+        <p style="font-size: 1.25rem; color: #666; margin-bottom: 40px; line-height: 1.6; font-weight: 400; max-width: 650px; margin-left: auto; margin-right: auto;">
+          Más de 15,422 dispositivos Apple rescatados en Bogotá. Transparencia total y soluciones reales, no reemplazos innecesarios. Diagnóstico gratuito en 30 minutos.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratuito." style="background: #000; color: #fff; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Agendar Diagnóstico Gratis</a>
+          <a href="#contacto" style="border: 1.5px solid #000; color: #000; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Ver canales de contacto</a>
         </div>
-        <br />
-        <a href="https://wa.me/573124813094" target="_blank" style="background: #25D366; color: #fff; padding: 15px 40px; border-radius: 50px; font-size: 1rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
-          <i class="bi bi-whatsapp"></i> Diagnóstico Gratuito por WhatsApp
-        </a>
       </div>
     </section>
 
-    {/* CONTENIDO PRINCIPAL + SIDEBAR */}
-    <div style="display: grid; grid-template-columns: 1fr 300px; gap: 40px; max-width: 1400px; margin: 0 auto; padding: 60px 20px;">
-      
-      {/* COLUMNA PRINCIPAL */}
-      <article>
+    {/* CONTENIDO PRINCIPAL */}
+    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 20px;">
         {/* HISTORIA */}
-        <section style="margin-bottom: 60px;">
-          <h2 style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">Nuestra Historia: El Chip de los $50,000</h2>
-          <div style="background: #F5F5F7; padding: 30px; border-radius: 8px; border-left: 4px solid #000;">
+        <section style="margin-bottom: 80px;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Nuestra Historia: El Chip de los $50,000</h2>
+          <div style="background: #F5F5F7; padding: 40px; border-radius: 20px; border-left: 5px solid #000;">
             <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Todo comenzó en 2009 con una MacBook Pro rota y una promesa: hacer las cosas bien.</p>
             <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Carlos, nuestro fundador, recibió un diagnóstico devastador en tres lugares de Bogotá: <em>"Hay que cambiar la placa madre, son $1,200,000"</em>. Sin ese dinero, decidió investigar por su cuenta. Semanas después, descubrió que el fallo era un simple chip de memoria de <strong>$50,000</strong>.</p>
             <p style="color: #444; line-height: 1.8; margin-bottom: 15px;">Esa experiencia definió el ADN de <strong>PIPOD</strong>: un centro técnico donde no te inflamos el presupuesto. Nos dimos cuenta de que profesionales y estudiantes necesitaban un aliado honesto, no solo un taller.</p>
@@ -47,14 +51,14 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
         </section>
 
         {/* FILOSOFÍA */}
-        <section style="margin-bottom: 60px;">
-          <h2 style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">Nuestra Filosofía: Reparamos, No Reemplazamos</h2>
+        <section style="margin-bottom: 80px;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Nuestra Filosofía: Reparamos, No Reemplazamos</h2>
           <p style="color: #444; line-height: 1.8; margin-bottom: 30px;">En PIPOD creemos que la tecnología Apple no es un lujo desechable. Por eso, donde otros cambian piezas completas, nosotros aplicamos <strong>microsoldadura y reparación de componentes</strong>.</p>
           
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-            <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #E5E5E5; text-align: center;">
-              <div style="font-size: 2.5rem; margin-bottom: 10px;">🌱</div>
-              <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">Sostenible</h3>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+            <div style="background: #fff; padding: 32px 24px; border-radius: 20px; border: 1px solid #E5E5E5; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+              <div style="font-size: 3rem; margin-bottom: 16px;">🌱</div>
+              <h3 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em;">Sostenible</h3>
               <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Reducimos el desperdicio electrónico. Cada reparación es un dispositivo que no termina en la basura.</p>
             </div>
             <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #E5E5E5; text-align: center;">
@@ -71,12 +75,12 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
         </section>
 
         {/* VALORES */}
-        <section style="margin-bottom: 60px;">
-          <h2 style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">Nuestros Valores</h2>
+        <section style="margin-bottom: 80px;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Nuestros Valores</h2>
           <p style="color: #444; line-height: 1.8; margin-bottom: 30px;">En PIPOD creemos que reparar es una forma de cuidar. Por eso, cada equipo que pasa por nuestras manos es tratado con responsabilidad, transparencia y dedicación.</p>
           
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-            <div style="padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #E5E5E5;">
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+            <div style="padding: 28px; background: #fff; border-radius: 20px; border: 1px solid #E5E5E5; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
               <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">🔍 Transparencia</h3>
               <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Mostramos todo el proceso de diagnóstico y reparación al cliente, sin sorpresas ni letra pequeña.</p>
             </div>
@@ -100,8 +104,8 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
         </section>
 
         {/* CONTACTO */}
-        <section style="margin-bottom: 60px;">
-          <h2 style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">Hablemos: Canales Directos</h2>
+        <section id="contacto" style="margin-bottom: 80px;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Hablemos: Canales Directos</h2>
           
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px;">
             <div>
@@ -124,11 +128,11 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
           </div>
 
           {/* FORMULARIO */}
-          <div style="background: #fff; padding: 40px; border-radius: 8px; border: 1px solid #E5E5E5;">
+          <div style="background: #fff; padding: 48px; border-radius: 20px; border: 1px solid #E5E5E5; box-shadow: 0 8px 24px rgba(0,0,0,0.04);">
             <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Envíanos un mensaje</h3>
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: grid; gap: 20px;">
               <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                <input type="text" name="nombre" placeholder="Nombre completo" required style="padding: 12px; border: 1px solid #E5E5E5; border-radius: 8px; font-size: 0.95rem;" />
+                <input type="text" name="nombre" placeholder="Nombre completo" required style="padding: 14px 16px; border: 1px solid #E5E5E5; border-radius: 12px; font-size: 0.95rem; font-family: 'Inter', sans-serif; transition: all 0.3s ease;" />
                 <input type="email" name="email" placeholder="Email" required style="padding: 12px; border: 1px solid #E5E5E5; border-radius: 8px; font-size: 0.95rem;" />
               </div>
               <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
@@ -142,17 +146,17 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
                 </select>
               </div>
               <textarea name="mensaje" placeholder="Cuéntanos qué necesitas..." rows="5" required style="padding: 12px; border: 1px solid #E5E5E5; border-radius: 8px; font-size: 0.95rem; resize: vertical;"></textarea>
-              <button type="submit" style="background: #000; color: #fff; padding: 15px; border-radius: 50px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer;">Enviar mensaje</button>
+              <button type="submit" style="background: #000; color: #fff; padding: 16px; border-radius: 50px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">Enviar mensaje</button>
             </form>
           </div>
         </section>
 
         {/* UBICACIÓN */}
-        <section style="margin-bottom: 60px;">
-          <h2 style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">Ubicación y Logística (Chapinero)</h2>
+        <section style="margin-bottom: 80px;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Ubicación y Logística (Chapinero)</h2>
           <p style="color: #444; line-height: 1.8; margin-bottom: 20px;">Estamos en el corazón de la zona creativa de Bogotá.</p>
           
-          <div style="background: #F5F5F7; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+          <div style="background: #F5F5F7; padding: 40px; border-radius: 20px; margin-bottom: 24px;">
             <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;">Cra. 13a #79-52, Chapinero, Bogotá</p>
             <p style="color: #666; margin-bottom: 20px;"><em>(A dos cuadras del Parque de los Hippies)</em></p>
             
@@ -165,15 +169,15 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
           </div>
 
           {/* MAPA */}
-          <div style="border-radius: 8px; overflow: hidden; height: 400px; background: #E5E5E5;">
+          <div style="border-radius: 20px; overflow: hidden; height: 450px; background: #E5E5E5; box-shadow: 0 8px 24px rgba(0,0,0,0.06);">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.6!2d-74.05!3d4.67!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDAnMTIuMCJOIDc0wrAwMycwMC4wIlc!5e0!3m2!1sen!2sco!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </section>
 
         {/* CHECKLIST */}
-        <section style="margin-bottom: 60px;">
-          <h2 style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">Antes de Visitarnos: Checklist</h2>
-          <div style="background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #E5E5E5;">
+        <section style="margin-bottom: 80px;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Antes de Visitarnos: Checklist</h2>
+          <div style="background: #fff; padding: 40px; border-radius: 20px; border: 1px solid #E5E5E5; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
             <p style="color: #444; line-height: 1.8; margin-bottom: 20px;">Prepárate para que tu reparación sea rápida y efectiva.</p>
             <div style="display: grid; gap: 15px;">
               <div style="display: flex; align-items: start; gap: 10px;">
@@ -203,9 +207,9 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
 
         {/* FAQ */}
         <section>
-          <h2 style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">Preguntas Frecuentes</h2>
-          <div style="display: grid; gap: 20px;">
-            <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #E5E5E5;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Preguntas Frecuentes</h2>
+          <div style="display: grid; gap: 24px; margin-bottom: 100px;">
+            <div style="background: #fff; padding: 32px; border-radius: 20px; border: 1px solid #E5E5E5; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
               <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">¿Cuánto tiempo tarda una reparación?</h3>
               <p style="color: #666; line-height: 1.6;">Depende del diagnóstico. Desde 1 hora (cambio de pantalla) hasta 3-5 días (reparaciones complejas). Diagnóstico gratuito en 30 minutos.</p>
             </div>
@@ -223,37 +227,39 @@ const keywords = "Servicio técnico Apple Chapinero, Reparación MacBook Bogotá
             </div>
           </div>
         </section>
+
+        {/* CTA SECTION - 3 CARDS */}
+        <section style="padding-top: 80px; border-top: 1px solid #E5E5E5;">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+            {/* Card 1: Plan Retoma */}
+            <div style="padding: 32px; border-radius: 20px; background: #F5F5F7; border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; text-align: center;">
+              <div style="font-size: 2.5rem; margin-bottom: 16px;">♻️</div>
+              <span style="font-family: 'PT Mono', monospace; font-size: 0.75rem; color: #3A506B; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Plan Retoma</span>
+              <h3 style="font-weight: 700; font-size: 1.2rem; margin: 12px 0; color: #000;">¿Vendes tu Apple?</h3>
+              <p style="font-size: 0.9rem; color: #666; margin: 0 0 20px 0; line-height: 1.5;">Cotiza en 2 minutos y recibe tu oferta inmediata.</p>
+              <a href="/plan-retoma" style="background: #000; color: #fff; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.3px;">Cotizar ahora</a>
+            </div>
+
+            {/* Card 2: Chat Soporte */}
+            <div style="padding: 32px; border-radius: 20px; border: 1px solid #E5E5E5; transition: all 0.3s ease; text-align: center;">
+              <div style="font-size: 2.5rem; margin-bottom: 16px;">💬</div>
+              <span style="font-family: 'PT Mono', monospace; font-size: 0.75rem; color: #3A506B; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Soporte</span>
+              <h3 style="font-weight: 700; font-size: 1.2rem; margin: 12px 0; color: #000;">¿Dudas con la garantía?</h3>
+              <p style="font-size: 0.9rem; color: #666; margin: 0 0 20px 0; line-height: 1.5;">Respuesta garantizada en máximo 2 horas.</p>
+              <a href="https://wa.me/573124813094" target="_blank" style="border: 1.5px solid #000; color: #000; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.3px;">Chat WhatsApp</a>
+            </div>
+
+            {/* Card 3: Servicio Técnico */}
+            <div style="padding: 32px; border-radius: 20px; border: 1px solid #E5E5E5; transition: all 0.3s ease; text-align: center;">
+              <div style="font-size: 2.5rem; margin-bottom: 16px;">🔧</div>
+              <span style="font-family: 'PT Mono', monospace; font-size: 0.75rem; color: #3A506B; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Reparación</span>
+              <h3 style="font-weight: 700; font-size: 1.2rem; margin: 12px 0; color: #000;">¿Necesitas reparación?</h3>
+              <p style="font-size: 0.9rem; color: #666; margin: 0 0 20px 0; line-height: 1.5;">Diagnóstico gratuito en 30 minutos.</p>
+              <a href="/servicio-tecnico" style="border: 1.5px solid #000; color: #000; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.3px;">Agendar Cita</a>
+            </div>
+          </div>
+        </section>
       </article>
-
-      {/* SIDEBAR DERECHO - WIDGETS */}
-      <aside style="display: grid; grid-template-rows: auto auto auto; gap: 20px; position: sticky; top: 140px; height: fit-content;">
-        {/* Widget Plan Retoma */}
-        <div style="padding: 20px; border-radius: 8px; background: #F5F5F7; border: 1px solid rgba(0,0,0,0.05);">
-          <span style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #3A506B; font-weight: 700; display: block; margin-bottom: 8px; text-transform: uppercase;">Plan Retoma</span>
-          <h3 style="font-weight: 700; font-size: 1rem; margin: 0 0 8px 0; color: #000;">¿Vendes tu Apple?</h3>
-          <p style="font-size: 0.85rem; color: #666; margin: 0 0 12px 0; line-height: 1.4;">Cotiza en 2 minutos y recibe tu oferta inmediata.</p>
-          <a href="/plan-retoma" style="background: #000; color: #fff; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-            Cotizar ahora <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-
-        {/* Widget Garantía */}
-        <div style="padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5;">
-          <p style="font-size: 0.85rem; color: #666; margin: 0 0 12px 0; line-height: 1.4;">¿Dudas con la garantía?</p>
-          <a href="https://wa.me/573124813094" target="_blank" style="border: 1px solid #000; color: #000; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="bi bi-whatsapp"></i> Chat de Soporte
-          </a>
-        </div>
-
-        {/* Widget Servicio Técnico */}
-        <div style="padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5;">
-          <p style="font-size: 0.85rem; color: #666; margin: 0 0 12px 0; line-height: 1.4;">¿Necesitas reparación?</p>
-          <a href="/servicio-tecnico" style="border: 1px solid #000; color: #000; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="bi bi-tools"></i> Agendar Cita
-          </a>
-        </div>
-      </aside>
-
     </div>
   </main>
 
