@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/contabilidad/:path*",
+      "destination": "https://contabilidad-457z.vercel.app/:path*"
+    }
+  ]
+}
