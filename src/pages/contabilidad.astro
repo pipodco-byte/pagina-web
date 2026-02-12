@@ -1,20 +1,14 @@
 ---
-export const prerender = false;
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contabilidad - Pipod</title>
-</head>
-<body style="margin: 0; padding: 0; overflow: hidden;">
+<Layout title="Contabilidad - Pipod">
+  <main style="margin: 0; padding: 0; overflow: hidden;">
     <iframe 
-        src="https://contabilidad-457z.vercel.app/" 
-        style="width: 100%; height: 100vh; border: none;"
-        title="Contabilidad"
-        allow="fullscreen"
+      src="https://contabilidad-457z.vercel.app/" 
+      style="width: 100%; height: 100vh; border: none; display: block;"
+      title="Contabilidad"
+      allow="fullscreen"
     ></iframe>
-</body>
-</html>
+  </main>
+</Layout>
