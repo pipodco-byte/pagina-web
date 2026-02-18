@@ -6,10 +6,7 @@ import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
 import CardProduct from '../components/products/cardProduct';
 import ServiceBentoDark from '../components/serviceCard';
-import IncentiveCol from '../components/incentives/incentiveCol';
 import IncentiveShortBlackA from '../components/incentives/incentiveShortBlackA';
-import IncentiveShortBlackB from '../components/incentives/incentiveShortBlackB';
-import IncentiveShortWhite from '../components/incentives/incentiveShortWhite';
 import ReviewWall from '../components/promo/pipodGoogleReviews.jsx';
 import BlogSection from '../components/reviews/blogSection';
 import Stats from '../components/stats/pipodStats.astro';
@@ -51,6 +48,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
           description="Diagnóstico rápido y garantía en todas nuestras reparaciones"
           buttonText="AGENDA"
           link="/servicio-tecnico"
+          data-gtm-servicio="reparacion"
           client:load
         />
       </div>
@@ -63,6 +61,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
           description="Intercambia tu equipo antiguo por uno nuevo con el mejor valor"
           buttonText="SABER MÁS"
           link="/productos?categoria=plan-retoma"
+          data-gtm-servicio="retoma"
           client:load
         />
       </div>
@@ -75,6 +74,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
           description="Accesorios originales y compatibles para todos tus dispositivos"
           buttonText="IR A TIENDA"
           link="/productos?categoria=accesorios"
+          data-gtm-servicio="accesorios"
           client:load
         />
       </div>
@@ -96,7 +96,12 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
     <div class="row g-4">
       {iphones.map(iphone => (
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div 
+          class="col-md-6 col-lg-3 d-flex align-items-stretch"
+          data-product-id={iphone.id}
+          data-product-name={iphone.nombre}
+          data-categoria="iphone"
+        >
           <div class="card-wrapper">
              <CardProduct 
                 {...iphone} 
@@ -291,7 +296,12 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
     <div class="row g-4">
       {macbooks.map(producto => (
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div 
+          class="col-md-6 col-lg-3 d-flex align-items-stretch"
+          data-product-id={producto.id}
+          data-product-name={producto.title}
+          data-categoria="macbook"
+        >
           <div class="card-wrapper">
             <CardProduct 
               thumb_src={producto.thumb_src}
@@ -306,7 +316,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
             />
           </div>
         </div>
-      ))}
+      ))}}
     </div>
   </div>
 </section>

@@ -1,0 +1,182 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- PAQUETES BÁSICOS ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{ebgaramond}
+\usepackage{microtype}
+
+% --- DISEÑO, COLOR Y GRÁFICOS ---
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage[most]{tcolorbox}
+\usepackage{lettrine}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{hyperref}
+
+% --- SÍMBOLOS ASTROLÓGICOS ---
+\usepackage{wasysym}
+\usepackage{amssymb}
+
+% --- CONFIGURACIÓN DE PÁGINA ---
+\geometry{top=3cm, bottom=3cm, left=2.5cm, right=2.5cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+% --- PALETA DE COLORES ---
+\definecolor{astroblue}{HTML}{1A237E}
+\definecolor{astrogold}{HTML}{996515}
+\definecolor{softbg}{HTML}{FAFAFA}
+
+% --- COMANDOS DE PORTADA / METADATOS ---
+\newcommand{\clientename}{Camila}
+\newcommand{\clientefecha}{1 de abril de 2005}
+\newcommand{\clientehora}{5:10 (hora local)}
+\newcommand{\clientelugar}{Fusagasugá, Colombia}
+\newcommand{\clientecoords}{4°21' N, 74°22' O}
+\newcommand{\sistemacasas}{Placidus}
+\newcommand{\autor}{Josué Calderón}
+\newcommand{\astroyear}{2026}
+\newcommand{\cartaimage}{camila.jpg} % nombre del archivo de la carta
+
+% --- LÍNEA DORADA ---
+\newcommand{\titlerulegold}{\color{astrogold}\rule{\linewidth}{1.5pt}}
+
+% --- HIPERVÍNCULOS ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=astroblue,
+    urlcolor=astrogold,
+    citecolor=astroblue,
+    pdfborder={0 0 0},
+    breaklinks=true
+}
+
+% --- ÍNDICE PERSONALIZADO ---
+\renewcommand{\contentsname}{Tabla de Contenidos}
+\renewcommand{\cfttoctitlefont}{\huge\bfseries\color{astroblue}\centering}
+\renewcommand{\cftsecfont}{\bfseries\color{astroblue}}
+\renewcommand{\cftsecleader}{\color{astrogold}\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecpagefont}{\color{astrogold}\bfseries}
+
+% --- ESTILO DE TÍTULOS ---
+\titleformat{\section}
+  {\color{astroblue}\normalfont\huge\bfseries}{\thesection}{1em}{}[\color{astrogold}\titlerule[1.5pt]]
+\titleformat{\subsection}
+  {\color{astrogold}\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\color{astroblue}\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% --- LISTAS ---
+\setlist[itemize]{label=\color{astrogold}$\star$, leftmargin=*, itemsep=0.2em}
+
+% --- CAJAS ESPECIALES REUTILIZABLES ---
+\newtcolorbox{astrobox}[1]{
+  enhanced, breakable,
+  colback=softbg, colframe=astrogold,
+  title=#1,
+  coltitle=black,
+  fonttitle=\bfseries,
+  arc=0mm
+}
+
+\newtcolorbox{heridasagrada}{
+  enhanced, breakable,
+  colback=softbg, colframe=astrogold,
+  title=La Herida Sagrada,
+  colbacktitle=astrogold,
+  sharp corners,
+  fonttitle=\bfseries\color{white}
+}
+
+\newtcolorbox{liturgia}{
+  enhanced, breakable,
+  colback=softbg, colframe=astroblue,
+  title=Liturgia Evolutiva,
+  colbacktitle=astroblue,
+  sharp corners,
+  fonttitle=\bfseries\color{white}
+}
+
+\newtcolorbox{consejomaestro}{
+  enhanced, breakable,
+  colback=softbg, colframe=astrogold,
+  title=Consejo del Maestro,
+  colbacktitle=astrogold,
+  sharp corners,
+  fonttitle=\bfseries\color{white}
+}
+
+% --- INICIO DEL DOCUMENTO ---
+\begin{document}
+
+% ========== PORTADA ==========
+\begin{titlepage}
+    \centering
+    \vspace*{0.5cm}
+    {\color{astrogold}\Large\textbf{INFORME ASTROLÓGICO INTEGRAL}}\\[0.5cm]
+    {\color{astroblue}\Huge\textbf{\clientename}}\\[0.5cm]
+    \titlerulegold
+    \vspace{1cm}
+
+    % Carta astral
+    \begin{tcolorbox}[enhanced, colframe=astrogold, boxrule=1.5pt,
+                      arc=0mm, colback=white, middle=0pt, boxsep=0pt]
+        \centering
+        \includegraphics[width=\linewidth, keepaspectratio]{\cartaimage}
+    \end{tcolorbox}
+
+    \vfill
+
+    % Datos de nacimiento
+    {\large\color{astroblue}\textbf{Datos de nacimiento}}\\[0.5cm]
+    {\color{astroblue}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{r l}
+        \textbf{Nombre:} & \clientename \\
+        \textbf{Fecha:} & \clientefecha \\
+        \textbf{Hora:} & \clientehora \\
+        \textbf{Lugar:} & \clientelugar \\
+        \textbf{Coordenadas:} & \clientecoords \\
+        \textbf{Sistema de casas:} & \sistemacasas \\
+        \textbf{Autor del informe:} & \autor \\
+    \end{tabular}
+    }
+
+    \vspace{1.5cm}
+    \begin{center}
+        {\small\color{gray} Bogotá, Colombia $\cdot$ \astroyear}
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+% ========== ÍNDICE ==========
+{
+  \hypersetup{linkcolor=astroblue}
+  \tableofcontents
+}
+\newpage
+
+% ========== CONTENIDO ==========
+% Aquí se insertará el contenido generado desde Markdown → LaTeX.
+% Por ejemplo, con \input{informe_contenido.tex}
+
+\input{informe_contenido.tex}
+
+% ========== FIRMA FINAL ==========
+\newpage
+\begin{center}
+  \titlerulegold\\[0.5cm]
+  {\autor}\\
+  {\small Astrólogo Evolutivo--Alquímico--Transpersonal}\\[0.2cm]
+  {\small Sagrada Ciencia $\cdot$ Bogotá, \astroyear}
+\end{center}
+
+\end{document}
