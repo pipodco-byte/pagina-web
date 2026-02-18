@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGTM } from './gtm';
+import { useGTM } from '../gtm/useGTM';
 import ProductBadge from './productBadge';
 import './cardProduct.css';
 
@@ -36,11 +36,15 @@ export default function CardProduct({
   const isUsed = condition !== 'Nuevo';
 
   const handleProductClick = () => {
-    track('click_product_card', {
-      product_name: title,
-      product_price: price,
-      condition: condition,
-    });
+    try {
+      track('click_product_card', {
+        product_name: title,
+        product_price: price,
+        condition: condition,
+      });
+    } catch (error) {
+      console.error('GTM tracking error:', error);
+    }
   };
 
   return (

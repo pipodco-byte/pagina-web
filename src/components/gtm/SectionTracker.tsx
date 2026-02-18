@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useGTM } from './gtm';
+import { useGTM } from './useGTM';
 
 interface SectionTrackerProps {
   sectionName: string;
@@ -33,7 +33,7 @@ export const SectionTracker: React.FC<SectionTrackerProps> = ({
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [track, sectionName, sectionData]);
 
   return <div ref={ref}>{children}</div>;
 };

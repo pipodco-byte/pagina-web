@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface GTMTrackerProps {
   eventName: string;
@@ -17,9 +17,11 @@ export const GTMTracker: React.FC<GTMTrackerProps> = ({
   className,
   onClick,
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
   const trackEvent = (data: Record<string, any>) => {
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({
+    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
         event: eventName,
         ...eventData,
         ...data,
@@ -33,18 +35,17 @@ export const GTMTracker: React.FC<GTMTrackerProps> = ({
       trackEvent({});
     }
 
-    if (triggerOn === 'view') {
+    if (triggerOn === 'view' && ref.current) {
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
           trackEvent({ view_type: 'intersection' });
           observer.unobserve(entry.target);
         }
       });
-      const element = document.currentScript?.parentElement;
-      if (element) observer.observe(element);
+      observer.observe(ref.current);
       return () => observer.disconnect();
     }
-  }, []);
+  }, [eventName, eventData, triggerOn]);
 
   const handleClick = () => {
     if (triggerOn === 'click') {
@@ -55,11 +56,11 @@ export const GTMTracker: React.FC<GTMTrackerProps> = ({
 
   if (triggerOn === 'click' && children) {
     return (
-      <div className={className} onClick={handleClick}>
+      <div ref={ref} className={className} onClick={handleClick}>
         {children}
       </div>
     );
   }
 
-  return <>{children}</>;
+  return <div ref={ref}>{children}</div>;
 };
