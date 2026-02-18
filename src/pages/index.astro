@@ -11,6 +11,7 @@ import ReviewWall from '../components/promo/pipodGoogleReviews.jsx';
 import BlogSection from '../components/reviews/blogSection';
 import Stats from '../components/stats/pipodStats.astro';
 import HeroBentoCarousel from '../components/hero/heroBentoCarousel.astro';
+import { SectionTracker } from '../components/gtm';
 import { getProductos } from '../lib/contentful';
 
 const productos = await getProductos();
@@ -25,363 +26,319 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     <!-- Hero Carousel Section -->
     <HeroBentoCarousel />
 
-
-<!-- Stats Section -->
+    <!-- Stats Section -->
     <Stats />
 
-
     <!-- Core Services (3 Pillars) -->
-<section class="service-cards-section" style="background-color: #FFFFFF; border-top: 1px solid #E0E0E0; padding: 80px 0;"> 
-  <div class="container">
-    <div class="mb-4 text-start">
-      <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
-        Servicios
-      </h2>
-    </div>
+    <SectionTracker sectionName="servicios" client:load>
+      <section class="service-cards-section" style="background-color: #FFFFFF; border-top: 1px solid #E0E0E0; padding: 80px 0;"> 
+        <div class="container">
+          <div class="mb-4 text-start">
+            <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
+              Servicios
+            </h2>
+          </div>
 
-    <div class="row g-4">
-      <div class="col-md-4">
-        <ServiceBentoDark 
-          image_src="/images/imagenservicios.jpg"
-          icon_name="bi-tools"
-          title="Reparación de Equipos"
-          description="Diagnóstico rápido y garantía en todas nuestras reparaciones"
-          buttonText="AGENDA"
-          link="/servicio-tecnico"
-          data-gtm-servicio="reparacion"
-          client:load
-        />
-      </div>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <ServiceBentoDark 
+                image_src="/images/imagenservicios.jpg"
+                icon_name="bi-tools"
+                title="Reparación de Equipos"
+                description="Diagnóstico rápido y garantía en todas nuestras reparaciones"
+                buttonText="AGENDA"
+                link="/servicio-tecnico"
+                servicio="reparacion"
+                client:load
+              />
+            </div>
 
-      <div class="col-md-4">
-        <ServiceBentoDark 
-          image_src="/images/plan retoma 1.jpg"
-          icon_name="bi-arrow-repeat"
-          title="Plan Retoma"
-          description="Intercambia tu equipo antiguo por uno nuevo con el mejor valor"
-          buttonText="SABER MÁS"
-          link="/productos?categoria=plan-retoma"
-          data-gtm-servicio="retoma"
-          client:load
-        />
-      </div>
+            <div class="col-md-4">
+              <ServiceBentoDark 
+                image_src="/images/plan retoma 1.jpg"
+                icon_name="bi-arrow-repeat"
+                title="Plan Retoma"
+                description="Intercambia tu equipo antiguo por uno nuevo con el mejor valor"
+                buttonText="SABER MÁS"
+                link="/productos?categoria=plan-retoma"
+                servicio="retoma"
+                client:load
+              />
+            </div>
 
-      <div class="col-md-4">
-        <ServiceBentoDark 
-          image_src="/images/accesorios 2.jpg"
-          icon_name="bi-bag-check"
-          title="Accesorios"
-          description="Accesorios originales y compatibles para todos tus dispositivos"
-          buttonText="IR A TIENDA"
-          link="/productos?categoria=accesorios"
-          data-gtm-servicio="accesorios"
-          client:load
-        />
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="col-md-4">
+              <ServiceBentoDark 
+                image_src="/images/accesorios 2.jpg"
+                icon_name="bi-bag-check"
+                title="Accesorios"
+                description="Accesorios originales y compatibles para todos tus dispositivos"
+                buttonText="IR A TIENDA"
+                link="/productos?categoria=accesorios"
+                servicio="accesorios"
+                client:load
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </SectionTracker>
 
- <!-- Why Choose Us (Differentiators) -->
+    <!-- Why Choose Us (Differentiators) -->
     <IncentiveShortBlackA client:load />
 
-
     <!-- Featured Products (iPhones) -->
+    <SectionTracker sectionName="productos_iphone" client:load>
+      <section class="products-section">
+        <div class="container">
+          <div class="header-container">
+            <h2 class="section-title">iPhone</h2>
+          </div>
 
-<section class="products-section">
-  <div class="container">
-    <div class="header-container">
-      <h2 class="section-title">iPhone</h2>
-    </div>
-
-    <div class="row g-4">
-      {iphones.map(iphone => (
-        <div 
-          class="col-md-6 col-lg-3 d-flex align-items-stretch"
-          data-product-id={iphone.id}
-          data-product-name={iphone.nombre}
-          data-categoria="iphone"
-        >
-          <div class="card-wrapper">
-             <CardProduct 
-                {...iphone} 
-                client:load 
-              />
+          <div class="row g-4">
+            {iphones.map(iphone => (
+              <div 
+                class="col-md-6 col-lg-3 d-flex align-items-stretch"
+                data-product-id={iphone.id}
+                data-product-name={iphone.nombre}
+                data-categoria="iphone"
+              >
+                <div class="card-wrapper">
+                  <CardProduct 
+                    {...iphone} 
+                    client:load 
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
+    </SectionTracker>
 
-<style is:global>
-  /* 1. SECCIÓN: Reducimos el exceso de aire superior (py-24 era demasiado) */
-  .products-section {
-    background-color: #FFFFFF;
-    padding: 80px 0; /* Unificado: 80px arriba y abajo */
-  }
+    <style is:global>
+      .products-section {
+        background-color: #FFFFFF;
+        padding: 80px 0;
+      }
 
-  .header-container {
-    margin-bottom: 40px; /* Separación constante con las cards */
-  }
+      .header-container {
+        margin-bottom: 40px;
+      }
 
-  .section-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #000000;
-    margin: 0;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-  }
+      .section-title {
+        font-family: 'Inter', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #000000;
+        margin: 0;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
 
-  /* 2. EL TRUCO PARA EQUILIBRAR LA CARD: 
-     Forzamos el espaciado interno mediante el wrapper si la card está descompensada */
-  
-  .card-wrapper {
-    width: 100%;
-    display: flex;
-  }
+      .card-wrapper {
+        width: 100%;
+        display: flex;
+      }
 
-  /* Seleccionamos la card generada dentro del componente */
-  .card-wrapper > div, 
-  .card-wrapper article {
-    width: 100%;
-    /* Ajustamos los paddings internos para quitar peso de arriba y darlo abajo */
-    padding-top: 20px !important;    /* Menos espacio arriba */
-    padding-bottom: 30px !important; /* Más espacio abajo para el footer */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #ffffff;
-    border-radius: 28px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease;
-  }
+      .card-wrapper > div, 
+      .card-wrapper article {
+        width: 100%;
+        padding-top: 20px !important;
+        padding-bottom: 30px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        transition: transform 0.3s ease;
+      }
 
-  .card-wrapper:hover > div {
-    transform: translateY(-5px);
-  }
+      .card-wrapper:hover > div {
+        transform: translateY(-5px);
+      }
 
-  /* 3. IMAGEN: Aseguramos que la imagen no tenga un margen superior propio */
-  .card-wrapper img {
-    margin-top: 10px !important;
-    margin-bottom: 20px !important;
-    object-fit: contain;
-  }
+      .card-wrapper img {
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+        object-fit: contain;
+      }
 
-  /* Responsivo para móviles */
-  @media (max-width: 768px) {
-    .products-section {
-      padding: 50px 0;
-    }
-    .section-title {
-      font-size: 1.5rem;
-    }
-  }
-</style>
+      @media (max-width: 768px) {
+        .products-section {
+          padding: 50px 0;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
 
     <!-- Payment Methods Banner -->
- <section class="payment-section">
-  <div class="container-fluid">
-    <div class="payment-wrapper">
-      <div class="payment-grid">
-        
-        <div class="payment-item">
-          <img src="https://checkout.bold.co/library/assets/bold-logos/bold-dark.svg" alt="Bold" class="logo-bold">
-        </div>
-
-        <div class="payment-item">
-          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/pse.svg" alt="PSE" class="logo-img pse">
-        </div>
-
-        <div class="payment-item">
-          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/visa.svg" alt="Visa" class="logo-img">
-        </div>
-
-        <div class="payment-item">
-          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/mastercard.svg" alt="Mastercard" class="logo-img">
-        </div>
-
-        <div class="payment-item">
-          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/amex.svg" alt="Amex" class="logo-img">
-        </div>
-
-        <div class="payment-item">
-          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/nequi.svg" alt="Nequi" class="logo-img">
-        </div>
-
-        <div class="payment-item">
-          <img src="https://checkout.bold.co/library/assets/payment-methods/dark/bancolombia.svg" alt="Bancolombia" class="logo-img">
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .payment-section {
-    background-color: #000;
-    /* MEDIDAS TÉCNICAS REQUERIDAS */
-    height: 119px; 
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .payment-wrapper {
-    /* ANCHO MÁXIMO REQUERIDO */
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 80px; /* Un poco más de aire en los bordes para mayor elegancia */
-  }
-
-  .payment-grid {
-    display: flex;
-    /* DISTRIBUCIÓN MINIMALISTA QUE TE GUSTÓ */
-    justify-content: space-between; 
-    align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;
-  }
-
-  .logo-img {
-    height: 38px; /* Tamaño optimizado para la distribución space-between */
-    width: auto;
-    object-fit: contain;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-
-  .logo-bold {
-    height: 28px;
-    width: auto;
-    transition: all 0.4s ease;
-  }
-
-  .logo-img.pse {
-    height: 52px; /* Proporción PSE ajustada */
-  }
-
-  /* Efecto Hover sutil conservando el color */
-  .payment-item:hover .logo-img, 
-  .payment-item:hover .logo-bold {
-    transform: translateY(-5px);
-    filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.1));
-  }
-
-  @media (max-width: 991px) {
-    .payment-section {
-      height: auto;
-      padding: 40px 0;
-    }
-    .payment-grid {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-  }
-</style>
-
-    <!-- Featured Products (MacBooks) -->
-    <section class="macbooks-section">
-  <div class="container">
-    <div class="header-container">
-      <h2 class="section-title">MacBooks</h2>
-    </div>
-
-    <div class="row g-4">
-      {macbooks.map(producto => (
-        <div 
-          class="col-md-6 col-lg-3 d-flex align-items-stretch"
-          data-product-id={producto.id}
-          data-product-name={producto.title}
-          data-categoria="macbook"
-        >
-          <div class="card-wrapper">
-            <CardProduct 
-              thumb_src={producto.thumb_src}
-              thumb_alt={producto.thumb_alt}
-              color={producto.color}
-              colors={producto.colors}
-              title={producto.title}
-              description={producto.description}
-              price={producto.price}
-              position="center"
-              client:load
-            />
+    <section class="payment-section">
+      <div class="container-fluid">
+        <div class="payment-wrapper">
+          <div class="payment-grid">
+            <div class="payment-item">
+              <img src="https://checkout.bold.co/library/assets/bold-logos/bold-dark.svg" alt="Bold" class="logo-bold">
+            </div>
+            <div class="payment-item">
+              <img src="https://checkout.bold.co/library/assets/payment-methods/dark/pse.svg" alt="PSE" class="logo-img pse">
+            </div>
+            <div class="payment-item">
+              <img src="https://checkout.bold.co/library/assets/payment-methods/dark/visa.svg" alt="Visa" class="logo-img">
+            </div>
+            <div class="payment-item">
+              <img src="https://checkout.bold.co/library/assets/payment-methods/dark/mastercard.svg" alt="Mastercard" class="logo-img">
+            </div>
+            <div class="payment-item">
+              <img src="https://checkout.bold.co/library/assets/payment-methods/dark/amex.svg" alt="Amex" class="logo-img">
+            </div>
+            <div class="payment-item">
+              <img src="https://checkout.bold.co/library/assets/payment-methods/dark/nequi.svg" alt="Nequi" class="logo-img">
+            </div>
+            <div class="payment-item">
+              <img src="https://checkout.bold.co/library/assets/payment-methods/dark/bancolombia.svg" alt="Bancolombia" class="logo-img">
+            </div>
           </div>
         </div>
-      ))}}
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<style is:global>
-  /* Unificamos el estilo de la sección para evitar desequilibrios */
-  .macbooks-section {
-    background-color: #FFFFFF;
-    padding: 80px 0; /* Padding equilibrado */
-  }
+    <style>
+      .payment-section {
+        background-color: #000;
+        height: 119px; 
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
 
-  .header-container {
-    margin-bottom: 40px; /* Espacio constante entre título y cards */
-  }
+      .payment-wrapper {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 80px;
+      }
 
-  .section-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #000000;
-    margin: 0;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-  }
+      .payment-grid {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+      }
 
-  /* Ajuste de la Card para MacBooks */
-  .card-wrapper {
-    width: 100%;
-    display: flex;
-  }
+      .logo-img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
 
-  /* Corregimos el espacio interno (Padding) para que no pese arriba */
-  .card-wrapper > div, 
-  .card-wrapper article {
-    width: 100%;
-    /* Balanceamos: Menos arriba (20px) para que la Mac suba, más abajo (32px) para el precio */
-    padding: 20px 24px 32px 24px !important; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #ffffff;
-    border-radius: 28px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
-  }
+      .logo-bold {
+        height: 28px;
+        width: auto;
+        transition: all 0.4s ease;
+      }
 
-  .card-wrapper:hover > div {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
-  }
+      .logo-img.pse {
+        height: 52px;
+      }
 
-  /* Aseguramos que la imagen de la MacBook esté centrada y tenga aire */
-  .card-wrapper img {
-    margin-top: 15px !important;
-    margin-bottom: 25px !important;
-    max-height: 180px; /* Altura controlada para laptops */
-    object-fit: contain;
-  }
+      .payment-item:hover .logo-img, 
+      .payment-item:hover .logo-bold {
+        transform: translateY(-5px);
+        filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.1));
+      }
 
-  @media (max-width: 991px) {
-    .macbooks-section { padding: 60px 0; }
-    .section-title { font-size: 1.7rem; }
-  }
-</style>
+      @media (max-width: 991px) {
+        .payment-section {
+          height: auto;
+          padding: 40px 0;
+        }
+        .payment-grid {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 30px;
+        }
+      }
+    </style>
 
+    <!-- Featured Products (MacBooks) -->
+    <SectionTracker sectionName="productos_macbook" client:load>
+      <section class="macbooks-section">
+        <div class="container">
+          <div class="header-container">
+            <h2 class="section-title">MacBooks</h2>
+          </div>
+
+          <div class="row g-4">
+            {macbooks.map(producto => (
+              <div 
+                class="col-md-6 col-lg-3 d-flex align-items-stretch"
+                data-product-id={producto.id}
+                data-product-name={producto.title}
+                data-categoria="macbook"
+              >
+                <div class="card-wrapper">
+                  <CardProduct 
+                    thumb_src={producto.thumb_src}
+                    thumb_alt={producto.thumb_alt}
+                    color={producto.color}
+                    colors={producto.colors}
+                    title={producto.title}
+                    description={producto.description}
+                    price={producto.price}
+                    position="center"
+                    client:load
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </SectionTracker>
+
+    <style is:global>
+      .macbooks-section {
+        background-color: #FFFFFF;
+        padding: 80px 0;
+      }
+
+      .macbooks-section .card-wrapper > div, 
+      .macbooks-section .card-wrapper article {
+        width: 100%;
+        padding: 20px 24px 32px 24px !important; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+        transition: all 0.3s ease;
+      }
+
+      .macbooks-section .card-wrapper:hover > div {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+      }
+
+      .macbooks-section .card-wrapper img {
+        margin-top: 15px !important;
+        margin-bottom: 25px !important;
+        max-height: 180px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 991px) {
+        .macbooks-section { padding: 60px 0; }
+      }
+    </style>
 
     <!-- Social Proof (Testimonials) -->
     <ReviewWall
@@ -389,8 +346,6 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
       pageHeaderMinVh="40vh"
     />
 
-   
-    
     <!-- Blog/News Section -->
     <BlogSection client:load />
 

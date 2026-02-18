@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGTM } from './gtm';
 import './serviceCard.css';
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
   description: string;
   buttonText: string;
   link: string;
+  servicio?: string;
 }
 
 export default function ServiceBentoDark({ 
@@ -16,8 +18,17 @@ export default function ServiceBentoDark({
   title, 
   description, 
   buttonText, 
-  link 
+  link,
+  servicio
 }: Props) {
+  const { track } = useGTM();
+
+  const handleClick = () => {
+    track('click_agendar_servicio', {
+      servicio: servicio || title,
+      button_text: buttonText,
+    });
+  };
   return (
     <div className="pipod-bento-dark">
       <div className="bento-visual-zone">
@@ -34,7 +45,7 @@ export default function ServiceBentoDark({
         <p className="bento-text-dark">{description}</p>
         
         <div className="bento-action-dark">
-          <a href={link} className="bento-link-dark">
+          <a href={link} className="bento-link-dark" onClick={handleClick}>
             {buttonText}
             <span className="bento-arrow">→</span>
           </a>

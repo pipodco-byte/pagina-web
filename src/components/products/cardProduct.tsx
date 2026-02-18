@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGTM } from './gtm';
 import ProductBadge from './productBadge';
 import './cardProduct.css';
 
@@ -27,14 +28,23 @@ export default function CardProduct({
   batteryHealth,
   slug
 }: Props) {
+  const { track } = useGTM();
   
   const productUrl = slug ? `/producto/${slug}` : '#';
   const discount = oldPrice ? Math.round(((oldPrice - price) / oldPrice) * 100) : 0;
   const discountColor = discount > 35 ? '#D32F2F' : '#2E7D32';
   const isUsed = condition !== 'Nuevo';
 
+  const handleProductClick = () => {
+    track('click_product_card', {
+      product_name: title,
+      product_price: price,
+      condition: condition,
+    });
+  };
+
   return (
-    <a href={productUrl} style={{ textDecoration: 'none', color: 'inherit' }}>
+    <a href={productUrl} style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleProductClick}>
       <div className="pipod-card-premium">
         <div className="product-display">
           <div className="badge-stack">
