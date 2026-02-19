@@ -1,6 +1,5 @@
 ---
 // src/components/SEO/LocalBusinessSchema.astro
-// Componente para inyectar schema JSON-LD de Local Business
 
 const schema = {
   "@context": "https://schema.org",
@@ -10,7 +9,10 @@ const schema = {
   "url": "https://www.pipod.co",
   "logo": "https://www.pipod.co/images/logo.jpg",
   "image": "https://www.pipod.co/images/logo.jpg",
-  "description": "Expertos en venta y reparación de productos Apple en Bogotá. Servicio técnico especializado, diagnóstico gratis y garantía en todas nuestras reparaciones.",
+  "description": "Expertos en venta y reparación de productos Apple en Bogotá. Servicio técnico especializado Apple, diagnóstico gratis y garantía en todas nuestras reparaciones.",
+  "slogan": "Expertos Apple. Confianza de 15 años.",
+  "email": "info@pipod.co",
+  "knowsLanguage": "es-CO",
   
   "address": {
     "@type": "PostalAddress",
@@ -53,16 +55,51 @@ const schema = {
   
   "priceRange": "$$",
   "currenciesAccepted": "COP",
-  "paymentAccepted": ["Cash", "CreditCard", "DebitCard", "MobilePayment"],
+  "paymentAccepted": [
+    "Cash", 
+    "Credit Card", 
+    "Debit Card", 
+    "Mobile Payment", 
+    "Bank Transfer", 
+    "PSE", 
+    "Nequi", 
+    "Daviplata", 
+    "Bold"
+  ],
   
   "areaServed": [
+    {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 4.6658,
+        "longitude": -74.0578
+      },
+      "geoRadius": "15000"
+    },
     {
       "@type": "City",
       "name": "Bogotá"
     },
     {
       "@type": "AdministrativeArea",
-      "name": "Cundinamarca"
+      "name": "Zona Norte de Bogotá"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Chapinero"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "El Retiro"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "Zona Rosa"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Usaquén"
     }
   ],
   
@@ -79,7 +116,7 @@ const schema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "150",
+    "reviewCount": "48",
     "bestRating": "5",
     "worstRating": "1"
   },
@@ -93,54 +130,186 @@ const schema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Cliente Verificado"
+        "name": "Wilson Vega"
       },
-      "reviewBody": "Excelente servicio técnico. Diagnóstico rápido y profesional."
+      "reviewBody": "Quiero agradecer por el servicio prestado. La atención fue muy buena desde el inicio, el trabajo se realizó de manera excelente."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sergio Niño Burgos"
+      },
+      "reviewBody": "Muchas gracias chicos el equipo re potenciado funciona muy bien, su servicio es muy pro!"
     }
+  ],
+  
+  "foundingDate": "2011",
+  "foundingLocation": "Bogotá, Colombia",
+  
+  "knowsAbout": [
+    // SERVICIO TÉCNICO
+    "Servicio técnico Apple Bogotá",
+    "Reparación iPhone Bogotá",
+    "Cambio batería iPhone",
+    "Reparación pantalla iPhone",
+    "Servicio técnico MacBook Bogotá",
+    "Cambio batería MacBook",
+    "Reparación pantalla MacBook Pro",
+    "Reparación iPad Bogotá",
+    "Reparación Apple Watch",
+    "Microsoldadura iPhone",
+    "iPhone mojado reparación",
+    "iPhone no prende",
+    "Diagnóstico gratuito iPhone",
+    "Servicio técnico Apple Chapinero",
+    "Reparación Apple Bogotá Norte",
+    "Cambio de teclado MacBook",
+    "Reparación placa base iPhone",
+    "Mantenimiento MacBook",
+    "iPhone no carga",
+    "MacBook batería inflada",
+    "Reparación Face ID",
+    "Cambio cámara iPhone",
+    "Servicio técnico Apple cerca TransMilenio",
+    
+    // VENTA DE PRODUCTOS
+    "Venta iPhone Bogotá",
+    "Comprar iPhone Bogotá",
+    "iPhone nuevos Bogotá",
+    "MacBook nuevos Bogotá",
+    "Venta MacBook Bogotá",
+    "iPad nuevos Bogotá",
+    "Apple Watch venta Bogotá",
+    
+    // SEMINUEVOS Y REFURBISHED
+    "iPhone seminuevos Bogotá",
+    "MacBook seminuevos Bogotá",
+    "iPhone refurbished Colombia",
+    "MacBook refurbished Bogotá",
+    "iPhone reacondicionados Bogotá",
+    "MacBook reacondicionados Colombia",
+    "iPhone usados certificados",
+    "MacBook usados garantía",
+    
+    // PLAN RETOMA
+    "Plan Retoma iPhone Bogotá",
+    "Cambiar iPhone por iPhone nuevo",
+    "Intercambiar iPhone Bogotá",
+    "Vender iPhone usado Bogotá",
+    "Compra de iPhone usados",
+    "Trade-in iPhone Colombia",
+    "Intercambio MacBook Bogotá",
+    "Vender MacBook usado",
+    
+    // GEOLOCALIZACIÓN
+    "Tienda Apple Chapinero",
+    "Comprar iPhone Chapinero",
+    "Venta Apple Bogotá Norte",
+    "Tienda Apple cerca TransMilenio",
+    
+    // B2B
+    "Apple para empresas Bogotá",
+    "Venta corporativa Apple"
   ],
   
   "service": [
     {
       "@type": "Service",
+      "serviceType": "Reparación de iPhone",
       "name": "Reparación de iPhone",
-      "description": "Diagnóstico rápido y garantía en todas nuestras reparaciones",
+      "description": "Diagnóstico rápido y garantía en todas nuestras reparaciones. Cambio de pantalla, batería y microsoldadura.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Pipod"
+      },
       "areaServed": "Bogotá"
     },
     {
       "@type": "Service",
+      "serviceType": "Reparación de MacBook",
       "name": "Reparación de MacBook",
-      "description": "Servicio técnico especializado para MacBooks",
+      "description": "Servicio técnico especializado para MacBooks. Cambio de batería, pantalla y teclado.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Pipod"
+      },
       "areaServed": "Bogotá"
     },
     {
       "@type": "Service",
-      "name": "Plan Retoma",
-      "description": "Intercambia tu equipo antiguo por uno nuevo con el mejor valor",
-      "areaServed": "Bogotá"
+      "serviceType": "Plan Retoma",
+      "name": "Plan Retoma Apple",
+      "description": "Intercambia tu equipo antiguo por uno nuevo con el mejor valor del mercado",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Pipod"
+      },
+      "areaServed": "Colombia"
     }
   ],
   
-  "offers": [
+  "makesOffer": [
     {
       "@type": "Offer",
-      "name": "Diagnóstico Gratis",
-      "description": "Diagnóstico técnico sin costo",
-      "priceCurrency": "COP",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Diagnóstico Gratis",
+        "description": "Diagnóstico técnico sin costo"
+      },
       "price": "0",
+      "priceCurrency": "COP",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Plan Retoma iPhone",
+        "description": "Intercambia tu equipo antiguo y recibe crédito"
+      },
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Compra de Equipos Usados",
+        "description": "Compramos tu iPhone, MacBook o iPad usado"
+      },
       "availability": "https://schema.org/InStock"
     }
   ],
   
-  "foundingDate": "2020",
-  "foundingLocation": "Bogotá, Colombia",
-  
-  "knowsAbout": [
-    "Apple Repair",
-    "iPhone Repair",
-    "MacBook Repair",
-    "iPad Repair",
-    "Apple Products",
-    "Technical Support"
+  "potentialAction": [
+    {
+      "@type": "OrderAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://wa.me/573124813094?text=Hola,%20quiero%20información",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "name": "Contactar por WhatsApp"
+    },
+    {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.pipod.co/servicio-tecnico",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "name": "Agendar Diagnóstico Gratuito"
+    }
   ]
 };
 ---
