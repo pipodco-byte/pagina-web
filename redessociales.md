@@ -4,9 +4,12 @@
 * **WhatsApp:** [Iniciar Chat](https://wa.me/573124813094)
 * **Facebook:** [Ir a la Página](https://www.facebook.com/pipod.co)
 * **TikTok:** [Ver Contenido](https://www.tiktok.com/@pipodstore)
+
+---
+
+## 🗺️ Google Maps y Reviews
+* **Google Maps:** [Ver Ubicación](https://maps.app.goo.gl/jocU5ETYjR7AKPxg8)
 * **Google Reviews:** [Dejar Reseña](https://g.page/r/CRgj2kSrZTO4EBM/review)
-
-
 
 ---
 
@@ -19,4 +22,7 @@
 ## 🛠️ Notas de Seguridad
 1. **Privacidad:** No compartir este archivo en repositorios públicos.
 2. **Protocolo tel:** Se ha configurado el enlace con `tel:+573124813094` para llamadas de voz directas.
-3. **Uso en VS Code:** Puedes ver este archivo formateado presionando `Ctrl+Shift+V` (Windows) o `Cmd+Shift+V` (Mac).
+3. **Google Maps vs Reviews:** 
+   - Maps: Para ver ubicación y horarios
+   - Reviews: Para dejar reseñas y calificaciones
+4. **Uso en VS Code:** Puedes ver este archivo formateado presionando `Ctrl+Shift+V` (Windows) o `Cmd+Shift+V` (Mac).
