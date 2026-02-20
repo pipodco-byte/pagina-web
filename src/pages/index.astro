@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LocalBusinessSchema from '../components/SEO/LocalBusinessSchema.astro';
 import '../../assets/scss/astro-ecommerce.scss';
 import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
@@ -20,6 +21,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 ---
 
 <Layout title="Pipod - Servicio Técnico Apple Especializado">
+  <LocalBusinessSchema />
   <main>
     <PipodNavbar client:load />
     
