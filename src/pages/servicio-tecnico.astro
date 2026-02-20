@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ServicePageSchema from '../components/SEO/ServicePageSchema.astro';
 import ServiceHero from '../components/service/ServiceHero.astro';
 import DeviceBento from '../components/service/DeviceBento.astro';
 import BateriasCatalog from '../components/service/BateriasCatalog.astro';
@@ -26,6 +27,7 @@ const description = "Especialistas en bater√≠as y pantallas Apple. 2,000+ bater√
 ---
 
 <Layout title={title}>
+  <ServicePageSchema />
   <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">

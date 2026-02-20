@@ -1,0 +1,82 @@
+---
+// src/components/SEO/ServicePageSchema.astro
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Servicio Técnico Apple - Pipod",
+  "description": "Servicio técnico especializado en reparación de iPhone, MacBook, iPad y Apple Watch. Diagnóstico gratis, garantía 12 meses y atención express.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Pipod",
+    "url": "https://www.pipod.co",
+    "telephone": "+573124813094",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cra. 13a #79-52",
+      "addressLocality": "Chapinero",
+      "addressRegion": "Bogotá D.C.",
+      "postalCode": "110221",
+      "addressCountry": "CO"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bogotá"
+  },
+  "serviceType": "Reparación Técnica",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Reparación",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Cambio de Batería iPhone",
+        "description": "Reemplazo de batería con garantía",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Cambio de Pantalla iPhone",
+        "description": "Reparación de pantalla rota o dañada",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Reparación MacBook",
+        "description": "Servicio técnico para MacBook Pro, Air y Mini",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Diagnóstico Gratis",
+        "description": "Evaluación técnica sin costo",
+        "price": "0",
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "40",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://wa.me/573124813094?text=Hola,%20necesito%20servicio%20técnico",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "name": "Agendar Servicio"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

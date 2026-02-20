@@ -1,0 +1,54 @@
+---
+// src/components/SEO/RetomaPageSchema.astro
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Plan Retoma Apple - Pipod",
+  "description": "Intercambia tu equipo Apple antiguo por uno nuevo con el mejor valor del mercado. Evaluamos tu dispositivo y te ofrecemos crédito inmediato.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Pipod",
+    "url": "https://www.pipod.co",
+    "telephone": "+573124813094",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cra. 13a #79-52",
+      "addressLocality": "Chapinero",
+      "addressRegion": "Bogotá D.C.",
+      "postalCode": "110221",
+      "addressCountry": "CO"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bogotá"
+  },
+  "serviceType": "Trade-in / Intercambio",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Evaluación Gratis",
+      "description": "Evaluamos tu equipo sin costo",
+      "price": "0",
+      "priceCurrency": "COP",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Crédito Inmediato",
+      "description": "Recibe crédito el mismo día para comprar equipo nuevo",
+      "availability": "https://schema.org/InStock"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "40",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

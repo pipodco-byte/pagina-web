@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RetomaPageSchema from '../components/SEO/RetomaPageSchema.astro';
 import { BENEFITS, STEPS, CHECKLIST, FAQS } from '../data/constants';
 import NewsletterForm from '../components/retoma/retoma.jsx';
 import Footer from '../components/pipodFooter';
@@ -25,6 +26,7 @@ const iconMap = {
 
 <Layout title="Pipod - Plan Retoma de Dispositivos Apple" description="Entrega tu dispositivo Apple usado (iPhone, MacBook, iMac, Apple Watch) y recibe crédito para comprar equipo nuevo o reacondicionado.">
 
+  <RetomaPageSchema />
   <PipodNavbar client:load />
 
   <main style="padding-top: 120px;">
