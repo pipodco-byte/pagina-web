@@ -3,7 +3,8 @@
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "ElectronicsStore", "ComputerRepairService"],
+  "@id": "https://www.pipod.co/#business",
+  "@type": ["LocalBusiness", "ElectronicsStore", "ComputerRepairService", "MobilePhoneRepairShop"],
   "name": "Pipod - Servicio Técnico Apple",
   "alternateName": "Pipod",
   "url": "https://www.pipod.co",
@@ -224,10 +225,9 @@ const schema = {
       "name": "Reparación de iPhone",
       "description": "Diagnóstico rápido y garantía en todas nuestras reparaciones. Cambio de pantalla, batería y microsoldadura.",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Pipod"
-      },
+      "@id": "https://www.pipod.co/#business",
       "areaServed": "Bogotá"
+      },
     },
     {
       "@type": "Service",
@@ -235,10 +235,9 @@ const schema = {
       "name": "Reparación de MacBook",
       "description": "Servicio técnico especializado para MacBooks. Cambio de batería, pantalla y teclado.",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Pipod"
-      },
+      "@id": "https://www.pipod.co/#business", 
       "areaServed": "Bogotá"
+      },
     },
     {
       "@type": "Service",
@@ -246,11 +245,10 @@ const schema = {
       "name": "Plan Retoma Apple",
       "description": "Intercambia tu equipo antiguo por uno nuevo con el mejor valor del mercado",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Pipod"
-      },
+      "@id": "https://www.pipod.co/#business", 
       "areaServed": "Colombia"
-    }
+      },
+    },
   ],
   
   "makesOffer": [
