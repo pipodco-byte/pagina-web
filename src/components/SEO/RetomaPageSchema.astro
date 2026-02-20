@@ -1,54 +1,64 @@
 ---
 // src/components/SEO/RetomaPageSchema.astro
-
-const schema = {
+const retomaPageSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Plan Retoma Apple - Pipod",
-  "description": "Intercambia tu equipo Apple antiguo por uno nuevo con el mejor valor del mercado. Evaluamos tu dispositivo y te ofrecemos crédito inmediato.",
+  "@id": "https://www.pipod.co/plan-retoma/#tradein",
+  "mainEntityOfPage": "https://www.pipod.co/plan-retoma",
+  "name": "Plan Retoma Apple Pipod - iPhone, MacBook y iPad",
+  "serviceType": "Apple Trade-in Program",
+  "description": "Cambia tu iPhone, MacBook o iPad usado por uno nuevo. Recibimos tu equipo como parte de pago con la mejor valoración de Bogotá. Proceso seguro y garantizado en Chapinero y Usaquén.",
   "provider": {
-    "@type": "LocalBusiness",
-    "name": "Pipod",
-    "url": "https://www.pipod.co",
-    "telephone": "+573124813094",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Cra. 13a #79-52",
-      "addressLocality": "Chapinero",
-      "addressRegion": "Bogotá D.C.",
-      "postalCode": "110221",
-      "addressCountry": "CO"
-    }
+    "@id": "https://www.pipod.co/#business"
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Bogotá"
-  },
-  "serviceType": "Trade-in / Intercambio",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Evaluación Gratis",
-      "description": "Evaluamos tu equipo sin costo",
-      "price": "0",
-      "priceCurrency": "COP",
-      "availability": "https://schema.org/InStock"
-    },
-    {
-      "@type": "Offer",
-      "name": "Crédito Inmediato",
-      "description": "Recibe crédito el mismo día para comprar equipo nuevo",
-      "availability": "https://schema.org/InStock"
-    }
+  "areaServed": [
+    { "@type": "City", "name": "Bogotá" },
+    { "@type": "AdministrativeArea", "name": "Chapinero" },
+    { "@type": "AdministrativeArea", "name": "Usaquén" },
+    { "@type": "AdministrativeArea", "name": "Bogotá Norte" },
+    { "@type": "Country", "name": "Colombia" }
   ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Propietarios de equipos Apple"
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "40",
+    "reviewCount": "48",
     "bestRating": "5",
     "worstRating": "1"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Opciones de Plan Retoma",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Retoma de iPhone",
+          "description": "Recibimos desde iPhone 11 en adelante para cambio por modelos más recientes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Retoma de MacBook",
+          "description": "Valoración de MacBook Air y Pro para renovación de equipo profesional."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valoración Inmediata de Usados",
+          "description": "Evaluación técnica del estado físico y funcional de tu equipo sin compromiso."
+        }
+      }
+    ]
   }
 };
 ---
-
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={JSON.stringify(retomaPageSchema)} />

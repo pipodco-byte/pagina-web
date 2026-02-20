@@ -8,7 +8,7 @@
 ---
 
 ## 🗺️ Google Maps y Reviews
-* **Google Maps:** [Ver Ubicación](https://maps.app.goo.gl/jocU5ETYjR7AKPxg8)
+* **Google Maps:** [Ver Ubicación](https://maps.app.goo.gl/vVsKwJXwAza4Tppg6)
 * **Google Reviews:** [Dejar Reseña](https://g.page/r/CRgj2kSrZTO4EBM/review)
 
 ---
