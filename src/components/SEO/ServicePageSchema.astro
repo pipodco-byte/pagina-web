@@ -2,24 +2,20 @@
 // src/components/SEO/ServicePageSchema.astro
 const servicePageSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.pipod.co/servicio-tecnico/#service",
+  "@type": "LocalBusiness",
+  "@id": "https://www.pipod.co/#business",
   "mainEntityOfPage": "https://www.pipod.co/servicio-tecnico",
-  "name": "Servicio Técnico Apple Especializado Pipod",
-  "serviceType": "Technical Support and Repair",
+  "name": "Pipod - Servicio Técnico Apple Especializado",
+  "image": "https://www.pipod.co/images/logo.jpg", // Asegúrate de que esta URL sea válida
+  "url": "https://www.pipod.co/servicio-tecnico",
+  "telephone": "+573124813094",
   "description": "Reparación experta de iPhone, MacBook, iPad y Apple Watch en Bogotá. Especialistas en microsoldadura, cambio de pantallas y baterías en Chapinero y Usaquén.",
-  "provider": {
-    "@id": "https://www.pipod.co/#business"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Bogotá" },
-    { "@type": "AdministrativeArea", "name": "Chapinero" },
-    { "@type": "AdministrativeArea", "name": "Usaquén" },
-    { "@type": "AdministrativeArea", "name": "Bogotá Norte" }
-  ],
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Usuarios de dispositivos Apple"
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cra. 13a #79-52",
+    "addressLocality": "Chapinero",
+    "addressRegion": "Bogotá D.C.",
+    "addressCountry": "CO"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -28,6 +24,12 @@ const servicePageSchema = {
     "bestRating": "5",
     "worstRating": "1"
   },
+  "areaServed": [
+    { "@type": "City", "name": "Bogotá" },
+    { "@type": "AdministrativeArea", "name": "Chapinero" },
+    { "@type": "AdministrativeArea", "name": "Usaquén" },
+    { "@type": "AdministrativeArea", "name": "Bogotá Norte" }
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios de Reparación Pipod",
