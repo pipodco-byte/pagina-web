@@ -2,25 +2,19 @@
 // src/components/SEO/RetomaPageSchema.astro
 const retomaPageSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.pipod.co/plan-retoma/#tradein",
+  "@type": "LocalBusiness",
+  "@id": "https://www.pipod.co/#business",
   "mainEntityOfPage": "https://www.pipod.co/plan-retoma",
   "name": "Plan Retoma Apple Pipod - iPhone, MacBook y iPad",
-  "serviceType": "Apple Trade-in Program",
+  "url": "https://www.pipod.co/plan-retoma",
+  "telephone": "+573124813094",
   "description": "Cambia tu iPhone, MacBook o iPad usado por uno nuevo. Recibimos tu equipo como parte de pago con la mejor valoración de Bogotá. Proceso seguro y garantizado en Chapinero y Usaquén.",
-  "provider": {
-    "@id": "https://www.pipod.co/#business"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Bogotá" },
-    { "@type": "AdministrativeArea", "name": "Chapinero" },
-    { "@type": "AdministrativeArea", "name": "Usaquén" },
-    { "@type": "AdministrativeArea", "name": "Bogotá Norte" },
-    { "@type": "Country", "name": "Colombia" }
-  ],
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Propietarios de equipos Apple"
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cra. 13a #79-52",
+    "addressLocality": "Chapinero",
+    "addressRegion": "Bogotá D.C.",
+    "addressCountry": "CO"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -29,6 +23,13 @@ const retomaPageSchema = {
     "bestRating": "5",
     "worstRating": "1"
   },
+  "areaServed": [
+    { "@type": "City", "name": "Bogotá" },
+    { "@type": "AdministrativeArea", "name": "Chapinero" },
+    { "@type": "AdministrativeArea", "name": "Usaquén" },
+    { "@type": "AdministrativeArea", "name": "Bogotá Norte" },
+    { "@type": "Country", "name": "Colombia" }
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Opciones de Plan Retoma",
