@@ -1,0 +1,121 @@
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stats-grid">
+      
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <i class="bi bi-shield-check incentive-icon"></i>
+          <span class="stat-suffix">GARANTÍA</span>
+        </div>
+        <p class="stat-text">DE 1 AÑO</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <i class="bi bi-truck incentive-icon"></i>
+          <span class="stat-suffix">RECOGIDA</span>
+        </div>
+        <p class="stat-text">A DOMICILIO</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <i class="bi bi-lightning-charge incentive-icon"></i>
+          <span class="stat-suffix">REPARACIÓN</span>
+        </div>
+        <p class="stat-text">EXPRESS</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats-section {
+    background-color: #000;
+    height: 119px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-top: 1px solid #1a1a1a;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .stats-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px; /* Alineación quirúrgica con el resto de tus bloques */
+  }
+
+  .stats-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  /* Alineación a los extremos */
+  .stat-item:first-child { justify-content: flex-start; }
+  .stat-item:last-child { justify-content: flex-end; }
+
+  .number-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .incentive-icon {
+    font-size: 1.8rem;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .stat-suffix {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .stat-text {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Mobile & Tablet */
+  @media (max-width: 1200px) {
+    .stats-container { padding: 0 40px; }
+  }
+
+  @media (max-width: 991px) {
+    .stats-section { 
+      height: auto; 
+      padding: 50px 0; 
+    }
+    .stats-grid { 
+      flex-direction: column; 
+      gap: 35px; 
+    }
+    .stat-item { 
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center;
+      gap: 5px;
+    }
+  }
+</style>

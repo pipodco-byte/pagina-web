@@ -78,7 +78,7 @@ export default function PipodGoogleReviews() {
               ))}
             </div>
             <span className="reviews-text">
-              40 reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1"/>
+              54 reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1"/>
             </span>
           </div>
           <a href="https://g.page/r/CRgj2kSrZTO4EBM/review" target="_blank" className="btn-google-blue">

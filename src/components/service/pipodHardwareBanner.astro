@@ -1,0 +1,179 @@
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stats-grid">
+      
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="196">0</h2>
+          <span class="stat-suffix">DISCOS/RAM</span>
+        </div>
+        <p class="stat-text">MEJORADOS</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="174">0</h2>
+          <span class="stat-suffix">BOARDS</span>
+        </div>
+        <p class="stat-text">REPARADOS</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="162">0</h2>
+          <span class="stat-suffix">MOJADOS</span>
+        </div>
+        <p class="stat-text">RECUPERADOS</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="number-wrapper">
+          <h2 class="stat-number" data-target="12.6">0</h2>
+          <span class="stat-number-percent">%</span>
+          <span class="stat-suffix">EQUIPOS</span>
+        </div>
+        <p class="stat-text">SALVADOS</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const hardwareObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = entry.target as HTMLElement;
+        const rawValue = target.getAttribute('data-target') || '0';
+        const targetValue = parseFloat(rawValue);
+        const isDecimal = rawValue.includes('.');
+        
+        let current = 0;
+        const steps = 100;
+        const increment = targetValue / steps;
+        
+        const updateCount = () => {
+          if (current < targetValue) {
+            current += increment;
+            if (isDecimal) {
+              target.innerText = current.toFixed(1);
+            } else {
+              target.innerText = Math.ceil(current).toString();
+            }
+            setTimeout(updateCount, 15);
+          } else {
+            target.innerText = isDecimal ? targetValue.toFixed(1) : targetValue.toString();
+          }
+        };
+        updateCount();
+        hardwareObserver.unobserve(target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-number').forEach(stat => hardwareObserver.observe(stat));
+</script>
+
+<style>
+  /* ESTILO UNIFICADO DE PIPOD (119px / NEGRO) */
+  .stats-section {
+    background-color: #000;
+    height: 119px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-top: 1px solid #1a1a1a;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .stats-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .stats-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .stat-item:first-child { justify-content: flex-start; }
+  .stat-item:last-child { justify-content: flex-end; }
+
+  .number-wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .stat-number {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .stat-number-percent {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-right: 2px;
+  }
+
+  .stat-suffix {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 8px;
+    text-transform: uppercase;
+  }
+
+  .stat-text {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1200px) {
+    .stat-number { font-size: 2rem; }
+    .stats-container { padding: 0 40px; }
+  }
+
+  @media (max-width: 991px) {
+    .stats-section { 
+      height: auto; 
+      padding: 50px 0; 
+    }
+    .stats-grid { 
+      flex-direction: column; 
+      gap: 35px; 
+    }
+    .stat-item { 
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center;
+      gap: 5px;
+    }
+    .stat-item:first-child, .stat-item:last-child { 
+      justify-content: center; 
+    }
+  }
+</style>

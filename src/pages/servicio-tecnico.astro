@@ -8,14 +8,13 @@ import PantallasCatalog from '../components/service/PantallasCatalog.astro';
 import MantenimientoCatalog from '../components/service/MantenimientoCatalog.astro';
 import OtrasReparaciones from '../components/service/OtrasReparaciones.astro';
 import PaymentBanner from '../components/service/PaymentBanner.astro';
-import HistoricoBanner from '../components/service/HistoricoBanner.astro';
-import BateriasBanner from '../components/service/BateriasBanner.astro';
-import PantallasBanner from '../components/service/PantallasBanner.astro';
-import HardwareBanner from '../components/service/HardwareBanner.astro';
+import BateriasBanner from '../components/service/pipodBateriasBanner.astro';
+import PantallasBanner from '../components/service/pipodPantallasBanner.astro';
+import HardwareBanner from '../components/service/pipodHardwareBanner.astro';
 import ProtocoloPipod from '../components/service/ProtocoloPipod.astro';
-import TransparencyModule from '../components/service/TransparencyModule.astro';
-import GoogleReviews from '../components/service/GoogleReviews.astro';
-import FloatingContact from '../layouts/floatingContact';
+import TransparencyModule from '../components/service/TransparencyModule.astro';import FloatingContact from '../layouts/floatingContact';
+import ServicesBanner from '../components/service/pipodServicesBanner.astro';
+import ReviewWall from '../components/promo/pipodGoogleReviews.jsx';
 import Footer from '../components/pipodFooter';
 import PipodNavbar from '../components/pipodNavbar';
 import Stats from '../components/stats/pipodStats.astro';
@@ -31,22 +30,22 @@ const description = "Especialistas en bater√≠as y pantallas Apple. 2,000+ bater√
   <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">
-    <ServiceHero />
+ <ServiceHero />
     <Stats />
     <DeviceBento />
-    <BateriasCatalog />
-    <PantallasCatalog />
-    <MantenimientoCatalog />
-    <OtrasReparaciones />
-    <PaymentBanner />
-    <HistoricoBanner />
     <BateriasBanner />
+    <BateriasCatalog />
     <PantallasBanner />
+    <PantallasCatalog />
+    <ServicesBanner />
+    <MantenimientoCatalog />
+    <PaymentBanner />
+    <OtrasReparaciones />
     <HardwareBanner />
     <ProtocoloPipod />
+    <ReviewWall />    
     <TransparencyModule />
-    <GoogleReviews />
-  </main>
+  </main>  </main>
 
   <FloatingContact client:load />
   <Footer client:load />
