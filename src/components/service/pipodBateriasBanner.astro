@@ -1,161 +1,161 @@
-<section class="stats-section">
-  <div class="stats-container">
-    <div class="stats-grid">
-      
-      <div class="stat-item">
-        <div class="number-wrapper">
-          <h2 class="stat-number" data-target="654">0</h2>
-          <span class="stat-suffix">BATERÍAS</span>
-        </div>
-        <p class="stat-text">REEMPLAZADAS</p>
-      </div>
-
-      <div class="stat-item">
-        <div class="number-wrapper">
-          <h2 class="stat-number" data-target="426">0</h2>
-          <span class="stat-suffix">BATERÍAS</span>
-        </div>
-        <p class="stat-text">DE IPHONE</p>
-      </div>
-
-      <div class="stat-item">
-        <div class="number-wrapper">
-          <h2 class="stat-number" data-target="82">0</h2>
-          <span class="stat-suffix">BATERIAS</span>
-        </div>
-        <p class="stat-text">DE MACBOOKS</p>
-      </div>
-
-      <div class="stat-item">
-        <div class="number-wrapper">
-          <h2 class="stat-number" data-target="149">0</h2>
-          <span class="stat-suffix">BATERÍAS</span>
-        </div>
-        <p class="stat-text">DE IPAD</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<script>
-  const batteryObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = entry.target;
-        const targetValue = parseInt(target.getAttribute('data-target') || '0');
-        let current = 0;
-        const increment = targetValue / 100;
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stats-grid">
         
-        const updateCount = () => {
-          if (current < targetValue) {
-            current += increment;
-            target.innerText = Math.ceil(current).toString();
-            setTimeout(updateCount, 15);
-          } else {
-            target.innerText = targetValue.toString();
-          }
-        };
-        updateCount();
-        batteryObserver.unobserve(target);
+        <div class="stat-item">
+          <div class="number-wrapper">
+            <h2 class="stat-number" data-target="654">0</h2>
+            <span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-text">BATERÍAS REEMPLAZADAS</p>
+        </div>
+
+        <div class="stat-item">
+          <div class="number-wrapper">
+            <h2 class="stat-number" data-target="426">0</h2>
+            <span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-text">BATERÍAS DE IPHONE</p>
+        </div>
+
+        <div class="stat-item">
+          <div class="number-wrapper">
+            <h2 class="stat-number" data-target="82">0</h2>
+            <span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-text">BATERÍAS DE MACBOOKS</p>
+        </div>
+
+        <div class="stat-item">
+          <div class="number-wrapper">
+            <h2 class="stat-number" data-target="149">0</h2>
+            <span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-text">BATERÍAS DE IPAD</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const batteryObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          const targetValue = parseInt(target.getAttribute('data-target') || '0');
+          let current = 0;
+          const increment = targetValue / 100;
+          
+          const updateCount = () => {
+            if (current < targetValue) {
+              current += increment;
+              target.innerText = Math.ceil(current).toString();
+              setTimeout(updateCount, 15);
+            } else {
+              target.innerText = targetValue.toString();
+            }
+          };
+          updateCount();
+          batteryObserver.unobserve(target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number').forEach(stat => batteryObserver.observe(stat));
+  </script>
+
+  <style>
+    .stats-section {
+      background-color: #000;
+      height: 119px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-top: 1px solid #1a1a1a;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .stats-container {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .stat-item:first-child { justify-content: flex-start; }
+    .stat-item:last-child { justify-content: flex-end; }
+
+    .number-wrapper {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .stat-number {
+      font-size: 2.3rem; /* Tamaño óptimo para 4 columnas */
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .stat-suffix {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      margin-left: 8px;
+      text-transform: uppercase;
+    }
+
+    .stat-text {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1200px) {
+      .stat-number { font-size: 2rem; }
+      .stats-container { padding: 0 40px; }
+    }
+
+    @media (max-width: 991px) {
+      .stats-section { 
+        height: auto; 
+        padding: 50px 0; 
       }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.stat-number').forEach(stat => batteryObserver.observe(stat));
-</script>
-
-<style>
-  .stats-section {
-    background-color: #000;
-    height: 119px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    border-top: 1px solid #1a1a1a;
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-
-  .stats-container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 80px;
-  }
-
-  .stats-grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
-  }
-
-  .stat-item {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 12px;
-  }
-
-  .stat-item:first-child { justify-content: flex-start; }
-  .stat-item:last-child { justify-content: flex-end; }
-
-  .number-wrapper {
-    display: flex;
-    align-items: baseline;
-  }
-
-  .stat-number {
-    font-size: 2.3rem; /* Tamaño óptimo para 4 columnas */
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: #ffffff;
-    margin: 0;
-    line-height: 1;
-  }
-
-  .stat-suffix {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
-    margin-left: 8px;
-    text-transform: uppercase;
-  }
-
-  .stat-text {
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: #ffffff;
-    margin: 0;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 1200px) {
-    .stat-number { font-size: 2rem; }
-    .stats-container { padding: 0 40px; }
-  }
-
-  @media (max-width: 991px) {
-    .stats-section { 
-      height: auto; 
-      padding: 50px 0; 
+      .stats-grid { 
+        flex-direction: column; 
+        gap: 35px; 
+      }
+      .stat-item { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+        gap: 5px;
+      }
+      .stat-item:first-child, .stat-item:last-child { 
+        justify-content: center; 
+      }
     }
-    .stats-grid { 
-      flex-direction: column; 
-      gap: 35px; 
-    }
-    .stat-item { 
-      flex-direction: column; 
-      align-items: center; 
-      text-align: center;
-      gap: 5px;
-    }
-    .stat-item:first-child, .stat-item:last-child { 
-      justify-content: center; 
-    }
-  }
-</style>
+  </style>
