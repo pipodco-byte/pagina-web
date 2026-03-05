@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+import PalafitHero from '../components/palafito/PalafitHero.astro';
+import PalafitHistory from '../components/palafito/PalafitHistory.astro';
+import PalafitNeed from '../components/palafito/PalafitNeed.astro';
+import PalafitEnsemble from '../components/palafito/PalafitEnsemble.astro';
+import PalafitDonation from '../components/palafito/PalafitDonation.astro';
+
+const title = "El Palafito de Don Gu | Donar - PIPOD";
+const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de música del Pacífico colombiano en Bogotá.";
+---
+
+<Layout title={title} description={description}>
+  <PipodNavbar client:load />
+
+  <main style="padding-top: 120px;">
+    <PalafitHero />
+    <PalafitHistory />
+    <PalafitNeed />
+    <PalafitEnsemble />
+    <PalafitDonation />
+
+    <!-- CTA FINAL -->
+    <section class="cta-section bg-black text-white py-5">
+      <div class="container text-center">
+        <h3 class="display-5 fw-bold mb-3">¿Preguntas?</h3>
+        <p class="lead mb-4">Estamos aquí para ayudarte. Contacta con nuestro equipo.</p>
+        <a href="https://wa.me/573124813094" class="btn-pill-dark">Contactar</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer client:load />
+</Layout>
+
+<style is:global>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F5F7;
+    overflow-x: hidden;
+  }
+
+  .btn-pill-dark {
+    background: #000;
+    color: #fff;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .btn-pill-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 768px) {
+    .cta-section {
+      padding: 50px 0;
+    }
+  }
+</style>

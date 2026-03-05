@@ -53,13 +53,40 @@ export default function Footer() {
 
           {/* Columna 3: SERVICIOS */}
           <div className="col-lg-2 col-md-4 col-6">
+            
+            {/* Sección de Servicios */}
             <h6 className="column-title">SERVICIOS</h6>
-            <ul className="footer-nav-list">
+            <ul className="footer-nav-list mb-4"> {/* Añadí mb-4 para dar espacio entre secciones */}
               <li><a href="#">Servicio Técnico</a></li>
-              <li><a href="https://wa.me/573124813094" target="_blank" className="highlight-service"><strong>Diagnóstico Gratuito</strong></a></li>
+              <li>
+                <a href="https://wa.me/573124813094" target="_blank" rel="noopener noreferrer" className="highlight-service">
+                  <strong>Diagnóstico Gratuito</strong>
+                </a>
+              </li>
               <li><a href="#">Plan Retoma PIPOD</a></li>
               <li><a href="#">Garantía Real</a></li>
             </ul>
+
+            {/* Sección de Impacto Social */}
+            <h6 className="column-title">PIPOD SOCIAL</h6>
+            <ul className="footer-nav-list">
+              <li><a href="/donar-fundacion-palafito"><strong>Fundación Palafito</strong></a></li>
+            </ul>
+            <ul className="footer-nav-list">
+               <ul className="footer-nav-list">
+                <li>
+                  <a 
+                    href="https://wa.me/573124813094?text=Quiero%20entregar%20mi%20bateria" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="highlight-service"
+                  >
+                    Reciclaje de Batería
+                  </a>
+                </li>
+              </ul>  
+             </ul>
+
           </div>
 
           {/* Columna 4: CENTRO DE AYUDA */}
