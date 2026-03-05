@@ -1,34 +1,132 @@
 ---
 // PalafitHistory.astro
+// Copy 100% íntegro - Estética Minimalista Pipod Pro
 ---
 
-<section id="historia" class="content-section bg-light">
-  <div class="container py-5">
-    <div class="row gy-5">
-      <div class="col-lg-6">
-        <h2 class="display-4 fw-black mb-4">Quién es Don Gu</h2>
-        <p class="mb-4">
-          Don Gu es un maestro luthier y músico tradicional del Pacífico colombiano, desplazado por la violencia desde Tumaco hace 8 años. Sobreviviente de la polio, ha dedicado su vida a enseñar a la infancia y juventud los ritmos y cantos que conectan con saberes ancestrales y protegen desde la alegría de crear juntos.
-        </p>
-        <p>
-          Tal vez gracias a que conoce a fondo el dolor, la injusticia y la dificultad, Don Gu es un ejemplo de solidaridad, esperanza e integridad. Un maestro del Arte de Vivir al servicio de su comunidad, donde quiera que esté.
-        </p>
-      </div>
-      <div class="col-lg-6">
-        <h2 class="display-4 fw-black mb-4">El Palafito</h2>
-        <p class="mb-4">
-          Hoy vive en el barrio México, en Ciudad Bolívar (Bogotá), donde ha creado un espacio único: el Palafito de Don Gu. El Palafito es una escuela comunitaria donde se enseña música del Pacífico y se fabrican a mano instrumentos como el cununo, el bombo, el guasá y la marimba. Todo, con ritmo, amor y resistencia.
-        </p>
-        <p>
-          Con tu apoyo, queremos sostener el funcionamiento de este palafito, donde operarán tanto el taller de luthería, como los salones donde se enseña música, danza, opera la pequeña biblioteca y se reciben voluntarios que quieran aportar su tiempo y talento al bienestar de esta comunidad. Son más de 40 niñas, niños y adolescentes que aprenden de Don Gu a ser música y, a través de ella, hermosos seres humanos.
-        </p>
-      </div>
+<section id="historia" class="pipod-history-section">
+  <div class="pipod-container">
+    <div class="pipod-history-grid">
+      
+      <article class="pipod-history-col">
+        <header class="pipod-history-header">
+          <span class="pipod-tech-label">EL MAESTRO</span>
+          <h2 class="pipod-history-title">Quién es Don Gu</h2>
+        </header>
+        <div class="pipod-history-content">
+          <p>
+            Don Gu es un maestro luthier y músico tradicional del Pacífico colombiano, desplazado por la violencia desde Tumaco hace 8 años. Sobreviviente de la polio, ha dedicado su vida a enseñar a la infancia y juventud los ritmos y cantos que conectan con saberes ancestrales y protegen desde la alegría de crear juntos.
+          </p>
+          <p>
+            Tal vez gracias a que conoce a fondo el dolor, la injusticia y la dificultad, Don Gu es un ejemplo de solidaridad, esperanza e integridad. Un maestro del Arte de Vivir al servicio de su comunidad, donde quiera que esté.
+          </p>
+        </div>
+      </article>
+
+      <article class="pipod-history-col pipod-separator">
+        <header class="pipod-history-header">
+          <span class="pipod-tech-label">EL ESPACIO</span>
+          <h2 class="pipod-history-title">El Palafito</h2>
+        </header>
+        <div class="pipod-history-content">
+          <p>
+            Hoy vive en el barrio México, en Ciudad Bolívar (Bogotá), donde ha creado un espacio único: el Palafito de Don Gu. El Palafito es una escuela comunitaria donde se enseña música del Pacífico y se fabrican a mano instrumentos como el cununo, el bombo, el guasá y la marimba. Todo, con ritmo, amor y resistencia.
+          </p>
+          <p>
+            Con tu apoyo, queremos sostener el funcionamiento de este palafito, donde operarán tanto el taller de luthería, como los salones donde se enseña música, danza, opera la pequeña biblioteca y se reciben voluntarios que quieran aportar su tiempo y talento al bienestar de esta comunidad. Son más de 40 niñas, niños y adolescentes que aprenden de Don Gu a ser música y, a través de ella, hermosos seres humanos.
+          </p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<style>
-  .content-section {
-    padding: 80px 0;
+<style lang="scss">
+  // Importación de fuentes según Stack
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Noto+Sans:wght@400;500&family=PT+Mono&display=swap');
+
+  .pipod-history-section {
+    background-color: #ffffff;
+    padding: 80px 0; // Spacing Desktop
+    border-bottom: 0.85px solid #000;
+
+    @media (max-width: 768px) {
+      padding: 50px 0; // Spacing Mobile
+    }
+  }
+
+  .pipod-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    @media (max-width: 768px) {
+      padding: 0 25px;
+    }
+  }
+
+  .pipod-history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; // Gap Grid obligatorio
+    align-items: start;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+  }
+
+  .pipod-history-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &.pipod-separator {
+      position: relative;
+      
+
+      @media (max-width: 1024px) {
+        padding-left: 0;
+        padding-top: 60px;
+        border-left: none;
+        border-top: 0.85px solid #000;
+      }
+    }
+  }
+
+  /* --- Tipografía --- */
+
+  .pipod-tech-label {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.7rem;
+    color: #999;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .pipod-history-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #000;
+    margin: 0;
+  }
+
+  .pipod-history-content {
+    p {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 </style>

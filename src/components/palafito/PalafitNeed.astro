@@ -1,71 +1,219 @@
 ---
 // PalafitNeed.astro
+// Estilo: Ultra-Minimalista Pipod | Texto Justificado
+// Regla: Copy 100% íntegro.
 ---
 
-<section class="content-section">
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card-highlight">
-          <h2 class="display-4 fw-black mb-4">¿Cómo Puedes Ayudar?</h2>
-          
-          <p class="lead mb-4">
+<section class="pipod-need-section">
+  <div class="pipod-container">
+    <div class="pipod-main-grid">
+      
+      <div class="pipod-text-column">
+        <header class="pipod-header">
+          <span class="pipod-label">COLABORA</span>
+          <h2 class="pipod-title">¿Cómo puedes ayudar?</h2>
+        </header>
+
+        <div class="pipod-body">
+          <p class="pipod-text-lead">
             Hasta ahora, los costos de funcionamiento (arriendo, meriendas de la comunidad y estímulo mensual para don Gu) han sido aportados por la Fundación Gratitud pero con toda la situación internacional de los recursos de cooperación, el Palafito necesita adaptar su estrategia.
           </p>
-
-          <p class="mb-5">
+          <p class="pipod-text-base">
             Esta es la oportunidad de hacernos cargo, corazón a corazón, del cuidado de nuestros sabedores y de las poblaciones que ellos protegen con su saber y entrega.
           </p>
-
-          <div class="meta-box mb-5">
-            <h3 class="fw-bold mb-3">Meta Mensual: COP $2'800.000 (USD $700)</h3>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="option-item">
-                  <h5 class="fw-bold mb-2">Suscripción Mensual</h5>
-                  <p class="text-secondary mb-0">Desde COP $20.000 mensuales</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="option-item">
-                  <h5 class="fw-bold mb-2">Donación Única</h5>
-                  <p class="text-secondary mb-0">Desde COP $3.000 en adelante</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p>
+          <p class="pipod-text-base">
             Además, creemos que Don Gu puede llegar a ser autosostenible y estamos trabajando en estrategias para lograrlo. Con el apoyo de un estímulo del IDARTES, grabaremos una masterclass y fortaleceremos su taller de luthería. Si quieres aportar a esta meta más inmediata, puedes hacer tu donación de dos maneras: a través de la opción "Aportar una única vez" desde COP $3,000 en adelante o puedes encontrar algo que te antoje y se adapte a tu bolsillo.
           </p>
         </div>
       </div>
+
+      <div class="pipod-meta-column"> 
+        <div class="pipod-meta-box">
+          <span class="pipod-label-mono">OBJETIVO FINANCIERO</span>
+          
+          <div class="pipod-amount-display">
+            <h3 class="pipod-meta-amount">COP $2'800.000</h3>
+            <span class="pipod-meta-usd">USD $700 mensuales</span>
+          </div>
+
+          <div class="pipod-divider"></div>
+
+          <ul class="pipod-options-list">
+            <li>
+              <span class="pipod-option-name">Suscripción Mensual</span>
+              <span class="pipod-option-value">Desde COP $20.000</span>
+            </li>
+            <li>
+              <span class="pipod-option-name">Donación Única</span>
+              <span class="pipod-option-value">Desde COP $3.000</span>
+            </li>
+          </ul>
+
+          <a href="https://vaki.co/" target="_blank" class="pipod-btn-primary">
+            IR A VAKI SPONSOR
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<style>
-  .content-section {
+<style lang="scss">
+  .pipod-need-section {
+    background-color: #F5F5F7; 
     padding: 80px 0;
+    margin-top: -1px;
   }
 
-  .card-highlight {
-    background: #F9F9F9;
+  .pipod-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    @media (max-width: 768px) { padding: 0 25px; }
+  }
+
+  .pipod-main-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+    justify-items: center;
+
+    @media (max-width: 1100px) {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+
+  .pipod-text-column {
+    justify-self: start;
+    width: 100%;
+  }
+
+  .pipod-meta-column {
+    justify-self: center;
+    width: 100%;
+  }
+
+  /* --- Columna de Texto --- */
+  .pipod-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .pipod-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+  }
+
+  .pipod-body {
+    text-align: left;
+  }
+
+  .pipod-text-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #000;
+  }
+
+  .pipod-text-base {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  /* --- Meta Column --- */
+  .pipod-meta-box {
+    background: #FFFFFF;
+    border: 0.85px solid #000;
+    border-radius: 24px;
     padding: 40px;
-    border-radius: 20px;
-    border: 1px solid #E0E0E0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   }
 
-  .meta-box {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    border-left: 4px solid #3A506B;
+  .pipod-label-mono {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    color: #000;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 25px;
   }
 
-  .option-item {
-    background: #F5F5F7;
-    padding: 20px;
-    border-radius: 10px;
+  .pipod-meta-amount {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  .pipod-meta-usd {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+  }
+
+  .pipod-divider {
+    height: 0.85px;
+    width: 100%;
+    margin: 30px 0;
+    opacity: 0.1;
+  }
+
+  .pipod-options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      
+      .pipod-option-name {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        color: #555;
+      }
+      
+      .pipod-option-value {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .pipod-btn-primary {
+    display: block;
+    width: 100%;
+    background: #000;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.85; }
   }
 </style>

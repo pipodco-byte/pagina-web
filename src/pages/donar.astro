@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+
+// Mantenemos la lógica de props y SEO
+const title = "El Palafito de Don Gu | Donar - PIPOD";
+const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de música del Pacífico colombiano en Bogotá.";
+---
+
+<Layout title={title} description={description}>
+  <PipodNavbar client:load />
+
+  <main class="palafito-page">
+    
+    <section class="palafito-hero">
+      <div class="pipod-container">
+        <span class="pipod-label-muted">// IMPACTO SOCIAL</span>
+        <h1 class="palafito-main-title">
+          El Palafito de Don Gu:<br/><span>música y esperanza</span>
+        </h1>
+        <div class="hero-video-container">
+          <iframe 
+            width="100%" 
+            height="500" 
+            src="https://www.youtube.com/embed/OVfZtrxdM-c" 
+            title="El Palafito de Don Gu" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="palafito-grid-section">
+      <div class="pipod-container">
+        <div class="palafito-bento-grid">
+          
+          <div class="bento-card">
+            <h2 class="bento-card-title">Música y esperanza del pacífico colombiano en Bogotá</h2>
+            <div class="bento-card-body">
+              <p>Don Gu, es un maestro luthier y músico tradicional del Pacífico colombiano, desplazado por la violencia desde Tumaco hace 8 años. Sobreviviente de la polio, ha dedicado su vida a enseñar a la infancia y juventud los ritmos y cantos que conectan con saberes ancestrales y protegen desde la alegría de crear juntos.</p>
+              <p>Tal vez gracias a que conoce a fondo el dolor, la injusticia y la dificultad, Don Gu es un ejemplo de solidaridad, esperanza e integridad. Un maestro del Arte de Vivir al servicio de su comunidad, donde quiera que esté.</p>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <h2 class="bento-card-title">El Palafito</h2>
+            <div class="bento-card-body">
+              <p>Hoy vive en el barrio México, en Ciudad Bolívar (Bogotá), donde ha creado un espacio único: el Palafito de Don Gu. El Palafito es una escuela comunitaria donde se enseña música del Pacífico y se fabrican a mano instrumentos como el cununo, el bombo, el guasá y la marimba. Todo, con ritmo, amor y resistencia.</p>
+              <p>Con tu apoyo, queremos sostener el funcionamiento de este palafito, donde operarán tanto el taller de luthería, como los salones donde se enseña música, danza, opera la pequeña biblioteca y se reciben voluntarios que quieran aportar su tiempo y talento al bienestar de esta comunidad. Son más de 40 niñas, niños y adolescentes que aprenden de Don Gu a ser música y, a través de ella, hermosos seres humanos.</p>
+            </div>
+          </div>
+
+          <div class="bento-card card-dark">
+            <h2 class="bento-card-title">¿Cómo Puedes Ayudar?</h2>
+            <div class="bento-card-body">
+              <p>Hasta ahora, los costos de funcionamiento (arriendo, meriendas de la comunidad y estímulo mensual para don Gu) han sido aportados por la Fundación Gratitud pero con toda la situación internacional de los recursos de cooperación, el Palafito necesita adaptar su estrategia. Esta es la oportunidad de hacernos cargo, corazón a corazón, del cuidado de nuestros sabedores y de las poblaciones que ellos protegen con su saber y entrega.</p>
+              <div class="meta-goal-box">
+                <span class="pipod-label-muted">META MENSUAL</span>
+                <p class="goal-value">COP $2'800.000 (USD $700)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-card-body">
+              <div class="donation-options">
+                <div class="option">
+                  <span class="option-tag">SUSCRIPCIÓN</span>
+                  <p>Desde COP $20.000 mensuales en PATROCINIOS.</p>
+                </div>
+                <div class="option">
+                  <span class="option-tag">ÚNICA VEZ</span>
+                  <p>Desde COP $3.000 en adelante.</p>
+                </div>
+              </div>
+              <p class="mt-4">Además, creemos que Don Gu puede llegar a ser autosostenible y estamos trabajando en estrategias para lograrlo. Con el apoyo de un estímulo del IDARTES, grabaremos una masterclass y fortaleceremos su taller de luthería. Si quieres aportar a esta meta más inmediata, puedes hacer tu donación de dos maneras: a través de la opción "Aportar una única vez" desde COP $3,000 en adelante o puedes ir a la pestaña de RECOMPENSAS y encontrar algo que te antoje y se adapte a tu bolsillo.</p>
+              <a href="https://vaki.co/" class="pipod-btn-dark">Ir a Vaki Sponsor</a>
+            </div>
+          </div>
+
+          <div class="bento-card card-full-width">
+            <div class="card-grid-2">
+              <div class="card-text-side">
+                <span class="pipod-label-muted">// ENSEMBLE LATAM</span>
+                <h2 class="bento-card-title mt-2">Crecer juntos es la única forma de avanzar</h2>
+                <div class="bento-card-body">
+                  <p>En el bilstein group creemos que nada verdaderamente sólido se construye en soledad: Individualmente fuertes, Invencibles como equipo. El trabajo en equipo, así como la música, necesita escucha, respeto por el tiempo del otro y conexión real.</p>
+                  <p>En el Palafito de Don Gu, ubicado en el Barrio México, de la localidad de Ciudad Bolivar en Bogotá, Colombia, nuestro equipo Ensemble LATAM vivió una experiencia que fue más allá del aprendizaje: una reflexión: Así como cada instrumento es indispensable para que exista la música, cada persona es esencial para que un equipo funcione de verdad.</p>
+                  <p>Escuchar a nuestro público LATAM, aprender de sus ritmos, de sus realidades y de sus formas de trabajar, nos enseñó que la armonía no nace de la perfección, sino de la colaboración. Cuando cada parte entiende su rol y se conecta con las demás, el resultado es más fuerte, más auténtico y más humano.</p>
+                  <p>Eso es lo que creemos. Eso es lo que "Ensemble LATAM" está aprendiendo todos los días: que juntos no solo avanzamos, sino que creamos algo que realmente tiene sentido. ¡Juntos somos más fuertes!</p>
+                </div>
+              </div>
+              <div class="card-video-side">
+              <div class="video-preview-apple">
+                <iframe 
+                  width="100%" 
+                  height="300" 
+                  src="https://www.youtube.com/embed/OVfZtrxdM-c" 
+                  title="Ensemble LATAM" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="palafito-contact">
+      <div class="pipod-container">
+        <div class="contact-dashboard">
+          <div class="contact-header">
+            <h2 class="pipod-section-title">Canales de Contacto</h2>
+          </div>
+          <div class="contact-grid-links">
+            <div class="contact-tile">
+              <span class="tile-label">TIKTOK / YOUTUBE</span>
+              <span class="tile-value">elpalafitodedongu@gmail.com</span>
+            </div>
+            <div class="contact-tile">
+              <span class="tile-label">FACEBOOK</span>
+              <span class="tile-value">EL Palafito de Don Gu</span>
+            </div>
+            <div class="contact-tile">
+              <span class="tile-label">INSTAGRAM</span>
+              <span class="tile-value">@elpalafitodedongu</span>
+            </div>
+          </div>
+          <p class="tax-info">*Todas las donaciones son deducibles de impuestos. Solicita tu certificado.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer client:load />
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  .palafito-page {
+    background: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+  }
+
+  .pipod-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  /* Labels y Tags */
+  .pipod-label-muted {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #999;
+    letter-spacing: 2px;
+    display: block;
+  }
+
+  /* Hero Section */
+  .palafito-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+  }
+
+  .palafito-main-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin: 20px 0 40px;
+    line-height: 1.1;
+  }
+
+  .palafito-main-title span { color: #3A506B; }
+
+  .hero-video-container {
+    border: 0.85px solid #000;
+    border-radius: 32px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16/9;
+  }
+
+  /* Bento Grid */
+  .palafito-grid-section { padding: 60px 0; }
+
+  .palafito-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .bento-card {
+    border: 0.85px solid #000;
+    border-radius: 32px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    transition: transform 0.3s ease;
+  }
+
+  .card-dark { background: #000; color: #FFF; border: none; }
+  .card-dark .bento-card-title { color: #FFF; }
+  .card-dark p { color: #AAA; }
+
+  .card-full-width { grid-column: span 2; }
+
+  .bento-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .bento-card-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: inherit;
+  }
+
+  /* Meta Goal Box */
+  .meta-goal-box {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 0.5px solid #333;
+  }
+
+  .goal-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFF !important;
+  }
+
+  /* Donation Options */
+  .donation-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 24px;
+  }
+
+  .option {
+    background: #F5F5F7;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .option-tag {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: #888;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .option p { font-size: 0.85rem; font-weight: 600; margin: 0; }
+
+  .pipod-btn-dark {
+    background: #000;
+    color: #FFF;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* Ensemble LATAM Layout */
+  .card-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .video-preview-apple {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 0.85px solid #000;
+    aspect-ratio: 16/9;
+  }
+
+  /* Contact Section */
+  .palafito-contact { padding: 80px 0; }
+
+  .contact-dashboard {
+    border-top: 0.85px solid #000;
+    padding-top: 60px;
+  }
+
+  .pipod-section-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 40px; }
+
+  .contact-grid-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .contact-tile {
+    padding: 24px;
+    border: 0.85px solid #000;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s ease;
+  }
+
+  .contact-tile:hover { background: #F5F5F7; }
+
+  .tile-label { font-size: 0.6rem; font-weight: 800; color: #999; margin-bottom: 8px; }
+  .tile-value { font-weight: 700; font-size: 0.95rem; }
+
+  .tax-info { font-size: 0.75rem; color: #999; margin-top: 30px; font-style: italic; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .pipod-container { padding: 0 24px; }
+    .palafito-main-title { font-size: 2.2rem; }
+    .palafito-bento-grid { grid-template-columns: 1fr; }
+    .card-full-width { grid-column: span 1; }
+    .card-grid-2 { grid-template-columns: 1fr; }
+    .contact-grid-links { grid-template-columns: 1fr; }
+  }
+</style>
