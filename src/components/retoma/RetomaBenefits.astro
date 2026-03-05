@@ -1,0 +1,96 @@
+---
+// RetomaBenefits.astro
+import { BENEFITS } from '../../data/constants';
+
+const iconMap = {
+  Lightbulb: 'bi-lightbulb',
+  Heart: 'bi-heart',
+  Leaf: 'bi-recycle',
+  Send: 'bi-send',
+  HardDrive: 'bi-hdd',
+  Lock: 'bi-lock',
+  Smartphone: 'bi-phone',
+  Zap: 'bi-lightning-charge',
+  FileText: 'bi-file-text',
+  HelpCircle: 'bi-question-circle'
+};
+---
+
+<section id="beneficios" class="benefits-section">
+  <div class="container py-5">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6 pe-lg-5">
+        <span class="text-uppercase fw-black tracking-widest text-secondary" style="font-size: 10px;">APROVECHA TU EQUIPO USADO</span>
+        <h2 class="display-3 fw-black mb-4 mt-2 shimmer-text">Beneficios</h2>
+        <p class="text-secondary lead">El Plan Retoma de Pipod te permite renovar tu equipo con beneficios económicos y ambientales. Obtén el mejor valor por tu dispositivo usado y contribuye a un futuro más sostenible.</p>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="row g-4">
+          {BENEFITS.map((item, idx) => {
+            return (
+              <div class="col-md-6">
+                <div class="benefit-card h-100 p-4 rounded-4 text-center">
+                  <div class="icon-box mb-3 mx-auto rounded-3 d-flex align-items-center justify-content-center">
+                    <i class={`bi ${iconMap[item.icon.name]} fs-1 text-white`}></i>
+                  </div>
+                  <h4 class="fw-bold mb-2">{item.title}</h4>
+                  <p class="text-secondary small">{item.desc}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits-section {
+    background: #121212;
+    color: #FFFFFF;
+    padding: 80px 0;
+  }
+
+  .benefit-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  }
+
+  .benefit-card .icon-box {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255,255,255,0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .benefit-card:hover .icon-box {
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  .tracking-widest {
+    letter-spacing: 0.4em;
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #F9FAFB 0%, #3B82F6 50%, #F9FAFB 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmerText 4s linear infinite;
+  }
+
+  @keyframes shimmerText {
+    0% { background-position: -200%; }
+    100% { background-position: 200%; }
+  }
+</style>

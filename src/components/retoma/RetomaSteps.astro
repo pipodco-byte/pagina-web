@@ -1,0 +1,56 @@
+---
+// RetomaSteps.astro
+import { STEPS } from '../../data/constants';
+---
+
+<section id="como-funciona" class="steps-section">
+  <div class="container">
+    <div class="mb-4 text-center">
+      <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
+        Tres pasos un nuevo equipo
+      </h2>
+    </div>
+    
+    <div class="row g-5 mt-4">
+      {STEPS.map((step) => (
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <div class="step-number display-1 fw-black text-gradient mb-3">{step.number}</div>
+            <h3 class="h2 fw-black text-dark mb-3">{step.title}</h3>
+            <p class="text-secondary">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .steps-section {
+    background-color: #FFFFFF;
+    border-top: 1px solid #E0E0E0;
+    padding: 80px 0;
+  }
+
+  .step-card {
+    transition: transform 0.3s ease;
+  }
+
+  .step-card .step-number {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .step-card:hover {
+    transform: translateY(-15px);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #3A506B, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
