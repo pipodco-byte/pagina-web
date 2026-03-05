@@ -2,83 +2,182 @@
 // PalafitHero.astro
 ---
 
-<section class="hero-section">
-  <div class="container py-5">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-6">
-        <span class="tech-tag mb-4">[ IMPACTO SOCIAL ]</span>
-        <h1 class="display-2 fw-bold mb-4">
-          El Palafito de<br/><span class="text-blue">Don Gu</span>
-        </h1>
-        <p class="lead mb-5">
-          Música y esperanza del Pacífico colombiano en Bogotá. Apoya a Don Gu y su escuela comunitaria donde más de 40 niñas, niños y adolescentes aprenden a ser música.
-        </p>
-        <div class="d-flex gap-3">
-          <a href="#donar" class="btn-pill-dark">Hacer Donación</a>
-          <a href="#historia" class="btn-pill-outline">Conocer Historia</a>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="video-wrapper rounded-4 overflow-hidden shadow-lg">
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/OVfZtrxdM-c" title="El Palafito de Don Gu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
+<section class="pipod-hero-immersive">
+  <div class="hero-video-bg">
+    <iframe 
+      src="https://www.youtube.com/embed/OVfZtrxdM-c?autoplay=1&mute=1&controls=0&loop=1&playlist=OVfZtrxdM-c" 
+      title="El Palafito de Don Gu" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+    <div class="video-overlay-pro"></div>
+  </div>
+
+  <div class="pipod-hud-top">
+    <div class="glass-tag-impact">
+      IMPACTO SOCIAL PIPOD
+    </div>
+    <div class="title-glass-area">
+      <h1 class="hero-title-impact">
+        El Palafito de<br/><span>Don Gu</span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="pipod-hud-bottom">
+    <div class="hero-actions-grid">
+       <a href="#historia" class="btn-pipod-glass-secondary">
+        Conocer Historia
+      </a>
+      <a href="#donar" class="btn-pipod-glass-primary">
+        Hacer Donación
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
 <style>
-  .hero-section {
-    padding: 80px 0 60px;
-    background: #fff;
-    margin-top: 2rem;
-  }
-
-  .tech-tag {
-    font-family: 'PT Mono', monospace;
-    font-size: 0.7rem;
-    color: #666;
-    letter-spacing: 2px;
-    display: block;
-  }
-
-  .text-blue {
-    color: #3A506B;
-  }
-
-  .video-wrapper {
-    aspect-ratio: 16/9;
-  }
-
-  .btn-pill-dark {
+  .pipod-hero-immersive {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
     background: #000;
-    color: #fff;
-    padding: 14px 40px;
+    border-bottom: 0.85px solid #000;
+  }
+
+  /* --- Video Core --- */
+  .hero-video-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero-video-bg iframe {
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .video-overlay-pro {
+    position: absolute;
+    inset: 0;
+    /* Oscurecemos un poco más la esquina del título para que brille */
+    background: radial-gradient(circle at 20% 30%, rgba(0,0,0,0.4) 0%, transparent 70%);
+    z-index: 2;
+  }
+
+  /* --- HUD Top Left --- */
+  .pipod-hud-top {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    z-index: 10;
+  }
+
+  .glass-tag-impact {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 0.85px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .hero-title-impact {
+    font-size: 5.5rem; /* Escala Monumental */
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: #FFF;
+    margin: 0;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .hero-title-impact span {
+    color: #4A90E2; /* Azul Pipod Pro */
+  }
+
+  /* --- HUD Bottom Right --- */
+  .pipod-hud-bottom {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    z-index: 10;
+  }
+
+  .hero-actions-grid {
+    display: flex;
+    gap: 16px;
+  }
+
+  /* --- Glass Buttons con Blur 14px --- */
+  .btn-pipod-glass-primary, .btn-pipod-glass-secondary {
+    padding: 18px 36px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(14px); /* Intensidad Glass aumentada */
+    -webkit-backdrop-filter: blur(14px);
+    border: 0.85px solid rgba(255,255,255,0.25);
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
   }
 
-  .btn-pill-dark:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  /* Primario: Glass más denso y blanco */
+  .btn-pipod-glass-primary {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFF;
   }
 
-  .btn-pill-outline {
-    border: 1.5px solid #000;
-    color: #000;
-    padding: 14px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s ease;
+  /* Secundario: Glass más etéreo */
+  .btn-pipod-glass-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255,255,255,0.9);
   }
 
-  .btn-pill-outline:hover {
-    background: #000;
-    color: #fff;
+  .btn-pipod-glass-primary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+
+  .btn-pipod-glass-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255,255,255,0.5);
+    transform: translateY(-4px);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-title-impact { font-size: 4rem; }
+    .pipod-hud-top, .pipod-hud-bottom { left: 40px; right: 40px; }
+  }
+
+  @media (max-width: 768px) {
+    .pipod-hero-immersive { height: 75vh; }
+    .hero-title-impact { font-size: 2.8rem; }
+    .pipod-hud-top { top: 40px; left: 20px; }
+    .pipod-hud-bottom { bottom: 40px; right: 20px; }
+    .hero-actions-grid { flex-direction: column; width: 100%; }
+    .btn-pipod-glass-primary, .btn-pipod-glass-secondary { justify-content: center; }
   }
 </style>
