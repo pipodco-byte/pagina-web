@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
+import MetaSocial from '../components/SEO/MetaSocial.astro';
 import PalafitHero from '../components/palafito/PalafitHero.astro';
 import PalafitHistory from '../components/palafito/PalafitHistory.astro';
 import PalafitNeed from '../components/palafito/PalafitNeed.astro';
@@ -13,6 +14,7 @@ const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de m
 ---
 
 <Layout title={title} description={description}>
+  <MetaSocial {title} {description} />
   <PipodNavbar client:load />
 
   <main style="padding-top: 120px;">
