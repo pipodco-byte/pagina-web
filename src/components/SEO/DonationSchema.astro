@@ -1,37 +1,29 @@
 ---
+---
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": "https://www.pipod.co/donar-fundacion-palafito#webpage",
   "url": "https://www.pipod.co/donar-fundacion-palafito",
   "name": "Donar a la Fundación Palafito de Don Gu - Impacto Social Pipod",
-  "description": "Apoya al Palafito de Don Gu en Ciudad Bolívar. Meta mensual: $2.800.000 COP. Recibimos donaciones de tecnología y aportes económicos.",
+  "description": "Apoya al Palafito de Don Gu. Meta mensual: $2.800.000 COP para el sostenimiento de más de 40 niños y jóvenes en Ciudad Bolívar.",
   "isPartOf": {
     "@id": "https://www.pipod.co/#website"
   },
   "about": {
     "@type": "NGO",
     "name": "El Palafito de Don Gu",
-    "description": "Escuela comunitaria de música y taller de luthería tradicional del Pacífico colombiano en Bogotá.",
+    "description": "Escuela comunitaria de música y luthería con más de 40 estudiantes. Preservan ritmos ancestrales del Pacífico en Bogotá.",
     "image": "https://www.pipod.co/images/palafito-don-gu.webp",
     "location": {
       "@type": "Place",
       "address": "Barrio México, Ciudad Bolívar, Bogotá, Colombia"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Don Gu"
-    },
-    "sameAs": [
-      "https://tiktok.com/@elpalafitodedongu",
-      "https://youtube.com/@elpalafitodedongu",
-      "https://facebook.com/elpalafitodedongu"
-    ]
+    }
   },
   "mainEntity": {
     "@type": "DonateAction",
-    "name": "Campaña de Sostenimiento Palafito de Don Gu",
-    "description": "Recaudación mensual de $2.800.000 COP para arriendo, meriendas y estímulo al maestro.",
+    "name": "Campaña de Sostenimiento Palafito",
+    "description": "Donación financiera (desde $3.000 COP) o de tecnología para el taller de luthería y educación musical.",
     "recipient": {
       "@type": "NGO",
       "name": "El Palafito de Don Gu",
@@ -42,13 +34,13 @@ const schema = {
     "target": [
       {
         "@type": "EntryPoint",
-        "name": "Donación en Vaki",
+        "name": "Donar en Vaki",
         "urlTemplate": "https://vaki.co/",
         "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
       },
       {
         "@type": "EntryPoint",
-        "name": "Donar Tecnología por WhatsApp",
+        "name": "Donar Tecnología",
         "urlTemplate": "https://wa.me/573124813094?text=Quiero%20donar%20un%20equipo"
       }
     ]
@@ -57,29 +49,13 @@ const schema = {
     "@type": "Organization",
     "@id": "https://www.pipod.co/#business",
     "name": "Pipod",
+    "url": "https://www.pipod.co",
     "contactPoint": {
       "@type": "ContactPoint",
-      "contactType": "Donaciones",
       "telephone": "+57-312-481-3094",
+      "contactType": "Customer Service",
       "email": "elpalafitodedongu@gmail.com"
     }
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Inicio",
-        "item": "https://www.pipod.co"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Donar Fundación Palafito",
-        "item": "https://www.pipod.co/donar-fundacion-palafito"
-      }
-    ]
   }
 };
 ---
