@@ -5,78 +5,64 @@ const schema = {
   "@id": "https://www.pipod.co/donar-fundacion-palafito#webpage",
   "url": "https://www.pipod.co/donar-fundacion-palafito",
   "name": "Donar a la Fundación Palafito de Don Gu - Impacto Social Pipod",
-  "description": "Apoya al Palafito de Don Gu en Ciudad Bolívar. Recibimos donaciones de tecnología para restaurar y aportes económicos para la escuela de música y luthería del Pacífico.",
+  "description": "Apoya al Palafito de Don Gu en Ciudad Bolívar. Meta mensual: $2.800.000 COP. Recibimos donaciones de tecnología y aportes económicos.",
   "isPartOf": {
     "@id": "https://www.pipod.co/#website"
   },
   "about": {
     "@type": "NGO",
     "name": "El Palafito de Don Gu",
-    "description": "Escuela comunitaria de música y taller de luthería tradicional del Pacífico colombiano en Bogotá. Enseña música del Pacífico y fabrica instrumentos como cununo, bombo, guasá y marimba.",
+    "description": "Escuela comunitaria de música y taller de luthería tradicional del Pacífico colombiano en Bogotá.",
+    "image": "https://www.pipod.co/images/palafito-don-gu.webp",
     "location": {
       "@type": "Place",
       "address": "Barrio México, Ciudad Bolívar, Bogotá, Colombia"
     },
     "founder": {
       "@type": "Person",
-      "name": "Don Gu",
-      "description": "Maestro luthier y músico tradicional del Pacífico colombiano, desplazado desde Tumaco hace 8 años. Sobreviviente de polio dedicado a enseñar ritmos y cantos ancestrales."
+      "name": "Don Gu"
     },
-    "numberOfStudents": "40+",
-    "image": "https://www.pipod.co/images/palafito-don-gu.webp"
+    "sameAs": [
+      "https://tiktok.com/@elpalafitodedongu",
+      "https://youtube.com/@elpalafitodedongu",
+      "https://facebook.com/elpalafitodedongu"
+    ]
   },
   "mainEntity": {
     "@type": "DonateAction",
+    "name": "Campaña de Sostenimiento Palafito de Don Gu",
+    "description": "Recaudación mensual de $2.800.000 COP para arriendo, meriendas y estímulo al maestro.",
     "recipient": {
-      "@type": "Organization",
+      "@type": "NGO",
       "name": "El Palafito de Don Gu",
       "parentOrganization": {
         "@id": "https://www.pipod.co/#business"
       }
     },
-    "description": "Donaciones para el sostenimiento de la escuela de música, taller de luthería, arriendo, meriendas de la comunidad y estímulo mensual para Don Gu.",
     "target": [
       {
         "@type": "EntryPoint",
-        "name": "Donación Financiera",
+        "name": "Donación en Vaki",
         "urlTemplate": "https://vaki.co/",
-        "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
-        "priceRange": "COP $3,000 - COP $20,000+"
+        "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
       },
       {
         "@type": "EntryPoint",
-        "name": "Donar Tecnología",
-        "urlTemplate": "https://wa.me/573124813094?text=Quiero%20donar%20un%20equipo",
-        "description": "Computadoras o tecnología en desuso para restaurar"
-      },
-      {
-        "@type": "EntryPoint",
-        "name": "Contacto Directo",
-        "urlTemplate": "https://wa.me/573124813094",
-        "description": "Donaciones especiales, voluntariado o certificado de donación"
+        "name": "Donar Tecnología por WhatsApp",
+        "urlTemplate": "https://wa.me/573124813094?text=Quiero%20donar%20un%20equipo"
       }
     ]
   },
-  "fundraisingGoal": {
-    "@type": "PriceSpecification",
-    "priceCurrency": "COP",
-    "price": "2800000",
-    "description": "Meta mensual para sostenimiento (USD $700)"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Donaciones",
-    "telephone": "+57-312-481-3094",
-    "email": "elpalafitodedongu@gmail.com",
-    "url": "https://wa.me/573124813094"
-  },
-  "sameAs": [
-    "https://tiktok.com/@elpalafitodedongu",
-    "https://youtube.com/@elpalafitodedongu",
-    "https://facebook.com/elpalafitodedongu"
-  ],
   "publisher": {
-    "@id": "https://www.pipod.co/#business"
+    "@type": "Organization",
+    "@id": "https://www.pipod.co/#business",
+    "name": "Pipod",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Donaciones",
+      "telephone": "+57-312-481-3094",
+      "email": "elpalafitodedongu@gmail.com"
+    }
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -98,6 +84,4 @@ const schema = {
 };
 ---
 
-<Fragment>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-</Fragment>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
