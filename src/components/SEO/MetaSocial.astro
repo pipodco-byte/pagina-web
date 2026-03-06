@@ -9,11 +9,11 @@ interface Props {
 const { 
   title = "El Palafito de Don Gu | Donar - PIPOD",
   description = "Apoya al Palafito de Don Gu en Ciudad Bolívar. Escuela comunitaria de música y luthería del Pacífico colombiano. Donaciones desde COP $3,000.",
-  image = "/images/palafito-don-gu.webp",
+  image = "https://www.pipod.co/images/palafito-don-gu.jpg",
   url = "https://www.pipod.co/donar-fundacion-palafito" 
 } = Astro.props;
 
-const absoluteImageUrl = new URL(image, Astro.site).href;
+const absoluteImageUrl = image;
 ---
 
 <meta property="og:type" content="website" />
