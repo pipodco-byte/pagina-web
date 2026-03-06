@@ -16,6 +16,7 @@ const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de m
 
 <Layout title={title} description={description}>
   <MetaSocial {title} {description} />
+  <DonationSchema />
   <PipodNavbar client:load />
 
   <main style="padding-top: 120px;">
@@ -25,7 +26,6 @@ const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de m
     <PalafitEnsemble />
     <PalafitDonationOptions />
     <PalafitSocial />
-    <DonationSchema />
 
   </main>
 

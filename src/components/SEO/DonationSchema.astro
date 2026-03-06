@@ -1,5 +1,4 @@
-// src/components/SEO/DonationSchema.astro
-
+---
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -97,3 +96,8 @@ const schema = {
     ]
   }
 };
+---
+
+<Fragment>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Fragment>
