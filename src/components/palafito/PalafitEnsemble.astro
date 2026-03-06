@@ -33,14 +33,15 @@
           <div class="pipod-video-glow"></div>
 
           <div class="pipod-video-frame">
-            <video 
-              controls 
-              playsinline
-              class="pipod-vertical-video"
-              poster="https://media.licdn.com/dms/image/v2/D4E10AQHq5rJUyDTK_A/ads-video-thumbnail_720_1280/B4EZxHiAzZG0Ak-/0/1770726624968?e=1773356400&v=beta&t=7V2K3kk2hLjR3cQtqTBjm4T63BrpdHFO8BDSxc1yhR8"
-            >
-              <source src="TU_ARCHIVO_VIDEO.mp4" type="video/mp4" />
-            </video>
+            <iframe 
+              src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7426965854690512896?compact=1" 
+              height="399" 
+              width="504" 
+              frameborder="0" 
+              allowfullscreen="" 
+              title="Embedded post"
+              class="pipod-linkedin-embed"
+            ></iframe>
             
             <div class="pipod-glass-border"></div>
           </div>
@@ -164,8 +165,14 @@
   .pipod-vertical-video {
     width: 100%;
     height: 100%;
-    object-fit: contain; // Muestra el video completo sin recortar
+    object-fit: contain;
     display: block;
+  }
+
+  .pipod-linkedin-embed {
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   .pipod-glass-border {

@@ -1,0 +1,193 @@
+---
+// PalafitSocial.astro
+// Versión Final Refinada | Estética: Pipod Studio | Fondo: #F5F5F7
+---
+
+<section class="pipod-social-section">
+  <div class="pipod-container">
+    
+    <div class="pipod-header-wrapper">
+      <h2 class="pipod-section-heading">Palafito conexiones</h2>
+    </div>
+
+    <div class="pipod-social-canvas">
+      
+      <a href="https://tiktok.com/@elpalafitodedongu" target="_blank" class="pipod-social-link" title="TikTok">
+        <div class="pipod-icon-wrapper">
+          <i class="bi bi-tiktok"></i>
+        </div>
+        <span class="pipod-social-label">@elpalafitodedongu</span>
+      </a>
+
+      <a href="mailto:elpalafitodedongu@gmail.com" class="pipod-social-link" title="Apple Mail">
+        <div class="pipod-icon-wrapper">
+          <i class="bi bi-envelope-paper-fill"></i>
+        </div>
+        <span class="pipod-social-label">Email Directo</span>
+      </a>
+
+      <a href="https://youtube.com/@elpalafitodedongu" target="_blank" class="pipod-social-link" title="YouTube">
+        <div class="pipod-icon-wrapper">
+          <i class="bi bi-youtube"></i>
+        </div>
+        <span class="pipod-social-label">YouTube Channel</span>
+      </a>
+
+      <a href="https://facebook.com/elpalafitodedongu" target="_blank" class="pipod-social-link" title="Facebook">
+        <div class="pipod-icon-wrapper">
+          <i class="bi bi-facebook"></i>
+        </div>
+        <span class="pipod-social-label">Comunidad Facebook</span>
+      </a>
+
+    </div>
+
+    <footer class="pipod-tax-certification">
+      <div class="pipod-hr-line"></div>
+      <div class="pipod-tax-content">
+        <span class="pipod-status-dot"></span>
+        <p class="pipod-tax-statement">
+          TODAS LAS DONACIONES SON DEDUCIBLES DE IMPUESTOS EN COLOMBIA
+        </p>
+        <span class="pipod-status-dot"></span>
+      </div>
+      <div class="pipod-hr-line"></div>
+    </footer>
+
+  </div>
+</section>
+
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=PT+Mono&display=swap');
+
+  .pipod-social-section {
+    background-color: #F5F5F7; // Gris Apple solicitado
+    padding: 120px 0; // Más aire para mayor elegancia
+    overflow: hidden;
+  }
+
+  .pipod-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    @media (max-width: 768px) { padding: 0 25px; }
+  }
+
+  /* --- Cabecera --- */
+  .pipod-header-wrapper {
+    text-align: left;
+    margin-bottom: 80px;
+  }
+
+  .pipod-section-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: #000;
+    margin: 0;
+  }
+
+  /* --- Canvas de Social Media --- */
+  .pipod-social-canvas {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 120px;
+
+    @media (max-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pipod-social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    flex: 1;
+
+    .pipod-icon-wrapper {
+      margin-bottom: 25px;
+      i {
+        font-size: 3.2rem; // Tamaño de impacto corregido
+        transition: transform 0.4s ease, color 0.4s ease;
+      }
+    }
+
+    .pipod-social-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.3;
+      transition: opacity 0.4s ease;
+    }
+
+    &:hover {
+      transform: translateY(-12px);
+      
+      i { 
+        color: #3A506B; // Tu azul de acento sutil
+        transform: scale(1.1);
+      }
+      
+      .pipod-social-label { 
+        opacity: 1; 
+      }
+    }
+  }
+
+  /* --- Certificación de Impuestos --- */
+  .pipod-tax-certification {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+
+   
+
+    .pipod-tax-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 0;
+    }
+
+    .pipod-status-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #3A506B;
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    .pipod-tax-statement {
+      font-family: 'PT Mono', monospace;
+      font-size: 1.1rem; // Presencia aumentada
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 4px; // Tracking pro para elegancia
+      margin: 0;
+      text-align: left;
+      line-height: 1.5;
+
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+      }
+    }
+  }
+</style>

@@ -6,7 +6,8 @@ import PalafitHero from '../components/palafito/PalafitHero.astro';
 import PalafitHistory from '../components/palafito/PalafitHistory.astro';
 import PalafitNeed from '../components/palafito/PalafitNeed.astro';
 import PalafitEnsemble from '../components/palafito/PalafitEnsemble.astro';
-import PalafitDonation from '../components/palafito/PalafitDonation.astro';
+import PalafitDonationOptions from '../components/palafito/PalafitDonationOptions.astro';
+import PalafitSocial from '../components/palafito/PalafitSocial.astro';
 
 const title = "El Palafito de Don Gu | Donar - PIPOD";
 const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de música del Pacífico colombiano en Bogotá.";
@@ -20,16 +21,10 @@ const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de m
     <PalafitHistory />
     <PalafitNeed />
     <PalafitEnsemble />
-    <PalafitDonation />
+    <PalafitDonationOptions />
+    <PalafitSocial />
 
-    <!-- CTA FINAL -->
-    <section class="cta-section bg-black text-white py-5">
-      <div class="container text-center">
-        <h3 class="display-5 fw-bold mb-3">¿Preguntas?</h3>
-        <p class="lead mb-4">Estamos aquí para ayudarte. Contacta con nuestro equipo.</p>
-        <a href="https://wa.me/573124813094" class="btn-pill-dark">Contactar</a>
-      </div>
-    </section>
+
   </main>
 
   <Footer client:load />

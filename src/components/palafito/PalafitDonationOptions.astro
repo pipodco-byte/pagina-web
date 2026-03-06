@@ -1,6 +1,5 @@
 ---
-// PalafitDonation.astro
-// Estética: Minimalista Pipod | Layout: Grid 3 Columnas + Social Impact
+// PalafitDonationOptions.astro
 ---
 
 <section id="donar" class="pipod-donation-section">
@@ -56,35 +55,10 @@
 
     </div>
 
-    <div class="pipod-social-impact">
-      <div class="pipod-social-grid">
-        <a href="https://tiktok.com/@elpalafitodedongu" target="_blank" class="pipod-social-hero" title="TikTok">
-          <i class="bi bi-tiktok"></i>
-          <span class="pipod-social-label">@elpalafitodedongu</span>
-        </a>
-        <a href="mailto:elpalafitodedongu@gmail.com" class="pipod-social-hero" title="Apple Mail">
-          <i class="bi bi-envelope-paper-fill"></i> <span class="pipod-social-label">Email</span>
-        </a>
-        <a href="https://youtube.com/" target="_blank" class="pipod-social-hero" title="YouTube">
-          <i class="bi bi-youtube"></i>
-          <span class="pipod-social-label">YouTube</span>
-        </a>
-        <a href="https://facebook.com/" target="_blank" class="pipod-social-hero" title="Facebook">
-          <i class="bi bi-facebook"></i>
-          <span class="pipod-social-label">Facebook</span>
-        </a>
-      </div>
-
-      <p class="pipod-tax-disclaimer">
-        * Todas las donaciones son deducibles de impuestos en Colombia.
-      </p>
-    </div>
-
   </div>
 </section>
 
 <style lang="scss">
-  // Fuentes Pipod
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Noto+Sans:wght@400;500&family=PT+Mono&display=swap');
 
   .pipod-donation-section {
@@ -100,7 +74,6 @@
     @media (max-width: 768px) { padding: 0 25px; }
   }
 
-  /* --- TÍTULO (Matching snippet) --- */
   .pipod-header-wrapper {
     text-align: left;
     margin-bottom: 50px;
@@ -114,12 +87,10 @@
     margin: 0;
   }
 
-  /* --- GRID DE CARDS --- */
   .pipod-impact-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-bottom: 100px;
 
     @media (max-width: 1024px) { grid-template-columns: 1fr; }
   }
@@ -128,7 +99,7 @@
     text-decoration: none;
     color: #000;
     border: 0.85px solid #000;
-    border-radius: 24px; // Radio Cards Pipod
+    border-radius: 24px;
     padding: 45px;
     background: #fff;
     display: flex;
@@ -143,7 +114,7 @@
     }
 
     &.tech-highlight {
-      background: #F9F9F9; // Resaltado sutil para Pipod Technology
+      background: #F9F9F9;
     }
 
     .pipod-card-header {
@@ -178,7 +149,6 @@
       flex-grow: 1;
     }
 
-    /* Badge a la izquierda reglamentario */
     .pipod-card-footer-left {
       text-align: left;
       .pipod-badge-action {
@@ -191,64 +161,5 @@
         gap: 10px;
       }
     }
-  }
-
-  /* --- SOCIAL IMPACT (Iconos Grandes) --- */
-  .pipod-social-impact {
-    border-top: 0.85px solid #eee;
-    padding-top: 80px;
-  }
-
-  .pipod-social-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
-
-    @media (max-width: 768px) { grid-template-columns: 1fr 1fr; }
-  }
-
-  .pipod-social-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
-    background: #ffffff;
-    border: 0.85px solid #f0f0f0;
-    border-radius: 20px;
-    text-decoration: none;
-    color: #000;
-    transition: all 0.3s ease;
-
-    i { 
-      font-size: 3rem; // Iconos mucho más grandes
-      transition: transform 0.3s ease;
-    }
-
-    .pipod-social-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      opacity: 0.6;
-    }
-
-    &:hover {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-      
-      i { transform: scale(1.15); }
-      .pipod-social-label { opacity: 1; }
-    }
-  }
-
-  .pipod-tax-disclaimer {
-    text-align: center;
-    font-family: 'PT Mono', monospace;
-    font-size: 0.7rem;
-    color: #bbb;
-    margin: 0;
   }
 </style>
