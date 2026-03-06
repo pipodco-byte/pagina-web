@@ -10,7 +10,8 @@
       title="El Palafito de Don Gu" 
       frameborder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
+      allowfullscreen
+      loading="lazy">
     </iframe>
     <div class="video-overlay-pro"></div>
   </div>
@@ -77,6 +78,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    opacity: 0;
+    animation: fadeInVideo 0.8s ease-in-out 0.5s forwards;
+  }
+
+  @keyframes fadeInVideo {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .video-overlay-pro {
