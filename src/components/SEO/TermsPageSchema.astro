@@ -1,0 +1,98 @@
+---
+// src/components/SEO/TermsPageSchema.astro
+
+// Obtener fecha actual para dateModified
+const today = new Date().toISOString().split('T')[0];
+// Fecha de publicación: hace 25 días
+const publishDate = new Date(Date.now() - 25 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+const termsPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.pipod.co/terminos-condiciones-pipod",
+  "mainEntityOfPage": "https://www.pipod.co/terminos-condiciones-pipod",
+  "name": "Términos y Condiciones - Pipod",
+  "description": "Términos y condiciones de uso del sitio web y servicios de Pipod, servicio técnico especializado en Apple.",
+  "url": "https://www.pipod.co/terminos-condiciones-pipod",
+  "image": "https://www.pipod.co/images/logo.jpg",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://www.pipod.co/#website",
+    "name": "Pipod - Servicio Técnico Apple",
+    "url": "https://www.pipod.co"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.pipod.co/#business",
+    "name": "Pipod",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.pipod.co/images/logo.jpg",
+      "width": 250,
+      "height": 60
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cra. 13a #79-52",
+      "addressLocality": "Chapinero",
+      "addressRegion": "Bogotá D.C.",
+      "postalCode": "110221",
+      "addressCountry": "CO"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "+573124813094",
+      "email": "hola@pipod.co"
+    }
+  },
+
+  "author": {
+    "@type": "Organization",
+    "@id": "https://www.pipod.co/#business",
+    "name": "Pipod"
+  },
+
+  "copyrightHolder": {
+    "@type": "Organization",
+    "@id": "https://www.pipod.co/#business",
+    "name": "Pipod"
+  },
+
+  "datePublished": publishDate,
+  "dateModified": today,
+
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://www.pipod.co"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Términos y Condiciones",
+        "item": "https://www.pipod.co/terminos-condiciones-pipod"
+      }
+    ]
+  },
+
+  "inLanguage": "es-CO",
+  "potentialAction": {
+    "@type": "ReadAction",
+    "target": "https://www.pipod.co/terminos-condiciones-pipod"
+  },
+
+  "about": {
+    "@type": "Thing",
+    "name": "Términos y Condiciones de Servicio",
+    "description": "Políticas y términos legales que rigen el uso de los servicios de Pipod"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(termsPageSchema)} />
