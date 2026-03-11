@@ -1,0 +1,34 @@
+{/* VALORES */}
+<section style="padding: 100px 0; border-bottom: 0.85px solid #000;">
+  <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
+    <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; letter-spacing: 2px; text-transform: uppercase;">NUESTROS VALORES FUNDAMENTALES</span>
+    <h2 style="font-family: 'Inter', sans-serif; font-size: 3rem; font-weight: 800; color: #000; margin: 20px 0 60px;">Lo que nos define</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+      {[
+        { emoji: "🔍", label: "Transparencia", d: "Sin sorpresas. Mostramos cada etapa del proceso de reparación." },
+        { emoji: "⚙️", label: "Precisión Técnica", d: "Especialistas en Apple que cuidan cada detalle técnico con estándares premium." },
+        { emoji: "🤝", label: "Cercanía Humana", d: "No tratamos con clientes, sino con personas. Escuchamos y acompañamos con empatía." },
+        { emoji: "⚡", label: "Agilidad y Eficiencia", d: "Optimizamos procesos para respetar tu tiempo sin sacrificar la calidad." }
+      ].map(val => (
+        <div style="border: 0.85px solid #000; border-radius: 24px; padding: 40px; transition: 0.3s;" class="hover-card">
+          <div style="font-size: 2rem; margin-bottom: 15px;">{val.emoji}</div>
+          <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px;">{val.label}</h3>
+          <p style="color: #444; line-height: 1.7;">{val.d}</p>
+        </div>
+      ))}
+      <div style="grid-column: 1 / -1; border: 0.85px solid #000; border-radius: 24px; padding: 40px; background: #F5F5F7;">
+        <div style="font-size: 2rem; margin-bottom: 15px;">🔧</div>
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px;">Solución Real</h3>
+        <p style="color: #444; line-height: 1.7;">Vamos al punto y resolvemos rápido, priorizando la reparación sobre el cambio de piezas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border-color: #4A90E2 !important;
+  }
+</style>

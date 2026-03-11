@@ -3,6 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
+import ContactoBanner from '../components/contacto/ContactoBanner.astro';
+import ContactoHero from '../components/contacto/ContactoHero.astro';
+import ContactoHistory from '../components/contacto/ContactoHistory.astro';
+import ContactoPhilosophy from '../components/contacto/ContactoPhilosophy.astro';
+import ContactoValues from '../components/contacto/ContactoValues.astro';
+import ContactoB2B from '../components/contacto/ContactoB2B.astro';
+import ContactoForm from '../components/contacto/ContactoForm.astro';
+import ContactLocation from '../components/contact/ContactLocation.astro';
+import ContactChecklist from '../components/contact/ContactChecklist.astro';
+import ContactFAQ from '../components/contact/ContactFAQ.astro';
+import ContactCTA from '../components/contact/ContactCTA.astro';
 import '../../assets/scss/astro-ecommerce.scss';
 
 const title = "Servicio Técnico Apple Chapinero | PIPOD";
@@ -13,249 +24,17 @@ const description = "Reparación MacBook, iPhone, iPad en Bogotá. Microsoldadur
   <PipodNavbar client:load />
   
   <main style="padding-top: 120px; background: #FFFFFF;">
-    
-    {/* BANNER SUPERIOR - ESTILO PT MONO */}
-    <div style="background: #3A506B; color: white; padding: 12px 0; border-bottom: 0.85px solid #000;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px; display: flex; justify-content: center; align-items: center; gap: 20px;">
-        <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">✓ 15,422 DISPOSITIVOS RESCATADOS • DESDE 2009</span>
-        <a href="https://wa.me/573124813094" style="background: #FFFFFF; color: #3A506B; padding: 6px 20px; border-radius: 50px; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.75rem; transition: all 0.3s ease;">Contactar Ahora</a>
-      </div>
-    </div>
-
-    {/* PALAFITHERO */}
-    <section style="height: 90vh; display: flex; align-items: center; border-bottom: 0.85px solid #000; position: relative; overflow: hidden;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px; width: 100%;">
-        <div style="display: inline-block; background: rgba(74, 144, 226, 0.1); border: 0.85px solid #4A90E2; padding: 4px 12px; border-radius: 50px; margin-bottom: 24px;">
-           <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #4A90E2; font-weight: 700; letter-spacing: 2px;">SERVICIO TÉCNICO APPLE CHAPINERO</span>
-        </div>
-        <h1 style="font-family: 'Inter', sans-serif; font-size: 4.5rem; font-weight: 800; color: #000; letter-spacing: -0.05em; line-height: 1.1; margin-bottom: 30px;">
-          Reparamos lo que otros<br/><span style="color: #4A90E2;">dan por perdido.</span>
-        </h1>
-        <p style="font-family: 'Inter', sans-serif; font-size: 1.2rem; color: #444; max-width: 600px; line-height: 1.7; margin-bottom: 45px;">
-          Más de 15,422 dispositivos Apple rescatados en Bogotá. Transparencia total y soluciones reales, no reemplazos innecesarios. Diagnóstico gratuito en 30 minutos.
-        </p>
-        <div style="display: flex; gap: 16px;">
-          <a href="https://wa.me/573124813094" style="background: #000; color: #FFF; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-family: 'Inter', sans-serif; transition: 0.3s;">Agendar Diagnóstico Gratis</a>
-          <a href="#contacto" style="border: 1.5px solid #000; color: #000; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-family: 'Inter', sans-serif; transition: 0.3s;">Ver canales de contacto</a>
-        </div>
-      </div>
-    </section>
-
-    {/* PALAFITHISTORY - 2 COLUMNAS */}
-    <section style="padding: 100px 0; border-bottom: 0.85px solid #000;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px;">
-        <div>
-          <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; letter-spacing: 2px; text-transform: uppercase;">NUESTRA HISTORIA</span>
-          <h2 style="font-family: 'Inter', sans-serif; font-size: 3rem; font-weight: 800; color: #000; margin-top: 20px; line-height: 1.1;">El Chip de los $50,000</h2>
-        </div>
-        <div style="border-left: 0.85px solid #000; padding-left: 60px;">
-          <p style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #444; line-height: 1.8; margin-bottom: 20px;">Todo comenzó en 2009 con una MacBook Pro rota y una promesa: hacer las cosas bien.</p>
-          <p style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #444; line-height: 1.8; margin-bottom: 20px;">Carlos, nuestro fundador, recibió un diagnóstico devastador en tres lugares de Bogotá: <span style="font-weight: 700; color: #000;">"Hay que cambiar la placa madre, son $1,200,000"</span>. Sin ese dinero, decidió investigar por su cuenta. Semanas después, descubrió que el fallo era un simple chip de memoria de <span style="color: #4A90E2; font-weight: 700;">$50,000</span>.</p>
-          <p style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #444; line-height: 1.8; margin-bottom: 20px;">Esa experiencia definió el ADN de <strong>PIPOD</strong>: un centro técnico donde no te inflamos el presupuesto. Nos dimos cuenta de que profesionales y estudiantes necesitaban un aliado honesto, no solo un taller.</p>
-          <p style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #000; font-weight: 700; line-height: 1.8;">Resultado: Hoy somos el referente de reparación Apple en Bogotá, con garantía real y transparencia total.</p>
-        </div>
-      </div>
-    </section>
-
-    {/* PALAFITNEED - FILOSOFÍA */}
-    <section style="padding: 100px 0; background: #F5F5F7;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
-        <h2 style="font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; margin-bottom: 40px; text-align: center;">Nuestra Filosofía: Reparamos, No Reemplazamos</h2>
-        <div style="background: #FFFFFF; border: 0.85px solid #000; border-radius: 24px; padding: 60px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;">
-          <div>
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">🌱</div>
-            <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; font-weight: 700; letter-spacing: 2px;">SOSTENIBLE</span>
-            <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #444; line-height: 1.7; margin-top: 15px;">Reducimos el desperdicio electrónico. Cada reparación es un dispositivo que no termina en la basura.</p>
-          </div>
-          <div style="border-left: 0.85px solid #F0F0F0; padding-left: 40px;">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">💰</div>
-            <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; font-weight: 700; letter-spacing: 2px;">ECONÓMICO</span>
-            <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #444; line-height: 1.7; margin-top: 15px;">Pagas por la reparación real, no por un módulo nuevo. Transparencia en cada presupuesto.</p>
-          </div>
-          <div style="border-left: 0.85px solid #F0F0F0; padding-left: 40px;">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">⚙️</div>
-            <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; font-weight: 700; letter-spacing: 2px;">TÉCNICAMENTE SUPERIOR</span>
-            <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #444; line-height: 1.7; margin-top: 15px;">Conocemos cada circuito de tu Mac, iPhone o iPad. Microsoldadura de precisión quirúrgica.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* VALORES - ESTILO IMPACT CARDS */}
-    <section style="padding: 100px 0; border-bottom: 0.85px solid #000;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
-        <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; letter-spacing: 2px; text-transform: uppercase;">ÉTICA PROFESIONAL</span>
-        <h2 style="font-family: 'Inter', sans-serif; font-size: 3rem; font-weight: 800; color: #000; margin: 20px 0 60px;">Nuestros Valores</h2>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
-          {[
-            { label: "01 Transparencia", d: "Mostramos todo el proceso de diagnóstico y reparación al cliente, sin sorpresas ni letra pequeña." },
-            { label: "02 Precisión técnica", d: "Somos especialistas en Apple. Cada reparación se realiza con conocimiento profundo y atención al detalle." },
-            { label: "03 Cercanía Humana", d: "Escuchamos al cliente, explicamos con claridad y acompañamos cada decisión técnica desde la empatía." },
-            { label: "04 Agilidad y eficiencia", d: "Optimizamos cada proceso para respetar el tiempo del cliente. Atendemos rápido, pero con calidad." }
-          ].map(val => (
-            <div style="border: 0.85px solid #000; border-radius: 24px; padding: 40px; transition: 0.3s;" class="hover-card">
-              <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px;">{val.label}</h3>
-              <p style="color: #444; line-height: 1.7;">{val.d}</p>
-            </div>
-          ))}
-          <div style="grid-column: 1 / -1; border: 0.85px solid #000; border-radius: 24px; padding: 40px; background: #F5F5F7;">
-            <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px;">🔧 Solución real, no reemplazo innecesario</h3>
-            <p style="color: #444; line-height: 1.7;">Reparamos donde otros reemplazan. Buscamos siempre la solución más eficiente y sostenible para tu equipo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* CONTACTO - ESTILO PALAFITENSEMBLE DARK */}
-    <section id="contacto" style="padding: 100px 0; background: #1a1a1a; color: #FFFFFF;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
-        <div>
-          <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #4A90E2; letter-spacing: 2px;">HABLEMOS: CANALES DIRECTOS</span>
-          <h2 style="font-family: 'Inter', sans-serif; font-size: 3.5rem; font-weight: 800; margin: 20px 0 40px; line-height: 1.1;">¿Tienes alguna duda técnica?</h2>
-          
-          <div style="margin-bottom: 40px;">
-            <h3 style="font-family: 'PT Mono', monospace; font-size: 0.8rem; color: #888; margin-bottom: 15px; letter-spacing: 1px;">CORREOS CORPORATIVOS</h3>
-            <p style="margin-bottom: 10px; font-size: 1.1rem;"><strong style="color: #bbb;">General:</strong> hola@pipod.co</p>
-            <p style="margin-bottom: 10px; font-size: 1.1rem;"><strong style="color: #bbb;">Ventas:</strong> ventas@pipod.co</p>
-            <p style="margin-bottom: 10px; font-size: 1.1rem;"><strong style="color: #bbb;">Soporte:</strong> soporte@pipod.co</p>
-          </div>
-          
-          <div>
-            <h3 style="font-family: 'PT Mono', monospace; font-size: 0.8rem; color: #888; margin-bottom: 15px; letter-spacing: 1px;">CONTACTO RÁPIDO</h3>
-            <p style="font-size: 1.5rem; font-weight: 700;">312 481 3094</p>
-            <p style="color: #4A90E2; font-family: 'PT Mono', monospace; font-size: 0.75rem; margin-top: 10px;">LUNES A SÁBADO, 10:00 AM - 7:00 PM</p>
-            <p style="color: #bbb; font-size: 0.8rem; margin-top: 10px; font-family: 'PT Mono', monospace;">✓ RESPUESTA GARANTIZADA EN MÁXIMO 2 HORAS</p>
-          </div>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.05); border: 0.85px solid rgba(255,255,255,0.25); border-radius: 24px; padding: 50px; backdrop-filter: blur(14px);">
-          <form style="display: grid; gap: 24px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-              <input type="text" placeholder="NOMBRE" style="background: transparent; border: 0.85px solid rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; color: #FFF; font-family: 'PT Mono', monospace; font-size: 0.8rem;" />
-              <input type="email" placeholder="EMAIL" style="background: transparent; border: 0.85px solid rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; color: #FFF; font-family: 'PT Mono', monospace; font-size: 0.8rem;" />
-            </div>
-            <select style="background: #1a1a1a; border: 0.85px solid rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; color: #FFF; font-family: 'PT Mono', monospace; font-size: 0.8rem;">
-              <option value="">TIPO DE CONSULTA</option>
-              <option value="reparacion">REPARACIÓN</option>
-              <option value="retoma">PLAN RETOMA</option>
-              <option value="garantia">GARANTÍA</option>
-            </select>
-            <textarea placeholder="CUÉNTANOS QUÉ NECESITAS..." rows="4" style="background: transparent; border: 0.85px solid rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; color: #FFF; font-family: 'Inter', sans-serif;"></textarea>
-            <button style="background: #4A90E2; color: #FFF; border: none; padding: 18px; border-radius: 50px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: 1px;">ENVIAR MENSAJE</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    {/* UBICACIÓN */}
-    <section style="padding: 100px 0;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
-        <h2 style="font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; margin-bottom: 40px;">Ubicación y Logística</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
-          <div style="background: #F5F5F7; border-radius: 24px; padding: 45px; border: 0.85px solid #000;">
-            <p style="font-family: 'Inter', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">Cra. 13a #79-52, Chapinero, Bogotá</p>
-            <p style="color: #888; font-family: 'PT Mono', monospace; font-size: 0.75rem; margin-bottom: 30px;">[ A DOS CUADRAS DEL PARQUE DE LOS HIPPIES ]</p>
-            
-            <div style="display: grid; gap: 20px;">
-              <div>
-                <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #3A506B;">TRANSMILENIO</span>
-                <p style="font-size: 0.95rem; color: #444;">Estación Calle 76 (5 min caminando)</p>
-              </div>
-              <div>
-                <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #3A506B;">SITP</span>
-                <p style="font-size: 0.95rem; color: #444;">Rutas por la Carrera 13 o Carrera 11</p>
-              </div>
-              <div>
-                <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #3A506B;">PARQUEADERO</span>
-                <p style="font-size: 0.95rem; color: #444;">Parqueaderos públicos Calle 79 y Carrera 11</p>
-              </div>
-            </div>
-          </div>
-          <div style="height: 100%; min-height: 400px; border-radius: 24px; border: 0.85px solid #000; overflow: hidden;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7176465403067!2d-74.0620158!3d4.6620583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a589578276f%3A0x6d8b9e67d264223f!2sCra.%2013a%20%2379-52%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* CHECKLIST */}
-    <section style="padding: 100px 0; background: #F5F5F7; border-top: 0.85px solid #000;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
-        <div style="text-align: center; margin-bottom: 60px;">
-          <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; letter-spacing: 2px;">PROTOCOLO DE VISITA</span>
-          <h2 style="font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; margin-top: 15px;">Antes de Visitarnos: Checklist</h2>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-          {[
-            { t: "Realiza un backup", d: "Sincroniza con iCloud o Time Machine para proteger tus archivos." },
-            { t: "Desactiva 'Find My'", d: "Desactiva Buscar mi iPhone/Mac para evitar bloqueos de seguridad." },
-            { t: "Trae tu cargador", d: "Esencial para diagnosticar fallos de encendido, especialmente en Mac." }
-          ].map((item, i) => (
-            <div style="background: #FFFFFF; padding: 40px; border-radius: 24px; border: 0.85px solid #000; position: relative;">
-              <span style="font-family: 'PT Mono', monospace; font-size: 3rem; color: #F0F0F0; position: absolute; top: 20px; right: 30px; font-weight: 800; z-index: 1;">0{i+1}</span>
-              <div style="position: relative; z-index: 2;">
-                <p style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.2rem; margin-bottom: 10px;">{item.t}</p>
-                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">{item.d}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* FAQ */}
-    <section style="padding: 100px 0;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
-        <h2 style="font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; margin-bottom: 50px;">Preguntas Frecuentes</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-          {[
-            { q: "¿Cuánto tiempo tarda una reparación?", a: "Depende del diagnóstico. Desde 1 hora (cambio de pantalla) hasta 3-5 días (reparaciones complejas). Diagnóstico gratuito en 30 minutos." },
-            { q: "¿Qué pasa si mi equipo tiene iCloud bloqueado?", a: "Podemos ayudarte con el desbloqueo si eres el propietario. Trae identificación y comprobante de compra." },
-            { q: "¿Ofrecen servicio a domicilio?", a: "Sí, en Zona Metropolitana. Consulta disponibilidad y costo según tu ubicación." },
-            { q: "¿Qué métodos de pago aceptan?", a: "Efectivo, transferencia bancaria, tarjeta de crédito/débito y financiación con Crédito Fácil." }
-          ].map(faq => (
-            <div style="padding: 35px; border-bottom: 0.85px solid #000;">
-              <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.1rem; margin-bottom: 15px; color: #3A506B;">{faq.q}</h3>
-              <p style="color: #444; line-height: 1.7; font-size: 0.95rem;">{faq.a}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* PALAFITDONATIONOPTIONS - CTA FINAL */}
-    <section style="padding: 100px 0; border-top: 0.85px solid #000;">
-      <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-          
-          <div style="border: 0.85px solid #000; border-radius: 24px; padding: 45px; text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">♻️</div>
-            <span style="background: #4A90E2; color: #FFF; padding: 4px 12px; border-radius: 50px; font-family: 'PT Mono', monospace; font-size: 0.65rem; font-weight: 700;">PLAN RETOMA</span>
-            <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.3rem; margin: 20px 0;">¿Vendes tu Apple?</h3>
-            <p style="color: #666; font-size: 0.9rem; margin-bottom: 30px;">Cotiza en 2 minutos y recibe tu oferta inmediata.</p>
-            <a href="/plan-retoma-apple" style="background: #000; color: #FFF; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.85rem; display: block; transition: 0.3s;">COTIZAR AHORA</a>
-          </div>
-
-          <div style="border: 0.85px solid #000; border-radius: 24px; padding: 45px; text-align: center; background: #3A506B; color: #FFF;">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">💬</div>
-            <span style="background: #FFF; color: #3A506B; padding: 4px 12px; border-radius: 50px; font-family: 'PT Mono', monospace; font-size: 0.65rem; font-weight: 700;">SOPORTE</span>
-            <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.3rem; margin: 20px 0;">¿Dudas de garantía?</h3>
-            <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 30px;">Respuesta garantizada en máximo 2 horas.</p>
-            <a href="https://wa.me/573124813094" style="background: #FFF; color: #3A506B; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.85rem; display: block; transition: 0.3s;">CHAT WHATSAPP</a>
-          </div>
-
-          <div style="border: 0.85px solid #000; border-radius: 24px; padding: 45px; text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">🔧</div>
-            <span style="background: #4A90E2; color: #FFF; padding: 4px 12px; border-radius: 50px; font-family: 'PT Mono', monospace; font-size: 0.65rem; font-weight: 700;">REPARACIÓN</span>
-            <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.3rem; margin: 20px 0;">¿Necesitas soporte?</h3>
-            <p style="color: #666; font-size: 0.9rem; margin-bottom: 30px;">Diagnóstico gratuito en 30 minutos.</p>
-            <a href="/servicio-tecnico-apple" style="border: 1.5px solid #000; color: #000; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.85rem; display: block; transition: 0.3s;">AGENDAR CITA</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
+    <ContactoBanner />
+    <ContactoHero />
+    <ContactoHistory />
+    <ContactoPhilosophy />
+    <ContactoValues />
+    <ContactoB2B />
+    <ContactoForm />
+    <ContactLocation />
+    <ContactChecklist />
+    <ContactFAQ />
+    <ContactCTA />
   </main>
 
   <FloatingContact client:load />
@@ -276,7 +55,6 @@ const description = "Reparación MacBook, iPhone, iPad en Bogotá. Microsoldadur
     border-color: #4A90E2 !important;
   }
 
-  /* REGLA DE ACCESIBILIDAD Y DISEÑO */
   input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: #4A90E2 !important;
