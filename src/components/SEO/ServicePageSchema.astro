@@ -1,65 +1,88 @@
 ---
-// src/components/SEO/ServicePageSchema.astro
+import JsonLdSchema from './JsonLdSchema.astro';
+
+const today = new Date().toISOString().split('T')[0];
+const publishDate = "2026-02-12";
+
 const servicePageSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.pipod.co/#business",
+  "@type": "WebPage",
+  "@id": "https://www.pipod.co/servicio-tecnico-apple",
   "mainEntityOfPage": "https://www.pipod.co/servicio-tecnico-apple",
-  "name": "Pipod - Servicio Técnico Apple Especializado",
-  "image": "https://www.pipod.co/images/logo.jpg", // Asegúrate de que esta URL sea válida
+  "name": "Servicio Técnico Apple Especializado - Pipod",
+  "description": "Reparación experta de iPhone, MacBook, iPad y Apple Watch en Bogotá. Especialistas en microsoldadura, pantallas y baterías en Chapinero.",
   "url": "https://www.pipod.co/servicio-tecnico-apple",
-  "telephone": "+573124813094",
-  "description": "Reparación experta de iPhone, MacBook, iPad y Apple Watch en Bogotá. Especialistas en microsoldadura, cambio de pantallas y baterías en Chapinero y Usaquén.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Cra. 13a #79-52",
-    "addressLocality": "Chapinero",
-    "addressRegion": "Bogotá D.C.",
-    "addressCountry": "CO"
+  "image": "https://www.pipod.co/images/logo.jpg",
+  
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "@id": "https://www.pipod.co/#business",
+    "name": "Pipod",
+    "telephone": "+573124813094",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cra. 13a #79-52",
+      "addressLocality": "Chapinero",
+      "addressRegion": "Bogotá D.C.",
+      "addressCountry": "CO"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Bogotá" },
+      { "@type": "AdministrativeArea", "name": "Chapinero" },
+      { "@type": "AdministrativeArea", "name": "Usaquén" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Reparación Apple",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Diagnóstico Gratuito Apple",
+            "description": "Evaluación técnica sin costo para identificar fallas."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Microsoldadura de Placa Base",
+            "description": "Reparación de cortos y fallos de encendido."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cambio de Pantalla y Batería",
+            "description": "Repuestos de alta calidad con garantía técnica."
+          }
+        }
+      ]
+    }
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "48",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Bogotá" },
-    { "@type": "AdministrativeArea", "name": "Chapinero" },
-    { "@type": "AdministrativeArea", "name": "Usaquén" },
-    { "@type": "AdministrativeArea", "name": "Bogotá Norte" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Servicios de Reparación Pipod",
+
+  "publisher": { "@id": "https://www.pipod.co/#business" },
+  "datePublished": publishDate,
+  "dateModified": today,
+
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Diagnóstico Gratuito Apple",
-          "description": "Evaluación técnica sin costo para identificar fallas en equipos Apple."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Reparación de Placa Base y Microsoldadura",
-          "description": "Solución a fallos de encendido y cortos circuitos en iPhone y Mac."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cambio de Pantalla y Batería Original",
-          "description": "Repuestos de alta calidad con garantía técnica certificada."
-        }
-      }
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.pipod.co" },
+      { "@type": "ListItem", "position": 2, "name": "Servicio Técnico", "item": "https://www.pipod.co/servicio-tecnico-apple" }
     ]
   }
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(servicePageSchema)} is:inline />
+
+<JsonLdSchema schema={servicePageSchema} type="WebPage" />

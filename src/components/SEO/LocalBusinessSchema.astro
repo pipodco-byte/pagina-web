@@ -13,7 +13,7 @@ const schema = {
   "description": "Expertos en venta y reparación de productos Apple en Bogotá. Servicio técnico especializado Apple, diagnóstico gratis y garantía en todas nuestras reparaciones.",
   "slogan": "Expertos Apple. Confianza de 15 años.",
   "email": "info@pipod.co",
-  "knowsLanguage": "es-CO",
+  "inLanguage": "es-CO",
   
   "address": {
     "@type": "PostalAddress",
@@ -155,7 +155,6 @@ const schema = {
   "dateModified": "2026-02-12",
   
   "knowsAbout": [
-    // SERVICIO TÉCNICO
     "Servicio técnico Apple Bogotá",
     "Reparación iPhone Bogotá",
     "Cambio batería iPhone",
@@ -179,8 +178,6 @@ const schema = {
     "Reparación Face ID",
     "Cambio cámara iPhone",
     "Servicio técnico Apple cerca TransMilenio",
-    
-    // VENTA DE PRODUCTOS
     "Venta iPhone Bogotá",
     "Comprar iPhone Bogotá",
     "iPhone nuevos Bogotá",
@@ -188,8 +185,6 @@ const schema = {
     "Venta MacBook Bogotá",
     "iPad nuevos Bogotá",
     "Apple Watch venta Bogotá",
-    
-    // SEMINUEVOS Y REFURBISHED
     "iPhone seminuevos Bogotá",
     "MacBook seminuevos Bogotá",
     "iPhone refurbished Colombia",
@@ -198,8 +193,6 @@ const schema = {
     "MacBook reacondicionados Colombia",
     "iPhone usados certificados",
     "MacBook usados garantía",
-    
-    // PLAN RETOMA
     "Plan Retoma iPhone Bogotá",
     "Cambiar iPhone por iPhone nuevo",
     "Intercambiar iPhone Bogotá",
@@ -208,109 +201,71 @@ const schema = {
     "Trade-in iPhone Colombia",
     "Intercambio MacBook Bogotá",
     "Vender MacBook usado",
-    
-    // GEOLOCALIZACIÓN
     "Tienda Apple Chapinero",
     "Comprar iPhone Chapinero",
     "Venta Apple Bogotá Norte",
     "Tienda Apple cerca TransMilenio",
-    
-    // B2B
     "Apple para empresas Bogotá",
     "Venta corporativa Apple"
   ],
   
-  "service": [
-    {
-      "@type": "Service",
-      "serviceType": "Reparación de iPhone",
-      "name": "Reparación de iPhone",
-      "description": "Diagnóstico rápido y garantía en todas nuestras reparaciones. Cambio de pantalla, batería y microsoldadura.",
-      "provider": {
-      "@id": "https://www.pipod.co/#business",
-      "areaServed": "Bogotá"
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Pipod",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diagnóstico Gratis",
+          "description": "Diagnóstico técnico sin costo"
+        },
+        "price": "0",
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
       },
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Reparación de MacBook",
-      "name": "Reparación de MacBook",
-      "description": "Servicio técnico especializado para MacBooks. Cambio de batería, pantalla y teclado.",
-      "provider": {
-      "@id": "https://www.pipod.co/#business", 
-      "areaServed": "Bogotá"
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Reparación de iPhone",
+          "description": "Diagnóstico rápido y garantía en todas nuestras reparaciones. Cambio de pantalla, batería y microsoldadura."
+        },
+        "availability": "https://schema.org/InStock"
       },
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Plan Retoma",
-      "name": "Plan Retoma Apple",
-      "description": "Intercambia tu equipo antiguo por uno nuevo con el mejor valor del mercado",
-      "provider": {
-      "@id": "https://www.pipod.co/#business", 
-      "areaServed": "Colombia"
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Reparación de MacBook",
+          "description": "Servicio técnico especializado para MacBooks. Cambio de batería, pantalla y teclado."
+        },
+        "availability": "https://schema.org/InStock"
       },
-    },
-  ],
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Plan Retoma Apple",
+          "description": "Intercambia tu equipo antiguo por uno nuevo con el mejor valor del mercado"
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  },
   
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Diagnóstico Gratis",
-        "description": "Diagnóstico técnico sin costo"
-      },
-      "price": "0",
-      "priceCurrency": "COP",
-      "availability": "https://schema.org/InStock"
+  "potentialAction": {
+    "@type": "CommunicateAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://wa.me/573124813094?text=Hola,%20quiero%20información",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
     },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Plan Retoma iPhone",
-        "description": "Intercambia tu equipo antiguo y recibe crédito"
-      },
-      "availability": "https://schema.org/InStock"
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Compra de Equipos Usados",
-        "description": "Compramos tu iPhone, MacBook o iPad usado"
-      },
-      "availability": "https://schema.org/InStock"
-    }
-  ],
-  
-  "potentialAction": [
-    {
-      "@type": "OrderAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://wa.me/573124813094?text=Hola,%20quiero%20información",
-        "actionPlatform": [
-          "http://schema.org/DesktopWebPlatform",
-          "http://schema.org/MobileWebPlatform"
-        ]
-      },
-      "name": "Contactar por WhatsApp"
-    },
-    {
-      "@type": "ReserveAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://www.pipod.co/servicio-tecnico-apple",
-        "actionPlatform": [
-          "http://schema.org/DesktopWebPlatform",
-          "http://schema.org/MobileWebPlatform"
-        ]
-      },
-      "name": "Agendar Diagnóstico Gratuito"
-    }
-  ]
+    "name": "Contactar por WhatsApp"
+  }
 };
 ---
 

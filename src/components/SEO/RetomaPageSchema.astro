@@ -1,65 +1,88 @@
 ---
-// src/components/SEO/RetomaPageSchema.astro
+import JsonLdSchema from './JsonLdSchema.astro';
+
+const today = new Date().toISOString().split('T')[0];
+const publishDate = "2026-02-12";
+
 const retomaPageSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.pipod.co/#business",
+  "@type": "WebPage",
+  "@id": "https://www.pipod.co/plan-retoma-apple",
   "mainEntityOfPage": "https://www.pipod.co/plan-retoma-apple",
-  "name": "Plan Retoma Apple Pipod - iPhone, MacBook y iPad",
+  "name": "Plan Retoma Apple Pipod - Cambia tu iPhone, MacBook o iPad",
+  "description": "Recibimos tu equipo Apple usado como parte de pago. Valoración inmediata y segura en Bogotá. Renueva tu iPhone o Mac en Chapinero y Usaquén.",
   "url": "https://www.pipod.co/plan-retoma-apple",
-  "telephone": "+573124813094",
-  "description": "Cambia tu iPhone, MacBook o iPad usado por uno nuevo. Recibimos tu equipo como parte de pago con la mejor valoración de Bogotá. Proceso seguro y garantizado en Chapinero y Usaquén.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Cra. 13a #79-52",
-    "addressLocality": "Chapinero",
-    "addressRegion": "Bogotá D.C.",
-    "addressCountry": "CO"
+  "image": "https://www.pipod.co/images/logo.jpg",
+  
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "@id": "https://www.pipod.co/#business",
+    "name": "Pipod",
+    "telephone": "+573124813094",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cra. 13a #79-52",
+      "addressLocality": "Chapinero",
+      "addressRegion": "Bogotá D.C.",
+      "addressCountry": "CO"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Bogotá" },
+      { "@type": "AdministrativeArea", "name": "Chapinero" },
+      { "@type": "AdministrativeArea", "name": "Usaquén" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catálogo Plan Retoma",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Retoma de iPhone",
+            "description": "Valoración de modelos iPhone 11 en adelante para renovación."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Retoma de MacBook",
+            "description": "Cambio de MacBook Air o Pro por modelos nuevos o superiores."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Valoración Técnica de Usados",
+            "description": "Evaluación funcional y cosmética inmediata para toma como parte de pago."
+          }
+        }
+      ]
+    }
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "48",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Bogotá" },
-    { "@type": "AdministrativeArea", "name": "Chapinero" },
-    { "@type": "AdministrativeArea", "name": "Usaquén" },
-    { "@type": "AdministrativeArea", "name": "Bogotá Norte" },
-    { "@type": "Country", "name": "Colombia" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Opciones de Plan Retoma",
+
+  "publisher": { "@id": "https://www.pipod.co/#business" },
+  "datePublished": publishDate,
+  "dateModified": today,
+
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Retoma de iPhone",
-          "description": "Recibimos desde iPhone 11 en adelante para cambio por modelos más recientes."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Retoma de MacBook",
-          "description": "Valoración de MacBook Air y Pro para renovación de equipo profesional."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Valoración Inmediata de Usados",
-          "description": "Evaluación técnica del estado físico y funcional de tu equipo sin compromiso."
-        }
-      }
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.pipod.co" },
+      { "@type": "ListItem", "position": 2, "name": "Plan Retoma", "item": "https://www.pipod.co/plan-retoma-apple" }
     ]
   }
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(retomaPageSchema)} is:inline />
+
+<JsonLdSchema schema={retomaPageSchema} type="WebPage" />
