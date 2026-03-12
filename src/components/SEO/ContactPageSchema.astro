@@ -1,3 +1,6 @@
+---
+import JsonLdSchema from './JsonLdSchema.astro';
+
 const today = new Date().toISOString().split('T')[0];
 const publishDate = "2026-02-12";
 
@@ -95,3 +98,6 @@ const contactPageSchema = {
     ]
   }
 };
+---
+
+<JsonLdSchema schema={contactPageSchema} type="ContactPage" />
