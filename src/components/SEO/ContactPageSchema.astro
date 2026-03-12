@@ -1,3 +1,6 @@
+const today = new Date().toISOString().split('T')[0];
+const publishDate = "2026-02-12";
+
 const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
@@ -65,10 +68,12 @@ const contactPageSchema = {
       "reviewCount": "58",
       "bestRating": "5",
       "worstRating": "1"
-    }
+    },
+    "hasMap": "https://maps.app.goo.gl/vVsKwJXwAza4Tppg6"
   },
 
   "copyrightHolder": { "@id": "https://www.pipod.co/#business" },
+  "hasMap": "https://maps.app.goo.gl/vVsKwJXwAza4Tppg6",
   "datePublished": publishDate,
   "dateModified": today,
 
