@@ -40,17 +40,17 @@ if (import.meta.env.DEV) {
 ---
 
 {isValid && (
-  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 2)}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 2)} is:inline>
   </script>
 )}
 
 {!isValid && (
-  <script type="application/ld+json">
-    {
+  <script type="application/ld+json" is:inline>
+    {{
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Error en Schema",
       "description": "Hubo un error al procesar el schema JSON-LD"
-    }
+    }}
   </script>
 )}

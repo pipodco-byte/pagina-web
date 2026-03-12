@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
+import TermsPageSchema from '../components/SEO/TermsPageSchema.astro';
 import '../../assets/scss/astro-ecommerce.scss';
 
 const title = "Términos y Condiciones - Pipod";
@@ -20,6 +21,7 @@ const sections = [
 ---
 
 <Layout title={title} description={description}>
+  <TermsPageSchema />
   <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">
