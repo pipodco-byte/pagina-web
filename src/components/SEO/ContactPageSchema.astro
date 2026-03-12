@@ -1,5 +1,6 @@
 ---
 // src/components/SEO/ContactPageSchema.astro
+import JsonLdSchema from './JsonLdSchema.astro';
 
 const today = new Date().toISOString().split('T')[0];
 // Fecha de publicación del sitio: 12 de febrero de 2026
@@ -158,4 +159,4 @@ const contactPageSchema = {
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(contactPageSchema)} />
+<JsonLdSchema schema={contactPageSchema} type="ContactPage" />

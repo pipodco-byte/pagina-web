@@ -1,5 +1,6 @@
 ---
 // src/components/SEO/TermsPageSchema.astro
+import JsonLdSchema from './JsonLdSchema.astro';
 
 // Obtener fecha actual para dateModified
 const today = new Date().toISOString().split('T')[0];
@@ -95,4 +96,4 @@ const termsPageSchema = {
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(termsPageSchema)} />
+<JsonLdSchema schema={termsPageSchema} type="WebPage" />

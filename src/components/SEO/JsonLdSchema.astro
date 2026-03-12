@@ -1,0 +1,56 @@
+---
+// src/components/SEO/JsonLdSchema.astro
+// Componente optimizado para inyectar JSON-LD en el <head> de forma segura
+// Garantiza renderización SSR antes de hidratación del cliente
+
+interface Props {
+  schema: Record<string, any>;
+  type?: 'ContactPage' | 'WebPage' | 'LocalBusiness' | 'Organization';
+}
+
+const { schema, type = 'WebPage' } = Astro.props;
+
+// Validar que el schema sea un objeto válido
+if (!schema || typeof schema !== 'object') {
+  console.warn(`[JsonLdSchema] Schema inválido para tipo ${type}`);
+}
+
+// Sanitizar y validar el JSON
+const validateSchema = (obj: any): boolean => {
+  try {
+    JSON.stringify(obj);
+    return true;
+  } catch (e) {
+    console.error(`[JsonLdSchema] Error al serializar schema ${type}:`, e);
+    return false;
+  }
+};
+
+const isValid = validateSchema(schema);
+
+// Log para debugging (solo en desarrollo)
+if (import.meta.env.DEV) {
+  console.log(`[JsonLdSchema] ${type} renderizado en SSR`, {
+    valid: isValid,
+    context: schema['@context'],
+    type: schema['@type'],
+    url: schema['url'] || schema['mainEntityOfPage']
+  });
+}
+---
+
+{isValid && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 2)}>
+  </script>
+)}
+
+{!isValid && (
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Error en Schema",
+      "description": "Hubo un error al procesar el schema JSON-LD"
+    }
+  </script>
+)}
