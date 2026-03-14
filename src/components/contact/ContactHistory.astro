@@ -1,0 +1,119 @@
+---
+---
+
+<section class="pipod-history-section">
+  <div class="pipod-container">
+    <div class="pipod-history-grid">
+      <article class="pipod-history-col">
+        <header class="pipod-history-header">
+          <span class="pipod-tech-label">NUESTRA HISTORIA</span>
+          <h2 class="pipod-history-title">Honestidad desde el Origen</h2>
+        </header>
+      </article>
+
+      <article class="pipod-history-col pipod-separator">
+        <div class="pipod-history-content">
+          <p>Presencia en Bogotá desde 2009. Pipod.co nació con una premisa clara: hacer las cosas bien. Creemos que la honestidad es la base de la confianza, por eso mostramos todo el proceso de diagnóstico sin sorpresas ni letra pequeña.</p>
+          <p>Nos dimos cuenta de que los usuarios Apple necesitaban un aliado tecnológico que hablara con lenguaje claro, sin exagerar diagnósticos. Hoy, somos el centro de servicio especializado que combina precisión técnica con un trato humano y empático.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pipod-history-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+    border-bottom: 0.85px solid #000;
+  }
+
+  .pipod-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .pipod-history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .pipod-history-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &.pipod-separator {
+      position: relative;
+      padding-left: 40px;
+      border-left: 0.85px solid #000;
+    }
+  }
+
+  .pipod-tech-label {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.7rem;
+    color: #999;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .pipod-history-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #000;
+    margin: 0;
+  }
+
+  .pipod-history-content p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 24px;
+  }
+
+  .pipod-history-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .pipod-history-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .pipod-history-col.pipod-separator {
+      padding-left: 0;
+      padding-top: 60px;
+      border-left: none;
+      border-top: 0.85px solid #000;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pipod-history-section {
+      padding: 50px 0;
+    }
+
+    .pipod-container {
+      padding: 0 25px;
+    }
+
+    .pipod-history-title {
+      font-size: 2rem;
+    }
+
+    .pipod-history-content p {
+      font-size: 1rem;
+    }
+  }
+</style>
