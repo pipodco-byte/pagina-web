@@ -15,6 +15,7 @@ interface Product {
   rating: number;
   batteryHealth: string;
   slug: string;
+  useCase?: 'Diseñadores' | 'Profesionales' | 'Estudiantes' | 'Viajeros' | 'Deportistas';
 }
 
 interface Props {
@@ -25,7 +26,8 @@ export default function StoreWithFilters({ productos }: Props) {
   const [filters, setFilters] = useState({
     conditions: [] as string[],
     devices: [] as string[],
-    priceRanges: [] as string[]
+    priceRange: [0, 10000000] as [number, number],
+    useCases: [] as string[]
   });
 
   // Categorizar productos
@@ -35,7 +37,10 @@ export default function StoreWithFilters({ productos }: Props) {
     if (lower.includes('macbook') || lower.includes('mac')) return 'MacBook';
     if (lower.includes('ipad')) return 'iPad';
     if (lower.includes('watch')) return 'Apple Watch';
-    return 'Accesorios';
+    if (lower.includes('airpods') || lower.includes('beats') || lower.includes('homepod')) return 'Audio';
+    if (lower.includes('magsafe') || lower.includes('cable') || lower.includes('cubo') || lower.includes('carga')) return 'Energía y Carga';
+    if (lower.includes('hub') || lower.includes('adaptador') || lower.includes('conectividad')) return 'Conectividad';
+    return 'Complementos';
   };
 
   // Filtrar productos
@@ -55,16 +60,13 @@ export default function StoreWithFilters({ productos }: Props) {
       }
 
       // Filtro de precio
-      if (filters.priceRanges.length > 0) {
-        const price = product.price;
-        const inRange = filters.priceRanges.some(range => {
-          if (range === 'price1' && price < 500000) return true;
-          if (range === 'price2' && price >= 500000 && price < 1000000) return true;
-          if (range === 'price3' && price >= 1000000 && price < 2000000) return true;
-          if (range === 'price4' && price >= 2000000) return true;
-          return false;
-        });
-        if (!inRange) return false;
+      if (product.price < filters.priceRange[0] || product.price > filters.priceRange[1]) {
+        return false;
+      }
+
+      // Filtro de caso de uso
+      if (filters.useCases.length > 0 && product.useCase && !filters.useCases.includes(product.useCase)) {
+        return false;
       }
 
       return true;
@@ -78,12 +80,17 @@ export default function StoreWithFilters({ productos }: Props) {
       'MacBook': [],
       'iPad': [],
       'Apple Watch': [],
-      'Accesorios': []
+      'Audio': [],
+      'Energía y Carga': [],
+      'Conectividad': [],
+      'Complementos': []
     };
 
     filteredProducts.forEach(product => {
       const category = categorizeProduct(product.title);
-      groups[category].push(product);
+      if (groups[category]) {
+        groups[category].push(product);
+      }
     });
 
     return groups;
@@ -107,12 +114,19 @@ export default function StoreWithFilters({ productos }: Props) {
     }));
   };
 
-  const handlePriceChange = (range: string) => {
+  const handlePriceChange = (min: number, max: number) => {
     setFilters(prev => ({
       ...prev,
-      priceRanges: prev.priceRanges.includes(range)
-        ? prev.priceRanges.filter(r => r !== range)
-        : [...prev.priceRanges, range]
+      priceRange: [min, max]
+    }));
+  };
+
+  const handleUseCaseChange = (useCase: string) => {
+    setFilters(prev => ({
+      ...prev,
+      useCases: prev.useCases.includes(useCase)
+        ? prev.useCases.filter(u => u !== useCase)
+        : [...prev.useCases, useCase]
     }));
   };
 
@@ -120,7 +134,8 @@ export default function StoreWithFilters({ productos }: Props) {
     setFilters({
       conditions: [],
       devices: [],
-      priceRanges: []
+      priceRange: [0, 10000000],
+      useCases: []
     });
   };
 
@@ -129,10 +144,13 @@ export default function StoreWithFilters({ productos }: Props) {
     'MacBook': 'Computadoras portátiles y de escritorio con rendimiento certificado',
     'iPad': 'Tablets Apple con pantalla retina y batería verificada',
     'Apple Watch': 'Smartwatches Apple con funciones completas',
-    'Accesorios': 'Accesorios originales y certificados para tu ecosistema Apple'
+    'Audio': 'AirPods, Beats, HomePod y más',
+    'Energía y Carga': 'MagSafe, Cables, Cubos de carga',
+    'Conectividad': 'Hubs, Adaptadores y accesorios de conectividad',
+    'Complementos': 'Pulseras, Stands, Lentes y más'
   };
 
-  const hasActiveFilters = filters.conditions.length > 0 || filters.devices.length > 0 || filters.priceRanges.length > 0;
+  const hasActiveFilters = filters.conditions.length > 0 || filters.devices.length > 0 || filters.useCases.length > 0 || filters.priceRange[0] > 0 || filters.priceRange[1] < 10000000;
   const totalFiltered = filteredProducts.length;
 
   return (
@@ -142,10 +160,10 @@ export default function StoreWithFilters({ productos }: Props) {
         <aside className="filters-sidebar">
           <div className="filters-wrapper">
             <div className="filters-header">
-              <h2 className="filters-title">Filtrar</h2>
+              <h2 className="filters-title">Filtrar Selección</h2>
               {hasActiveFilters && (
                 <button className="reset-filters" onClick={resetFilters}>
-                  Limpiar
+                  Limpiar Todo
                 </button>
               )}
             </div>
@@ -154,14 +172,21 @@ export default function StoreWithFilters({ productos }: Props) {
             <div className="filter-section">
               <h3 className="filter-section-title">Condición</h3>
               <div className="filter-options">
-                {['Nuevo', 'Seminuevo', 'Repotenciado'].map(condition => (
-                  <label key={condition} className="filter-checkbox">
+                {[
+                  { value: 'Nuevo', label: 'Nuevo', desc: 'Sellado, garantía Apple' },
+                  { value: 'Seminuevo', label: 'Seminuevo', desc: 'Como nuevo, inspección 360°' },
+                  { value: 'Repotenciado', label: 'Repotenciado', desc: 'Certificado Pipod, máximo rendimiento' }
+                ].map(condition => (
+                  <label key={condition.value} className="filter-checkbox">
                     <input
                       type="checkbox"
-                      checked={filters.conditions.includes(condition)}
-                      onChange={() => handleConditionChange(condition)}
+                      checked={filters.conditions.includes(condition.value)}
+                      onChange={() => handleConditionChange(condition.value)}
                     />
-                    <span>{condition}</span>
+                    <div className="checkbox-content">
+                      <span className="checkbox-label">{condition.label}</span>
+                      <span className="checkbox-desc">{condition.desc}</span>
+                    </div>
                   </label>
                 ))}
               </div>
@@ -171,7 +196,16 @@ export default function StoreWithFilters({ productos }: Props) {
             <div className="filter-section">
               <h3 className="filter-section-title">Dispositivo</h3>
               <div className="filter-options">
-                {['iPhone', 'MacBook', 'iPad', 'Apple Watch'].map(device => (
+                {[
+                  'iPhone',
+                  'MacBook',
+                  'iPad',
+                  'Apple Watch',
+                  'Audio',
+                  'Energía y Carga',
+                  'Conectividad',
+                  'Complementos'
+                ].map(device => (
                   <label key={device} className="filter-checkbox">
                     <input
                       type="checkbox"
@@ -184,26 +218,66 @@ export default function StoreWithFilters({ productos }: Props) {
               </div>
             </div>
 
-            {/* RANGO DE PRECIO */}
+            {/* RANGO DE PRESUPUESTO */}
             <div className="filter-section">
-              <h3 className="filter-section-title">Rango de Precio</h3>
+              <h3 className="filter-section-title">Rango de Presupuesto</h3>
+              <div className="price-slider-container">
+                <input
+                  type="range"
+                  min="0"
+                  max="10000000"
+                  value={filters.priceRange[1]}
+                  onChange={(e) => handlePriceChange(filters.priceRange[0], parseInt(e.target.value))}
+                  className="price-slider"
+                />
+                <div className="price-display">
+                  <span>${filters.priceRange[0].toLocaleString('es-CO')}</span>
+                  <span>-</span>
+                  <span>${filters.priceRange[1].toLocaleString('es-CO')}</span>
+                </div>
+                <p className="price-microcopy">Desliza para ajustar tu inversión</p>
+              </div>
+            </div>
+
+            {/* ÚSALO PARA */}
+            <div className="filter-section">
+              <h3 className="filter-section-title">Úsalo Para</h3>
               <div className="filter-options">
                 {[
-                  { id: 'price1', label: 'Menos de $500k' },
-                  { id: 'price2', label: '$500k - $1M' },
-                  { id: 'price3', label: '$1M - $2M' },
-                  { id: 'price4', label: 'Más de $2M' }
-                ].map(price => (
-                  <label key={price.id} className="filter-checkbox">
+                  { value: 'Diseñadores', label: 'Diseñadores', desc: 'Creativos, editores de video, fotógrafos' },
+                  { value: 'Profesionales', label: 'Profesionales', desc: 'Oficina, ejecutivos, negocios' },
+                  { value: 'Estudiantes', label: 'Estudiantes', desc: 'Colegio hasta postgrado' },
+                  { value: 'Viajeros', label: 'Viajeros', desc: 'Nómadas digitales, constante movimiento' },
+                  { value: 'Deportistas', label: 'Deportistas', desc: 'Seguimiento de rendimiento, fitness' }
+                ].map(useCase => (
+                  <label key={useCase.value} className="filter-checkbox">
                     <input
                       type="checkbox"
-                      checked={filters.priceRanges.includes(price.id)}
-                      onChange={() => handlePriceChange(price.id)}
+                      checked={filters.useCases.includes(useCase.value)}
+                      onChange={() => handleUseCaseChange(useCase.value)}
                     />
-                    <span>{price.label}</span>
+                    <div className="checkbox-content">
+                      <span className="checkbox-label">{useCase.label}</span>
+                      <span className="checkbox-desc">{useCase.desc}</span>
+                    </div>
                   </label>
                 ))}
               </div>
+            </div>
+
+            {/* NOTA ESPECIAL */}
+            <div className="filter-note">
+              <span className="note-icon">🛡️</span>
+              <div className="note-content">
+                <strong>Blindaje Pipod</strong>
+                <p>Para garantizar una aplicación perfecta y sin burbujas, nuestros protectores de pantalla se instalan exclusivamente en tienda física por nuestros expertos.</p>
+              </div>
+            </div>
+
+            {/* BOTONES DE ACCIÓN */}
+            <div className="filter-actions">
+              <button className="btn-apply">Aplicar Filtros</button>
+              <button className="btn-clear" onClick={resetFilters}>Limpiar Todo</button>
             </div>
           </div>
         </aside>
@@ -327,7 +401,7 @@ export default function StoreWithFilters({ productos }: Props) {
           border-bottom: 1px solid #E5E5E7;
         }
 
-        .filter-section:last-child {
+        .filter-section:last-of-type {
           border-bottom: none;
           margin-bottom: 0;
           padding-bottom: 0;
@@ -351,12 +425,13 @@ export default function StoreWithFilters({ productos }: Props) {
 
         .filter-checkbox {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           cursor: pointer;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           font-size: 0.95rem;
           color: #555;
           transition: all 0.2s;
+          gap: 8px;
         }
 
         .filter-checkbox:hover {
@@ -364,11 +439,166 @@ export default function StoreWithFilters({ productos }: Props) {
         }
 
         .filter-checkbox input {
-          margin-right: 8px;
+          margin-top: 2px;
           cursor: pointer;
           width: 16px;
           height: 16px;
+          flex-shrink: 0;
           accent-color: #3A506B;
+        }
+
+        .checkbox-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .checkbox-label {
+          font-weight: 500;
+          color: #1D1D1F;
+        }
+
+        .checkbox-desc {
+          font-size: 0.8rem;
+          color: #86868B;
+          line-height: 1.3;
+        }
+
+        .price-slider-container {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .price-slider {
+          width: 100%;
+          height: 6px;
+          border-radius: 3px;
+          background: #E5E5E7;
+          outline: none;
+          -webkit-appearance: none;
+          appearance: none;
+        }
+
+        .price-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #3A506B;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .price-slider::-webkit-slider-thumb:hover {
+          background: #4A90E2;
+          transform: scale(1.1);
+        }
+
+        .price-slider::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #3A506B;
+          cursor: pointer;
+          border: none;
+          transition: all 0.2s;
+        }
+
+        .price-slider::-moz-range-thumb:hover {
+          background: #4A90E2;
+          transform: scale(1.1);
+        }
+
+        .price-display {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #1D1D1F;
+        }
+
+        .price-microcopy {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 0.75rem;
+          color: #86868B;
+          margin: 0;
+          text-align: center;
+        }
+
+        .filter-note {
+          background: #F5F5F7;
+          border-radius: 12px;
+          padding: 12px;
+          display: flex;
+          gap: 10px;
+          margin-top: 24px;
+          margin-bottom: 24px;
+        }
+
+        .note-icon {
+          font-size: 1.2rem;
+          flex-shrink: 0;
+        }
+
+        .note-content {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .note-content strong {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 0.85rem;
+          color: #1D1D1F;
+        }
+
+        .note-content p {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 0.75rem;
+          color: #555;
+          margin: 0;
+          line-height: 1.4;
+        }
+
+        .filter-actions {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 24px;
+        }
+
+        .btn-apply,
+        .btn-clear {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-weight: 600;
+          padding: 10px 16px;
+          border-radius: 100px;
+          border: none;
+          cursor: pointer;
+          font-size: 0.9rem;
+          transition: all 0.2s;
+        }
+
+        .btn-apply {
+          background: #4A90E2;
+          color: #FFFFFF;
+        }
+
+        .btn-apply:hover {
+          background: #3A506B;
+        }
+
+        .btn-clear {
+          background: #F5F5F7;
+          color: #1D1D1F;
+        }
+
+        .btn-clear:hover {
+          background: #E5E5E7;
         }
 
         .products-section {
@@ -483,7 +713,7 @@ export default function StoreWithFilters({ productos }: Props) {
           color: #fff;
           border: none;
           padding: 12px 32px;
-          border-radius: 50px;
+          border-radius: 100px;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           font-weight: 600;
           cursor: pointer;

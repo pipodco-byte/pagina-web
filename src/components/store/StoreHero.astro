@@ -9,7 +9,7 @@ interface Props {
 }
 
 const {
-  title = "Tienda Pipod",
+  title = "Pipod Store",
   subtitle = "Especialistas en ecosistema Apple",
   description = "Descubre nuestra selección de productos nuevos, seminuevos y repotenciados certificados por Pipod.",
   backgroundImage = "/images/iphone-17-pro.webp",
@@ -24,12 +24,9 @@ const {
   
   <div class="hero-content">
     <div class="content-left">
-      <div class="glass-tag">
-        TIENDA PIPOD
-      </div>
+      <span class="label-tag">Especialistas en ecosistema Apple </span>
       <div class="content-wrapper">
         <h1 class="hero-title">{title}</h1>
-        <p class="hero-subtitle">{subtitle}</p>
         <p class="hero-description">{description}</p>
       </div>
     </div>
@@ -97,6 +94,18 @@ const {
     animation: fadeInUp 0.8s ease-out;
   }
 
+  .label-tag {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
   .glass-tag {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(14px) saturate(180%);
@@ -104,13 +113,8 @@ const {
     border: 0.5px solid rgba(255, 255, 255, 0.25);
     border-radius: 50px;
     padding: 8px 20px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.8);
-    letter-spacing: 2px;
     display: inline-block;
     margin-bottom: 16px;
-    text-transform: uppercase;
     width: fit-content;
   }
 
@@ -139,7 +143,7 @@ const {
   }
 
   .hero-description {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     color: #D2D2D7;
@@ -158,7 +162,7 @@ const {
     background: #FFFFFF;
     color: #000;
     padding: 14px 35px;
-    border-radius: 50px;
+    border-radius: 100px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 700;
     font-size: 0.95rem;
@@ -208,9 +212,13 @@ const {
       max-width: 100%;
     }
 
+    .label-tag {
+      font-size: 0.65rem;
+      margin-bottom: 10px;
+    }
+
     .glass-tag {
       padding: 6px 16px;
-      font-size: 0.65rem;
       margin-bottom: 12px;
     }
 
@@ -245,9 +253,13 @@ const {
       padding: 0 16px;
     }
 
+    .label-tag {
+      font-size: 0.6rem;
+      margin-bottom: 8px;
+    }
+
     .glass-tag {
       padding: 6px 14px;
-      font-size: 0.6rem;
       margin-bottom: 10px;
     }
 
