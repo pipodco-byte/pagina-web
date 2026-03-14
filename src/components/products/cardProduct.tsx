@@ -82,9 +82,9 @@ export default function CardProduct({
         <div className="product-content">
           <div className="price-rating-group">
             <div className="price-block">
-              <span className="price-now">${price.toLocaleString()}</span>
+              <span className="price-now">${price.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</span>
               {oldPrice && (
-                <span className="price-before">${oldPrice.toLocaleString()}</span>
+                <span className="price-before">${oldPrice.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</span>
               )}
             </div>
             <div className="rating-block">

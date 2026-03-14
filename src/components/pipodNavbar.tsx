@@ -13,6 +13,11 @@ const PipodNavbar = () => {
     return () => window.removeEventListener('scroll', handleScrollEvent);
   }, []);
 
+  useEffect(() => {
+    // Cerrar menú al montar el componente
+    setIsMobileMenuOpen(false);
+  }, []);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
