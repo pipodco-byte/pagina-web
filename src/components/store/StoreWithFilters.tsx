@@ -286,6 +286,7 @@ export default function StoreWithFilters({ productos }: Props) {
           padding: 24px;
           border-radius: 18px;
           border: 1px solid #D5D5D7;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .filters-header {
@@ -308,7 +309,7 @@ export default function StoreWithFilters({ productos }: Props) {
         .reset-filters {
           background: none;
           border: none;
-          color: #0066cc;
+          color: #3A506B;
           font-size: 0.85rem;
           font-weight: 600;
           cursor: pointer;
@@ -317,7 +318,7 @@ export default function StoreWithFilters({ productos }: Props) {
         }
 
         .reset-filters:hover {
-          color: #0052a3;
+          color: #4A90E2;
         }
 
         .filter-section {
@@ -355,7 +356,7 @@ export default function StoreWithFilters({ productos }: Props) {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           font-size: 0.95rem;
           color: #555;
-          transition: color 0.2s;
+          transition: all 0.2s;
         }
 
         .filter-checkbox:hover {
@@ -367,6 +368,7 @@ export default function StoreWithFilters({ productos }: Props) {
           cursor: pointer;
           width: 16px;
           height: 16px;
+          accent-color: #3A506B;
         }
 
         .products-section {
