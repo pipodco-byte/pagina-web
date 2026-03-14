@@ -26,6 +26,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 /* LOGO: Robusto y de 32px */
@@ -36,6 +37,7 @@
   color: #000;
   text-decoration: none;
   transition: transform 0.3s ease;
+  z-index: 1001;
 }
 
 /* MENÚ CENTRADO: 16px con 40px de separación */
@@ -88,12 +90,14 @@
   background: #000;
   color: #fff;
   padding: 12px 28px;
-  border-radius: 12px;
+  border-radius: 100px;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-premium:hover {
@@ -102,7 +106,93 @@
   transform: translateY(-2px);
 }
 
-/* Ocultar en tablets/móviles para desarrollo futuro de menú hamburguesa */
+/* HAMBURGER MENU - Hidden by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2.5px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #E5E5E7;
+  padding: 20px 0;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.mobile-nav-item {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-item:hover {
+  color: #0066cc;
+}
+
+.mobile-cta {
+  display: block;
+  margin: 0 24px;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   .nav-links {
     gap: 20px; /* Reducimos gap antes de ocultar */
@@ -110,5 +200,60 @@
 }
 
 @media (max-width: 1024px) {
-  .nav-links, .nav-actions { display: none; }
+  .nav-links, .nav-actions { 
+    display: none; 
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 32px;
+  }
+
+  .mobile-nav-links {
+    gap: 12px;
+  }
+
+  .mobile-nav-item {
+    font-size: 15px;
+  }
+
+  .mobile-cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 28px;
+  }
+
+  .hamburger {
+    padding: 6px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .mobile-nav-links {
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .mobile-cta {
+    margin: 0 16px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
 }
