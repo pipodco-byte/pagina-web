@@ -1,0 +1,768 @@
+---
+import CardProduct from '../products/cardProduct.tsx';
+import { CategoryIcon } from './CategoryIcon';
+import NoResults from './NoResults.astro';
+
+interface Product {
+  thumb_src: string;
+  thumb_alt: string;
+  color?: string;
+  colors?: string[];
+  title: string;
+  description: string;
+  price: number;
+  oldPrice?: number;
+  condition?: 'Nuevo' | 'Seminuevo' | 'Repotenciado';
+  rating?: number;
+  batteryHealth?: string;
+  slug: string;
+  useCase?: 'Diseñadores' | 'Profesionales' | 'Estudiantes' | 'Viajeros' | 'Deportistas';
+}
+
+interface Props {
+  productos: Product[];
+}
+
+const { productos } = Astro.props as Props;
+
+// Categorizar productos
+const categorizeProduct = (title: string) => {
+  const lower = title.toLowerCase();
+  if (lower.includes('iphone')) return 'iPhone';
+  if (lower.includes('macbook') || lower.includes('mac')) return 'MacBook';
+  if (lower.includes('ipad')) return 'iPad';
+  if (lower.includes('watch')) return 'Apple Watch';
+  if (lower.includes('airpods') || lower.includes('beats') || lower.includes('homepod')) return 'Audio';
+  if (lower.includes('magsafe') || lower.includes('cable') || lower.includes('cubo') || lower.includes('carga')) return 'Energía y Carga';
+  if (lower.includes('hub') || lower.includes('adaptador') || lower.includes('conectividad')) return 'Conectividad';
+  return 'Complementos';
+};
+
+// Agrupar productos por categoría
+const groupedProducts: { [key: string]: Product[] } = {
+  'iPhone': [],
+  'MacBook': [],
+  'iPad': [],
+  'Apple Watch': [],
+  'Audio': [],
+  'Energía y Carga': [],
+  'Conectividad': [],
+  'Complementos': []
+};
+
+productos.forEach(product => {
+  const category = categorizeProduct(product.title);
+  if (groupedProducts[category]) {
+    groupedProducts[category].push(product);
+  }
+});
+
+const categoryDescriptions: { [key: string]: string } = {
+  'iPhone': 'Últimos modelos con garantía técnica y diagnóstico gratis',
+  'MacBook': 'Computadoras portátiles y de escritorio con rendimiento certificado',
+  'iPad': 'Tablets Apple con pantalla retina y batería verificada',
+  'Apple Watch': 'Smartwatches Apple con funciones completas',
+  'Audio': 'AirPods, Beats, HomePod y más',
+  'Energía y Carga': 'MagSafe, Cables, Cubos de carga',
+  'Conectividad': 'Hubs, Adaptadores y accesorios de conectividad',
+  'Complementos': 'Pulseras, Stands, Lentes y más'
+};
+---
+
+<div class="store-with-filters">
+  <div class="store-layout">
+    {/* FILTROS SIDEBAR */}
+    <aside class="filters-sidebar">
+      <div class="filters-wrapper">
+        <div class="filters-header">
+          <h2 class="filters-title">Filtrar Selección</h2>
+          <button class="reset-filters" id="resetFiltersBtn">
+            Limpiar Todo
+          </button>
+        </div>
+
+        {/* CONDICIÓN */}
+        <div class="filter-section">
+          <h3 class="filter-section-title">Condición</h3>
+          <div class="filter-options">
+            {['Nuevo', 'Seminuevo', 'Repotenciado'].map(condition => (
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  class="condition-filter"
+                  value={condition}
+                />
+                <div class="checkbox-content">
+                  <span class="checkbox-label">{condition}</span>
+                  <span class="checkbox-desc">
+                    {condition === 'Nuevo' && 'Sellado, garantía Apple'}
+                    {condition === 'Seminuevo' && 'Como nuevo, inspección 360°'}
+                    {condition === 'Repotenciado' && 'Certificado Pipod, máximo rendimiento'}
+                  </span>
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* DISPOSITIVO */}
+        <div class="filter-section">
+          <h3 class="filter-section-title">Dispositivo</h3>
+          <div class="filter-options">
+            {['iPhone', 'MacBook', 'iPad', 'Apple Watch', 'Audio', 'Energía y Carga', 'Conectividad', 'Complementos'].map(device => (
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  class="device-filter"
+                  value={device}
+                />
+                <span>{device}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* RANGO DE PRESUPUESTO */}
+        <div class="filter-section">
+          <h3 class="filter-section-title">Rango de Presupuesto</h3>
+          <div class="price-slider-container">
+            <input
+              type="range"
+              id="priceSlider"
+              min="0"
+              max="10000000"
+              value="10000000"
+              class="price-slider"
+            />
+            <div class="price-display">
+              <span id="priceMin">$0</span>
+              <span>-</span>
+              <span id="priceMax">$10.000.000</span>
+            </div>
+            <p class="price-microcopy">Desliza para ajustar tu inversión</p>
+          </div>
+        </div>
+
+        {/* ÚSALO PARA */}
+        <div class="filter-section">
+          <h3 class="filter-section-title">Úsalo Para</h3>
+          <div class="filter-options">
+            {['Diseñadores', 'Profesionales', 'Estudiantes', 'Viajeros', 'Deportistas'].map(useCase => (
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  class="usecase-filter"
+                  value={useCase}
+                />
+                <div class="checkbox-content">
+                  <span class="checkbox-label">{useCase}</span>
+                  <span class="checkbox-desc">
+                    {useCase === 'Diseñadores' && 'Creativos, editores de video, fotógrafos'}
+                    {useCase === 'Profesionales' && 'Oficina, ejecutivos, negocios'}
+                    {useCase === 'Estudiantes' && 'Colegio hasta postgrado'}
+                    {useCase === 'Viajeros' && 'Nómadas digitales, constante movimiento'}
+                    {useCase === 'Deportistas' && 'Seguimiento de rendimiento, fitness'}
+                  </span>
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* NOTA ESPECIAL */}
+        <div class="filter-note">
+          <span class="note-icon">🛡️</span>
+          <div class="note-content">
+            <strong>Blindaje Pipod</strong>
+            <p>Para garantizar una aplicación perfecta y sin burbujas, nuestros protectores de pantalla se instalan exclusivamente en tienda física por nuestros expertos.</p>
+          </div>
+        </div>
+
+        {/* BOTONES DE ACCIÓN */}
+        <div class="filter-actions">
+          <button class="btn-apply" id="applyFiltersBtn">Aplicar Filtros</button>
+          <button class="btn-clear" id="clearFiltersBtn">Limpiar Todo</button>
+        </div>
+      </div>
+    </aside>
+
+    {/* PRODUCTOS */}
+    <section class="products-section">
+      <div id="productsContainer" class="categories-container">
+        {Object.entries(groupedProducts).map(([category, products]) => (
+          products.length > 0 && (
+            <div class="category-block" data-category={category}>
+              <div class="category-header">
+                <div class="icon-container">
+                  <CategoryIcon category={category} size={32} />
+                </div>
+                <div class="header-content">
+                  <div class="header-text">
+                    <h2 class="category-title">{category}</h2>
+                  </div>
+                </div>
+                <div class="header-divider"></div>
+              </div>
+
+              <div class="products-grid">
+                {products.map(producto => (
+                  <div class="product-wrapper" data-condition={producto.condition || 'Nuevo'} data-device={category} data-usecase={producto.useCase || ''} data-price={producto.price}>
+                    <CardProduct 
+                      thumb_src={producto.thumb_src}
+                      thumb_alt={producto.thumb_alt}
+                      color={producto.color || 'blue'}
+                      colors={producto.colors || ['blue', 'gray', 'black']}
+                      title={producto.title}
+                      description={producto.description}
+                      price={producto.price}
+                      oldPrice={producto.oldPrice}
+                      condition={producto.condition || 'Nuevo'}
+                      rating={producto.rating || 4}
+                      batteryHealth={producto.batteryHealth || ''}
+                      slug={producto.slug}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+      <div id="noResults" style="display: none;">
+        <NoResults 
+          title="No encontramos productos"
+          message="Intenta ajustando los filtros o el rango de precio para encontrar el equipo ideal."
+          buttonText="Limpiar filtros"
+        />
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  // Esperar a que el DOM esté listo
+  function initFilters() {
+    // Filtrado de productos
+    const conditionFilters = document.querySelectorAll('.condition-filter');
+    const deviceFilters = document.querySelectorAll('.device-filter');
+    const usecaseFilters = document.querySelectorAll('.usecase-filter');
+    const priceSlider = document.getElementById('priceSlider');
+    const priceMin = document.getElementById('priceMin');
+    const priceMax = document.getElementById('priceMax');
+    const resetBtn = document.getElementById('resetFiltersBtn');
+    const productsContainer = document.getElementById('productsContainer');
+    const noResults = document.getElementById('noResults');
+    const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+
+    console.log('Filtros inicializados:', {
+      conditionFilters: conditionFilters.length,
+      deviceFilters: deviceFilters.length,
+      products: document.querySelectorAll('.product-wrapper').length
+    });
+
+    // Leer parámetros de URL
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('filter') === 'accesorios') {
+      const accesoriosDevices = ['Audio', 'Energía y Carga', 'Conectividad', 'Complementos'];
+      deviceFilters.forEach(filter => {
+        if (accesoriosDevices.includes(filter.value)) {
+          filter.checked = true;
+        }
+      });
+    }
+
+    function formatPrice(price) {
+      return new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(price);
+    }
+
+    function applyFilters() {
+      const selectedConditions = Array.from(conditionFilters)
+        .filter(f => f.checked)
+        .map(f => f.value);
+      
+      const selectedDevices = Array.from(deviceFilters)
+        .filter(f => f.checked)
+        .map(f => f.value);
+      
+      const selectedUsecases = Array.from(usecaseFilters)
+        .filter(f => f.checked)
+        .map(f => f.value);
+      
+      const maxPrice = parseInt(priceSlider.value);
+
+      const products = document.querySelectorAll('.product-wrapper');
+      let visibleCount = 0;
+
+      products.forEach(product => {
+        const condition = product.dataset.condition;
+        const device = product.dataset.device;
+        const usecase = product.dataset.usecase;
+        const price = parseInt(product.dataset.price);
+
+        let show = true;
+
+        if (selectedConditions.length > 0 && !selectedConditions.includes(condition)) {
+          show = false;
+        }
+
+        if (selectedDevices.length > 0 && !selectedDevices.includes(device)) {
+          show = false;
+        }
+
+        if (selectedUsecases.length > 0 && usecase && !selectedUsecases.includes(usecase)) {
+          show = false;
+        }
+
+        if (price > maxPrice) {
+          show = false;
+        }
+
+        product.style.display = show ? 'block' : 'none';
+        if (show) visibleCount++;
+      });
+
+      // Mostrar/ocultar categorías vacías
+      document.querySelectorAll('.category-block').forEach(block => {
+        const visibleProducts = block.querySelectorAll('.product-wrapper:not([style*="display: none"])').length;
+        block.style.display = visibleProducts > 0 ? 'block' : 'none';
+      });
+
+      // Mostrar/ocultar mensaje de no resultados
+      if (visibleCount === 0) {
+        productsContainer.style.display = 'none';
+        noResults.style.display = 'block';
+      } else {
+        productsContainer.style.display = 'block';
+        noResults.style.display = 'none';
+      }
+    }
+
+    function updatePriceDisplay() {
+      priceMax.textContent = formatPrice(parseInt(priceSlider.value));
+    }
+
+    // Event listeners
+    conditionFilters.forEach(filter => filter.addEventListener('change', applyFilters));
+    deviceFilters.forEach(filter => filter.addEventListener('change', applyFilters));
+    usecaseFilters.forEach(filter => filter.addEventListener('change', applyFilters));
+    priceSlider.addEventListener('input', () => {
+      updatePriceDisplay();
+      applyFilters();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      conditionFilters.forEach(f => f.checked = false);
+      deviceFilters.forEach(f => f.checked = false);
+      usecaseFilters.forEach(f => f.checked = false);
+      priceSlider.value = 10000000;
+      updatePriceDisplay();
+      applyFilters();
+    });
+
+    clearFiltersBtn.addEventListener('click', () => {
+      conditionFilters.forEach(f => f.checked = false);
+      deviceFilters.forEach(f => f.checked = false);
+      usecaseFilters.forEach(f => f.checked = false);
+      priceSlider.value = 10000000;
+      updatePriceDisplay();
+      applyFilters();
+    });
+
+    // Aplicar filtros iniciales
+    applyFilters();
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFilters);
+  } else {
+    initFilters();
+  }
+</script>
+
+<style>
+  .store-with-filters {
+    width: 100%;
+  }
+
+  .store-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+  }
+
+  .filters-sidebar {
+    position: sticky;
+    top: 160px;
+    height: fit-content;
+  }
+
+  .filters-wrapper {
+    background: #FFFFFF;
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid #D5D5D7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .filters-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin: 0;
+    color: #86868B;
+  }
+
+  .reset-filters {
+    background: none;
+    border: none;
+    color: #3A506B;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+  }
+
+  .reset-filters:hover {
+    color: #4A90E2;
+  }
+
+  .filter-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E5E5E7;
+  }
+
+  .filter-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .filter-section-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1D1D1F;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-checkbox {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    transition: all 0.2s;
+    gap: 8px;
+  }
+
+  .filter-checkbox:hover {
+    color: #1D1D1F;
+  }
+
+  .filter-checkbox input {
+    margin-top: 2px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    accent-color: #3A506B;
+  }
+
+  .checkbox-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .checkbox-label {
+    font-weight: 500;
+    color: #1D1D1F;
+  }
+
+  .checkbox-desc {
+    font-size: 0.8rem;
+    color: #86868B;
+    line-height: 1.3;
+  }
+
+  .price-slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #E5E5E7;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3A506B;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .price-slider::-webkit-slider-thumb:hover {
+    background: #4A90E2;
+    transform: scale(1.1);
+  }
+
+  .price-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3A506B;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .price-slider::-moz-range-thumb:hover {
+    background: #4A90E2;
+    transform: scale(1.1);
+  }
+
+  .price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1D1D1F;
+  }
+
+  .price-microcopy {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.75rem;
+    color: #86868B;
+    margin: 0;
+    text-align: center;
+  }
+
+  .filter-note {
+    background: #F5F5F7;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .note-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .note-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .note-content strong {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.85rem;
+    color: #1D1D1F;
+  }
+
+  .note-content p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.75rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .filter-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .btn-apply,
+  .btn-clear {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+
+  .btn-apply {
+    background: #4A90E2;
+    color: #FFFFFF;
+  }
+
+  .btn-apply:hover {
+    background: #3A506B;
+  }
+
+  .btn-clear {
+    background: #F5F5F7;
+    color: #1D1D1F;
+  }
+
+  .btn-clear:hover {
+    background: #E5E5E7;
+  }
+
+  .products-section {
+    width: 100%;
+  }
+
+  .categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .category-block {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .category-header {
+    margin-bottom: 24px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: auto;
+    padding-bottom: 12px;
+  }
+
+  .header-content {
+    display: contents;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E7;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    color: #1D1D1F;
+  }
+
+  .header-text {
+    display: contents;
+  }
+
+  .category-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1D1D1F;
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .header-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, #E5E5E7 0%, #E5E5E7 60%, transparent 100%);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    margin-left: 0;
+  }
+
+  .product-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .store-layout {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .filters-sidebar {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .filters-wrapper {
+      padding: 16px;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+    }
+
+    .categories-container {
+      gap: 60px;
+    }
+
+    .icon-container {
+      width: 48px;
+      height: 48px;
+    }
+  }
+</style>

@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import CardProduct from '../products/cardProduct';
 import { CategoryIcon } from './CategoryIcon';
+import NoResults from './NoResults.astro';
 
 interface Product {
   thumb_src: string;
@@ -29,6 +30,21 @@ export default function StoreWithFilters({ productos }: Props) {
     priceRange: [0, 10000000] as [number, number],
     useCases: [] as string[]
   });
+
+  // Leer parámetros de URL al montar
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const filterParam = params.get('filter');
+      
+      if (filterParam === 'accesorios') {
+        setFilters(prev => ({
+          ...prev,
+          devices: ['Audio', 'Energía y Carga', 'Conectividad', 'Complementos']
+        }));
+      }
+    }
+  }, []);
 
   // Categorizar productos
   const categorizeProduct = (title: string) => {
@@ -326,14 +342,11 @@ export default function StoreWithFilters({ productos }: Props) {
               ))}
             </div>
           ) : (
-            <div className="no-results">
-              <div className="no-results-icon">🔍</div>
-              <h3>No encontramos productos</h3>
-              <p>Intenta ajustar los filtros para ver más opciones</p>
-              <button className="reset-btn" onClick={resetFilters}>
-                Limpiar filtros
-              </button>
-            </div>
+            <NoResults 
+              title="No encontramos productos"
+              message="Intenta ajustando los filtros o el rango de precio para encontrar el equipo ideal."
+              buttonText="Limpiar filtros"
+            />
           )}
         </section>
       </div>
@@ -681,49 +694,7 @@ export default function StoreWithFilters({ productos }: Props) {
           animation: fadeInUp 0.6s ease-out;
         }
 
-        .no-results {
-          text-align: center;
-          padding: 80px 40px;
-          background: #F5F5F7;
-          border-radius: 24px;
-        }
 
-        .no-results-icon {
-          font-size: 3rem;
-          margin-bottom: 16px;
-        }
-
-        .no-results h3 {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: #1D1D1F;
-          margin: 0 0 8px 0;
-        }
-
-        .no-results p {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-          font-size: 0.95rem;
-          color: #86868B;
-          margin: 0 0 24px 0;
-        }
-
-        .reset-btn {
-          background: #000;
-          color: #fff;
-          border: none;
-          padding: 12px 32px;
-          border-radius: 100px;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s;
-        }
-
-        .reset-btn:hover {
-          background: #0066cc;
-          transform: translateY(-2px);
-        }
 
         @keyframes fadeInUp {
           from {
@@ -770,6 +741,8 @@ export default function StoreWithFilters({ productos }: Props) {
             width: 48px;
             height: 48px;
           }
+
+
         }
       `}</style>
     </div>

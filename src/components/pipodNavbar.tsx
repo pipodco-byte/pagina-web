@@ -38,7 +38,7 @@ const PipodNavbar = () => {
           <li><a href="/servicio-tecnico-apple" className="nav-item">Servicio Técnico</a></li>
           <li><a href="/plan-retoma-apple" className="nav-item">Plan Retoma</a></li>
           <li><a href="/tienda-pipod" className="nav-item">Tienda</a></li>
-          <li><a href="/accesorios" className="nav-item">Accesorios</a></li>
+          <li><a href="/tienda-pipod?filter=accesorios" className="nav-item">Accesorios</a></li>
           <li><a href="/contacto-pipod" className="nav-item">Contacto</a></li>
           <li><a href="/pipod-blog" className="nav-item">Blog</a></li>
         </ul>
@@ -66,7 +66,7 @@ const PipodNavbar = () => {
               <li><a href="/servicio-tecnico-apple" className="mobile-nav-item" onClick={closeMobileMenu}>Servicio Técnico</a></li>
               <li><a href="/plan-retoma-apple" className="mobile-nav-item" onClick={closeMobileMenu}>Plan Retoma</a></li>
               <li><a href="/tienda-pipod" className="mobile-nav-item" onClick={closeMobileMenu}>Tienda</a></li>
-              <li><a href="/accesorios" className="mobile-nav-item" onClick={closeMobileMenu}>Accesorios</a></li>
+              <li><a href="/tienda-pipod?filter=accesorios" className="mobile-nav-item" onClick={closeMobileMenu}>Accesorios</a></li>
               <li><a href="/contacto-pipod" className="mobile-nav-item" onClick={closeMobileMenu}>Contacto</a></li>
               <li><a href="/pipod-blog" className="mobile-nav-item" onClick={closeMobileMenu}>Blog</a></li>
             </ul>

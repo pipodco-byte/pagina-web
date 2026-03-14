@@ -44,22 +44,24 @@
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 40px; 
+  gap: 32px; 
   margin: 0;
   padding: 0;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .nav-item {
   text-decoration: none;
   color: #444;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   position: relative;
   padding: 8px 0;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 /* Animación de línea al pasar el mouse */

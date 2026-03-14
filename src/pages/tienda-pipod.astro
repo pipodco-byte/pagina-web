@@ -4,7 +4,7 @@ import '../../assets/scss/astro-ecommerce.scss';
 import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import StoreHero from '../components/store/StoreHero.astro';
-import StoreWithFilters from '../components/store/StoreWithFilters';
+import StoreWithFilters from '../components/store/StoreWithFilters.astro';
 import StoreEmptyState from '../components/store/StoreEmptyState.astro';
 import { getProductos } from '../lib/contentful';
 
@@ -29,7 +29,7 @@ const description = "Descubre nuestra selección de productos Apple nuevos, semi
     <div class="container" id="productos">
       {/* PRODUCTOS CON FILTROS */}
       {productos.length > 0 ? (
-        <StoreWithFilters client:load productos={productos} />
+        <StoreWithFilters productos={productos} />
       ) : (
         <StoreEmptyState 
           title="Estamos preparando nuevos equipos"
