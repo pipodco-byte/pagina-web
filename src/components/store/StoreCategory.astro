@@ -1,0 +1,121 @@
+---
+interface Props {
+  title: string;
+  icon: string;
+  description: string;
+  products: any[];
+}
+
+import CardProduct from '../products/cardProduct';
+
+const { title, icon, description, products } = Astro.props;
+---
+
+<section class="store-category">
+  <div class="category-header">
+    <div class="header-content">
+      <span class="category-icon">{icon}</span>
+      <div>
+        <h2 class="category-title">{title}</h2>
+        <p class="category-description">{description}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="products-grid">
+    {products.map(producto => (
+      <div class="product-wrapper">
+        <CardProduct 
+          thumb_src={producto.thumb_src}
+          thumb_alt={producto.thumb_alt}
+          color={producto.color}
+          colors={producto.colors}
+          title={producto.title}
+          description={producto.description}
+          price={producto.price}
+          oldPrice={producto.oldPrice}
+          condition={producto.condition}
+          rating={producto.rating}
+          batteryHealth={producto.batteryHealth}
+          slug={producto.slug}
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .store-category {
+    margin-bottom: 80px;
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .category-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E5E5E7;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .category-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .category-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1D1D1F;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .category-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #86868B;
+    margin: 0;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .product-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .store-category {
+      margin-bottom: 60px;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+  }
+</style>

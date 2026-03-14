@@ -1,0 +1,274 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  backgroundImage?: string;
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+const {
+  title = "Tienda Pipod",
+  subtitle = "Especialistas en ecosistema Apple",
+  description = "Descubre nuestra selección de productos nuevos, seminuevos y repotenciados certificados por Pipod.",
+  backgroundImage = "/images/iphone-17-pro.webp",
+  ctaText = "Catálogo",
+  ctaLink = "#productos"
+} = Astro.props;
+---
+
+<section class="store-hero">
+  <div class="hero-background" style={`background-image: url('${backgroundImage}')`}></div>
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content">
+    <div class="content-left">
+      <div class="glass-tag">
+        TIENDA PIPOD
+      </div>
+      <div class="content-wrapper">
+        <h1 class="hero-title">{title}</h1>
+        <p class="hero-subtitle">{subtitle}</p>
+        <p class="hero-description">{description}</p>
+      </div>
+    </div>
+
+    <a href={ctaLink} class="hero-cta">
+      {ctaText}
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  .store-hero {
+    position: relative;
+    width: 100vw;
+    height: 361px;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
+
+  .store-hero:hover .hero-background {
+    transform: scale(1.03);
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 550px;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .glass-tag {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  .content-wrapper {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subtitle {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #E8E8ED;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-description {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #D2D2D7;
+    margin: 0 0 32px 0;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .hero-cta {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    color: #000;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: none;
+    z-index: 10;
+  }
+
+  .hero-cta:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    background: #f8f9fa;
+  }
+
+  .hero-cta svg {
+    transition: transform 0.3s ease;
+  }
+
+  .hero-cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .store-hero {
+      height: 280px;
+      margin-bottom: 60px;
+    }
+
+    .hero-content {
+      padding: 0 24px;
+    }
+
+    .content-left {
+      max-width: 100%;
+    }
+
+    .glass-tag {
+      padding: 6px 16px;
+      font-size: 0.65rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      padding: 12px 28px;
+      font-size: 0.9rem;
+      bottom: 30px;
+      right: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .store-hero {
+      height: 240px;
+      margin-bottom: 40px;
+    }
+
+    .hero-content {
+      padding: 0 16px;
+    }
+
+    .glass-tag {
+      padding: 6px 14px;
+      font-size: 0.6rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-description {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-cta {
+      padding: 10px 24px;
+      font-size: 0.85rem;
+      bottom: 20px;
+      right: 16px;
+    }
+  }
+</style>
