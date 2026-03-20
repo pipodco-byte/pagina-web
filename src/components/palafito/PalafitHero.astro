@@ -4,24 +4,16 @@
 
 <section class="pipod-hero-immersive">
   <div class="hero-video-bg">
-    <iframe 
-      id="hero-video-iframe"
-      src="https://www.youtube.com/embed/OVfZtrxdM-c?autoplay=1&mute=1&controls=0&loop=1&playlist=OVfZtrxdM-c" 
-      title="El Palafito de Don Gu" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen
-      loading="lazy">
-    </iframe>
+    <div id="hero-video-player"></div>
     <div class="video-overlay-pro"></div>
   </div>
 
   <button class="sound-toggle-btn" id="soundToggle" aria-label="Toggle sound">
-    <svg class="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg class="icon-audio-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
       <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-      <path class="sound-wave" d="M15.54 3.54a9 9 0 0 1 0 12.73M18.91 7.09a15 15 0 0 1 0 9.82" stroke-linecap="round"></path>
+      <path d="M15.54 3.54a9 9 0 0 1 0 12.73M18.91 7.09a15 15 0 0 1 0 9.82" stroke-linecap="round"></path>
     </svg>
-    <svg class="mute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+    <svg class="icon-audio-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
       <line x1="23" y1="9" x2="17" y2="15"></line>
       <line x1="17" y1="9" x2="23" y2="15"></line>
@@ -29,9 +21,7 @@
   </button>
 
   <div class="pipod-hud-top">
-    <div class="glass-tag-impact">
-      IMPACTO SOCIAL PIPOD
-    </div>
+    <div class="glass-tag-impact">IMPACTO SOCIAL PIPOD</div>
     <div class="title-glass-area">
       <h1 class="hero-title-impact">
         El Palafito de<br/><span>Don Gu</span>
@@ -41,9 +31,7 @@
 
   <div class="pipod-hud-bottom">
     <div class="hero-actions-grid">
-       <a href="#historia" class="btn-pipod-glass-secondary">
-        Conocer Historia
-      </a>
+       <a href="#historia" class="btn-pipod-glass-secondary">Conocer Historia</a>
       <a href="#donar" class="btn-pipod-glass-primary">
         Hacer Donación
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
@@ -56,57 +44,47 @@
   .pipod-hero-immersive {
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 90vh; /* Puedes usar 100dvh para móviles */
     overflow: hidden;
     background: #000;
   }
 
-  /* --- Video Core --- */
   .hero-video-bg {
     position: absolute;
     inset: 0;
     z-index: 1;
+    pointer-events: none;
   }
 
-  .hero-video-bg iframe {
+  /* Hack para que el iframe actue como background-cover */
+  .hero-video-bg :global(iframe) {
     width: 100vw;
-    height: 56.25vw;
-    min-height: 100vh;
-    min-width: 177.77vh;
+    height: 100vh;
+    min-width: 177.77vh; /* 16:9 ratio */
+    min-height: 56.25vw; /* 16:9 ratio */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    pointer-events: none;
     opacity: 0;
-    animation: fadeInVideo 0.8s ease-in-out 0.5s forwards;
+    transition: opacity 1s ease-in-out;
   }
 
-  @keyframes fadeInVideo {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  /* Clase que añadiremos por JS cuando el video esté listo */
+  .hero-video-bg :global(.video-loaded) {
+    opacity: 1;
   }
 
   .video-overlay-pro {
     position: absolute;
     inset: 0;
-    /* Oscurecemos un poco más la esquina del título para que brille */
-    background: radial-gradient(circle at 20% 30%, rgba(0,0,0,0.4) 0%, transparent 70%);
+    background: radial-gradient(circle at 20% 30%, rgba(0,0,0,0.4) 0%, transparent 70%),
+                linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.6));
     z-index: 2;
   }
 
-  /* --- HUD Top Left --- */
-  .pipod-hud-top {
-    position: absolute;
-    top: 60px;
-    left: 80px;
-    z-index: 10;
-  }
-
+  /* HUD Styles (Mantengo tus estilos base por ser excelentes) */
+  .pipod-hud-top { position: absolute; top: 60px; left: 80px; z-index: 10; }
   .glass-tag-impact {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(14px);
@@ -124,33 +102,18 @@
   }
 
   .hero-title-impact {
-    font-size: 5.5rem; /* Escala Monumental */
+    font-size: clamp(2.5rem, 8vw, 5.5rem); /* Responsive fluido */
     font-weight: 900;
     line-height: 0.9;
-    letter-spacing: -0.05em;
     color: #FFF;
     margin: 0;
     text-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
+  .hero-title-impact span { color: #4A90E2; }
 
-  .hero-title-impact span {
-    color: #4A90E2; /* Azul Pipod Pro */
-  }
+  .pipod-hud-bottom { position: absolute; bottom: 60px; right: 80px; z-index: 10; }
+  .hero-actions-grid { display: flex; gap: 16px; }
 
-  /* --- HUD Bottom Right --- */
-  .pipod-hud-bottom {
-    position: absolute;
-    bottom: 60px;
-    right: 80px;
-    z-index: 10;
-  }
-
-  .hero-actions-grid {
-    display: flex;
-    gap: 16px;
-  }
-
-  /* --- Glass Buttons con Blur 14px --- */
   .btn-pipod-glass-primary, .btn-pipod-glass-secondary {
     padding: 18px 36px;
     border-radius: 50px;
@@ -160,34 +123,19 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    backdrop-filter: blur(14px); /* Intensidad Glass aumentada */
+    backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 0.85px solid rgba(255,255,255,0.25);
-    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Primario: Glass más denso y blanco */
-  .btn-pipod-glass-primary {
-    background: rgba(255, 255, 255, 0.2);
-    color: #FFF;
-  }
-
-  /* Secundario: Glass más etéreo */
-  .btn-pipod-glass-secondary {
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255,255,255,0.9);
-  }
+  .btn-pipod-glass-primary { background: rgba(255, 255, 255, 0.2); color: #FFF; }
+  .btn-pipod-glass-secondary { background: rgba(255, 255, 255, 0.08); color: #FFF; }
 
   .btn-pipod-glass-primary:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  }
-
-  .btn-pipod-glass-secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255,255,255,0.5);
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
   }
 
   .sound-toggle-btn {
@@ -195,74 +143,98 @@
     top: 60px;
     right: 80px;
     z-index: 15;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.15);
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 0.85px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
     color: #FFF;
-    padding: 0;
+    transition: all 0.3s ease;
   }
 
-  .sound-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: scale(1.1);
-  }
-
-  .sound-icon, .mute-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .hero-title-impact { font-size: 4rem; }
-    .pipod-hud-top, .pipod-hud-bottom { left: 40px; right: 40px; }
-  }
+  .sound-toggle-btn:hover { background: rgba(255, 255, 255, 0.2); scale: 1.05; }
 
   @media (max-width: 768px) {
-    .pipod-hero-immersive { height: 75vh; }
-    .hero-title-impact { font-size: 2.8rem; }
     .pipod-hud-top { top: 40px; left: 20px; }
-    .pipod-hud-bottom { bottom: 40px; right: 20px; }
-    .hero-actions-grid { flex-direction: column; width: 100%; }
-    .btn-pipod-glass-primary, .btn-pipod-glass-secondary { justify-content: center; }
-    .sound-toggle-btn {
-      top: 40px;
-      right: 20px;
-      width: 44px;
-      height: 44px;
-    }
+    .pipod-hud-bottom { bottom: 40px; right: 20px; left: 20px; }
+    .hero-actions-grid { flex-direction: column; }
+    .sound-toggle-btn { top: 20px; right: 20px; }
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const soundToggle = document.getElementById('soundToggle');
-    const soundIcon = soundToggle.querySelector('.sound-icon');
-    const muteIcon = soundToggle.querySelector('.mute-icon');
-    const iframe = document.getElementById('hero-video-iframe');
-    let isMuted = true;
+  let player;
+  const videoId = 'OVfZtrxdM-c';
 
-    soundToggle.addEventListener('click', () => {
-      isMuted = !isMuted;
+  function initYouTubeAPI() {
+    // Si la API ya existe, inicializar directamente
+    if (window.YT && window.YT.Player) {
+      createPlayer();
+    } else {
+      // Si no, cargar el script y definir el callback
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       
-      if (isMuted) {
-        soundIcon.style.display = 'block';
-        muteIcon.style.display = 'none';
-        iframe.src = 'https://www.youtube.com/embed/OVfZtrxdM-c?autoplay=1&mute=1&controls=0&loop=1&playlist=OVfZtrxdM-c';
-      } else {
-        soundIcon.style.display = 'none';
-        muteIcon.style.display = 'block';
-        iframe.src = 'https://www.youtube.com/embed/OVfZtrxdM-c?autoplay=1&mute=0&controls=0&loop=1&playlist=OVfZtrxdM-c';
+      window.onYouTubeIframeAPIReady = createPlayer;
+    }
+  }
+
+  function createPlayer() {
+    player = new YT.Player('hero-video-player', {
+      videoId: videoId,
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        loop: 1,
+        playlist: videoId, // Necesario para que el loop funcione en YT
+        showinfo: 0,
+        modestbranding: 1,
+        rel: 0,
+        playsinline: 1
+      },
+      events: {
+        onReady: (event) => {
+          event.target.playVideo();
+          // Añadir clase para el fade-in suave
+          const iframe = document.querySelector('.hero-video-bg iframe');
+          if (iframe) iframe.classList.add('video-loaded');
+          setupSoundToggle();
+        }
       }
     });
-  });
+  }
+
+  function setupSoundToggle() {
+    const btn = document.getElementById('soundToggle');
+    const iconOn = btn.querySelector('.icon-audio-on');
+    const iconMuted = btn.querySelector('.icon-audio-muted');
+
+    btn.addEventListener('click', () => {
+      if (player.isMuted()) {
+        player.unMute();
+        iconOn.style.display = 'block';
+        iconMuted.style.display = 'none';
+      } else {
+        player.mute();
+        iconOn.style.display = 'none';
+        iconMuted.style.display = 'block';
+      }
+    });
+  }
+
+  // Ejecutar al cargar la página (compatible con View Transitions de Astro)
+  document.addEventListener('astro:page-load', initYouTubeAPI);
+  // Fallback para cuando no se usan View Transitions
+  if (!window.astroPageLoadEventAdded) {
+    initYouTubeAPI();
+    window.astroPageLoadEventAdded = true;
+  }
 </script>
