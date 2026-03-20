@@ -7,23 +7,56 @@
     <div style="text-align: left; margin-bottom: 50px;">
       <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 900; letter-spacing: -1px; text-transform: uppercase; margin: 0; color: #000000;">Preguntas Frecuentes</h2>
     </div>
-    <div style="display: grid; gap: 24px;">
-    <div style="background: #fff; padding: 32px; border-radius: 20px; border: 1px solid #E5E5E5; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 10px;">¿Cuánto tiempo tarda una reparación?</h3>
-      <p style="color: #666; line-height: 1.6;">Depende del diagnóstico. Desde 1 hora (cambio de pantalla) hasta 3-5 días (reparaciones complejas). Diagnóstico gratuito en 30 minutos.</p>
-    </div>
-    <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #E5E5E5;">
-      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 10px;">¿Qué pasa si mi equipo tiene iCloud bloqueado?</h3>
-      <p style="color: #666; line-height: 1.6;">Podemos ayudarte con el desbloqueo si eres el propietario. Trae identificación y comprobante de compra.</p>
-    </div>
-    <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #E5E5E5;">
-      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 10px;">¿Ofrecen servicio a domicilio?</h3>
-      <p style="color: #666; line-height: 1.6;">Sí, en Zona Metropolitana. Consulta disponibilidad y costo según tu ubicación.</p>
-    </div>
-    <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #E5E5E5;">
-      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 10px;">¿Qué métodos de pago aceptan?</h3>
-      <p style="color: #666; line-height: 1.6;">Efectivo, transferencia bancaria, tarjeta de crédito/débito y financiación con Crédito Fácil.</p>
-    </div>
+    <div style="display: grid; gap: 16px;">
+      <details style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; transition: all 0.3s ease;" class="faq-item">
+        <summary style="font-size: 1rem; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+          ¿Cuánto tiempo tarda una reparación?
+          <span class="faq-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+        </summary>
+        <p style="color: #666; line-height: 1.7; margin: 16px 0 0 0; padding-top: 16px; border-top: 1px solid #F5F5F7;">Depende del diagnóstico. Desde 1 hora (cambio de pantalla) hasta 3-5 días (reparaciones complejas). Diagnóstico gratuito en 30 minutos.</p>
+      </details>
+
+      <details style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; transition: all 0.3s ease;" class="faq-item">
+        <summary style="font-size: 1rem; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+          ¿Qué pasa si mi equipo tiene iCloud bloqueado?
+          <span class="faq-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+        </summary>
+        <p style="color: #666; line-height: 1.7; margin: 16px 0 0 0; padding-top: 16px; border-top: 1px solid #F5F5F7;">Podemos ayudarte con el desbloqueo si eres el propietario. Trae identificación y comprobante de compra.</p>
+      </details>
+
+      <details style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; transition: all 0.3s ease;" class="faq-item">
+        <summary style="font-size: 1rem; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+          ¿Ofrecen servicio a domicilio?
+          <span class="faq-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+        </summary>
+        <p style="color: #666; line-height: 1.7; margin: 16px 0 0 0; padding-top: 16px; border-top: 1px solid #F5F5F7;">Sí, en Zona Metropolitana. Consulta disponibilidad y costo según tu ubicación.</p>
+      </details>
+
+      <details style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; transition: all 0.3s ease;" class="faq-item">
+        <summary style="font-size: 1rem; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+          ¿Qué métodos de pago aceptan?
+          <span class="faq-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+        </summary>
+        <p style="color: #666; line-height: 1.7; margin: 16px 0 0 0; padding-top: 16px; border-top: 1px solid #F5F5F7;">Efectivo, transferencia bancaria, tarjeta de crédito/débito y financiación con Crédito Fácil.</p>
+      </details>
     </div>
   </div>
 </section>
+
+<style>
+  .faq-item[open] {
+    border-color: #000;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-item:hover {
+    border-color: #999;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
