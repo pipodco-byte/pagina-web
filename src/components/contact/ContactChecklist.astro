@@ -1,33 +1,96 @@
 ---
-// ContactChecklist.astro
 ---
 
-<section style="margin-bottom: 80px;">
-  <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 24px; letter-spacing: -0.02em; text-transform: uppercase;">Antes de Visitarnos: Checklist</h2>
-  <div style="background: #fff; padding: 40px; border-radius: 20px; border: 1px solid #E5E5E5; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-    <p style="color: #444; line-height: 1.8; margin-bottom: 20px;">Prepárate para que tu reparación sea rápida y efectiva.</p>
-    <div style="display: grid; gap: 15px;">
-      <div style="display: flex; align-items: start; gap: 10px;">
-        <span style="color: #25D366; font-size: 1.5rem;">✓</span>
-        <div>
-          <strong>Realiza un backup de tu información</strong>
-          <p style="color: #666; margin: 5px 0 0 0;">Sincroniza con iCloud o Time Machine</p>
+<section style="padding: 80px 0; background: #F5F5F7;">
+  <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
+    <div style="text-align: left; margin-bottom: 50px;">
+      <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 900; letter-spacing: -1px; text-transform: uppercase; margin: 0; color: #000000;">Antes de Visitarnos: Checklist</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;">
+      <div class="checklist-card">
+        <div class="checklist-icon-wrapper">
+          <i class="bi bi-cloud-check checklist-icon"></i>
         </div>
+        <h5 class="checklist-title">Realiza un backup de tu información</h5>
+        <p class="checklist-desc">Sincroniza con iCloud o Time Machine</p>
       </div>
-      <div style="display: flex; align-items: start; gap: 10px;">
-        <span style="color: #25D366; font-size: 1.5rem;">✓</span>
-        <div>
-          <strong>Desactiva "Find My"</strong>
-          <p style="color: #666; margin: 5px 0 0 0;">Buscar mi iPhone/Mac (evita bloqueos)</p>
+
+      <div class="checklist-card">
+        <div class="checklist-icon-wrapper">
+          <i class="bi bi-shield-lock checklist-icon"></i>
         </div>
+        <h5 class="checklist-title">Desactiva "Find My"</h5>
+        <p class="checklist-desc">Buscar mi iPhone/Mac (evita bloqueos)</p>
       </div>
-      <div style="display: flex; align-items: start; gap: 10px;">
-        <span style="color: #25D366; font-size: 1.5rem;">✓</span>
-        <div>
-          <strong>Trae tu cargador</strong>
-          <p style="color: #666; margin: 5px 0 0 0;">Especialmente importante para fallos de encendido en Mac</p>
+
+      <div class="checklist-card">
+        <div class="checklist-icon-wrapper">
+          <i class="bi bi-lightning-charge checklist-icon"></i>
         </div>
+        <h5 class="checklist-title">Trae tu cargador</h5>
+        <p class="checklist-desc">Especialmente importante para fallos de encendido en Mac</p>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .checklist-card {
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 20px;
+  }
+
+  .checklist-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .checklist-icon-wrapper {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .checklist-icon {
+    font-size: 45px;
+    color: #000000;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .checklist-card:hover .checklist-icon {
+    transform: scale(1.1);
+  }
+
+  .checklist-title {
+    font-weight: 800;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: -0.5px;
+    margin: 0 0 12px 0;
+  }
+
+  .checklist-desc {
+    color: #6E6E6E;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 260px;
+    font-weight: 400;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1024px) {
+    div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 30px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 30px !important;
+    }
+  }
+</style>

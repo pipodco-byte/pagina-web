@@ -7,13 +7,13 @@ import ContactPageSchema from '../components/SEO/ContactPageSchema.astro';
 import ContactHero from '../components/contact/ContactHero.astro';
 import ContactHistory from '../components/contact/ContactHistory.astro';
 import ContactPhilosophy from '../components/contact/ContactPhilosophy.astro';
-import ContactValues from '../components/contact/ContactValues.astro';
 import ContactB2B from '../components/contact/ContactB2B.astro';
 import ContactFormSection from '../components/contact/ContactFormSection.astro';
 import ContactLocation from '../components/contact/ContactLocation.astro';
 import ContactChecklist from '../components/contact/ContactChecklist.astro';
 import ContactFAQ from '../components/contact/ContactFAQ.astro';
 import ContactCTA from '../components/contact/ContactCTA.astro';
+import ValoresContact from '../components/contact/ValoresContact';
 import '../../assets/scss/astro-ecommerce.scss';
 
 const title = "Servicio Técnico Apple Chapinero | PIPOD";
@@ -28,7 +28,7 @@ const description = "Reparación MacBook, iPhone, iPad en Bogotá. Microsoldadur
     <ContactHero />
     <ContactHistory />
     <ContactPhilosophy />
-    <ContactValues />
+    <ValoresContact client:load />
     <ContactB2B />
     <ContactFormSection />
 

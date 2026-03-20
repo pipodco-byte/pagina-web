@@ -1,36 +1,107 @@
 ---
 ---
 
-<section style="padding: 100px 0; border-bottom: 0.85px solid #000;">
+<section style="padding: 80px 0;">
   <div style="max-width: 1440px; margin: 0 auto; padding: 0 80px;">
-    <span style="font-family: 'PT Mono', monospace; font-size: 0.7rem; color: #888; letter-spacing: 2px; text-transform: uppercase;">NUESTROS VALORES FUNDAMENTALES</span>
-    <h2 style="font-family: 'Inter', sans-serif; font-size: 3rem; font-weight: 800; color: #000; margin: 20px 0 60px;">Lo que nos define</h2>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
-      {[
-        { emoji: "🔍", label: "Transparencia", d: "Sin sorpresas. Mostramos cada etapa del proceso de reparación." },
-        { emoji: "⚙️", label: "Precisión Técnica", d: "Especialistas en Apple que cuidan cada detalle técnico con estándares premium." },
-        { emoji: "🤝", label: "Cercanía Humana", d: "No tratamos con clientes, sino con personas. Escuchamos y acompañamos con empatía." },
-        { emoji: "⚡", label: "Agilidad y Eficiencia", d: "Optimizamos procesos para respetar tu tiempo sin sacrificar la calidad." }
-      ].map(val => (
-        <div style="border: 0.85px solid #000; border-radius: 24px; padding: 40px; transition: 0.3s;" class="hover-card">
-          <div style="font-size: 2rem; margin-bottom: 15px;">{val.emoji}</div>
-          <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px;">{val.label}</h3>
-          <p style="color: #444; line-height: 1.7;">{val.d}</p>
+    <div style="text-align: left; margin-bottom: 50px;">
+      <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 900; letter-spacing: -1px; text-transform: uppercase; margin: 0; color: #000000;">Nuestros Valores</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px;">
+      <div class="value-card">
+        <div class="value-icon-wrapper">
+          <i class="bi bi-eye value-icon"></i>
         </div>
-      ))}
-      <div style="grid-column: 1 / -1; border: 0.85px solid #000; border-radius: 24px; padding: 40px; background: #F5F5F7;">
-        <div style="font-size: 2rem; margin-bottom: 15px;">🔧</div>
-        <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px;">Solución Real</h3>
-        <p style="color: #444; line-height: 1.7;">Vamos al punto y resolvemos rápido, priorizando la reparación sobre el cambio de piezas.</p>
+        <span style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #000; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; display: block; margin-bottom: 12px;">Transparencia</span>
+        <p style="font-family: 'Inter', sans-serif; font-size: 0.9375rem; color: #6E6E6E; line-height: 1.7; margin: 0;">Sin sorpresas. Mostramos cada etapa del proceso de reparación.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon-wrapper">
+          <i class="bi bi-gear value-icon"></i>
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #000; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; display: block; margin-bottom: 12px;">Precisión Técnica</span>
+        <p style="font-family: 'Inter', sans-serif; font-size: 0.9375rem; color: #6E6E6E; line-height: 1.7; margin: 0;">Especialistas en Apple que cuidan cada detalle técnico con estándares premium.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon-wrapper">
+          <i class="bi bi-hand-thumbs-up value-icon"></i>
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #000; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; display: block; margin-bottom: 12px;">Cercanía Humana</span>
+        <p style="font-family: 'Inter', sans-serif; font-size: 0.9375rem; color: #6E6E6E; line-height: 1.7; margin: 0;">No tratamos con clientes, sino con personas. Escuchamos y acompañamos con empatía.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon-wrapper">
+          <i class="bi bi-lightning-charge value-icon"></i>
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #000; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; display: block; margin-bottom: 12px;">Agilidad y Eficiencia</span>
+        <p style="font-family: 'Inter', sans-serif; font-size: 0.9375rem; color: #6E6E6E; line-height: 1.7; margin: 0;">Optimizamos procesos para respetar tu tiempo sin sacrificar la calidad.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon-wrapper">
+          <i class="bi bi-wrench value-icon"></i>
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #000; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; display: block; margin-bottom: 12px;">Solución Real</span>
+        <p style="font-family: 'Inter', sans-serif; font-size: 0.9375rem; color: #6E6E6E; line-height: 1.7; margin: 0;">Vamos al punto y resolvemos rápido, priorizando la reparación sobre el cambio de piezas.</p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .hover-card:hover {
+  .value-card {
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 20px;
+  }
+
+  .value-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    border-color: #4A90E2 !important;
+  }
+
+  .value-icon-wrapper {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .value-icon {
+    font-size: 45px;
+    color: #000000;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .value-card:hover .value-icon {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 1024px) {
+    div[style*="grid-template-columns: repeat(5, 1fr)"] {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 25px !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    div[style*="grid-template-columns: repeat(5, 1fr)"] {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+
+    h2 {
+      font-size: 1.8rem !important;
+      margin-bottom: 40px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    div[style*="padding: 0 80px"] {
+      padding: 0 20px !important;
+    }
   }
 </style>
