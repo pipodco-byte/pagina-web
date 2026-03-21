@@ -16,20 +16,20 @@
       <div style="margin-top: 40px;"></div>
     </div>
 
-    <form style="display: grid; gap: 0;">
+    <form id="contactForm" style="display: grid; gap: 0;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-          <input type="text" placeholder="NOMBRE" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s;" />
-          <input type="email" placeholder="EMAIL" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s;" />
+          <input type="text" id="nombre" placeholder="NOMBRE" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s;" required />
+          <input type="email" id="email" placeholder="EMAIL" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s;" required />
         </div>
-        <select style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s; margin-top: 16px;">
+        <select id="tipoConsulta" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s; margin-top: 16px;" required>
           <option value="">TIPO DE CONSULTA</option>
           <option value="reparacion">REPARACIÓN</option>
           <option value="retoma">PLAN RETOMA</option>
           <option value="garantia">GARANTÍA</option>
         </select>
-        <textarea placeholder="CUÉNTANOS QUÉ NECESITAS..." rows="3" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s; resize: none; margin-top: 16px;"></textarea>
+        <textarea id="mensaje" placeholder="CUÉNTANOS QUÉ NECESITAS..." rows="3" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px; color: #D0D0D0; font-family: 'PT Mono', monospace; font-size: 0.8rem; transition: all 0.3s; resize: none; margin-top: 16px;" required></textarea>
         <div style="display: flex; justify-content: flex-end; margin-top: 16px;">
-          <button style="background: #FFFFFF; color: #1a1a1a; border: none; padding: 10px 32px; border-radius: 50px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-size: 0.8rem; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.2);" class="btn-enviar">ENVIAR</button>
+          <button type="button" onclick="enviarWhatsApp()" style="background: #FFFFFF; color: #1a1a1a; border: none; padding: 10px 32px; border-radius: 50px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: 1px; font-size: 0.8rem; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.2);" class="btn-enviar">ENVIAR</button>
         </div>
     </form>
   </div>
@@ -61,3 +61,50 @@
     }
   }
 </style>
+
+<script is:inline>
+  function enviarWhatsApp() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const tipoConsulta = document.getElementById('tipoConsulta').value;
+    const mensaje = document.getElementById('mensaje').value.trim();
+
+    if (!nombre || !email || !mensaje) {
+      alert('Por favor, completa todos los campos. \uD83C\uDF4E');
+      return;
+    }
+
+    // Definimos los emojis por su código Unicode para evitar errores de símbolos 
+    const apple = '\uD83C\uDF4E'; // 🍎
+    const user = '\uD83D\uDC64';  // 👤
+    const mail = '\uD83D\uDCE7';  // 📧
+    const tag = '\uD83C\uDFF7';   // 🏷️
+    const chat = '\uD83D\uDCAC';  // 💬
+
+    const tipoEmoji = {
+      'reparacion': '\uD83D\uDD27', // 🔧
+      'retoma': '\uD83D\uDD04',     // 🔄
+      'garantia': '\u2705'          // ✅
+    };
+
+    const emojiDinamico = tipoEmoji[tipoConsulta] || mail;
+    const tipoLabel = tipoConsulta.charAt(0).toUpperCase() + tipoConsulta.slice(1);
+
+    // Construimos el mensaje usando los códigos seguros
+    const mensaje_completo = 
+      `${apple} *NUEVO CONTACTO | Pipod.co*\n` +
+      `----------------------------------\n` +
+      `${user} *Nombre:* ${nombre}\n` +
+      `${mail} *Email:* ${email}\n` +
+      `${tag} *Asunto:* ${tipoLabel} ${emojiDinamico}\n\n` +
+      `${chat} *Consulta:*\n"${mensaje}"\n` +
+      `----------------------------------\n` +
+      `_Enviado desde el formulario web_`;
+
+    const textoWhatsApp = encodeURIComponent(mensaje_completo);
+    const numeroWhatsApp = '573124813094';
+    
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${textoWhatsApp}`, '_blank');
+  }
+</script>
+
