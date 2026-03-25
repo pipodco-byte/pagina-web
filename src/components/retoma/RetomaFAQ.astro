@@ -28,9 +28,7 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
   <div class="container">
     
     <header class="header-center">
-      <span class="eyebrow">DUDAS</span>
-      <h2 class="main-title">Preguntas Frecuentes</h2>
-      <p class="main-description">TODO SOBRE EL PLAN RETOMA</p>
+      <h2 style="font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; margin: 0 0 40px; text-align: left;">PREGUNTAS FRECUENTES</h2>
     </header>
 
     <div class="faq-grid">
@@ -72,6 +70,8 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
 </section>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=PT+Mono:wght@400;700&family=Noto+Sans:wght@400;500;600&display=swap');
+
   /* ESTILOS DE LA SECCIÓN (Minimalismo total) */
   .faq-section {
     background-color: #FFFFFF; /* Blanco Puro */
@@ -102,27 +102,15 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
   }
 
   .eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: #86868b;
-    margin-bottom: 8px;
-    display: block;
+    display: none;
   }
 
   .main-title {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Tamaño Apple Premium */
-    font-weight: 700;
-    color: #1d1d1f;
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
+    display: none;
   }
 
   .main-description {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    color: #86868b;
+    display: none;
   }
 
   /* GRID DE DOS COLUMNAS */
@@ -180,6 +168,7 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
   }
 
   .question-text {
+    font-family: 'Inter', sans-serif;
     font-size: 1.15rem;
     font-weight: 600;
     color: #1d1d1f;
@@ -188,10 +177,15 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
 
   /* RESPUESTA */
   .faq-content {
+    font-family: 'Noto Sans', sans-serif;
     padding: 0 0 24px 36px;
     font-size: 1rem;
     line-height: 1.5;
     color: #434345;
+  }
+
+  .faq-content p {
+    font-family: 'Noto Sans', sans-serif;
   }
 
   /* Animación simple para el despliegue */

@@ -43,9 +43,7 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
   <div class="container">
     
     <header class="header-center">
-      <span class="eyebrow">COMPARACIÓN</span>
-      <h2 class="main-title shimmer-text">¿Por qué elegir Plan Retoma?</h2>
-      <p class="main-description">COMPARA Y DECIDE CON INFORMACIÓN CLARA</p>
+      <h2 style="font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; margin: 0 0 40px; text-align: left;">¿POR QUÉ ELEGIR PLAN RETOMA?</h2>
     </header>
 
     <div class="table-container">
@@ -85,6 +83,8 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
 </section>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=PT+Mono:wght@400;700&family=Noto+Sans:wght@400;500;600&display=swap');
+
   /* CONFIGURACIÓN ESTILO PIPOD (Blanco Perfecto) */
   .comparison-section {
     background-color: #FFFFFF;
@@ -115,46 +115,15 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
   }
 
   .eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: #86868b;
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  /* SHIMMER AZUL SOBRE TÍTULO NEGRO */
-  .shimmer-text {
-    background: linear-gradient(
-      90deg, 
-      #1d1d1f 0%, 
-      #0066CC 50%, 
-      #1d1d1f 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmerEffect 5s linear infinite;
-  }
-
-  @keyframes shimmerEffect {
-    to { background-position: 200% center; }
+    display: none;
   }
 
   .main-title {
-    font-size: clamp(2.5rem, 6vw, 3.8rem);
-    font-weight: 800;
-    color: #1d1d1f;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 16px;
+    display: none;
   }
 
   .main-description {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: #86868b;
+    display: none;
   }
 
   /* TABLA PREMIUM (Sin bordes pesados) */
@@ -169,8 +138,8 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
     text-align: left;
   }
 
-  /* Headers */
   th {
+    font-family: 'Inter', sans-serif;
     padding: 24px 20px;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -179,13 +148,15 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
     border-bottom: 1px solid #f5f5f7;
   }
 
-  .col-pipod {
-    color: #0066CC;
-    font-weight: 800;
+  th.col-pipod {
+    background-color: #F5F5F7;
+    color: #1d1d1f;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.08);
   }
 
   /* Celdas */
   td {
+    font-family: 'Noto Sans', sans-serif;
     padding: 24px 20px;
     font-size: 1rem;
     border-bottom: 1px solid #f5f5f7;
@@ -193,28 +164,24 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
   }
 
   .criteria-cell {
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     color: #1d1d1f;
     width: 25%;
   }
 
-  /* Resaltado de la columna Pipod (Sutil) */
-  .highlight {
-    background-color: rgba(0, 102, 204, 0.03); /* Un toque de azul casi invisible */
+  td.pipod-cell {
+    background-color: #F5F5F7;
+    color: #1d1d1f;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
-  .pipod-cell {
-    color: #0066CC;
-    font-weight: 700;
-  }
-
-  .pipod-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  td.pipod-cell svg {
+    stroke: #000000;
   }
 
   .other-cell {
+    font-family: 'Noto Sans', sans-serif;
     color: #86868b; /* Gris para lo que no es Pipod */
   }
 
@@ -225,6 +192,7 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
   }
 
   .btn-premium {
+    font-family: 'Inter', sans-serif;
     display: inline-block;
     background-color: #0066CC;
     color: #FFFFFF;

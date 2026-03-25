@@ -31,7 +31,7 @@ const services = [
 <section class="pipod-location-unified">
   <div class="container-pipod">
     <div class="header-wrapper">
-      <h2 class="section-heading">Ubicación PIPOD</h2>
+      <h2 style="font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; margin: 0 0 40px; text-align: left;">UBICACIÓN PIPOD</h2>
     </div>
     
     <div class="pipod-grid">
@@ -93,15 +93,25 @@ const services = [
     width: 100%;
     display: flex;
     font-family: 'Inter', sans-serif;
-    border-top: 0.85px solid #000;
-    padding: 80px 0;
+    border: none;
+    padding: 50px 0;
   }
 
   .container-pipod {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 25px;
     width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .pipod-location-unified {
+      padding: 80px 0;
+    }
+
+    .container-pipod {
+      padding: 0 80px;
+    }
   }
 
   .header-wrapper {
@@ -110,13 +120,7 @@ const services = [
   }
 
   .section-heading {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    font-weight: 900;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    margin: 0;
-    color: #000000;
+    display: none;
   }
 
   .pipod-grid {

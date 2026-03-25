@@ -43,11 +43,10 @@ export default function RetomaTrustBadges() {
       <style dangerouslySetInnerHTML={{ __html: `
         .retoma-trust-badges {
           background-color: #FFFFFF !important;
-          height: 119px;
+          padding: 50px 0;
           display: flex;
           align-items: center;
-          border-top: 1px solid rgba(0,0,0,0.06);
-          border-bottom: 1px solid rgba(0,0,0,0.06);
+          border: none;
           font-family: 'Inter', sans-serif;
           overflow: hidden;
         }
@@ -56,10 +55,19 @@ export default function RetomaTrustBadges() {
           width: 100%;
           max-width: 1440px;
           margin: 0 auto;
-          padding: 0 80px;
+          padding: 0 25px;
           display: flex;
           justify-content: space-between;
           align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+          .retoma-trust-badges {
+            padding: 80px 0;
+          }
+          .container-trust {
+            padding: 0 80px;
+          }
         }
 
         .trust-item {
@@ -94,7 +102,7 @@ export default function RetomaTrustBadges() {
 
         .trust-title {
           font-weight: 900;
-          font-size: 14px;
+          font-size: 0.875rem;
           color: #000000 !important;
           text-transform: uppercase;
           letter-spacing: 0.8px;
@@ -103,7 +111,7 @@ export default function RetomaTrustBadges() {
 
         .trust-subtitle {
           font-weight: 500;
-          font-size: 13px;
+          font-size: 0.75rem;
           color: rgba(0, 0, 0, 0.6) !important;
           text-transform: uppercase;
           letter-spacing: 0.5px;
