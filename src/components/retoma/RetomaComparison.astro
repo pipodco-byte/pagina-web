@@ -2,6 +2,8 @@
 /**
  * DATA: Comparativa Plan Retoma
  */
+import FloatingContact from '../../layouts/floatingContact';
+
 const comparisons = [
   {
     criteria: 'Tiempo de venta',
@@ -75,9 +77,7 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
     </div>
 
     <div class="cta-container">
-      <a href="/comenzar" class="btn-premium">
-        Comenzar ahora
-      </a>
+      <FloatingContact client:load />
     </div>
   </div>
 </section>
@@ -189,25 +189,6 @@ const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
   .cta-container {
     text-align: center;
     margin-top: 60px;
-  }
-
-  .btn-premium {
-    font-family: 'Inter', sans-serif;
-    display: inline-block;
-    background-color: #0066CC;
-    color: #FFFFFF;
-    padding: 16px 40px;
-    border-radius: 99px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .btn-premium:hover {
-    background-color: #0077ED;
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 102, 204, 0.15);
   }
 
   @media (max-width: 768px) {

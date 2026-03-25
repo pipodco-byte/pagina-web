@@ -1,7 +1,15 @@
 import React from 'react';
 
-export default function RetomaTrustBadges() {
-  const badges = [
+// Definimos la interfaz para la estructura de cada badge
+interface BadgeItem {
+  icon: string;
+  title: string;
+  subtitle: string;
+}
+
+export default function RetomaTrustBadges(): JSX.Element {
+  // Tipamos el array de objetos usando la interfaz BadgeItem
+  const badges: BadgeItem[] = [
     { 
       icon: "bi-shield-check", 
       title: "Proceso", 
@@ -27,7 +35,7 @@ export default function RetomaTrustBadges() {
   return (
     <section className="retoma-trust-badges">
       <div className="container-trust">
-        {badges.map((item, index) => (
+        {badges.map((item: BadgeItem, index: number) => (
           <div key={index} className="trust-item">
             <div className="trust-icon">
               <i className={`bi ${item.icon}`}></i>
@@ -42,14 +50,13 @@ export default function RetomaTrustBadges() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .retoma-trust-badges {
-          background-color: #FFFFFF !important;
+          background-color: #000000 !important;
           padding: 50px 0;
           display: flex;
           align-items: center;
           border: none;
           font-family: 'Inter', sans-serif;
           overflow: hidden;
-          width: 100%;
         }
 
         .container-trust {
@@ -85,7 +92,7 @@ export default function RetomaTrustBadges() {
 
         .trust-icon i {
           font-size: 32px;
-          color: #3A506B !important;
+          color: #FFFFFF !important;
           display: flex;
           align-items: center;
           transition: transform 0.3s ease;
@@ -104,7 +111,7 @@ export default function RetomaTrustBadges() {
         .trust-title {
           font-weight: 900;
           font-size: 0.875rem;
-          color: #000000 !important;
+          color: #FFFFFF !important;
           text-transform: uppercase;
           letter-spacing: 0.8px;
           -webkit-font-smoothing: antialiased;
@@ -113,7 +120,7 @@ export default function RetomaTrustBadges() {
         .trust-subtitle {
           font-weight: 500;
           font-size: 0.75rem;
-          color: rgba(0, 0, 0, 0.6) !important;
+          color: rgba(255, 255, 255, 0.7) !important;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           margin-top: 3px;

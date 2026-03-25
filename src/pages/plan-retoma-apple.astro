@@ -5,7 +5,7 @@ import Footer from '../components/pipodFooter';
 import PipodNavbar from '../components/pipodNavbar';
 import RetomaStats from '../components/retoma/RetomaStats.astro';
 import GoogleMaps from '../components/maps/pipodGooglemaps.astro';
-import RetomaTrustBadges from '../components/retoma/RetomaTrustBadges';
+import RetomaTrustBadgesBlackAstro from '../components/retoma/RetomaTrustBadgesBlackAstro.astro';
 import RetomaComparison from '../components/retoma/RetomaComparison.astro';
 import RetomaHero from '../components/retoma/RetomaHero.astro';
 import RetomaBenefits from '../components/retoma/RetomaBenefits.astro';
@@ -25,7 +25,7 @@ import NewsletterRetoma from '../components/retoma/NewsletterRetoma.astro';
     <RetomaHero />
     <RetomaProductsWhite />
     <RetomaBenefits />
-    <RetomaTrustBadges client:load />
+    <RetomaTrustBadgesBlackAstro />
     <RetomaSteps />
     <RetomaStats />
     <RetomaComparison />
@@ -73,7 +73,7 @@ import NewsletterRetoma from '../components/retoma/NewsletterRetoma.astro';
 <style is:global>
   body {
     font-family: 'Inter', sans-serif;
-    background-color: #F5F5F7;
+    background-color: #FFFFFF;
     overflow-x: hidden;
   }
 
