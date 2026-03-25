@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTENT } from '../data/ver-data';
+
+const title = "Arquitectura del Sistema - Pipod";
+const description = "Diagrama de arquitectura del sistema Pipod Next.js con Supabase, Brevo y tracking";
+---
+
+<Layout title={title} description={description}>
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <main class="container mx-auto px-4 py-8" style="padding-top: 120px;">
+    <article class="prose prose-lg max-w-none">
+      <Fragment set:html={CONTENT} />
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    max-width: 1200px;
+  }
+  
+  pre:has(.mermaid) {
+    background: transparent;
+    padding: 0;
+  }
+</style>

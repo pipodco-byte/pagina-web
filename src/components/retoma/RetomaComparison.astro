@@ -1,4 +1,7 @@
 ---
+/**
+ * DATA: Comparativa Plan Retoma
+ */
 const comparisons = [
   {
     criteria: 'Tiempo de venta',
@@ -31,204 +34,218 @@ const comparisons = [
     mercadolibre: 'Moderado'
   }
 ];
+
+// Icono Check Blue
+const checkIcon = '<path d="M20 6L9 17l-5-5"></path>';
 ---
 
 <section class="comparison-section">
   <div class="container">
-    <div class="text-center mb-5">
-      <span class="section-label">COMPARACIÓN</span>
-      <h2 class="section-title mt-3">¿Por qué elegir Plan Retoma?</h2>
-      <p class="section-subtitle">Compara y decide con información clara</p>
-    </div>
+    
+    <header class="header-center">
+      <span class="eyebrow">COMPARACIÓN</span>
+      <h2 class="main-title shimmer-text">¿Por qué elegir Plan Retoma?</h2>
+      <p class="main-description">COMPARA Y DECIDE CON INFORMACIÓN CLARA</p>
+    </header>
 
-    <div class="comparison-table-wrapper">
+    <div class="table-container">
       <table class="comparison-table">
         <thead>
           <tr>
-            <th class="criteria-header">Criterio</th>
-            <th class="pipod-header">Plan Retoma Pipod</th>
-            <th>Venta Particular</th>
-            <th>Mercado Libre</th>
+            <th class="col-criteria">Criterio</th>
+            <th class="col-pipod highlight">Plan Retoma Pipod</th>
+            <th class="col-others">Venta Particular</th>
+            <th class="col-others">Mercado Libre</th>
           </tr>
         </thead>
         <tbody>
           {comparisons.map((row) => (
             <tr>
               <td class="criteria-cell">{row.criteria}</td>
-              <td class="pipod-cell">
-                <i class="bi bi-check-circle-fill me-2"></i>
-                {row.pipod}
+              <td class="pipod-cell highlight">
+                <div class="pipod-content">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" set:html={checkIcon} />
+                  <span>{row.pipod}</span>
+                </div>
               </td>
-              <td class="regular-cell">{row.particular}</td>
-              <td class="regular-cell">{row.mercadolibre}</td>
+              <td class="other-cell">{row.particular}</td>
+              <td class="other-cell">{row.mercadolibre}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
 
-    <div class="text-center mt-5">
-      <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold">
+    <div class="cta-container">
+      <a href="/comenzar" class="btn-premium">
         Comenzar ahora
-      </button>
+      </a>
     </div>
   </div>
 </section>
 
-<style lang="scss">
-$primary: #0066CC;
-$accent: #3A506B;
-$dark: #1F1F1F;
-$light: #F5F5F7;
-$white: #FFFFFF;
-$success: #10B981;
-$border: #E0E0E0;
-
-.comparison-section {
-  background: $white;
-  padding: 80px 0;
-  border-top: 1px solid $border;
-
-  .section-label {
-    font-size: 0.625rem;
-    font-weight: 900;
-    letter-spacing: 0.4em;
-    color: $accent;
-    text-transform: uppercase;
+<style>
+  /* CONFIGURACIÓN ESTILO PIPOD (Blanco Perfecto) */
+  .comparison-section {
+    background-color: #FFFFFF;
+    padding: 50px 0;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
-  .section-title {
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 900;
-    color: $dark;
-    letter-spacing: -0.02em;
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 25px;
   }
 
-  .section-subtitle {
-    font-size: 1.125rem;
-    color: $accent;
-    margin-top: 1rem;
+  @media (min-width: 1024px) {
+    .comparison-section {
+      padding: 80px 0;
+    }
+
+    .container {
+      padding: 0 80px;
+    }
   }
 
-  .comparison-table-wrapper {
+  /* HEADER CENTRADO */
+  .header-center {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #86868b;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  /* SHIMMER AZUL SOBRE TÍTULO NEGRO */
+  .shimmer-text {
+    background: linear-gradient(
+      90deg, 
+      #1d1d1f 0%, 
+      #0066CC 50%, 
+      #1d1d1f 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerEffect 5s linear infinite;
+  }
+
+  @keyframes shimmerEffect {
+    to { background-position: 200% center; }
+  }
+
+  .main-title {
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 800;
+    color: #1d1d1f;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .main-description {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #86868b;
+  }
+
+  /* TABLA PREMIUM (Sin bordes pesados) */
+  .table-container {
     overflow-x: auto;
-    margin: 3rem 0;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 40px 0;
   }
 
   .comparison-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: $white;
-    border-radius: 24px;
-    overflow: hidden;
-
-    thead {
-      background: $light;
-
-      th {
-        padding: 1.5rem 2rem;
-        text-align: left;
-        font-weight: 700;
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: $dark;
-        border-bottom: 2px solid $border;
-
-        &.pipod-header {
-          background: linear-gradient(135deg, $primary 0%, #06B6D4 100%);
-          color: $white;
-          position: relative;
-
-          &::after {
-            content: '⭐ RECOMENDADO';
-            position: absolute;
-            top: 0.5rem;
-            right: 1rem;
-            font-size: 0.625rem;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-    }
-
-    tbody {
-      tr {
-        transition: background 0.3s ease;
-
-        &:hover {
-          background: rgba($primary, 0.02);
-        }
-
-        &:not(:last-child) td {
-          border-bottom: 1px solid $border;
-        }
-      }
-
-      td {
-        padding: 1.5rem 2rem;
-        font-size: 1rem;
-        color: $dark;
-
-        &.criteria-cell {
-          font-weight: 600;
-          color: $accent;
-        }
-
-        &.pipod-cell {
-          background: rgba($primary, 0.05);
-          font-weight: 600;
-          color: $primary;
-
-          i {
-            color: $success;
-          }
-        }
-
-        &.regular-cell {
-          color: $accent;
-        }
-      }
-    }
+    border-collapse: collapse;
+    text-align: left;
   }
 
-  .btn-primary {
-    background: $primary;
-    border: none;
-    color: $white;
+  /* Headers */
+  th {
+    padding: 24px 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1d1d1f;
+    border-bottom: 1px solid #f5f5f7;
+  }
+
+  .col-pipod {
+    color: #0066CC;
+    font-weight: 800;
+  }
+
+  /* Celdas */
+  td {
+    padding: 24px 20px;
+    font-size: 1rem;
+    border-bottom: 1px solid #f5f5f7;
+    color: #424245;
+  }
+
+  .criteria-cell {
+    font-weight: 600;
+    color: #1d1d1f;
+    width: 25%;
+  }
+
+  /* Resaltado de la columna Pipod (Sutil) */
+  .highlight {
+    background-color: rgba(0, 102, 204, 0.03); /* Un toque de azul casi invisible */
+  }
+
+  .pipod-cell {
+    color: #0066CC;
+    font-weight: 700;
+  }
+
+  .pipod-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .other-cell {
+    color: #86868b; /* Gris para lo que no es Pipod */
+  }
+
+  /* BOTÓN PREMIUM (Estilo Apple) */
+  .cta-container {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .btn-premium {
+    display: inline-block;
+    background-color: #0066CC;
+    color: #FFFFFF;
+    padding: 16px 40px;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba($primary, 0.3);
-
-    &:hover {
-      background: darken($primary, 10%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba($primary, 0.4);
-    }
   }
-}
 
-@media (max-width: 768px) {
-  .comparison-section {
-    padding: 50px 0;
-
-    .comparison-table {
-      font-size: 0.875rem;
-
-      thead th,
-      tbody td {
-        padding: 1rem;
-      }
-
-      thead th.pipod-header::after {
-        display: none;
-      }
-    }
+  .btn-premium:hover {
+    background-color: #0077ED;
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 102, 204, 0.15);
   }
-}
+
+  @media (max-width: 768px) {
+    .main-title { font-size: 2.2rem; }
+    th, td { padding: 16px 10px; font-size: 0.9rem; }
+    .col-others { display: none; } /* En móvil simplificamos la tabla */
+    .other-cell { display: none; }
+  }
 </style>

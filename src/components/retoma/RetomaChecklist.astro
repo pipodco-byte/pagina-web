@@ -1,63 +1,205 @@
 ---
-// RetomaChecklist.astro
-import { CHECKLIST } from '../../data/constants';
+/**
+ * DATA: Checklist extraído de tus constantes y la imagen
+ */
+const CHECKLIST = [
+  { title: 'Respalda tu información', desc: 'Realizar un respaldo (backup) y, si lo prefieres, restablecerlo de fábrica.', icon: 'hardDrive' },
+  { title: 'Desvincula tu cuenta Apple', desc: 'Desactivar "Buscar mi iPhone" y eliminar tu cuenta de iCloud.', icon: 'lock' },
+  { title: 'Cuida tus accesorios', desc: 'Retirar tarjetas SIM, fundas y accesorios personales.', icon: 'smartphone' },
+  { title: 'Recuerda el cargador', desc: 'Incluir el cargador si hace parte de la oferta puede aumentar el valor final.', icon: 'zap' },
+  { title: 'Documentación', desc: 'Traer factura, documento de propiedad o cajas de producto si lo tienes disponible.', icon: 'fileText' },
+  { title: '¿No sabes cómo hacerlo?', desc: 'Nuestro equipo en tienda puede ayudarte con el respaldo, restablecimiento y desactivación de iCloud.', icon: 'helpCircle' }
+];
 
-const iconMap = {
-  Lightbulb: 'bi-lightbulb',
-  Heart: 'bi-heart',
-  Leaf: 'bi-recycle',
-  Send: 'bi-send',
-  HardDrive: 'bi-hdd',
-  Lock: 'bi-lock',
-  Smartphone: 'bi-phone',
-  Zap: 'bi-lightning-charge',
-  FileText: 'bi-file-text',
-  HelpCircle: 'bi-question-circle'
+// HOJA DE ICONOS (Paths originales rescatados de tu primer código)
+const iconPaths = {
+  hardDrive: '<path d="M22 12H2v10h20V12Z"/><path d="M2 7h20v5H2V7Z"/><path d="M6 16h.01"/><path d="M10 16h.01"/>',
+  lock: '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+  smartphone: '<rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/>',
+  zap: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
+  fileText: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+  helpCircle: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>'
 };
+
+// Dividimos el array para la estructura de dos columnas de la imagen
+const col1 = CHECKLIST.slice(0, 3);
+const col2 = CHECKLIST.slice(3, 6);
 ---
 
 <section id="recomendaciones" class="checklist-section">
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <span class="text-uppercase fw-black tracking-widest text-secondary" style="font-size: 10px;">RECOMENDACIONES</span>
-      <h2 class="display-4 fw-black text-white mt-3">Antes de entregar tu equipo, asegúrate de</h2>
-    </div>
+  <div class="container">
+    
+    <header class="header-content-center">
+      <span class="eyebrow">RECOMENDACIONES</span>
+      <h2 class="main-title text-white">Antes de entregar tu equipo, asegúrate de</h2>
+    </header>
 
-    <div class="row g-4">
-      {CHECKLIST.map((item) => (
-        <div class="col-md-6">
-          <div class="d-flex align-items-start gap-3 p-3 rounded-3 checklist-item">
-            <div class="icon-wrapper text-primary fs-3">
-               <i class={`bi ${iconMap[item.icon.name]}`}></i>
+    <div class="checklist-grid-container">
+      
+      <div class="cards-column">
+        {col1.map((item) => (
+          <article class="check-item group">
+            <div class="icon-box">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="32" height="32" viewBox="0 0 24 24" fill="none" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                class="icon-svg floating-icon"
+                set:html={iconPaths[item.icon]}
+              />
             </div>
-            <div>
-              <h4 class="h5 fw-bold text-white">{item.title}</h4>
-              <p class="text-secondary mb-0 small">{item.desc}</p>
+            <div class="item-text">
+              <h3 class="text-white">{item.title}</h3>
+              <p>{item.desc}</p>
             </div>
-          </div>
-        </div>
-      ))}
+          </article>
+        ))}
+      </div>
+
+      <div class="cards-column">
+        {col2.map((item) => (
+          <article class="check-item group">
+            <div class="icon-box">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="32" height="32" viewBox="0 0 24 24" fill="none" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                class="icon-svg floating-icon"
+                set:html={iconPaths[item.icon]}
+              />
+            </div>
+            <div class="item-text">
+              <h3 class="text-white">{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
     </div>
   </div>
 </section>
 
 <style>
+  /* CONFIGURACIÓN DARK DEL ORIGINAL */
   .checklist-section {
-    background: #000000;
-    color: #FFFFFF;
-    padding: 80px 0;
+    position: relative;
+    background-color: #121212; /* Fondo exacto de tu primer código y la imagen */
+    color: #ffffff;
+    padding: 50px 0;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
-  .checklist-item {
-    transition: transform 0.3s;
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 25px;
   }
 
-  .checklist-item:hover {
-    transform: scale(1.02);
-    background-color: rgba(255, 255, 255, 0.05);
+  @media (min-width: 1024px) {
+    .checklist-section {
+      padding: 80px 0;
+    }
+
+    .container {
+      padding: 0 80px;
+    }
   }
 
-  .tracking-widest {
+  /* CABECERA CENTRADA (Réplica exacta de la imagen) */
+  .header-content-center {
+    text-align: center;
+    margin-bottom: 96px; /* Equivalente a mb-24 */
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+    font-weight: 900;
     letter-spacing: 0.4em;
+    color: #9CA3AF;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .main-title {
+    font-size: clamp(3.2rem, 8vw, 5.8rem); /* text-6xl md:text-7xl */
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0;
+  }
+
+  /* GRID DE ITEMS (Réplica exacta: icono izquierda, texto derecha) */
+  .checklist-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; /* gap-8 md:gap-16 */
+  }
+
+  @media (max-width: 768px) {
+    .checklist-grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 48px; /* Espaciado vertical entre cards */
+  }
+
+  /* ITEM INTEGRADO (Sin cajas delimitadoras) */
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    background: transparent;
+    border: none;
+    padding: 8px; /* p-2 */
+    border-radius: 8px; /* rounded */
+    transition: all 0.4s ease;
+  }
+
+  .check-item:hover {
+    transform: translateX(10px) scale(1.02);
+    background-color: rgba(255, 255, 255, 0.02); /* Efecto de brillo sutil en hover */
+  }
+
+  .icon-box {
+    flex-shrink: 0;
+    margin-top: 4px; /* mt-1 */
+    color: #0066CC; /* Azul exacto de los iconos de tu React */
+  }
+
+  /* Animación de flotado (Rescatada de tu React) */
+  .floating-icon {
+    animation: float 3.5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* TEXTO NEGRO */
+  .item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* space-y-2 */
+  }
+
+  .item-text h3 {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 800;
+    margin: 0;
+    color: #FFFFFF;
+  }
+
+  .item-text p {
+    font-size: 1rem; /* text-base */
+    line-height: 1.6;
+    color: #D1D5DB; /* Gris suave original */
+    margin: 0;
   }
 </style>

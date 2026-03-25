@@ -1,0 +1,330 @@
+<section class="pipod-newsletter-section">
+  <div class="pipod-newsletter-container">
+    <header class="pipod-newsletter-header">
+      <span class="pipod-newsletter-eyebrow">NEWSLETTER</span>
+      <h2 class="pipod-newsletter-title">Mantente Informado</h2>
+      <p class="pipod-newsletter-subtitle">Recibe noticias sobre promos, blog, ofertas y más</p>
+    </header>
+
+    <div class="pipod-newsletter-form-wrapper">
+      <form id="newsletter-form" class="pipod-newsletter-form">
+        <div class="pipod-newsletter-input-container">
+          <input 
+            type="email" 
+            id="email-input"
+            placeholder="Email" 
+            required 
+            class="pipod-newsletter-input"
+          />
+          <span class="pipod-newsletter-validation-icon hidden">✓</span>
+          <button type="submit" id="submit-btn" class="pipod-newsletter-button" aria-label="Suscribirse al newsletter">
+            <span class="pipod-newsletter-btn-text">Unirme</span>
+            <span class="pipod-newsletter-loader hidden"></span>
+          </button>
+        </div>
+        <p id="message" class="pipod-newsletter-message hidden"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletter-form');
+  const btn = document.getElementById('submit-btn');
+  const btnText = btn.querySelector('.pipod-newsletter-btn-text');
+  const loader = btn.querySelector('.pipod-newsletter-loader');
+  const input = document.getElementById('email-input');
+  const validationIcon = document.querySelector('.pipod-newsletter-validation-icon');
+
+  // Validación en tiempo real
+  input.addEventListener('input', (e) => {
+    const isValid = e.target.validity.valid;
+    if (isValid && e.target.value.length > 0) {
+      validationIcon.classList.remove('hidden');
+      input.classList.add('pipod-newsletter-input-valid');
+    } else {
+      validationIcon.classList.add('hidden');
+      input.classList.remove('pipod-newsletter-input-valid');
+    }
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    btn.disabled = true;
+    btnText.classList.add('hidden');
+    loader.classList.remove('hidden');
+
+    setTimeout(() => {
+      form.innerHTML = `
+        <div class="pipod-newsletter-success-state">
+          <span class="pipod-newsletter-success-icon">✓</span>
+          <span>¡Suscrito con éxito!</span>
+        </div>
+      `;
+    }, 1500);
+  });
+  
+  input.addEventListener('invalid', (e) => {
+    e.preventDefault();
+    input.setAttribute('aria-invalid', 'true');
+  });
+</script>
+
+<style>
+  .pipod-newsletter-section {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+    padding: 50px 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pipod-newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(58, 80, 107, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .pipod-newsletter-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 25px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pipod-newsletter-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .pipod-newsletter-eyebrow {
+    display: block;
+    font-family: 'PT Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #6E6E6E;
+    margin-bottom: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .pipod-newsletter-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .pipod-newsletter-subtitle {
+    font-size: 0.875rem;
+    color: #6E6E6E;
+    margin: 12px 0 0 0;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .pipod-newsletter-form-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pipod-newsletter-form {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  /* Estructura Pill (Apple Style) */
+  .pipod-newsletter-input-container {
+    display: flex;
+    align-items: center;
+    background: #1c1c1e;
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(20px);
+  }
+
+  .pipod-newsletter-input-container:focus-within {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06), inset 0 0 20px rgba(58, 80, 107, 0.1);
+    background: #252527;
+  }
+
+  .pipod-newsletter-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0 24px;
+    font-size: 1rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .pipod-newsletter-input::placeholder {
+    color: #6E6E6E;
+  }
+
+  .pipod-newsletter-input-valid {
+    color: #25D366;
+  }
+
+  .pipod-newsletter-validation-icon {
+    color: #25D366;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-right: 8px;
+    animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* El Botón Blanco Sólido */
+  .pipod-newsletter-button {
+    background: #FFFFFF;
+    color: #000000;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-family: 'Inter', system-ui, sans-serif;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+
+  .pipod-newsletter-button:hover {
+    background: #f5f5f7;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .pipod-newsletter-button:active {
+    transform: scale(0.96);
+  }
+
+  .pipod-newsletter-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .pipod-newsletter-loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-top-color: #000000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .pipod-newsletter-message {
+    margin-top: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+  }
+
+  .pipod-newsletter-success-state {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .pipod-newsletter-success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #25D366;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-weight: 700;
+    animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(10px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  .hidden { display: none; }
+
+  @media (min-width: 1024px) {
+    .pipod-newsletter-section {
+      padding: 80px 0;
+    }
+
+    .pipod-newsletter-container {
+      padding: 0 80px;
+    }
+
+    .pipod-newsletter-header {
+      margin-bottom: 56px;
+    }
+
+    .pipod-newsletter-title {
+      font-size: 2.25rem;
+    }
+
+    .pipod-newsletter-subtitle {
+      font-size: 1rem;
+    }
+
+    .pipod-newsletter-button:hover {
+      transform: translateY(-3px);
+    }
+  }
+</style>

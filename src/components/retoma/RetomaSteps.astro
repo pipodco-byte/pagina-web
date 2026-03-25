@@ -1,56 +1,147 @@
 ---
-// RetomaSteps.astro
+/**
+ * DATA: Pasos del Plan Retoma
+ */
 import { STEPS } from '../../data/constants';
 ---
 
 <section id="como-funciona" class="steps-section">
   <div class="container">
-    <div class="mb-4 text-center">
-      <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
-        Tres pasos un nuevo equipo
-      </h2>
-    </div>
     
-    <div class="row g-5 mt-4">
+    <header class="header-center">
+      <span class="eyebrow">PROCESO</span>
+      <h2 class="main-title">Tres pasos por tu nuevo equipo</h2>
+      <p class="main-description">SIMPLE, RÁPIDO Y TRANSPARENTE</p>
+    </header>
+
+    <div class="steps-grid">
       {STEPS.map((step) => (
-        <div class="col-md-4">
-          <div class="step-card text-center">
-            <div class="step-number display-1 fw-black text-gradient mb-3">{step.number}</div>
-            <h3 class="h2 fw-black text-dark mb-3">{step.title}</h3>
-            <p class="text-secondary">{step.desc}</p>
+        <article class="step-item">
+          <div class="step-number-wrapper">
+            <span class="step-number">{step.number}</span>
           </div>
-        </div>
+          <div class="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        </article>
       ))}
     </div>
+
   </div>
 </section>
 
 <style>
+  /* CONFIGURACIÓN BLANCO Y NEGRO PREMIUM */
   .steps-section {
-    background-color: #FFFFFF;
-    border-top: 1px solid #E0E0E0;
-    padding: 80px 0;
+    background-color: #FFFFFF; /* Blanco Perfecto */
+    padding: 50px 0;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
-  .step-card {
-    transition: transform 0.3s ease;
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 25px;
   }
 
-  .step-card .step-number {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  @media (min-width: 1024px) {
+    .steps-section {
+      padding: 80px 0;
+    }
+
+    .container {
+      padding: 0 80px;
+    }
   }
 
-  .step-card:hover {
-    transform: translateY(-15px);
+  /* HEADER CENTRADO */
+  .header-center {
+    text-align: center;
+    margin-bottom: 80px;
   }
 
-  .text-gradient {
-    background: linear-gradient(90deg, #3A506B, #000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #86868b;
+    margin-bottom: 12px;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .main-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: #1D1D1F; /* Negro sólido */
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .main-description {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #86868b;
+    text-transform: uppercase;
+  }
+
+  /* GRID DE PASOS */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+  }
+
+  /* ITEM DE PASO */
+  .step-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.4s ease;
+  }
+
+  .step-item:hover {
+    transform: translateY(-5px);
+  }
+
+  /* NÚMEROS EN NEGRO SÓLIDO */
+  .step-number-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .step-number {
+    font-size: clamp(4rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    color: #000000; /* Negro sólido como pediste */
+    letter-spacing: -0.05em;
+  }
+
+  /* CONTENIDO DE TEXTO */
+  .step-content h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1D1D1F;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #424245; /* Gris oscuro para legibilidad */
+    max-width: 280px;
+    margin: 0 auto;
   }
 </style>

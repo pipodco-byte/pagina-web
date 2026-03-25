@@ -1,19 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RetomaPageSchema from '../components/SEO/RetomaPageSchema.astro';
-import NewsletterForm from '../components/retoma/retoma.jsx';
 import Footer from '../components/pipodFooter';
 import PipodNavbar from '../components/pipodNavbar';
 import RetomaStats from '../components/retoma/RetomaStats.astro';
 import GoogleMaps from '../components/maps/pipodGooglemaps.astro';
 import RetomaTrustBadges from '../components/retoma/RetomaTrustBadges';
-import RetomaProducts from '../components/retoma/RetomaProducts.astro';
 import RetomaComparison from '../components/retoma/RetomaComparison.astro';
 import RetomaHero from '../components/retoma/RetomaHero.astro';
 import RetomaBenefits from '../components/retoma/RetomaBenefits.astro';
 import RetomaSteps from '../components/retoma/RetomaSteps.astro';
 import RetomaChecklist from '../components/retoma/RetomaChecklist.astro';
 import RetomaFAQ from '../components/retoma/RetomaFAQ.astro';
+import RetomaProductsWhite from '../components/retoma/RetomaProductsWhite.astro';
+import NewsletterRetoma from '../components/retoma/NewsletterRetoma.astro';
 ---
 
 <Layout title="Pipod - Plan Retoma de Dispositivos Apple" description="Entrega tu dispositivo Apple usado (iPhone, MacBook, iMac, Apple Watch) y recibe crédito para comprar equipo nuevo o reacondicionado.">
@@ -23,11 +23,11 @@ import RetomaFAQ from '../components/retoma/RetomaFAQ.astro';
 
   <main style="padding-top: 120px;">
     <RetomaHero />
-    <RetomaProducts />
-    <RetomaStats />
-    <RetomaTrustBadges client:load />
+    <RetomaProductsWhite />
     <RetomaBenefits />
+    <RetomaTrustBadges client:load />
     <RetomaSteps />
+    <RetomaStats />
     <RetomaComparison />
     <RetomaChecklist />
     <RetomaFAQ />
@@ -64,19 +64,8 @@ import RetomaFAQ from '../components/retoma/RetomaFAQ.astro';
 
     <GoogleMaps />
 
-    <section class="footer-cta py-5 bg-black text-center">
-      <div class="container py-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h3 class="display-5 fw-bold text-white mb-3">Mantente Informado</h3>
-            <p class="text-secondary mb-4">Recibe ofertas exclusivas del Plan Retoma y novedades sobre dispositivos Apple.<br/><span class="small text-uppercase tracking-wide text-muted">Sin spam, solo valor</span></p>
-            <NewsletterForm client:visible />
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
+    <NewsletterRetoma />
+  
   <Footer client:load />
 
 </Layout>

@@ -5,9 +5,9 @@ import { PRODUCTS } from '../../data/constants';
 <section class="products-section">
   <div class="products-container">
     <div class="products-grid">
-      {PRODUCTS.map((product) => (
-        <div class="product-card">
-          <h3>{product.label}</h3>
+      {PRODUCTS.map((product, i) => (
+        <div class="product-card" style={`--delay: ${i * 0.4}s`}>
+          <h3 class="shimmer-word">{product.label}</h3>
         </div>
       ))}
     </div>
@@ -16,8 +16,8 @@ import { PRODUCTS } from '../../data/constants';
 
 <style>
   .products-section {
-    background-color: #000000;
-    border-top: 1px solid #1A1A1A;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E0E0E0;
     height: 119px;
     display: flex;
     align-items: center;
@@ -40,25 +40,28 @@ import { PRODUCTS } from '../../data/constants';
 
   .product-card:hover {
     transform: translateY(-5px);
-    transition: transform 0.3s ease;
   }
 
   .product-card h3 {
     font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 700;
-    color: #FFFFFF; /* Letras blancas fijas */
+    color: #000000;
     margin: 0;
+  }
+
+  @keyframes shimmerWord {
+    0%, 100% { color: #1D1D1F; }
+    20%, 50% { color: #0066CC; }
+  }
+
+  .shimmer-word {
+    animation: shimmerWord 5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
   }
 
   @media (max-width: 768px) {
     .products-section {
       padding: 50px 0 !important;
-      height: auto;
-    }
-    .products-grid {
-      flex-direction: column;
-      gap: 20px;
-      text-align: center;
     }
   }
 </style>
