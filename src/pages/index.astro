@@ -85,6 +85,30 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
       </section>
     </SectionTracker>
 
+    <style>
+      .service-cards-section {
+        padding: 80px 0;
+      }
+
+      .service-cards-section h2 {
+        font-size: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .service-cards-section {
+          padding: 40px 0 !important;
+        }
+
+        .service-cards-section h2 {
+          font-size: 1.8rem !important;
+        }
+
+        .service-cards-section .container {
+          padding: 0 24px !important;
+        }
+      }
+    </style>
+
     <!-- Why Choose Us (Differentiators) -->
     <IncentiveShortBlackA client:load />
 
@@ -168,10 +192,13 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
       @media (max-width: 768px) {
         .products-section {
-          padding: 50px 0;
+          padding: 40px 0;
         }
         .section-title {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
+        }
+        .container {
+          padding: 0 24px !important;
         }
       }
     </style>
@@ -267,6 +294,15 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
           justify-content: center;
           gap: 30px;
         }
+        .payment-wrapper {
+          padding: 0 24px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .payment-wrapper {
+          padding: 0 24px;
+        }
       }
     </style>
 
@@ -339,6 +375,18 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
 
       @media (max-width: 991px) {
         .macbooks-section { padding: 60px 0; }
+      }
+
+      @media (max-width: 768px) {
+        .macbooks-section {
+          padding: 40px 0;
+        }
+        .macbooks-section .section-title {
+          font-size: 1.8rem;
+        }
+        .macbooks-section .container {
+          padding: 0 24px !important;
+        }
       }
     </style>
 

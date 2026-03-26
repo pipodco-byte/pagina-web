@@ -231,6 +231,90 @@ export default function Footer() {
           .ecosystem-section { margin-top: 40px; padding: 20px 10px; }
           .bottom-credit-bar { padding: 25px 0; }
         }
+
+        @media (max-width: 768px) {
+          .footer-pipod {
+            padding-top: 40px;
+          }
+
+          .footer-brand {
+            font-size: 24px;
+            margin-bottom: 16px;
+          }
+
+          .footer-brand-text {
+            font-size: 13px;
+            max-width: 100%;
+          }
+
+          .social-links-grid {
+            gap: 14px;
+          }
+
+          .social-icon-item {
+            font-size: 20px;
+          }
+
+          .column-title {
+            font-size: 11px;
+            margin-bottom: 16px;
+          }
+
+          .footer-nav-list li {
+            margin-bottom: 10px;
+          }
+
+          .footer-nav-list a {
+            font-size: 13px;
+          }
+
+          .visit-entry {
+            font-size: 13px;
+            gap: 8px;
+          }
+
+          .visit-entry i {
+            font-size: 16px;
+            min-width: 20px;
+          }
+
+          .ecosystem-section {
+            margin-top: 30px;
+            padding: 20px 0;
+          }
+
+          .ecosystem-text {
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .devices {
+            font-size: 12px;
+          }
+
+          .divider {
+            display: none;
+          }
+
+          .skills {
+            font-size: 12px;
+          }
+
+          .bottom-credit-bar {
+            padding: 16px 0;
+          }
+
+          .copyright-mandatory {
+            font-size: 11px;
+          }
+
+          .premium-tag {
+            font-size: 10px;
+            letter-spacing: 3px;
+          }
+        }
       `}} />
     </footer>
   );

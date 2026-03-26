@@ -128,8 +128,24 @@ export default function BlogSection() {
         }
 
         @media (max-width: 768px) {
-          .blog-main-title { font-size: 28px; }
-          .blog-section-white { padding: 60px 0; }
+          .blog-main-title { 
+            font-size: 1.8rem !important;
+          }
+          .blog-section-white { 
+            padding: 40px 0 !important;
+          }
+          .blog-card-white {
+            padding: 24px 20px !important;
+          }
+          .card-t {
+            font-size: 1.1rem !important;
+          }
+          .card-p {
+            font-size: 0.9rem !important;
+          }
+          .card-link-premium {
+            font-size: 0.85rem !important;
+          }
         }
       `}} />
     </section>

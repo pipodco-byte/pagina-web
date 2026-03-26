@@ -46,7 +46,7 @@ const defaultSlides: Slide[] = [
 const { slides = defaultSlides } = Astro.props as Props;
 ---
 
-<section id="bento-hero-section" class="py-4" style="background-color: #FFFFFF;">
+<section id="bento-hero-section" class="py-4" style="background-color: #FFFFFF; padding-top: 140px;">
   <div class="container">
     <div class="row g-3">
       
@@ -199,5 +199,48 @@ const { slides = defaultSlides } = Astro.props as Props;
     .slide-title { font-size: 2.1rem; }
     .cta-anchor { right: 20px; bottom: 80px; }
     .pipod-btn-cta { padding: 10px 24px; font-size: 0.85rem; }
+  }
+
+  @media (max-width: 768px) {
+    #bento-hero-section {
+      padding: 120px 0 20px 0 !important;
+    }
+
+    .bento-card-side {
+      min-height: 180px;
+      padding: 20px !important;
+    }
+
+    .title-side {
+      font-size: 1.3rem;
+    }
+
+    .slide-title {
+      font-size: 1.8rem;
+      margin-top: 8px;
+    }
+
+    .slide-desc {
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    .carousel-item {
+      min-height: 350px !important;
+    }
+
+    .cta-anchor {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .pipod-btn-cta {
+      padding: 10px 20px;
+      font-size: 0.8rem;
+    }
+
+    .indicators-container {
+      bottom: 15px;
+    }
   }
 </style>

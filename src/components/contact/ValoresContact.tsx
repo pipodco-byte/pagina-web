@@ -56,6 +56,12 @@ export default function ValoresContact() {
           font-family: 'Inter', sans-serif;
         }
 
+        .container {
+          max-width: 1440px;
+          margin: 0 auto;
+          padding: 0 80px;
+        }
+
         .values-header {
           text-align: left;
           margin-bottom: 50px;
@@ -123,6 +129,10 @@ export default function ValoresContact() {
 
           .pipod-values-section {
             padding: 40px 0;
+          }
+
+          .container {
+            padding: 0 24px !important;
           }
 
           .values-title {
