@@ -3,19 +3,22 @@ import React from 'react';
 export default function BlogSection() {
   const posts = [
     {
-      title: 'Cómo mantener tu iPhone en perfecto estado',
-      excerpt: 'Guía de mantenimiento preventivo para baterías y cuidado de componentes internos.',
-      category: 'TIPS TÉCNICOS'
+      title: 'Pantalla rota: Diagnóstico y reparación en 24 horas',
+      excerpt: 'Conoce nuestro proceso de reparación con garantía Pipod. Microsoldadura de precisión y componentes originales.',
+      category: 'SERVICIO TÉCNICO APPLE',
+      link: '/blog/servicio-tecnico-apple'
     },
     {
-      title: 'MacBook: Rendimiento y productividad',
-      excerpt: 'Configuraciones de expertos para optimizar tu flujo de trabajo en el ecosistema Apple.',
-      category: 'GUÍA MAC'
+      title: 'iPhone vs MacBook: ¿Cuál es la mejor inversión para ti?',
+      excerpt: 'Guía completa de compra. Comparativas de specs, presupuestos y recomendaciones según tu uso.',
+      category: 'COMPRA INTELIGENTE',
+      link: '/blog/compra-inteligente'
     },
     {
-      title: 'Reparaciones comunes en equipos Apple',
-      excerpt: 'Conoce los procesos de microsoldadura y por qué un diagnóstico a tiempo salva tu equipo.',
-      category: 'SOPORTE'
+      title: 'Por qué confiar en técnicos certificados Apple',
+      excerpt: 'Más de 15 años de experiencia. Certificaciones oficiales, garantía real y diagnóstico gratuito.',
+      category: 'EXPERTOS CERTIFICADOS',
+      link: '/blog/expertos-certificados'
     }
   ];
 
@@ -28,13 +31,13 @@ export default function BlogSection() {
 
         <div className="row">
           {posts.map((post, index) => (
-            <div key={index} className="col-md-4 mb-4">
+            <div key={index} className="col-12 col-md-4 mb-4">
               <div className="blog-card-white">
                 <div className="card-body-white">
                   <span className="card-cat">{post.category}</span>
                   <h4 className="card-t">{post.title}</h4>
                   <p className="card-p">{post.excerpt}</p>
-                  <a href="#" className="card-link-premium">
+                  <a href={post.link} className="card-link-premium">
                     LEER ARTÍCULO <i className="bi bi-arrow-right-short"></i>
                   </a>
                 </div>
@@ -70,6 +73,7 @@ export default function BlogSection() {
         .blog-card-white {
           background-color: #FFFFFF;
           border: 1px solid #E0E0E0; /* Platinum */
+          border-radius: 24px;
           padding: 45px 35px;
           height: 100%;
           transition: all 0.4s ease;

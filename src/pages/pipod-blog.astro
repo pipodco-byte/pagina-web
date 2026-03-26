@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
-import BlogSection from '../components/reviews/blogSection';
+import BlogFilter from '../components/blog/BlogFilter';
 import BlogHeroSection from '../components/blog/BlogHeroSection.astro';
 import BlogCtaSection from '../components/blog/BlogCtaSection.astro';
 import FloatingContact from '../layouts/floatingContact';
@@ -17,7 +17,7 @@ const description = "Artículos, tips y guías sobre reparación, mantenimiento 
   
   <main style="padding-top: 120px;">
     <BlogHeroSection />
-    <BlogSection client:load />
+    <BlogFilter client:load />
     <BlogCtaSection />
   </main>
 

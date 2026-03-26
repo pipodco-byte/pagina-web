@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function PipodGoogleReviews() {
+  const [reviewsData, setReviewsData] = useState({
+    rating: 5.0,
+    totalReviews: 63
+  });
+
+  useEffect(() => {
+    fetch('/data/reviews.json')
+      .then(res => res.json())
+      .then(data => setReviewsData(data))
+      .catch(err => console.error('Error loading reviews:', err));
+  }, []);
+
+  const { rating, totalReviews } = reviewsData;
+
   const reviews = [
     {
       name: "Wilson Vega",
@@ -36,9 +50,9 @@ export default function PipodGoogleReviews() {
       type: "Local Guide",
       date: "3 semanas atrás",
       text: "Excelente servicio, atención impecable y muy buena experiencia. Súper recomendado, sin duda volveré.",
-      image: null, 
+      image: null,
       initial: "N",
-      bg: "#E65100", // Naranja medio oscuro (Burnt Orange)
+      bg: "#E65100",
       color: "#FFFFFF",
       isLocalGuide: true
     },
@@ -55,7 +69,7 @@ export default function PipodGoogleReviews() {
       name: "Mario Bonilla",
       date: "Hace 2 años",
       text: "Atención rápida honesta, y profesional. Realmente saben de dispositivos Apple.",
-      image: "/images/mario.jpg", 
+      image: "/images/mario.jpg",
       initial: "M",
       bg: "#F3E8FD",
       color: "#7E57C2",
@@ -71,14 +85,14 @@ export default function PipodGoogleReviews() {
         {/* HEADER DE GOOGLE */}
         <div className="google-header-bar mb-5 shadow-sm">
           <div className="d-flex align-items-center flex-wrap gap-3">
-            <span className="big-score">4.9</span>
+            <span className="big-score">{rating}</span>
             <div className="stars-group d-flex gap-1">
               {[...Array(5)].map((_, i) => (
                 <i key={i} className="bi bi-star-fill text-warning"></i>
               ))}
             </div>
             <span className="reviews-text">
-              54 reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1"/>
+              {totalReviews} reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1"/>
             </span>
           </div>
           <a href="https://g.page/r/CRgj2kSrZTO4EBM/review" target="_blank" className="btn-google-blue">
@@ -89,7 +103,7 @@ export default function PipodGoogleReviews() {
         {/* GRID DE CARDS */}
         <div className="row g-4">
           {reviews.map((review, index) => (
-            <div key={index} className="col-md-6 col-lg-4 animate-card" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div key={index} className="col-12 col-md-6 col-lg-4 animate-card" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="pipod-card h-100">
                 <div className="d-flex align-items-center gap-3 mb-3">
                   <div className="avatar-container">
@@ -207,7 +221,63 @@ export default function PipodGoogleReviews() {
         }
 
         @media (max-width: 768px) {
-          .google-header-bar { border-radius: 20px; flex-direction: column; text-align: center; gap: 15px; }
+          .review-wall-pipod {
+            padding: 40px 0;
+          }
+
+          .main-title {
+            font-size: 1.8rem;
+            margin-bottom: 24px !important;
+          }
+
+          .google-header-bar {
+            border-radius: 20px;
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+            padding: 16px 20px;
+          }
+
+          .big-score {
+            font-size: 20px;
+          }
+
+          .reviews-text {
+            font-size: 12px;
+          }
+
+          .btn-google-blue {
+            padding: 10px 24px;
+            font-size: 13px;
+            width: 100%;
+          }
+
+          .pipod-card {
+            padding: 16px;
+            border-radius: 16px;
+          }
+
+          .user-name {
+            font-size: 13px;
+          }
+
+          .review-date, .lg-tag {
+            font-size: 10px;
+          }
+
+          .review-comment {
+            font-size: 13px;
+          }
+
+          .avatar-container {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+          }
+
+          .avatar-circle {
+            font-size: 16px;
+          }
         }
       `}} />
     </section>
