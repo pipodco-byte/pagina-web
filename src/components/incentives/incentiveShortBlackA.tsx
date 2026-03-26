@@ -122,7 +122,14 @@ export default function IncentiveGemaCoherent() {
             padding: 0 24px;
             flex-direction: column;
             gap: 32px;
-            align-items: flex-start;
+            align-items: center;
+          }
+          .gema-item-coherent {
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            justify-content: flex-start;
+            margin-left: auto;
           }
           .gema-icon-coherent i { font-size: 28px; }
           .gema-title-coherent { font-size: 13px; }
