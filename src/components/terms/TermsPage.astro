@@ -1,0 +1,449 @@
+---
+import type { termsData } from '../../data/terminos-condiciones';
+
+interface Props {
+  data: typeof termsData;
+}
+
+const { data } = Astro.props;
+---
+
+<div class="terms-container">
+  {/* SIDEBAR IZQUIERDO - ACCORDION */}
+  <aside class="terms-sidebar">
+    <h3 class="sidebar-title">Navegación</h3>
+    <nav class="sidebar-nav">
+      {data.sections.map(section => (
+        <details class="sidebar-details">
+          <summary class="sidebar-summary">
+            {section.title}
+            <span class="sidebar-arrow">▼</span>
+          </summary>
+          <ul class="sidebar-list">
+            {section.subsections.map(sub => (
+              <li class="sidebar-item">
+                <a href={`#${sub.id}`} class="sidebar-link">
+                  {sub.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </nav>
+  </aside>
+
+  {/* CONTENIDO PRINCIPAL */}
+  <article class="terms-content">
+    <div class="terms-header">
+      <p class="terms-breadcrumb">{data.breadcrumb}</p>
+      <h1 class="terms-title">{data.title}</h1>
+    </div>
+
+    {data.sections.map(section => (
+      <section id={section.id} class="terms-section">
+        <h2 class="section-heading">{section.title}</h2>
+        
+        {section.subsections.map(subsection => (
+          <div id={subsection.id} class="subsection">
+            <h3 class="subsection-heading">{subsection.title}</h3>
+            
+            {typeof subsection.content === 'string' ? (
+              <p class="subsection-text">{subsection.content}</p>
+            ) : Array.isArray(subsection.content) ? (
+              subsection.content.map((item, idx) => (
+                typeof item === 'string' ? (
+                  <p key={idx} class="subsection-text">{item}</p>
+                ) : (
+                  <p key={idx} class="subsection-text">
+                    <strong>{item.label}</strong> {item.text}
+                  </p>
+                )
+              ))
+            ) : (
+              <div class="subsection-complex">
+                {subsection.content.intro && (
+                  <p class="subsection-text"><strong>{subsection.content.intro}</strong></p>
+                )}
+                {subsection.content.items && (
+                  <ul class="subsection-list">
+                    {subsection.content.items.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {subsection.content.coverage && (
+                  <p class="subsection-text">{subsection.content.coverage}</p>
+                )}
+                {subsection.content.invalidates && (
+                  <>
+                    <p class="subsection-text"><strong>{subsection.content.invalidates}</strong></p>
+                    <ul class="subsection-list">
+                      {subsection.content.invalidatesList.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </section>
+    ))}
+
+    <div class="terms-footer">
+      <p class="footer-label"><strong>Contacto para Soporte:</strong></p>
+      <p class="footer-text">Email: {data.contact.support} | Garantía: {data.contact.warranty} | Privacidad: {data.contact.privacy}</p>
+      <p class="footer-text">Última actualización: {data.lastUpdate}</p>
+    </div>
+  </article>
+
+  {/* SIDEBAR DERECHO - WIDGETS */}
+  <div class="terms-widgets">
+    {data.widgets.map(widget => (
+      <div class={`widget widget-${widget.type}`}>
+        <span class="widget-label">{widget.type === 'retoma' ? 'Plan Retoma' : widget.type === 'support' ? 'Soporte' : 'Servicio'}</span>
+        <h3 class="widget-title">{widget.title}</h3>
+        {widget.description && <p class="widget-description">{widget.description}</p>}
+        <a href={widget.link} class={`widget-link ${widget.type === 'retoma' ? 'widget-link-primary' : 'widget-link-secondary'}`}>
+          {widget.cta} <i class={`bi ${widget.type === 'retoma' ? 'bi-arrow-right' : widget.type === 'support' ? 'bi-whatsapp' : 'bi-tools'}`}></i>
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .terms-container {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 20px 40px 20px;
+  }
+
+  /* SIDEBAR IZQUIERDO */
+  .terms-sidebar {
+    background: #F5F5F7;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;
+    top: 140px;
+  }
+
+  .sidebar-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-details {
+    margin-bottom: 12px;
+  }
+
+  .sidebar-summary {
+    background: none;
+    border: none;
+    padding: 6px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 500;
+    color: #3A506B;
+    font-size: 0.9rem;
+    list-style: none;
+  }
+
+  .sidebar-arrow {
+    display: inline-block;
+    font-size: 0.65rem;
+    color: #999;
+    opacity: 0.6;
+    transition: transform 0.2s;
+  }
+
+  .sidebar-details[open] > .sidebar-summary .sidebar-arrow {
+    transform: rotate(180deg);
+  }
+
+  .sidebar-list {
+    list-style: none;
+    padding-left: 12px;
+    margin: 6px 0 0 0;
+  }
+
+  .sidebar-item {
+    margin-bottom: 6px;
+  }
+
+  .sidebar-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .sidebar-link:hover {
+    color: #3A506B;
+  }
+
+  /* CONTENIDO PRINCIPAL */
+  .terms-content {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 8px;
+  }
+
+  .terms-header {
+    margin-bottom: 30px;
+  }
+
+  .terms-breadcrumb {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .terms-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+  }
+
+  .terms-section {
+    margin-bottom: 50px;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  .subsection {
+    margin-bottom: 30px;
+  }
+
+  .subsection-heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .subsection-text {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .subsection-list {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    list-style: disc;
+  }
+
+  .subsection-list li {
+    margin-bottom: 8px;
+  }
+
+  .subsection-complex {
+    margin-bottom: 15px;
+  }
+
+  .terms-footer {
+    background: #F5F5F7;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+  }
+
+  .footer-label {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 8px 0;
+  }
+
+  .footer-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 4px 0;
+  }
+
+  /* SIDEBAR DERECHO */
+  .terms-widgets {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    position: sticky;
+    top: 140px;
+    height: fit-content;
+  }
+
+  .widget {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .widget-retoma {
+    background: #F5F5F7;
+  }
+
+  .widget-support,
+  .widget-service {
+    border: 1px solid #E5E5E5;
+  }
+
+  .widget-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #3A506B;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .widget-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+    color: #000;
+  }
+
+  .widget-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+
+  .widget-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .widget-link-primary {
+    background: #000;
+    color: #fff;
+  }
+
+  .widget-link-primary:hover {
+    background: #333;
+  }
+
+  .widget-link-secondary {
+    border: 1px solid #000;
+    color: #000;
+  }
+
+  .widget-link-secondary:hover {
+    background: #f5f5f5;
+  }
+
+  /* MOBILE RESPONSIVENESS */
+  @media (max-width: 1024px) {
+    .terms-container {
+      grid-template-columns: 1fr;
+    }
+
+    .terms-sidebar {
+      display: none;
+    }
+
+    .terms-widgets {
+      position: static;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .terms-container {
+      padding: 120px 16px 24px 16px;
+      gap: 24px;
+    }
+
+    .terms-content {
+      padding: 24px;
+    }
+
+    .terms-title {
+      font-size: 1.8rem;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+    }
+
+    .subsection-heading {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    .subsection-text {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .widget {
+      padding: 16px;
+    }
+
+    .widget-title {
+      font-size: 0.95rem;
+    }
+
+    .widget-link {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .terms-container {
+      padding: 16px 12px;
+    }
+
+    .terms-content {
+      padding: 16px;
+    }
+
+    .terms-title {
+      font-size: 1.5rem;
+    }
+
+    .section-heading {
+      font-size: 1.2rem;
+    }
+
+    .subsection-heading {
+      font-size: 1rem;
+    }
+
+    .subsection-text {
+      font-size: 0.9rem;
+    }
+  }
+</style>

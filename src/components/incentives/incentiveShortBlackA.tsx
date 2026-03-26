@@ -115,6 +115,19 @@ export default function IncentiveGemaCoherent() {
           }
           .gema-subtitle-coherent { white-space: normal; }
         }
+
+        @media (max-width: 768px) {
+          .pipod-gema-coherent { height: auto; padding: 40px 0; }
+          .container-gema-coherent { 
+            padding: 0 24px;
+            flex-direction: column;
+            gap: 32px;
+            align-items: flex-start;
+          }
+          .gema-icon-coherent i { font-size: 28px; }
+          .gema-title-coherent { font-size: 13px; }
+          .gema-subtitle-coherent { font-size: 11px; }
+        }
       `}} />
     </section>
   );
