@@ -66,10 +66,10 @@ import FloatingContact from '../layouts/floatingContact';
     <GoogleMaps />
 
     <NewsletterRetoma />
+  
+    <FloatingContact client:load />
+    <Footer client:load />
   </main>
-
-  <FloatingContact client:load />
-  <Footer client:load />
 
 </Layout>
 
@@ -78,6 +78,11 @@ import FloatingContact from '../layouts/floatingContact';
     font-family: 'Inter', sans-serif;
     background-color: #FFFFFF;
     overflow-x: hidden;
+  }
+
+  main .footer-pipod {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .payment-section {

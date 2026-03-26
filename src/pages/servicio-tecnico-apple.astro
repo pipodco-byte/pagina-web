@@ -48,10 +48,9 @@ const description = "Especialistas en bater√≠as y pantallas Apple. 2,000+ bater√
     <ReviewWall />    
     <PipoData />
     <PipodFAQ />
+    <FloatingContact client:load />
+    <Footer client:load />
   </main>
-
-  <FloatingContact client:load />
-  <Footer client:load />
 </Layout>
 
 <style is:global>
@@ -59,6 +58,11 @@ const description = "Especialistas en bater√≠as y pantallas Apple. 2,000+ bater√
   body { 
     font-family: 'Inter', sans-serif; 
     overflow-x: hidden; 
+  }
+  
+  main .footer-pipod {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   
   .text-gradient { 
