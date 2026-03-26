@@ -71,7 +71,6 @@ const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'))
     padding-bottom: 30px !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background: #ffffff;
     border-radius: 28px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
@@ -98,8 +97,14 @@ const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'))
     .container {
       padding: 0 24px !important;
     }
-    .row {
+    .products-section .row {
       gap: 16px !important;
+    }
+    .card-wrapper > div,
+    .card-wrapper article,
+    .card-wrapper a {
+      padding-top: 1px !important;
+      padding-bottom: 1px !important;
     }
   }
 </style>

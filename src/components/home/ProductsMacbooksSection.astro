@@ -20,7 +20,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
       <div class="row g-4">
         {macbooks.map(producto => (
           <div 
-            class="col-md-6 col-lg-3 d-flex align-items-stretch"
+            class="col-12 col-md-6 col-lg-3 d-flex align-items-stretch"
             data-product-id={producto.id}
             data-product-name={producto.title}
             data-categoria="macbook"
@@ -70,20 +70,21 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     display: flex;
   }
 
-  .macbooks-section .card-wrapper > div, 
-  .macbooks-section .card-wrapper article {
+  .card-wrapper > div, 
+  .card-wrapper article,
+  .card-wrapper a {
     width: 100%;
-    padding: 20px 24px 32px 24px !important; 
+    padding-top: 20px !important;
+    padding-bottom: 30px !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background: #ffffff;
     border-radius: 28px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.02);
     transition: all 0.3s ease;
   }
 
-  .macbooks-section .card-wrapper:hover > div {
+  .card-wrapper:hover > div {
     transform: translateY(-5px);
     box-shadow: 0 12px 35px rgba(0,0,0,0.06);
   }
@@ -108,6 +109,15 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     }
     .macbooks-section .container {
       padding: 0 24px !important;
+    }
+    .macbooks-section .row {
+      gap: 16px !important;
+    }
+    .card-wrapper > div,
+    .card-wrapper article,
+    .card-wrapper a {
+      padding-top: 1px !important;
+      padding-bottom: 1px !important;
     }
   }
 </style>
