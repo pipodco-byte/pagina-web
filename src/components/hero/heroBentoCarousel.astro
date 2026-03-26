@@ -19,7 +19,7 @@ const defaultSlides: Slide[] = [
     title: "SERVICIO TÉCNICO",
     subtitle: "ESPECIALIZADO",
     description: "Diagnóstico preciso y repuestos originales en Bogotá.",
-    buttonText: "Agendar Cita →",
+    buttonText: "AGENDAR →",
     buttonLink: "https://wa.me/573124813094",
     backgroundImage: "/images/appleblack.jpg"
   },
@@ -28,7 +28,7 @@ const defaultSlides: Slide[] = [
     title: "REPARACIÓN",
     subtitle: "EXPRESS",
     description: "Mismo día para pantallas y baterías.",
-    buttonText: "Solicitar →",
+    buttonText: "AGENDAR →",
     buttonLink: "https://wa.me/573124813094",
     backgroundImage: "/images/promo phone.jpg"
   },
@@ -37,7 +37,7 @@ const defaultSlides: Slide[] = [
     title: "OFERTAS",
     subtitle: "EXCLUSIVAS",
     description: "Descubre nuestras mejores promociones.",
-    buttonText: "Ver Más →",
+    buttonText: "VER →",
     buttonLink: "https://wa.me/573124813094",
     backgroundImage: "/images/nueva2.jpg"
   }
@@ -227,6 +227,11 @@ const { slides = defaultSlides } = Astro.props as Props;
 
     .carousel-item {
       min-height: 350px !important;
+    }
+
+    .carousel-item .p-5 {
+      padding: 20px !important;
+      justify-content: space-between !important;
     }
 
     .cta-anchor {
