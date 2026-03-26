@@ -351,30 +351,7 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
     <!-- Blog/News Section -->
     <BlogSection client:load />
 
-    <!-- Sticky CTA (Mobile) -->
-    <div class="fixed-bottom d-md-none" style="z-index: 1030; padding: 20px;">
-      <a href="https://wa.me/573124813094" 
-         style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #FFFFFF; 
-          color: #000000;
-          text-decoration: none;
-          padding: 16px;
-          border-radius: 12px;
-          font-weight: 800;
-          font-size: 14px;
-          letter-spacing: 1px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-          text-transform: uppercase;
-         ">
-         <i class="bi bi-whatsapp" style="margin-right: 10px; font-size: 18px; color: #25D366;"></i>
-         Agendar Servicio Técnico
-      </a>
-    </div>
-
-    <FloatingContact client:load />
+<FloatingContact client:load />
     <Footer client:load />
   </main>
 </Layout>
