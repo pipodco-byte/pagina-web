@@ -132,6 +132,12 @@ const services = [
     padding-bottom: 40px;
   }
 
+  @media (max-width: 768px) {
+    .pipod-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* CARD AREA (COL 2) */
   .pipod-col-card {
     display: flex;
@@ -257,12 +263,16 @@ const services = [
   }
 
   @media (max-width: 1100px) {
-    .main-grid-three { grid-template-columns: 1fr 1fr; }
     .pipod-col-map { display: none; }
   }
 
   @media (max-width: 768px) {
-    .main-grid-three { grid-template-columns: 1fr; }
-    .pipod-col-info, .pipod-col-card { border-right: none; border-bottom: 0.85px solid #000; }
+    .container-pipod {
+      padding: 0 24px;
+    }
+
+    .card-tail {
+      display: none;
+    }
   }
 </style>
