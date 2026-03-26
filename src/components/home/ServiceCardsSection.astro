@@ -1,0 +1,81 @@
+---
+import ServiceBentoDark from '../serviceCard';
+import { SectionTracker } from '../gtm';
+---
+
+<SectionTracker sectionName="servicios" client:load>
+  <section class="service-cards-section" style="background-color: #FFFFFF; border-top: 1px solid #E0E0E0; padding: 80px 0;"> 
+    <div class="container">
+      <div class="mb-4 text-start">
+        <h2 style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
+          Servicios
+        </h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <ServiceBentoDark 
+            image_src="/images/imagenservicios.jpg"
+            icon_name="bi-tools"
+            title="Reparación de Equipos"
+            description="Diagnóstico rápido y garantía en todas nuestras reparaciones"
+            buttonText="AGENDA"
+            link="/servicio-tecnico-apple"
+            servicio="reparacion"
+            client:load
+          />
+        </div>
+
+        <div class="col-md-4">
+          <ServiceBentoDark 
+            image_src="/images/plan retoma 1.jpg"
+            icon_name="bi-arrow-repeat"
+            title="Plan Retoma"
+            description="Intercambia tu equipo antiguo por uno nuevo con el mejor valor"
+            buttonText="SABER MÁS"
+            link="/productos?categoria=plan-retoma-apple"
+            servicio="retoma"
+            client:load
+          />
+        </div>
+
+        <div class="col-md-4">
+          <ServiceBentoDark 
+            image_src="/images/accesorios 2.jpg"
+            icon_name="bi-bag-check"
+            title="Accesorios"
+            description="Accesorios originales y compatibles para todos tus dispositivos"
+            buttonText="IR A TIENDA"
+            link="/productos?categoria=accesorios"
+            servicio="accesorios"
+            client:load
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</SectionTracker>
+
+<style>
+  .service-cards-section {
+    padding: 80px 0;
+  }
+
+  .service-cards-section h2 {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .service-cards-section {
+      padding: 40px 0 !important;
+    }
+
+    .service-cards-section h2 {
+      font-size: 1.8rem !important;
+    }
+
+    .service-cards-section .container {
+      padding: 0 24px !important;
+    }
+  }
+</style>

@@ -1,0 +1,113 @@
+---
+import CardProduct from '../products/cardProduct';
+import { SectionTracker } from '../gtm';
+
+interface Props {
+  productos: any[];
+}
+
+const { productos } = Astro.props;
+const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'));
+---
+
+<SectionTracker sectionName="productos_macbook" client:load>
+  <section class="macbooks-section">
+    <div class="container">
+      <div class="header-container">
+        <h2 class="section-title">MacBooks</h2>
+      </div>
+
+      <div class="row g-4">
+        {macbooks.map(producto => (
+          <div 
+            class="col-md-6 col-lg-3 d-flex align-items-stretch"
+            data-product-id={producto.id}
+            data-product-name={producto.title}
+            data-categoria="macbook"
+          >
+            <div class="card-wrapper">
+              <CardProduct 
+                thumb_src={producto.thumb_src}
+                thumb_alt={producto.thumb_alt}
+                color={producto.color}
+                colors={producto.colors}
+                title={producto.title}
+                description={producto.description}
+                price={producto.price}
+                position="center"
+                client:load
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</SectionTracker>
+
+<style is:global>
+  .macbooks-section {
+    background-color: #FFFFFF;
+    padding: 80px 0;
+  }
+
+  .header-container {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .card-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  .macbooks-section .card-wrapper > div, 
+  .macbooks-section .card-wrapper article {
+    width: 100%;
+    padding: 20px 24px 32px 24px !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+  }
+
+  .macbooks-section .card-wrapper:hover > div {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  }
+
+  .macbooks-section .card-wrapper img {
+    margin-top: 15px !important;
+    margin-bottom: 25px !important;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 991px) {
+    .macbooks-section { padding: 60px 0; }
+  }
+
+  @media (max-width: 768px) {
+    .macbooks-section {
+      padding: 40px 0;
+    }
+    .macbooks-section .section-title {
+      font-size: 1.8rem;
+    }
+    .macbooks-section .container {
+      padding: 0 24px !important;
+    }
+  }
+</style>
