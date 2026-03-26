@@ -120,6 +120,26 @@ export default function ValoresContact() {
           .values-header {
             margin-bottom: 40px;
           }
+
+          .pipod-values-section {
+            padding: 40px 0;
+          }
+
+          .values-title {
+            font-size: 1.8rem;
+          }
+
+          .icon-wrapper i {
+            font-size: 36px;
+          }
+
+          .value-title {
+            font-size: 1rem;
+          }
+
+          .value-desc {
+            font-size: 0.85rem;
+          }
         }
       `}} />
     </section>

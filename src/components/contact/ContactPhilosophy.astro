@@ -74,7 +74,24 @@
 
   @media (max-width: 768px) {
     div[style*="padding: 0 80px"] {
-      padding: 0 20px !important;
+      padding: 0 24px !important;
+    }
+
+    section[style*="padding: 80px 0"] {
+      padding: 50px 0 !important;
+    }
+
+    div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    h2[style*="font-size: clamp"] {
+      font-size: 1.8rem !important;
+    }
+
+    .philosophy-icon {
+      font-size: 36px !important;
     }
   }
 </style>
