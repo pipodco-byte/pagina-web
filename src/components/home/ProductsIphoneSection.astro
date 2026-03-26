@@ -20,7 +20,7 @@ const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'))
       <div class="row g-4">
         {iphones.map(iphone => (
           <div 
-            class="col-md-6 col-lg-3 d-flex align-items-stretch"
+            class="col-12 col-md-6 col-lg-3 d-flex align-items-stretch"
             data-product-id={iphone.id}
             data-product-name={iphone.nombre}
             data-categoria="iphone"
@@ -64,7 +64,8 @@ const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'))
   }
 
   .card-wrapper > div, 
-  .card-wrapper article {
+  .card-wrapper article,
+  .card-wrapper a {
     width: 100%;
     padding-top: 20px !important;
     padding-bottom: 30px !important;
@@ -96,6 +97,9 @@ const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'))
     }
     .container {
       padding: 0 24px !important;
+    }
+    .row {
+      gap: 16px !important;
     }
   }
 </style>
