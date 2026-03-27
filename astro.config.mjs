@@ -9,5 +9,14 @@ export default defineConfig({
   integrations: [react(), sitemap(), mermaid()],
   output: 'server',
   adapter: vercel(),
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,
+        },
+      },
+    },
+  },
 });
 

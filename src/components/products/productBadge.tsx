@@ -7,15 +7,12 @@ export default function ProductBadge({
 }: Props) {
   return (
     <>
-      <div>{colors.map(color => badge(color))}</div>
+      <div>
+        {colors.map((color, index) => (
+          <span key={index} className={`badge filter rounded-4 bg-${color}`}></span>
+        ))}
+      </div>
     </>
   );
-}
-
-function badge(color:string) {
-  const badgeClass = "badge filter rounded-4 bg-" + color;
-  const badge = <span className={badgeClass}></span>
-  
-  return badge;
 }
 
