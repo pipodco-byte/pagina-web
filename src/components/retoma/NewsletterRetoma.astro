@@ -34,35 +34,69 @@
   const loader = btn.querySelector('.pipod-newsletter-loader');
   const input = document.getElementById('email-input');
   const validationIcon = document.querySelector('.pipod-newsletter-validation-icon');
+  const messageEl = document.getElementById('message');
 
   // Validación en tiempo real
   input.addEventListener('input', (e) => {
     const isValid = e.target.validity.valid;
     if (isValid && e.target.value.length > 0) {
       validationIcon.classList.remove('hidden');
-      input.classList.add('pipod-newsletter-input-valid');
     } else {
       validationIcon.classList.add('hidden');
-      input.classList.remove('pipod-newsletter-input-valid');
     }
   });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    const email = input.value.trim();
     btn.disabled = true;
     btnText.classList.add('hidden');
     loader.classList.remove('hidden');
 
-    setTimeout(() => {
-      form.innerHTML = `
-        <div class="pipod-newsletter-success-state">
-          <span class="pipod-newsletter-success-icon">✓</span>
-          <span>¡Suscrito con éxito!</span>
-        </div>
-      `;
-    }, 1500);
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Mostrar mensaje de éxito
+        messageEl.innerHTML = '✓ ¡Suscrito con éxito!';
+        messageEl.classList.remove('hidden');
+        messageEl.style.color = '#FFFFFF';
+        messageEl.classList.add('success-message');
+        
+        // Limpiar formulario y volver después de 3 segundos
+        setTimeout(() => {
+          messageEl.classList.add('hidden');
+          messageEl.classList.remove('success-message');
+          btn.disabled = false;
+          btnText.classList.remove('hidden');
+          loader.classList.add('hidden');
+          input.value = '';
+          validationIcon.classList.add('hidden');
+        }, 3000);
+      } else {
+        showError(data.error || 'Error al suscribirse');
+      }
+    } catch (error) {
+      showError('Error de conexión');
+    }
   });
+
+  function showError(message) {
+    btn.disabled = false;
+    btnText.classList.remove('hidden');
+    loader.classList.add('hidden');
+    messageEl.textContent = message;
+    messageEl.classList.remove('hidden');
+    messageEl.style.color = '#FF3B30';
+    setTimeout(() => messageEl.classList.add('hidden'), 4000);
+  }
   
   input.addEventListener('invalid', (e) => {
     e.preventDefault();
@@ -154,7 +188,7 @@
     background: transparent;
     border: none;
     outline: none;
-    color: white;
+    color: #6E6E6E;
     padding: 0 24px;
     font-size: 1rem;
     font-family: 'Inter', system-ui, sans-serif;
@@ -165,12 +199,8 @@
     color: #6E6E6E;
   }
 
-  .pipod-newsletter-input-valid {
-    color: #25D366;
-  }
-
   .pipod-newsletter-validation-icon {
-    color: #25D366;
+    color: #FFFFFF;
     font-weight: 700;
     font-size: 1.1rem;
     margin-right: 8px;
@@ -240,52 +270,28 @@
     font-size: 0.875rem;
   }
 
-  .pipod-newsletter-success-state {
-    color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
-    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+  .pipod-newsletter-message.success-message {
+    font-size: 1.1rem;
+    font-weight: 600;
+    animation: fadeInOut 3s ease-in-out forwards;
   }
 
-  .pipod-newsletter-success-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: #25D366;
-    border-radius: 50%;
-    color: #FFFFFF;
-    font-weight: 700;
-    animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  @keyframes popIn {
+  @keyframes fadeInOut {
     0% {
       opacity: 0;
-      transform: scale(0);
+      transform: translateY(-10px);
     }
-    50% {
-      transform: scale(1.1);
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0);
     }
     100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes slideUp {
-    from { 
-      opacity: 0; 
-      transform: translateY(10px); 
-    }
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
+      opacity: 0;
+      transform: translateY(-10px);
     }
   }
 

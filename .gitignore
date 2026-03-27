@@ -8,3 +8,4 @@ dist/
 package-lock.json
 .astro/
 .env
+.env.local
