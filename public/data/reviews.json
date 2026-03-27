@@ -1,12 +1,14 @@
 {
-  "_comment": "DATOS DE RESEÑAS DE GOOGLE - Actualizar aquí para sincronizar en todos los lugares",
-  "_usedBy": [
-    "src/components/promo/pipodGoogleReviews.jsx (Visual en /home y /servicio-tecnico)",
-    "src/components/SEO/LocalBusinessSchema.astro (Schema SEO)",
-    "src/components/SEO/RetomaPageSchema.astro (Schema SEO Plan Retoma)",
-    "src/components/SEO/ServicePageSchema.astro (Schema SEO Servicio Técnico)",
-    "src/components/SEO/ContactPageSchema.astro (Schema SEO Contacto)"
-  ],
   "rating": "5.0",
-  "totalReviews": 63
+  "totalReviews": 63,
+  "lastUpdated": "2026-03-27T20:53:50.992Z",
+  "comments": [
+    "Datos sincronizados desde Google Places API",
+    "Archivos que usan este dato:",
+    "- src/components/promo/pipodGoogleReviews.jsx",
+    "- src/components/SEO/LocalBusinessSchema.astro",
+    "- src/components/SEO/RetomaPageSchema.astro",
+    "- src/components/SEO/ServicePageSchema.astro",
+    "- src/components/SEO/ContactPageSchema.astro"
+  ]
 }
