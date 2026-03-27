@@ -39,6 +39,7 @@ const images = [
   <main style="padding-top: 120px;">
     <div class="container mt-5">
       <ProductOverviewGrid 
+        client:load
         title={producto.nombre}
         colors={producto.colors || ['blue', 'gray', 'black']}
         images={images}
@@ -53,6 +54,9 @@ const images = [
         rating={producto.rating || 4}
         reviews={producto.reviews || 117}
         sizes={new Map()}
+        tipo={producto.tipo}
+        id={producto.id}
+        slug={producto.slug}
       />
 
       <hr class="dark horizontal my-5" />
@@ -62,6 +66,7 @@ const images = [
         {productosRelacionados.map(prod => (
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <CardProduct 
+              client:load
               thumb_src={prod.thumb_src}
               thumb_alt={prod.thumb_alt}
               color={prod.color}
@@ -74,6 +79,7 @@ const images = [
               rating={prod.rating}
               batteryHealth={prod.batteryHealth}
               slug={prod.slug}
+              tipo={prod.tipo}
             />
           </div>
         ))}

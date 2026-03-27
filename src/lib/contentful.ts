@@ -11,6 +11,7 @@ const mockProductos = [
       condicion: 'Nuevo',
       useCase: 'Profesionales',
       sku: 'IPHONE-15-PM-256',
+      tipo: 'equipo',
       imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
       enStock: true,
     },
@@ -25,6 +26,7 @@ const mockProductos = [
       condicion: 'Seminuevo',
       useCase: 'Estudiantes',
       sku: 'IPHONE-15-128',
+      tipo: 'equipo',
       imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
       enStock: true,
     },
@@ -39,6 +41,7 @@ const mockProductos = [
       condicion: 'Nuevo',
       useCase: 'Diseñadores',
       sku: 'MBP-16-M3MAX-512',
+      tipo: 'equipo',
       imagenes: [{ fields: { file: { url: 'MacBook_Pro_14-in_Space_Black_Pure_Front_Screen__USEN_dba9e232-238a-454c-b1d2-76d00adc5385_1500x.webp.jpeg' } } }],
       enStock: true,
     },
@@ -53,6 +56,7 @@ const mockProductos = [
       condicion: 'Nuevo',
       useCase: 'Viajeros',
       sku: 'MBA-15-M2-256',
+      tipo: 'equipo',
       imagenes: [{ fields: { file: { url: 'MacBook_Pro_14-in_Space_Black_Pure_Front_Screen__USEN_dba9e232-238a-454c-b1d2-76d00adc5385_1500x.webp.jpeg' } } }],
       enStock: true,
     },
@@ -67,6 +71,7 @@ const mockProductos = [
       condicion: 'Repotenciado',
       useCase: 'Deportistas',
       sku: 'IPHONE-15-PRO-256',
+      tipo: 'equipo',
       imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
       enStock: true,
     },
@@ -81,6 +86,7 @@ const mockProductos = [
       condicion: 'Nuevo',
       useCase: 'Profesionales',
       sku: 'MBP-14-M3-512',
+      tipo: 'equipo',
       imagenes: [{ fields: { file: { url: 'MacBook_Pro_14-in_Space_Black_Pure_Front_Screen__USEN_dba9e232-238a-454c-b1d2-76d00adc5385_1500x.webp.jpeg' } } }],
       enStock: false,
     },
@@ -95,6 +101,7 @@ const mockProductos = [
       condicion: 'Nuevo',
       useCase: 'Viajeros',
       sku: 'AIRPODS-PRO-2',
+      tipo: 'accesorio',
       imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
       enStock: true,
     },
@@ -109,6 +116,7 @@ const mockProductos = [
       condicion: 'Nuevo',
       useCase: 'Profesionales',
       sku: 'MAGSAFE-CHARGER',
+      tipo: 'accesorio',
       imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
       enStock: true,
     },
@@ -123,6 +131,7 @@ const mockProductos = [
       condicion: 'Nuevo',
       useCase: 'Diseñadores',
       sku: 'USB-C-HUB',
+      tipo: 'accesorio',
       imagenes: [{ fields: { file: { url: 'MacBook_Pro_14-in_Space_Black_Pure_Front_Screen__USEN_dba9e232-238a-454c-b1d2-76d00adc5385_1500x.webp.jpeg' } } }],
       enStock: true,
     },
@@ -137,6 +146,7 @@ const mockProductos = [
       condicion: 'Seminuevo',
       useCase: 'Diseñadores',
       sku: 'IPAD-AIR-M1',
+      tipo: 'equipo',
       imagenes: [{ fields: { file: { url: 'iPhone-11_Black_Front_c58d1663-99b0-433b-bd78-8496d0fe89ac_1200x.jpg.webp' } } }],
       enStock: true,
     },
@@ -153,6 +163,7 @@ export interface Producto {
   condicion?: string;
   useCase?: string;
   sku: string;
+  tipo: 'equipo' | 'accesorio';
   imagenes: any[];
   categoria?: any;
   enStock: boolean;
@@ -183,6 +194,7 @@ export async function getProductos(): Promise<Producto[]> {
         condicion: item.fields.condicion,
         useCase: item.fields.useCase,
         sku: item.fields.sku,
+        tipo: item.fields.tipo,
         imagenes: item.fields.imagenes || [],
         categoria: item.fields.categoria,
         enStock: item.fields.enStock ?? true,
@@ -222,6 +234,7 @@ export async function getProductoPorSlug(slug: string): Promise<Producto | null>
       condicion: item.fields.condicion,
       useCase: item.fields.useCase,
       sku: item.fields.sku,
+      tipo: item.fields.tipo,
       imagenes: item.fields.imagenes || [],
       categoria: item.fields.categoria,
       enStock: item.fields.enStock ?? true,

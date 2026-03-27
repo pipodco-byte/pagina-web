@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+
+const { reference, status } = Astro.url.searchParams;
+const isSuccess = status === 'approved' || status === 'success';
+---
+
+<Layout title="Pago Procesado - Pipod" description="Tu pago ha sido procesado">
+  <PipodNavbar client:load />
+  
+  <main style="padding-top: 120px; padding-bottom: 100px;">
+    <div class="container">
+      <div style="text-align: center; padding: 60px 20px;">
+        {isSuccess ? (
+          <>
+            <div style="font-size: 64px; margin-bottom: 20px;">✓</div>
+            <h1 style="color: #2E7D32; margin-bottom: 10px;">¡Pago Exitoso!</h1>
+            <p style="font-size: 18px; color: #555; margin-bottom: 30px;">
+              Tu compra ha sido procesada correctamente.
+            </p>
+            {reference && (
+              <p style="color: #86868B; margin-bottom: 30px;">
+                Referencia: <strong>{reference}</strong>
+              </p>
+            )}
+            <p style="color: #555; margin-bottom: 30px;">
+              Recibirás un correo de confirmación en breve con los detalles de tu pedido.
+            </p>
+            <a href="/tienda-pipod" style="
+              display: inline-block;
+              background: #3A506B;
+              color: white;
+              padding: 12px 32px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-weight: 600;
+              margin-right: 10px;
+            ">
+              Volver a la Tienda
+            </a>
+            <a href="/" style="
+              display: inline-block;
+              background: #E5E5E7;
+              color: #1D1D1F;
+              padding: 12px 32px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-weight: 600;
+            ">
+              Ir al Inicio
+            </a>
+          </>
+        ) : (
+          <>
+            <div style="font-size: 64px; margin-bottom: 20px;">✕</div>
+            <h1 style="color: #D32F2F; margin-bottom: 10px;">Pago No Completado</h1>
+            <p style="font-size: 18px; color: #555; margin-bottom: 30px;">
+              Hubo un problema al procesar tu pago.
+            </p>
+            {reference && (
+              <p style="color: #86868B; margin-bottom: 30px;">
+                Referencia: <strong>{reference}</strong>
+              </p>
+            )}
+            <p style="color: #555; margin-bottom: 30px;">
+              Por favor, intenta de nuevo o contacta con nuestro equipo de soporte.
+            </p>
+            <a href="/tienda-pipod" style="
+              display: inline-block;
+              background: #3A506B;
+              color: white;
+              padding: 12px 32px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-weight: 600;
+              margin-right: 10px;
+            ">
+              Volver al Carrito
+            </a>
+            <a href="https://wa.me/573124813094" target="_blank" style="
+              display: inline-block;
+              background: #25D366;
+              color: white;
+              padding: 12px 32px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-weight: 600;
+            ">
+              Contactar Soporte
+            </a>
+          </>
+        )}
+      </div>
+    </div>
+  </main>
+
+  <Footer client:load />
+
+  <script define:vars={{ isSuccess, reference }}>
+    // Enviar email si el pago fue exitoso
+    if (isSuccess && reference) {
+      const checkoutData = JSON.parse(localStorage.getItem('checkoutData') || '{}');
+      
+      if (checkoutData.shipping && checkoutData.items) {
+        // Enviar email a ventas@pipod.co
+        fetch('/api/send-order-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            reference: reference,
+            amount: checkoutData.amount,
+            customerName: checkoutData.shipping.fullName,
+            customerEmail: checkoutData.shipping.email,
+            customerPhone: checkoutData.shipping.phone,
+            address: checkoutData.shipping.address,
+            neighborhood: checkoutData.shipping.neighborhood,
+            items: checkoutData.items
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log('Email enviado:', data);
+          // Limpiar localStorage después de enviar
+          localStorage.removeItem('checkoutData');
+        })
+        .catch(err => console.error('Error enviando email:', err));
+      }
+    }
+  </script>
+
+  <style>
+    a {
+      transition: all 0.2s;
+    }
+    
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</Layout>

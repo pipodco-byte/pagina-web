@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PipodNavbar from '../components/pipodNavbar';
+import Footer from '../components/pipodFooter';
+import CheckoutForm from '../components/checkout/CheckoutForm';
+---
+
+<Layout title="Checkout - Pipod" description="Completa tu compra en Pipod">
+  <PipodNavbar client:load />
+  
+  <main style="padding-top: 120px; padding-bottom: 60px;">
+    <div class="container">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h1 style="margin-bottom: 40px; font-size: 32px; font-weight: 700;">Finalizar Compra</h1>
+        
+        <CheckoutForm client:load />
+      </div>
+    </div>
+  </main>
+
+  <Footer client:load />
+</Layout>
+
+<style>
+  main {
+    background: #FFFFFF;
+    min-height: calc(100vh - 200px);
+  }
+</style>
