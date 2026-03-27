@@ -1,6 +1,8 @@
 ---
 // src/components/SEO/LocalBusinessSchema.astro
 
+const reviewsData = await fetch('http://localhost:3000/data/reviews.json').then(r => r.json()).catch(() => ({ rating: "5.0", totalReviews: 63 }));
+
 const schema = {
   "@context": "https://schema.org",
   "@id": "https://www.pipod.co/#business",
@@ -116,8 +118,8 @@ const schema = {
   
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "63",
+    "ratingValue": reviewsData.rating,
+    "reviewCount": reviewsData.totalReviews.toString(),
     "bestRating": "5",
     "worstRating": "1"
   },

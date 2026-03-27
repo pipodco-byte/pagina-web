@@ -3,6 +3,7 @@ import JsonLdSchema from './JsonLdSchema.astro';
 
 const today = new Date().toISOString().split('T')[0];
 const publishDate = "2026-02-12";
+const reviewsData = await fetch('http://localhost:3000/data/reviews.json').then(r => r.json()).catch(() => ({ rating: "5.0", totalReviews: 63 }));
 
 const contactPageSchema = {
   "@context": "https://schema.org",
@@ -67,8 +68,8 @@ const contactPageSchema = {
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "58",
+      "ratingValue": reviewsData.rating,
+      "reviewCount": reviewsData.totalReviews.toString(),
       "bestRating": "5",
       "worstRating": "1"
     },

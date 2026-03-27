@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function PipodGoogleReviews() {
   const [reviewsData, setReviewsData] = useState({
-    rating: 5.0,
+    rating: "5.0",
     totalReviews: 63
   });
 

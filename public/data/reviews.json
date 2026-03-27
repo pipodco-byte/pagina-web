@@ -1,4 +1,12 @@
 {
+  "_comment": "DATOS DE RESEÑAS DE GOOGLE - Actualizar aquí para sincronizar en todos los lugares",
+  "_usedBy": [
+    "src/components/promo/pipodGoogleReviews.jsx (Visual en /home y /servicio-tecnico)",
+    "src/components/SEO/LocalBusinessSchema.astro (Schema SEO)",
+    "src/components/SEO/RetomaPageSchema.astro (Schema SEO Plan Retoma)",
+    "src/components/SEO/ServicePageSchema.astro (Schema SEO Servicio Técnico)",
+    "src/components/SEO/ContactPageSchema.astro (Schema SEO Contacto)"
+  ],
   "rating": "5.0",
   "totalReviews": 63
 }
