@@ -8,4 +8,5 @@ dist/
 package-lock.json
 .astro/
 .env
+.env.local.vercel/
 .env.local

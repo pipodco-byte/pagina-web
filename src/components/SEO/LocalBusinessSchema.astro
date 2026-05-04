@@ -1,7 +1,8 @@
 ---
 // src/components/SEO/LocalBusinessSchema.astro
 
-const reviewsData = await fetch('http://localhost:3000/data/reviews.json').then(r => r.json()).catch(() => ({ rating: "5.0", totalReviews: 63 }));
+// Static reviews data - no runtime fetch needed
+const reviewsData = { rating: "5.0", totalReviews: 63 };
 
 const schema = {
   "@context": "https://schema.org",

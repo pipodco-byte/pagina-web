@@ -1,31 +1,39 @@
 ---
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image?: string;
   url?: string;
+  locale?: string;
 }
 
-const { 
-  title = "El Palafito de Don Gu | Donar - PIPOD",
-  description = "Apoya al Palafito de Don Gu en Ciudad Bolívar. Escuela comunitaria de música y luthería del Pacífico colombiano. Donaciones desde COP $3,000.",
-  image = "https://www.pipod.co/images/palafito-don-gu.jpg",
-  url = "https://www.pipod.co/donar-fundacion-palafito" 
+const siteUrl = 'https://www.pipod.co';
+const defaultImage = `${siteUrl}/images/logo-pipod.jpg`;
+
+const {
+  title = "Pipod - Servicio Técnico Apple Bogotá",
+  description = "Expertos en reparación y venta de productos Apple en Bogotá. Servicio técnico especializado, diagnóstico gratis y garantía.",
+  image = defaultImage,
+  url = Astro.url.href,
+  locale = "es_CO"
 } = Astro.props;
 
-const absoluteImageUrl = image;
+const absoluteImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+const absoluteUrl = url.startsWith('http') ? url : `${siteUrl}${url}`;
 ---
 
 <meta property="og:type" content="website" />
-<meta property="og:url" content={url} />
+<meta property="og:url" content={absoluteUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImageUrl} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:locale" content={locale} />
+<meta property="og:site_name" content="Pipod" />
 
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={absoluteImageUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={absoluteUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={absoluteImageUrl} />

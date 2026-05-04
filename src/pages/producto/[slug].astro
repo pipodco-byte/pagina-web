@@ -5,6 +5,7 @@ import Footer from '../../components/pipodFooter';
 import FloatingContact from '../../layouts/floatingContact';
 import ProductOverviewGrid from '../../components/products/productOverviewGrid';
 import CardProduct from '../../components/products/cardProduct';
+import ProductSchema from '../../components/SEO/ProductSchema.astro';
 import { getProductos, getProductoPorSlug } from '../../lib/contentful';
 import '../../../assets/scss/astro-ecommerce.scss';
 
@@ -34,6 +35,20 @@ const images = [
 ---
 
 <Layout title={`${producto.nombre} - Pipod`} description={producto.descripcion}>
+  <ProductSchema product={{
+    id: producto.id,
+    name: producto.nombre,
+    description: producto.descripcion,
+    price: producto.precio,
+    currency: "COP",
+    image: producto.thumb_src || '',
+    condition: producto.condicion as 'new' | 'used' | 'refurbished',
+    availability: producto.enStock ? 'InStock' : 'OutOfStock',
+    brand: "Apple",
+    sku: producto.sku,
+    rating: producto.rating,
+    reviewCount: producto.reviews
+  }} />
   <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">

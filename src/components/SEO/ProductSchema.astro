@@ -1,0 +1,60 @@
+---
+// src/components/SEO/ProductSchema.astro
+
+interface Props {
+  product: {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    currency?: string;
+    image: string;
+    condition: 'new' | 'used' | 'refurbished';
+    availability: 'InStock' | 'OutOfStock' | 'PreOrder';
+    brand?: string;
+    sku?: string;
+    rating?: number;
+    reviewCount?: number;
+  };
+}
+
+const { product } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": product.name,
+  "description": product.description,
+  "image": product.image,
+  "brand": {
+    "@type": "Brand",
+    "name": product.brand || "Apple"
+  },
+  "sku": product.sku || product.id,
+  "mpn": product.id,
+  "identifier": product.id,
+  "category": "Electronics > smartphones", // Could be dynamic based on product type
+  "offers": {
+    "@type": "Offer",
+    "price": product.price,
+    "priceCurrency": product.currency || "COP",
+    "availability": `https://schema.org/${product.availability}`,
+    "seller": {
+      "@type": "Organization",
+      "name": "Pipod - Servicio Técnico Apple"
+    }
+  },
+  "aggregateRating": product.rating ? {
+    "@type": "AggregateRating",
+    "ratingValue": product.rating.toString(),
+    "reviewCount": (product.reviewCount || 0).toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  } : undefined
+};
+
+// Filter out undefined values
+const cleanSchema = JSON.parse(JSON.stringify(schema));
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(cleanSchema)} is:inline />

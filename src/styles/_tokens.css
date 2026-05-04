@@ -1,0 +1,170 @@
+/**
+ * PIPOD Design System - CSS Tokens
+ *
+ * These tokens define the official PIPOD design language.
+ * Use these variables instead of hardcoded values.
+ *
+ * HOW TO USE (when ready to integrate):
+ * 1. Import this file in Layout.astro: import '../styles/_tokens.css';
+ * 2. Replace hardcoded colors with var(--pipod-color-*)
+ * 3. Replace hardcoded spacing with var(--pipod-space-*)
+ *
+ * CURRENT STATUS: Reference file only - NOT yet integrated
+ * Created: 2026-05-04
+ */
+
+/* ============================================
+   COLOR TOKENS
+   ============================================ */
+
+:root {
+  /* Canvas Colors */
+  --pipod-color-white: #ffffff;
+  --pipod-color-black: #000000;
+  --pipod-color-near-black: #1F1F1F;
+  --pipod-color-deep-black: #0a0a0a;
+
+  /* Brand Blues */
+  --pipod-color-tech-blue: #4A90E2;    /* Primary CTA, links */
+  --pipod-color-deep-blue: #3A506B;     /* Secondary accent, hover */
+
+  /* Surface Colors */
+  --pipod-color-light-surface: #F5F5F7; /* Page backgrounds */
+  --pipod-color-border-gray: #E5E5E7;   /* Card borders, dividers */
+  --pipod-color-disabled: rgba(0, 0, 0, 0.24);
+
+  /* Status Colors */
+  --pipod-color-success: #2E7D32;      /* Free shipping, in stock */
+  --pipod-color-error: #D32F2F;         /* Error text, high discount */
+  --pipod-color-warning: #F57C00;       /* Warnings */
+  --pipod-color-star: #FFB800;          /* Rating stars */
+
+  /* WhatsApp */
+  --pipod-color-whatsapp: #25D366;
+
+  /* ============================================
+     TYPOGRAPHY TOKENS
+     ============================================ */
+
+  /* Font Families */
+  --pipod-font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --pipod-font-pt-mono: 'PT Mono', Monaco, Consolas, monospace;
+  --pipod-font-noto-sans: 'Noto Sans', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --pipod-size-display: 3rem;           /* 48px+ - Stats numbers */
+  --pipod-size-h1: 2.8rem;             /* 45px - Hero titles */
+  --pipod-size-h2: 2rem;              /* 32px - Section headings */
+  --pipod-size-h3: 1.5rem;            /* 24px - Card headings */
+  --pipod-size-ui-medium: 1rem;        /* 16px - Navigation */
+  --pipod-size-body: 0.95rem;          /* 15px - Body text */
+  --pipod-size-small: 0.85rem;         /* 14px - Captions */
+  --pipod-size-label: 0.7rem;          /* 12px - Labels, tags */
+  --pipod-size-micro: 0.65rem;         /* 10px - Badges */
+
+  /* Font Weights */
+  --pipod-weight-regular: 400;
+  --pipod-weight-medium: 500;
+  --pipod-weight-semibold: 600;
+  --pipod-weight-bold: 700;
+  --pipod-weight-extrabold: 800;
+  --pipod-weight-black: 900;
+
+  /* Line Heights */
+  --pipod-leading-tight: 1.2;
+  --pipod-leading-snug: 1.25;
+  --pipod-leading-normal: 1.5;
+  --pipod-leading-relaxed: 1.6;
+
+  /* Letter Spacing */
+  --pipod-tracking-tight: -0.02em;
+  --pipod-tracking-normal: 0;
+  --pipod-tracking-wide: 0.02em;
+  --pipod-tracking-wider: 0.05em;
+
+  /* ============================================
+     SPACING TOKENS
+     Base unit: 8px
+     ============================================ */
+
+  --pipod-space-2xs: 2px;
+  --pipod-space-xs: 4px;
+  --pipod-space-sm: 8px;     /* Base unit */
+  --pipod-space-md: 16px;    /* 2x base */
+  --pipod-space-lg: 24px;    /* 3x base */
+  --pipod-space-xl: 32px;    /* 4x base */
+  --pipod-space-2xl: 48px;   /* 6x base */
+  --pipod-space-3xl: 80px;   /* 10x base */
+
+  /* ============================================
+     BORDER RADIUS TOKENS
+     ============================================ */
+
+  --pipod-radius-subtle: 8px;     /* Buttons, inputs */
+  --pipod-radius-standard: 24px;  /* Cards standard */
+  --pipod-radius-large: 40px;    /* Bento cards */
+  --pipod-radius-pill: 50px;      /* Pills, full-rounded */
+
+  /* ============================================
+     SHADOW TOKENS
+     ============================================ */
+
+  --pipod-shadow-flat: none;
+  --pipod-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --pipod-shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --pipod-shadow-stats: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --pipod-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.2);  /* Palafito hover */
+
+  /* ============================================
+     LAYOUT TOKENS
+     ============================================ */
+
+  --pipod-container-max: 1440px;
+  --pipod-padding-desktop: 80px;
+  --pipod-padding-tablet: 40px;
+  --pipod-padding-mobile: 24px;
+  --pipod-padding-mobile-sm: 16px;
+
+  /* Stats bar special height */
+  --pipod-stats-height: 119px;
+
+  /* Navbar */
+  --pipod-navbar-height: 70px;
+  --pipod-navbar-padding: 35px;
+
+  /* ============================================
+     TRANSITION TOKENS
+     ============================================ */
+
+  --pipod-transition-fast: 150ms ease;
+  --pipod-transition-normal: 300ms ease;
+  --pipod-transition-slow: 500ms ease;
+
+  /* ============================================
+     Z-INDEX TOKENS
+     ============================================ */
+
+  --pipod-z-dropdown: 100;
+  --pipod-z-sticky: 200;
+  --pipod-z-modal: 300;
+  --pipod-z-tooltip: 400;
+}
+
+/* ============================================
+   COMPONENT TOKENS (Utility Classes Ready)
+   ============================================ */
+
+/*
+ * When Phase 3 (Button System) is implemented,
+ * these utility classes will be available:
+ *
+ * .btn-primary   - Tech Blue (#4A90E2) button
+ * .btn-secondary - Near Black (#1F1F1F) button
+ * .btn-pill-dark - Black (#000) pill button (Palafito style)
+ *
+ * .card-standard - 24px radius card
+ * .card-bento    - 40px radius bento card
+ * .card-stats    - 119px height stats card
+ *
+ * .container-pipod - 1440px max-width centered
+ */

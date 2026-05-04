@@ -1,0 +1,56 @@
+---
+// src/components/SEO/BlogPostingSchema.astro
+
+interface Props {
+  title: string;
+  description: string;
+  author?: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+  url?: string;
+}
+
+const siteUrl = 'https://www.pipod.co';
+
+const { title, description, author = "Pipod", datePublished, dateModified, image, url = Astro.url.href } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": siteUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pipod - Servicio Técnico Apple",
+    "url": siteUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/images/logo-pipod.jpg`
+    }
+  },
+  "datePublished": datePublished,
+  "dateModified": dateModified || datePublished,
+  "url": url,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  }
+};
+
+if (image) {
+  schema["image"] = {
+    "@type": "ImageObject",
+    "url": image,
+    "width": 1200,
+    "height": 630
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />

@@ -2,5 +2,11 @@
 User-agent: *
 Allow: /
 
+# Block API endpoints from crawlers
+Disallow: /api/
+
+# Block internal tools
+Disallow: /contabilidad/
+
 # Sitemaps
 Sitemap: https://www.pipod.co/sitemap-index.xml
