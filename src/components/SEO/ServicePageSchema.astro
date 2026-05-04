@@ -3,89 +3,281 @@ import JsonLdSchema from './JsonLdSchema.astro';
 
 const today = new Date().toISOString().split('T')[0];
 const publishDate = "2026-02-12";
-const reviewsData = await fetch('http://localhost:3000/data/reviews.json').then(r => r.json()).catch(() => ({ rating: "5.0", totalReviews: 63 }));
 
-const servicePageSchema = {
+const reviewsData = {
+  rating: "5.0",
+  totalReviews: 89
+};
+
+const hubSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://www.pipod.co/servicio-tecnico-apple",
-  "mainEntityOfPage": "https://www.pipod.co/servicio-tecnico-apple",
-  "name": "Servicio Técnico Apple Especializado - Pipod",
-  "description": "Reparación experta de iPhone, MacBook, iPad y Apple Watch en Bogotá. Especialistas en microsoldadura, pantallas y baterías en Chapinero.",
-  "url": "https://www.pipod.co/servicio-tecnico-apple",
-  "image": "https://www.pipod.co/images/logo.jpg",
-  
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "@id": "https://www.pipod.co/#business",
-    "name": "Pipod",
-    "telephone": "+573124813094",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Cra. 13a #79-52",
-      "addressLocality": "Chapinero",
-      "addressRegion": "Bogotá D.C.",
-      "addressCountry": "CO"
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.pipod.co/#business",
+      "name": "Pipod - Servicio Técnico Apple",
+      "alternateName": "Pipod",
+      "url": "https://www.pipod.co",
+      "logo": "https://www.pipod.co/images/logo.jpg",
+      "description": "Expertos en venta y reparación de productos Apple en Bogotá. Servicio técnico especializado, diagnóstico gratis y garantía en todas nuestras reparaciones.",
+      "email": "info@pipod.co",
+      "telephone": "+573124813094",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cra. 13a #79-52",
+        "addressLocality": "Chapinero",
+        "addressRegion": "Bogotá D.C.",
+        "postalCode": "110221",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 4.6658,
+        "longitude": -74.0578
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": reviewsData.rating,
+        "reviewCount": reviewsData.totalReviews.toString(),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bogotá" },
+        { "@type": "AdministrativeArea", "name": "Chapinero" },
+        { "@type": "AdministrativeArea", "name": "Usaquén" },
+        { "@type": "AdministrativeArea", "name": "Zona Norte de Bogotá" }
+      ],
+      "hasMap": "https://maps.app.goo.gl/vVsKwJXwAza4Tppg6",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/pipod.co",
+        "https://www.facebook.com/pipod.co",
+        "https://www.tiktok.com/@pipodstore",
+        "https://wa.me/573124813094",
+        "https://g.page/r/CRgj2kSrZTO4EBM/review"
+      ]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": reviewsData.rating,
-      "reviewCount": reviewsData.totalReviews.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
+    {
+      "@type": "Service",
+      "@id": "https://www.pipod.co/#service-repair",
+      "name": "Servicio de Reparación Apple",
+      "serviceType": "Computer Repair",
+      "description": "Reparación experta de iPhone, MacBook, iPad y Apple Watch en Bogotá. Especialistas en microsoldadura, pantallas y baterías con garantía de 12 meses.",
+      "provider": { "@id": "https://www.pipod.co/#business" },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bogotá"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Reparación",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación iPhone",
+              "description": "Pantalla, batería, Face ID, diagnóstico gratis en 2 horas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación MacBook",
+              "description": "Pantalla Retina, teclado, batería, logic board - Especialistas M1 M4"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación iPad",
+              "description": "Cristal y LCD con técnica original"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación Apple Watch",
+              "description": "Restauración de cristal Series/Ultra"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Microsoldadura",
+              "description": "Reparación de placa base y corto circuitos"
+            }
+          }
+        ]
+      }
     },
-    "areaServed": [
-      { "@type": "City", "name": "Bogotá" },
-      { "@type": "AdministrativeArea", "name": "Chapinero" },
-      { "@type": "AdministrativeArea", "name": "Usaquén" }
-    ],
-    "hasMap": "https://maps.app.goo.gl/vVsKwJXwAza4Tppg6",
-    "hasMap": "https://maps.app.goo.gl/vVsKwJXwAza4Tppg6",
-    "hasOfferCatalog": {
+    {
+      "@type": "Service",
+      "@id": "https://www.pipod.co/#service-tradein",
+      "name": "Plan Retoma Apple - Trade-in",
+      "serviceType": "Trade-in Service",
+      "description": "Intercambia tu equipo Apple antiguo por uno nuevo o seminuevo con el mejor valor del mercado. Diagnóstico en 24 horas.",
+      "provider": { "@id": "https://www.pipod.co/#business" },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bogotá"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Opciones de Trade-in",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Retoma iPhone",
+              "description": "Intercambia tu iPhone por uno nuevo o recibe dinero"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Retoma MacBook",
+              "description": "Intercambia tu MacBook por uno nuevo o recibe dinero"
+            }
+          }
+        ]
+      }
+    },
+    {
       "@type": "OfferCatalog",
-      "name": "Servicios de Reparación Apple",
+      "name": "Equipos Apple Disponibles",
+      "description": "iPhone y MacBook nuevos, seminuevos y refurbished con garantía",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Service",
-            "name": "Diagnóstico Gratuito Apple",
-            "description": "Evaluación técnica sin costo para identificar fallas."
+            "@type": "Product",
+            "name": "iPhone Nuevos",
+            "description": "iPhone nuevo con garantía Apple"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Service",
-            "name": "Microsoldadura de Placa Base",
-            "description": "Reparación de cortos y fallos de encendido."
+            "@type": "Product",
+            "name": "iPhone Seminuevos",
+            "description": "iPhone seminuevo certificado con garantía de 12 meses"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Service",
-            "name": "Cambio de Pantalla y Batería",
-            "description": "Repuestos de alta calidad con garantía técnica."
+            "@type": "Product",
+            "name": "MacBook Nuevos",
+            "description": "MacBook nuevo con garantía Apple"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "MacBook Refurbished",
+            "description": "MacBook reacondicionado certificado con garantía de 12 meses"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "iPad Nuevos",
+            "description": "iPad nuevo con garantía Apple"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Apple Watch",
+            "description": "Apple Watch nuevo y seminuevo"
           }
         }
       ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "name": "Accesorios Apple",
+      "description": "Cases, cargadores, AirPods y más accesorios originales",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Cases y Fundas",
+            "description": "Protectores para iPhone, iPad y MacBook"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Cargadores",
+            "description": "Cargadores MagSafe, Lightning y USB-C"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "AirPods",
+            "description": "AirPods, AirPods Pro y AirPods Max"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Cables y Adaptadores",
+            "description": "Cables Lightning, USB-C y adaptadores"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.pipod.co/servicio-tecnico-apple",
+      "name": "Servicio Técnico Apple Bogotá | PIPOD - Baterías y Pantallas",
+      "description": "Especialistas en baterías y pantallas Apple. 2,000+ baterías reemplazadas. Express 2h para iPhone. Garantía 12 meses. Bogotá.",
+      "url": "https://www.pipod.co/servicio-tecnico-apple",
+      "mainEntity": { "@id": "https://www.pipod.co/#business" },
+      "publisher": { "@id": "https://www.pipod.co/#business" },
+      "datePublished": publishDate,
+      "dateModified": today,
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.pipod.co" },
+          { "@type": "ListItem", "position": 2, "name": "Servicio Técnico", "item": "https://www.pipod.co/servicio-tecnico-apple" }
+        ]
+      }
     }
-  },
-
-  "publisher": { "@id": "https://www.pipod.co/#business" },
-  "datePublished": publishDate,
-  "dateModified": today,
-
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.pipod.co" },
-      { "@type": "ListItem", "position": 2, "name": "Servicio Técnico", "item": "https://www.pipod.co/servicio-tecnico-apple" }
-    ]
-  }
+  ]
 };
 ---
 
-<JsonLdSchema schema={servicePageSchema} type="WebPage" />
+<JsonLdSchema schema={hubSchema} type="WebPage" />
