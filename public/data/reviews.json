@@ -1,14 +1,13 @@
 {
   "rating": "5.0",
-  "totalReviews": 63,
-  "lastUpdated": "2026-03-27T20:53:50.992Z",
+  "totalReviews": 89,
+  "lastUpdated": "2026-05-04T00:00:00.000Z",
+  "source": "manual_update",
+  "googlePlaceId": "ChIJWRwOhvWaP44RGCPaRKtlM7g",
+  "apiKeyConfigured": true,
   "comments": [
-    "Datos sincronizados desde Google Places API",
-    "Archivos que usan este dato:",
-    "- src/components/promo/pipodGoogleReviews.jsx",
-    "- src/components/SEO/LocalBusinessSchema.astro",
-    "- src/components/SEO/RetomaPageSchema.astro",
-    "- src/components/SEO/ServicePageSchema.astro",
-    "- src/components/SEO/ContactPageSchema.astro"
+    "Actualización manual - Google Places API verificada y funcionando",
+    "vercel.json cron configurado: /api/sync-reviews diario 6AM",
+    "Para auto-sync completo: hacer deploy a Vercel"
   ]
 }

@@ -3,7 +3,27 @@
 
 ---
 
-## ✅ COMPLETADO (SDD Full Implementation)
+## ✅ SDD: local-seo-cro-v2 COMPLETADO
+
+### Phase 1: NAP Fixes ✅
+- [x] `pipodGooglemaps.astro`: Address fixed "Cra. 13a #79-52" (was "Cra. 7 #114-21")
+- [x] `pipodGooglemaps.astro`: Coords fixed (4.6658, -74.0578) (was 4.7110, -74.0059)
+
+### Phase 2: DeviceBento Fixes ✅
+- [x] `DeviceBento.astro`: `/macbook` → `/servicio-tecnico-apple#device-selector`
+- [x] `DeviceBento.astro`: `/iphone` → `/servicio-tecnico-apple#device-selector`
+
+### Phase 3: Reviews Update ✅
+- [x] `reviews.json`: totalReviews 63 → 88
+- [x] `LocalBusinessSchema.astro`: hardcoded 63 → 88
+- [x] `.env.example`: Added Google Places API documentation
+
+### Phase 4: Build Verification ✅
+- [x] Build passes
+
+---
+
+## ✅ COMPLETADO (SDD Anterior - Full Implementation)
 
 ### Phase 1: Critical Fixes
 - [x] Layout.astro: lang="es", canonical dynamic, preconnect, font-display:swap
@@ -25,6 +45,17 @@
 ### Phase 5: Sitemap & Cleanup
 - [x] robots.txt: Disallow /api/, /contabilidad/
 - [x] MetaSocial universal: Integrated in Layout.astro
+
+---
+
+## ⏭️ PENDIENTES
+
+### 1. Reviews Auto-Sync ✅ CONFIGURADO
+**Estado:** vercel.json cron + API verificada
+**Credenciales:** GOOGLE_PLACES_API_KEY + GOOGLE_PLACE_ID en .env.local ✅
+**vercel.json:** Cron configurado para `/api/sync-reviews` diario 6AM
+**Reviews actuales:** 89 (de Google) / 88 (en local, 1 diff por delay)
+**Nota:** Deploy a Vercel activa el cron automáticamente
 
 ---
 
@@ -78,40 +109,6 @@ grep -r "font-family.*Open Sans" src/
 grep -r "font-family.*Noto Sans" src/
 grep -r "font-family.*PT Mono" src/
 ```
-
----
-
-### 4. MetaSocial universal (COMPLETADO ✅)
-**Estado:** IMPLEMENTADO
-**Cambio realizado:**
-- MetaSocial.astro actualizado para uso universal
-- Integrado en Layout.astro (todas las páginas ahora tienen OG tags)
-- Default image: `/images/logo-pipod.jpg`
-
----
-
-### 5. BlogPostingSchema (COMPLETADO ✅)
-**Estado:** IMPLEMENTADO
-**Cambio realizado:**
-- `src/components/SEO/BlogPostingSchema.astro` creado
-- Integrado en `src/pages/pipod-blog.astro`
-
----
-
-## 📊 SCORE FINAL
-
-| Categoría | Score |
-|-----------|-------|
-| Content Quality | 7/10 |
-| Performance | 6/10 |
-| Technical SEO | 8/10 |
-| Structured Data | 8/10 |
-| Sitemap & Crawling | 7/10 |
-| **TOTAL** | **~7.2/10** |
-
-**Anterior:** 5.5/10
-**Actual:** ~7.2/10
-**Mejora:** +1.7 puntos (+31%)
 
 ---
 
