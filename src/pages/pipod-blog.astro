@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import BlogFilter from '../components/blog/BlogFilter';
 import BlogHeroSection from '../components/blog/BlogHeroSection.astro';
@@ -24,7 +23,6 @@ const today = new Date().toISOString().split('T')[0];
     datePublished={today}
     url={blogUrl}
   />
-  <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">
     <BlogHeroSection />

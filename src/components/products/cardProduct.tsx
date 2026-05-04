@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useGTM } from '../gtm/useGTM';
-import { useCart } from '../../context/CartContext';
+import { addItem } from '../../store/cartStore';
 import ProductBadge from './productBadge';
 import './cardProduct.css';
 
@@ -34,7 +34,6 @@ export default function CardProduct({
   id = slug || title
 }: Props) {
   const { track } = useGTM();
-  const { addItem } = useCart();
   const [showToast, setShowToast] = useState(false);
   
   const isEquipo = tipo === 'equipo';

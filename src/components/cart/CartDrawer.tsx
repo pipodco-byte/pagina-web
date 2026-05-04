@@ -1,16 +1,9 @@
 import React from 'react';
-import { useStore } from '@nanostores/react';
-import { cartItems, removeItem, updateQuantity, clearCart, getTotal } from '../../store/cartStore';
+import { useCartStore } from '../../hooks/useCartStore';
 import './CartDrawer.css';
 
-interface CartDrawerProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
-  const items = useStore(cartItems);
-  const total = getTotal();
+export default function CartDrawer() {
+  const { items, removeItem, updateQuantity, clearCart, total, isOpen, closeCart } = useCartStore();
 
   const handleCheckout = () => {
     if (items.length === 0) return;
@@ -21,14 +14,14 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     <>
       {/* Overlay */}
       {isOpen && (
-        <div className="cart-overlay" onClick={onClose}></div>
+        <div className="cart-overlay" onClick={closeCart}></div>
       )}
 
       {/* Drawer */}
       <div className={`cart-drawer ${isOpen ? 'open' : ''}`}>
         <div className="cart-header">
           <h2>Tu Carrito</h2>
-          <button className="close-btn" onClick={onClose}>
+          <button className="close-btn" onClick={closeCart}>
             <i className="bi bi-x-lg"></i>
           </button>
         </div>

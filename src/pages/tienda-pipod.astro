@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../../assets/scss/astro-ecommerce.scss';
-import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import StoreHero from '../components/store/StoreHero.astro';
 import StoreWithFilters from '../components/store/StoreWithFilters';
@@ -15,7 +14,6 @@ const description = "Descubre nuestra selección de productos Apple nuevos, semi
 ---
 
 <Layout title={title} description={description}>
-  <PipodNavbar client:load />
   
   <main class="store-main">
     <StoreHero 

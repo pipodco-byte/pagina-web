@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 
 // Mantenemos la lógica de props y SEO
@@ -9,7 +8,6 @@ const description = "Apoya a El Palafito de Don Gu, una escuela comunitaria de m
 ---
 
 <Layout title={title} description={description}>
-  <PipodNavbar client:load />
 
   <main class="palafito-page">
     

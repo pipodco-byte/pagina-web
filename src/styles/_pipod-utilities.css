@@ -1,0 +1,196 @@
+/**
+ * PIPOD Utilities - CSS Replacement for Creative Tim SCSS
+ *
+ * This file replaces assets/scss/astro-ecommerce.scss
+ * DO NOT modify this file - add to _tokens.css instead
+ *
+ * Uses --pipod-* tokens from _tokens.css where defined
+ * Fallback values ensure visual consistency
+ *
+ * Created: 2026-05-04
+ */
+
+/* ============================================
+   1. SHADOW UTILITIES
+   ============================================ */
+
+.shadow-sm {
+  box-shadow: var(--pipod-shadow-stats, 0 2px 8px rgba(0, 0, 0, 0.08));
+}
+
+.shadow-md {
+  box-shadow: var(--pipod-shadow-card, 0 4px 12px rgba(0, 0, 0, 0.06));
+}
+
+.shadow-lg {
+  box-shadow: var(--pipod-shadow-elevated, 0 8px 24px rgba(0, 0, 0, 0.1));
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+/* ============================================
+   2. GRADIENT CLASSES
+   ============================================ */
+
+.bg-gradient-dark {
+  background-image: var(--pipod-gradient-dark, linear-gradient(310deg, #141727 0%, #3a416f 100%));
+}
+
+.bg-gradient-secondary {
+  background-image: var(--pipod-gradient-secondary, linear-gradient(310deg, #627594 0%, #a8b8d8 100%));
+}
+
+.bg-gradient-blue {
+  background-image: var(--pipod-gradient-blue, linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%));
+}
+
+[class*="bg-gradient-"] {
+  color: #fff;
+}
+
+/* ============================================
+   3. TEXT GRADIENT
+   ============================================ */
+
+.text-gradient {
+  background: var(--pipod-gradient-text, linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   4. BUTTON SYSTEM
+   ============================================ */
+
+/* Base Button */
+.btn {
+  margin-bottom: 0;
+  box-shadow: none;
+  transition: all 0.2s ease;
+}
+
+.btn:active,
+.btn:active:focus,
+.btn:active:hover {
+  box-shadow: none;
+  opacity: 0.85;
+}
+
+.btn:not(.btn-icon-only):hover {
+  box-shadow: none;
+  opacity: 0.85;
+}
+
+/* Button Dark */
+.btn.btn-dark {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fff;
+}
+
+.btn.btn-dark:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+/* Button White */
+.btn.btn-white {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+.btn.btn-white:hover {
+  background-color: #f9fafb;
+}
+
+/* Button Large */
+.btn.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Button Round */
+.btn.btn-round {
+  border-radius: 0.5rem;
+}
+
+/* ============================================
+   5. UTILITIES
+   ============================================ */
+
+/* Z-Index */
+.z-index-10 {
+  z-index: 10 !important;
+}
+
+/* Pagination Active State */
+.pagination .active .page-link {
+  color: #fff;
+}
+
+/* ============================================
+   6. CARD SYSTEM (from template)
+   ============================================ */
+
+.card {
+  box-shadow: var(--pipod-shadow-card, 0 4px 12px rgba(0, 0, 0, 0.06));
+  border-radius: var(--pipod-radius-standard, 24px);
+}
+
+.card .card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card .card-body {
+  padding: 1.5rem;
+}
+
+.card.card-plain {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* ============================================
+   7. CUSTOM UTILITIES FROM TEMPLATE
+   ============================================ */
+
+/* Avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar.avatar-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   8. COMPONENT OVERRIDES
+   ============================================ */
+
+/* Complex Navbar gradients */
+.complex-navbar-gradient {
+  background-image: var(--pipod-gradient-dark, linear-gradient(310deg, #141727 0%, #3a416f 100%));
+}
+
+/* Checkout gradient */
+.checkout-gradient {
+  background-image: linear-gradient(to right, #1f2937, #111827);
+}

@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PipodNavbar from '../../components/pipodNavbar';
 import Footer from '../../components/pipodFooter';
 import FloatingContact from '../../layouts/floatingContact';
 import ProductOverviewGrid from '../../components/products/productOverviewGrid';
@@ -49,7 +48,6 @@ const images = [
     rating: producto.rating,
     reviewCount: producto.reviews
   }} />
-  <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">
     <div class="container mt-5">
@@ -81,7 +79,6 @@ const images = [
         {productosRelacionados.map(prod => (
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <CardProduct 
-              client:load
               thumb_src={prod.thumb_src}
               thumb_alt={prod.thumb_alt}
               color={prod.color}

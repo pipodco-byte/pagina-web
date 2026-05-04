@@ -1,4 +1,4 @@
-import { atom } from 'nanostores';
+import { atom, computed } from 'nanostores';
 
 export type CartItem = {
   id: string;
@@ -13,12 +13,21 @@ const isBrowser = typeof window !== 'undefined';
 const initialCart = isBrowser ? JSON.parse(localStorage.getItem('pipod-cart') || '[]') : [];
 
 export const cartItems = atom<CartItem[]>(initialCart);
+export const isCartOpen = atom(false);
 
 cartItems.listen((items) => {
   if (isBrowser) {
     localStorage.setItem('pipod-cart', JSON.stringify(items));
   }
 });
+
+export const itemCount = computed(cartItems, (items) =>
+  items.reduce((acc, item) => acc + item.cantidad, 0)
+);
+
+export const cartTotal = computed(cartItems, (items) =>
+  items.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
+);
 
 export function addItem(item: Omit<CartItem, 'cantidad'>) {
   const items = cartItems.get();
@@ -57,12 +66,14 @@ export function clearCart() {
   cartItems.set([]);
 }
 
-export function getTotal() {
-  const items = cartItems.get();
-  return items.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
+export function openCart() {
+  isCartOpen.set(true);
 }
 
-export function getItemCount() {
-  const items = cartItems.get();
-  return items.reduce((sum, item) => sum + item.cantidad, 0);
+export function closeCart() {
+  isCartOpen.set(false);
+}
+
+export function toggleCart() {
+  isCartOpen.set(!isCartOpen.get());
 }

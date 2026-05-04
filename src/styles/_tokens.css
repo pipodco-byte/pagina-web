@@ -116,6 +116,15 @@
   --pipod-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.2);  /* Palafito hover */
 
   /* ============================================
+     GRADIENT TOKENS
+     ============================================ */
+
+  --pipod-gradient-dark: linear-gradient(310deg, #141727 0%, #3a416f 100%);
+  --pipod-gradient-secondary: linear-gradient(310deg, #627594 0%, #a8b8d8 100%);
+  --pipod-gradient-text: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  --pipod-gradient-blue: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+
+  /* ============================================
      LAYOUT TOKENS
      ============================================ */
 

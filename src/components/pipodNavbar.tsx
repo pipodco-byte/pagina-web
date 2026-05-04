@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useStore } from '@nanostores/react';
-import { cartItems, getItemCount } from '../store/cartStore';
-import CartDrawer from './cart/CartDrawer';
+import { useCartStore } from '../hooks/useCartStore';
 import './pipodNavbar.css';
 
 const PipodNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [animateCart, setAnimateCart] = useState(false);
-  const items = useStore(cartItems);
-  const itemCount = items.reduce((sum, item) => sum + item.cantidad, 0);
+  const { itemCount, openCart } = useCartStore();
   const [prevItemCount, setPrevItemCount] = useState(itemCount);
 
   useEffect(() => {
@@ -43,7 +39,7 @@ const PipodNavbar = () => {
   };
 
   const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
+    openCart();
   };
 
   return (
@@ -119,9 +115,6 @@ const PipodNavbar = () => {
           )}
         </div>
       </nav>
-
-      {/* Cart Drawer */}
-      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );
 };

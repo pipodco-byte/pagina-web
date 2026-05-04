@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
 import ContactPageSchema from '../components/SEO/ContactPageSchema.astro';
@@ -22,7 +21,6 @@ const description = "Reparación MacBook, iPhone, iPad en Bogotá. Microsoldadur
 
 <Layout title={title} description={description}>
   <ContactPageSchema />
-  <PipodNavbar client:load />
   
     <main>
     <ContactHero />

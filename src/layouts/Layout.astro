@@ -6,6 +6,9 @@ export interface Props {
 
 const { title, description } = Astro.props;
 import MetaSocial from '../components/SEO/MetaSocial.astro';
+import AppWrapper from '../components/AppWrapper';
+import '../styles/_pipod-utilities.css';
+import '../styles/_tokens.css';
 ---
 
 <!DOCTYPE html>
@@ -57,7 +60,11 @@ import MetaSocial from '../components/SEO/MetaSocial.astro';
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KT7MTVGS"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <slot />
+    <div id="app">
+      <AppWrapper client:load>
+        <slot />
+      </AppWrapper>
+    </div>
 	</body>
 
   <!-- Bootstrap JavaScript Bundle with Popper -->

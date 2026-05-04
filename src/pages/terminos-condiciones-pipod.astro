@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
 import TermsPageSchema from '../components/SEO/TermsPageSchema.astro';
@@ -14,7 +13,6 @@ const description = "Términos y condiciones generales de Pipod. Lee nuestras po
 
 <Layout title={title} description={description}>
   <TermsPageSchema />
-  <PipodNavbar client:load />
   
   <main>
     <TermsPage data={termsData} />

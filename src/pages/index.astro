@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import LocalBusinessSchema from '../components/SEO/LocalBusinessSchema.astro';
 import '../../assets/scss/astro-ecommerce.scss';
-import PipodNavbar from '../components/pipodNavbar';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
 import CardProduct from '../components/products/cardProduct';
@@ -25,7 +24,6 @@ const productos = await getProductos();
 <Layout title="Pipod - Servicio Técnico Apple Especializado" description="Servicio técnico Apple especializado en Bogotá. Reparación de MacBook, iPhone, iPad. Baterías, pantallas y microsoldadura con garantía de 12 meses.">
   <LocalBusinessSchema />
   <main>
-    <PipodNavbar client:load />
     
     <!-- Hero Carousel Section -->
     <HeroBentoCarousel />

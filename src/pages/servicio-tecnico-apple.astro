@@ -17,7 +17,6 @@ import PipodFAQ from '../components/service/pipodFAQretoma.astro';
 import ServicesBanner from '../components/service/pipodServicesBanner.astro';
 import ReviewWall from '../components/promo/pipodGoogleReviews.jsx';
 import Footer from '../components/pipodFooter';
-import PipodNavbar from '../components/pipodNavbar';
 import Stats from '../components/stats/pipodStats.astro';
 import PaymentBanner from '../components/payment/PaymentBanner.astro';
 import '../../assets/scss/astro-ecommerce.scss';
@@ -29,7 +28,6 @@ const description = "Especialistas en bater√≠as y pantallas Apple. 2,000+ bater√
 
 <Layout title={title}>
   <ServicePageSchema />
-  <PipodNavbar client:load />
   
   <main style="padding-top: 120px;">
  <ServiceHero />
