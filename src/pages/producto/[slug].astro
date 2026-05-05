@@ -6,7 +6,7 @@ import ProductOverviewGrid from '../../components/products/productOverviewGrid';
 import CardProduct from '../../components/products/cardProduct';
 import ProductSchema from '../../components/SEO/ProductSchema.astro';
 import { getProductos, getProductoPorSlug } from '../../lib/contentful';
-import '../../../assets/scss/astro-ecommerce.scss';
+// import '../../../assets/scss/astro-ecommerce.scss';
 
 export async function getStaticPaths() {
   const productos = await getProductos();
