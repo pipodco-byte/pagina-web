@@ -82,7 +82,12 @@ html * {
 - `.sidebar-title` restored to main version (no negative margin)
 - `.widget` removed added box-shadow
 
-**Nota:** El componente `TermsPage.astro` tiene todos sus estilos inline, pero la página necesita el SCSS para los estilos base de Bootstrap/TIM que pueden afectar el layout.
+### Commit: 79f2c7f - "fix(servicio-tecnico): restore SCSS import for Google Fonts"
+| Archivo | Issue | Fix |
+|---------|-------|-----|
+| `servicio-tecnico-apple.astro` | Google Fonts no cargaban | Uncomment `import '../../assets/scss/astro-ecommerce.scss'` |
+
+**Root cause:** El SCSS de TIM incluye las declaraciones `@import` para Google Fonts (Inter, etc.). Sin el SCSS, las fuentes no se cargaban.
 
 ## Resumen de Fixes por Archivo
 
