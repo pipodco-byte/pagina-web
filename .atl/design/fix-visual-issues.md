@@ -66,6 +66,24 @@ html * {
 | `TermsPage.astro` | sidebar background | `background: #FFFFFF` |
 | `cartStore.ts` | hydration error | Initialize empty, sync via useEffect post-hydration |
 
+### Commit: 242e427 - "fix(terms): restore SCSS import for terms page"
+| Archivo | Issue | Fix |
+|---------|-------|-----|
+| `terminos-condiciones-pipod.astro` | Missing SCSS import | Uncomment `import '../../assets/scss/astro-ecommerce.scss'` |
+
+### Commit: 3224c56 - "fix(terms): restore TermsPage styles to match main exactly"
+| Archivo | Issue | Fix |
+|---------|-------|-----|
+| `TermsPage.astro` | Styles different from main | Restored exact main styles |
+
+**Changes reverted to match main:**
+- `.terms-sidebar background: #FFFFFF → #F5F5F7`
+- `.terms-sidebar` removed added box-shadow
+- `.sidebar-title` restored to main version (no negative margin)
+- `.widget` removed added box-shadow
+
+**Nota:** El componente `TermsPage.astro` tiene todos sus estilos inline, pero la página necesita el SCSS para los estilos base de Bootstrap/TIM que pueden afectar el layout.
+
 ## Resumen de Fixes por Archivo
 
 | Archivo | Fixs Aplicados |
