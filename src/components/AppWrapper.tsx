@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import PipodNavbar from './PipodNavbar';
+import PipodNavbar from './pipodNavbar';
 import CartDrawer from './cart/CartDrawer';
 import { cartItems } from '../store/cartStore';
 import type { CartItem } from '../store/cartStore';
