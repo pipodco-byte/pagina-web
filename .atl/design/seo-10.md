@@ -2,88 +2,260 @@
 
 ## Overview
 
-Technical design for SEO improvements (HowTo schema, WebP images, Core Web Vitals, internal linking).
+Technical design for all SEO tasks to reach 10/10 score, including new high-precision tasks (FAQPage, IndexNow, VideoObject, Topic Clusters).
 
 ---
 
-## H1: Citations Locales - Design
-
-### Manual Process (no code changes)
-Create accounts on each directory and fill in business information:
-
-**Yelp Colombia:**
-1. Go to yelp.com.co
-2. Click "Claim Your Business"
-3. Search for "Pipod Servicio Técnico Apple"
-4. Fill: Cra. 13a #79-52, Chapinero, Bogotá
-5. Add phone: +57 312 481 3094
-6. Categories: "Electronics Repair", "Mobile Phone Repair"
-7. Hours: Mon-Sat 10AM-7PM
-
-**Thomson Local:**
-1. thomsonlocal.com
-2. Free listing submission
-3. Same business details
-
-**Páginas Amarillas:**
-1. paginasamarillas.com.co
-2. Free business listing
-3. Same details
-
-### No code changes required.
+## NEW: High-Precision Tasks
 
 ---
 
-## H2: Reviews con Fotos - Design
+## M1: FAQPage Schema - Design
 
-### Current Implementation
-```jsx
-const reviews = [
-  {
-    name: "Wilson Vega",
-    image: "/images/wilson.jpg",  // FILE MISSING
-    initial: "W",
-    bg: "#E8F0FE",
-    isLocalGuide: false
-  },
-  // ...
+### Component: FAQPageSchema.astro
+
+```astro
+---
+import JsonLdSchema from './JsonLdSchema.astro';
+
+interface Props {
+  pageUrl: string;
+}
+
+const { pageUrl } = Astro.props;
+
+const serviceFAQs = [
+  { q: "¿Cuánto tiempo tarda la reparación de un iPhone?", a: "2 horas o menos con servicio Express. Reparaciones complejas: 24-48h." },
+  { q: "¿Qué garantía ofrecen?", a: "12 meses en todas las reparaciones." },
+  // ... more FAQs
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": serviceFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+---
+
+<JsonLdSchema schema={faqSchema} type="FAQPage" />
 ```
 
-### Problem
-`wilson.jpg`, `sergio.jpg`, `nicolas.jpg` files do not exist in `/public/images/`.
+### Integration:
+Add to `servicio-tecnico-apple.astro`:
+```astro
+import FAQPageSchema from '../components/SEO/FAQPageSchema.astro';
+// In head section
+<FAQPageSchema pageUrl="https://www.pipod.co/servicio-tecnico-apple" />
+```
 
-### Solution A: Get Real Photos
-Obtain photos from:
-1. Google Reviews (where originals exist)
-2. Customer consent to use
-3. Add to /public/images/
+### Visual Component:
+The FAQ accordion already exists in the page (`PipodFAQ` component). The schema just marks up the same content for search engines.
 
-### Solution B: Enhanced Avatar Fallback
-If photos unavailable, use:
-```jsx
+---
+
+## INDEX-NOW: IndexNow Protocol - Design
+
+### Endpoint: /api/index-now.ts
+
+```typescript
+import type { APIRoute } from 'astro';
+
+export const prerender = false;
+
+const INDEXNOW_URLS = [
+  'https://indexnow.org/indexnow',
+  'https://www.bing.com/indexnow'
+];
+
+export const POST: APIRoute = async ({ request }) => {
+  const { urls } = await request.json();
+
+  const payload = {
+    host: 'www.pipod.co',
+    key: 'pipod-seo-key',
+    keyLocation: 'https://www.pipod.co/pipod-seo-key.txt',
+    urlList: urls
+  };
+
+  // Notify both engines
+  await Promise.allSettled(
+    INDEXNOW_URLS.map(url =>
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+    )
+  );
+
+  return new Response(JSON.stringify({ success: true }));
+};
+```
+
+### Verification File: public/pipod-seo-key.txt
+
+Content:
+```
+pipod-seo-key
+```
+
+### Usage Triggers:
+- Price update in retoma page
+- New blog post published
+- Product added to tienda
+
+### Alternative (simpler):
+Use cron job at `/api/sync-reviews` to also notify IndexNow if prices changed.
+
+---
+
+## VIDEO: VideoObject Schema - Design
+
+### If Video Exists (YouTube or hosted):
+
+```astro
+---
+import JsonLdSchema from './JsonLdSchema.astro';
+
+interface Props {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration: string;
+  contentUrl: string;
+  embedUrl?: string;
+}
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": name,
+  "description": description,
+  "thumbnailUrl": thumbnailUrl,
+  "uploadDate": uploadDate,
+  "duration": duration,
+  "contentUrl": contentUrl,
+  "embedUrl": embedUrl
+};
+---
+
+<JsonLdSchema schema={videoSchema} type="VideoObject" />
+```
+
+### If No Video:
+Skip this task. No code changes needed.
+
+### Video Recommendations:
+- 15-30 seconds (short, professional)
+- Show hands doing microsoldadura or repair
+- Good lighting, clean background
+- No audio required (can add caption)
+
+---
+
+## CLUSTERS: Semantic Topic Clusters - Design
+
+### No Code Implementation - Content Strategy
+
+This is primarily a content and linking strategy:
+
+1. **Pillar Page** (already exists or create new):
+   - `/blog/guia-mantenimiento-macbook-bogota`
+
+2. **Internal Linking** (add to existing posts):
+   ```markdown
+   Ver también: [Cómo cuidar la batería de tu MacBook](/blog/cuidado-bateria-macbook)
+   ```
+
+3. **Schema for Article Relationship:**
+   ```json
+   {
+     "@type": "Article",
+     "about": { "@type": "Thing", "name": "MacBook Maintenance" }
+   }
+   ```
+
+### Implementation Steps:
+1. Map existing blog posts to topics
+2. Create missing satellite articles
+3. Add internal links from satellites to pillar
+4. Ensure pillar links to all satellites
+
+### Topic Clusters for Pipod:
+```
+MacBook Maintenance
+├── Cuidado batería MacBook
+├── Cambio pasta térmica
+└── Falla logic board
+
+iPhone Repair
+├── Pantalla iPhone guía
+├── Batería iPhone guía
+└── Face ID reparación
+
+Trade-in
+├── Cómo funciona retoma
+├── Evaluar mi equipo
+└── Trade-in vs vender
+```
+
+---
+
+## LOCAL: Hyper-Local Landing Pages - Design
+
+### Option A: Full Pages (More SEO Impact)
+Create routes:
+- `/servicio-tecnico-apple/chapinero`
+- `/servicio-tecnico-apple/usaquen`
+
+Each page has neighborhood-specific content and schema.
+
+### Option B: Anchor Sections (Simpler, Less Effort)
+Add to existing `servicio-tecnico-apple.astro`:
+```html
+<section id="chapinero">
+  <h2>Servicio Técnico Apple en Chapinero</h2>
+  <p>Estamos ubicados en Cra. 13a #79-52, Chapinero...</p>
+</section>
+
+<section id="usaquen">
+  <h2>Servicio Técnico Apple en Usaquén</h2>
+  <p>También servimos la zona norte de Bogotá incluyendo Usaquén...</p>
+</section>
+```
+
+### Schema for Local Pages:
+```json
 {
-  name: "Wilson Vega",
-  image: null,  // No photo
-  initial: "W",
-  bg: "#E8F0FE",  // Consistent with Google avatar colors
-  isLocalGuide: true  // If user is a Local Guide
+  "@type": "LocalBusiness",
+  "areaServed": { "@type": "Neighborhood", "name": "Chapinero" }
 }
 ```
 
-The component already handles `image: null` by showing avatar with initial.
+---
 
-### Recommendation
-Use Solution B (enhanced avatars) for now since:
-- Component already supports it
-- Low SEO impact (avatars don't affect rankings)
-- Can add photos later if customers provide them
+## ORIGINAL: Core Tasks (Preserved)
 
 ---
 
-## M2: HowTo Schema - Design
+## H1: Citations Locales - No Code
 
-### New Component: HowToSchema.astro
+Manual process: Create accounts on Yelp, Thomson, etc.
+
+---
+
+## H2: Reviews con Fotos - No Code
+
+Existing avatar fallback is sufficient. No code changes.
+
+---
+
+## M2: HowTo Schema - Component Design
 
 ```astro
 ---
@@ -117,140 +289,99 @@ const schema = {
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 ```
 
-### Usage in Pages:
-```astro
----
-import HowToSchema from '../components/SEO/HowToSchema.astro';
----
-
-<HowToSchema
-  name="Cómo cuidar tu iPhone después de una reparación"
-  description="Sigue estos 5 pasos para mantener tu iPhone en óptimas condiciones."
-  steps={[
-    { name: "Evita temperaturas extremas", text: "No expongas tu iPhone a calor o frío excesivo." },
-    { name: "Usa funda protectora", text: "Una buena funda evita daños por caídas." },
-    // ...
-  ]}
-/>
-```
-
-### Where to Add:
-1. `/src/pages/servicio-tecnico-apple.astro` - Below iPhone service section
-2. Or create `/src/pages/blog/cuidado-iphone-guide.astro`
-
 ---
 
 ## M3: Imágenes WebP - Design
 
-### Conversion Strategy
+### Conversion Process:
 
-**Step 1:** Identify images without WebP version
 ```bash
+# Find images
 find public/images -name "*.jpg" -o -name "*.png" | head -20
+
+# Convert single image (macOS)
+sips -s format webp image.jpg --out image.webp
+
+# Batch convert (all jpg in folder)
+for f in *.jpg; do sips -s format webp "$f" --out "${f%.jpg}.webp"; done
 ```
 
-**Step 2:** Convert using standard tools
-- macOS: `sips -s format webp image.jpg --out image.webp`
-- Online: CloudConvert, Squoosh
-- CLI: `cwebp input.jpg -o output.webp`
+### Component Update Example:
 
-**Step 3:** Update components with `<picture>` tag
-
-### Example: Hero Image
 ```astro
 <picture>
   <source srcset="/images/hero.webp" type="image/webp">
-  <img
-    src="/images/hero.jpg"
-    alt="Servicio Técnico Apple Bogotá"
-    width="1920"
-    height="600"
-    loading="eager"
-  >
+  <img src="/images/hero.jpg" alt="..." width="1920" height="600" loading="eager">
 </picture>
 ```
 
-### Images to Prioritize:
-1. hero-image.webp (LCP candidate)
-2. Product images in tienda-pipod
-3. Service section images
-
-### Fallback Strategy
-Keep original JPG/PNG as fallback for browsers that don't support WebP.
+### Priority:
+1. ServiceHero.astro (LCP candidate)
+2. Product cards in tienda-pipod
+3. Payment method logos (lower priority)
 
 ---
 
-## L1: Core Web Vitals - Design
+## L1: Core Web Vitals - Measurement
 
-### Measurement Steps
-
-1. Deploy to Vercel: `vercel --prod`
-2. Run PageSpeed Insights: https://pagespeed.web.dev/?url=https://www.pipod.co
-
-3. Check Metrics:
-   - LCP: Should be < 2.5s
-   - CLS: Should be < 0.1
-   - FID: Should be < 100ms
-
-### Optimization Triggers
-
-**If LCP > 2.5s:**
-- Optimize hero image (WebP, correct size)
-- Preload critical fonts
-- Add cache headers
-- Enable Vercel Edge Network
-
-**If CLS > 0.1:**
-- Add width/height to all images (DONE in local-seo-cro-v3)
-- Avoid dynamic content injection
-- Use font-display: swap (DONE)
-
-**If FID > 100ms:**
-- Defer non-critical JS
-- Use client:visible for below-fold components (not implemented - user choice)
+Steps:
+1. Deploy: `vercel --prod`
+2. Measure: https://pagespeed.web.dev/?url=https://www.pipod.co
+3. If LCP > 2.5s: optimize hero image
+4. If CLS > 0.1: check image dimensions
+5. If FID > 100ms: defer non-critical JS
 
 ---
 
-## L2: Internal Linking - Design
+## L2: Internal Linking - Content Update
 
-### Blog Structure
-Blog posts at `/pipod-blog` can link to:
-- Product pages
-- Service pages
-- Trade-in page
-
-### Link Placement Strategy
-
-Within blog post content, add contextual links:
+Edit blog posts to add contextual links:
 
 ```markdown
-<!-- Example blog post: "5 señales de que necesitas cambiar la batería de tu iPhone" -->
+<!-- In existing blog post about iPhone repair -->
 
-...después de explicar cada señal...
+Para un diagnóstico profesional, visita nuestro [servicio técnico iPhone en Pipod](/servicio-tecnico-apple#iphone).
 
-**¿Necesitas un diagnóstico?** [Agenda tu revisión gratuita en Pipod](/servicio-tecnico-apple#device-selector)
-
-...al final del artículo...
-
-**También te puede interesar:**
-- [Trade-in: Canjea tu iPhone por uno nuevo](/plan-retoma-apple)
-- [Ver casos de reparación exitosos](/pipod-blog/casos-exito)
+También te puede interesar: [Trade-in: Canjea tu iPhone por uno nuevo](/plan-retoma-apple).
 ```
-
-### Implementation
-Edit blog post `.astro` or `.mdx` files to add anchor links.
 
 ---
 
-## Summary of Code Changes
+## Summary: Code Changes Required
 
-| Task | File | Change |
-|------|------|--------|
-| H2 (Photos) | None | No change - use existing avatar fallback |
-| M2 (HowTo) | `src/components/SEO/HowToSchema.astro` | NEW component |
-| M2 (HowTo) | `src/pages/servicio-tecnico-apple.astro` | Add 1-2 guides |
-| M3 (WebP) | Various image components | Add `<picture>` tags |
-| L1 (CWV) | None | Measurement only, no code |
-| L2 (Links) | Blog post `.astro` files | Add anchor links |
+| Task | Files | Complexity |
+|------|-------|------------|
+| M1: FAQPage | `FAQPageSchema.astro`, `servicio-tecnico-apple.astro` | LOW |
+| INDEX-NOW | `api/index-now.ts`, `public/pipod-seo-key.txt` | LOW |
+| VIDEO | `VideoSchema.astro` (if video exists) | LOW |
+| CLUSTERS | Content/linking strategy only | LOW |
+| LOCAL | New sections or pages | MEDIUM |
+| M2: HowTo | `HowToSchema.astro` | LOW |
+| M3: WebP | Image files + component updates | MEDIUM |
+| L1: CWV | No code, measurement only | NONE |
+| L2: Links | Blog post edits | LOW |
 
-No existing components need modification for H1 (external) or H2 (existing code handles fallback).
+---
+
+## Rollback Commands
+
+```bash
+# FAQPage
+rm src/components/SEO/FAQPageSchema.astro
+
+# IndexNow
+rm src/pages/api/index-now.ts
+rm public/pipod-seo-key.txt
+
+# VideoObject
+rm src/components/SEO/VideoSchema.astro
+
+# HowTo
+rm src/components/SEO/HowToSchema.astro
+
+# WebP
+# Remove .webp files, revert component to original <img>
+
+# Internal links
+# Revert blog post changes
+```
