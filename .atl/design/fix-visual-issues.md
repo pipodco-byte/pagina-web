@@ -89,6 +89,13 @@ html * {
 
 **Root cause:** El SCSS de TIM incluye las declaraciones `@import` para Google Fonts (Inter, etc.). Sin el SCSS, las fuentes no se cargaban.
 
+### Commit: 3596873 - "fix: correct PipodNavbar import case sensitivity for Vercel Linux build"
+| Archivo | Issue | Fix |
+|---------|-------|-----|
+| `AppWrapper.tsx` | Build fail en Vercel: `Could not resolve "./PipodNavbar"` | `./PipodNavbar` → `./pipodNavbar` |
+
+**Root cause:** MacOS es case-insensitive para archivos, Linux/Vercel es case-sensitive. El archivo es `pipodNavbar.tsx` (minúsculas) pero el import decía `PipodNavbar` (mayúsculas).
+
 ## Resumen de Fixes por Archivo
 
 | Archivo | Fixs Aplicados |
