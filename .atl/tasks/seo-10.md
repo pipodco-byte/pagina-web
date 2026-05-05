@@ -46,15 +46,29 @@ Notifica instantáneamente a Bing/Yandex cuando actualizas precios o posts. Redu
 - [ ] **IN1.1** Create `src/pages/api/index-now.ts` endpoint
 - [ ] **IN1.2** Add `INDEXNOW_KEY` to `.env.example`
 - [ ] **IN1.3** Create `pipod-seo-key.txt` verification file in `public/`
-- [ ] **IN1.4** Configure to notify on:
-  - Price changes (retoma prices)
-  - New blog posts
-  - Product updates
+- [ ] **IN1.4** Configure automatic triggers (not just manual):
+  - **Webhook trigger:** POST to `/api/index-now` on sitemap update
+  - **Deploy hook:** Vercel cron or GitHub webhook triggers IndexNow on deploy
+  - **Manual fallback:** `POST /api/index-now { urls: [...] }` still available
 
-### Implementation:
+### Automatic Trigger Options:
+
+**Option A: Vercel Cron + sitemap check**
+- Cron runs daily, checks if sitemap changed since last run
+- If changed, automatically notifies IndexNow
+
+**Option B: Build hook**
+- On every deploy, automatically notify IndexNow with changed URLs
+- Extract changed URLs from git diff or sitemap
+
+**Option C: CMS Webhook**
+- If using CMS (Contentful, Sanity), webhook triggers on content publish
+- Sends updated URLs to `/api/index-now`
+
+### Implementation (Option A - Cron):
 ```typescript
-// POST /api/index-now with { urls: [...] }
-// Notifies indexnow.org and bing.com
+// GET /api/index-now (cron trigger)
+// Or integrate into existing /api/sync-reviews cron
 ```
 
 ### Verification File Content (public/pipod-seo-key.txt):

@@ -81,7 +81,6 @@ export const POST: APIRoute = async ({ request }) => {
     urlList: urls
   };
 
-  // Notify both engines
   await Promise.allSettled(
     INDEXNOW_URLS.map(url =>
       fetch(url, {
@@ -103,13 +102,25 @@ Content:
 pipod-seo-key
 ```
 
-### Usage Triggers:
-- Price update in retoma page
-- New blog post published
-- Product added to tienda
+### AUTOMATIC TRIGGER (No Manual Intervention)
 
-### Alternative (simpler):
-Use cron job at `/api/sync-reviews` to also notify IndexNow if prices changed.
+**Option A: Vercel Cron Integration**
+Modify existing `/api/sync-reviews` cron to also check sitemap and notify IndexNow:
+- Cron runs every 3 days
+- Compares current sitemap with cached hash
+- If changed, sends updated URLs to IndexNow
+
+**Option B: GitHub Webhook on Deploy**
+- On push to main/develop, GitHub webhook triggers
+- Build extracts changed URLs from git diff
+- POSTs to IndexNow automatically
+
+**Option C: Direct from CMS (Contentful/Sanity)**
+- Content publish webhook → triggers serverless function
+- Function notifies IndexNow with published content URLs
+
+### Recommended: Option A (Leverage existing cron)
+Modify `/api/sync-reviews` to also notify IndexNow when sitemap changes.
 
 ---
 

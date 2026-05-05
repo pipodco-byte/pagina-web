@@ -54,7 +54,7 @@ Technical specifications for all SEO tasks to reach 10/10 score.
 ### Scenario: Price update triggers instant crawler notification
 
 **Given** Admin updates retoma prices in pipod.co
-**When** The change is published
+**When** The change is published OR cron detects sitemap change
 **Then** IndexNow notifies Bing/Yandex within seconds
 **And** Search engines index the new prices within minutes (not days)
 
@@ -67,6 +67,18 @@ Technical specifications for all SEO tasks to reach 10/10 score.
   ]
 }
 ```
+
+### Automatic Trigger (No Manual):
+**Scenario:** Sitemap changes but no human triggers IndexNow
+
+**Given** Vercel cron runs daily at 6AM
+**When** Sitemap has changed since last check
+**Then** Automatically POST to IndexNow with updated URLs
+
+### Alternative: Git Hook on Deploy
+**Given** Developer pushes to main/develop
+**When** Build completes
+**Then** GitHub webhook triggers IndexNow with all changed URLs
 
 ### Notification Targets:
 - indexnow.org
