@@ -70,28 +70,31 @@
 
 ---
 
+## ✅ SDD: fix-cart-hydration COMPLETADO
+
+### Nano Stores Implementation ✅
+- `cartStore.ts`: Enhanced con computed values (itemCount, cartTotal)
+- `useCartStore.ts`: Hook de React creado
+- `AppWrapper.tsx`: Single island con Navbar + CartDrawer
+- `CartDrawer.tsx`: Usa nanostores (isOpen del store)
+- `pipodNavbar.tsx`: Usa nanostores (openCart del store)
+- `CardProduct.tsx`: Usa addItem directo del store
+- `CartContext.tsx`: **ELIMINADO** - Reemplazado por nanostores
+- `CartProviderWrapper.tsx`: **ELIMINADO**
+- 12 pages: `<PipodNavbar client:load>` removido (Navbar ahora global via AppWrapper)
+
+**Fix:** Error "useCart must be used within a CartProvider" eliminado
+
+**Commit:** `5c7b665` - fix: replace CartContext with Nano Stores for cross-island state
+
+---
+
 ## ⏭️ PENDIENTES
 
-### 1. Reviews Auto-Sync ✅ CONFIGURADO
-**Estado:** vercel.json cron + API verificada
-**Credenciales:** GOOGLE_PLACES_API_KEY + GOOGLE_PLACE_ID en .env.local ✅
-**vercel.json:** Cron configurado para `/api/sync-reviews` cada 3 días 6AM
-**Reviews actuales:** 89 (de Google) ✅
-**Vercel CLI:** ✅ Configurado (usuario: calderonjosue)
-**Acción:** Hacer deploy a Vercel para activar cron
-
-### 2. Deploy a Vercel (PENDIENTE)
-**Opción A:** Vercel Dashboard → Deploy button (después de push a origin)
+### 1. Deploy a Vercel (PENDIENTE)
+**Opción A:** Vercel Dashboard → Deploy button
 **Opción B:** `vercel --prod` (desde CLI)
-**Nota:** El cron se activa automáticamente tras el primer deploy con vercel.json
-
-### 3. Cambios sin commit en develop
-**Archivos:**
-- `src/components/cart/CartDrawer.tsx` — refactoring: nanostores → CartContext
-- `src/components/pipodNavbar.tsx` — refactoring: nanostores → CartContext
-- `src/layouts/Layout.astro` — añadido RootProvider wrapper
-**Estado:** Sin commit, en develop branch
-**Recomendación:** Revisar y commitear separately cuando se valide que el carrito funciona correctamente
+**Nota:** El cron de reviews se activa automáticamente tras el primer deploy
 
 ---
 
@@ -172,4 +175,4 @@
 - robots.txt actualizado con Disallow rules
 - Meta tags ahora dinámicos en todas las páginas
 - SEO Score actual: ~8/10 (meta: 10/10)
-- Last commit: `6c8893a` - local-seo-cro-v3 Hub schema + CLS fix
+- Last commit: `5c7b665` - fix: replace CartContext with Nano Stores for cross-island state

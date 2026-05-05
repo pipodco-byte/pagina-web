@@ -31,7 +31,7 @@ Loaded from: `~/.config/opencode/skills/`
 | Convention | Details |
 |------------|---------|
 | **Tech Stack** | Astro 6.1 (SSR), React 18, TypeScript (strict), Vite 5 |
-| **State Management** | Nanostores (atom-based) |
+| **State Management** | Nanostores (atom-based, cross-island) |
 | **Styling** | SCSS, Bootstrap 2.6, Tailwind |
 | **CMS** | Contentful (production) |
 | **Backend** | Astro API routes (server mode) |
@@ -43,10 +43,18 @@ Loaded from: `~/.config/opencode/skills/`
 ## Architecture Patterns
 
 - **Component Organization**: Feature-based directories under `src/components/`
-- **Store Pattern**: Centralized stores in `src/store/` with localStorage persistence
-- **Context Pattern**: React Context for cart management
+- **Store Pattern**: Centralized stores in `src/store/` (cartStore.ts) with localStorage persistence
+- **Cross-Island State**: Nano Stores for React islands communication (solves Astro hydration issue)
 - **API Routes**: Astro SSR endpoints in `src/pages/api/`
 - **Data Layer**: Contentful client in `src/lib/contentful.ts`
+
+## Recent Changes
+
+| Date | Change | Commit |
+|------|--------|--------|
+| 2026-05-04 | fix-cart-hydration: Nano Stores replace React Context | `5c7b665` |
+| 2026-05-04 | local-seo-cro-v3: Hub Schema, CLS Fix | `6c8893a` |
+| 2026-05-04 | content: Contact Hero/History copy update | `01c3b38` |
 
 ## Commands
 

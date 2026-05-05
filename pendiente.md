@@ -1,6 +1,6 @@
 # Pendientes - Astro-Ecommerce / Pipod
 
-**Última actualización:** 2026-05-04
+**Última actualización:** 2026-05-04 (actualizado con fix-cart-hydration)
 **Estado SEO:** ✅ COMPLETADO (7.2/10)
 **Design System:** Tokens creados, 98 tareas pendientes
 
@@ -8,7 +8,7 @@
 
 ## ✅ COMPLETADO
 
-### SEO (Score: 7.2/10)
+### SEO (Score: 8/10)
 - Phase 1-5 SEO completamente resuelto
 - Layout.astro corregido (canonical, lang=es)
 - LocalBusinessSchema.fixedo
@@ -16,6 +16,15 @@
 - Meta descriptions añadidas
 - robots.txt actualizado
 - 3 archivos duplicados eliminados
+- Hub Schema (local-seo-cro-v3)
+- CLS Fix (PaymentBanner width/height)
+
+### Cart Hydration (Score: ✅ FIXED)
+- **Nano Stores** reemplaza React Context para estado global
+- **AppWrapper** como single island con Navbar + CartDrawer
+- **Error useCart** eliminado
+- `CartContext.tsx` y `CartProviderWrapper.tsx` eliminados
+- **Commit:** `5c7b665`
 
 ---
 

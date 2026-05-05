@@ -1,7 +1,7 @@
 # PIPOD - Estado Total del Proyecto
 
 **Proyecto:** Astro-Ecommerce (pipod.co)
-**Última actualización:** 2026-05-04
+**Última actualización:** 2026-05-04 (actualizado con fix-cart-hydration)
 **Stack:** Astro 6.1 (SSR), React 18, TypeScript, Vite 5
 
 ---
@@ -14,7 +14,7 @@
 - **Styling:** SCSS, Bootstrap 2.6, Tailwind
 - **CMS:** Contentful (configurado)
 - **Backend:** Astro API routes (server mode)
-- **State:** Nanostores (atom-based)
+- **State:** Nano Stores (atom-based, framework-agnostic) ✅
 - **Deploy:** Vercel
 
 ### Páginas (~20 rutas)
@@ -180,7 +180,7 @@ PIPOD es una plataforma de servicio técnico premium que combina profesionalismo
 | 5 | Servicio Técnico: Pulir /servicio-tecnico-apple | Media | ⏳ Pendiente |
 | 6 | Visual Entradas: Diseño posts individuales | Baja | ⏳ Pendiente |
 | 7 | Creación Visual: Piezas gráficas faltantes | Baja | ⏳ Pendiente |
-| 8 | Card MacBook: Quitar "añadir a carrito" | Alta | ⏳ Pendiente |
+| 8 | Card MacBook: Quitar "añadir a carrito" | Alta | ✅ COMPLETADO (via nanostores) |
 | 9 | Orden del Home: Reordenar componentes | Media | ⏳ Pendiente |
 
 ### Backend / Datos (5 tareas)
