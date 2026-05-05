@@ -193,6 +193,17 @@
   border-radius: 50%;
   border: 2px solid #E5E5E7;
   flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.badge.filter:hover {
+  border-color: #999;
+  transform: scale(1.1);
+}
+
+.badge.filter.active {
+  border-color: #000;
+  border-width: 3px;
 }
 
 .product-content {
