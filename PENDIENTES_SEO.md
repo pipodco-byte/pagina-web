@@ -1,5 +1,65 @@
 # PENDIENTES SEO - Astro-Ecommerce PIPOD
-## Updated: 2026-05-04
+## Updated: 2026-05-05
+
+---
+
+## ✅ SDD: seo-10 IMPLEMENTADO
+
+### M1: FAQPage Schema ✅
+
+**Implementado en 3 páginas:**
+
+| Página | Archivo | # FAQs |
+|--------|---------|--------|
+| `/servicio-tecnico-apple` | `src/pages/servicio-tecnico-apple.astro` | 8 |
+| `/plan-retoma-apple` | `src/pages/plan-retoma-apple.astro` | 12 |
+| `/contacto-pipod` | `src/pages/contacto-pipod.astro` | 4 |
+
+**Componente creado:** `src/components/SEO/FAQPageSchema.astro`
+- Props: `faqData` (array de `{q: string, a: string}`)
+- Genera JSON-LD tipo FAQPage
+
+**Preguntas para servicio técnico:**
+1. ¿Cuánto tiempo tarda la reparación de un iPhone?
+2. ¿Qué garantía ofrecen?
+3. ¿Los repuestos son originales?
+4. ¿Puedo dejar mi equipo sin cita?
+5. ¿Ofrecen servicio a domicilio?
+6. ¿Qué dispositivos Apple reparan?
+7. ¿Cómo funciona el diagnóstico gratis?
+8. ¿Pueden recuperar datos de un iPhone mojado?
+
+**Preguntas para retoma:** (12 preguntas de RetomaFAQ.astro)
+
+**Preguntas para contacto:**
+1. ¿Cuánto tiempo tarda una reparación?
+2. ¿Qué pasa si mi equipo tiene iCloud bloqueado?
+3. ¿Ofrecen servicio a domicilio?
+4. ¿Qué métodos de pago aceptan?
+
+---
+
+### IN: IndexNow Protocol ✅
+
+**Archivos creados/modificados:**
+
+| Archivo | Acción |
+|---------|--------|
+| `src/pages/api/index-now.ts` | CREADO - Endpoint POST/GET |
+| `src/pages/api/sync-reviews.ts` | MODIFICADO - Agregado notifyIndexNow() |
+| `public/6e7e2464-f98a-4108-b71c-a652b9a63a9b.txt` | CREADO - Key file |
+
+**Key:** `6e7e2464-f98a-4108-b71c-a652b9a63a9b`
+**URL verificación:** `https://www.pipod.co/6e7e2464-f98a-4108-b71c-a652b9a63a9b.txt`
+
+**Funcionalidad:**
+- `POST /api/index-now { urls: [...] }` - Notifica URLs específicas
+- `GET /api/index-now` - Notifica URLs principales automáticamente
+- Integrado en `/api/sync-reviews` (cada 3 días via cron)
+
+**Endpoints notificados:**
+- `https://indexnow.org/indexnow`
+- `https://www.bing.com/indexnow`
 
 ---
 
@@ -100,44 +160,92 @@
 
 ## 📊 SEO SCORE ACTUAL
 
-| Categoría | Score |
-|-----------|-------|
-| Content Quality | 8/10 |
-| Technical SEO | 9/10 |
-| Structured Data | 9/10 |
-| Performance | 7/10 |
-| Local SEO | 8/10 |
-| Sitemap/Crawl | 8/10 |
-| **TOTAL** | **~8/10** |
+| Categoría | Score | Cambio |
+|-----------|-------|--------|
+| Content Quality | 8/10 | - |
+| Technical SEO | 9/10 | - |
+| Structured Data | 9/10 | +0.2 (FAQPage) |
+| Performance | 7/10 | - |
+| Local SEO | 8/10 | - |
+| Sitemap/Crawl | 8/10 | - |
+| **TOTAL** | **~8.2/10** | +0.2 |
 
 **Meta: Llegar a 10/10**
 
 ---
 
-## ⏭️ SDD: seo-10 (Planificado - para llegar a 10/10)
+## ⏭️ SDD: seo-10 (Para llegar a 10/10)
 
 ### 🔴 HIGH IMPACT
 
-| # | Tarea | Impacto | Riesgo |
-|---|-------|---------|--------|
-| H1 | **Citations locales** — Agregar pipod a Yelp, Thomson, directorios Bogotá | +0.5 | BAJO |
-| H2 | **Reviews con fotos** — Mostrar fotos de clientes reales en página | +0.3 | BAJO |
-| H3 | **Reducir fonts** — 4→2 (Inter + Noto Sans) | +0.2 | MUY BAJO |
+| # | Tarea | Impacto | Riesgo | Estado |
+|---|-------|---------|--------|--------|
+| H1 | **Citations locales** — Directorios Colombia optimizados | +0.5 | BAJO | 🔴 PLAN ACTUALIZADO |
+| H2 | **Reviews con fotos** — Mostrar fotos de clientes reales en página | +0.3 | BAJO | PENDIENTE |
+| H3 | **Reducir fonts** — 4→2 (Inter + Noto Sans) | +0.2 | MUY BAJO | PENDIENTE |
+
+### 🔴 H1: Citations Locales - COLOMBIA OPTIMIZADO
+
+**Nota:** Yelp y Thomson Local ELIMINADOS (no operan en Colombia).
+
+#### 🔴 CRÍTICA (Google Maps + Apple)
+| # | Directorio | URL | Acción |
+|---|------------|-----|--------|
+| 1 | **Google Business Profile** | business.google.com | Verificar/optimizar perfil existente |
+| 2 | **Apple Business Connect** | register.apple.com | CREAR (Apple Maps, Siri, Spotlight) |
+
+#### 🔴 ALTA (Autoridad Bogotá)
+| # | Directorio | URL | Acción |
+|---|------------|-----|--------|
+| 3 | **Cámara de Comercio (Bazzarbog)** | bazzarbog.com | Verificar o registrar |
+
+#### 🟡 MEDIA (Consistencia NAP)
+| # | Directorio | URL | Acción |
+|---|------------|-----|--------|
+| 4 | **Bing Places** | bingplaces.com | Registrar |
+| 5 | **Páginas Amarillas** | paginasamarillas.com.co | Registrar |
+| 6 | **Cylex Colombia** | cylex.com.co | Registrar |
+
+#### ❌ ELIMINADO
+- Yelp (no opera en Colombia)
+- Thomson Local (UK only)
+
+#### NAP Unificado:
+```
+NOMBRE: Pipod - Servicio Técnico Apple
+DIRECCIÓN: Cra. 13a #79-52, Chapinero, Bogotá
+TELÉFONO: +57 312 481 3094
+WHATSAPP: +57 312 481 3094
+HORARIO: Lun-Sáb 10AM-7PM
+WEB: https://www.pipod.co
+SERVICIOS: Reparación iPhone, MacBook, iPad, Apple Watch, Microsoldadura, Trade-in
+DESCRIPCIÓN: Desde 2007. Garantía 12 meses. Diagnóstico gratis. Express 2h.
+```
+
+#### 📝 Mapa de Google Embebido (pendiente código)
+- Ubicaciones: Footer + Contacto
+- Componentes: `pipodFooter.astro`, `ContactLocation.astro`
 
 ### 🟡 MEDIUM IMPACT
 
-| # | Tarea | Impacto | Riesgo |
-|---|-------|---------|--------|
-| M1 | **FAQPage schema** — Si hay sección FAQ en servicio-tecnico | +0.2 | BAJO |
-| M2 | **HowTo schema** — Guías "cómo cuidar tu iPhone" | +0.1 | BAJO |
-| M3 | **Imágenes WebP** — Convertir principales a WebP | +0.3 | MEDIO |
+| # | Tarea | Impacto | Riesgo | Estado |
+|---|-------|---------|--------|--------|
+| M1 | **FAQPage schema** | +0.2 | BAJO | ✅ COMPLETADO |
+| M2 | **HowTo schema** — Guías "cómo cuidar tu iPhone" | +0.1 | BAJO | PENDIENTE |
+| M3 | **Imágenes WebP** — Convertir principales a WebP | +0.3 | MEDIO | PENDIENTE |
 
 ### 🟢 LOW IMPACT
 
-| # | Tarea | Impacto | Riesgo |
-|---|-------|---------|--------|
-| L1 | **Core Web Vitals reales** — Medir post-deploy | +0.1 | NINGUNO |
-| L2 | **Internal linking** — Blog → productos/servicios | +0.1 | BAJO |
+| # | Tarea | Impacto | Riesgo | Estado |
+|---|-------|---------|--------|--------|
+| L1 | **Core Web Vitals reales** — Medir post-deploy | +0.1 | NINGUNO | PENDIENTE |
+| L2 | **Internal linking** — Blog → productos/servicios | +0.1 | BAJO | PENDIENTE |
+
+### ⚡ INDEX-NOW
+
+| # | Tarea | Estado |
+|---|-------|--------|
+| IN | **IndexNow Protocol** | ✅ COMPLETADO |
 
 **SDD Artifacts:** `.atl/proposals/seo-10.md`, `.atl/specs/seo-10.md`, `.atl/design/seo-10.md`, `.atl/tasks/seo-10.md`
 
@@ -163,43 +271,9 @@
 1. H1: Citations locales (Yelp, Thomson, directorios)
 2. H2: Reviews con fotos reales
 3. H3: Reducir fonts (4→2)
-4. M1-M3: FAQ schema, HowTo schema, WebP
-5. L1-L2: Core Web Vitals, internal linking
-
----
-
-## 🧠 Sanity CMS (Exploración — 80% probabilidad de implementación)
-
-### Descripción
-Evaluar migración de contenido a Sanity CMS para gestión dinámica de contenido y webhook automático para IndexNow.
-
-### ⚠️ Estado: PENDIENTE DECISIÓN
-**No se ha confirmado implementación.** La siguiente documentación es especulativa hasta confirmación del usuario.
-
-### Configuración Planeada (NO IMPLEMENTADO)
-- [ ] **Proyecto Sanity:** `pipodco-studio` (por crear)
-- [ ] **Webhook:** `https://www.pipod.co/api/index-now` en cada evento `publish`
-- [ ] **Trigger:** Eventos de `create`, `update`, `delete`
-
-### Schemas Planeados (NO IMPLEMENTADO)
-1. **blogPost** — Con vinculación automática a productos/servicios, authorship (E-E-A-T)
-2. **servicePage** — Arrays de FAQs para FAQPage schema dinámico
-3. **howToGuide** — Pasos numerados para HowTo schema
-
-### Beneficios Esperados (SI SE IMPLEMENTA)
-- Indexación en tiempo real (no depende de cron)
-- Crawl budget protegido (solo notifica si hay cambios)
-- Desacoplamiento contenido/despliegue
-- Eficiencia: reviews sync + sitemap check en misma instancia
-
-### Relación con SDD seo-10 (IN1.4)
-- Reemplaza Option A (Vercel Cron) en IN1.4 como opción preferida
-- Webhook directo desde Sanity → /api/index-now
-- Sin cold starts adicionales
-
-### ⚠️ Advertencia
-- Si NO se implementa Sanity, esta sección debe eliminarse
-- **Acción:** Revisar y limpiar esta sección si no hay decisión en 3 meses
+4. M2: HowTo schema
+5. M3: WebP images
+6. L1-L2: Core Web Vitals, internal linking
 
 ---
 
@@ -209,6 +283,27 @@ Evaluar migración de contenido a Sanity CMS para gestión dinámica de contenid
 - sitemap-index.xml genera correctamente
 - robots.txt actualizado con Disallow rules
 - Meta tags ahora dinámicos en todas las páginas
-- SEO Score actual: ~8/10 (meta: 10/10)
-- Last commit: `5c7b665` - fix: replace CartContext with Nano Stores for cross-island state
-- Sanity CMS: En exploración (80% probabilidad de implementación)
+- SEO Score actual: ~8.2/10 (meta: 10/10)
+- FAQPage Schema implementado en 3 páginas
+- IndexNow Protocol configurado con key: `6e7e2464-...`
+- Last deploy pendiente para activar cron
+
+---
+
+## 📁 ARCHIVOS MODIFICADOS (seo-10)
+
+### Nuevos archivos:
+- `src/components/SEO/FAQPageSchema.astro`
+- `src/pages/api/index-now.ts`
+- `public/6e7e2464-f98a-4108-b71c-a652b9a63a9b.txt`
+
+### Archivos modificados:
+- `src/pages/servicio-tecnico-apple.astro` (FAQPage + serviceFAQs)
+- `src/pages/plan-retoma-apple.astro` (FAQPage + retomaFAQs)
+- `src/pages/contacto-pipod.astro` (FAQPage + contactFAQs)
+- `src/pages/api/sync-reviews.ts` (IndexNow integration)
+
+---
+
+**Última actualización:** 2026-05-05
+**Estado:** M1 + IN completados, esperando deploy

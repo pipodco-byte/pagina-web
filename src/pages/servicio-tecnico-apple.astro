@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ServicePageSchema from '../components/SEO/ServicePageSchema.astro';
+import FAQPageSchema from '../components/SEO/FAQPageSchema.astro';
 import ServiceHero from '../components/service/ServiceHero.astro';
 import DeviceBento from '../components/service/DeviceBento.astro';
 import PantallasCatalog from '../components/service/PantallasCatalog.astro';
@@ -24,10 +25,22 @@ import PaymentBanner from '../components/payment/PaymentBanner.astro';
 // SEO Metas
 const title = "Servicio Técnico Apple Bogotá | PIPOD - Baterías y Pantallas";
 const description = "Especialistas en baterías y pantallas Apple. 2,000+ baterías reemplazadas. Express 2h para iPhone. Garantía 12 meses. Bogotá.";
+
+const serviceFAQs = [
+  { q: '¿Cuánto tiempo tarda la reparación de un iPhone?', a: '2 horas o menos con servicio Express. Reparaciones complejas como microsoldadura: 24-48h.' },
+  { q: '¿Qué garantía ofrecen?', a: '12 meses en todas las reparaciones. La garantía cubre partes y mano de obra.' },
+  { q: '¿Los repuestos son originales?', a: 'Usamos repuestos de alta calidad certificados. Para equipos Apple, recomendamos repuestos originales o calidad OEM.' },
+  { q: '¿Puedo dejar mi equipo sin cita?', a: 'Sí, puedes traer tu equipo sin cita para diagnóstico gratis (30-60 min). Para reparaciones, agendar asegura disponibilidad.' },
+  { q: '¿Ofrecen servicio a domicilio?', a: 'Sí, ofrecemos servicio de recogida y entrega a domicilio en toda Bogotá.' },
+  { q: '¿Qué dispositivos Apple reparan?', a: 'iPhone, iPad, MacBook, iMac, Apple Watch y AirPods. También hacemos microsoldadura para reparaciones de placa.' },
+  { q: '¿Cómo funciona el diagnóstico gratis?', a: 'Traes tu equipo, lo revisamos en 30-60 minutos y te informamos el problema y costo exactos. Sin compromiso.' },
+  { q: '¿Pueden recuperar datos de un iPhone mojado?', a: 'Sí, tenemos equipo especializado para recuperación de datos en equipos con daño por líquido. El éxito depende del estado.' }
+];
 ---
 
 <Layout title={title}>
   <ServicePageSchema />
+  <FAQPageSchema faqData={serviceFAQs} />
   
   <main style="padding-top: 120px;">
  <ServiceHero />

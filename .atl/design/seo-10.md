@@ -276,9 +276,21 @@ Add to existing `servicio-tecnico-apple.astro`:
 
 ---
 
-## H1: Citations Locales - No Code
+## H1: Citations Locales - COLOMBIA OPTIMIZADO (No Code)
 
-Manual process: Create accounts on Yelp, Thomson, etc.
+**Manual process - No code changes needed.**
+
+### Target Directories:
+1. Google Business Profile (CRÍTICA)
+2. Apple Business Connect (CRÍTICA)
+3. Cámara de Comercio Bazzarbog (ALTA)
+4. Bing Places (MEDIA)
+5. Páginas Amarillas Colombia (MEDIA)
+6. Cylex Colombia (MEDIA)
+
+### Eliminado:
+- Yelp (no opera en Colombia)
+- Thomson Local (UK only)
 
 ---
 

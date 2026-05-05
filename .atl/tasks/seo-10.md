@@ -8,94 +8,70 @@
 
 ---
 
-## M1: FAQPage Schema (NEW - High Priority)
+## M1: FAQPage Schema (COMPLETADO ✅)
 
 ### Why
 Google muestra FAQs directamente en SERPs, dando más "real estate" visual y desplazando a la competencia.
 
-### Tasks
-- [ ] **M1.1** Create `FAQPageSchema.astro` component
-- [ ] **M1.2** Add FAQ questions relevant to service page:
-  - "¿Cuánto tiempo tarda la reparación?"
-  - "¿Qué garantía ofrecen?"
-  - "¿Los repuestos son originales?"
-  - "¿Puedo dejar mi equipo sin cita?"
-  - "¿Ofrecen servicio a domicilio?"
-- [ ] **M1.3** Integrate in `servicio-tecnico-apple.astro`
-- [ ] **M1.4** Validate with Google Rich Results Test
+### Implementation
+- [x] **M1.1** Create `FAQPageSchema.astro` component
+- [x] **M1.2** Add FAQ questions to 3 pages:
+  - [x] `/servicio-tecnico-apple` - 8 preguntas
+  - [x] `/plan-retoma-apple` - 12 preguntas
+  - [x] `/contacto-pipod` - 4 preguntas
+- [x] **M1.3** Integrate in all 3 pages
+- [ ] **M1.4** Validate with Google Rich Results Test (post-deploy)
 
-### FAQ Questions Template:
+### FAQ Questions:
 ```javascript
+// Servicio Técnico (8)
 const serviceFAQs = [
-  { q: "¿Cuánto tiempo tarda la reparación de un iPhone?", a: "2 horas o menos con servicio Express. Reparaciones complejas: 24-48h." },
-  { q: "¿Qué garantía ofrecen?", a: "12 meses en todas las reparaciones." },
-  { q: "¿Los repuestos son originales?", a: "Repuestos de alta calidad certificados." },
-  { q: "¿Puedo dejar mi equipo sin cita?", a: "Sí, diagnóstico gratis 30-60 min." },
-  { q: "¿Ofrecen servicio a domicilio?", a: "Sí, en toda Bogotá." }
+  { q: '¿Cuánto tiempo tarda la reparación de un iPhone?', a: '...' },
+  { q: '¿Qué garantía ofrecen?', a: '...' },
+  // ... 8 total
 ];
+
+// Retoma (12) - de RetomaFAQ.astro
+// Contacto (4) - de ContactFAQ.astro
 ```
+
+### Status: ✅ COMPLETADO (2026-05-05)
+- Component created: `src/components/SEO/FAQPageSchema.astro`
+- Integrated in 3 pages
+- Build verified: PASS
 
 ---
 
-## INDEX-NOW: IndexNow Protocol (NEW - High Priority)
+## INDEX-NOW: IndexNow Protocol (COMPLETADO ✅)
 
 ### Why
 Notifica instantáneamente a Bing/Yandex cuando actualizas precios o posts. Reduce tiempo de descubrimiento de días a segundos.
 
-### ⚠️ Estado: EN EVALUACIÓN
-**No se ha confirmado implementación de Sanity CMS (80% probabilidad).**
+### Implementation
+- [x] **IN1.1** Create `src/pages/api/index-now.ts` endpoint
+- [x] **IN1.2** Add key file `public/6e7e2464-f98a-4108-b71c-a652b9a63a9b.txt`
+- [x] **IN1.3** Configure automatic trigger via sync-reviews cron
+- [x] **IN1.4** Integrated with Vercel cron (every 3 days)
 
-### Tasks
-- [ ] **IN1.1** Create `src/pages/api/index-now.ts` endpoint
-- [ ] **IN1.2** Add `INDEXNOW_KEY` to `.env.example`
-- [ ] **IN1.3** Create `pipod-seo-key.txt` verification file in `public/`
-- [ ] **IN1.4** Configure automatic triggers (not just manual):
-  - **Webhook trigger:** POST to `/api/index-now` on sitemap update
-  - **Deploy hook:** Vercel cron or GitHub webhook triggers IndexNow on deploy
-  - **Manual fallback:** `POST /api/index-now { urls: [...] }` still available
+### Key Details
+- **Key:** `6e7e2464-f98a-4108-b71c-a652b9a63a9b`
+- **KeyLocation:** `https://www.pipod.co/6e7e2464-f98a-4108-b71c-a652b9a63a9b.txt`
+- **Endpoints:** `indexnow.org`, `bing.com/indexnow`
 
-### ⚠️ Opción Preferida: Sanity CMS Webhook (PENDIENTE CONFIRMACIÓN)
+### Automatic Trigger (ALWAYS ACTIVE)
+- Cron runs every 3 days via `/api/sync-reviews`
+- Sends main URLs to IndexNow after reviews sync
+- Runs regardless of Sanity CMS
 
-**Option C (PREFERRED if Sanity is confirmed):**
-- Sanity webhook triggers on content publish
-- Sends updated URLs to `/api/index-now` automatically
-- Real-time indexation (seconds, not days)
+### Endpoints:
+- `POST /api/index-now { urls: [...] }` - Manual notification
+- `GET /api/index-now` - Auto notification of main URLs
 
-**⚠️ ADVERTENCIA:** Opción C solo se implementa SI se confirma Sanity CMS.
-
-**CRON VERCEL SIEMPRE ACTIVO:**
-- Cron runs every 3 days regardless of Sanity
-- Acts as backup even if Sanity is confirmed
-- Ensures indexation even if webhook fails
-- Interval can be decreased to daily or 12h if needed
-
-### Automatic Trigger Options:
-
-**Option A: Vercel Cron + sitemap check** (ALWAYS ACTIVE - Backup)
-- Cron runs every 3 days (or more frequently if needed)
-- Checks if sitemap changed since last run
-- If changed, automatically notifies IndexNow
-- **This runs ALWAYS, even if Sanity is confirmed**
-
-**Option B: Build hook** (Alternative)
-- On every deploy, automatically notify IndexNow with changed URLs
-- Extract changed URLs from git diff or sitemap
-
-**Option C: CMS Webhook (PREFERRED when confirmed)**
-- If using CMS (Sanity confirmed 80%), webhook triggers on content publish
-- Sends updated URLs to `/api/index-now`
-- Vercel cron still runs as backup
-
-### Implementation (Option A - Cron fallback):
-```typescript
-// GET /api/index-now (cron trigger)
-// Or integrate into existing /api/sync-reviews cron
-```
-
-### Verification File Content (public/pipod-seo-key.txt):
-```
-pipod-seo-key
-```
+### Status: ✅ COMPLETADO (2026-05-05)
+- Endpoint created: `src/pages/api/index-now.ts`
+- Key file created in `public/`
+- Integrated with sync-reviews cron
+- Build verified: PASS
 
 ---
 
@@ -175,21 +151,35 @@ Add sections to existing page with anchor links (#chapinero, #usaquen)
 
 ---
 
-## H1: Citations Locales (Manual Process)
+## H1: Citations Locales (Manual Process) - COLOMBIA OPTIMIZADO
 
-- [ ] **H1.1** Crear cuenta en Yelp Colombia
-- [ ] **H1.2** Agregar negocio "Pipod - Servicio Técnico Apple"
-- [ ] **H1.3** Crear cuenta en Thomson Local
-- [ ] **H1.4** Agregar negocio en Páginas Amarillas Colombia
-- [ ] **H1.5** Buscar y agregar a 1-2 directorios de servicios técnicos Bogotá
+**Nota:** Yelp y Thomson Local ELIMINADOS (no operan en Colombia).
 
-**Business Info para citas:**
+### 🔴 CRÍTICA (Google Maps + Apple)
+- [ ] **H1.1** Google Business Profile - Verificar/optimizar perfil existente
+- [ ] **H1.2** Apple Business Connect - CREAR (Apple Maps, Siri, Spotlight)
+
+### 🔴 ALTA (Autoridad Bogotá)
+- [ ] **H1.3** Cámara de Comercio (Bazzarbog) - Verificar o registrar
+
+### 🟡 MEDIA (Consistencia NAP)
+- [ ] **H1.4** Bing Places - Registrar
+- [ ] **H1.5** Páginas Amarillas Colombia - Registrar
+- [ ] **H1.6** Cylex Colombia - Registrar
+
+### 📝 Mapa de Google Embebido (pendiente código)
+- [ ] **H1.7** Agregar embed mapa a `pipodFooter.astro` y `ContactLocation.astro`
+
+**Business Info para citas (NAP Unificado):**
 ```
 Nombre: Pipod - Servicio Técnico Apple
 Dirección: Cra. 13a #79-52, Chapinero, Bogotá
 Teléfono: +57 312 481 3094
+WhatsApp: +57 312 481 3094
 Horario: Lun-Sáb 10AM-7PM
-Servicios: Reparación iPhone, MacBook, iPad, Watch, Trade-in
+Web: https://www.pipod.co
+Servicios: Reparación iPhone, MacBook, iPad, Watch, Trade-in, Microsoldadura
+Descripción: Desde 2007. Garantía 12 meses. Diagnóstico gratis. Express 2h.
 ```
 
 ---

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RetomaPageSchema from '../components/SEO/RetomaPageSchema.astro';
+import FAQPageSchema from '../components/SEO/FAQPageSchema.astro';
 import Footer from '../components/pipodFooter';
 import RetomaStats from '../components/retoma/RetomaStats.astro';
 import GoogleMaps from '../components/maps/pipodGooglemaps.astro';
@@ -15,11 +16,27 @@ import RetomaProductsWhite from '../components/retoma/RetomaProductsWhite.astro'
 import NewsletterRetoma from '../components/retoma/NewsletterRetoma.astro';
 import FloatingContact from '../layouts/floatingContact';
 import PaymentBanner from '../components/payment/PaymentBanner.astro';
+
+const retomaFAQs = [
+  { q: '¿Cuánto tarda el proceso de valoración?', a: 'El diagnóstico inicial toma entre 30-60 minutos. La evaluación completa y oferta final se entrega el mismo día.' },
+  { q: '¿Qué tipos de equipos reciben?', a: 'Aceptamos iPhone, MacBook, iMac, Apple Watch y otros dispositivos Apple.' },
+  { q: '¿Aceptan equipos rotos o con pantalla partida?', a: 'Sí, evaluamos equipos con daños menores. El valor se ajusta según el estado real.' },
+  { q: '¿Puedo vender mi equipo en efectivo sin hacer retoma?', a: 'Sí, ofrecemos opciones de compra directa en efectivo.' },
+  { q: '¿Qué garantía tiene el equipo reacondicionado?', a: 'Los equipos reacondicionados incluyen garantía de 12 meses.' },
+  { q: '¿Puedo pedir valoración sin llevar el equipo?', a: 'Puedes solicitar una valoración inicial por fotos o video.' },
+  { q: '¿Puedo usar el crédito en cualquier producto?', a: 'El crédito se puede aplicar a productos nuevos o reacondicionados.' },
+  { q: '¿Qué pasa si mi dispositivo tiene datos?', a: 'Recomendamos respaldar y borrar tus datos. Nosotros hacemos un borrado seguro.' },
+  { q: '¿Qué pasa si no acepto la oferta?', a: 'Sin problema. Puedes rechazar la oferta sin compromiso.' },
+  { q: '¿El crédito se puede transferir a otra persona?', a: 'El crédito es personal y no transferable.' },
+  { q: '¿Puedo entregar más de un equipo?', a: 'Sí, puedes entregar múltiples equipos y los créditos se suman.' },
+  { q: '¿Cómo funciona el domicilio?', a: 'Ofrecemos servicio de recogida a domicilio en Bogotá.' }
+];
 ---
 
 <Layout title="Pipod - Plan Retoma de Dispositivos Apple" description="Entrega tu dispositivo Apple usado (iPhone, MacBook, iMac, Apple Watch) y recibe crédito para comprar equipo nuevo o reacondicionado.">
 
   <RetomaPageSchema />
+  <FAQPageSchema faqData={retomaFAQs} />
 
   <main style="padding-top: 120px;">
     <RetomaHero />

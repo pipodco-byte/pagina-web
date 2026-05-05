@@ -7,6 +7,43 @@ export const prerender = false;
 const GOOGLE_PLACES_API_KEY = import.meta.env.GOOGLE_PLACES_API_KEY;
 const GOOGLE_PLACE_ID = import.meta.env.GOOGLE_PLACE_ID;
 
+const INDEXNOW_ENDPOINTS = [
+  'https://indexnow.org/indexnow',
+  'https://www.bing.com/indexnow'
+];
+const HOST = 'www.pipod.co';
+const KEY = '6e7e2464-f98a-4108-b71c-a652b9a63a9b';
+
+const mainUrls = [
+  'https://www.pipod.co/',
+  'https://www.pipod.co/servicio-tecnico-apple',
+  'https://www.pipod.co/plan-retoma-apple',
+  'https://www.pipod.co/tienda-pipod',
+  'https://www.pipod.co/contacto-pipod',
+  'https://www.pipod.co/pipod-blog'
+];
+
+const notifyIndexNow = async (): Promise<void> => {
+  const payload = {
+    host: HOST,
+    key: KEY,
+    keyLocation: `https://${HOST}/6e7e2464-f98a-4108-b71c-a652b9a63a9b.txt`,
+    urlList: mainUrls
+  };
+
+  await Promise.allSettled(
+    INDEXNOW_ENDPOINTS.map(endpoint =>
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+    )
+  );
+
+  console.log('[IndexNow] Notification sent for main URLs');
+};
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     if (!GOOGLE_PLACES_API_KEY || !GOOGLE_PLACE_ID) {
@@ -17,7 +54,6 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Consultar Google Places API
     const response = await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${GOOGLE_PLACE_ID}&fields=rating,user_ratings_total&key=${GOOGLE_PLACES_API_KEY}`
     );
@@ -34,7 +70,6 @@ export const POST: APIRoute = async ({ request }) => {
 
     const { rating, user_ratings_total } = data.result;
 
-    // Actualizar reviews.json
     const reviewsPath = path.join(process.cwd(), 'public', 'data', 'reviews.json');
     
     const reviewsData = {
@@ -56,10 +91,12 @@ export const POST: APIRoute = async ({ request }) => {
 
     console.log(`Reviews updated: ${rating} stars, ${user_ratings_total} reviews`);
 
+    await notifyIndexNow();
+
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: 'Reviews synced successfully',
+        message: 'Reviews synced and IndexNow notified',
         data: reviewsData
       }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }

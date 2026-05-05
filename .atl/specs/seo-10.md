@@ -191,21 +191,31 @@ Add anchor sections to existing page:
 
 ---
 
-## H1: Citations Locales
+## H1: Citations Locales - COLOMBIA OPTIMIZADO
 
-### Directories:
-1. Yelp Colombia
-2. Thomson Local
-3. Páginas Amarillas
-4. Apple specialist directory
-5. Servicios técnicos Bogotá
+### Directories for Colombia (2026):
+No Yelp, no Thomson Local. Focus on local authority.
 
-### Business Info:
+### CRÍTICA (Google Maps + Apple):
+1. **Google Business Profile** - Verificar/optimizar
+2. **Apple Business Connect** - Crear (Apple Maps, Siri, Spotlight)
+
+### ALTA (Autoridad Bogotá):
+3. **Cámara de Comercio (Bazzarbog)** - Verificar o registrar
+
+### MEDIA (Consistencia NAP):
+4. **Bing Places**
+5. **Páginas Amarillas Colombia**
+6. **Cylex Colombia**
+
+### NAP Unificado:
 ```
 Nombre: Pipod - Servicio Técnico Apple
 Dirección: Cra. 13a #79-52, Chapinero, Bogotá
 Teléfono: +57 312 481 3094
+WhatsApp: +57 312 481 3094
 Horario: Lun-Sáb 10AM-7PM
+Web: https://www.pipod.co
 ```
 
 ---

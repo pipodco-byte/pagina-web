@@ -6,6 +6,13 @@ export default function BlogFilter() {
 
   const posts = [
     {
+      id: 0,
+      title: 'De Reparar Nokia a Ser Especialistas Apple: La Historia de Pipod en Bogotá',
+      excerpt: 'Descubre cómo Pipod pasó de reparar móviles en 2007 a convertirse en el servicio técnico especializado en Apple más confiable de Bogotá. 15+ años de transparencia y excelencia.',
+      category: 'HISTORIA PIPOD',
+      link: '/blog/historia-pipod-bogota'
+    },
+    {
       id: 1,
       title: 'Pantalla rota: Diagnóstico y reparación en 24 horas',
       excerpt: 'Conoce nuestro proceso de reparación con garantía Pipod. Microsoldadura de precisión y componentes originales.',
@@ -49,7 +56,7 @@ export default function BlogFilter() {
     }
   ];
 
-  const categories = ['SERVICIO TÉCNICO APPLE', 'COMPRA INTELIGENTE', 'EXPERTOS CERTIFICADOS'];
+  const categories = ['HISTORIA PIPOD', 'SERVICIO TÉCNICO APPLE', 'COMPRA INTELIGENTE', 'EXPERTOS CERTIFICADOS'];
 
   const filteredPosts = useMemo(() => {
     return posts.filter(post => {

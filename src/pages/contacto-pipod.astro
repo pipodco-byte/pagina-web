@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
 import ContactPageSchema from '../components/SEO/ContactPageSchema.astro';
+import FAQPageSchema from '../components/SEO/FAQPageSchema.astro';
 import ContactHero from '../components/contact/ContactHero.astro';
 import PipodStats from '../components/stats/pipodStats.astro';
 import ContactHistory from '../components/contact/ContactHistory.astro';
@@ -17,10 +18,18 @@ import ValoresContact from '../components/contact/ValoresContact';
 
 const title = "Servicio Técnico Apple Chapinero | PIPOD";
 const description = "Reparación MacBook, iPhone, iPad en Bogotá. Microsoldadura, garantía real y plan retoma. Desde 2009 rescatando tecnología.";
+
+const contactFAQs = [
+  { q: '¿Cuánto tiempo tarda una reparación?', a: 'Depende del diagnóstico. Desde 1 hora (cambio de pantalla) hasta 3-5 días (reparaciones complejas). Diagnóstico gratuito en 30 minutos.' },
+  { q: '¿Qué pasa si mi equipo tiene iCloud bloqueado?', a: 'Podemos ayudarte con el desbloqueo si eres el propietario. Trae identificación y comprobante de compra.' },
+  { q: '¿Ofrecen servicio a domicilio?', a: 'Sí, en Zona Metropolitana. Consulta disponibilidad y costo según tu ubicación.' },
+  { q: '¿Qué métodos de pago aceptan?', a: 'Efectivo, transferencia bancaria, tarjeta de crédito/débito y financiación con Crédito Fácil.' }
+];
 ---
 
 <Layout title={title} description={description}>
   <ContactPageSchema />
+  <FAQPageSchema faqData={contactFAQs} />
   
     <main>
     <ContactHero />
