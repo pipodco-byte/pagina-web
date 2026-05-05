@@ -126,14 +126,13 @@ const { data } = Astro.props;
 
   /* SIDEBAR IZQUIERDO */
   .terms-sidebar {
-    background: #F5F5F7;
+    background: #FFFFFF;
     padding: 20px;
     border-radius: 8px;
     height: fit-content;
     position: sticky;
     top: 140px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   }
 
   .sidebar-title {
@@ -141,7 +140,10 @@ const { data } = Astro.props;
     font-weight: 700;
     text-transform: uppercase;
     color: #666;
-    margin-bottom: 20px;
+    margin: -20px -20px 20px -20px;
+    padding: 15px 20px;
+    background: #F5F5F7;
+    border-radius: 8px 8px 0 0;
   }
 
   .sidebar-details {
@@ -300,6 +302,7 @@ const { data } = Astro.props;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   }
 
   .widget-retoma {

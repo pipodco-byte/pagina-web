@@ -9,14 +9,11 @@ export type CartItem = {
   slug: string;
 };
 
-const isBrowser = typeof window !== 'undefined';
-const initialCart = isBrowser ? JSON.parse(localStorage.getItem('pipod-cart') || '[]') : [];
-
-export const cartItems = atom<CartItem[]>(initialCart);
+export const cartItems = atom<CartItem[]>([]);
 export const isCartOpen = atom(false);
 
 cartItems.listen((items) => {
-  if (isBrowser) {
+  if (typeof window !== 'undefined') {
     localStorage.setItem('pipod-cart', JSON.stringify(items));
   }
 });

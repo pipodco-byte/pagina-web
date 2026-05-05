@@ -62,7 +62,7 @@ export default function ProductOverview({
 
   return (
     <>
-    <div className="card card-product card-plain">
+    <div style={{ border: 'none' }}>
       <div className="row">
         {(images.length != 0) && 
           <ProductGallery images={images}/>
@@ -135,11 +135,11 @@ export default function ProductOverview({
            </>
           }
            {(details.length != 0) && 
-            <>
-              <h6>More about product</h6>
-              <p>{details}</p>
-            </>
-           }
+             <>
+               <h6>Más sobre el producto</h6>
+               <p>{details}</p>
+             </>
+            }
         </div>
       </div>
     </div>
