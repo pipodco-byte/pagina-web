@@ -59,6 +59,8 @@ The FAQ accordion already exists in the page (`PipodFAQ` component). The schema 
 
 ## INDEX-NOW: IndexNow Protocol - Design
 
+### ⚠️ Estado: EN EVALUACIÓN — Sanity CMS (80% probabilidad)
+
 ### Endpoint: /api/index-now.ts
 
 ```typescript
@@ -95,6 +97,37 @@ export const POST: APIRoute = async ({ request }) => {
 };
 ```
 
+### ⚠️ Opción Preferida: Sanity CMS Webhook (PENDIENTE CONFIRMACIÓN)
+
+**Si Sanity es confirmado (80% probabilidad):**
+
+### Sanity CMS Integration
+- **Proyecto:** `pipodco-studio` (por crear)
+- **Webhook URL:** `https://www.pipod.co/api/index-now`
+- **Events:** `create`, `update`, `delete`
+
+#### Flujo:
+```
+Sanity Publish → Webhook POST → /api/index-now → Bing/Yandex notified
+```
+
+#### Beneficios (si se implementa):
+- Indexación en tiempo real (segundos, no días)
+- Sin cron dependency
+- Solo notifica cuando hay cambios reales
+- Crawl budget protegido
+
+#### CRON VERCEL SIEMPRE ACTIVO:
+- Cron runs every 3 days regardless of Sanity
+- Acts as backup even if Sanity is confirmed
+- Ensures indexation even if webhook fails
+- Interval can be decreased to daily or 12h if needed
+
+#### ⚠️ Advertencia:
+- Si NO se usa Sanity, usar Option A (Vercel Cron + Supabase hash check) como fallback
+- No implementar hasta confirmación
+- Cron Vercel NUNCA se desactiva
+
 ### Verification File: public/pipod-seo-key.txt
 
 Content:
@@ -102,25 +135,14 @@ Content:
 pipod-seo-key
 ```
 
-### AUTOMATIC TRIGGER (No Manual Intervention)
+### Cron: Vercel (ALWAYS ACTIVE - Backup)
 
-**Option A: Vercel Cron Integration**
-Modify existing `/api/sync-reviews` cron to also check sitemap and notify IndexNow:
-- Cron runs every 3 days
-- Compares current sitemap with cached hash
+**Option A: Vercel Cron (SIEMPRE CORRE)**
+Modify existing `/api/sync-reviews` to also check sitemap hash:
+- Cron runs every 3 days (can decrease to daily if needed)
+- Compares current sitemap with cached hash in Supabase
 - If changed, sends updated URLs to IndexNow
-
-**Option B: GitHub Webhook on Deploy**
-- On push to main/develop, GitHub webhook triggers
-- Build extracts changed URLs from git diff
-- POSTs to IndexNow automatically
-
-**Option C: Direct from CMS (Contentful/Sanity)**
-- Content publish webhook → triggers serverless function
-- Function notifies IndexNow with published content URLs
-
-### Recommended: Option A (Leverage existing cron)
-Modify `/api/sync-reviews` to also notify IndexNow when sitemap changes.
+- **This is backup - runs even if Sanity is confirmed**
 
 ---
 

@@ -42,6 +42,9 @@ const serviceFAQs = [
 ### Why
 Notifica instantáneamente a Bing/Yandex cuando actualizas precios o posts. Reduce tiempo de descubrimiento de días a segundos.
 
+### ⚠️ Estado: EN EVALUACIÓN
+**No se ha confirmado implementación de Sanity CMS (80% probabilidad).**
+
 ### Tasks
 - [ ] **IN1.1** Create `src/pages/api/index-now.ts` endpoint
 - [ ] **IN1.2** Add `INDEXNOW_KEY` to `.env.example`
@@ -51,21 +54,39 @@ Notifica instantáneamente a Bing/Yandex cuando actualizas precios o posts. Redu
   - **Deploy hook:** Vercel cron or GitHub webhook triggers IndexNow on deploy
   - **Manual fallback:** `POST /api/index-now { urls: [...] }` still available
 
+### ⚠️ Opción Preferida: Sanity CMS Webhook (PENDIENTE CONFIRMACIÓN)
+
+**Option C (PREFERRED if Sanity is confirmed):**
+- Sanity webhook triggers on content publish
+- Sends updated URLs to `/api/index-now` automatically
+- Real-time indexation (seconds, not days)
+
+**⚠️ ADVERTENCIA:** Opción C solo se implementa SI se confirma Sanity CMS.
+
+**CRON VERCEL SIEMPRE ACTIVO:**
+- Cron runs every 3 days regardless of Sanity
+- Acts as backup even if Sanity is confirmed
+- Ensures indexation even if webhook fails
+- Interval can be decreased to daily or 12h if needed
+
 ### Automatic Trigger Options:
 
-**Option A: Vercel Cron + sitemap check**
-- Cron runs daily, checks if sitemap changed since last run
+**Option A: Vercel Cron + sitemap check** (ALWAYS ACTIVE - Backup)
+- Cron runs every 3 days (or more frequently if needed)
+- Checks if sitemap changed since last run
 - If changed, automatically notifies IndexNow
+- **This runs ALWAYS, even if Sanity is confirmed**
 
-**Option B: Build hook**
+**Option B: Build hook** (Alternative)
 - On every deploy, automatically notify IndexNow with changed URLs
 - Extract changed URLs from git diff or sitemap
 
-**Option C: CMS Webhook**
-- If using CMS (Contentful, Sanity), webhook triggers on content publish
+**Option C: CMS Webhook (PREFERRED when confirmed)**
+- If using CMS (Sanity confirmed 80%), webhook triggers on content publish
 - Sends updated URLs to `/api/index-now`
+- Vercel cron still runs as backup
 
-### Implementation (Option A - Cron):
+### Implementation (Option A - Cron fallback):
 ```typescript
 // GET /api/index-now (cron trigger)
 // Or integrate into existing /api/sync-reviews cron

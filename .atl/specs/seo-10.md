@@ -51,12 +51,32 @@ Technical specifications for all SEO tasks to reach 10/10 score.
 
 ## INDEX-NOW: IndexNow Protocol
 
+### ⚠️ Estado: EN EVALUACIÓN — Sanity CMS (80% probabilidad)
+
+**No se ha confirmado implementación de Sanity CMS. Las siguientes opciones están sujetas a decisión.**
+
 ### Scenario: Price update triggers instant crawler notification
 
 **Given** Admin updates retoma prices in pipod.co
-**When** The change is published OR cron detects sitemap change
+**When** The change is published OR (if Sanity confirmed) webhook triggers
 **Then** IndexNow notifies Bing/Yandex within seconds
 **And** Search engines index the new prices within minutes (not days)
+
+### ⚠️ Opción Preferida: Sanity CMS Webhook (PENDIENTE CONFIRMACIÓN)
+
+**Given** Sanity CMS is confirmed and configured (80% probability)
+**When** Content is published/updated in Sanity Studio
+**Then** Sanity webhook POSTs to /api/index-now with updated URLs
+**And** Bing/Yandex are notified within seconds
+
+**CRON VERCEL SIEMPRE ACTIVO:**
+- Vercel cron runs every 3 days (backup)
+- Acts as backup even if Sanity is confirmed
+- Ensures indexation even if webhook fails
+- Interval can be decreased to daily if needed
+
+⚠️ **ADVERTENCIA:** Solo implementar Option C (Sanity) SI se confirma decisión.
+Cron Vercel NUNCA se desactiva — es backup permanente.
 
 ### Endpoint: POST /api/index-now
 ```json
@@ -68,11 +88,12 @@ Technical specifications for all SEO tasks to reach 10/10 score.
 }
 ```
 
-### Automatic Trigger (No Manual):
-**Scenario:** Sitemap changes but no human triggers IndexNow
+### Alternative: Vercel Cron (Fallback if no Sanity)
 
-**Given** Vercel cron runs daily at 6AM
-**When** Sitemap has changed since last check
+**Scenario:** Sitemap changes but no human triggers IndexNow (no Sanity)
+
+**Given** Vercel cron runs every 3 days
+**When** Sitemap has changed since last check (Supabase hash comparison)
 **Then** Automatically POST to IndexNow with updated URLs
 
 ### Alternative: Git Hook on Deploy

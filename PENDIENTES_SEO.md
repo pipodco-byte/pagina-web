@@ -168,6 +168,41 @@
 
 ---
 
+## 🧠 Sanity CMS (Exploración — 80% probabilidad de implementación)
+
+### Descripción
+Evaluar migración de contenido a Sanity CMS para gestión dinámica de contenido y webhook automático para IndexNow.
+
+### ⚠️ Estado: PENDIENTE DECISIÓN
+**No se ha confirmado implementación.** La siguiente documentación es especulativa hasta confirmación del usuario.
+
+### Configuración Planeada (NO IMPLEMENTADO)
+- [ ] **Proyecto Sanity:** `pipodco-studio` (por crear)
+- [ ] **Webhook:** `https://www.pipod.co/api/index-now` en cada evento `publish`
+- [ ] **Trigger:** Eventos de `create`, `update`, `delete`
+
+### Schemas Planeados (NO IMPLEMENTADO)
+1. **blogPost** — Con vinculación automática a productos/servicios, authorship (E-E-A-T)
+2. **servicePage** — Arrays de FAQs para FAQPage schema dinámico
+3. **howToGuide** — Pasos numerados para HowTo schema
+
+### Beneficios Esperados (SI SE IMPLEMENTA)
+- Indexación en tiempo real (no depende de cron)
+- Crawl budget protegido (solo notifica si hay cambios)
+- Desacoplamiento contenido/despliegue
+- Eficiencia: reviews sync + sitemap check en misma instancia
+
+### Relación con SDD seo-10 (IN1.4)
+- Reemplaza Option A (Vercel Cron) en IN1.4 como opción preferida
+- Webhook directo desde Sanity → /api/index-now
+- Sin cold starts adicionales
+
+### ⚠️ Advertencia
+- Si NO se implementa Sanity, esta sección debe eliminarse
+- **Acción:** Revisar y limpiar esta sección si no hay decisión en 3 meses
+
+---
+
 ## 📝 NOTAS
 
 - Build verificado: ✅ PASS (solo warnings de Sass)
@@ -176,3 +211,4 @@
 - Meta tags ahora dinámicos en todas las páginas
 - SEO Score actual: ~8/10 (meta: 10/10)
 - Last commit: `5c7b665` - fix: replace CartContext with Nano Stores for cross-island state
+- Sanity CMS: En exploración (80% probabilidad de implementación)
