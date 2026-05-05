@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* ============================================
+   PIPOD Design System - Tailwind v4 Theme
+   ============================================
+   Using CSS Tokens Bridge (Approach C)
+   Breakpoints match Bootstrap exact values
+   ============================================ */
+
+@theme {
+  /* ============================================
+     BOOTSTRAP-COMPATIBLE BREAKPOINTS
+     ============================================ */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* ============================================
+     COLORS - From _tokens.css
+     ============================================ */
+  --color-tech-blue: var(--pipod-color-tech-blue);    /* #4A90E2 - Primary CTA */
+  --color-deep-blue: var(--pipod-color-deep-blue);    /* #3A506B - Secondary */
+  --color-pipod-black: var(--pipod-color-black);     /* #000000 */
+  --color-pipod-white: var(--pipod-color-white);     /* #ffffff */
+  --color-surface: var(--pipod-color-light-surface);  /* #F5F5F7 */
+  --color-border: var(--pipod-color-border-gray);     /* #E5E5E7 */
+  --color-success: var(--pipod-color-success);        /* #2E7D32 */
+  --color-error: var(--pipod-color-error);            /* #D32F2F */
+  --color-warning: var(--pipod-color-warning);        /* #F57C00 */
+  --color-star: var(--pipod-color-star);              /* #FFB800 */
+  --color-whatsapp: var(--pipod-color-whatsapp);      /* #25D366 */
+
+  /* ============================================
+     BORDER RADIUS - From _tokens.css
+     ============================================ */
+  --radius-standard: var(--pipod-radius-standard);    /* 24px - Cards */
+  --radius-bento: var(--pipod-radius-large);          /* 40px - Bento cards */
+  --radius-pill: var(--pipod-radius-pill);             /* 50px - Buttons */
+  --radius-subtle: var(--pipod-radius-subtle);        /* 8px - Inputs */
+
+  /* ============================================
+     SHADOWS - From _tokens.css
+     ============================================ */
+  --shadow-pipod-card: var(--pipod-shadow-card);         /* 0 4px 12px rgba(0,0,0,.06) */
+  --shadow-pipod-elevated: var(--pipod-shadow-elevated);  /* 0 8px 24px rgba(0,0,0,.1) */
+  --shadow-pipod-stats: var(--pipod-shadow-stats);        /* 0 2px 8px rgba(0,0,0,.08) */
+
+  /* ============================================
+     TYPOGRAPHY - From _tokens.css
+     ============================================ */
+  --font-family-inter: var(--pipod-font-inter);
+  --font-family-mono: var(--pipod-font-pt-mono);
+
+  /* ============================================
+     SPACING - From _tokens.css
+     ============================================ */
+  --spacing-pipod-xs: var(--pipod-space-xs);    /* 4px */
+  --spacing-pipod-sm: var(--pipod-space-sm);    /* 8px */
+  --spacing-pipod-md: var(--pipod-space-md);    /* 16px */
+  --spacing-pipod-lg: var(--pipod-space-lg);    /* 24px */
+  --spacing-pipod-xl: var(--pipod-space-xl);    /* 32px */
+  --spacing-pipod-2xl: var(--pipod-space-2xl);  /* 48px */
+  --spacing-pipod-3xl: var(--pipod-space-3xl);  /* 80px */
+}

@@ -24,72 +24,54 @@ Use CSS Tokens Bridge (Approach C) to migrate from Creative Tim SCSS to Tailwind
 **Alternatives considered**: Migrate component by component (slower), migrate all at once (higher risk)
 **Rationale**: Grid is the foundation - once grid is migrated, component migration becomes trivial
 
-## Tailwind Configuration
+## Tailwind Configuration (v4 with @theme - ACTIVE)
 
-```javascript
-// tailwind.config.mjs
-export default {
-  prefix: 'p-',
-  theme: {
-    extend: {
-      colors: {
-        'tech-blue': 'var(--pipod-color-tech-blue)',
-        'deep-blue': 'var(--pipod-color-deep-blue)',
-        'pipod-black': 'var(--pipod-color-black)',
-        'pipod-white': 'var(--pipod-color-white)',
-        'surface': 'var(--pipod-color-surface)',
-        'border': 'var(--pipod-color-border)',
-        'success': 'var(--pipod-color-success)',
-        'error': 'var(--pipod-color-error)',
-      },
-      fontFamily: {
-        'inter': 'var(--pipod-font-inter)',
-      },
-      borderRadius: {
-        'standard': 'var(--pipod-radius-standard)',
-        'bento': 'var(--pipod-radius-large)',
-        'pill': 'var(--pipod-radius-pill)',
-      },
-      boxShadow: {
-        'pipod-card': 'var(--pipod-shadow-card)',
-        'pipod-elevated': 'var(--pipod-shadow-elevated)',
-      },
-      screens: {
-        'sm': '576px',   // Bootstrap sm
-        'md': '768px',   // Bootstrap md
-        'lg': '992px',   // Bootstrap lg
-        'xl': '1200px',  // Bootstrap xl
-      },
-    },
-  },
-  plugins: [],
+**File:** `src/styles/global.css`
+
+Tailwind v4 uses CSS-based configuration via `@theme` directive:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  /* Bootstrap breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* Colors from _tokens.css */
+  --color-tech-blue: var(--pipod-color-tech-blue);
+  --color-deep-blue: var(--pipod-color-deep-blue);
+
+  /* Border Radius */
+  --radius-standard: var(--pipod-radius-standard);  /* 24px */
+  --radius-bento: var(--pipod-radius-large);         /* 40px */
+  --radius-pill: var(--pipod-radius-pill);            /* 50px */
+
+  /* Shadows */
+  --shadow-pipod-card: var(--pipod-shadow-card);
+  --shadow-pipod-elevated: var(--pipod-shadow-elevated);
 }
 ```
+
+**Status:** ✅ Configured and verified working with `npm run build`
 
 ## Migration Mapping
 
 ### Grid System
 
-| Bootstrap | Tailwind | Notes |
-|-----------|----------|-------|
-| `.container` | `p-container p-mx-auto p-px-4` | Or use `@tailwindcss/typography` |
-| `.row` | `p-flex p-flex-wrap` | CSS Grid alternative: `p-grid p-grid-cols-12` |
-| `.col-12` | `p-w-full` | |
-| `.col-lg-6` | `p-lg:w-1/2` | |
-| `.g-4` | `p-gap-4` | |
-| `.gy-5` | `p-gap-y-5` | |
+| Bootstrap | Tailwind v4 | Notes |
+|-----------|-------------|-------|
+| `.container` | `mx-auto px-4 max-w-7xl` | Or use container class |
+| `.row` | `flex flex-wrap` | CSS Grid alternative: `grid grid-cols-12` |
+| `.col-12` | `w-full` | |
+| `.col-lg-6` | `lg:w-1/2` | |
+| `.g-4` | `gap-4` | |
+| `.gy-5` | `gap-y-5` | |
 
-### Utility Classes
-
-| Bootstrap | Tailwind | Notes |
-|-----------|----------|-------|
-| `.d-flex` | `p-flex` | |
-| `.d-none` | `p-hidden` | |
-| `.d-md-none` | `p-hidden p-md:p-block` | |
-| `.text-center` | `p-text-center` | |
-| `.mt-4` | `p-mt-4` | |
-| `.mb-4` | `p-mb-4` | |
-| `.p-4` | `p-p-4` | |
+**Important:** v4 doesn't use prefix `p-` by default. We can use utility classes directly since Bootstrap CDN is still loaded separately.
 
 ## File Changes
 

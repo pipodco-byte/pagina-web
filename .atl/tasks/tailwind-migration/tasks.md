@@ -1,22 +1,72 @@
 # Tasks: tailwind-migration
 
-## Phase 1: Setup (Foundation)
+## Phase 1: Setup (Foundation) - ✅ COMPLETE
 
-- [ ] 1.1 Install Tailwind CSS: `npx astro add tailwind`
-- [ ] 1.2 Create `tailwind.config.mjs` with `p-` prefix
-- [ ] 1.3 Configure Bootstrap-compatible breakpoints (576px, 768px, 992px, 1200px)
-- [ ] 1.4 Map `--pipod-*` CSS tokens to Tailwind theme
-- [ ] 1.5 Create `src/styles/global.css` with Tailwind directives
-- [ ] 1.6 Verify build passes: `npm run build`
+- [x] 1.1 Install Tailwind CSS: `npx astro add tailwind` ✅ v4.2.4
+- [x] 1.2 Import global.css in Layout.astro ✅ Added
+- [x] 1.3 Configure `@theme` in global.css ✅ Bootstrap breakpoints + Pipod tokens
+- [x] 1.4 Verify build passes ✅ Build successful
+
+### Configuration Summary (global.css @theme)
+
+```css
+@theme {
+  /* Bootstrap breakpoints: 576px, 768px, 992px, 1200px, 1400px */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* Colors mapped to --pipod-color-* */
+  --color-tech-blue: var(--pipod-color-tech-blue);
+  --color-deep-blue: var(--pipod-color-deep-blue);
+  /* ... all brand colors */
+
+  /* Border Radius */
+  --radius-standard: var(--pipod-radius-standard);  /* 24px */
+  --radius-bento: var(--pipod-radius-large);         /* 40px */
+  --radius-pill: var(--pipod-radius-pill);            /* 50px */
+
+  /* Shadows */
+  --shadow-pipod-card: var(--pipod-shadow-card);
+  --shadow-pipod-elevated: var(--pipod-shadow-elevated);
+}
+```
 
 ## Phase 2: Grid Migration (Layout)
 
-- [ ] 2.1 Identify all `.container` usages → replace with Tailwind container
-- [ ] 2.2 Identify all `.row` usages → replace with `p-flex p-flex-wrap`
-- [ ] 2.3 Identify all `.col-*` usages → replace with width utilities
-- [ ] 2.4 Identify all `.g-*`, `.gy-*`, `.gx-*` usages → replace with `p-gap-*`
-- [ ] 2.5 Test grid layout on: Homepage, Tienda, producto page
-- [ ] 2.6 Visual QA: Compare grid with production
+### Status: Navbar ALREADY CUSTOM - Footer needs migration
+
+**Navbar (`pipodNavbar.css`):** ✅ Custom CSS - NO Bootstrap grid
+- Uses custom `.container` class (styled with flexbox)
+- All styles are pure custom CSS
+- NO Bootstrap grid dependencies
+
+**Footer (`pipodFooter.tsx`):** ⚠️ Uses Bootstrap grid classes
+
+| Bootstrap Class | Usage in Footer |
+|-----------------|-----------------|
+| `.container` | Main footer wrapper (2x) |
+| `.row` | Grid rows (2x) |
+| `.col-lg-3` | Brand column, visit column |
+| `.col-lg-2` | Nav columns (3x) |
+| `.col-md-12`, `.col-md-4` | Nav columns |
+| `.col-6`, `.col-12` | Mobile columns |
+| `.mb-4`, `.gy-5` | Spacing utilities |
+| `.mt-2`, `.mt-lg-0` | Margin utilities |
+| `.text-center`, `.text-lg-start/end` | Text alignment |
+
+### Step 2.1: Migrate Footer grid to CSS Grid/Tailwind
+
+- [ ] Replace `.container` → `container mx-auto px-4`
+- [ ] Replace `.row` → `flex flex-wrap gap-y-5` (or `grid`)
+- [ ] Replace `.col-lg-3` → `lg:w-1/4`
+- [ ] Replace `.col-lg-2` → `lg:w-1/6`
+- [ ] Replace `.col-md-4` → `md:w-1/3`
+- [ ] Replace `.col-6` → `w-1/2`
+- [ ] Replace `.col-12` → `w-full`
+- [ ] Remove Bootstrap grid classes
 
 ## Phase 3: UI Components (Migration)
 
