@@ -52,9 +52,27 @@ Loaded from: `~/.config/opencode/skills/`
 
 | Date | Change | Commit |
 |------|--------|--------|
+| 2026-05-05 | restore-scss-5-pages: SCSS restored in all pages | `80c4c6b` |
+| 2026-05-05 | fix: remove Tailwind v4 (abandoned migration) | `44a3de1` |
+| 2026-05-05 | fix: AppWrapper PipodNavbar case sensitivity | `3596873` |
+| 2026-05-05 | memoria branch created from 241f9ce | Visual reference |
 | 2026-05-04 | fix-cart-hydration: Nano Stores replace React Context | `5c7b665` |
 | 2026-05-04 | local-seo-cro-v3: Hub Schema, CLS Fix | `6c8893a` |
 | 2026-05-04 | content: Contact Hero/History copy update | `01c3b38` |
+
+## Branches
+
+| Branch | Status | Purpose |
+|--------|--------|---------|
+| `main` | Production (www.pipod.co) | Live site |
+| `develop` | Synced with main | Active development |
+| `memoria` | 241f9ce | Visual reference (before fixes) |
+
+## Tech Stack Notes
+
+- **Tailwind**: REMOVED (v4 migration abandoned)
+- **Styling**: SCSS + Bootstrap 5.3 CDN + custom CSS files
+- **Build**: Vercel adapter, Node 24 runtime
 
 ## Commands
 

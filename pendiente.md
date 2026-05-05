@@ -1,6 +1,17 @@
 # Pendientes - Astro-Ecommerce / Pipod
 
-**Última actualización:** 2026-05-04 (actualizado con fix-cart-hydration)
+**Última actualización:** 2026-05-05 (Tailwind v4 removido, SCSS restaurado)
+
+## ✅ COMPLETADO
+
+### Visual Fixes (2026-05-05)
+- **Tailwind v4 migration ABANDONADA** - Demasiados problemas visuales
+- **SCSS restaurado** en todas las páginas: index, tienda, carrito, contacto, blog, servicio-tecnico, terminos
+- **AppWrapper fix** - Case sensitivity PipodNavbar import para Vercel Linux
+- **Branch memoria** creada desde 241f9ce para referencia visual
+- **develop → main MERGE** exitoso (80c4c6b)
+
+### SEO (Score: 8/10)
 **Estado SEO:** ✅ COMPLETADO (7.2/10)
 **Design System:** Tokens creados, 98 tareas pendientes
 
@@ -49,12 +60,10 @@
 | # | Tarea | Prioridad | Estado |
 |---|-------|-----------|--------|
 | - | Crear `src/styles/_tokens.css` | - | ✅ CREADO |
-| - | 98 tareas de implementación | - | ⏳ Pendientes |
+| - | Tailwind v4 integration | - | ❌ ABANDONADA |
+| - | SCSS approach mantenida | - | ✅ ACTIVO |
 
-**Archivo creado:** `src/styles/_tokens.css`
-- 60+ tokens CSS definidos
-- Colores, tipografía, espaciado, radios, sombras
-- **NO está integrado** - solo archivo de referencia
+**Nota:** Tailwind v4 fue removido (2026-05-05). El proyecto vuelve a depender 100% de SCSS + Bootstrap CDN.
 
 ### Backend / Datos
 

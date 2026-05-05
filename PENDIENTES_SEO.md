@@ -149,12 +149,11 @@
 
 ---
 
-## ⏭️ PENDIENTES
+## ✅ Deploy a Vercel (COMPLETADO)
 
-### 1. Deploy a Vercel (PENDIENTE)
-**Opción A:** Vercel Dashboard → Deploy button
-**Opción B:** `vercel --prod` (desde CLI)
-**Nota:** El cron de reviews se activa automáticamente tras el primer deploy
+- **main branch** deployada a www.pipod.co
+- develop y main sincronizados (80c4c6b)
+- memoria branch disponible para referencia visual
 
 ---
 
