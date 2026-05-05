@@ -1,5 +1,11 @@
 # Design: tailwind-migration
 
+## ⚠️ STATUS: ABANDONED - 2026-05-05
+
+**Tailwind v4 migration has been abandoned.** See `.atl/design/fix-visual-issues.md` for details.
+
+---
+
 ## Technical Approach
 
 Use CSS Tokens Bridge (Approach C) to migrate from Creative Tim SCSS to Tailwind CSS without visual regressions.

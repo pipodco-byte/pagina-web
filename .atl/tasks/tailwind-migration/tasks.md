@@ -1,6 +1,14 @@
 # Tasks: tailwind-migration
 
-## Phase 1: Setup (Foundation) - ✅ COMPLETE
+## ⚠️ STATUS: ABANDONED - 2026-05-05
+
+**Decision:** Tailwind v4 migration has been abandoned. All Tailwind v4 files have been removed.
+
+See: `.atl/design/fix-visual-issues.md` for details.
+
+---
+
+## Phase 1: Setup (Foundation) - ✅ COMPLETE (BUT REVERTED)
 
 - [x] 1.1 Install Tailwind CSS: `npx astro add tailwind` ✅ v4.2.4
 - [x] 1.2 Import global.css in Layout.astro ✅ Added
@@ -34,7 +42,7 @@
 }
 ```
 
-## Phase 2: Grid Migration (Layout)
+## Phase 2: Grid Migration (Layout) - NOT STARTED (CANCELLED)
 
 ### Status: Navbar ALREADY CUSTOM - Footer needs migration
 

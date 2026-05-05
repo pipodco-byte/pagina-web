@@ -32,7 +32,7 @@ Loaded from: `~/.config/opencode/skills/`
 |------------|---------|
 | **Tech Stack** | Astro 6.1 (SSR), React 18, TypeScript (strict), Vite 5 |
 | **State Management** | Nanostores (atom-based, cross-island) |
-| **Styling** | SCSS, Bootstrap 2.6, Tailwind |
+| **Styling** | SCSS, Bootstrap 5.3, Bootstrap Icons |
 | **CMS** | Contentful (production) |
 | **Backend** | Astro API routes (server mode) |
 | **Deployment** | Vercel adapter |

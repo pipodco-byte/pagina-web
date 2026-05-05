@@ -144,30 +144,37 @@ These tokens define the complete Pipod design system:
 ### Key Insight
 The custom CSS files (`.pipodNavbar.css`, `.cardProduct.css`) are **NOT Bootstrap-dependent** - they already use custom classes and reference Inter font directly.
 
-### Decision: CSS Tokens Bridge (Approach C)
-Instead of restoring SCSS or doing full Tailwind rewrite:
+### DECISION: ABANDON Tailwind v4 Migration
 
-1. Install Tailwind with `p-` prefix (avoids Bootstrap collisions)
-2. Map existing `--pipod-*` tokens to Tailwind config
-3. Migrate only Bootstrap grid system (`.row`, `.col-*`, `.container`)
-4. Keep existing custom component CSS as-is
+**Date:** 2026-05-05
+**Reason:** Tailwind v4 integration via `global.css` was causing MORE visual regressions than it solved:
+- Google logo appeared enormous in ReviewWall
+- Review cards layout and margins broken
+- Navbar shadows and spacing inconsistent
+- Each fix broke something else
 
-### Timeline: 8-14 hours total
-| Phase | Focus | Effort |
-|-------|-------|--------|
-| 0: Setup | Install Tailwind + config | 15 min |
-| A: Grid | Migrate layout grid | 2-4 hrs |
-| B: UI | Migrate utilities | 4-8 hrs |
-| C: Cleanup | Remove SCSS, QA | 1-2 hrs |
+### Rollback Actions (Commit: 44a3de1)
+| File | Action | Reason |
+|------|--------|--------|
+| `Layout.astro` | Removed `import '../styles/global.css'` | Remove Tailwind v4 entry |
+| `src/styles/global.css` | DELETED | Tailwind v4 no longer needed |
+| `astro.config.mjs` | Removed `@tailwindcss/vite` plugin | Disable Tailwind v4 |
+| `tailwind.config.mjs` | DELETED | Config no longer needed |
 
-### Risks Identified
-- Bootstrap breakpoints (576/768/992px) vs Tailwind (640/768/1024px) → Mitigated with custom screen config
-- Visual drift during migration → Mitigated with component-by-component approach
+### Lessons Learned
+- Tailwind v4 CSS cascade behaves differently than expected
+- Global CSS imports affect ALL components unexpectedly
+- Bootstrap/TIM SCSS was working correctly before migration attempts
+- When something breaks repeatedly, the approach is wrong - not the implementation
+
+### Current State
+- Back to main branch styling approach (Bootstrap/TIM SCSS + Bootstrap CDN)
+- Google Fonts fixed by restoring SCSS import on pages that needed it
+- All visual gaps from initial SCSS removal have been addressed individually
 
 ### Files Affected by Migration
 | File | Action | Reason |
 |------|--------|--------|
-| `tailwind.config.mjs` | Create | Tailwind configuration |
-| `src/styles/_tokens.css` | Read-only | Source of truth |
-| Layout components | Modify | Grid migration |
-| All 8 pages | Modify | Remove SCSS import |
+| `tailwind.config.mjs` | DELETED | Tailwind v4 abandoned |
+| `src/styles/global.css` | DELETED | Tailwind v4 no longer needed |
+| Layout.astro | Removed global.css import | Disable Tailwind v4 |
