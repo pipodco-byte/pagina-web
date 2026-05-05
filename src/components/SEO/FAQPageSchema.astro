@@ -1,0 +1,34 @@
+---
+/**
+ * FAQPageSchema.astro
+ * Genera JSON-LD para FAQPage de Schema.org
+ * Implementado en: servicio-tecnico-apple, plan-retoma-apple
+ */
+
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  faqData: FAQItem[];
+  pageUrl?: string;
+}
+
+const { faqData, pageUrl } = Astro.props;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
