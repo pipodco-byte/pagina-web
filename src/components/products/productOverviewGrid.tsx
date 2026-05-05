@@ -69,7 +69,7 @@ export default function ProductOverview({
         }
         <div className="col-12 col-lg-6 ps-lg-5">
           {(title.length != 0) && 
-            <h2 className="mt-4">{title}</h2>
+            <h2 className="mt-4" style={{ fontWeight: 700 }}>{title}</h2>
           }
           {(full_description.length != 0) && 
             <p className="mb-5">{full_description}</p>
