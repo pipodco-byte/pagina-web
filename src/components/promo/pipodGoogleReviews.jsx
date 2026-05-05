@@ -92,7 +92,7 @@ export default function PipodGoogleReviews() {
               ))}
             </div>
             <span className="reviews-text">
-              {totalReviews} reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1"/>
+              {totalReviews} reseñas • <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="16" alt="Google" className="align-middle mb-1" style={{height: "16px", width: "auto"}}/>
             </span>
           </div>
           <a href="https://g.page/r/CRgj2kSrZTO4EBM/review" target="_blank" className="btn-google-blue">
