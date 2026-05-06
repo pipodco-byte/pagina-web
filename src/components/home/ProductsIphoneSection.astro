@@ -27,7 +27,20 @@ const iphones = productos.filter(p => p.nombre.toLowerCase().includes('iphone'))
           >
             <div class="card-wrapper">
               <CardProduct 
-                {...iphone} 
+                thumb_src={iphone.thumb_src}
+                thumb_alt={iphone.thumb_alt}
+                color={iphone.color}
+                colors={iphone.colors}
+                title={iphone.title}
+                description={iphone.description}
+                price={iphone.price}
+                oldPrice={iphone.oldPrice}
+                condition={iphone.condition}
+                rating={iphone.rating}
+                batteryHealth={iphone.batteryHealth}
+                slug={iphone.slug}
+                tipo="equipo"
+                id={iphone.id}
               />
             </div>
           </div>

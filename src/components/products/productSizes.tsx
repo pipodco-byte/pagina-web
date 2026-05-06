@@ -1,5 +1,5 @@
 interface Props {
-  sizes: Map<string,number>
+  sizes: { [key: string]: number }
 }
 
 export default function ProductSizes({

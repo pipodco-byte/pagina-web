@@ -27,7 +27,20 @@ const accesorios = productos.filter(p => p.tipo === 'accesorio');
           >
             <div class="card-wrapper">
               <CardProduct 
-                {...accesorio} 
+                thumb_src={accesorio.thumb_src}
+                thumb_alt={accesorio.thumb_alt}
+                color={accesorio.color}
+                colors={accesorio.colors}
+                title={accesorio.title}
+                description={accesorio.description}
+                price={accesorio.price}
+                oldPrice={accesorio.oldPrice}
+                condition={accesorio.condition}
+                rating={accesorio.rating}
+                batteryHealth={accesorio.batteryHealth}
+                slug={accesorio.slug}
+                tipo="accesorio"
+                id={accesorio.id}
                 client:load 
               />
             </div>

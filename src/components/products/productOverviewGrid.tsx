@@ -17,7 +17,7 @@ interface Props {
   details: string;
   rating: number;
   reviews: number;
-  sizes: Map<string,number>;
+  sizes: { [key: string]: number };
   tipo?: 'equipo' | 'accesorio';
   id?: string;
   slug?: string;
@@ -76,7 +76,7 @@ export default function ProductOverview({
           }
 
           <form action="" method="post">
-            {(price.length != 0) && 
+            {(price != 0) && 
               <div className="d-flex">
                 <h3 className="font-weight-normal">${price.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</h3>
                 <input className="opacity-0" defaultValue={price} />
@@ -93,7 +93,7 @@ export default function ProductOverview({
             </>
             }
             
-            {(sizes.size != 0) && 
+            {(Object.keys(sizes).length != 0) && 
               <ProductSizes sizes={sizes}/>
             }
 
