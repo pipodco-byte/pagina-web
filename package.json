@@ -15,7 +15,6 @@
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/vercel": "^10.0.3",
     "@nanostores/react": "^1.1.0",
-    "@tailwindcss/vite": "^4.2.4",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^6.1.1",
@@ -26,7 +25,6 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^4.2.4",
     "vite": "^5.0.0"
   },
   "devDependencies": {
