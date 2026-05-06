@@ -49,7 +49,7 @@ export default function BlogSection() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .blog-section-white {
-          background-color: #F8F9FA;
+          background-color: #FFFFFF;
           padding: 100px 0;
           color: #000000;
         }

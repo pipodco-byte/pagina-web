@@ -27,8 +27,14 @@ const macbooks = productos.filter(p => p.nombre.toLowerCase().includes('macbook'
           >
             <div class="card-wrapper">
               <CardProduct 
-                {...producto}
-                client:load
+                thumb_src={producto.thumb_src}
+                thumb_alt={producto.thumb_alt}
+                color={producto.color}
+                colors={producto.colors}
+                title={producto.title}
+                description={producto.description}
+                price={producto.price}
+                position="center"
               />
             </div>
           </div>
