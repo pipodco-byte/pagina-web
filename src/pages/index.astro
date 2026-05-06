@@ -15,6 +15,7 @@ import PaymentBanner from '../components/payment/PaymentBanner.astro';
 import ServiceCardsSection from '../components/home/ServiceCardsSection.astro';
 import ProductsIphoneSection from '../components/home/ProductsIphoneSection.astro';
 import ProductsMacbooksSection from '../components/home/ProductsMacbooksSection.astro';
+import AccesoriosAppleSection from '../components/home/AccesoriosAppleSection.astro';
 import { SectionTracker } from '../components/gtm';
 import { getProductos } from '../lib/contentful';
 
@@ -30,10 +31,9 @@ const productos = await getProductos();
 
     <!-- Stats Section -->
     <Stats />
-
-    <!-- Core Services (3 Pillars) -->
-    <ServiceCardsSection />
-
+  <!-- Featured Products (MacBooks) -->
+    <ProductsMacbooksSection productos={productos} />
+  
     <!-- Why Choose Us (Differentiators) -->
     <IncentiveShortBlackA client:load />
 
@@ -43,14 +43,18 @@ const productos = await getProductos();
     <!-- Payment Methods Banner -->
     <PaymentBanner />
 
-    <!-- Featured Products (MacBooks) -->
-    <ProductsMacbooksSection productos={productos} />
+    <!-- Accesorios -->
+    <AccesoriosAppleSection productos={productos} />
 
+    
     <!-- Social Proof (Testimonials) -->
     <ReviewWall
       pageHeaderBgImg="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
       pageHeaderMinVh="40vh"
     />
+
+    <!-- Core Services (3 Pillars) -->
+    <ServiceCardsSection />
 
     <!-- Blog/News Section -->
     <BlogSection client:load />

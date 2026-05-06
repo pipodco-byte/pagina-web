@@ -1,0 +1,110 @@
+---
+import CardProduct from '../products/cardProduct';
+import { SectionTracker } from '../gtm';
+
+interface Props {
+  productos: any[];
+}
+
+const { productos } = Astro.props;
+const accesorios = productos.filter(p => p.tipo === 'accesorio');
+---
+
+<SectionTracker sectionName="productos_accesorios" client:load>
+  <section class="products-section">
+    <div class="container">
+      <div class="header-container">
+        <h2 class="section-title">Accesorios</h2>
+      </div>
+
+      <div class="row g-4">
+        {accesorios.map(accesorio => (
+          <div 
+            class="col-12 col-md-6 col-lg-3 d-flex align-items-stretch"
+            data-product-id={accesorio.id}
+            data-product-name={accesorio.nombre}
+            data-categoria="accesorio"
+          >
+            <div class="card-wrapper">
+              <CardProduct 
+                {...accesorio} 
+                client:load 
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</SectionTracker>
+
+<style is:global>
+  .products-section {
+    background-color: #FFFFFF;
+    padding: 80px 0;
+  }
+
+  .header-container {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .card-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  .card-wrapper > div, 
+  .card-wrapper article,
+  .card-wrapper a {
+    width: 100%;
+    padding-top: 20px !important;
+    padding-bottom: 30px !important;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+  }
+
+  .card-wrapper:hover > div {
+    transform: translateY(-5px);
+  }
+
+  .card-wrapper img {
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    .products-section {
+      padding: 40px 0;
+    }
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .container {
+      padding: 0 24px !important;
+    }
+    .products-section .row {
+      gap: 16px !important;
+    }
+    .card-wrapper > div,
+    .card-wrapper article,
+    .card-wrapper a {
+      padding-top: 1px !important;
+      padding-bottom: 1px !important;
+    }
+  }
+</style>
