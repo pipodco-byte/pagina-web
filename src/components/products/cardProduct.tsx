@@ -35,11 +35,13 @@ export default function CardProduct({
 }: Props) {
   const { track } = useGTM();
   const [showToast, setShowToast] = useState(false);
+  const displayPrice = price ?? 0;
+  const displayOldPrice = oldPrice ?? 0;
   
   const isEquipo = tipo === 'equipo';
   const isUsed = condition !== 'Nuevo';
   const productUrl = slug ? `/producto/${slug}` : '#';
-  const discount = oldPrice ? Math.round(((oldPrice - price) / oldPrice) * 100) : 0;
+  const discount = displayOldPrice > 0 ? Math.round(((displayOldPrice - displayPrice) / displayOldPrice) * 100) : 0;
   const discountColor = discount > 35 ? '#D32F2F' : '#2E7D32';
 
   const handleProductClick = () => {
@@ -58,7 +60,7 @@ export default function CardProduct({
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    const mensaje = `Hola Pipod, me interesa el producto ${title} a $${price.toLocaleString('es-CO', { maximumFractionDigits: 0 })}`;
+    const mensaje = `Hola Pipod, me interesa el producto ${title} a $${displayPrice.toLocaleString('es-CO', { maximumFractionDigits: 0 })}`;
     const url = `https://wa.me/573124813094?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
   };
@@ -70,7 +72,7 @@ export default function CardProduct({
     addItem({
       id,
       nombre: title,
-      precio: price,
+      precio: displayPrice,
       thumb_src,
       slug: slug || '',
     });
@@ -122,18 +124,19 @@ export default function CardProduct({
             </div>
 
             <img 
-              src={`${import.meta.env.BASE_URL}${thumb_src}`} 
+              src={thumb_src} 
               alt={title} 
               className="img-hero" 
+              onError={(e) => { e.currentTarget.src = 'https://store.storeimages.cdn-apple.com/4982/Apple/Images/model-thumbnail/default.webp'; }}
             />
           </div>
 
           <div className="product-content">
             <div className="price-rating-group">
               <div className="price-block">
-                <span className="price-now">${price.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</span>
-                {oldPrice && (
-                  <span className="price-before">${oldPrice.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</span>
+                <span className="price-now">${displayPrice.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</span>
+                {displayOldPrice > 0 && (
+                  <span className="price-before">${displayOldPrice.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</span>
                 )}
               </div>
               <div className="rating-block">

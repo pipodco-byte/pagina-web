@@ -5,11 +5,12 @@ import FloatingContact from '../../layouts/floatingContact';
 import ProductOverviewGrid from '../../components/products/productOverviewGrid';
 import CardProduct from '../../components/products/cardProduct';
 import ProductSchema from '../../components/SEO/ProductSchema.astro';
-import { getProductos, getProductoPorSlug } from '../../lib/contentful';
-// import '../../../assets/scss/astro-ecommerce.scss';
+import { getWebProductos, getWebProductoPorSlug, getImageUrl, getStockBadge } from '../../lib/supabase/products';
+import type { Producto } from '../../lib/contentful';
 
+// Re-export for backwards compatibility
 export async function getStaticPaths() {
-  const productos = await getProductos();
+  const productos = await getWebProductos();
   return productos.map(producto => ({
     params: { slug: producto.slug },
     props: { producto }
@@ -17,19 +18,38 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const producto = await getProductoPorSlug(slug);
-const todosProductos = await getProductos();
+const producto = await getWebProductoPorSlug(slug);
+const todosProductos = await getWebProductos();
 const productosRelacionados = todosProductos.filter(p => p.slug !== slug).slice(0, 4);
 
 if (!producto) {
   return Astro.redirect('/tienda-pipod');
 }
 
+const productoAdapter: Producto = {
+  id: producto.id,
+  slug: producto.slug || '',
+  nombre: producto.nombre,
+  descripcion: producto.descripcion || '',
+  precio: producto.precio_base,
+  precioAnterior: producto.precio_anterior || undefined,
+  condicion: producto.condicion,
+  sku: producto.sku,
+  tipo: producto.tipo,
+  thumb_src: producto.imagen_principal,
+  thumb_alt: producto.nombre,
+  enStock: producto.cantidad > 0,
+  colors: producto.variantes?.map(v => v.atributos.color || 'default') || []
+};
+
+const stockBadge = getStockBadge(producto);
+const imageUrl = getImageUrl(producto);
+
 const images = [
-  { src: producto.thumb_src || '', alt: producto.nombre },
-  { src: producto.thumb_src || '', alt: producto.nombre },
-  { src: producto.thumb_src || '', alt: producto.nombre },
-  { src: producto.thumb_src || '', alt: producto.nombre }
+  { src: imageUrl, alt: producto.nombre },
+  { src: imageUrl, alt: producto.nombre },
+  { src: imageUrl, alt: producto.nombre },
+  { src: imageUrl, alt: producto.nombre }
 ];
 ---
 
@@ -38,15 +58,15 @@ const images = [
     id: producto.id,
     name: producto.nombre,
     description: producto.descripcion,
-    price: producto.precio,
+    price: producto.precio_base,
     currency: "COP",
-    image: producto.thumb_src || '',
+    image: imageUrl,
     condition: producto.condicion as 'new' | 'used' | 'refurbished',
-    availability: producto.enStock ? 'InStock' : 'OutOfStock',
+    availability: producto.cantidad > 0 ? 'InStock' : 'PreOrder',
     brand: "Apple",
     sku: producto.sku,
-    rating: producto.rating,
-    reviewCount: producto.reviews
+    rating: 4,
+    reviewCount: 117
   }} />
   
   <main style="padding-top: 120px; background: #ffffff;">
@@ -54,18 +74,18 @@ const images = [
       <ProductOverviewGrid 
         client:load
         title={producto.nombre}
-        colors={producto.colors || ['blue', 'gray', 'black']}
+        colors={productoAdapter.colors || ['blue', 'gray', 'black']}
         images={images}
         full_description={producto.descripcion}
-        price={producto.precio}
+        price={producto.precio_base}
         highlights={[
           `Condición: ${producto.condicion}`,
           `SKU: ${producto.sku}`,
-          `Stock: ${producto.enStock ? 'Disponible' : 'Agotado'}`
+          `Stock: ${stockBadge.text}`
         ]}
         details={`Producto ${producto.condicion} de alta calidad. Garantía Pipod incluida.`}
-        rating={producto.rating || 4}
-        reviews={producto.reviews || 117}
+        rating={4}
+        reviews={117}
         sizes={{}}
         tipo={producto.tipo}
         id={producto.id}
@@ -78,18 +98,18 @@ const images = [
         <h5 class="mb-4">Productos Relacionados</h5>
         {productosRelacionados.map(prod => (
           <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <CardProduct 
-              thumb_src={prod.thumb_src}
-              thumb_alt={prod.thumb_alt}
-              color={prod.color}
-              colors={prod.colors}
-              title={prod.title}
-              description={prod.description}
-              price={prod.price}
-              oldPrice={prod.oldPrice}
-              condition={prod.condition}
-              rating={prod.rating}
-              batteryHealth={prod.batteryHealth}
+            <CardProduct
+              thumb_src={prod.imagen_principal}
+              thumb_alt={prod.nombre}
+              color={prod.variantes?.[0]?.atributos?.color}
+              colors={prod.variantes?.map(v => v.atributos.color || 'default')}
+              title={prod.nombre}
+              description={prod.descripcion}
+              price={prod.precio_base}
+              oldPrice={prod.precio_anterior}
+              condition={prod.condicion}
+              rating={4}
+              batteryHealth={undefined}
               slug={prod.slug}
               tipo={prod.tipo}
             />
