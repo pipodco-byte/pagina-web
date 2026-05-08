@@ -1,0 +1,51 @@
+ID_Orden,Titulo_Sugerido,Keyword_Principal,Categoria_Contenido,Intencion_Busqueda,Volumen_Busquedas_Mensuales,Prioridad_Score,Nivel_Estrategico
+1,Mac Center vs. Servicio Técnico Especializado: ¿Dónde te conviene reparar?,macbook center,Confianza / Local,Informativa,500000.0,7000000.0,1
+2,Expertos en Macs: Tu Centro de Servicio Técnico de Confianza,macs center,Confianza / Local,Informativa,500000.0,7000000.0,1
+3,¿Cómo solicitar Soporte Técnico de Apple en Colombia? Guía paso a paso,soporte de apple,Guía de Blog (Tráfico),Informativa,5000.0,1500000.0,1
+4,Soporte Técnico Apple en Bogotá: Reparaciones Rápidas y Garantizadas,soporte técnico apple,Guía de Blog (Tráfico),Informativa,5000.0,1470000.0,1
+5,Cambio de Pantalla para MacBook en Bogotá: Precios y Garantía,pantalla mac,Confianza / Local,Informativa,5000.0,1100000.0,1
+6,"Garantía Apple en Colombia: Qué cubre, qué no y qué hacer si ya expiró",garantia en apple,Guía de Blog (Tráfico),Informativa,5000.0,505000.0,1
+7,Cómo tramitar la garantía con Apple: Guía Completa,garantia con apple,Guía de Blog (Tráfico),Informativa,5000.0,505000.0,1
+8,Servicio Técnico Apple: Referencias y Estándares de España,apple en españa,Confianza / Local,Informativa,5000.0,240000.0,1
+9,Reparación Apple: Calidad Europea en Soporte Técnico,españa apple,Confianza / Local,Informativa,5000.0,240000.0,1
+10,Teléfonos de Soporte Apple: Cómo contactar con expertos rápidamente,telefono apple soporte tecnico,Guía de Blog (Tráfico),Informativa,500.0,150000.0,1
+11,Soporte Técnico Apple Teléfono: Atención inmediata para tus equipos,soporte técnico apple teléfono,Guía de Blog (Tráfico),Informativa,500.0,150000.0,1
+12,Soporte Técnico Apple para Empresas en Colombia: Planes Corporativos,apple empresas,Confianza / Local,Informativa,500.0,150000.0,1
+13,Servicio Técnico Especializado en iPhone: Reparamos todos los modelos,soporte tecnico iphone,Guía de Blog (Tráfico),Informativa,500.0,148500.0,1
+14,Soporte Técnico de Apple: Expertos en hardware y software,soporte tecnico de apple,Guía de Blog (Tráfico),Informativa,500.0,145500.0,1
+15,Reparar Apple: ¿Por qué elegir un servicio especializado independiente?,reparar apple,Página de Servicio (Venta),Transaccional,500.0,142500.0,1
+16,¿Tu iPhone no enciende? Guía de Soporte de iPhone para emergencias,soporte de iphone,Guía de Blog (Tráfico),Informativa,500.0,142500.0,2
+17,Arreglo de iPhone en el acto: Soluciones para pantallas y baterías,arreglo de iphone,Página de Servicio (Venta),Transaccional,500.0,133500.0,2
+18,Cambio de Batería para MacBook: Recupera la autonomía de tu equipo,mac center cambio de bateria,Página de Servicio (Venta),Transaccional,500.0,121250.0,2
+19,Cambio de Batería para iPhone: Recupera la vida útil de tu equipo,cambiar bateria iphone,Confianza / Local,Informativa,500.0,118750.0,2
+20,Cómo cambiar la batería de tu iPhone de forma segura,bateria iphone cambio,Página de Servicio (Venta),Transaccional,500.0,118750.0,2
+21,Guía para comprar un iPhone usado en Bogotá sin ser estafado,soporte iphone,Guía de Blog (Tráfico),Informativa,500.0,112500.0,2
+22,Mi Mac está lenta: Soporte Mac y optimización de sistema,soporte mac,Guía de Blog (Tráfico),Informativa,500.0,81000.0,2
+23,Las mejores Tiendas Apple en Bogotá: Dónde comprar y recibir soporte,tienda apple,Confianza / Local,Transaccional,5000.0,75000.0,2
+24,"¿Pantalla Original, OEM o Genérica? Diferencias en pantallas Apple",pantallas apple,Confianza / Local,Informativa,500.0,56250.0,2
+25,Reparación de Pantalla Apple: Lo que debes saber antes de cambiarla,pantalla apple,Confianza / Local,Informativa,500.0,56250.0,2
+26,Atención al Cliente Apple: Diferencias entre el soporte oficial y especializado,mac garantia,Guía de Blog (Tráfico),Informativa,500.0,50500.0,2
+27,Guía de Lanzamientos Apple 2024: Nuevos equipos y tendencias,garantía macbook,Confianza / Local,Informativa,500.0,50500.0,2
+28,Servicio al Cliente Apple: Soluciones rápidas a tus problemas técnicos,garantias de apple,Guía de Blog (Tráfico),Informativa,500.0,50500.0,2
+29,Garantías de Apple: Todo lo que necesitas saber sobre la cobertura,apple servicio cliente,Confianza / Local,Informativa,500.0,50500.0,2
+30,Garantía MacBook: Protege tu inversión y conoce tus derechos,lanzamiento apple,Confianza / Local,Informativa,500.0,50500.0,2
+31,Mac Garantía: ¿Tu equipo falló? Revisa si aún tienes cobertura,apple atencion al cliente,Confianza / Local,Informativa,500.0,50500.0,2
+32,Iphone Garantía: Qué hacer si tu teléfono presenta fallas de fábrica,iphone garantia,Guía de Blog (Tráfico),Informativa,500.0,50000.0,2
+33,Garantía del iPhone: Guía para usuarios en Colombia,garantia del iphone,Guía de Blog (Tráfico),Informativa,500.0,50000.0,2
+34,Soporte Apple: Estándares internacionales de reparación,apple espańa,Confianza / Local,Informativa,500.0,49500.0,2
+35,¿Tu Apple Watch no enciende? Guía de reinicio y soluciones,mi apple watch no enciende,Confianza / Local,Informativa,500.0,49000.0,2
+36,Mi Apple Watch no prende: Causas comunes y cómo arreglarlo,mi apple watch no prende,Confianza / Local,Informativa,500.0,49000.0,2
+37,¿Cómo encontrar el mejor reparador Apple en tu zona?,reparacion apple,Confianza / Local,Informativa,500.0,47500.0,2
+38,Reparación Apple: Especialistas en toda la gama de productos,reparador apple,Confianza / Local,Informativa,500.0,47500.0,2
+39,¿Qué hacer con un iPhone antiguo? Opciones de actualización,iphone antiguos,Confianza / Local,Informativa,500.0,47000.0,2
+40,Apple Técnico Servicio: Profesionales a tu disposición,apple méxico,Confianza / Local,Informativa,500.0,45000.0,2
+41,Servicio Técnico Apple para usuarios en México: Guía de referencia,apple tecnico servicio,Confianza / Local,Informativa,500.0,45000.0,3
+42,Arreglar iPhone: Costos y beneficios de reparar vs comprar nuevo,arreglar iphone,Confianza / Local,Informativa,500.0,44500.0,3
+43,"Reparación iPhone en Bogotá: Pantallas, Baterías y más",reparacion iphone,Confianza / Local,Informativa,500.0,44500.0,3
+44,¿Buscas una Tienda Mac en Bogotá? Visítanos,tiendamac,Confianza / Local,Transaccional,500.0,44500.0,3
+45,Reparación de iPhone: Guía completa de soluciones de hardware,reparacion de iphone,Confianza / Local,Informativa,500.0,42500.0,3
+46,iPhone cerca de mí: Dónde encontrar soporte rápido,iphone cerca de mí,Confianza / Local,Informativa,500.0,41500.0,3
+47,Reparación Mac: Especialistas en iMac y Mac Mini,reparacion macbook,Confianza / Local,Informativa,500.0,41000.0,3
+48,Reparación MacBook Pro y Air: Soluciones para profesionales,reparacion mac,Confianza / Local,Informativa,500.0,41000.0,3
+49,Servicio Técnico Apple Online: Diagnóstico remoto,apple on line,Confianza / Local,Informativa,500.0,40500.0,3
+50,Reparación de iPhone cerca de mí: Tu técnico de confianza en Bogotá,reparacion de iphone cerca de mi,Confianza / Local,Informativa,500.0,40000.0,3

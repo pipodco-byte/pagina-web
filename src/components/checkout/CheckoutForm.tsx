@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useStore } from '@nanostores/react';
 import { cartItems, clearCart } from '../../store/cartStore';
 import { validateCheckoutForm, sanitizeInput } from '../../lib/checkoutValidations';
+import { useHydrated } from '../../hooks/useHydrated';
 import './CheckoutForm.css';
 
 interface ShippingData {
@@ -14,6 +15,7 @@ interface ShippingData {
 
 export default function CheckoutForm() {
   const items = useStore(cartItems);
+  const isHydrated = useHydrated();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<ShippingData>({
     fullName: '',
@@ -58,7 +60,7 @@ export default function CheckoutForm() {
       }
 
       const boldPublicKey = import.meta.env.PUBLIC_BOLD_API_KEY;
-      
+
       if (!boldPublicKey) {
         alert('Error: Pasarela de pagos no configurada');
         setIsLoading(false);
@@ -66,9 +68,8 @@ export default function CheckoutForm() {
       }
 
       const reference = `PIPOD-${Date.now()}`;
-      const amount = Math.round(finalTotal); // Bold en Colombia espera pesos sin centavos
+      const amount = Math.round(finalTotal);
 
-      // Preparar descripción con datos de envío para Bold
       const shippingDescription = `
 Enviar a: ${sanitizedData.fullName}
 Teléfono: ${sanitizedData.phone}
@@ -77,7 +78,6 @@ Barrio: ${sanitizedData.neighborhood}
 Email: ${sanitizedData.email}
       `.trim();
 
-      // Guardar datos en localStorage
       localStorage.setItem('checkoutData', JSON.stringify({
         shipping: sanitizedData,
         items: items,
@@ -86,14 +86,10 @@ Email: ${sanitizedData.email}
         total: finalTotal
       }));
 
-      // Preparar datos para Bold
       const checkoutData = {
-        publicKey: boldPublicKey,
         amount: amount,
-        currency: 'COP',
-        reference: reference,
         description: `Compra Pipod - ${shippingDescription}`,
-        redirectUrl: `${window.location.origin}/checkout-success`,
+        orderId: reference,
         customerEmail: sanitizedData.email,
         customerName: sanitizedData.fullName,
         customerPhone: sanitizedData.phone,
@@ -108,11 +104,25 @@ Email: ${sanitizedData.email}
 
       console.log('Iniciando pago con Bold:', checkoutData);
 
-      // Usar URL de Bold directamente (más confiable)
-      const boldUrl = `https://checkout.bold.co/?key=${boldPublicKey}&amount=${amount}&currency=COP&reference=${reference}&email=${encodeURIComponent(sanitizedData.email)}&redirectUrl=${encodeURIComponent(checkoutData.redirectUrl)}`;
-      
-      console.log('Redirigiendo a Bold:', boldUrl);
-      window.location.href = boldUrl;
+      const response = await fetch('/api/bold/create-link', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(checkoutData)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.checkoutUrl) {
+        console.error('Error creando link de pago:', result);
+        alert('Error al procesar tu pedido. Intenta de nuevo.');
+        setIsLoading(false);
+        return;
+      }
+
+      console.log('Redirigiendo a Bold:', result.checkoutUrl);
+      window.location.href = result.checkoutUrl;
     } catch (error) {
       console.error('Error al procesar checkout:', error);
       alert('Error al procesar tu pedido. Intenta de nuevo.');
@@ -120,6 +130,15 @@ Email: ${sanitizedData.email}
       setIsLoading(false);
     }
   };
+
+  if (!isHydrated) {
+    return (
+      <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+        <i className="bi bi-bag" style={{ fontSize: '64px', color: '#86868B', marginBottom: '20px', display: 'block' }}></i>
+        <h2 style={{ color: '#1D1D1F', marginBottom: '10px' }}>Cargando...</h2>
+      </div>
+    );
+  }
 
   if (items.length === 0) {
     return (
