@@ -3,7 +3,7 @@ title: "iPhone Mojado en Bogotá | Recuperación de Datos - Pipod"
 description: "¿Se te mojó el iPhone? No lo conectes. En Pipod Chapinero recuperamos equipos con daño por líquidos. Protocolo especializado. 16 años de experiencia. ¡Llámanos ya!"
 slug: "/blog/iphone-mojado-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "iPhone mojado"

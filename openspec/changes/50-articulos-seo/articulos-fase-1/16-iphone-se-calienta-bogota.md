@@ -3,7 +3,7 @@ title: "iPhone se Calienta Bogotá | Causas y Solución - Pipod"
 description: "¿Tu iPhone se calienta mucho en Bogotá? En Pipod Chapinero diagnosticamos gratis las causas. Batería, software, uso. 16 años de experiencia. ¡Solución real!"
 slug: "/blog/iphone-se-calienta-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "iPhone caliente"

@@ -3,7 +3,7 @@ title: "Cambio Batería MacBook Bogotá | Rápido y Garantizado - Pipod"
 description: "Cambio de batería MacBook en Bogotá. Air, Pro M1, M2, Intel. 16 años de experiencia en Chapinero. Garantía 12 meses. ¡Agenda tu cita!"
 slug: "/blog/cambio-bateria-macbook-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "MacBook"
 tags:
   - "batería MacBook"

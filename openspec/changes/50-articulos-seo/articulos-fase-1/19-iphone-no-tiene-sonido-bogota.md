@@ -3,7 +3,7 @@ title: "iPhone No Tiene Sonido Bogotá | Altavoz y Auricular - Pipod"
 description: "¿Tu iPhone no tiene sonido? En Pipod Chapinero reparamos altavoz, auricular y micrófono. 16 años de experiencia, garantía 12 meses. ¡Diagnóstico gratis!"
 slug: "/blog/iphone-no-tiene-sonido-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "iPhone sin sonido"

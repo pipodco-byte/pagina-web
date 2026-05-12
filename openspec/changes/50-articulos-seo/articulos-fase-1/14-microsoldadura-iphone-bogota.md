@@ -3,7 +3,7 @@ title: "Microsoldadura iPhone Bogotá | Reparación de Placa - Pipod"
 description: "Microsoldadura iPhone en Bogotá. Reparamos IC de carga, líneas de alimentación, daños por agua. 16 años de experiencia en Chapinero. ¡Diagnóstico gratis!"
 slug: "/blog/microsoldadura-iphone-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "microsoldadura"

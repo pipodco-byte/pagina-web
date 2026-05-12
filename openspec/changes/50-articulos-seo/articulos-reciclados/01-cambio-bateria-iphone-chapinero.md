@@ -3,7 +3,7 @@ title: "Cambio batería de tu iPhone en Chapinero | Laboratorio Pipod"
 description: "Cambio de batería iPhone en Chapinero. Diagnóstico técnico gratis, reparación en 2-3 horas con cita. 16 años de experiencia, 3,600+ equipos reparados. Métodos de pago: Nequi, Daviplata, Bre-B, efectivo."
 slug: "/blog/cambio-bateria-iphone-chapinero"
 publishDate: "2026-05-08"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "batería"

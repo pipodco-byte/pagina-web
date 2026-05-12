@@ -3,7 +3,7 @@ title: "Micrófono y Speaker iPhone en Bogotá: 5 Causas Reales de Daño | Pipod
 description: "¿Tu micrófono no funciona o el speaker suena mal? Explicamos 5 causas reales: humedad, golpes, suciedad, temperatura, vibración. Diagnóstico gratis + reparación express. 16 años de experiencia."
 slug: "/blog/reparacion-microfono-speaker-iphone-5-causas-bogota"
 publishDate: "2026-05-08"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "micrófono"

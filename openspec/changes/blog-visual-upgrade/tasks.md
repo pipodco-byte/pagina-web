@@ -98,7 +98,7 @@
 ---
 
 ### Task 8: Test on Vercel deployment
-- [ ] Run `npm run build` locally and verify no errors
+- [x] Run `npm run build` locally and verify no errors
 - [ ] Deploy to Vercel (via `vercel --prod` or Git push trigger)
 - [ ] Open blog page (`/pipod-blog`) and verify:
   - [ ] Hero section renders with editorial typography

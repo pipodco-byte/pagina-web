@@ -3,7 +3,7 @@ title: "Cámara iPhone Vibra o No Enfoca en Bogotá | Reparación OIS - Pipod"
 description: "¿Tu cámara de iPhone hace ruido o se mueve sola? Reparamos el estabilizador óptico (OIS) en Bogotá sin borrar tus datos. Ingeniería Apple en 2 horas. 16 años de experiencia."
 slug: "/blog/reparacion-camara-iphone-vibra-bogota-ois"
 publishDate: "2026-05-08"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "cámara"

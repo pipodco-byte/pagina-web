@@ -3,7 +3,7 @@ title: "MacBook Lento en Bogotá | Diagnóstico y Solución - Pipod"
 description: "¿Tu MacBook está lento en Bogotá? En Pipod Chapinero diagnosticamos gratis las causas reales. Limpieza, optimización y reparación. 16 años de experiencia. ¡Agenda ya!"
 slug: "/blog/macbook-lento-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "MacBook"
 tags:
   - "MacBook lento"

@@ -3,7 +3,7 @@ title: "Pantalla MacBook Bogotá | Reparación LCD/Retina - Pipod"
 description: "Reparación pantalla MacBook en Bogotá. LCD, Retina, M1, M2. Diagnóstico gratis en Chapinero. 16 años de experiencia, garantía 12 meses. ¡Agenda ya!"
 slug: "/blog/pantalla-macbook-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "MacBook"
 tags:
   - "pantalla MacBook"

@@ -3,7 +3,7 @@ title: "Servicio Técnico Cerca Chapinero | Apple - Pipod"
 description: "Servicio técnico Apple cerca de Chapinero. Reparamos iPhone, iPad, MacBook. A 5 minutos de El Lago y Zona Rosa. 16 años de experiencia. ¡Visítanos!"
 slug: "/blog/servicio-tecnico-cerca-chapinero"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "Servicio Técnico"
 tags:
   - "servicio técnico"

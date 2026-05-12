@@ -167,7 +167,7 @@ title: "[Keyword Primary] | [Tag] | Pipod Chapinero"
 description: "[Hook con dolor] + [Keyword] + [CTA]"
 slug: "/blog/[keyword-slug]-bogota"
 publishDate: "2026-XX-XX"
-author: "Equipo Pipod"
+author: "kimi"
 category: "[Dispositivo]"
 tags:
   - "[problema]"

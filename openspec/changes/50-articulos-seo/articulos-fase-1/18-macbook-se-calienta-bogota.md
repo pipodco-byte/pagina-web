@@ -3,7 +3,7 @@ title: "MacBook se Calienta Bogotá | Ventiladores y Pasta Térmica - Pipod"
 description: "¿Tu MacBook se calienta mucho en Bogotá? Limpieza de ventiladores, cambio de pasta térmica. 16 años de experiencia en Chapinero. ¡Agenda tu cita!"
 slug: "/blog/macbook-se-calienta-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "MacBook"
 tags:
   - "MacBook caliente"

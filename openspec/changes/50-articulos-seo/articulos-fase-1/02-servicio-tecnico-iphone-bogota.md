@@ -3,7 +3,7 @@ title: "Servicio Técnico iPhone Bogotá | Reparación Especializada - Pipod"
 description: "Servicio técnico especializado en iPhone en Bogotá. Reparamos pantallas, baterías, daño por agua y más. 16 años de experiencia. Diagnóstico gratuito. ¡Visítanos en Chapinero!"
 slug: "/blog/servicio-tecnico-iphone-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "servicio técnico"

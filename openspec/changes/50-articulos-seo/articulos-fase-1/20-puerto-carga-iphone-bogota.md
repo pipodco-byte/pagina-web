@@ -3,7 +3,7 @@ title: "Puerto de Carga iPhone Bogotá | Reparación Lightning/USB-C - Pipod"
 description: "¿Puerto de carga de tu iPhone no funciona? En Pipod Chapinero lo reparamos o reemplazamos. iPhone con Lightning o USB-C. 16 años de experiencia."
 slug: "/blog/puerto-carga-iphone-bogota"
 publishDate: "2026-05-15"
-author: "Equipo Pipod"
+author: "kimi"
 category: "iPhone"
 tags:
   - "puerto carga"

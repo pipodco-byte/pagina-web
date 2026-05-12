@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import readingTime from 'reading-time';
 
 export default function BlogFilter() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,32 +11,21 @@ export default function BlogFilter() {
       excerpt: 'Descubre cómo Pipod pasó de reparar móviles en 2007 a convertirse en el servicio técnico especializado en Apple más confiable de Bogotá. 15+ años de transparencia y excelencia.',
       category: 'HISTORIA PIPOD',
       link: '/blog/historia-pipod-bogota',
-      date: '2026-05-12',
+      date: '12 Mayo 2026',
       readingTime: '5 min de lectura'
     }
   ];
 
-  // Calculate reading time for each post using reading-time package
-  const postsWithReadingTime = useMemo(() => {
-    return posts.map(post => {
-      const stats = readingTime(post.excerpt);
-      return {
-        ...post,
-        readingTime: stats.text
-      };
-    });
-  }, []);
-
   const categories = ['HISTORIA PIPOD'];
 
   const filteredPosts = useMemo(() => {
-    return postsWithReadingTime.filter(post => {
+    return posts.filter(post => {
       const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = !selectedCategory || post.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, selectedCategory, postsWithReadingTime]);
+  }, [searchTerm, selectedCategory]);
 
   return (
     <section className="blog-filter-section">
