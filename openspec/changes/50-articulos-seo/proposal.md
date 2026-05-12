@@ -74,7 +74,7 @@
 
 ### Ubicación
 - **Chapinero, Bogotá** (único punto físico)
-- Cll 63 #14-45
+- Cra. 13a #79-52
 - NO Cedritos, NO Usaquén, NO Colina
 
 ### Horario
@@ -94,6 +94,33 @@ Dom: Cerrado
 ### Contacto
 - WhatsApp: wa.me/573124813094
 - Mensaje contextual por tipo de problema
+
+---
+
+## Estrategia Geográfica: Hub-and-Spoke
+
+**Chapinero es el HUB PRINCIPAL** — aquí está Pipod físicamente (Cra. 13a #79-52).
+
+Las demás zonas son **SPOKES de cobertura** — gente que busca "cerca de X" pero está a minutos de Chapinero.
+
+### Modelo de 3 Anillos
+
+| Anillo | Zonas | Prioridad SEO |
+|--------|-------|---------------|
+| **Hub Principal** | **Chapinero** (Cra. 13a #79-52) | 🔥🔥🔥 En TODOS los artículos |
+| **Spoke 1** | **El Lago** — anti-Unilago positioning | 🔥🔥 Alta — diferenciación |
+| **Spoke 2** | **La Soledad / Teusaquillo** | 🔥🔥 Muy alta — menos competencia |
+| **Spoke 3** | **Quinta Camacho / Rosales** | 🔥🔥 Alta — target premium |
+
+### Zonas DESCARTADAS ❌
+
+- **Candelaria / Centro** — Queda lejos, fricción de desplazamiento alta
+- **Colina** — Extremo norte, muy alejado
+- **San Martín** — Transicional, menor volumen de búsqueda Apple
+
+### Regla de Oro
+
+> **Chapinero aparece en TODOS los artículos.** Los spokes son para capturar búsquedas de gente que no conoce Chapinero pero está cerca.
 
 ---
 
@@ -162,7 +189,7 @@ locale: "es-CO"
 ## H1 + INTRO
 
 Conexión daño del equipo con ritmo de vida bogotano.
-Chapinero + Bogotá (mínimo 2 menciones)
+**Chapinero (mínimo 2 menciones) + Bogotá + spoke relevante si aplica**
 
 ## H2 DIAGNÓSTICO
 
@@ -212,8 +239,9 @@ wa.me/573124813094 con mensaje contextual
 6. SIN comparación con Mac Center
    → Competidor de tienda, no servicio técnico
 
-7. Localismo: Chapinero + Bogotá
-   → Mínimo 2 menciones por artículo
+7. Localismo: Chapinero PRIMERO + spokes estratégicos
+   → Chapinero: Mínimo 2 menciones en CADA artículo (hub principal)
+   → Spokes (El Lago, La Soledad, Quinta Camacho): Solo cuando el artículo lo amerite
 
 8. Markdown limpio para Astro
    → Código limpio, listo para copiar
@@ -300,7 +328,7 @@ También reparamos Apple Watch: cambio de pila y recuperación cuando se moja.</
     <li><strong>Garantía real</strong> — 6 meses en todas las reparaciones</li>
     <li><strong>Trabajo frente a ti</strong> — Vés todo lo que hacemos</li>
   </ul>
-  <p><strong>Dónde estamos:</strong> Calle 63 #14-45, Chapinero, Bogotá. 
+  <p><strong>Dónde estamos:</strong> Cra. 13a #79-52, Chapinero, Bogotá. 
   <strong>Horario:</strong> Lun-Vie 10am-7pm, Sáb 10am-6pm, Dom cerrado.</p>
 </section>
 ```
@@ -311,7 +339,7 @@ También reparamos Apple Watch: cambio de pila y recuperación cuando se moja.</
   <h2>¿Necesitas Reparación? Estamos en Chapinero</h2>
   <p>Si tu iPhone, iPad, MacBook u otro dispositivo Apple necesita atención, pásate por nuestra sede en Chapinero.</p>
   <p><strong>15+ años de experiencia. Diagnóstico gratis. Garantía de 6 meses.</strong></p>
-  <p><strong>📍 Calle 63 #14-45, Chapinero, Bogotá</strong><br>
+  <p><strong>📍 Cra. 13a #79-52, Chapinero, Bogotá</strong><br>
   <strong>📅 Lun-Vie 10am-7pm | Sáb 10am-6pm</strong><br>
   <strong>💳 Davivienda, Nequi/Daviplata (312 481 3094), tarjeta (5% recargo)</strong></p>
   <div class="cta-buttons">
@@ -327,7 +355,7 @@ También reparamos Apple Watch: cambio de pila y recuperación cuando se moja.</
   <h2>Preguntas Frecuentes</h2>
   
   <h3>¿Dónde queda Pipod?</h3>
-  <p>Estamos en Chapinero, Bogotá. Dirección: Calle 63 #14-45.</p>
+  <p>Estamos en Chapinero, Bogotá. Dirección: Cra. 13a #79-52.</p>
   
   <h3>¿Necesito cita?</h3>
   <p>No es obligatorio, pero si agendás por WhatsApp te atendemos más rápido 

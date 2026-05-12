@@ -43,7 +43,7 @@ locale: "es-CO"
 
 [Frase que conecta con el dolor del cliente bogotano. Sin relleno.]
 
-En Pipod llevamos más de [X] años reparando [DISPOSITIVOS] en Chapinero, Bogotá. Estamos en la calle 63 #14-45. Diagnosticamos gratis todos los días de 10am a 7pm.
+En Pipod llevamos más de [X] años reparando [DISPOSITIVOS] en Chapinero, Bogotá. Estamos en la Cra. 13a #79-52. Diagnosticamos gratis todos los días de 10am a 7pm.
 
 **Al final de esta guía vas a saber:**
 - [Beneficio 1]
@@ -60,7 +60,7 @@ Vamos.
 
 Esa sensación de ver 20% a las 8am después de cargarlo toda la noche... no es "normal". Es una batería que está llegado al límite de su vida útil.
 
-En Pipod Chapinero llevamos años viendo este problema. La buena noticia: en menos de 2 horas puedes tener tu iPhone rindiendo como nuevo, sin perder tus fotos ni tus chats. Estamos en la calle 63 #14-45, Bogotá. Diagnosticamos gratis.
+En Pipod Chapinero llevamos años viendo este problema. La buena noticia: en menos de 2 horas puedes tener tu iPhone rindiendo como nuevo, sin perder tus fotos ni tus chats. Estamos en la Cra. 13a #79-52, Bogotá. Diagnosticamos gratis.
 
 **En esta guía vas a saber:**
 - Cómo identificar si tu batería realmente necesita cambio
@@ -115,7 +115,7 @@ Antes de pagar por algo que quizás no necesitas, verifica estos puntos:
 ```markdown
 ## ✅ Nuestro Protocolo de Calidad en Pipod Chapinero
 
-Cuando traes tu equipo a nuestra sede en la calle 63 #14-45, hacemos esto:
+Cuando traes tu equipo a nuestra sede en la Cra. 13a #79-52, hacemos esto:
 
 **Paso 1 — Recepción y registro (5 minutos)**
 Tomamos tus datos, el IMEI/serial del equipo, y te entregamos un ticket con número de seguimiento. Nunca dejamos equipo sin identificación.
@@ -195,7 +195,7 @@ Si tu [DISPOSITIVO] tiene los síntomas que describimos en esta guía, lo más r
 
 **Escríbenos por WhatsApp:** [wa.me/573124813094](https://wa.me/573124813094?text=Hola%2C%20tengo%20un%20[DISPOSITIVO]%20con%20problema%20de%20[BATERÍA/PANTALLA/OTRO].%20Quiero%20saber%20cuánto%20cuesta%20el%20diagnóstico.)
 
-Te respondemos en menos de 20 minutos. Diagnosticamos gratis. Estamos en Chapinero, calle 63 #14-45. Lun-Vie 10am-7pm, Sáb 10am-6pm.
+Te respondemos en menos de 20 minutos. Diagnosticamos gratis. Estamos en Chapinero, Cra. 13a #79-52. Lun-Vie 10am-7pm, Sáb 10am-6pm.
 ```
 
 ### CTA por Tipo de Artículo
