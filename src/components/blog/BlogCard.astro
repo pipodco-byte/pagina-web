@@ -1,0 +1,50 @@
+---
+/**
+ * BlogCard.astro - Reusable blog post card component
+ * Uses shared blog-cards.css styles with Pipod design tokens
+ */
+
+interface Props {
+  title: string;
+  excerpt: string;
+  category: string;
+  link: string;
+  date: string;           // ISO date string, e.g. "2026-05-12"
+  readingTime?: string;   // e.g. "5 min de lectura"
+}
+
+const { title, excerpt, category, link, date, readingTime } = Astro.props;
+
+// Format date to Spanish locale (DD MMM YYYY)
+const formattedDate = new Date(date).toLocaleDateString('es-CO', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class="blog-card">
+  <div class="blog-card__inner">
+    <span class="blog-card__category">{category}</span>
+    <h3 class="blog-card__title">{title}</h3>
+    <p class="blog-card__excerpt">{excerpt}</p>
+    <footer class="blog-card__footer">
+      <div class="blog-card__meta">
+        <time datetime={date}>{formattedDate}</time>
+        {readingTime && (
+          <>
+            <span class="blog-card__separator">·</span>
+            <span>{readingTime}</span>
+          </>
+        )}
+      </div>
+      <a href={link} class="blog-card__link">
+        LEER ARTÍCULO <i class="bi bi-arrow-right-short"></i>
+      </a>
+    </footer>
+  </div>
+</article>
+
+<style>
+  @import '../../styles/blog-cards.css';
+</style>

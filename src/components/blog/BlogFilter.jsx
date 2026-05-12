@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import readingTime from 'reading-time';
 
 export default function BlogFilter() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,20 +11,33 @@ export default function BlogFilter() {
       title: 'De Reparar Nokia a Ser Especialistas Apple: La Historia de Pipod en Bogotá',
       excerpt: 'Descubre cómo Pipod pasó de reparar móviles en 2007 a convertirse en el servicio técnico especializado en Apple más confiable de Bogotá. 15+ años de transparencia y excelencia.',
       category: 'HISTORIA PIPOD',
-      link: '/blog/historia-pipod-bogota'
+      link: '/blog/historia-pipod-bogota',
+      date: '2026-05-12',
+      readingTime: '5 min de lectura'
     }
   ];
+
+  // Calculate reading time for each post using reading-time package
+  const postsWithReadingTime = useMemo(() => {
+    return posts.map(post => {
+      const stats = readingTime(post.excerpt);
+      return {
+        ...post,
+        readingTime: stats.text
+      };
+    });
+  }, []);
 
   const categories = ['HISTORIA PIPOD'];
 
   const filteredPosts = useMemo(() => {
-    return posts.filter(post => {
+    return postsWithReadingTime.filter(post => {
       const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = !selectedCategory || post.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, selectedCategory]);
+  }, [searchTerm, selectedCategory, postsWithReadingTime]);
 
   return (
     <section className="blog-filter-section">
@@ -40,7 +54,7 @@ export default function BlogFilter() {
               className="search-input"
             />
             {searchTerm && (
-              <button 
+              <button
                 className="clear-btn"
                 onClick={() => setSearchTerm('')}
               >
@@ -79,24 +93,31 @@ export default function BlogFilter() {
           <div className="row mt-5">
             {filteredPosts.map(post => (
               <div key={post.id} className="col-12 col-md-6 col-lg-4 mb-4">
-                <div className="blog-card-white">
-                  <div className="card-body-white">
-                    <span className="card-cat">{post.category}</span>
-                    <h4 className="card-t">{post.title}</h4>
-                    <p className="card-p">{post.excerpt}</p>
-                    <a href={post.link} className="card-link-premium">
-                      LEER ARTÍCULO <i className="bi bi-arrow-right-short"></i>
-                    </a>
+                <a href={post.link} className="blog-card">
+                  <div className="blog-card__inner">
+                    <span className="blog-card__category">{post.category}</span>
+                    <h4 className="blog-card__title">{post.title}</h4>
+                    <p className="blog-card__excerpt">{post.excerpt}</p>
+                    <footer className="blog-card__footer">
+                      <div className="blog-card__meta">
+                        <span>{post.date}</span>
+                        <span className="blog-card__separator">·</span>
+                        <span>{post.readingTime}</span>
+                      </div>
+                      <span className="blog-card__link">
+                        LEER ARTÍCULO <i className="bi bi-arrow-right-short"></i>
+                      </span>
+                    </footer>
                   </div>
-                </div>
+                </a>
               </div>
             ))}
           </div>
         ) : (
-          <div className="no-results">
+          <div className="blog-empty-state">
             <i className="bi bi-search"></i>
             <p>No encontramos artículos que coincidan con tu búsqueda.</p>
-            <button 
+            <button
               className="reset-btn"
               onClick={() => {
                 setSearchTerm('');
@@ -109,9 +130,9 @@ export default function BlogFilter() {
         )}
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style>{`
         .blog-filter-section {
-          background-color: #FFFFFF;
+          background-color: var(--pipod-color-white, #ffffff);
           padding: 60px 0;
         }
 
@@ -129,23 +150,23 @@ export default function BlogFilter() {
           left: 16px;
           top: 50%;
           transform: translateY(-50%);
-          color: #86868B;
+          color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
           font-size: 18px;
         }
 
         .search-input {
           width: 100%;
           padding: 12px 16px 12px 45px;
-          border: 1px solid #E5E5E7;
+          border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
           border-radius: 12px;
-          font-size: 15px;
-          font-family: 'Inter', sans-serif;
+          font-size: var(--pipod-size-body, 15px);
+          font-family: var(--pipod-font-inter, 'Inter', sans-serif);
           transition: all 0.3s ease;
         }
 
         .search-input:focus {
           outline: none;
-          border-color: #3A506B;
+          border-color: var(--pipod-color-deep-blue, #3A506B);
           box-shadow: 0 0 0 3px rgba(58, 80, 107, 0.1);
         }
 
@@ -156,7 +177,7 @@ export default function BlogFilter() {
           transform: translateY(-50%);
           background: none;
           border: none;
-          color: #86868B;
+          color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
           font-size: 18px;
           cursor: pointer;
           padding: 4px 8px;
@@ -164,7 +185,7 @@ export default function BlogFilter() {
         }
 
         .clear-btn:hover {
-          color: #1D1D1F;
+          color: var(--pipod-color-near-black, #1F1F1F);
         }
 
         .category-filters {
@@ -176,146 +197,37 @@ export default function BlogFilter() {
 
         .filter-btn {
           padding: 8px 16px;
-          border: 1px solid #E5E5E7;
-          background: #FFFFFF;
+          border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+          background: var(--pipod-color-white, #ffffff);
           border-radius: 20px;
           font-size: 13px;
-          font-weight: 600;
-          color: #1D1D1F;
+          font-weight: var(--pipod-weight-semibold, 600);
+          color: var(--pipod-color-near-black, #1F1F1F);
           cursor: pointer;
           transition: all 0.3s ease;
-          font-family: 'Inter', sans-serif;
+          font-family: var(--pipod-font-inter, 'Inter', sans-serif);
         }
 
         .filter-btn:hover {
-          border-color: #3A506B;
-          color: #3A506B;
+          border-color: var(--pipod-color-deep-blue, #3A506B);
+          color: var(--pipod-color-deep-blue, #3A506B);
         }
 
         .filter-btn.active {
-          background: #3A506B;
-          color: #FFFFFF;
-          border-color: #3A506B;
+          background: var(--pipod-color-deep-blue, #3A506B);
+          color: var(--pipod-color-white, #ffffff);
+          border-color: var(--pipod-color-deep-blue, #3A506B);
         }
 
         .results-count {
           font-size: 13px;
-          color: #86868B;
-          font-family: 'Inter', sans-serif;
+          color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+          font-family: var(--pipod-font-inter, 'Inter', sans-serif);
         }
 
         .results-count strong {
-          color: #1D1D1F;
-          font-weight: 600;
-        }
-
-        .blog-card-white {
-          background-color: #FFFFFF;
-          border: 1px solid #E0E0E0;
-          border-radius: 24px;
-          padding: 45px 35px;
-          height: 100%;
-          transition: all 0.4s ease;
-          position: relative;
-        }
-
-        .blog-card-white:hover {
-          border-color: #000000;
-          box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-          transform: translateY(-5px);
-        }
-
-        .card-body-white {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-        }
-
-        .card-cat {
-          color: #3A506B;
-          font-size: 10px;
-          letter-spacing: 2px;
-          font-weight: 800;
-          display: block;
-          margin-bottom: 20px;
-          text-transform: uppercase;
-        }
-
-        .card-t {
-          font-weight: 700;
-          font-size: 22px;
-          line-height: 1.3;
-          margin-bottom: 15px;
-          color: #000000;
-          margin: 0 0 15px 0;
-        }
-
-        .card-p {
-          color: #4C4C4C;
-          font-size: 15px;
-          line-height: 1.7;
-          margin-bottom: 30px;
-          flex-grow: 1;
-          margin: 0 0 30px 0;
-        }
-
-        .card-link-premium {
-          color: #000000;
-          text-decoration: none;
-          font-size: 12px;
-          font-weight: 800;
-          letter-spacing: 1px;
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          transition: gap 0.3s ease;
-          margin-top: auto;
-        }
-
-        .card-link-premium:hover {
-          gap: 12px;
-          color: #000000;
-        }
-
-        .card-link-premium i {
-          font-size: 20px;
-        }
-
-        .no-results {
-          text-align: center;
-          padding: 60px 20px;
-        }
-
-        .no-results i {
-          font-size: 48px;
-          color: #E5E5E7;
-          display: block;
-          margin-bottom: 16px;
-        }
-
-        .no-results p {
-          font-size: 16px;
-          color: #86868B;
-          margin-bottom: 24px;
-          font-family: 'Inter', sans-serif;
-        }
-
-        .reset-btn {
-          padding: 10px 24px;
-          background: #3A506B;
-          color: #FFFFFF;
-          border: none;
-          border-radius: 20px;
-          font-size: 14px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-family: 'Inter', sans-serif;
-        }
-
-        .reset-btn:hover {
-          background: #2A3A5B;
-          transform: translateY(-2px);
+          color: var(--pipod-color-near-black, #1F1F1F);
+          font-weight: var(--pipod-weight-semibold, 600);
         }
 
         @media (max-width: 768px) {
@@ -337,18 +249,6 @@ export default function BlogFilter() {
             font-size: 12px;
           }
 
-          .blog-card-white {
-            padding: 24px 20px;
-          }
-
-          .card-t {
-            font-size: 1.1rem;
-          }
-
-          .card-p {
-            font-size: 0.9rem;
-          }
-
           .no-results {
             padding: 40px 20px;
           }
@@ -361,7 +261,7 @@ export default function BlogFilter() {
             font-size: 14px;
           }
         }
-      `}} />
+      `}</style>
     </section>
   );
 }
