@@ -1,6 +1,7 @@
 import { supabase } from './client';
 import type { WebProduct, WebProductVariante, WebProductWithVariants } from './types';
 import { slugify } from '../slug';
+import { getMockProductos } from '../mockProductos';
 
 const APPLE_PLACEHOLDER_BASE = 'https://store.storeimages.cdn-apple.com';
 
@@ -92,25 +93,34 @@ function mapViewToWebProduct(view: WebProductView): WebProductWithVariants {
 }
 
 export async function getWebProductos(): Promise<WebProductWithVariants[]> {
-  const { data: productos, error } = await supabase
-    .from('web_productos_complete')
-    .select('*')
-    .order('title');
+  try {
+    const { data: productos, error } = await supabase
+      .from('web_productos_complete')
+      .select('*')
+      .order('title');
 
-  if (error) {
-    console.error('Error fetching web productos:', error);
-    return [];
+    if (error) {
+      console.error('Supabase error:', error.code, error.message);
+      return getMockProductos();
+    }
+
+    if (!productos || productos.length === 0) {
+      console.warn('No products returned from Supabase, using mock data');
+      return getMockProductos();
+    }
+
+    return productos.map(mapViewToWebProduct);
+  } catch (e) {
+    console.error('Exception in getWebProductos:', e);
+    return getMockProductos();
   }
-
-  if (!productos || productos.length === 0) {
-    return [];
-  }
-
-  return productos.map(mapViewToWebProduct);
 }
 
 export async function getWebProductoPorSlug(slug: string): Promise<WebProductWithVariants | null> {
   const productos = await getWebProductos();
+  if (!productos || productos.length === 0) {
+    return null;
+  }
   const producto = productos.find(p => p.slug === slug);
   return producto || null;
 }
