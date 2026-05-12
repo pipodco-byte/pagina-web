@@ -11,52 +11,10 @@ export default function BlogFilter() {
       excerpt: 'Descubre cómo Pipod pasó de reparar móviles en 2007 a convertirse en el servicio técnico especializado en Apple más confiable de Bogotá. 15+ años de transparencia y excelencia.',
       category: 'HISTORIA PIPOD',
       link: '/blog/historia-pipod-bogota'
-    },
-    {
-      id: 1,
-      title: 'Pantalla rota: Diagnóstico y reparación en 24 horas',
-      excerpt: 'Conoce nuestro proceso de reparación con garantía Pipod. Microsoldadura de precisión y componentes originales.',
-      category: 'SERVICIO TÉCNICO APPLE',
-      link: '/blog/servicio-tecnico-apple'
-    },
-    {
-      id: 2,
-      title: 'iPhone vs MacBook: ¿Cuál es la mejor inversión para ti?',
-      excerpt: 'Guía completa de compra. Comparativas de specs, presupuestos y recomendaciones según tu uso.',
-      category: 'COMPRA INTELIGENTE',
-      link: '/blog/compra-inteligente'
-    },
-    {
-      id: 3,
-      title: 'Por qué confiar en técnicos certificados Apple',
-      excerpt: 'Más de 15 años de experiencia. Certificaciones oficiales, garantía real y diagnóstico gratuito.',
-      category: 'EXPERTOS CERTIFICADOS',
-      link: '/blog/expertos-certificados'
-    },
-    {
-      id: 4,
-      title: 'Batería iPhone: Mitos y realidades sobre su duración',
-      excerpt: 'Aprende cuándo cambiar tu batería y cómo maximizar su vida útil con prácticas recomendadas.',
-      category: 'SERVICIO TÉCNICO APPLE',
-      link: '/blog/bateria-iphone'
-    },
-    {
-      id: 5,
-      title: 'MacBook M1 vs M2: Comparativa de rendimiento y precio',
-      excerpt: 'Análisis detallado para ayudarte a elegir el modelo que mejor se adapta a tus necesidades.',
-      category: 'COMPRA INTELIGENTE',
-      link: '/blog/macbook-m1-vs-m2'
-    },
-    {
-      id: 6,
-      title: 'Garantía Pipod: Protección completa para tu equipo',
-      excerpt: 'Descubre qué cubre nuestra garantía y por qué es la mejor del mercado en Colombia.',
-      category: 'EXPERTOS CERTIFICADOS',
-      link: '/blog/garantia-pipod'
     }
   ];
 
-  const categories = ['HISTORIA PIPOD', 'SERVICIO TÉCNICO APPLE', 'COMPRA INTELIGENTE', 'EXPERTOS CERTIFICADOS'];
+  const categories = ['HISTORIA PIPOD'];
 
   const filteredPosts = useMemo(() => {
     return posts.filter(post => {
