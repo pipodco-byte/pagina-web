@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - develop
+  workflow_dispatch:
+    # Permite trigger manual: gh workflow run auto-pr.yml
 
 permissions:
   contents: read
@@ -16,63 +18,103 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Get changed files
+      - name: Fetch main branch
         run: |
           git fetch origin main
-          CHANGED_FILES=$(git diff --name-only origin/main...HEAD)
-          echo "Changed files: $CHANGED_FILES"
+          git log --oneline -3
 
-      - name: Create or update PR
+      - name: Get commit count since main
+        id: commits
+        run: |
+          # Count commits between main and develop
+          COUNT=$(git rev-list --count origin/main..HEAD 2>/dev/null || echo "0")
+          echo "Commits to merge: $COUNT"
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+
+      - name: Get commit list
+        id: commits-list
+        run: |
+          git log origin/main..HEAD --oneline | head -20 > commits.txt
+          cat commits.txt
+
+      - name: Create PR
         id: pr
         run: |
           # Check if PR already exists
           PR_EXISTS=$(gh pr list --base main --head develop --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
 
           if [ -n "$PR_EXISTS" ]; then
-            echo "PR already exists: #$PR_EXISTS"
+            echo "ℹ️ PR already exists: #$PR_EXISTS"
             echo "pr_number=$PR_EXISTS" >> $GITHUB_OUTPUT
-          else
-            # Create new PR
-            TITLE="Merge develop → main"
-            BODY=$(cat <<'EOF'
-## Summary
-Automated PR from develop branch
 
-### Changes
-This PR merges all changes from develop to main for production deployment.
+            # Update PR with new commits
+            gh pr update $PR_EXISTS --body "## 🚀 Release PR — develop → main
 
-## Checklist
+**Commits being merged:** ${{ steps.commits.outputs.count }}
+
+### Resumen
+Nuevos cambios listos para producción.
+
+### Commits
+\`\`\`
+$(cat commits.txt)
+\`\`\`
+
+### Checklist
 - [ ] Build passes
-- [ ] All tests pass
-- [ ] Reviewed and approved
-
-## Files Changed
-<!-- Will be auto-populated with file list -->
+- [ ] Tests pass
+- [ ] Preview OK
+- [ ] Listo para producción ✅
 
 ---
-_Automatically created by GitHub Actions_
-EOF
-            )
+_Updated $(date '+%Y-%m-%d %H:%M') by GitHub Actions_"
+
+          else
+            # Create new PR
+            TITLE="Merge develop → main (${{ steps.commits.outputs.count }} commits)"
+            BODY="## 🚀 Release PR — develop → main
+
+**Commits being merged:** ${{ steps.commits.outputs.count }}
+
+### Resumen
+Automated PR ready for production deployment.
+
+### Commits
+\`\`\`
+$(cat commits.txt)
+\`\`\`
+
+### Checklist
+- [ ] Build passes
+- [ ] Tests pass
+- [ ] Preview OK
+- [ ] Listo para producción ✅
+
+---
+_Created $(date '+%Y-%m-%d %H:%M') by GitHub Actions_"
+
             gh pr create --title "$TITLE" --body "$BODY" --base main --head develop
-            echo "pr_number=$(gh pr list --base main --head develop --state open --json number --jq '.[0].number')" >> $GITHUB_OUTPUT
+
+            PR_NUMBER=$(gh pr list --base main --head develop --state open --json number --jq '.[0].number')
+            echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+            echo "✅ PR #$PR_NUMBER created"
           fi
 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add comment with build status
+      - name: Comment on PR
         if: steps.pr.outputs.pr_number
         run: |
-          gh pr comment ${{ steps.pr.outputs.pr_number }} --body "## 🚀 Ready for Review
+          if [ -n "${{ steps.pr.outputs.pr_number }}" ]; then
+            gh pr comment ${{ steps.pr.outputs.pr_number }} --body "## ✅ Listo para review
 
-This PR is ready to merge to main.
+Haz click en **Merge** cuando estés listo para desplegar a producción.
 
-**Actions available:**
-- `/merge` - Squash and merge
-- Review changes in the Files tab
-
----
-_Automated PR created by GitHub Actions_"
+O usa:
+- \`gh pr merge ${{ steps.pr.outputs.pr_number }}\` — squash merge
+- \`gh pr close ${{ steps.pr.outputs.pr_number }}\` — cancelar"
+          fi
 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
