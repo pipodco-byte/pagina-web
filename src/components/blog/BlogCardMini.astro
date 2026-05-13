@@ -1,0 +1,135 @@
+---
+/**
+ * BlogCardMini.astro - Minimal horizontal card
+ *
+ * Small thumbnail with title only.
+ * Used for sidebar "recent posts" and similar compact lists.
+ *
+ * Props:
+ *   post: BlogPost - The post data object
+ */
+
+import type { BlogPost } from '../../types/blog';
+
+interface Props {
+  post: BlogPost;
+  class?: string;
+}
+
+const { post, class: className = '' } = Astro.props;
+
+const cardHref = post.slug ? `/blog/${post.slug}` : '#';
+const hasImage = !!post.ogImage;
+---
+
+<article class={`blog-card-mini ${className}`.trim()}>
+  <a href={cardHref} class="blog-card-mini__link" aria-label={`Leer: ${post.title}`}>
+    <!-- Thumbnail -->
+    <div class="blog-card-mini__image-wrapper">
+      {hasImage ? (
+        <img
+          src={post.ogImage}
+          alt={post.title}
+          loading="lazy"
+          decoding="async"
+          onerror="this.style.display='none'; this.parentElement.classList.add('blog-card-mini__image-wrapper--placeholder')"
+        />
+      ) : (
+        <div class="blog-card-mini__placeholder">
+          <span>{post.category.charAt(0)}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- Title only -->
+    <div class="blog-card-mini__content">
+      <h4 class="blog-card-mini__title">{post.title}</h4>
+    </div>
+  </a>
+</article>
+
+<style>
+  .blog-card-mini {
+    border-bottom: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .blog-card-mini__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    transition: background-color 150ms ease;
+
+    &:hover {
+      .blog-card-mini__title {
+        color: var(--pipod-color-deep-blue, #3A506B);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .blog-card-mini__image-wrapper {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .blog-card-mini__image-wrapper--placeholder {
+    background: var(--pipod-color-deep-blue, #3A506B);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blog-card-mini__placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--pipod-color-deep-blue, #3A506B);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--pipod-color-white, #ffffff);
+      text-transform: uppercase;
+    }
+  }
+
+  .blog-card-mini__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .blog-card-mini__title {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--pipod-color-near-black, #1F1F1F);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 150ms ease;
+  }
+</style>

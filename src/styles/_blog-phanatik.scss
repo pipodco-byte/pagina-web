@@ -3,13 +3,15 @@
 // Shared styles for new components
 // Uses --pipod-* CSS custom properties from _tokens.css
 // NO Tailwind classes — all styles in SCSS
+// NO PURPLE COLORS — Only Pipod blues (#3A506B, #4A90E2)
 // ============================================
 
 // ============================================
 // 1. SHARED GRADIENT PLACEHOLDERS
 // ============================================
+// NOTE: Using Pipod blue only, NO purple (#8B5CF6 removed)
 %gradient-placeholder {
-  background: var(--pipod-gradient-blue, linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%));
+  background: var(--pipod-color-deep-blue, #3A506B);
 }
 
 // ============================================
@@ -71,4 +73,76 @@
   height: 60%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
   z-index: 1;
+}
+
+// ============================================
+// 7. SECTION DIVIDER PATTERN
+// ============================================
+%section-divider {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--pipod-color-border-gray, #E5E5E7) 15%,
+      var(--pipod-color-border-gray, #E5E5E7) 85%,
+      transparent 100%
+    );
+  }
+
+  @media (max-width: 768px) {
+    &::before {
+      width: 85%;
+    }
+  }
+}
+
+// ============================================
+// 8. CARD BASE WITH PIPOD STANDARDS
+// ============================================
+%card-base {
+  background: var(--pipod-color-white, #ffffff);
+  border-radius: var(--pipod-radius-standard, 24px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+
+  &:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+}
+
+// ============================================
+// 9. CATEGORY BADGE (PIPOD BLUE)
+// ============================================
+// NO PURPLE - Uses #3A506B only
+%category-badge-blue {
+  font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--pipod-color-white, #ffffff);
+  background: var(--pipod-color-deep-blue, #3A506B);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+// ============================================
+// 10. LINK HOVER STATE (PIPOD TECH BLUE)
+// ============================================
+%link-hover-blue {
+  color: var(--pipod-color-tech-blue, #4A90E2);
+  text-decoration: underline;
 }

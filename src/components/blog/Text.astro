@@ -1,0 +1,152 @@
+---
+/**
+ * Text.astro - Typography component with 9 variants
+ *
+ * Provides consistent typography across the blog using Pipod's
+ * design system: Inter (headings), Noto Sans (body), PT Mono (labels)
+ *
+ * Variants:
+ * - display-xxl: 48px, Inter 700 (hero titles)
+ * - display-xl: 36px, Inter 700 (section titles)
+ * - display-l: 28px, Inter 600 (card titles)
+ * - heading-2: 24px, Inter 600 (h2)
+ * - heading-3: 20px, Inter 600 (h3)
+ * - body: 16px, Noto Sans 400 (paragraphs)
+ * - body-small: 14px, Noto Sans 400 (captions)
+ * - caption: 12px, PT Mono 400 (metadata)
+ * - label: 11px, PT Mono 500 uppercase (tags/badges)
+ */
+
+interface Props {
+  variant?: 'display-xxl' | 'display-xl' | 'display-l' | 'heading-2' | 'heading-3' | 'body' | 'body-small' | 'caption' | 'label';
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div' | 'time';
+  class?: string;
+  id?: string;
+}
+
+const {
+  variant = 'body',
+  as: Tag = 'p',
+  class: className = '',
+  id
+} = Astro.props;
+
+// Base classes for each variant
+const variantClasses: Record<string, string> = {
+  'display-xxl': 'text-display-xxl',
+  'display-xl': 'text-display-xl',
+  'display-l': 'text-display-l',
+  'heading-2': 'text-heading-2',
+  'heading-3': 'text-heading-3',
+  'body': 'text-body',
+  'body-small': 'text-body-small',
+  'caption': 'text-caption',
+  'label': 'text-label'
+};
+
+const classes = `${variantClasses[variant] || 'text-body'} ${className}`.trim();
+---
+
+<Tag class={classes} id={id}>
+  <slot />
+</Tag>
+
+<style>
+  /* Display Variants - Inter */
+  .text-display-xxl {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: clamp(2rem, 5vw, 3rem); /* 32px - 48px */
+    font-weight: var(--pipod-weight-bold, 700);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  .text-display-xl {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: clamp(1.75rem, 4vw, 2.25rem); /* 28px - 36px */
+    font-weight: var(--pipod-weight-bold, 700);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  .text-display-l {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: clamp(1.5rem, 3vw, 1.75rem); /* 24px - 28px */
+    font-weight: var(--pipod-weight-semibold, 600);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  /* Heading Variants - Inter */
+  .text-heading-2 {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* 20px - 24px */
+    font-weight: var(--pipod-weight-semibold, 600);
+    line-height: 1.4;
+    color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  .text-heading-3 {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18px - 20px */
+    font-weight: var(--pipod-weight-semibold, 600);
+    line-height: 1.4;
+    color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  /* Body Variants - Noto Sans */
+  .text-body {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 1rem; /* 16px */
+    font-weight: var(--pipod-weight-regular, 400);
+    line-height: 1.6;
+    color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  .text-body-small {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 0.875rem; /* 14px */
+    font-weight: var(--pipod-weight-regular, 400);
+    line-height: 1.5;
+    color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  /* Caption/Label Variants - PT Mono */
+  .text-caption {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: 0.75rem; /* 12px */
+    font-weight: var(--pipod-weight-regular, 400);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: var(--pipod-color-deep-blue, #3A506B);
+  }
+
+  .text-label {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: 0.6875rem; /* 11px */
+    font-weight: var(--pipod-weight-medium, 500);
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--pipod-color-deep-blue, #3A506B);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .text-display-xxl {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    .text-display-xl {
+      font-size: 1.75rem;
+    }
+
+    .text-display-l {
+      font-size: 1.5rem;
+    }
+  }
+</style>

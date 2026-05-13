@@ -1,0 +1,267 @@
+---
+/**
+ * BlogAside.astro - Sidebar component with 4 sections
+ *
+ * Sections:
+ * 1. Author bio with avatar
+ * 2. Recent posts list (3-5 items)
+ * 3. Categories cloud
+ * 4. Newsletter signup form
+ *
+ * Props:
+ *   posts: BlogPost[] - Array of posts for recent posts section
+ *   categories: string[] - Array of category names
+ *   currentCategory?: string - Currently selected category (optional)
+ */
+
+import BlogCardMini from './BlogCardMini.astro';
+import type { BlogPost } from '../../types/blog';
+
+interface Props {
+  posts: BlogPost[];
+  categories: string[];
+  currentCategory?: string;
+  class?: string;
+}
+
+const { posts, categories, currentCategory, class: className = '' } = Astro.props;
+
+// Take first 5 posts for recent section
+const recentPosts = posts.slice(0, 5);
+
+// Author info (could be made dynamic in future)
+const author = {
+  name: 'Pipod Team',
+  bio: 'Servicio técnico especializado en Apple desde 2009. Expertos en reparación, mantenimiento y optimización de equipos Apple.',
+  avatar: '/images/pipod-logo.svg'
+};
+---
+
+<aside class={`blog-aside ${className}`.trim()}>
+  {/* Section 1: Author Bio */}
+  <section class="blog-aside__section blog-aside__author">
+    <div class="blog-aside__author-avatar">
+      <span>{author.name.charAt(0)}</span>
+    </div>
+    <h3 class="blog-aside__author-name">{author.name}</h3>
+    <p class="blog-aside__author-bio">{author.bio}</p>
+  </section>
+
+  {/* Divider */}
+  <div class="blog-aside__divider"></div>
+
+  {/* Section 2: Recent Posts */}
+  <section class="blog-aside__section">
+    <h4 class="blog-aside__section-title">Artículos recientes</h4>
+    <div class="blog-aside__recent-posts">
+      {recentPosts.map(post => (
+        <BlogCardMini post={post} />
+      ))}
+    </div>
+  </section>
+
+  {/* Divider */}
+  <div class="blog-aside__divider"></div>
+
+  {/* Section 3: Categories */}
+  <section class="blog-aside__section">
+    <h4 class="blog-aside__section-title">Categorías</h4>
+    <div class="blog-aside__categories">
+      {categories.map(category => (
+        <a
+          href={`/blog?category=${encodeURIComponent(category)}`}
+          class={`blog-aside__category ${currentCategory === category ? 'blog-aside__category--active' : ''}`}
+        >
+          {category}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {/* Divider */}
+  <div class="blog-aside__divider"></div>
+
+  {/* Section 4: Newsletter */}
+  <section class="blog-aside__section blog-aside__newsletter">
+    <h4 class="blog-aside__section-title">Newsletter</h4>
+    <p class="blog-aside__newsletter-text">
+      Recibe tips y noticias sobre Apple directamente en tu correo.
+    </p>
+    <form class="blog-aside__newsletter-form" action="/api/newsletter" method="POST">
+      <input
+        type="email"
+        name="email"
+        placeholder="tu@email.com"
+        required
+        class="blog-aside__newsletter-input"
+      />
+      <button type="submit" class="blog-aside__newsletter-button">
+        Suscribirse
+      </button>
+    </form>
+  </section>
+</aside>
+
+<style>
+  .blog-aside {
+    background: var(--pipod-color-light-surface, #F5F5F7);
+    border-radius: var(--pipod-radius-standard, 24px);
+    padding: 32px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+
+  .blog-aside__section {
+    margin-bottom: 0;
+  }
+
+  .blog-aside__divider {
+    height: 1px;
+    background: var(--pipod-color-border-gray, #E5E5E7);
+    margin: 24px 0;
+  }
+
+  /* Author Section */
+  .blog-aside__author {
+    text-align: center;
+  }
+
+  .blog-aside__author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--pipod-color-deep-blue, #3A506B);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+
+    span {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--pipod-color-white, #ffffff);
+    }
+  }
+
+  .blog-aside__author-name {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--pipod-color-near-black, #1F1F1F);
+    margin: 0 0 8px 0;
+  }
+
+  .blog-aside__author-bio {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--pipod-color-near-black, #1F1F1F);
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  /* Section Titles */
+  .blog-aside__section-title {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--pipod-color-near-black, #1F1F1F);
+    margin: 0 0 16px 0;
+  }
+
+  /* Recent Posts */
+  .blog-aside__recent-posts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Categories */
+  .blog-aside__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .blog-aside__category {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--pipod-color-deep-blue, #3A506B);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    border: 1px solid var(--pipod-color-deep-blue, #3A506B);
+    border-radius: 4px;
+    transition: all 150ms ease;
+
+    &:hover,
+    &--active {
+      background: var(--pipod-color-deep-blue, #3A506B);
+      color: var(--pipod-color-white, #ffffff);
+    }
+  }
+
+  /* Newsletter */
+  .blog-aside__newsletter-text {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--pipod-color-near-black, #1F1F1F);
+    opacity: 0.8;
+    margin: 0 0 16px 0;
+  }
+
+  .blog-aside__newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .blog-aside__newsletter-input {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 0.875rem;
+    padding: 12px 16px;
+    border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+    border-radius: 8px;
+    background: var(--pipod-color-white, #ffffff);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    transition: border-color 150ms ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--pipod-color-deep-blue, #3A506B);
+    }
+
+    &::placeholder {
+      color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+    }
+  }
+
+  .blog-aside__newsletter-button {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--pipod-color-white, #ffffff);
+    background: var(--pipod-color-deep-blue, #3A506B);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+
+    &:hover {
+      background: var(--pipod-color-tech-blue, #4A90E2);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .blog-aside {
+      position: static;
+      margin-top: 40px;
+    }
+  }
+</style>

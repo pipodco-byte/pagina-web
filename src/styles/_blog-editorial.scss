@@ -58,7 +58,7 @@
 
   &__image {
     aspect-ratio: 12 / 8;
-    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%));
+    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
     overflow: hidden;
     position: relative;
 
@@ -190,7 +190,7 @@
   &__image-wrapper {
     position: relative;
     aspect-ratio: 16 / 9;
-    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%));
+    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
     overflow: hidden;
 
     img {
@@ -244,7 +244,7 @@
     font-size: var(--pipod-size-micro, 0.65rem);
     font-weight: var(--pipod-weight-bold, 700);
     color: var(--pipod-color-white, #ffffff);
-    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%));
+    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
     padding: 4px 12px;
     border-radius: var(--pipod-radius-pill, 50px);
     text-transform: uppercase;

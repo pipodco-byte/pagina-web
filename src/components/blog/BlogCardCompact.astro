@@ -3,7 +3,7 @@
  * BlogCardCompact.astro — Horizontal compact card (Phanatik BlogCard1 pattern)
  *
  * Flex row: optional 80px image left + text right.
- * Title, category, date. Compact size.
+ * Title, category, date, reading time. Compact size.
  *
  * Props:
  *   slug: string       — Article URL path
@@ -11,6 +11,7 @@
  *   category: string   — Category badge text
  *   publishDate: string — ISO date string
  *   ogImage?: string   — Optional image path
+ *   readingTime?: string — Reading time text (e.g., "5 min de lectura")
  */
 
 interface Props {
@@ -19,9 +20,10 @@ interface Props {
   category: string;
   publishDate: string;
   ogImage?: string;
+  readingTime?: string;
 }
 
-const { slug, title, category, publishDate, ogImage } = Astro.props;
+const { slug, title, category, publishDate, ogImage, readingTime } = Astro.props;
 
 const hasImage = !!ogImage;
 const cardHref = slug ? `/blog/${slug}` : '#';
@@ -50,7 +52,15 @@ const formattedDate = new Date(publishDate).toLocaleDateString('es-CO', {
     <div class="blog-card-compact__content">
       <span class="blog-card-compact__category">{category}</span>
       <h3 class="blog-card-compact__title">{title}</h3>
-      <time class="blog-card-compact__date" datetime={publishDate}>{formattedDate}</time>
+      <div class="blog-card-compact__meta">
+        <time class="blog-card-compact__date" datetime={publishDate}>{formattedDate}</time>
+        {readingTime && (
+          <>
+            <span class="blog-card-compact__separator">·</span>
+            <span class="blog-card-compact__reading-time">{readingTime}</span>
+          </>
+        )}
+      </div>
     </div>
   </a>
 </article>
@@ -75,7 +85,7 @@ const formattedDate = new Date(publishDate).toLocaleDateString('es-CO', {
       flex-shrink: 0;
       border-radius: var(--pipod-radius-subtle, 8px);
       overflow: hidden;
-      background: var(--pipod-gradient-blue, linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%));
+      background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
 
       img {
         width: 100%;
@@ -117,10 +127,41 @@ const formattedDate = new Date(publishDate).toLocaleDateString('es-CO', {
       }
     }
 
+    &__meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     &__date {
       font-family: var(--pipod-font-inter, 'Inter', sans-serif);
       font-size: var(--pipod-size-label, 0.7rem);
       color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+    }
+
+    &__separator {
+      color: var(--pipod-color-border-gray, #E5E5E7);
+      font-size: var(--pipod-size-label, 0.7rem);
+    }
+
+    &__reading-time {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-label, 0.7rem);
+      color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.5;
+      }
     }
   }
 </style>

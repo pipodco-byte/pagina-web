@@ -1,21 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/pipodFooter';
-import BlogFilter from '../components/blog/BlogFilter';
-import BlogHeroFeatured from '../components/blog/BlogHeroFeatured.astro';
-import BlogCtaSection from '../components/blog/BlogCtaSection.astro';
 import FloatingContact from '../layouts/floatingContact';
 import BlogPostingSchema from '../components/SEO/BlogPostingSchema.astro';
 import { getCollection } from 'astro:content';
-import '../styles/_blog-editorial.scss';
-import '../styles/_blog-phanatik.scss';
-import '../../assets/scss/astro-ecommerce.scss';
 
-// New components for Phanatik enhancements
-import TopStoriesSection from '../components/blog/TopStoriesSection.astro';
-import BriefsSection from '../components/blog/BriefsSection.astro';
-import BlogSidebar from '../components/blog/BlogSidebar.astro';
-import CategoriesGrid from '../components/blog/CategoriesGrid.astro';
+// Import new card components
+import BlogCardHero from '../components/blog/BlogCardHero.astro';
+import BlogCardSplit from '../components/blog/BlogCardSplit.astro';
+import BlogCardGrid from '../components/blog/BlogCardGrid.astro';
+import BlogCardList from '../components/blog/BlogCardList.astro';
+import BlogCardCompact from '../components/blog/BlogCardCompact.astro';
+import BlogAside from '../components/blog/BlogAside.astro';
+import SectionDivider from '../components/blog/SectionDivider.astro';
+import Text from '../components/blog/Text.astro';
+
+// Import reading time utility
+import { calculateReadingTimeES } from '../lib/readingTime';
+
+// Import styles
+import '../styles/_blog-cards.scss';
+import '../styles/_blog-phanatik.scss';
+import '../styles/_pipod-utilities.css';
 
 // Enable static prerendering
 export const prerender = true;
@@ -23,37 +29,42 @@ export const prerender = true;
 // Fetch all blog posts from Content Collections
 const allPosts = await getCollection('blog');
 
-// Transform posts to the format expected by BlogFilter and BlogHeroFeatured
+// Transform posts with reading time calculation
 const posts = allPosts
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-  .map(post => ({
-    id: post.id,
-    slug: post.data.slug,
-    title: post.data.title,
-    description: post.data.description,
-    category: post.data.category,
-    tags: post.data.tags,
-    ogImage: post.data.ogImage,
-    publishDate: post.data.publishDate.toISOString(),
-    author: post.data.author,
-    readingTime: '5 min de lectura'
-  }));
+  .map(post => {
+    // Calculate reading time from body content
+    const readingTime = calculateReadingTimeES(post.body || '');
 
-// Derive data for new sections
-// TopStories: 5 posts (1 hero + 4 list) - most recent
-const topStories = posts.slice(0, 5);
+    return {
+      id: post.id,
+      slug: post.data.slug,
+      title: post.data.title,
+      description: post.data.description,
+      category: post.data.category,
+      tags: post.data.tags,
+      ogImage: post.data.ogImage,
+      publishDate: post.data.publishDate.toISOString(),
+      author: post.data.author,
+      readingTime
+    };
+  });
 
-// Briefs: 3 posts - next after TopStories
-const briefs = posts.slice(5, 8);
+// Card distribution logic:
+// Post 1: BlogCardHero (featured hero)
+// Posts 2-3: BlogCardSplit (secondary features)
+// Posts 4-6: BlogCardGrid (standard grid)
+// Posts 7+: BlogCardList or BlogCardCompact (list view)
+const heroPost = posts[0];
+const splitPosts = posts.slice(1, 3);
+const gridPosts = posts.slice(3, 6);
+const listPosts = posts.slice(6, 12);
 
-// Rest for BlogFilter grid (skip first 8 used above)
-const remainingPosts = posts.slice(8);
+// Sidebar data: 5 posts for recent section
+const asidePosts = posts.slice(0, 5);
 
-// Sidebar: 5 posts for sidebar list
-const sidebarPosts = posts.slice(0, 5);
-
-// Categories: all posts for count derivation
-const categoriesPosts = posts;
+// Extract unique categories
+const categories = [...new Set(posts.map(p => p.category))].sort();
 
 const title = "Blog Pipod - Expertos en Apple";
 const description = "Artículos, tips y guías sobre reparación, mantenimiento y optimización de equipos Apple.";
@@ -74,85 +85,285 @@ const today = new Date().toISOString().split('T')[0];
     url={blogUrl}
   />
 
-  <main style="padding-top: 120px;">
-    <!-- Hero: Featured article -->
-    {posts.length > 0 && <BlogHeroFeatured post={posts[0]} />}
-
-    <!-- Top Stories: 1 overlay hero + 4 list items -->
-    {topStories.length > 0 && (
-      <div class="container" style="padding: 0 24px;">
-        <TopStoriesSection posts={topStories} />
+  <main class="pipod-blog">
+    {/* Header */}
+    <header class="pipod-blog__header">
+      <div class="pipod-blog__container">
+        <Text variant="display-xl" as="h1">Blog Pipod</Text>
+        <Text variant="body" as="p" class="pipod-blog__subtitle">
+          Artículos, tips y guías sobre reparación, mantenimiento y optimización de equipos Apple.
+        </Text>
       </div>
+    </header>
+
+    <SectionDivider />
+
+    {/* Hero Section - Post 1 */}
+    {heroPost && (
+      <section class="pipod-blog__section pipod-blog__hero">
+        <div class="pipod-blog__container">
+          <BlogCardHero post={heroPost} />
+        </div>
+      </section>
     )}
 
-    <!-- Briefs: 3 compact horizontal cards -->
-    {briefs.length > 0 && (
-      <div class="container" style="padding: 0 24px;">
-        <BriefsSection posts={briefs} />
-      </div>
+    <SectionDivider />
+
+    {/* Split Section - Posts 2-3 */}
+    {splitPosts.length > 0 && (
+      <section class="pipod-blog__section pipod-blog__split">
+        <div class="pipod-blog__container">
+          <Text variant="heading-2" as="h2" class="pipod-blog__section-title">Destacados</Text>
+          <div class="pipod-blog__split-grid">
+            {splitPosts.map(post => (
+              <BlogCardSplit post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
     )}
 
-    <!-- BlogFilter: search + filter + remaining post grid (posts 9-73) -->
-    <div class="container" style="padding: 0 24px;">
-      <BlogFilter client:load posts={remainingPosts} />
-    </div>
+    <SectionDivider />
 
-    <!-- Categories Grid -->
-    {categoriesPosts.length > 0 && (
-      <div class="container" style="padding: 0 24px;">
-        <CategoriesGrid posts={categoriesPosts} />
+    {/* Main Content Grid - 4 Column Layout */}
+    <section class="pipod-blog__section pipod-blog__main">
+      <div class="pipod-blog__container">
+        <div class="pipod-blog__layout-grid">
+          {/* Content Area */}
+          <div class="pipod-blog__content">
+            {/* Grid Section - Posts 4-6 */}
+            {gridPosts.length > 0 && (
+              <div class="pipod-blog__grid-section">
+                <Text variant="heading-2" as="h2" class="pipod-blog__section-title">Más artículos</Text>
+                <div class="pipod-blog__grid">
+                  {gridPosts.map(post => (
+                    <BlogCardGrid post={post} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* List Section - Posts 7+ */}
+            {listPosts.length > 0 && (
+              <div class="pipod-blog__list-section">
+                <Text variant="heading-2" as="h2" class="pipod-blog__section-title">Recientes</Text>
+                <div class="pipod-blog__list">
+                  {listPosts.map(post => (
+                    <BlogCardList
+                      slug={post.slug}
+                      title={post.title}
+                      category={post.category}
+                      publishDate={post.publishDate}
+                      readingTime={post.readingTime}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <aside class="pipod-blog__sidebar">
+            <BlogAside
+              posts={asidePosts}
+              categories={categories}
+            />
+          </aside>
+        </div>
       </div>
-    )}
+    </section>
 
-    <!-- Sidebar: featured post list -->
-    {sidebarPosts.length > 0 && (
-      <div class="container" style="padding: 0 24px;">
-        <BlogSidebar posts={sidebarPosts} limit={5} />
+    <SectionDivider />
+
+    {/* CTA Section */}
+    <section class="pipod-blog__section pipod-blog__cta">
+      <div class="pipod-blog__container">
+        <div class="pipod-blog__cta-box">
+          <Text variant="heading-2" as="h2">¿Necesitas ayuda con tu dispositivo Apple?</Text>
+          <Text variant="body" as="p">
+            Nuestro equipo de expertos está listo para ayudarte con cualquier reparación o mantenimiento.
+          </Text>
+          <a href="/contacto-pipod" class="pipod-blog__cta-button">
+            Contáctanos
+          </a>
+        </div>
       </div>
-    )}
-
-    <BlogCtaSection />
+    </section>
   </main>
 
   <FloatingContact client:load />
   <Footer client:load />
 </Layout>
 
-<style is:global>
-  body {
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+<style>
+  .pipod-blog {
+    background: var(--pipod-color-white, #ffffff);
+    padding-top: 120px;
+    padding-bottom: 80px;
   }
 
-  .container {
-    padding: 0 24px !important;
+  .pipod-blog__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
   }
 
-  // Layout grid for sidebar
-  .blog-layout-grid {
+  /* Header */
+  .pipod-blog__header {
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  :global(.pipod-blog__subtitle) {
+    max-width: 600px;
+    margin: 16px auto 0 !important;
+    opacity: 0.8;
+  }
+
+  /* Section spacing */
+  .pipod-blog__section {
+    padding: 40px 0;
+  }
+
+  .pipod-blog__section-title {
+    margin-bottom: 24px;
+  }
+
+  :global(.pipod-blog__section-title) {
+    margin-bottom: 24px !important;
+  }
+
+  /* Hero Section */
+  .pipod-blog__hero {
+    .blog-card-hero {
+      max-width: 100%;
+    }
+  }
+
+  /* Split Grid */
+  .pipod-blog__split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* 4-Column Layout Grid */
+  .pipod-blog__layout-grid {
     display: grid;
     grid-template-columns: 1fr 320px;
-    gap: var(--pipod-space-2xl, 48px);
-    padding: var(--pipod-space-xl, 32px) 0;
+    gap: 40px;
+  }
+
+  .pipod-blog__content {
+    min-width: 0;
+  }
+
+  .pipod-blog__sidebar {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+  }
+
+  /* Grid Section */
+  .pipod-blog__grid-section {
+    margin-bottom: 48px;
+  }
+
+  .pipod-blog__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
 
     @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* List Section */
+  .pipod-blog__list-section {
+    margin-top: 48px;
+  }
+
+  .pipod-blog__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* CTA Section */
+  .pipod-blog__cta {
+    padding: 60px 0;
+  }
+
+  .pipod-blog__cta-box {
+    background: var(--pipod-color-light-surface, #F5F5F7);
+    border-radius: var(--pipod-radius-standard, 24px);
+    padding: 48px;
+    text-align: center;
+
+    :global(h2) {
+      margin-bottom: 16px !important;
+    }
+
+    :global(p) {
+      max-width: 500px;
+      margin: 0 auto 24px !important;
+      opacity: 0.8;
+    }
+  }
+
+  .pipod-blog__cta-button {
+    display: inline-block;
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--pipod-color-white, #ffffff);
+    background: var(--pipod-color-deep-blue, #3A506B);
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    transition: background-color 200ms ease;
+
+    &:hover {
+      background: var(--pipod-color-tech-blue, #4A90E2);
+    }
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) {
+    .pipod-blog__layout-grid {
       grid-template-columns: 1fr;
     }
 
-    &__main {
-      min-width: 0;
+    .pipod-blog__sidebar {
+      position: static;
+      margin-top: 48px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pipod-blog {
+      padding-top: 100px;
+      padding-bottom: 50px;
     }
 
-    &__sidebar {
-      @media (max-width: 1024px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--pipod-space-xl, 32px);
-      }
+    .pipod-blog__container {
+      padding: 0 16px;
+    }
 
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-      }
+    .pipod-blog__section {
+      padding: 24px 0;
+    }
+
+    .pipod-blog__cta-box {
+      padding: 32px 24px;
     }
   }
 </style>

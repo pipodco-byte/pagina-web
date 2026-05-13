@@ -2,6 +2,7 @@
 // src/pages/blog/[...slug].astro
 import { getCollection, render } from 'astro:content';
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { calculateReadingTimeES } from '../../lib/readingTime';
 
 // Enable static prerendering
 export const prerender = true;
@@ -19,11 +20,14 @@ export async function getStaticPaths() {
 // Get the post from props
 const { post } = Astro.props;
 
+// Calculate reading time from post body content (200 WPM)
+const readingTime = calculateReadingTimeES(post.body || '');
+
 // Render the markdown content using the new API
 const { Content } = await render(post);
 ---
 
-<!-- Pass frontmatter as props to layout -->
-<BlogPostLayout {...post.data}>
+<!-- Pass frontmatter as props to layout, including calculated reading time -->
+<BlogPostLayout {...post.data} readingTime={readingTime}>
   <Content />
 </BlogPostLayout>
