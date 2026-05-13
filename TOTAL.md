@@ -1,8 +1,8 @@
 # PIPOD - Estado Total del Proyecto
 
 **Proyecto:** Astro-Ecommerce (pipod.co)
-**Última actualización:** 2026-05-04 (actualizado con fix-cart-hydration)
-**Stack:** Astro 6.1 (SSR), React 18, TypeScript, Vite 5
+**Última actualización:** 2026-05-12 (actualizado con Blog Content Collections)
+**Stack:** Astro 6.1 (SSR), React 18, TypeScript, Vite 5, Nano Stores, Astro Content Collections
 
 ---
 
@@ -12,9 +12,10 @@
 - **Framework:** Astro 6.1 con SSR (Vercel adapter)
 - **Frontend:** React 18, TypeScript
 - **Styling:** SCSS, Bootstrap 2.6, Tailwind
-- **CMS:** Contentful (configurado)
+- **CMS:** Contentful (configurado) + Astro Content Collections (blog)
 - **Backend:** Astro API routes (server mode)
 - **State:** Nano Stores (atom-based, framework-agnostic) ✅
+- **Content:** Astro Content Collections para blog (73 artículos migrados) ✅
 - **Deploy:** Vercel
 
 ### Páginas (~20 rutas)
@@ -29,7 +30,9 @@
 | `/plan-retoma-apple` | plan-retoma-apple.astro | ✅ OK |
 | `/servicio-tecnico-apple` | servicio-tecnico-apple.astro | ✅ Title shortened |
 | `/contacto-pipod` | contacto-pipod.astro | ✅ OK |
-| `/pipod-blog` | pipod-blog.astro | ✅ OK |
+| `/blog` | Blog index (Content Collections) | ✅ 73 artículos, filtros categoría/tag |
+| `/blog/[slug]` | Blog post individual | ✅ SEO completo (OG, JSON-LD) |
+| `/pipod-blog` | Legacy blog (redirect) | ⚠️ Temporal — migrar a /blog |
 | `/donar-fundacion-palafito` | donate-fundacion-palafito.astro | ✅ OK |
 | `/terminos-condiciones-pipod` | terminos-condiciones-pipod.astro | ✅ OK |
 | `/contabilidad` | contabilidad.astro | ✅ Meta description added |
@@ -169,19 +172,18 @@ PIPOD es una plataforma de servicio técnico premium que combina profesionalismo
 
 ## 4. Pendientes - 22 Tareas
 
-### Frontend / Visual (9 tareas)
+### Frontend / Visual (8 tareas)
 
 | # | Tarea | Prioridad | Estado |
 |---|-------|-----------|--------|
 | 1 | Revisión total de Mobile Responsive | Alta | ⏳ Pendiente |
 | 2 | NavBar Tienda: Componente navegación | Media | ⏳ Pendiente |
-| 3 | Diseño Blog: Pulir página principal | Media | ⏳ Pendiente |
+| 3 | Diseño Blog: Pulir página principal | Media | ⏳ Pendiente (ya migrado a Content Collections) |
 | 4 | Diseño ProductShop: Mejorar estética | Media | ⏳ Pendiente |
 | 5 | Servicio Técnico: Pulir /servicio-tecnico-apple | Media | ⏳ Pendiente |
-| 6 | Visual Entradas: Diseño posts individuales | Baja | ⏳ Pendiente |
+| 6 | Visual Entradas: Diseño posts individuales | Baja | ✅ COMPLETADO (BlogPostLayout.astro) |
 | 7 | Creación Visual: Piezas gráficas faltantes | Baja | ⏳ Pendiente |
-| 8 | Card MacBook: Quitar "añadir a carrito" | Alta | ✅ COMPLETADO (via nanostores) |
-| 9 | Orden del Home: Reordenar componentes | Media | ⏳ Pendiente |
+| 8 | Orden del Home: Reordenar componentes | Media | ⏳ Pendiente |
 
 ### Backend / Datos (5 tareas)
 
@@ -193,14 +195,14 @@ PIPOD es una plataforma de servicio técnico premium que combina profesionalismo
 | 13 | Carga Visual: Elementos visuales | Media | ⏳ Pendiente |
 | 14 | Sync Dashboard Pipod + Supabase | Media | ⏳ Pendiente |
 
-### Contenido (4 tareas)
+### Contenido (3 tareas)
 
 | # | Tarea | Prioridad | Estado |
 |---|-------|-----------|--------|
-| 15 | Plataforma Blog: Sanity vs Ghost | Alta | 🔍 Decisión pendiente |
-| 16 | Scripts Astro: Convertir blog a formato | Media | ⏳ Pendiente |
+| 15 | Plataforma Blog: Sanity vs Ghost | Alta | ✅ COMPLETADO (Astro Content Collections) |
+| 16 | Scripts Astro: Convertir blog a formato | Media | ✅ COMPLETADO (73 artículos migrados) |
 | 17 | Revisar categorías Blog en Contentful | Media | ⏳ Pendiente |
-| 18 | Contenido Marcelo: Subir artículos | Baja | ⏳ Pendiente |
+| 18 | Contenido Marcelo: Subir artículos | Baja | ⏳ Pendiente (73 artículos nuevos listos) |
 
 ### Payments / Integraciones (3 tareas)
 
@@ -235,12 +237,24 @@ PIPOD es una plataforma de servicio técnico premium que combina profesionalismo
 | RetomaHero | `RetomaHero.astro` | 90vh video bg, glass tag 50px radius, title clamp(2.5rem,8vw,5.5rem) |
 | PalafitHero | `PalafitHero.astro` | `#F5F5F7` bg, `#000` pill buttons, hover translateY(-2px) |
 
+### Componentes Blog (Content Collections)
+
+| Componente | Archivo | Propósito |
+|------------|---------|-----------|
+| BlogPostLayout.astro | `src/layouts/BlogPostLayout.astro` | Layout individual con SEO completo |
+| BlogIndexLayout.astro | `src/layouts/BlogIndexLayout.astro` | Índice con filtros categoría/tag |
+| BlogPostingSchema.astro | `src/components/SEO/BlogPostingSchema.astro` | JSON-LD BlogPosting |
+| [...slug].astro | `src/pages/blog/[...slug].astro` | Ruta dinámica de posts |
+| index.astro | `src/pages/blog/index.astro` | Página índice del blog |
+| content config | `src/content.config.ts` | Schema Zod para validación |
+
 ### Componentes SEO
 
 | Componente | Propósito | Estado |
 |-----------|-----------|--------|
 | LocalBusinessSchema.astro | JSON-LD LocalBusiness | ✅ Fixed |
 | ProductSchema.astro | JSON-LD Product | ✅ Creado |
+| BlogPostingSchema.astro | JSON-LD BlogPosting | ✅ Creado |
 | RetomaPageSchema.astro | WebPage para Retoma | ✅ OK |
 | ServicePageSchema.astro | WebPage para Service | ✅ OK |
 | ContactPageSchema.astro | ContactPage | ✅ OK |
@@ -285,15 +299,19 @@ Black pure:         #000000 (Palafito buttons)
 ## 7. Decisiones Pendientes
 
 ### CMS de Blog: Sanity vs Ghost
-
-| Opción | Pros | Contras |
-|--------|------|---------|
-| **Sanity** | Esquemas flexibles, API potente, SDK excelente | Curva de aprendizaje, más caro |
-| **Ghost** | Enfocado en publishing, membresías integradas | Menos flexible para e-commerce |
+- **Decisión:** Astro Content Collections (no se necesitó CMS externo)
+- Los 73 artículos now viven en `src/content/blog/` con schema Zod validado
 
 ### Card MacBook
-- Cambiar comportamiento para que NO añada a carrito
-- Debe ser igual a Card iPhone (solo mostrar info, no comprar)
+- ✅ COMPLETADO (via nanostores) — ya no añade a carrito
+
+### Mantenimiento Blog (Post-migración)
+
+| # | Tarea | Prioridad |
+|---|-------|-----------|
+| BM1 | OG article tags | Baja |
+| BM2 | Sass @import → @use | Baja |
+| BM3 | Monitoring SEO (indexación Google) | Media |
 
 ---
 

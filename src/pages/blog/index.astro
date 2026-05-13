@@ -1,0 +1,53 @@
+---
+// src/pages/blog/index.astro
+import { getCollection } from 'astro:content';
+import BlogIndexLayout from '../../layouts/BlogIndexLayout.astro';
+
+// Enable static prerendering for this page
+export const prerender = true;
+
+// Get all blog posts
+const allPosts = await getCollection('blog');
+
+// Get query params - for static site these come from client-side JS
+const category = Astro.url.searchParams.get('category');
+const tag = Astro.url.searchParams.get('tag');
+
+// Filter posts if needed
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+let posts = sortedPosts;
+
+if (category) {
+  posts = posts.filter(p => 
+    p.data.category.toLowerCase() === category.toLowerCase()
+  );
+}
+
+if (tag) {
+  posts = posts.filter(p => 
+    p.data.tags.some((t: string) => t.toLowerCase() === tag.toLowerCase())
+  );
+}
+
+// Page metadata
+const title = category 
+  ? `Artículos de ${category} | Blog`
+  : tag 
+    ? `Artículos etiquetados con #${tag} | Blog`
+    : 'Blog | Servicio Técnico Apple Bogotá';
+
+const description = category
+  ? `Descubre todos nuestros artículos sobre ${category}`
+  : 'Artículos sobre reparación de equipos Apple, consejos técnicos y noticias de Pipod.';
+---
+
+<BlogIndexLayout 
+  title={title}
+  description={description}
+  posts={posts}
+  categoryFilter={category || undefined}
+  tagFilter={tag || undefined}
+/>

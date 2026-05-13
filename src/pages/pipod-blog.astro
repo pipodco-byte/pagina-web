@@ -2,11 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/pipodFooter';
 import BlogFilter from '../components/blog/BlogFilter';
-import BlogHeroSection from '../components/blog/BlogHeroSection.astro';
+import BlogHeroFeatured from '../components/blog/BlogHeroFeatured.astro';
 import BlogCtaSection from '../components/blog/BlogCtaSection.astro';
 import FloatingContact from '../layouts/floatingContact';
 import BlogPostingSchema from '../components/SEO/BlogPostingSchema.astro';
+import { getCollection } from 'astro:content';
+import '../styles/_blog-editorial.scss';
 import '../../assets/scss/astro-ecommerce.scss';
+
+// Enable static prerendering
+export const prerender = true;
+
+// Fetch all blog posts from Content Collections
+const allPosts = await getCollection('blog');
+
+// Transform posts to the format expected by BlogFilter and BlogHeroFeatured
+const posts = allPosts
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .map(post => ({
+    id: post.id,
+    slug: post.data.slug,
+    title: post.data.title,
+    description: post.data.description,
+    category: post.data.category,
+    tags: post.data.tags,
+    ogImage: post.data.ogImage,
+    publishDate: post.data.publishDate.toISOString(),
+    author: post.data.author,
+    readingTime: '5 min de lectura'
+  }));
 
 const title = "Blog Pipod - Expertos en Apple";
 const description = "Artículos, tips y guías sobre reparación, mantenimiento y optimización de equipos Apple.";
@@ -16,6 +40,9 @@ const today = new Date().toISOString().split('T')[0];
 ---
 
 <Layout title={title} description={description}>
+  <script define:vars={{ posts }}>
+    window.__BLOG_POSTS__ = posts;
+  </script>
   <BlogPostingSchema
     title={title}
     description={description}
@@ -25,8 +52,8 @@ const today = new Date().toISOString().split('T')[0];
   />
   
   <main style="padding-top: 120px;">
-    <BlogHeroSection />
-    <BlogFilter client:load />
+    {posts.length > 0 && <BlogHeroFeatured post={posts[0]} />}
+    <BlogFilter client:load posts={posts} />
     <BlogCtaSection />
   </main>
 

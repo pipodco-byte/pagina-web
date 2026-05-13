@@ -1,0 +1,249 @@
+---
+// src/layouts/BlogIndexLayout.astro
+import type { CollectionEntry } from 'astro:content';
+import Layout from './Layout.astro';
+import '../styles/_pipod-utilities.css';
+import '../styles/_tokens.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  posts: CollectionEntry<'blog'>[];
+  categoryFilter?: string;
+  tagFilter?: string;
+}
+
+const {
+  title = 'Blog',
+  description = 'Artículos sobre marketing, ventas y productividad',
+  posts,
+  categoryFilter,
+  tagFilter,
+} = Astro.props;
+
+// Extract unique categories and tags
+const categories = [...new Set(posts.map(p => p.data.category))].sort();
+const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
+
+const currentUrl = Astro.url.href;
+---
+
+<Layout title={title} description={description}>
+  <main style="padding-top: 120px;">
+    <div class="blog-index">
+      <div class="blog-index__container">
+        {/* Header */}
+        <header class="blog-index__header">
+          <h1 class="blog-index__title">{title}</h1>
+          <p class="blog-index__description">{description}</p>
+        </header>
+
+        {/* Filters */}
+        <aside class="blog-index__filters">
+          <div class="filter-group">
+            <label for="category-filter">Categoría:</label>
+            <select id="category-filter" onchange="window.location.href=this.value">
+              <option value="/blog" selected={!categoryFilter}>Todas</option>
+              {categories.map(cat => (
+                <option 
+                  value={`/blog?category=${encodeURIComponent(cat)}`}
+                  selected={categoryFilter?.toLowerCase() === cat.toLowerCase()}
+                >
+                  {cat}
+                </option>
+              ))}
+            </select>
+          </div>
+          
+          {tagFilter && (
+            <div class="filter-tag">
+              <span>Filtrando por: #{tagFilter}</span>
+              <a href="/blog" class="clear-filter">✕</a>
+            </div>
+          )}
+        </aside>
+
+        {/* Results count */}
+        <div class="blog-index__count">
+          {posts.length} {posts.length === 1 ? 'artículo' : 'artículos'}
+        </div>
+
+        {/* Post Grid */}
+        {posts.length > 0 ? (
+          <div class="blog-index__grid">
+            {posts.map(post => (
+              <article class="blog-card">
+                <a href={`/blog/${post.data.slug}`} class="blog-card__inner">
+                  <span class="blog-card__category">{post.data.category}</span>
+                  <h2 class="blog-card__title">{post.data.title}</h2>
+                  <p class="blog-card__excerpt">{post.data.description}</p>
+                  <footer class="blog-card__footer">
+                    <div class="blog-card__meta">
+                      <time datetime={post.data.publishDate.toISOString().split('T')[0]}>
+                        {new Date(post.data.publishDate).toLocaleDateString('es-ES', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
+                        })}
+                      </time>
+                    </div>
+                    <span class="blog-card__link">
+                      Leer más <i class="bi bi-arrow-right"></i>
+                    </span>
+                  </footer>
+                </a>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div class="blog-empty-state">
+            <i class="bi bi-search"></i>
+            <p>No hay artículos disponibles con los filtros seleccionados.</p>
+            <a href="/blog" class="reset-btn">Ver todos los artículos</a>
+          </div>
+        )}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .blog-index {
+    background: var(--pipod-color-gray-50, #F5F5F7);
+    min-height: 100vh;
+    padding: 60px 0;
+  }
+
+  .blog-index__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .blog-index__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .blog-index__title {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--pipod-color-black, #000000);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .blog-index__description {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 1.1rem;
+    color: var(--pipod-color-near-black, #1F1F1F);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .blog-index__filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .filter-group label {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: var(--pipod-size-small, 0.85rem);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    font-weight: 600;
+  }
+
+  .filter-group select {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: var(--pipod-size-body, 0.95rem);
+    padding: 8px 16px;
+    border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+    border-radius: var(--pipod-radius-subtle, 8px);
+    background: var(--pipod-color-white, #FFFFFF);
+    cursor: pointer;
+    min-width: 180px;
+  }
+
+  .filter-group select:hover {
+    border-color: var(--pipod-color-near-black, #1F1F1F);
+  }
+
+  .filter-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(58, 80, 107, 0.08);
+    border-radius: 50px;
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: var(--pipod-size-small, 0.85rem);
+    color: var(--pipod-color-deep-blue, #3A506B);
+  }
+
+  .filter-tag .clear-filter {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .filter-tag .clear-filter:hover {
+    opacity: 1;
+  }
+
+  .blog-index__count {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: var(--pipod-size-small, 0.85rem);
+    color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .blog-index__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    .blog-index {
+      padding: 40px 0;
+    }
+
+    .blog-index__container {
+      padding: 0 16px;
+    }
+
+    .blog-index__filters {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .blog-index__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-index__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (640px - 1024px) {
+    .blog-index__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

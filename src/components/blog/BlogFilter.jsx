@@ -1,31 +1,60 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 export default function BlogFilter() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [posts, setPosts] = useState([]);
 
-  const posts = [
-    {
-      id: 0,
-      title: 'De Reparar Nokia a Ser Especialistas Apple: La Historia de Pipod en Bogotá',
-      excerpt: 'Descubre cómo Pipod pasó de reparar móviles en 2007 a convertirse en el servicio técnico especializado en Apple más confiable de Bogotá. 15+ años de transparencia y excelencia.',
-      category: 'HISTORIA PIPOD',
-      link: '/blog/historia-pipod-bogota',
-      date: '12 Mayo 2026',
-      readingTime: '5 min de lectura'
+  // Load posts from global variable on client-side only
+  useEffect(() => {
+    const storedPosts = typeof window !== 'undefined' ? window.__BLOG_POSTS__ : null;
+    if (storedPosts) {
+      setPosts(storedPosts);
     }
-  ];
+  }, []);
 
-  const categories = ['HISTORIA PIPOD'];
+  // Extract unique categories from posts
+  const categories = useMemo(() => {
+    const cats = [...new Set(posts.map((post) => post.category))];
+    return cats.sort();
+  }, [posts]);
 
   const filteredPosts = useMemo(() => {
-    return posts.filter(post => {
-      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = !selectedCategory || post.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [searchTerm, selectedCategory]);
+    return posts
+      .filter((post) => {
+        const matchesSearch =
+          post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          post.description.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesCategory = !selectedCategory || post.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+      })
+      .sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+  }, [searchTerm, selectedCategory, posts]);
+
+  // Grid posts: skip the first article (already shown in BlogHeroFeatured)
+  const gridPosts = useMemo(() => {
+    return filteredPosts.slice(1);
+  }, [filteredPosts]);
+
+  // Format date for display (Spanish locale)
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    return new Intl.DateTimeFormat('es-CO', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(date);
+  };
+
+  // Capitalize author name (e.g. "kimi" → "Kimi")
+  const formatAuthor = (author) => {
+    if (!author) return 'Pipod Team';
+    return author
+      .replace(/-/g, ' ')
+      .split(' ')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
 
   return (
     <section className="blog-filter-section">
@@ -42,10 +71,7 @@ export default function BlogFilter() {
               className="search-input"
             />
             {searchTerm && (
-              <button
-                className="clear-btn"
-                onClick={() => setSearchTerm('')}
-              >
+              <button className="clear-btn" onClick={() => setSearchTerm('')}>
                 ✕
               </button>
             )}
@@ -59,7 +85,7 @@ export default function BlogFilter() {
             >
               Todos
             </button>
-            {categories.map(cat => (
+            {categories.map((cat) => (
               <button
                 key={cat}
                 className={`filter-btn ${selectedCategory === cat ? 'active' : ''}`}
@@ -72,33 +98,93 @@ export default function BlogFilter() {
 
           {/* Contador de resultados */}
           <div className="results-count">
-            Mostrando <strong>{filteredPosts.length}</strong> de <strong>{posts.length}</strong> artículos
+            Mostrando <strong>{gridPosts.length}</strong> de <strong>{posts.length}</strong> artículos
           </div>
         </div>
 
-        {/* Grid de posts */}
-        {filteredPosts.length > 0 ? (
-          <div className="row mt-5">
-            {filteredPosts.map(post => (
-              <div key={post.id} className="col-12 col-md-6 col-lg-4 mb-4">
-                <a href={post.link} className="blog-card">
-                  <div className="blog-card__inner">
-                    <span className="blog-card__category">{post.category}</span>
-                    <h4 className="blog-card__title">{post.title}</h4>
-                    <p className="blog-card__excerpt">{post.excerpt}</p>
-                    <footer className="blog-card__footer">
-                      <div className="blog-card__meta">
-                        <span>{post.date}</span>
-                        <span className="blog-card__separator">·</span>
-                        <span>{post.readingTime}</span>
+        {/* Grid de posts editorial */}
+        {gridPosts.length > 0 ? (
+          <div className="blog-grid">
+            {gridPosts.map((post) => (
+              <article key={post.id || post.slug} className="blog-card-editorial">
+                <a
+                  href={`/blog/${post.slug}`}
+                  className="blog-card-editorial__link"
+                  aria-label={`Leer: ${post.title}`}
+                >
+                  {/* Image section with gradient fallback */}
+                  <div className="blog-card-editorial__image">
+                    {post.ogImage ? (
+                      <img
+                        src={post.ogImage}
+                        alt={post.title}
+                        loading="lazy"
+                        decoding="async"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                    ) : (
+                      <div className="blog-card-editorial__placeholder">
+                        <span className="blog-card-editorial__placeholder-text">
+                          {post.category}
+                        </span>
                       </div>
-                      <span className="blog-card__link">
-                        LEER ARTÍCULO <i className="bi bi-arrow-right-short"></i>
-                      </span>
-                    </footer>
+                    )}
+                  </div>
+
+                  {/* Content section */}
+                  <div className="blog-card-editorial__body">
+                    {post.tags && post.tags.length > 0 && (
+                      <div className="blog-card-editorial__tags">
+                        {post.tags.slice(0, 3).map((tag, i) => (
+                          <span key={i} className="blog-card-editorial__tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <span className="blog-card-editorial__category">
+                      {post.category}
+                    </span>
+                    <h3 className="blog-card-editorial__title">{post.title}</h3>
+                    {post.description && (
+                      <p className="blog-card-editorial__excerpt">
+                        {post.description}
+                      </p>
+                    )}
                   </div>
                 </a>
-              </div>
+
+                {/* Author footer */}
+                <div className="blog-card-editorial__meta">
+                  <div className="blog-author">
+                    <div className="blog-author__avatar" aria-hidden="true">
+                      {formatAuthor(post.author).charAt(0).toUpperCase()}
+                    </div>
+                    <div className="blog-author__info">
+                      <span className="blog-author__name">
+                        {formatAuthor(post.author)}
+                      </span>
+                      <div className="blog-author__meta">
+                        <time dateTime={post.publishDate}>
+                          {formatDate(post.publishDate)}
+                        </time>
+                        {post.readingTime && (
+                          <>
+                            <span className="blog-author__separator" aria-hidden="true">
+                              ·
+                            </span>
+                            <span className="blog-author__reading-time">
+                              {post.readingTime}
+                            </span>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         ) : (
@@ -218,6 +304,39 @@ export default function BlogFilter() {
           font-weight: var(--pipod-weight-semibold, 600);
         }
 
+        .blog-empty-state {
+          text-align: center;
+          padding: 60px 20px;
+        }
+
+        .blog-empty-state i {
+          font-size: 48px;
+          color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+          margin-bottom: 16px;
+        }
+
+        .blog-empty-state p {
+          font-size: 16px;
+          color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+          margin-bottom: 20px;
+        }
+
+        .reset-btn {
+          padding: 10px 20px;
+          background: var(--pipod-color-deep-blue, #3A506B);
+          color: var(--pipod-color-white, #ffffff);
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: var(--pipod-weight-semibold, 600);
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+          background: var(--pipod-color-near-black, #1F1F1F);
+        }
+
         @media (max-width: 768px) {
           .blog-filter-section {
             padding: 40px 0;
@@ -237,15 +356,15 @@ export default function BlogFilter() {
             font-size: 12px;
           }
 
-          .no-results {
+          .blog-empty-state {
             padding: 40px 20px;
           }
 
-          .no-results i {
+          .blog-empty-state i {
             font-size: 36px;
           }
 
-          .no-results p {
+          .blog-empty-state p {
             font-size: 14px;
           }
         }

@@ -1,0 +1,90 @@
+---
+/**
+ * BlogCardFeatured.astro — Featured/hero blog card (Phanatik BlogCard2 pattern)
+ *
+ * Larger, more prominent card for the first/featured article.
+ * Structure: large image (16:9) with overlay → featured badge → category → title → excerpt → author
+ *
+ * Props:
+ *   slug: string        — Article URL path
+ *   title: string       — Article title
+ *   category: string    — Category badge text
+ *   tags?: string[]     — Tag labels
+ *   ogImage?: string    — OG image path
+ *   publishDate: string — ISO date string
+ *   author?: string     — Author name
+ *   description?: string— Article excerpt
+ *   readingTime?: string— e.g. "5 min de lectura"
+ */
+
+import BlogAuthor from './BlogAuthor.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  category: string;
+  tags?: string[];
+  ogImage?: string;
+  publishDate: string;
+  author?: string;
+  description?: string;
+  readingTime?: string;
+}
+
+const {
+  slug,
+  title,
+  category,
+  ogImage,
+  publishDate,
+  author,
+  description,
+  readingTime,
+} = Astro.props;
+
+const hasImage = !!ogImage;
+const cardHref = slug ? `/blog/${slug}` : '#';
+---
+
+<article class="blog-card-featured">
+  <a href={cardHref} class="blog-card-featured__link" aria-label={`Leer: ${title}`}>
+    <!-- Large image section with gradient overlay -->
+    <div class="blog-card-featured__image-wrapper">
+      {hasImage ? (
+        <>
+          <div class="blog-card-featured__overlay" aria-hidden="true"></div>
+          <img
+            src={ogImage}
+            alt={title}
+            loading="eager"
+            decoding="async"
+            onerror="this.style.display='none'"
+          />
+        </>
+      ) : (
+        <div class="blog-card-featured__placeholder">
+          <span>{category}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- Content section -->
+    <div class="blog-card-featured__content">
+      <span class="blog-card-featured__featured-badge">Destacado</span>
+      <span class="blog-card-featured__category">{category}</span>
+      <h2 class="blog-card-featured__title">{title}</h2>
+      {description && (
+        <p class="blog-card-featured__excerpt">{description}</p>
+      )}
+
+      <!-- Author metadata -->
+      <div class="blog-card-featured__meta">
+        <BlogAuthor
+          author={author}
+          publishDate={publishDate}
+          readingTime={readingTime}
+        />
+      </div>
+    </div>
+  </a>
+</article>

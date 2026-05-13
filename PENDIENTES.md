@@ -1,7 +1,7 @@
 # ⏳ Pendientes — Pipod Ecommerce (Astro)
 
-**Última actualización:** Mayo 2026
-**Versión:** 1.1
+**Última actualización:** Mayo 12, 2026
+**Versión:** 1.2
 **Proyecto:** Astro-Ecommerce (paginaweb-ecommerce / www.pipod.co)
 **Fuente de verdad:** Este archivo
 
@@ -43,6 +43,7 @@
 | F11 | **Slug generation** — `lib/slug.ts` para URLs de productos | ✅ | 5c2510c |
 | F12 | **Product API endpoints** — `/api/products/index.ts` y `/api/products/[sku].ts` | ✅ | 5c2510c |
 | F13 | **Nanostores productStore** — estado global para productos | ✅ | 5c2510c |
+| F14 | **Blog Content Collections** — 73 artículos migrados a `src/content/blog/`, layouts SEO, rutas `/blog/{slug}` | ✅ | Mayo 2026 |
 
 ---
 
@@ -106,6 +107,14 @@
 | B4 | HowTo Schema | Guías "cómo cuidar tu iPhone" |
 | B5 | WebP Images | Convertir principales a WebP |
 
+### 🔧 Mantenimiento Blog (Post-separar-contenido-layout)
+
+| # | Tarea | Prioridad | Notas |
+|---|-------|-----------|-------|
+| BM1 | OG article tags | Baja | Agregar `article:published_time`, `article:author`, `article:section` en BlogPostLayout |
+| BM2 | Sass `@import` → `@use` | Baja | 457 warnings deprecated — migrar en futuro |
+| BM3 | Monitoring SEO | Media | Verificar Google indexing de las 73 nuevas URLs |
+
 ---
 
 ## 📋 SDD Changes (Spec-Driven Development)
@@ -114,6 +123,7 @@
 |--------|--------|------------|
 | `supabase-products-integration` | ✅ Completado | `openspec/changes/supabase-products-integration/` |
 | `bold-api-checkout` | ✅ Completado | `openspec/changes/bold-api-checkout/` |
+| `separar-contenido-layout` | ✅ Completado | 73 artículos migrados a Content Collections con rutas /blog |
 | `condicion-normalization` | ⏳ Pendiente | Mapping DB → UI para Nuevo/Seminuevo/Repotenciado |
 
 ---
@@ -200,4 +210,4 @@ Para detalle SEO completo, consulta `PENDIENTES_SEO.md`.
 
 ---
 
-_Ultima actualizacion: Mayo 6, 2026 (v1.1 - Supabase integration + Bold checkout)_
+_Ultima actualizacion: Mayo 12, 2026 (v1.2 - Blog Content Collections + separa-contenido-layout)_
