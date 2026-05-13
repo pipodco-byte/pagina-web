@@ -30,7 +30,7 @@ Aquí te explicamos los problemas más comunes y cómo los resolvemos.
 
 ---
 
-## 📸 Problemas Comunes de Cámara iPhone
+## Problemas Comunes de Cámara iPhone en Bogotá
 
 ### 1. Cámara Negra / No Enciende
 **Síntomas:**
@@ -116,7 +116,7 @@ Aquí te explicamos los problemas más comunes y cómo los resolvemos.
 
 ---
 
-## 💰 Precios Estimados Reparación Cámara
+## Precios Estimados Reparación Cámara iPhone en Bogotá 2026
 
 | Problema | Precio Estimado | Tiempo | Garantía |
 |----------|----------------|--------|----------|
@@ -139,7 +139,7 @@ Aquí te explicamos los problemas más comunes y cómo los resolvemos.
 
 ---
 
-## 🔧 El Proceso de Reparación
+## El Proceso de Reparación de Cámara iPhone en Bogotá
 
 ### Paso 1: Diagnóstico
 - Prueba de ambas cámaras
@@ -165,7 +165,7 @@ Aquí te explicamos los problemas más comunes y cómo los resolvemos.
 
 ---
 
-## 📱 Modelos y Especificaciones
+## Modelos y Especificaciones de Cámara iPhone en Bogotá
 
 ### Cámaras Simples vs Múltiples
 - **iPhone SE, XR:** Cámara trasera simple
@@ -180,7 +180,7 @@ Aquí te explicamos los problemas más comunes y cómo los resolvemos.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Cámara iPhone en Bogotá
 
 **¿Por qué no funciona mi cámara?**
 Las causas van desde simples (suciedad, software) hasta complejas (pieza dañada, placa). Diagnóstico gratis para determinar.

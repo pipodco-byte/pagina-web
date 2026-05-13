@@ -27,7 +27,7 @@ Vas a comprar una MacBook y no sabes si Air o Pro. Esta guía compara rendimient
 
 ---
 
-## Comparativa Rápida
+## Comparativa Rápida de MacBook en Bogotá
 
 | Característica | MacBook Air | MacBook Pro |
 |----------------|-------------|-------------|
@@ -43,7 +43,7 @@ Vas a comprar una MacBook y no sabes si Air o Pro. Esta guía compara rendimient
 
 ---
 
-## Precios en Bogotá 2026
+## Precios de MacBook en Bogotá 2026
 
 ### MacBook Air M3 (2024)
 
@@ -72,7 +72,7 @@ Vas a comprar una MacBook y no sabes si Air o Pro. Esta guía compara rendimient
 
 ---
 
-## Diferencias Clave
+## Diferencias Clave entre MacBook Air y Pro en Bogotá
 
 ### 1. Rendimiento
 
@@ -159,7 +159,7 @@ Vas a comprar una MacBook y no sabes si Air o Pro. Esta guía compara rendimient
 
 ---
 
-## ¿Para Quién es Cada Una?
+## Guía de Uso: Para Quién es MacBook Air y Para Quién es Pro en Bogotá
 
 ### Compra MacBook Air Si:
 
@@ -198,7 +198,7 @@ Vas a comprar una MacBook y no sabes si Air o Pro. Esta guía compara rendimient
 
 ---
 
-## Comparativa por Uso
+## Comparativa por Tipo de Uso de MacBook en Bogotá
 
 ### Para Estudiantes
 
@@ -260,7 +260,7 @@ Vas a comprar una MacBook y no sabes si Air o Pro. Esta guía compara rendimient
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre MacBook Air vs Pro en Bogotá
 
 **1. ¿Air M3 es suficiente para universidad?**
 **Sí.** Para el 95% de carreras es más que suficiente. Solo ingenierías muy específicas necesitan Pro.
@@ -293,7 +293,7 @@ Para MacBook Pro cara: **Sí**. Para Air: Evalúa según uso.
 
 ---
 
-## Conclusión
+## Conclusión: Guía de MacBook Air vs Pro en Bogotá 2026
 
 **MacBook Air M3:** Mejor opción para la mayoría de usuarios. Potencia suficiente, excelente batería, precio accesible.
 

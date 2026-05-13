@@ -116,7 +116,7 @@ Si uno falla, los otros pueden seguir funcionando.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación de Audio iPhone en Bogotá
 
 **1. ¿Por qué dejó de sonar mi iPhone?**
 Causas comunes: contacto con agua, polvo acumulado, desgaste por uso, golpe en área de altavoz.

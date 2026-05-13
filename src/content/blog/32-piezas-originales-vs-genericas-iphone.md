@@ -38,7 +38,7 @@ Vamos.
 
 ---
 
-## 🔍 Los 3 Tipos de Piezas en el Mercado
+## Los 3 Tipos de Piezas para iPhone sobre Reparación iPhone Bogotá
 
 ### 1. Piezas Originales Apple (Nuevas)
 **Realidad:** Solo disponibles en Apple Store y Centros de Servicio Autorizado Apple.
@@ -77,7 +77,7 @@ Vamos.
 
 ---
 
-## ⚖️ Comparativa Real de Opciones
+## Comparativa Real de Piezas Originales vs Genéricas para iPhone sobre Reparación iPhone Bogotá
 
 | Aspecto | Original Apple (Autorizado) | Segunda Mano (Pipod) | Genérica Baja Calidad |
 |---------|----------------------------|----------------------|----------------------|
@@ -93,7 +93,7 @@ Vamos.
 
 ---
 
-## 🎯 Qué Elegir Según Tu Situación
+## Qué Elegir Según Tu Situación para Reparación de iPhone sobre Reparación iPhone Bogotá
 
 ### Si tu iPhone tiene menos de 2 años:
 - **Recomendado:** Original Apple (si tienes garantía) o segunda mano garantizada
@@ -113,7 +113,7 @@ Vamos.
 
 ---
 
-## 📱 Mensajes de iPhone sobre Piezas: Qué Significan
+## Mensajes de iPhone sobre Piezas: Qué Significan sobre Reparación iPhone Bogotá
 
 Desde iOS 15, Apple muestra alertas cuando se cambian ciertos componentes:
 
@@ -136,7 +136,7 @@ Desde iOS 15, Apple muestra alertas cuando se cambian ciertos componentes:
 
 ---
 
-## ✅ Nuestro Criterio de Selección de Piezas
+## Nuestro Criterio de Selección de Piezas para iPhone sobre Reparación iPhone Bogotá
 
 En Pipod Chapinero seguimos este proceso:
 
@@ -159,7 +159,7 @@ En Pipod Chapinero seguimos este proceso:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Piezas Originales vs Genéricas iPhone sobre Reparación iPhone Bogotá
 
 **¿Son originales las piezas que usan?**
 Son piezas genuinas Apple de segunda mano. No existen piezas "originales nuevas" fuera de Apple autorizado. Lo importante es que funcionan igual y tienen garantía de 12 meses.

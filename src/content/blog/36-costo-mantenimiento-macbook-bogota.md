@@ -39,7 +39,7 @@ Vamos.
 
 ---
 
-## 🔧 Qué Incluye el Mantenimiento Completo de MacBook
+## Qué Incluye el Mantenimiento Completo de MacBook sobre Mantenimiento MacBook Bogotá
 
 ### Limpieza Interna Profunda
 - **Ventiladores:** Eliminación de polvo acumulado
@@ -73,7 +73,7 @@ Vamos.
 
 ---
 
-## 💰 Costos Aproximados en Bogotá 2026
+## Costos de Mantenimiento de MacBook sobre Mantenimiento MacBook Bogotá
 
 ### Mantenimiento Básico
 **Incluye:**
@@ -112,7 +112,7 @@ Vamos.
 
 ---
 
-## 📅 Cada Cuánto Hacer Mantenimiento
+## Cada Cuánto Hacer Mantenimiento de MacBook sobre Mantenimiento MacBook Bogotá
 
 ### Uso Ligero (3-4 horas diarias)
 - **Básico:** Cada 18-24 meses
@@ -134,7 +134,7 @@ Vamos.
 
 ---
 
-## ⚠️ Señales de Que Tu MacBook Necesita Mantenimiento
+## Señales de Que Tu MacBook Necesita Mantenimiento sobre Mantenimiento MacBook Bogotá
 
 ### Rendimiento
 - [ ] Se siente más lento que antes
@@ -156,7 +156,7 @@ Vamos.
 
 ---
 
-## 📊 Mantenimiento vs No Hacer Nada
+## Comparativa de Mantenimiento vs No Hacer Nada sobre Mantenimiento MacBook Bogotá
 
 | Aspecto | Con mantenimiento anual | Sin mantenimiento |
 |---------|------------------------|-------------------|
@@ -170,7 +170,7 @@ Vamos.
 
 ---
 
-## 🎯 Nuestro Servicio de Mantenimiento en Pipod
+## Nuestro Servicio de Mantenimiento de MacBook sobre Mantenimiento MacBook Bogotá
 
 ### Proceso:
 1. **Recepción:** Registro de equipo y condición
@@ -195,7 +195,7 @@ Vamos.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Mantenimiento de MacBook sobre Mantenimiento MacBook Bogotá
 
 **¿Realmente necesito mantenimiento si mi MacBook funciona bien?**
 Sí. El daño por acumulación de polvo y pasta térmica seca es gradual. Cuando notas el problema, ya hay desgaste. Preventivo es mejor.

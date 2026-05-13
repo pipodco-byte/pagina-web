@@ -30,7 +30,7 @@ Aquí te explicamos qué puede fallar y cómo lo resolvemos.
 
 ---
 
-## ⌨️ Problemas Comunes de Teclado MacBook
+## Problemas Comunes de Teclado MacBook en Bogotá
 
 ### 1. Teclas Pegadas o Que No Responden
 **Síntomas:**
@@ -112,7 +112,7 @@ Aquí te explicamos qué puede fallar y cómo lo resolvemos.
 
 ---
 
-## 💰 Precios Estimados Reparación Teclado
+## Precios Estimados Reparación Teclado MacBook en Bogotá 2026
 
 | Problema | Precio Estimado | Tiempo | Garantía |
 |----------|----------------|--------|----------|
@@ -136,7 +136,7 @@ Aquí te explicamos qué puede fallar y cómo lo resolvemos.
 
 ---
 
-## ⚠️ Modelos y Consideraciones Especiales
+## Modelos y Consideraciones Especiales de Teclado MacBook en Bogotá
 
 ### MacBook Pro 2016-2019 (Teclado Butterfly)
 **Problema conocido:**
@@ -152,7 +152,7 @@ Aquí te explicamos qué puede fallar y cómo lo resolvemos.
 
 ---
 
-## 🔧 El Proceso de Reparación
+## El Proceso de Reparación de Teclado MacBook en Bogotá
 
 ### Paso 1: Diagnóstico
 - Prueba de todas las teclas
@@ -177,7 +177,7 @@ Aquí te explicamos qué puede fallar y cómo lo resolvemos.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Teclado MacBook en Bogotá
 
 **¿Por qué no funciona mi teclado?**
 Las causas varían: suciedad, líquido derramado, mecanismo defectuoso, conexión dañada. Diagnóstico gratis para identificar.

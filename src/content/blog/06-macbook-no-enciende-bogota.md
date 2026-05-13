@@ -138,7 +138,7 @@ Te informamos exactamente qué tiene y cuánto cuesta. Decides si reparamos.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación MacBook No Enciende en Bogotá
 
 **1. ¿Pueden salvar mis archivos si el MacBook no enciende?**
 Si el disco SSD está sano, **sí recuperamos todo**. Si el daño es en placa de almacenamiento, dependerá del grado de daño.

@@ -30,9 +30,9 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 
 ---
 
-## 📊 Datos de Recomendación
+## Datos de Recomendación de Nuestro Servicio Técnico Apple en Bogotá
 
-### Cifras Clave
+### Cifras Clave de Recomendación
 
 | Métrica | Valor |
 |---------|-------|
@@ -42,7 +42,7 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 | Clientes recurrentes | 45% |
 | "Generaciones" de clientes | 3+ (padres → hijos) |
 
-### Evolución del Crecimiento
+### Evolución del Crecimiento de Nuestro Servicio Técnico Apple en Bogotá
 - **2010-2014:** 100% boca a boca
 - **2015-2019:** 80% boca a boca, 20% redes
 - **2020-2026:** 60% boca a boca, 40% redes/Google
@@ -51,9 +51,9 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 
 ---
 
-## 💬 Razones Principales de Recomendación
+## Razones Principales de Recomendación de Nuestro Servicio Técnico Apple en Bogotá
 
-### 1. "Resolvieron Lo Que Otros No Pudieron"
+### 1. "Resolvieron Lo Que Otros No Pudieron" en Bogotá
 
 **Contexto:** Casos complejos, equipos "sin esperanza"
 
@@ -64,7 +64,7 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 
 ---
 
-### 2. "Me Explicaron Todo"
+### 2. "Me Explicaron Todo" en Bogotá
 
 **Contexto:** Transparencia y educación al cliente
 
@@ -75,7 +75,7 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 
 ---
 
-### 3. "Cumplieron La Garantía"
+### 3. "Cumplieron La Garantía" en Bogotá
 
 **Contexto:** Problemas post-reparación resueltos sin drama
 
@@ -86,7 +86,7 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 
 ---
 
-### 4. "Fueron Rápidos"
+### 4. "Fueron Rápidos" en Bogotá
 
 **Contexto:** Solución en horas vs semanas
 
@@ -97,7 +97,7 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 
 ---
 
-### 5. "El Precio Fue Justo"
+### 5. "El Precio Fue Justo" en Bogotá
 
 **Contexto:** Valor recibido vs costo
 
@@ -108,7 +108,7 @@ Estas son las razones por las que nuestros clientes nos recomiendan.
 
 ---
 
-### 6. "Me Trataron Bien"
+### 6. "Me Trataron Bien" en Bogotá
 
 **Contexto:** Atención personalizada y respeto
 

@@ -147,7 +147,7 @@ Este mantenimiento no es reparación. Es prevención.
 
 ---
 
-## 🆚 Mantenimiento vs Esperar a Que Falle
+## Mantenimiento Preventivo vs Esperar a Que Falle iPhone en Bogotá
 
 | Aspecto | Mantenimiento Preventivo | Reparación Correctiva |
 |---------|-------------------------|----------------------|

@@ -88,7 +88,7 @@ locale: "es-CO"
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Servicio Técnico Apple Cerca de Chapinero
 
 **1. ¿Tienen parqueadero?**
 Parqueadero público disponible a media cuadra. También puede estacionar en vía si hay espacio.

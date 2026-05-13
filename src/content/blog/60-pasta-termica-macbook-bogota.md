@@ -30,7 +30,7 @@ Probablemente necesitas cambiar la pasta térmica.
 
 ---
 
-## 🌡️ Qué Es la Pasta Térmica y Por Qué Importa
+## Pasta Térmica MacBook en Bogotá: Qué Es y Por Qué Importa
 
 ### Función
 La pasta térmica es un compuesto que:
@@ -55,7 +55,7 @@ Con el tiempo (2-3 años):
 
 ---
 
-## 🔧 El Proceso de Cambio
+## Proceso de Cambio de Pasta Térmica MacBook en Bogotá
 
 ### Paso 1: Desarme Completo
 - Apertura MacBook
@@ -89,7 +89,7 @@ Con el tiempo (2-3 años):
 
 ---
 
-## 📊 Resultados Esperados
+## Resultados del Cambio de Pasta Térmica MacBook en Bogotá
 
 ### Antes del Cambio
 - Temperatura reposo: 60-70°C
@@ -107,7 +107,7 @@ Con el tiempo (2-3 años):
 
 ---
 
-## 💰 Precios Cambio Pasta Térmica MacBook
+## Precios Cambio Pasta Térmica MacBook en Bogotá 2026
 
 El cambio de pasta térmica está incluido en nuestros paquetes de mantenimiento:
 
@@ -150,7 +150,7 @@ El cambio de pasta térmica está incluido en nuestros paquetes de mantenimiento
 
 ---
 
-## 📅 Cuándo Cambiar la Pasta Térmica
+## Cuándo Cambiar la Pasta Térmica MacBook en Bogotá
 
 ### Por Tiempo
 **Recomendación:** Cada 2-3 años
@@ -167,7 +167,7 @@ El cambio de pasta térmica está incluido en nuestros paquetes de mantenimiento
 
 ---
 
-## 🆚 Solo Pasta vs Mantenimiento Completo
+## Pasta Térmica vs Mantenimiento Completo MacBook en Bogotá
 
 | Servicio | Incluye | Precio |
 |----------|---------|--------|
@@ -179,7 +179,7 @@ El cambio de pasta térmica está incluido en nuestros paquetes de mantenimiento
 
 ---
 
-## ⚠️ Lo Que NO Resolverá
+## Lo Que NO Resolverá el Cambio de Pasta Térmica MacBook
 
 El cambio de pasta térmica NO soluciona:
 - ❌ Ventiladores dañados físicamente
@@ -192,7 +192,7 @@ El cambio de pasta térmica NO soluciona:
 
 ---
 
-## 🎯 Nuestro Proceso en Pipod
+## Proceso de Cambio de Pasta Térmica MacBook en Pipod
 
 ### Diagnóstico
 - Verificación temperaturas
@@ -217,7 +217,7 @@ El cambio de pasta térmica NO soluciona:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Pasta Térmica MacBook en Bogotá
 
 **¿Realmente funciona?**
 Sí. Es una de las reparaciones con resultado más visible. Temperaturas bajan 15-25°C inmediatamente.

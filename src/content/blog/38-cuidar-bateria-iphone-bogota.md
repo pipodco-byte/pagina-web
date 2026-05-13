@@ -38,7 +38,7 @@ Vamos.
 
 ---
 
-## 🔋 Los 7 Hábitos Para una Batería Saludable
+## Los 7 Hábitos Para una Batería Saludable de iPhone sobre Cuidado Batería iPhone Bogotá
 
 ### 1. Mantén la Carga Entre 20% y 80%
 **Por qué:** Los extremos (0% y 100%) aceleran el desgaste químico.
@@ -113,7 +113,7 @@ Vamos.
 
 ---
 
-## ❌ Mitos Sobre Cargar el iPhone (Que Puedes Ignorar)
+## Mitos Sobre Cargar el iPhone que Puedes Ignorar sobre Cuidado Batería iPhone Bogotá
 
 ### Mito 1: "Dejar cargando toda la noche daña la batería"
 **Realidad:** iOS moderno gestiona esto. Se detiene al 100% y mantiene.
@@ -133,7 +133,7 @@ Vamos.
 
 ---
 
-## ⚙️ Configuraciones de iOS Que Ayudan
+## Configuraciones de iOS Que Ayudan a Cuidar la Batería sobre Cuidado Batería iPhone Bogotá
 
 ### Modo Bajo Consumo
 **Cuándo usarlo:**
@@ -168,7 +168,7 @@ Vamos.
 
 ---
 
-## 📊 Hábitos: Buenos vs Malos
+## Hábitos Buenos vs Malos para la Batería de iPhone sobre Cuidado Batería iPhone Bogotá
 
 | Buenos Hábitos | Malos Hábitos |
 |----------------|---------------|
@@ -183,7 +183,7 @@ Vamos.
 
 ---
 
-## 🎯 Cuándo Es Normal Que la Batería se Degrade
+## Cuándo Es Normal Que la Batería de iPhone se Degrade sobre Cuidado Batería iPhone Bogotá
 
 ### Meses 1-12
 **Esperado:** 100% - 95% de salud
@@ -203,7 +203,7 @@ Vamos.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Cuidado de Batería iPhone sobre Cuidado Batería iPhone Bogotá
 
 **¿Es malo cargar el iPhone toda la noche?**
 No es ideal, pero iOS moderno lo gestiona. Si puedes, desconecta cuando llega a 100%. Si no, no es catastrófico.

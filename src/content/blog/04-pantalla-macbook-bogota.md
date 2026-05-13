@@ -89,7 +89,7 @@ Verificamos brillo, colores, ángulos de visión y entregamos con **garantía de
 
 ---
 
-## ¿Por qué elegir Pipod?
+## ¿Por qué elegir Pipod para Reparación MacBook en Bogotá?
 
 | Característica | Pipod | Otros |
 |----------------|-------|-------|
@@ -101,7 +101,7 @@ Verificamos brillo, colores, ángulos de visión y entregamos con **garantía de
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación Pantalla MacBook en Bogotá
 
 **1. ¿Cuánto cuesta cambiar la pantalla de un MacBook?**
 Depende del modelo:

@@ -95,7 +95,7 @@ Verificamos que el equipo no tenga consumos parásitos y que el voltaje de corte
 
 ---
 
-## Preguntas Frecuentes: Lo que los usuarios de Apple en Chapinero deben saber
+## Preguntas Frecuentes sobre Cambio de Batería iPhone en Bogotá
 
 **¿Perderé mis fotos y archivos al cambiar la batería?**
 No. Al ser reparación de hardware externa, no tocamos tu software ni borramos datos. Como ingenieros responsables, recomendamos siempre tener backup en iCloud.

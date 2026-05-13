@@ -114,7 +114,7 @@ iPad Air (1-5), iPad Pro 11"/12.9" (1-6), iPad Mini (1-6), iPad (5-10)
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación iPad en Bogotá
 
 **1. ¿Cuánto cuesta cambiar la pantalla de un iPad?**
 - iPad Mini: $400,000 - $550,000

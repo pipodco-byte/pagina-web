@@ -28,7 +28,7 @@ Llamadas silenciosas sin vibrar. Notificaciones que no sientes. Si tu iPhone per
 
 ---
 
-## 🔍 Por Qué el iPhone No Vibra
+## Por Qué el iPhone No Vibra en Bogotá
 
 ### 1. Configuración de iOS
 **Antes de preocuparte, verifica:**
@@ -84,7 +84,7 @@ Llamadas silenciosas sin vibrar. Notificaciones que no sientes. Si tu iPhone per
 
 ---
 
-## 💰 Precios Estimados Reparación Vibración
+## Precios Estimados Reparación Vibración iPhone en Bogotá 2026
 
 | Problema | Precio Estimado | Tiempo | Garantía |
 |----------|----------------|--------|----------|
@@ -104,7 +104,7 @@ Llamadas silenciosas sin vibrar. Notificaciones que no sientes. Si tu iPhone per
 
 ---
 
-## 🔧 El Proceso de Reparación
+## El Proceso de Reparación de Vibración iPhone en Bogotá
 
 ### Paso 1: Verificación de Software
 - Revisión configuración iOS
@@ -128,7 +128,7 @@ Llamadas silenciosas sin vibrar. Notificaciones que no sientes. Si tu iPhone per
 
 ---
 
-## 📱 Modelos y Consideraciones
+## Modelos y Consideraciones de Vibración iPhone en Bogotá
 
 ### iPhone con Motor Taptic Engine
 - iPhone 6S y posteriores
@@ -142,7 +142,7 @@ Llamadas silenciosas sin vibrar. Notificaciones que no sientes. Si tu iPhone per
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre iPhone No Vibra en Bogotá
 
 **¿Por qué dejó de vibrar mi iPhone?**
 Las causas más comunes: configuración desactivada, motor dañado por golpe, o desconexión. Evaluamos gratis.

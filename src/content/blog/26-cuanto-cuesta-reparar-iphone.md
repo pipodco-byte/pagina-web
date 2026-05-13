@@ -29,7 +29,7 @@ locale: "es-CO"
 
 ---
 
-## Precios por Tipo de Reparación
+## Precios por Tipo de Reparación de iPhone en Bogotá sobre Precio Reparación iPhone Bogotá
 
 ### Cambio de Pantalla
 
@@ -141,7 +141,7 @@ locale: "es-CO"
 
 ---
 
-## ¿Cuándo Vale la Pena Reparar?
+## Cuándo Vale la Pena Reparar un iPhone en Bogotá sobre Precio Reparación iPhone Bogotá
 
 ### Sí vale la pena si:
 
@@ -161,7 +161,7 @@ locale: "es-CO"
 
 ---
 
-## Factores que Afectan el Precio
+## Factores que Afectan el Precio de Reparación en Bogotá sobre Precio Reparación iPhone Bogotá
 
 ### 1. Modelo del iPhone
 - Modelos nuevos = piezas más caras
@@ -187,7 +187,7 @@ locale: "es-CO"
 
 ---
 
-## Cómo Ahorrar en Reparaciones
+## Cómo Ahorrar en Reparaciones de iPhone en Bogotá sobre Precio Reparación iPhone Bogotá
 
 ### 1. Compara Cotizaciones
 - Pide presupuesto en 2-3 lugares
@@ -211,7 +211,7 @@ locale: "es-CO"
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Costos de Reparación iPhone en Bogotá sobre Precio Reparación iPhone Bogotá
 
 **1. ¿Por qué varían tanto los precios entre talleres?**
 - Calidad de piezas usadas
@@ -245,7 +245,7 @@ Sí, en Pipod ofrecemos descuentos si reparas pantalla + batería, o más de un 
 
 ---
 
-## Cotización Gratis en Pipod
+## Cotización Gratis de Reparación iPhone en Pipod Chapinero
 
 **Te damos precio exacto sin compromiso:**
 📍 Cra. 13a #79-52, Chapinero  

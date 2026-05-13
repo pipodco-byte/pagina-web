@@ -28,7 +28,7 @@ En Pipod Chapinero, con **16 años de experiencia** y **más de 3,600 equipos re
 
 ---
 
-## 1. Puerto de Carga Bloqueado por Polvo (Lightning y USB-C)
+## 1. Puerto de Carga Bloqueado por Polvo en iPhone Bogotá
 
 Con el tiempo se acumulan: polvo ambiental, pelusa de bolsillo y partículas microscópicas de tela. Estas partículas se compactan en el fondo del puerto provocando que:
 - El cable no entre completamente
@@ -45,7 +45,7 @@ En muchos casos esta limpieza recupera la carga sin necesidad de cambiar el puer
 
 ---
 
-## 2. Cable de Carga de Baja Calidad
+## 2. Cable de Carga de Baja Calidad para iPhone en Bogotá
 
 Muchos cables genéricos no cumplen con el estándar MFi (Made for iPhone) de Apple. Esto genera:
 - Carga lenta
@@ -58,7 +58,7 @@ Aplicaciones como Instagram o TikTok consumen bastante energía. Un cable de mal
 
 ---
 
-## 3. Batería Degradada por Ciclos de Carga
+## 3. Batería Degradada por Ciclos de Carga en iPhone Bogotá
 
 Las baterías de litio pierden capacidad después de varios cientos de ciclos de carga. Cuando una batería está degradada pueden aparecer estos problemas:
 - El iPhone tarda mucho en cargarse
@@ -71,7 +71,7 @@ Esto ocurre porque la batería ya no puede almacenar energía eficientemente, po
 
 ---
 
-## 4. Falla en el Circuito de Carga
+## 4. Falla en el Circuito de Carga del iPhone en Bogotá
 
 En algunos casos el problema está en los componentes electrónicos que regulan la energía dentro del iPhone.
 
@@ -89,7 +89,7 @@ Este tipo de casos requiere **diagnóstico técnico especializado** y posiblemen
 
 ---
 
-## Diagnóstico Gratis en Pipod Chapinero
+## Diagnóstico Gratis de iPhone No Carga en Pipod Chapinero Bogotá
 
 **📍 Ubicación:** Cra. 13a #79-52, Chapinero, Bogotá  
 **📅 Horario:** Lun-Vie 10am-7pm | Sáb 10am-6pm  
@@ -105,7 +105,7 @@ Este tipo de casos requiere **diagnóstico técnico especializado** y posiblemen
 
 ---
 
-## ¿Listo para solucionar el problema de carga?
+## ¿Listo para Solucionar el Problema de Carga de tu iPhone en Bogotá?
 
 No sigas lidiando con un iPhone que no carga o tarda horas. En Pipod Chapinero diagnosticamos gratis y resolvemos el problema real.
 

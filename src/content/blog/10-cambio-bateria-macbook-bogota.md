@@ -93,7 +93,7 @@ Verificamos salud de la batería, ciclos de carga, estado físico.
 
 ---
 
-## ¿Por qué Cambiar la Batería en Pipod?
+## ¿Por qué elegir Pipod para Cambio de Batería MacBook en Bogotá?
 
 | Característica | Pipod | Apple Oficial | Otros Talleres |
 |----------------|-------|---------------|----------------|
@@ -105,7 +105,7 @@ Verificamos salud de la batería, ciclos de carga, estado físico.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Cambio de Batería MacBook en Bogotá
 
 **1. ¿Cuánto cuesta cambiar la batería de un MacBook?**
 Depende del modelo:

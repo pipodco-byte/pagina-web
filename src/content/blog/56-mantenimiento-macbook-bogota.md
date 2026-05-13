@@ -30,7 +30,7 @@ Aquí te explicamos qué incluye, cuánto cuesta y por qué es importante.
 
 ---
 
-## 🔧 Nuestro Mantenimiento Incluye
+## Mantenimiento MacBook en Bogotá: Qué Incluye Nuestro Servicio
 
 ### 💻 Optimización Interna y Externa
 Para que tu equipo rinda al máximo:
@@ -62,7 +62,7 @@ Esencial para una disipación de calor eficiente:
 
 ---
 
-## ✨ ¿El Resultado?
+## Resultado del Mantenimiento MacBook en Bogotá
 
 Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
@@ -70,7 +70,7 @@ Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
 ---
 
-## 📝 Notas Importantes
+## Notas Importantes sobre Mantenimiento MacBook en Bogotá
 
 **No incluye:**
 - ❌ iMac (servicio diferente)
@@ -82,7 +82,7 @@ Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
 ---
 
-## 💰 Precios Mantenimiento MacBook
+## Precios de Mantenimiento MacBook en Bogotá
 
 ### Mantenimiento Completo
 **Precio:** $80.000 COP
@@ -115,7 +115,7 @@ Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
 ---
 
-## 📅 Cada Cuánto Hacer Mantenimiento
+## Cada Cuánto Hacer Mantenimiento a tu MacBook en Bogotá
 
 ### Uso Ligero (2-4 horas diarias)
 **Recomendación:** Cada 18-24 meses
@@ -135,7 +135,7 @@ Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
 ---
 
-## ⚠️ Señales de Que Necesitas Mantenimiento
+## Señales de Que Necesitas Mantenimiento de MacBook en Bogotá
 
 ### Rendimiento
 - [ ] MacBook más lento que antes
@@ -157,7 +157,7 @@ Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
 ---
 
-## 🆚 Mantenimiento vs Reparación
+## Mantenimiento vs Reparación MacBook en Bogotá
 
 | Aspecto | Mantenimiento Preventivo | Reparación Correctiva |
 |---------|-------------------------|----------------------|
@@ -171,7 +171,7 @@ Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
 ---
 
-## 🎯 Nuestro Proceso en Pipod
+## Nuestro Proceso de Mantenimiento MacBook en Pipod
 
 ### Paso 1: Recepción
 - Registro del equipo
@@ -205,7 +205,7 @@ Un **MacBook más rápido, silencioso y con una vida útil prolongada**.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Mantenimiento MacBook en Bogotá
 
 **¿Realmente necesito mantenimiento si mi MacBook funciona bien?**
 Sí. El daño por acumulación es gradual. Cuando notas el problema, ya hay desgaste. Preventivo siempre es mejor y más barato.

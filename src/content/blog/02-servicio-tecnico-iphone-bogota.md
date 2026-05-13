@@ -31,14 +31,14 @@ Tu iPhone tiene problemas. En Pipod Chapinero llevamos **16 años** reparando eq
 - **Calidad:** Piezas de alta calidad y garantía de 12 meses.
 - **Velocidad:** La mayoría de reparaciones listas el mismo día.
 
-## Servicios que ofrecemos
+## Servicios de Servicio Técnico iPhone en Bogotá que Ofrecemos
 
 - **Cambio de Pantalla:** iPhone X, 11, 12, 13, 14, 15 y más.
 - **Cambio de Batería:** Recupera la autonomía original de tu equipo.
 - **Reparación de daño por agua:** Protocolo especializado de deshumidificación.
 - **Reparación de placa:** Microsoldadura para fallas complejas.
 
-## Ubicación conveniente en Chapinero
+## Ubicación del Servicio Técnico iPhone en Chapinero Bogotá
 
 Nos encontramos en **Cra. 13a #79-52**, fácil de llegar desde cualquier parte de Bogotá.
 

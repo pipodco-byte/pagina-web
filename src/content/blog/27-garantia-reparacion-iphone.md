@@ -50,7 +50,7 @@ Basado en **16 años de experiencia** y miles de reparaciones en Bogotá.
 
 ---
 
-## Tiempos de Garantía por Tipo de Reparación
+## Tiempos de Garantía por Tipo de Reparación sobre Garantía Servicio Técnico Bogotá
 
 ### Estándar en el Mercado
 
@@ -88,7 +88,7 @@ Basado en **16 años de experiencia** y miles de reparaciones en Bogotá.
 
 ---
 
-## Qué Debe Cubrir la Garantía
+## Qué Debe Cubrir la Garantía sobre Garantía Servicio Técnico Bogotá
 
 ### SI Debe Cubrir (Garantía Real)
 
@@ -166,7 +166,7 @@ Basado en **16 años de experiencia** y miles de reparaciones en Bogotá.
 
 ---
 
-## Documento de Garantía: Qué Debe Incluir
+## Documento de Garantía: Qué Debe Incluir sobre Garantía Servicio Técnico Bogotá
 
 ### Información del Taller
 - [ ] Nombre completo del negocio
@@ -197,7 +197,7 @@ Basado en **16 años de experiencia** y miles de reparaciones en Bogotá.
 
 ---
 
-## Cómo Reclamar tu Garantía
+## Cómo Reclamar tu Garantía sobre Garantía Servicio Técnico Bogotá
 
 ### Paso 1: Reúne Documentación
 - Factura o recibo de pago
@@ -266,7 +266,7 @@ Batería dura 2 horas
 
 ---
 
-## Tus Derechos como Consumidor (Colombia)
+## Tus Derechos como Consumidor (Colombia) sobre Garantía Servicio Técnico Bogotá
 
 ### Ley 1480 de 2011 (Estatuto del Consumidor)
 
@@ -287,7 +287,7 @@ Batería dura 2 horas
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Garantía de Reparación iPhone en Bogotá sobre Garantía Servicio Técnico Bogotá
 
 **1. ¿Es legal que no me den garantía por escrito?**
 No es ilegal, pero es mala práctica. Siempre exige documento. Si se niegan, considera ir a otro taller.
@@ -327,7 +327,7 @@ NO. Garantía cubre defectos de pieza, no daños por usuario. Eso requiere nueva
 
 ---
 
-## Garantía en Pipod
+## Garantía de Reparación iPhone en Pipod Chapinero
 
 **Nuestra política:**
 

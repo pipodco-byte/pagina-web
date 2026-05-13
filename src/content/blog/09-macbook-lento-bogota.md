@@ -27,7 +27,7 @@ Estás editando un video importante, trabajando en una presentación o simplemen
 
 No es "que ya está viejo". En la mayoría de casos, hay soluciones reales que pueden devolverle la velocidad a tu MacBook.
 
-## Causas Comunes de Lentitud en MacBook
+## Causas Comunes de Lentitud en MacBook en Bogotá
 
 ### 1. Disco Duro Lleno (o SSD sin espacio)
 
@@ -53,7 +53,7 @@ El polvo acumulado en los ventiladores y el cambio de pasta térmica desgastada 
 
 **Solución:** Mantenimiento completo de limpieza y cambio de pasta térmica.
 
-## Diagnóstico Gratuito en Pipod
+## Diagnóstico Gratuito de MacBook Lento en Chapinero
 
 En nuestro laboratorio en **Chapinero**, diagnosticamos gratis qué está causando la lentitud de tu MacBook:
 

@@ -121,7 +121,7 @@ Los ventiladores de tu MacBook están siempre encendidos y hacen ruido. La base 
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Mantenimiento MacBook en Bogotá
 
 **1. ¿Cuánto cuesta el mantenimiento?**
 - MacBook Air: $180,000 - $250,000

@@ -39,7 +39,7 @@ Vamos.
 
 ---
 
-## 🏪 Dónde Comprar MacBook Usado en Bogotá
+## Dónde Comprar MacBook Usado sobre MacBook Usado Bogotá
 
 ### Opción A: Marketplace Online (Mercado Libre, Facebook)
 **Pros:** Mayor variedad, posibilidad de negociar
@@ -67,7 +67,7 @@ Vamos.
 
 ---
 
-## ✅ Checklist de Verificación MacBook Usado
+## Checklist de Verificación de MacBook Usado sobre MacBook Usado Bogotá
 
 ### 1. Información del Sistema
 **Cómo ver:** Manzana > Acerca de este Mac
@@ -164,7 +164,7 @@ Vamos.
 
 ---
 
-## ⚠️ Modelos MacBook a Evitar o Evaluar con Cuidado
+## Modelos de MacBook a Evitar o Evaluar con Cuidado sobre MacBook Usado Bogotá
 
 ### MacBook Pro 2016-2019 (Teclado Butterfly)
 **Problema:** Teclado propenso a fallas (programa reparación Apple vencido)
@@ -187,7 +187,7 @@ Vamos.
 
 ---
 
-## 💰 Rangos de Precios MacBook Usados Bogotá 2026
+## Rangos de Precios de MacBook Usado sobre MacBook Usado Bogotá
 
 | Modelo | Estado A | Estado B | Estado C |
 |--------|----------|----------|----------|
@@ -203,7 +203,7 @@ Vamos.
 
 ---
 
-## 🎯 Revisión Profesional en Pipod Chapinero
+## Revisión Profesional de MacBook Usado sobre MacBook Usado Bogotá
 
 Antes de comprar, tráelo:
 
@@ -220,7 +220,7 @@ Antes de comprar, tráelo:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Compra de MacBook Usado sobre MacBook Usado Bogotá
 
 **¿Cuántos ciclos de batería son aceptables en un MacBook usado?**
 Menos de 500 ciclos es bueno. Más de 800 ciclos significa cambio próximo (costo adicional ~$400.000-700.000).
