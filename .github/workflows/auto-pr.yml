@@ -1,0 +1,78 @@
+name: Auto PR from develop to main
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        run: |
+          git fetch origin main
+          CHANGED_FILES=$(git diff --name-only origin/main...HEAD)
+          echo "Changed files: $CHANGED_FILES"
+
+      - name: Create or update PR
+        id: pr
+        run: |
+          # Check if PR already exists
+          PR_EXISTS=$(gh pr list --base main --head develop --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+
+          if [ -n "$PR_EXISTS" ]; then
+            echo "PR already exists: #$PR_EXISTS"
+            echo "pr_number=$PR_EXISTS" >> $GITHUB_OUTPUT
+          else
+            # Create new PR
+            TITLE="Merge develop → main"
+            BODY=$(cat <<'EOF'
+## Summary
+Automated PR from develop branch
+
+### Changes
+This PR merges all changes from develop to main for production deployment.
+
+## Checklist
+- [ ] Build passes
+- [ ] All tests pass
+- [ ] Reviewed and approved
+
+## Files Changed
+<!-- Will be auto-populated with file list -->
+
+---
+_Automatically created by GitHub Actions_
+EOF
+            )
+            gh pr create --title "$TITLE" --body "$BODY" --base main --head develop
+            echo "pr_number=$(gh pr list --base main --head develop --state open --json number --jq '.[0].number')" >> $GITHUB_OUTPUT
+          fi
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add comment with build status
+        if: steps.pr.outputs.pr_number
+        run: |
+          gh pr comment ${{ steps.pr.outputs.pr_number }} --body "## 🚀 Ready for Review
+
+This PR is ready to merge to main.
+
+**Actions available:**
+- `/merge` - Squash and merge
+- Review changes in the Files tab
+
+---
+_Automated PR created by GitHub Actions_"
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
