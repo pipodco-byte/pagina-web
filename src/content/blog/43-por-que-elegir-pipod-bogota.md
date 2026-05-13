@@ -3,7 +3,7 @@ title: "Por Qué Elegir Pipod | 7 Razones Definitivas | Servicio Técnico Apple 
 description: "Descubre por qué miles de bogotanos eligen Pipod para reparar sus equipos Apple. 7 razones que nos diferencian en Chapinero desde 2010."
 slug: "por-que-elegir-pipod-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "por qué elegir Pipod"

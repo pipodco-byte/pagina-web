@@ -30,8 +30,8 @@ const blogCollection = defineCollection({
     // Metadata
     publishDate: z.coerce.date(),
     
-    author: z.literal('kimi', {
-      invalid_type_error: 'Author must be "kimi"'
+    author: z.literal('equipo-pipod', {
+      invalid_type_error: 'Author must be "equipo-pipod"'
     }),
     
     category: z.string()

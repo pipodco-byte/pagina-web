@@ -3,7 +3,7 @@ title: "Reparar vs Comprar Nuevo iPhone Bogotá 2026 | Guía de Decisión"
 description: "¿Reparar tu iPhone o comprar uno nuevo? Análisis completo con matemática real. Precios, depreciación, momento ideal. Guía 2026 para decidir bien."
 slug: "reparar-vs-comprar-nuevo-iphone"
 publishDate: "2026-06-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "reparar vs comprar"

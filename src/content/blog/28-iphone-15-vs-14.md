@@ -3,7 +3,7 @@ title: "iPhone 15 vs 14 Bogotá | ¿Vale la Pena Actualizar? - Pipod"
 description: "Comparativa iPhone 15 vs 14 en Bogotá. USB-C, cámara, rendimiento, precios. ¿Vale la pena actualizar? Guía 2026 para tomar la mejor decisión."
 slug: "iphone-15-vs-14-bogota"
 publishDate: "2026-06-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "iPhone 15"

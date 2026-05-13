@@ -3,7 +3,7 @@ title: "Ubicación Pipod Chapinero | Cómo Llegar | Servicio Técnico Apple Bogo
 description: "Encuentra Pipod en Chapinero, Bogotá. Dirección exacta, referencias, horarios y cómo llegar desde diferentes zonas de la ciudad."
 slug: "ubicacion-pipod-chapinero-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "ubicación Pipod"

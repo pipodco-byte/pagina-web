@@ -3,7 +3,7 @@ title: "Cómo Cuidar la Batería del iPhone | Guía Definitiva | Pipod Chapinero
 description: "Aprende a cuidar la batería de tu iPhone para que dure años. Hábitos de carga, configuraciones y errores comunes. Desde Chapinero, Bogotá."
 slug: "cuidar-bateria-iphone-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "cuidar batería"

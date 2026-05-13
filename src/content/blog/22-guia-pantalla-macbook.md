@@ -3,7 +3,7 @@ title: "Guía Pantalla MacBook Bogotá | Reparación y Reemplazo - Pipod"
 description: "Guía completa sobre pantallas de MacBook en Bogotá. Tipos, precios, reparación vs reemplazo. 16 años de experiencia en Chapinero. ¡Información 2026!"
 slug: "guia-pantalla-macbook-bogota"
 publishDate: "2026-06-01"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "guía"

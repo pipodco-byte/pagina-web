@@ -3,7 +3,7 @@ title: "MacBook Teclado No Funciona Bogotá | Reparación Teclas | Pipod Chapine
 description: "Teclado MacBook que no funciona en Bogotá. Reparamos teclas pegadas, butterfly defectuoso, teclado completo. Diagnóstico gratis en Chapinero. Garantía incluida."
 slug: "macbook-teclado-no-funciona-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "MacBook teclado no funciona"

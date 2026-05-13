@@ -3,7 +3,7 @@ title: "Trabajo Frente al Cliente Pipod | Transparencia Total | Chapinero Bogot�
 description: "En Pipod puedes ver cómo reparamos tu equipo. Trabajo frente al cliente para total transparencia. Conoce el proceso en Chapinero, Bogotá."
 slug: "trabajo-frente-al-cliente-pipod"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "trabajo frente al cliente"

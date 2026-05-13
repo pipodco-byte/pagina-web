@@ -3,7 +3,7 @@ title: "Mejor Servicio Técnico Apple Bogotá 2026 | Cómo Elegir - Pipod"
 description: "¿Cuál es el mejor servicio técnico Apple en Bogotá? Guía 2026: qué buscar, qué evitar, comparativa. 16 años de experiencia te contamos la verdad."
 slug: "mejor-servicio-tecnico-apple-bogota"
 publishDate: "2026-06-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "mejor servicio técnico"

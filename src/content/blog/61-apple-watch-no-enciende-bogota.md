@@ -3,7 +3,7 @@ title: "Apple Watch No Enciende Bogotá | Reparación | Pipod Chapinero"
 description: "Apple Watch que no enciende en Bogotá. Diagnóstico y reparación en Pipod Chapinero. Batería, carga, pantalla. Evaluación gratis."
 slug: "apple-watch-no-enciende-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "Apple Watch no enciende"

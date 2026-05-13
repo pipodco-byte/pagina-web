@@ -3,7 +3,7 @@ title: "Cambio Pantalla iPhone en Bogotá | Laboratorio Pipod Chapinero"
 description: "Reparación de pantalla iPhone en Chapinero, Bogotá. LCD vs OLED explicado. Diagnóstico técnico en 20 minutos. 16 años de experiencia, 3,600+ equipos. Garantí..."
 slug: "cambio-pantalla-iphone-bogota"
 publishDate: "2026-05-08"
-author: "kimi"
+author: "equipo-pipod"
 category: "iPhone"
 tags:
   - "pantalla"

@@ -3,7 +3,7 @@ title: "Reseñas Pipod Bogotá | Opiniones de Clientes Reales | Chapinero"
 description: "Lee reseñas reales de clientes de Pipod en Bogotá. 5.0 estrellas, 90+ opiniones verificadas. Experiencias de quienes confiaron su Apple a nosotros."
 slug: "resenas-pipod-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "reseñas Pipod"

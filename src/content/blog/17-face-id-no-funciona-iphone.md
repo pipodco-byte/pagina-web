@@ -3,7 +3,7 @@ title: "Face ID No Funciona iPhone | Reparación Sensor TrueDepth - Pipod"
 description: "¿Face ID de tu iPhone no funciona? En Pipod Chapinero reparamos el sensor TrueDepth. 16 años de experiencia, garantía 12 meses. ¡Diagnóstico gratis!"
 slug: "face-id-no-funciona-iphone"
 publishDate: "2026-05-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "iPhone"
 tags:
   - "Face ID"

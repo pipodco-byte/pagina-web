@@ -3,7 +3,7 @@ title: "Cuánto Cuesta Reparar un iPhone en Bogotá 2026 | Guía de Precios"
 description: "¿Cuánto cuesta reparar un iPhone en Bogotá? Guía de precios 2026: pantalla, batería, placa, daño por agua. Comparativa Apple vs Pipod vs talleres baratos."
 slug: "cuanto-cuesta-reparar-iphone-bogota"
 publishDate: "2026-06-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "precios"

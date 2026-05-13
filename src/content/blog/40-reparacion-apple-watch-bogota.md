@@ -3,7 +3,7 @@ title: "Reparación Apple Watch Bogotá | Cambio de Pila y Más | Pipod Chapiner
 description: "Servicio técnico Apple Watch en Bogotá. Cambio de pila, reparación por agua y más. Diagnóstico gratis en Chapinero. Garantía de 6 meses."
 slug: "reparacion-apple-watch-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "reparación Apple Watch"

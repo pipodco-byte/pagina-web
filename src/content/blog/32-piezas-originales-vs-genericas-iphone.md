@@ -3,7 +3,7 @@ title: "Piezas Originales vs Genéricas iPhone | Qué Elegir | Pipod Chapinero"
 description: "Descubre la verdad sobre piezas originales, genéricas y segunda mano para iPhone. Aprende qué conviene más para tu reparación en Bogotá."
 slug: "piezas-originales-vs-genericas-iphone"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "piezas iPhone"

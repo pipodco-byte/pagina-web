@@ -3,7 +3,7 @@ title: "Reparación iPhone Chapinero | Servicio Técnico Apple Pipod"
 description: "Reparación iPhone en Chapinero, Bogotá. Pantalla, batería, carga, software. Diagnóstico gratis en 20 minutos. 16 años de experiencia, 3,600+ equipos reparado..."
 slug: "reparacion-iphone-chapinero"
 publishDate: "2026-05-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "iPhone"
 tags:
   - "reparación"

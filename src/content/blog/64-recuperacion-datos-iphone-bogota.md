@@ -3,7 +3,7 @@ title: "Recuperación Datos iPhone Bogotá | Rescate de Información | Pipod"
 description: "Recuperación de datos iPhone en Bogotá. Fotos, contactos, mensajes. Equipos dañados, no encienden, pantalla rota. Evaluación gratis en Chapinero."
 slug: "recuperacion-datos-iphone-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "recuperación datos iPhone"

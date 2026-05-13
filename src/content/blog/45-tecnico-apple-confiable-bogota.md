@@ -3,7 +3,7 @@ title: "Técnico Apple Confiable en Bogotá | Cómo Encontrarlo | Pipod Chapiner
 description: "Aprende a identificar un técnico Apple confiable en Bogotá. 8 señales de confianza, preguntas clave y red flags. Guía desde Chapinero."
 slug: "tecnico-apple-confiable-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "técnico confiable"

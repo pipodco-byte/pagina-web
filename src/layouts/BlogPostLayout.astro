@@ -5,6 +5,9 @@ import Layout from './Layout.astro';
 import BlogPostingSchema from '../components/SEO/BlogPostingSchema.astro';
 import Text from '../components/blog/Text.astro';
 import SectionDivider from '../components/blog/SectionDivider.astro';
+import BlogCardGrid from '../components/blog/BlogCardGrid.astro';
+import TableOfContents from '../components/blog/TableOfContents.astro';
+import { getCollection } from 'astro:content';
 import '../styles/_pipod-utilities.css';
 import '../styles/_tokens.css';
 
@@ -20,6 +23,7 @@ interface Props {
   schemaType?: string;
   locale?: string;
   readingTime?: string;
+  headings?: { depth: number; text: string; slug: string }[];
 }
 
 const {
@@ -34,6 +38,7 @@ const {
   schemaType = 'BlogPosting',
   locale = 'es-ES',
   readingTime = '5 min de lectura',
+  headings = [],
 } = Astro.props;
 
 const siteUrl = 'https://www.pipod.co';
@@ -119,8 +124,11 @@ const authorInitial = formattedAuthor.charAt(0).toUpperCase();
         </header>
 
         {/* Contenido del artículo */}
-        <div class="article-content">
-          <slot />
+        <div class="article-content-wrapper">
+          <TableOfContents headings={headings} />
+          <div class="article-content">
+            <slot />
+          </div>
         </div>
 
         {/* Footer del artículo */}
@@ -139,12 +147,69 @@ const authorInitial = formattedAuthor.charAt(0).toUpperCase();
             <div class="article-author-box-avatar">{authorInitial}</div>
             <div class="article-author-box-info">
               <Text variant="heading-3" as="h4">{formattedAuthor}</Text>
-              <p>Servicio técnico especializado en Apple desde 2009.</p>
+              <p>Servicio técnico especializado en Apple desde 2009. Expertos en reparación, mantenimiento y optimización de equipos Apple.</p>
             </div>
           </div>
         </footer>
+
+        {/* Artículos que te pueden interesar */}
+        {(() => {
+          // Get all posts and filter by matching tags or category
+          const allPosts = Astro.props as any;
+          const currentSlug = Astro.url.pathname.split('/').pop();
+          
+          // Get all blog posts for related section
+          return null; // We'll render this in the template below
+        })()}
       </div>
     </article>
+
+    {/* Related Posts Section */}
+    {(async () => {
+      const allPosts = await getCollection('blog');
+      const currentSlug = Astro.url.pathname.split('/').pop();
+      
+      // Filter related posts: same category or shared tags
+      const relatedPosts = allPosts
+        .filter(post => {
+          const postSlug = post.data.slug || post.id;
+          if (postSlug === currentSlug) return false;
+          
+          // Match by tags (prioritize) or category
+          const sharedTags = post.data.tags?.filter((tag: string) => tags.includes(tag));
+          const sameCategory = post.data.category === category;
+          
+          return sharedTags?.length > 0 || sameCategory;
+        })
+        .slice(0, 3);
+      
+      if (relatedPosts.length === 0) return null;
+      
+      return (
+        <section class="related-posts-section">
+          <div class="related-posts-container">
+            <Text variant="heading-2" as="h2" class="related-posts-title">
+              Artículos que te pueden interesar
+            </Text>
+            <div class="related-posts-grid">
+              {relatedPosts.map(post => (
+                <BlogCardGrid post={{
+                  id: post.id,
+                  slug: post.data.slug,
+                  title: post.data.title,
+                  description: post.data.description,
+                  category: post.data.category,
+                  tags: post.data.tags,
+                  ogImage: post.data.ogImage,
+                  publishDate: post.data.publishDate.toISOString(),
+                  author: post.data.author
+                }} />
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    })()}
   </main>
 </Layout>
 
@@ -279,10 +344,23 @@ const authorInitial = formattedAuthor.charAt(0).toUpperCase();
   }
 
   /* Article Content */
+  .article-content-wrapper {
+    display: flow-root;
+  }
+
   .article-content {
     font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
     line-height: 1.8;
     color: var(--pipod-color-near-black, #1F1F1F);
+    float: right;
+    width: calc(100% - 260px);
+  }
+
+  @media (max-width: 1200px) {
+    .article-content {
+      float: none;
+      width: 100%;
+    }
   }
 
   .article-content :global(h2) {
@@ -469,6 +547,38 @@ const authorInitial = formattedAuthor.charAt(0).toUpperCase();
     }
   }
 
+  /* Related Posts Section */
+  .related-posts-section {
+    background: var(--pipod-color-light-surface, #F5F5F7);
+    padding: 60px 0;
+    margin-top: 60px;
+  }
+
+  .related-posts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .related-posts-title {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
     .article-container {
@@ -504,6 +614,14 @@ const authorInitial = formattedAuthor.charAt(0).toUpperCase();
     .article-content :global(p),
     .article-content :global(li) {
       font-size: 0.95rem;
+    }
+
+    .related-posts-section {
+      padding: 40px 0;
+    }
+
+    .related-posts-grid {
+      gap: 24px;
     }
   }
 </style>

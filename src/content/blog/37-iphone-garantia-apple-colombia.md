@@ -3,7 +3,7 @@ title: "Garantía Apple iPhone Colombia | Qué Cubre y Qué No | Pipod Chapinero
 description: "Descubre todo sobre la garantía Apple para iPhone en Colombia. Qué cubre, duración, cómo reclamar y qué hacer cuando vence. Guía desde Chapinero, Bogotá."
 slug: "iphone-garantia-apple-colombia"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "garantía Apple"

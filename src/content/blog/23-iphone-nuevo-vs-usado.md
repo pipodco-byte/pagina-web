@@ -3,7 +3,7 @@ title: "iPhone Nuevo vs Usado Bogotá | Guía de Compra 2026 - Pipod"
 description: "¿iPhone nuevo o usado en Bogotá? Comparativa completa: precios, garantías, riesgos. Guía 2026 para tomar la mejor decisión. ¡Lee antes de comprar!"
 slug: "iphone-nuevo-vs-usado-bogota"
 publishDate: "2026-06-01"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "iPhone"

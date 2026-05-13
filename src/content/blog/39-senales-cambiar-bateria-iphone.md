@@ -3,7 +3,7 @@ title: "Señales de Cambiar la Batería del iPhone | Guía Definitiva | Pipod Ch
 description: "Descubre las 7 señales claras de que tu iPhone necesita cambio de batería. Diagnóstico gratis en Chapinero, Bogotá. Cambio en 2-3 horas con garantía."
 slug: "senales-cambiar-bateria-iphone"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "señales batería"

@@ -3,7 +3,7 @@ title: "Limpieza MacBook Bogotá | Servicio Profesional | Pipod Chapinero"
 description: "Limpieza profesional de MacBook en Bogotá. Teclado, trackpad, pantalla, puertos. Elimina bacterias, polvo y residuos. Servicio en 1 hora. Chapinero."
 slug: "limpieza-macbook-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "limpieza MacBook"

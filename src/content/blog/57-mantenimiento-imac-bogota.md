@@ -3,7 +3,7 @@ title: "Mantenimiento iMac Bogotá | Limpieza y Optimización | Pipod Chapinero"
 description: "Mantenimiento profesional de iMac en Bogotá. Limpieza interna, cambio de pasta térmica, optimización. Servicio a domicilio disponible. Chapinero."
 slug: "mantenimiento-imac-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "mantenimiento iMac"

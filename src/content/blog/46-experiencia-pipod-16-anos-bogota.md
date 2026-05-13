@@ -3,7 +3,7 @@ title: "Experiencia Pipod 16 Años | Trayectoria Reparando Apple | Chapinero Bog
 description: "16 años reparando equipos Apple en Bogotá. Conoce nuestra trayectoria, evolución técnica y por qué la experiencia marca la diferencia en Chapinero."
 slug: "experiencia-pipod-16-anos-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "16 años experiencia"

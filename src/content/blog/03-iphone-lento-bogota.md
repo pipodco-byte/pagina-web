@@ -3,7 +3,7 @@ title: "iPhone Lento Bogotá: Diagnóstico Técnico de RAM vs Storage - Pipod"
 description: "¿Tu iPhone está lento en Bogotá? Diagnóstico técnico gratis en Chapinero. Resolvemos problemas de RAM, almacenamiento lleno y batería degradada. 16 años de e..."
 slug: "iphone-lento-bogota-diagnostico-ram-storage"
 publishDate: "2026-05-08"
-author: "kimi"
+author: "equipo-pipod"
 category: "iPhone"
 tags:
   - "lentitud"

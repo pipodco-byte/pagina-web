@@ -3,7 +3,7 @@ title: "Cómo Elegir Técnico Apple en Bogotá | Guía Definitiva | Pipod Chapin
 description: "No todos los técnicos Apple son iguales. Descubre los 7 criterios para elegir un servicio técnico confiable en Bogotá y evitar reparaciones mal hechas."
 slug: "como-elegir-tecnico-apple-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "técnico Apple"

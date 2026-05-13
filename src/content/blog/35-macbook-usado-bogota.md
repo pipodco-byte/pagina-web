@@ -3,7 +3,7 @@ title: "Comprar MacBook Usado en Bogotá | Guía 2026 | Pipod Chapinero"
 description: "Aprende a comprar MacBook usado seguro en Bogotá. Checklist de verificación, señales de estafa y dónde comprar sin riesgos. Desde Chapinero."
 slug: "macbook-usado-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "MacBook usado"

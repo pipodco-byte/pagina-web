@@ -3,7 +3,7 @@ title: "Reparación iPad Bogotá | Pantalla, Batería, Carga - Pipod"
 description: "Reparación iPad en Bogotá. Air, Pro, Mini. Pantalla rota, batería, problemas de carga. 16 años de experiencia en Chapinero. ¡Diagnóstico gratis!"
 slug: "reparacion-ipad-bogota"
 publishDate: "2026-05-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "iPad"
 tags:
   - "reparación iPad"

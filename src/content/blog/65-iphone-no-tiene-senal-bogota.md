@@ -3,7 +3,7 @@ title: "iPhone No Tiene Señal Bogotá | Sin Servicio Celular | Pipod Chapinero"
 description: "iPhone sin señal o servicio celular en Bogotá. Diagnóstico y reparación de problemas de red, antena, baseband. Servicio en Chapinero. Garantía incluida."
 slug: "iphone-no-tiene-senal-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "iPhone no tiene señal"

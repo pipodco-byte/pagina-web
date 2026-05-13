@@ -3,7 +3,7 @@ title: "Garantía Reparación iPhone Bogotá | Qué Debes Exigir - Pipod"
 description: "Todo sobre garantías en reparación de iPhone en Bogotá. Qué cubre, por cuánto tiempo, qué preguntar. Guía para no ser engañado. 16 años de experiencia."
 slug: "garantia-reparacion-iphone-bogota"
 publishDate: "2026-06-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "garantía"

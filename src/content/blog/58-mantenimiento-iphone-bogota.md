@@ -3,7 +3,7 @@ title: "Mantenimiento iPhone Bogotá | Cuidado Preventivo | Pipod Chapinero"
 description: "Mantenimiento preventivo iPhone en Bogotá. Limpieza de puertos, revisión de batería, optimización. Extende la vida útil de tu equipo. Chapinero."
 slug: "mantenimiento-iphone-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "mantenimiento iPhone"

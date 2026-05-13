@@ -3,7 +3,7 @@ title: "Costo Mantenimiento MacBook Bogotá | Qué Incluye 2026 | Pipod Chapiner
 description: "Descubre cuánto cuesta el mantenimiento de MacBook en Bogotá, qué incluye y cada cuánto hacerlo. Guía completa desde Chapinero."
 slug: "costo-mantenimiento-macbook-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "mantenimiento MacBook"

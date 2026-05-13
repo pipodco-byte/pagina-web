@@ -3,7 +3,7 @@ title: "Apple Watch Mojado Bogotá | Recuperación | Pipod Chapinero"
 description: "Apple Watch mojado en Bogotá. Servicio de recuperación en Pipod Chapinero. Limpieza interna, secado profesional, cambio de pila. Tasa de éxito 40-60%."
 slug: "apple-watch-mojado-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "Apple Watch mojado"

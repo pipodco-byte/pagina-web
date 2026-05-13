@@ -3,7 +3,7 @@ title: "iPhone Pantalla Negra Bogotá | Enciende Pero No Se Ve | Pipod Chapinero
 description: "iPhone con pantalla negra en Bogotá. Enciende pero no se ve nada. Reparamos problemas de pantalla, placa, retroiluminación. Diagnóstico gratis en Chapinero."
 slug: "iphone-pantalla-negra-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "iPhone pantalla negra"

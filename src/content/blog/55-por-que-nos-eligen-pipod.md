@@ -3,7 +3,7 @@ title: "Por Qué Nos Eligen | Diferenciadores Pipod | Servicio Técnico Apple Bo
 description: "Descubre los diferenciadores que hacen de Pipod la elección de miles de bogotanos. 16 años de experiencia, especialización Apple, garantía real. Chapinero."
 slug: "por-que-nos-eligen-pipod"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "por qué nos eligen"

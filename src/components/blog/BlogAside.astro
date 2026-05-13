@@ -31,7 +31,7 @@ const recentPosts = posts.slice(0, 5);
 
 // Author info (could be made dynamic in future)
 const author = {
-  name: 'Pipod Team',
+  name: 'Equipo Pipod',
   bio: 'Servicio técnico especializado en Apple desde 2009. Expertos en reparación, mantenimiento y optimización de equipos Apple.',
   avatar: '/images/pipod-logo.svg'
 };
@@ -247,13 +247,14 @@ const author = {
     color: var(--pipod-color-white, #ffffff);
     background: var(--pipod-color-deep-blue, #3A506B);
     border: none;
-    border-radius: 8px;
+    border-radius: 100px;
     padding: 12px 24px;
     cursor: pointer;
-    transition: background-color 150ms ease;
+    transition: all 0.3s ease;
 
     &:hover {
-      background: var(--pipod-color-tech-blue, #4A90E2);
+      background: #000000;
+      transform: translateY(-2px);
     }
   }
 

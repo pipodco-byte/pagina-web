@@ -3,7 +3,7 @@ title: "Equipo Técnico Pipod Bogotá | Quiénes Somos | Especialistas Apple Cha
 description: "Conoce al equipo técnico de Pipod: especialistas Apple con años de experiencia. Quiénes reparan tu equipo en Chapinero, Bogotá."
 slug: "equipo-tecnico-pipod-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "equipo técnico Pipod"

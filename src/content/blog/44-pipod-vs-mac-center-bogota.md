@@ -3,7 +3,7 @@ title: "Pipod vs Mac Center Bogotá | Comparativa Real | Servicio Técnico Apple
 description: "Comparativa honesta entre Pipod y Mac Center Bogotá. Diferencias en precio, tiempo, garantía y servicio. Desde Chapinero, especialistas Apple desde 2010."
 slug: "pipod-vs-mac-center-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "Pipod vs Mac Center"

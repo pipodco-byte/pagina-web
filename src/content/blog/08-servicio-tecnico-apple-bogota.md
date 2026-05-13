@@ -3,7 +3,7 @@ title: "Servicio Técnico Apple Bogotá | Especialistas Certificados - Pipod"
 description: "El mejor servicio técnico Apple en Bogotá. Reparamos iPhone, iPad, MacBook, iMac y Apple Watch. 16 años de experiencia. Visítanos en Chapinero. ¡Diagnóstico ..."
 slug: "servicio-tecnico-apple-bogota"
 publishDate: "2026-05-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "Apple"
 tags:
   - "servicio técnico Apple"

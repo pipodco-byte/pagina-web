@@ -3,7 +3,7 @@ title: "iPhone No Vibra Bogotá | Vibrador Dañado | Reparación Pipod Chapinero
 description: "iPhone que no vibra en Bogotá. Reparación de motor Taptic, vibrador, configuración. Diagnóstico gratis en Chapinero. Servicio rápido con garantía."
 slug: "iphone-no-vibra-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "iPhone no vibra"

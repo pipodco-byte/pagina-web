@@ -3,7 +3,7 @@ title: "Comprar iPhone Usado en Bogotá | Guía Definitiva 2026 | Pipod Chapiner
 description: "Descubre cómo comprar un iPhone usado seguro en Bogotá. Checklist de verificación, señales de alerta y dónde comprar sin riesgos. Guía desde Chapinero."
 slug: "iphone-usado-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "iPhone usado"

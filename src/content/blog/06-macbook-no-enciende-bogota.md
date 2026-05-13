@@ -3,7 +3,7 @@ title: "MacBook No Enciende Bogotá | Reparación Urgente - Pipod"
 description: "¿Tu MacBook no enciende o se quedó en negro? En Pipod Chapinero diagnosticamos gratis. Batería, placa, pantalla. 16 años de experiencia. ¡Agenda ya!"
 slug: "macbook-no-enciende-bogota"
 publishDate: "2026-05-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "MacBook"
 tags:
   - "MacBook no enciende"

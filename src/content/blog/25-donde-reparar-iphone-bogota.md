@@ -3,7 +3,7 @@ title: "Dónde Reparar iPhone en Bogotá | Guía de Talleres 2026 - Pipod"
 description: "¿Dónde reparar tu iPhone en Bogotá? Comparativa de talleres: Apple, Pipod, baratos. Precios, garantías, tiempos. Guía completa para elegir bien."
 slug: "donde-reparar-iphone-bogota"
 publishDate: "2026-06-01"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "dónde reparar"

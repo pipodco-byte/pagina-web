@@ -3,7 +3,7 @@ title: "Cambio Pasta Térmica MacBook Bogotá | Servicio Especializado | Pipod"
 description: "Cambio de pasta térmica MacBook en Bogotá. Solución para sobrecalentamiento y throttling. Mejora rendimiento y extiende vida útil. Chapinero."
 slug: "pasta-termica-macbook-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "pasta térmica MacBook"

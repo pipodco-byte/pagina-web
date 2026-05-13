@@ -3,7 +3,7 @@ title: "Cuánto Dura la Batería de un iPhone | Vida Útil Real | Pipod Chapiner
 description: "Descubre cuánto dura realmente la batería de un iPhone, cuándo debes cambiarla y cómo extender su vida útil. Guía práctica desde Chapinero, Bogotá."
 slug: "cuanto-dura-bateria-iphone"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "GUÍAS"
 tags:
   - "batería iPhone"

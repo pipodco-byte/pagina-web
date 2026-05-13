@@ -3,7 +3,7 @@ title: "iPhone No Enciende Bogotá | Solución Rápida - Pipod"
 description: "¿Tu iPhone no enciende? En Pipod Chapinero diagnosticamos gratis las causas reales. Batería, placa, software. 16 años de experiencia. ¡Visítanos ya!"
 slug: "iphone-no-enciende-bogota"
 publishDate: "2026-05-15"
-author: "kimi"
+author: "equipo-pipod"
 category: "iPhone"
 tags:
   - "iPhone no enciende"

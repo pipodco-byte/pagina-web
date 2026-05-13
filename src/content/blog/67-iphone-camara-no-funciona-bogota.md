@@ -3,7 +3,7 @@ title: "iPhone Cámara No Funciona Bogotá | Reparación Cámara | Pipod Chapine
 description: "Cámara iPhone que no funciona en Bogotá. Reparamos cámara frontal, trasera, OIS, enfoque. Diagnóstico gratis en Chapinero. Garantía 12 meses."
 slug: "iphone-camara-no-funciona-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "iPhone cámara no funciona"

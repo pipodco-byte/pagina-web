@@ -3,7 +3,7 @@ title: "Pipod Recomendaciones Bogotá | Por Qué Nos Recomiendan | Chapinero"
 description: "Descubre por qué clientes recomiendan Pipod en Bogotá. Razones reales de quienes confiaron su Apple a nosotros. 16 años en Chapinero."
 slug: "pipod-recomendaciones-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "recomendaciones Pipod"

@@ -3,7 +3,7 @@ title: "Mantenimiento MacBook Bogotá | Servicio Completo | Pipod Chapinero"
 description: "Mantenimiento completo de MacBook en Bogotá. Limpieza interna, cambio de pasta térmica, optimización. 2-3 horas en Chapinero. Garantía incluida."
 slug: "mantenimiento-macbook-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "mantenimiento MacBook"

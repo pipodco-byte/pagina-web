@@ -3,7 +3,7 @@ title: "Historia Pipod Bogotá | 16 Años Reparando Apple | Chapinero"
 description: "Conoce la historia de Pipod: 16 años reparando equipos Apple en Chapinero, Bogotá. Desde un garaje hasta líder en servicio técnico especializado."
 slug: "historia-pipod-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "historia Pipod"

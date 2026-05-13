@@ -3,7 +3,7 @@ title: "iPhone No Carga o Carga Muy Lento en Bogotá | Pipod Chapinero"
 description: "¿Tu iPhone no carga o carga muy lento en Bogotá? Las 4 causas reales: puerto bloqueado, cable de baja calidad, batería degradada, circuito de carga. Diagnóst..."
 slug: "iphone-no-carga-bogota-reparacion"
 publishDate: "2026-05-08"
-author: "kimi"
+author: "equipo-pipod"
 category: "iPhone"
 tags:
   - "no carga"

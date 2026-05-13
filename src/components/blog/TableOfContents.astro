@@ -1,0 +1,171 @@
+---
+/**
+ * TableOfContents.astro - Floating TOC on left side of article
+ * 
+ * Features:
+ * - Floating sticky on LEFT side of article content (desktop)
+ * - Auto-generate from H2/H3 in article
+ * - Highlight current section on scroll
+ * - Style: small text, vertical list, subtle border-left indicator
+ * - On mobile: hide or move to top
+ */
+
+interface Props {
+  headings?: { depth: number; text: string; slug: string }[];
+}
+
+const { headings = [] } = Astro.props;
+
+// Filter to only H2 and H3
+const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+---
+
+{filteredHeadings.length > 0 && (
+  <nav class="table-of-contents" aria-label="Tabla de contenidos">
+    <div class="toc-header">Contenido</div>
+    <ul class="toc-list">
+      {filteredHeadings.map((heading) => (
+        <li class={`toc-item toc-item--h${heading.depth}`}>
+          <a href={`#${heading.slug}`} class="toc-link" data-heading={heading.slug}>
+            {heading.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .table-of-contents {
+    position: sticky;
+    top: 120px;
+    float: left;
+    width: 220px;
+    margin-right: 40px;
+    padding: 20px;
+    background: var(--pipod-color-light-surface, #F5F5F7);
+    border-radius: var(--pipod-radius-standard, 24px);
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+  }
+
+  .toc-header {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--pipod-color-near-black, #1F1F1F);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin-bottom: 8px;
+  }
+
+  .toc-item--h3 {
+    padding-left: 16px;
+  }
+
+  .toc-link {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 0.8rem;
+    color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.5));
+    text-decoration: none;
+    display: block;
+    padding: 6px 12px;
+    border-left: 2px solid transparent;
+    transition: all 150ms ease;
+    line-height: 1.4;
+  }
+
+  .toc-link:hover {
+    color: var(--pipod-color-near-black, #1F1F1F);
+    border-left-color: var(--pipod-color-deep-blue, #3A506B);
+    background: rgba(58, 80, 107, 0.05);
+  }
+
+  .toc-link.active {
+    color: var(--pipod-color-deep-blue, #3A506B);
+    border-left-color: var(--pipod-color-deep-blue, #3A506B);
+    font-weight: 600;
+  }
+
+  /* Hide on mobile */
+  @media (max-width: 1200px) {
+    .table-of-contents {
+      display: none;
+    }
+  }
+
+  /* Scrollbar styling */
+  .table-of-contents::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .table-of-contents::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .table-of-contents::-webkit-scrollbar-thumb {
+    background: var(--pipod-color-border-gray, #E5E5E7);
+    border-radius: 2px;
+  }
+
+  .table-of-contents::-webkit-scrollbar-thumb:hover {
+    background: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+  }
+</style>
+
+<script>
+  // Highlight current section on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const headingElements = [];
+
+    // Collect all heading elements
+    tocLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        const id = href.replace('#', '');
+        const heading = document.getElementById(id);
+        if (heading) {
+          headingElements.push(heading);
+        }
+      }
+    });
+
+    // Intersection Observer for active state
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            tocLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('data-heading') === id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      },
+      {
+        rootMargin: '-100px 0px -70% 0px',
+        threshold: 0
+      }
+    );
+
+    headingElements.forEach(heading => {
+      observer.observe(heading);
+    });
+  });
+</script>

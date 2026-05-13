@@ -3,7 +3,7 @@ title: "Cambio Pila Apple Watch Bogotá | Batería Nueva | Pipod Chapinero"
 description: "Cambio de pila Apple Watch en Bogotá. Batería nueva con garantía. Series 3-9 y Ultra. Diagnóstico previo. Servicio en Chapinero. 6 meses garantía."
 slug: "cambio-pila-apple-watch-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "cambio pila Apple Watch"

@@ -46,9 +46,12 @@ export default function BlogFilter() {
     }).format(date);
   };
 
-  // Capitalize author name (e.g. "kimi" → "Kimi")
+  // Format author: "equipo-pipod" → "Equipo Pipod"
   const formatAuthor = (author) => {
-    if (!author) return 'Pipod Team';
+    if (!author) return 'Equipo Pipod';
+    if (author.toLowerCase() === 'equipo-pipod' || author.toLowerCase() === 'kimi') {
+      return 'Equipo Pipod';
+    }
     return author
       .replace(/-/g, ' ')
       .split(' ')
@@ -273,7 +276,7 @@ export default function BlogFilter() {
           padding: 8px 16px;
           border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
           background: var(--pipod-color-white, #ffffff);
-          border-radius: 20px;
+          border-radius: 100px;
           font-size: 13px;
           font-weight: var(--pipod-weight-semibold, 600);
           color: var(--pipod-color-near-black, #1F1F1F);
@@ -326,7 +329,7 @@ export default function BlogFilter() {
           background: var(--pipod-color-deep-blue, #3A506B);
           color: var(--pipod-color-white, #ffffff);
           border: none;
-          border-radius: 8px;
+          border-radius: 100px;
           font-size: 14px;
           font-weight: var(--pipod-weight-semibold, 600);
           cursor: pointer;
@@ -334,7 +337,8 @@ export default function BlogFilter() {
         }
 
         .reset-btn:hover {
-          background: var(--pipod-color-near-black, #1F1F1F);
+          background: #000000;
+          transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {

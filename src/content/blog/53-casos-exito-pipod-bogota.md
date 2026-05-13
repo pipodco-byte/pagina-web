@@ -3,7 +3,7 @@ title: "Casos Éxito Pipod Bogotá | Historias Reales de Recuperación | Chapine
 description: "Lee casos reales de recuperación de equipos Apple en Pipod. Historias de clientes que recuperaron iPhones y MacBooks 'sin esperanza'. Chapinero, Bogotá."
 slug: "casos-exito-pipod-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "casos éxito Pipod"

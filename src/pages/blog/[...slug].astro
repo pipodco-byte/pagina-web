@@ -24,10 +24,10 @@ const { post } = Astro.props;
 const readingTime = calculateReadingTimeES(post.body || '');
 
 // Render the markdown content using the new API
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 ---
 
 <!-- Pass frontmatter as props to layout, including calculated reading time -->
-<BlogPostLayout {...post.data} readingTime={readingTime}>
+<BlogPostLayout {...post.data} readingTime={readingTime} headings={headings}>
   <Content />
 </BlogPostLayout>

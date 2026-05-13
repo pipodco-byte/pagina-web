@@ -3,7 +3,7 @@ title: "Guía Cambio Batería iPhone Bogotá | Todo Lo Que Debes Saber - Pipod"
 description: "Guía completa para cambiar la batería de tu iPhone en Bogotá. Precios, tiempos, garantías. 16 años de experiencia en Chapinero. ¡Lee antes de decidir!"
 slug: "guia-cambio-bateria-iphone-bogota"
 publishDate: "2026-06-01"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "guía"

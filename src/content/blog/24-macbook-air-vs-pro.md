@@ -3,7 +3,7 @@ title: "MacBook Air vs Pro Bogotá | Guía de Compra 2026 - Pipod"
 description: "¿MacBook Air o Pro en Bogotá? Comparativa completa 2026: rendimiento, precios, para quién es cada uno. Guía para tomar la mejor decisión."
 slug: "macbook-air-vs-pro-bogota"
 publishDate: "2026-06-01"
-author: "kimi"
+author: "equipo-pipod"
 category: "Guías"
 tags:
   - "MacBook Air"

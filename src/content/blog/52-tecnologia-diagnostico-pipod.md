@@ -3,7 +3,7 @@ title: "Tecnología Diagnóstico Pipod | Herramientas Profesionales | Chapinero 
 description: "Conoce la tecnología de diagnóstico que usa Pipod: osciloscopios, microscopios, estaciones de soldadura y software especializado. Precisión en Chapinero."
 slug: "tecnologia-diagnostico-pipod"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "tecnología diagnóstico"

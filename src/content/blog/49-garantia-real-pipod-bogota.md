@@ -3,7 +3,7 @@ title: "Garantía Real Pipod Bogotá | Qué Cubre y Cómo Funciona | Chapinero"
 description: "Conoce la garantía real de Pipod: 12 meses en todas las reparaciones. Qué cubre, cómo hacerla válida y por qué cumplimos. Desde Chapinero, Bogotá."
 slug: "garantia-real-pipod-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "garantía Pipod"

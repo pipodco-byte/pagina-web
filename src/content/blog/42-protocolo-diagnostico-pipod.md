@@ -3,7 +3,7 @@ title: "Protocolo Diagnóstico Pipod | Cómo Revisamos Tu Equipo | Chapinero"
 description: "Conoce el protocolo de diagnóstico de Pipod: 5 pasos para evaluar tu equipo Apple en 20 minutos. Transparencia total desde Chapinero, Bogotá."
 slug: "protocolo-diagnostico-pipod"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "CONFIANZA"
 tags:
   - "protocolo diagnóstico"

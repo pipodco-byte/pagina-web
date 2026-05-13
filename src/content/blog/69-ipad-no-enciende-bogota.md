@@ -3,7 +3,7 @@ title: "iPad No Enciende Bogotá | Reparación iPad Apagado | Pipod Chapinero"
 description: "iPad que no enciende en Bogotá. Diagnóstico y reparación de problemas de batería, placa, carga. Servicio en Chapinero. Evaluación gratuita. Garantía incluida."
 slug: "ipad-no-enciende-bogota"
 publishDate: "2026-05-12"
-author: "kimi"
+author: "equipo-pipod"
 category: "REPARACIONES"
 tags:
   - "iPad no enciende"
