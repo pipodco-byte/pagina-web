@@ -1,0 +1,80 @@
+---
+/**
+ * Wrapper.astro - Layout container component
+ *
+ * Provides consistent layout containers with size variants.
+ * Used to wrap sections and maintain consistent spacing.
+ *
+ * Size Variants:
+ * - default: max-width 1200px
+ * - large: max-width 1400px
+ * - full: 100% width
+ */
+
+interface Props {
+  size?: 'default' | 'large' | 'full';
+  class?: string;
+  id?: string;
+  as?: 'div' | 'section' | 'article' | 'main';
+}
+
+const {
+  size = 'default',
+  class: className = '',
+  id,
+  as: Tag = 'div'
+} = Astro.props;
+
+const sizeClasses: Record<string, string> = {
+  'default': 'wrapper-default',
+  'large': 'wrapper-large',
+  'full': 'wrapper-full'
+};
+
+const classes = `wrapper ${sizeClasses[size] || 'wrapper-default'} ${className}`.trim();
+---
+
+<Tag class={classes} id={id}>
+  <slot />
+</Tag>
+
+<style>
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--pipod-padding-desktop, 80px) var(--pipod-padding-mobile, 24px);
+    box-sizing: border-box;
+  }
+
+  /* Size Variants */
+  .wrapper-default {
+    max-width: 1200px;
+  }
+
+  .wrapper-large {
+    max-width: 1400px;
+  }
+
+  .wrapper-full {
+    max-width: 100%;
+  }
+
+  /* Responsive Padding */
+  @media (max-width: 768px) {
+    .wrapper {
+      padding: var(--pipod-padding-mobile, 50px) var(--pipod-padding-mobile-sm, 16px);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .wrapper {
+      padding: var(--pipod-padding-tablet, 40px) var(--pipod-padding-mobile, 24px);
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .wrapper {
+      padding: var(--pipod-padding-desktop, 80px) var(--pipod-padding-mobile, 24px);
+    }
+  }
+</style>

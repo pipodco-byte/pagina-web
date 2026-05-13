@@ -1,0 +1,80 @@
+# State: blog-editorial-redesign
+# Generated: 2026-05-12
+
+change: blog-editorial-redesign
+status: archived
+project: Astro-Ecommerce
+
+phases:
+  proposal:
+    status: complete
+    artifact: .atl/proposal/blog-editorial-redesign-proposal.md
+
+  spec:
+    status: complete
+    artifact: .atl/specs/blog-editorial-redesign-spec.md
+
+  design:
+    status: complete
+    artifact: .atl/design/blog-editorial-redesign-design.md
+
+  tasks:
+    status: complete
+    artifact: .atl/tasks/blog-editorial-redesign-tasks.md
+
+  apply:
+    status: complete
+    started: "2026-05-12"
+    completed: "2026-05-12"
+
+  verify:
+    status: not_performed
+    notes: "No verify report found in .atl/verify/. Build succeeded (exit 0, 75 pages)."
+
+  archive:
+    status: complete
+    completed: "2026-05-12"
+
+metrics:
+  pages_generated: 75
+  build_exit_code: 0
+  files_created: 5
+  files_modified: 2
+  files_archived: 1
+  tasks_completed: 5
+  tasks_deferred: 4
+
+artifacts:
+  created:
+    - src/styles/_blog-editorial.scss
+    - src/components/blog/BlogAuthor.astro
+    - src/components/blog/BlogCardEditorial.astro
+    - src/components/blog/BlogCardFeatured.astro
+    - src/components/blog/BlogHeroFeatured.astro
+
+  modified:
+    - src/pages/pipod-blog.astro
+    - src/components/blog/BlogFilter.jsx
+
+  archived:
+    - src/components/blog/BlogCard.astro
+
+key_decisions:
+  - CSS Grid (.blog-grid) over Bootstrap .row for editorial layout
+  - Used img with onerror fallback instead of Astro Image (OG images in public/)
+  - CSS-only initials avatar (32px circle, no external image dependency)
+  - _blog-editorial.scss imported via Astro frontmatter (blog-cards.css is plain CSS)
+  - Spanish date formatting (es-CO locale)
+  - Author name "kimi" capitalized to "Kimi"
+
+warnings:
+  - Phase 4 browser testing deferred (responsive, search/filter, image fallback not verified in browser)
+  - No formal verify report saved to .atl/verify/
+
+next_steps:
+  - Browser testing: responsive grid at 320px/768px/1024px/1440px
+  - Browser testing: search/filter functionality
+  - Browser testing: image fallback rendering
+  - Lighthouse performance audit as baseline
+  - Consider reading-time npm package for accurate word count estimates
+  - Address duplicate search bar (BlogHeroSection.astro vs BlogFilter.jsx)

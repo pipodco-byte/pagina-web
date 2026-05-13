@@ -1,0 +1,49 @@
+---
+/**
+ * BlogHeroFeatured.astro — Hero section wrapper for the featured blog post
+ *
+ * Renders a "Destacado" label heading followed by BlogCardFeatured
+ * for the most recent / first blog article.
+ *
+ * Props:
+ *   post: object — Flat post object with slug, title, category, tags, ogImage,
+ *                  publishDate, author, description, readingTime
+ */
+
+import BlogCardFeatured from './BlogCardFeatured.astro';
+
+interface Post {
+  slug: string;
+  title: string;
+  category: string;
+  tags?: string[];
+  ogImage?: string;
+  publishDate: string;
+  author?: string;
+  description?: string;
+  readingTime?: string;
+}
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<section class="blog-hero-featured">
+  <div class="container">
+    <span class="blog-hero-featured__label">Destacado</span>
+    <BlogCardFeatured
+      slug={post.slug}
+      title={post.title}
+      category={post.category}
+      tags={post.tags}
+      ogImage={post.ogImage}
+      publishDate={post.publishDate}
+      author={post.author}
+      description={post.description}
+      readingTime={post.readingTime}
+    />
+  </div>
+</section>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCartStore } from '../hooks/useCartStore';
+import { useHydrated } from '../hooks/useHydrated';
 import './pipodNavbar.css';
 
 const PipodNavbar = () => {
@@ -8,6 +9,7 @@ const PipodNavbar = () => {
   const [animateCart, setAnimateCart] = useState(false);
   const { itemCount, openCart } = useCartStore();
   const [prevItemCount, setPrevItemCount] = useState(itemCount);
+  const isHydrated = useHydrated();
 
   useEffect(() => {
     const handleScrollEvent = () => {
@@ -68,7 +70,7 @@ const PipodNavbar = () => {
               title="Ver carrito"
             >
               <i className="bi bi-bag"></i>
-              {itemCount > 0 && (
+              {isHydrated && itemCount > 0 && (
                 <span className={`cart-badge ${animateCart ? 'pop' : ''}`}>
                   {itemCount}
                 </span>
@@ -107,7 +109,7 @@ const PipodNavbar = () => {
                 }}
               >
                 <i className="bi bi-bag"></i>
-                {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
+                {isHydrated && itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
                 Ver carrito
               </button>
               <a href="https://wa.me/573124813094" target="_blank" rel="noopener noreferrer" className="btn-premium mobile-cta" onClick={closeMobileMenu}>Cotizar servicio</a>

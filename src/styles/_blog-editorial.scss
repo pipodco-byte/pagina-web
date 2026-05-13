@@ -1,0 +1,418 @@
+// ============================================
+// BLOG EDITORIAL REDESIGN
+// CSS Grid layout + card styles + author component
+// Uses --pipod-* CSS custom properties from _tokens.css
+// NO Tailwind classes — all styles in SCSS
+// ============================================
+
+// ============================================
+// 1. GRID LAYOUT
+// ============================================
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--pipod-space-xl, 32px);
+  padding: var(--pipod-space-2xl, 48px) 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--pipod-space-lg, 24px);
+    padding: var(--pipod-space-xl, 32px) 0;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1025px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ============================================
+// 2. EDITORIAL CARD (BlogCard3 pattern)
+// ============================================
+.blog-card-editorial {
+  background: var(--pipod-color-white, #ffffff);
+  border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+  border-radius: var(--pipod-radius-standard, 24px);
+  overflow: hidden;
+  transition:
+    transform var(--pipod-transition-normal, 300ms ease),
+    box-shadow var(--pipod-transition-normal, 300ms ease);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--pipod-shadow-elevated, 0 8px 24px rgba(0, 0, 0, 0.1));
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__image {
+    aspect-ratio: 12 / 8;
+    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--pipod-transition-normal, 300ms ease);
+    }
+  }
+
+  &:hover &__image img {
+    transform: scale(1.03);
+  }
+
+  &__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-text {
+      color: var(--pipod-color-white, #ffffff);
+      font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+      font-size: var(--pipod-size-h3, 1.5rem);
+      font-weight: var(--pipod-weight-extrabold, 800);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+      opacity: 0.7;
+    }
+  }
+
+  &__body {
+    padding: var(--pipod-space-lg, 24px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pipod-space-xs, 4px);
+    margin-bottom: var(--pipod-space-sm, 8px);
+  }
+
+  &__tag {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: var(--pipod-size-micro, 0.65rem);
+    font-weight: var(--pipod-weight-medium, 500);
+    color: var(--pipod-color-deep-blue, #3A506B);
+    background: rgba(58, 80, 107, 0.08);
+    padding: 2px 8px;
+    border-radius: var(--pipod-radius-pill, 50px);
+    text-transform: capitalize;
+  }
+
+  &__category {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: var(--pipod-size-label, 0.7rem);
+    font-weight: var(--pipod-weight-extrabold, 800);
+    color: var(--pipod-color-deep-blue, #3A506B);
+    text-transform: uppercase;
+    letter-spacing: var(--pipod-tracking-wider, 0.05em);
+    margin-bottom: var(--pipod-space-sm, 8px);
+    display: inline-block;
+  }
+
+  &__title {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-h3, 1.5rem);
+    font-weight: var(--pipod-weight-bold, 700);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    line-height: var(--pipod-leading-snug, 1.25);
+    margin: 0 0 var(--pipod-space-sm, 8px) 0;
+    letter-spacing: var(--pipod-tracking-tight, -0.02em);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__excerpt {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-body, 0.95rem);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    line-height: var(--pipod-leading-relaxed, 1.6);
+    margin: 0;
+    flex: 1;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__meta {
+    padding: var(--pipod-space-md, 16px) var(--pipod-space-lg, 24px);
+    border-top: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+  }
+}
+
+// ============================================
+// 3. FEATURED CARD (BlogCard2 pattern — hero variant)
+// ============================================
+.blog-card-featured {
+  background: var(--pipod-color-white, #ffffff);
+  border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+  border-radius: var(--pipod-radius-standard, 24px);
+  overflow: hidden;
+  transition:
+    transform var(--pipod-transition-normal, 300ms ease),
+    box-shadow var(--pipod-transition-normal, 300ms ease);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--pipod-shadow-elevated, 0 8px 24px rgba(0, 0, 0, 0.1));
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--pipod-transition-normal, 300ms ease);
+    }
+  }
+
+  &:hover &__image-wrapper img {
+    transform: scale(1.02);
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    z-index: 1;
+  }
+
+  &__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      color: var(--pipod-color-white, #ffffff);
+      font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+      font-size: var(--pipod-size-h2, 2rem);
+      font-weight: var(--pipod-weight-extrabold, 800);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+      opacity: 0.6;
+    }
+  }
+
+  &__content {
+    padding: var(--pipod-space-xl, 32px);
+  }
+
+  &__featured-badge {
+    display: inline-block;
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: var(--pipod-size-micro, 0.65rem);
+    font-weight: var(--pipod-weight-bold, 700);
+    color: var(--pipod-color-white, #ffffff);
+    background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
+    padding: 4px 12px;
+    border-radius: var(--pipod-radius-pill, 50px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--pipod-space-sm, 8px);
+  }
+
+  &__category {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: var(--pipod-size-label, 0.7rem);
+    font-weight: var(--pipod-weight-extrabold, 800);
+    color: var(--pipod-color-deep-blue, #3A506B);
+    text-transform: uppercase;
+    letter-spacing: var(--pipod-tracking-wider, 0.05em);
+    display: block;
+    margin-bottom: var(--pipod-space-md, 16px);
+  }
+
+  &__title {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-h2, 2rem);
+    font-weight: var(--pipod-weight-extrabold, 800);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    line-height: var(--pipod-leading-tight, 1.2);
+    margin: 0 0 var(--pipod-space-md, 16px) 0;
+    letter-spacing: var(--pipod-tracking-tight, -0.02em);
+  }
+
+  &__excerpt {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-body, 0.95rem);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    line-height: var(--pipod-leading-relaxed, 1.6);
+    margin: 0 0 var(--pipod-space-lg, 24px) 0;
+  }
+
+  &__meta {
+    border-top: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+    padding-top: var(--pipod-space-md, 16px);
+  }
+}
+
+// ============================================
+// 4. AUTHOR COMPONENT
+// ============================================
+.blog-author {
+  display: flex;
+  align-items: center;
+  gap: var(--pipod-space-sm, 8px);
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--pipod-radius-subtle, 8px);
+    background: var(--pipod-color-deep-blue, #3A506B);
+    color: var(--pipod-color-white, #ffffff);
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: var(--pipod-size-label, 0.7rem);
+    font-weight: var(--pipod-weight-bold, 700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  &__name {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: var(--pipod-size-small, 0.85rem);
+    font-weight: var(--pipod-weight-semibold, 600);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    line-height: 1.2;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--pipod-space-xs, 4px);
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: var(--pipod-size-label, 0.7rem);
+    color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+    line-height: 1.2;
+    flex-wrap: wrap;
+  }
+
+  &__separator {
+    color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+  }
+
+  &__reading-time {
+    white-space: nowrap;
+  }
+}
+
+// ============================================
+// 5. HERO FEATURED SECTION WRAPPER
+// ============================================
+.blog-hero-featured {
+  padding: var(--pipod-space-2xl, 48px) 0;
+
+  &__label {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: var(--pipod-size-label, 0.7rem);
+    font-weight: var(--pipod-weight-bold, 700);
+    color: var(--pipod-color-deep-blue, #3A506B);
+    text-transform: uppercase;
+    letter-spacing: var(--pipod-tracking-wider, 0.05em);
+    margin-bottom: var(--pipod-space-md, 16px);
+    display: block;
+  }
+}
+
+// ============================================
+// 6. RESPONSIVE BREAKPOINTS
+// ============================================
+@media (max-width: 768px) {
+  .blog-card-featured {
+    &__content {
+      padding: var(--pipod-space-lg, 24px);
+    }
+
+    &__title {
+      font-size: var(--pipod-size-h3, 1.5rem);
+    }
+
+    &__excerpt {
+      font-size: var(--pipod-size-small, 0.85rem);
+      margin-bottom: var(--pipod-space-md, 16px);
+    }
+  }
+
+  .blog-card-editorial {
+    &__body {
+      padding: var(--pipod-space-md, 16px);
+    }
+
+    &__meta {
+      padding: var(--pipod-space-sm, 8px) var(--pipod-space-md, 16px);
+    }
+
+    &__title {
+      font-size: var(--pipod-size-ui-medium, 1rem);
+    }
+  }
+
+  .blog-hero-featured {
+    padding: var(--pipod-space-xl, 32px) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-card-featured {
+    &__title {
+      font-size: var(--pipod-size-h4, 1.25rem);
+    }
+  }
+
+  .blog-card-editorial {
+    &__title {
+      font-size: var(--pipod-size-body, 0.95rem);
+    }
+  }
+}

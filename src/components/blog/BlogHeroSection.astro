@@ -1,27 +1,30 @@
 ---
 ---
 
-<section style="background: linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 100%); padding: 80px 0; margin-top: 2rem;">
+<section class="blog-hero">
   <div class="container">
-    <div class="text-center">
-      <h1 style="font-family: 'Inter', sans-serif; font-size: 3rem; font-weight: 800; color: #000000; margin: 0; letter-spacing: -0.02em; text-transform: uppercase;">
-        Blog Pipod
-      </h1>
-      <p style="font-size: 1.25rem; color: #666; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <div class="blog-hero__content">
+      {/*
+      <h1 class="blog-hero__title">Blog Pipod</h1>
+      <p class="blog-hero__subtitle">
         Artículos, tips y guías sobre reparación, mantenimiento y optimización de equipos Apple
       </p>
-      
-      <div style="margin-top: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; display: flex; gap: 10px;">
-        <input 
-          type="text" 
-          id="searchInput"
-          placeholder="Buscar artículos..." 
-          style="flex: 1; padding: 12px 20px; border: 2px solid #E0E0E0; border-radius: 50px; font-size: 1rem; font-family: 'Inter', sans-serif; transition: all 0.3s ease;"
-          onkeyup="filterBlogPosts(this.value)"
-        />
-        <button 
+      */}
+
+      <div class="blog-hero__search">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar artículos..."
+            class="search-input"
+            onkeyup="filterBlogPosts(this.value)"
+          />
+        </div>
+        <button
+          class="search-btn"
           onclick="filterBlogPosts(document.getElementById('searchInput').value)"
-          style="padding: 12px 30px; background: #000000; color: #FFFFFF; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'Inter', sans-serif;"
         >
           <i class="bi bi-search"></i>
         </button>
@@ -30,41 +33,136 @@
   </div>
 </section>
 
-<style is:global>
+<style>
+  .blog-hero {
+    background: linear-gradient(
+      135deg,
+      var(--pipod-color-light-surface, #F5F5F7) 0%,
+      var(--pipod-color-white, #ffffff) 100%
+    );
+    padding: var(--pipod-space-3xl, 80px) 0;
+    margin-top: var(--pipod-space-md, 16px);
+  }
+
+  .blog-hero__content {
+    text-align: center;
+  }
+
+  .blog-hero__title {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-h1, 2.8rem);
+    font-weight: var(--pipod-weight-bold, 700);
+    color: var(--pipod-color-black, #000000);
+    letter-spacing: var(--pipod-tracking-tight, -0.02em);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .blog-hero__subtitle {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-h2, 2rem);
+    font-weight: var(--pipod-weight-regular, 400);
+    color: var(--pipod-color-near-black, #1F1F1F);
+    margin-top: var(--pipod-space-md, 16px);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: var(--pipod-leading-relaxed, 1.6);
+  }
+
+  .blog-hero__search {
+    margin-top: var(--pipod-space-xl, 32px);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    gap: var(--pipod-space-sm, 8px);
+  }
+
+  .search-box {
+    position: relative;
+    flex: 1;
+  }
+
+  .search-box i {
+    position: absolute;
+    left: var(--pipod-space-md, 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+    font-size: var(--pipod-size-ui-medium, 1rem);
+  }
+
+  .search-input {
+    width: 100%;
+    padding: var(--pipod-space-md, 16px) var(--pipod-space-md, 16px) var(--pipod-space-md, 16px) calc(var(--pipod-space-md, 16px) * 2 + 18px);
+    border: 2px solid var(--pipod-color-border-gray, #E5E5E7);
+    border-radius: var(--pipod-radius-pill, 50px);
+    font-size: var(--pipod-size-ui-medium, 1rem);
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    transition:
+      border-color var(--pipod-transition-fast, 150ms ease),
+      box-shadow var(--pipod-transition-fast, 150ms ease);
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--pipod-color-deep-blue, #3A506B);
+    box-shadow: 0 0 0 3px rgba(58, 80, 107, 0.1);
+  }
+
+  .search-btn {
+    padding: var(--pipod-space-md, 16px) var(--pipod-space-lg, 24px);
+    background: var(--pipod-color-black, #000000);
+    color: var(--pipod-color-white, #ffffff);
+    border: none;
+    border-radius: var(--pipod-radius-pill, 50px);
+    font-weight: var(--pipod-weight-semibold, 600);
+    cursor: pointer;
+    transition:
+      background var(--pipod-transition-fast, 150ms ease),
+      transform var(--pipod-transition-fast, 150ms ease);
+  }
+
+  .search-btn:hover {
+    background: var(--pipod-color-near-black, #1F1F1F);
+    transform: translateY(-2px);
+  }
+
   @media (max-width: 768px) {
-    section[style*="background: linear-gradient"] {
-      padding: 40px 0 !important;
+    .blog-hero {
+      padding: var(--pipod-space-2xl, 48px) 0;
     }
 
-    section[style*="background: linear-gradient"] h1 {
-      font-size: 1.8rem !important;
+    .blog-hero__title {
+      font-size: var(--pipod-size-h2, 2rem);
     }
 
-    section[style*="background: linear-gradient"] p {
-      font-size: 1rem !important;
+    .blog-hero__subtitle {
+      font-size: var(--pipod-size-ui-medium, 1rem);
     }
 
-    div[style*="margin-top: 2rem; max-width: 500px"] {
-      flex-direction: column !important;
-      gap: 12px !important;
+    .blog-hero__search {
+      flex-direction: column;
+      gap: var(--pipod-space-sm, 8px);
     }
 
-    input[placeholder="Buscar artículos..."] {
-      width: 100% !important;
+    .search-btn {
+      width: 100%;
     }
   }
 </style>
 
 <script>
   function filterBlogPosts(searchTerm) {
-    const cards = document.querySelectorAll('.blog-card-white');
+    const cards = document.querySelectorAll('.blog-card');
     const searchLower = searchTerm.toLowerCase();
-    
+
     cards.forEach(card => {
-      const title = card.querySelector('.card-t')?.textContent.toLowerCase() || '';
-      const excerpt = card.querySelector('.card-p')?.textContent.toLowerCase() || '';
-      const category = card.querySelector('.card-cat')?.textContent.toLowerCase() || '';
-      
+      const title = card.querySelector('.blog-card__title')?.textContent.toLowerCase() || '';
+      const excerpt = card.querySelector('.blog-card__excerpt')?.textContent.toLowerCase() || '';
+      const category = card.querySelector('.blog-card__category')?.textContent.toLowerCase() || '';
+
       if (title.includes(searchLower) || excerpt.includes(searchLower) || category.includes(searchLower)) {
         card.parentElement.style.display = 'block';
       } else {

@@ -1,0 +1,97 @@
+# State: blog-phanatik-enhancements
+# Generated: 2026-05-12
+
+change: blog-phanatik-enhancements
+status: archived
+project: Astro-Ecommerce
+
+phases:
+  proposal:
+    status: complete
+    artifact: engram #112
+    topic_key: sdd/blog-phanatik-enhancements/proposal
+
+  spec:
+    status: complete
+    artifact: engram #114
+    topic_key: sdd/blog-phanatik-enhancements/spec
+
+  design:
+    status: complete
+    artifact: engram #113
+    topic_key: sdd/blog-phanatik-enhancements/design
+
+  tasks:
+    status: complete
+    artifact: engram #115
+    topic_key: sdd/blog-phanatik-enhancements/tasks
+
+  apply:
+    status: complete
+    started: "2026-05-12"
+    completed: "2026-05-13"
+    artifact: engram #116
+    topic_key: sdd/blog-phanatik-enhancements/apply-progress
+
+  verify:
+    status: complete
+    started: "2026-05-12"
+    completed: "2026-05-13"
+    artifact: engram #117
+    topic_key: sdd/blog-phanatik-enhancements/verify-report
+    verdict: conditionally_ready
+    critical_issues: 0
+    warnings: 3
+    suggestions: 2
+
+  archive:
+    status: complete
+    completed: "2026-05-12"
+    artifact: engram
+    topic_key: sdd/blog-phanatik-enhancements/archive-report
+
+metrics:
+  components_created: 7
+  files_created: 8
+  files_modified: 1
+  pages_generated: 83
+  build_errors: 0
+  build_exit_code: 0
+  tasks_total: 17
+  tasks_completed: 15
+  tasks_incomplete: 2
+
+artifacts:
+  created:
+    - src/components/blog/BlogCardList.astro
+    - src/components/blog/BlogSidebar.astro
+    - src/components/blog/BlogCardCompact.astro
+    - src/components/blog/BlogCardOverlay.astro
+    - src/components/blog/BriefsSection.astro
+    - src/components/blog/TopStoriesSection.astro
+    - src/components/blog/CategoriesGrid.astro
+    - src/styles/_blog-phanatik.scss
+
+  modified:
+    - src/pages/pipod-blog.astro
+
+archived: []
+
+key_decisions:
+  - Used existing category field instead of adding boolean schema flags
+  - Scoped <style> blocks in each .astro component (self-contained)
+  - Text-only sidebar (BlogSidebar) matches Aside1 pattern — no images in narrow aside space
+  - BlogCardOverlay uses gradient overlay bottom-third with image onerror fallback
+  - CategoriesGrid derives counts from getCollection('blog') at build time — no schema changes
+  - Spanish locale (es-CO) for all date formatting and labels
+  - All styling uses --pipod-* CSS custom properties, no Tailwind
+
+warnings:
+  - Task 1.3 (shared date formatter utility) not implemented — each component inlines toLocaleDateString('es-CO', ...)
+  - Shared SCSS _blog-phanatik.scss defines placeholders not consumed by any component — styles duplicated per-component
+  - CSS nesting warnings (~40 &__selector patterns) in compiled output — work in modern browsers but technically invalid CSS nesting syntax
+
+next_steps:
+  - Extract formatDateSpanish() to src/utils/date.ts and import across components
+  - Refactor components to consume shared SCSS placeholders from _blog-phanatik.scss
+  - Migrate &__selector BEM patterns to use @nest or flat selectors to eliminate CSS warnings

@@ -1,0 +1,94 @@
+---
+/**
+ * BlogCardEditorial.astro — Standard editorial blog card (Phanatik BlogCard3 pattern)
+ *
+ * Structure: image (top) → tags row → category badge → title → author
+ * Image fallback: CSS gradient placeholder when ogImage is missing/invalid
+ *
+ * Props:
+ *   slug: string        — Article URL path
+ *   title: string       — Article title
+ *   category: string    — Category badge text
+ *   tags?: string[]     — Tag labels
+ *   ogImage?: string    — OG image path (e.g. "/images/blog/{slug}/og-{slug}.webp")
+ *   publishDate: string — ISO date string
+ *   author?: string     — Author name
+ *   description?: string— Article excerpt
+ *   readingTime?: string— e.g. "5 min de lectura"
+ */
+
+import BlogAuthor from './BlogAuthor.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  category: string;
+  tags?: string[];
+  ogImage?: string;
+  publishDate: string;
+  author?: string;
+  description?: string;
+  readingTime?: string;
+}
+
+const {
+  slug,
+  title,
+  category,
+  tags = [],
+  ogImage,
+  publishDate,
+  author,
+  description,
+  readingTime,
+} = Astro.props;
+
+const hasImage = !!ogImage;
+const cardHref = slug ? `/blog/${slug}` : '#';
+---
+
+<article class="blog-card-editorial">
+  <a href={cardHref} class="blog-card-editorial__link" aria-label={`Leer: ${title}`}>
+    <!-- Image section: gradient placeholder with optional img overlay -->
+    <div class="blog-card-editorial__image">
+      {hasImage ? (
+        <img
+          src={ogImage}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+          onerror="this.style.display='none'"
+        />
+      ) : (
+        <div class="blog-card-editorial__placeholder">
+          <span class="blog-card-editorial__placeholder-text">{category}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- Content section -->
+    <div class="blog-card-editorial__body">
+      {tags.length > 0 && (
+        <div class="blog-card-editorial__tags">
+          {tags.map((tag) => (
+            <span class="blog-card-editorial__tag">{tag}</span>
+          ))}
+        </div>
+      )}
+      <span class="blog-card-editorial__category">{category}</span>
+      <h3 class="blog-card-editorial__title">{title}</h3>
+      {description && (
+        <p class="blog-card-editorial__excerpt">{description}</p>
+      )}
+    </div>
+  </a>
+
+  <!-- Author footer -->
+  <div class="blog-card-editorial__meta">
+    <BlogAuthor
+      author={author}
+      publishDate={publishDate}
+      readingTime={readingTime}
+    />
+  </div>
+</article>
