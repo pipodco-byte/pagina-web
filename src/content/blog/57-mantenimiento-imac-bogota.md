@@ -30,7 +30,7 @@ Aquí te explicamos qué necesita tu iMac para mantenerse en óptimas condicione
 
 ---
 
-## 🔧 Qué Incluye el Mantenimiento de iMac
+## Mantenimiento iMac en Bogotá: Qué Incluye
 
 ### 1. Limpieza Interna Completa
 **Desarme del iMac:**
@@ -110,7 +110,7 @@ Aquí te explicamos qué necesita tu iMac para mantenerse en óptimas condicione
 
 ---
 
-## 💰 Costos Aproximados Bogotá 2026
+## Precios Mantenimiento iMac en Bogotá 2026
 
 ### iMac 21.5"
 **Costo aproximado:** $350.000-450.000 COP
@@ -138,7 +138,7 @@ Aquí te explicamos qué necesita tu iMac para mantenerse en óptimas condicione
 
 ---
 
-## 📅 Frecuencia de Mantenimiento
+## Frecuencia de Mantenimiento iMac en Bogotá
 
 ### Uso Hogareño (4-6 horas diarias)
 **Recomendación:** Cada 24-36 meses
@@ -157,7 +157,7 @@ Aquí te explicamos qué necesita tu iMac para mantenerse en óptimas condicione
 
 ---
 
-## ⚠️ Señales de Que Tu iMac Necesita Mantenimiento
+## Señales de Que Tu iMac Necesita Mantenimiento en Bogotá
 
 ### Rendimiento
 - [ ] Más lento que antes
@@ -178,7 +178,7 @@ Aquí te explicamos qué necesita tu iMac para mantenerse en óptimas condicione
 
 ---
 
-## 🆚 Taller vs Domicilio
+## Taller vs Domicilio para iMac en Bogotá
 
 | Aspecto | En Taller (Chapinero) | A Domicilio |
 |---------|----------------------|-------------|
@@ -195,7 +195,7 @@ Aquí te explicamos qué necesita tu iMac para mantenerse en óptimas condicione
 
 ---
 
-## 🎯 Proceso en Pipod
+## Proceso de Mantenimiento iMac en Pipod
 
 ### Paso 1: Evaluación
 - Estado general del iMac
@@ -228,7 +228,7 @@ Aquí te explicamos qué necesita tu iMac para mantenerse en óptimas condicione
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Mantenimiento iMac en Bogotá
 
 **¿El mantenimiento anula la garantía de Apple?**
 Si tu iMac aún tiene garantía Apple, mejor llevarlo a ellos. Si ya venció, mantenimiento con nosotros no tiene problema.

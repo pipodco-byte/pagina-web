@@ -38,7 +38,7 @@ Vamos.
 
 ---
 
-## 🔴 Señal #1: Se Apaga Con 20-30% de Batería
+## Señal #1: Se Apaga Con 20-30% de Batería sobre Cambio Batería iPhone Bogotá
 
 **Qué pasa:** Estás usando el iPhone normal, dice 25%... y se apaga.
 
@@ -55,7 +55,7 @@ Vamos.
 
 ---
 
-## 🔴 Señal #2: Dura Menos de Medio Día Con Uso Normal
+## Señal #2: Dura Menos de Medio Día Con Uso Normal sobre Cambio Batería iPhone Bogotá
 
 **Qué pasa:** Lo cargas a las 7am, a la 1pm ya pide cargador.
 
@@ -72,7 +72,7 @@ Vamos.
 
 ---
 
-## 🚨 Señal #3: La Batería Está Hinchada
+## Señal #3: La Batería de iPhone Está Hinchada sobre Cambio Batería iPhone Bogotá
 
 **Qué pasa:** La tapa trasera se separa, pantalla se levanta ligeramente.
 
@@ -94,7 +94,7 @@ Vamos.
 
 ---
 
-## 🔴 Señal #4: "Rendimiento Máximo Desactivado"
+## Señal #4: Rendimiento Máximo Desactivado sobre Cambio Batería iPhone Bogotá
 
 **Qué pasa:** iOS muestra mensaje en Configuración > Batería > Salud
 
@@ -111,7 +111,7 @@ Vamos.
 
 ---
 
-## 🔴 Señal #5: Tiempos de Carga Excesivos
+## Señal #5: Tiempos de Carga Excesivos sobre Cambio Batería iPhone Bogotá
 
 **Qué pasa:** De 0 a 100% toma 4+ horas.
 
@@ -126,7 +126,7 @@ Vamos.
 
 ---
 
-## 🔴 Señal #6: Se Apaga Solo en Frío o Calor
+## Señal #6: Se Apaga Solo en Frío o Calor sobre Cambio Batería iPhone Bogotá
 
 **Qué pasa:** iPhone funciona bien a temperatura ambiente, pero se apaga solo cuando hace mucho frío o calor.
 
@@ -143,7 +143,7 @@ Vamos.
 
 ---
 
-## 🔴 Señal #7: Porcentaje Salta de Forma Errática
+## Señal #7: Porcentaje Salta de Forma Errática sobre Cambio Batería iPhone Bogotá
 
 **Qué pasa:** Dice 50%, lo dejas 5 minutos, dice 20%... o al revés.
 
@@ -158,7 +158,7 @@ Vamos.
 
 ---
 
-## 📊 Checklist: ¿Necesito Cambio de Batería?
+## Checklist: ¿Necesito Cambio de Batería sobre Cambio Batería iPhone Bogotá
 
 Marca las que apliquen:
 
@@ -179,7 +179,7 @@ Marca las que apliquen:
 
 ---
 
-## ⚡ Nuestro Servicio de Cambio de Batería
+## Nuestro Servicio de Cambio de Batería de iPhone sobre Cambio Batería iPhone Bogotá
 
 En Pipod Chapinero:
 
@@ -206,7 +206,7 @@ En Pipod Chapinero:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Señales de Cambio de Batería iPhone sobre Cambio Batería iPhone Bogotá
 
 **¿Es peligroso usar el iPhone con batería hinchada?**
 Sí. Puede dañar pantalla, Face ID, y en casos extremos hay riesgo de fuga. Cambiar urgentemente.

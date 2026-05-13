@@ -30,7 +30,7 @@ Estas son historias reales de recuperación.
 
 ---
 
-## 📱 Caso 1: El iPhone de la Boda
+## Caso 1: El iPhone de la Boda - Recuperación en Bogotá
 
 ### El Problema
 **Equipo:** iPhone 12 Pro Max
@@ -51,7 +51,6 @@ Estas son historias reales de recuperación.
 - Placa con sulfatación inicial
 
 **Proceso:**
-- Apertura inmediata
 - Limpieza con alcohol isopropílico ultra-puro
 - Secado profesional 4 horas
 - Reemplazo de 2 componentes en placa
@@ -70,7 +69,7 @@ Estas son historias reales de recuperación.
 
 ---
 
-## 💻 Caso 2: El MacBook del Arquitecto
+## Caso 2: El MacBook del Arquitecto - Recuperación en Bogotá
 
 ### El Problema
 **Equipo:** MacBook Pro 15" 2018
@@ -113,7 +112,7 @@ Estas son historias reales de recuperación.
 
 ---
 
-## 📱 Caso 3: Los 15 iPhones de la Empresa
+## Caso 3: Los 15 iPhones de la Empresa - Servicio en Bogotá
 
 ### El Problema
 **Equipo:** 15 iPhones 8 corporativos
@@ -153,7 +152,7 @@ Estas son historias reales de recuperación.
 
 ---
 
-## 📱 Caso 4: El iPhone "Muerto" del Estudiante
+## Caso 4: El iPhone "Muerto" del Estudiante - Recuperación en Bogotá
 
 ### El Problema
 **Equipo:** iPhone X
@@ -193,7 +192,7 @@ Estas son historias reales de recuperación.
 
 ---
 
-## 💻 Caso 5: La Microsoldadura Imposible
+## Caso 5: La Microsoldadura Imposible - Recuperación en Bogotá
 
 ### El Problema
 **Equipo:** iPhone 12

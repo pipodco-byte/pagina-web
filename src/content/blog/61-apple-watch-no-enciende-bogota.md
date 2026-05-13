@@ -30,7 +30,7 @@ Aquí te explicamos qué puede pasar y qué podemos hacer.
 
 ---
 
-## 🔍 Causas de Apple Watch Que No Enciende
+## Causas de Apple Watch Que No Enciende en Bogotá
 
 ### 1. Batería Completamente Descargada
 **Síntomas:**
@@ -114,7 +114,7 @@ Aquí te explicamos qué puede pasar y qué podemos hacer.
 
 ---
 
-## 💰 Costos Aproximados Bogotá 2026
+## Precios Reparación Apple Watch No Enciende en Bogotá 2026
 
 ### Diagnóstico
 **Costo:** Gratis
@@ -143,7 +143,7 @@ Aquí te explicamos qué puede pasar y qué podemos hacer.
 
 ---
 
-## ⚠️ Limitaciones de Reparación Apple Watch
+## Limitaciones de Reparación Apple Watch en Bogotá
 
 ### Lo Que SÍ Podemos Hacer
 - ✅ Cambio de batería (pila)
@@ -163,7 +163,7 @@ Es el dispositivo Apple más difícil de reparar. Sellado, compacto, componentes
 
 ---
 
-## 🎯 Nuestro Proceso
+## Proceso de Reparación Apple Watch No Enciende en Pipod
 
 ### Paso 1: Diagnóstico Gratis
 - Evaluación visual
@@ -189,7 +189,7 @@ Es el dispositivo Apple más difícil de reparar. Sellado, compacto, componentes
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Apple Watch No Enciende en Bogotá
 
 **¿Pueden reparar cualquier Apple Watch?**
 No. Depende del modelo y la falla. Baterías generalmente sí. Placas lógicas no. Diagnosticamos gratis para evaluar.

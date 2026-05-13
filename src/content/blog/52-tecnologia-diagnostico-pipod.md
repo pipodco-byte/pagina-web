@@ -30,9 +30,9 @@ Conoce el equipamiento que nos permite diagnosticar y reparar con precisión.
 
 ---
 
-## 🔬 Equipos de Diagnóstico
+## Equipos de Diagnóstico que Usamos en Nuestro Taller Apple en Bogotá
 
-### Osciloscopio Digital
+### Osciloscopio Digital para Diagnóstico Apple
 **Qué es:** Instrumento que mide y grafica señales eléctricas
 
 **Para qué lo usamos:**
@@ -49,7 +49,7 @@ Conoce el equipamiento que nos permite diagnosticar y reparar con precisión.
 
 ---
 
-### Microscopio Estéreo
+### Microscopio Estéreo para Diagnóstico Apple
 **Qué es:** Microscopio de doble ocular con magnificación 7x-45x
 
 **Para qué lo usamos:**
@@ -66,7 +66,7 @@ Conoce el equipamiento que nos permite diagnosticar y reparar con precisión.
 
 ---
 
-### Estación de Soldadura de Precisión
+### Estación de Soldadura de Precisión para Diagnóstico Apple
 **Qué es:** Sistema de soldadura con control exacto de temperatura
 
 **Especificaciones:**
@@ -83,7 +83,7 @@ Conoce el equipamiento que nos permite diagnosticar y reparar con precisión.
 
 ---
 
-### Estación de Aire Caliente (Hot Air)
+### Estación de Aire Caliente (Hot Air) para Diagnóstico Apple
 **Qué es:** Sistema de calor controlado para soldadura sin contacto
 
 **Especificaciones:**
@@ -100,7 +100,7 @@ Conoce el equipamiento que nos permite diagnosticar y reparar con precisión.
 
 ---
 
-### Fuente de Poder Regulada
+### Fuente de Poder Regulada para Diagnóstico Apple
 **Qué es:** Suministro de energía controlado para pruebas
 
 **Especificaciones:**

@@ -112,7 +112,7 @@ Verificamos reconocimiento en diferentes ángulos y condiciones de luz.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación Face ID iPhone en Bogotá
 
 **1. ¿Por qué falló mi Face ID después de cambiar la pantalla?**
 El técnico no transplantó tu sensor TrueDepth original. Es un procedimiento delicado que no todos hacen.

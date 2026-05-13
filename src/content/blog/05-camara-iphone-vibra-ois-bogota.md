@@ -88,7 +88,7 @@ Verificamos enfoque en diferentes distancias, estabilización de video, y calida
 
 ---
 
-## ¿Por Qué Elegir Pipod en Chapinero?
+## ¿Por Qué Elegir Pipod para Reparación Cámara iPhone en Bogotá?
 
 | Característica | Pipod (Laboratorio) |
 |----------------|---------------------|
@@ -104,7 +104,7 @@ Verificamos enfoque en diferentes distancias, estabilización de video, y calida
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación Cámara iPhone en Bogotá
 
 **¿Perderé mis fotos si reparan la cámara?**
 No. El reemplazo del módulo de cámara no afecta el almacenamiento interno ni tus datos.

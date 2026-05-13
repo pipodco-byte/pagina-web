@@ -112,7 +112,7 @@ Probamos llamadas, grabación de audio, FaceTime, y altavoz multimedia. Entregam
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación de Audio iPhone en Bogotá
 
 **¿Cuánto tiempo toma la reparación?**
 - Limpieza profunda o cambio de flex: **90 minutos** mientras te tomas un café

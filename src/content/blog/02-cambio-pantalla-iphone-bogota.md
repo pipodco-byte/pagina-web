@@ -92,7 +92,7 @@ Verificamos brillo, táctil, True Tone (si aplica), y Face ID. Entregamos con **
 
 ---
 
-## ¿Por qué elegir Pipod en Chapinero?
+## ¿Por qué elegir Pipod para Cambio de Pantalla iPhone en Bogotá?
 
 | Característica | Pipod (Laboratorio) |
 |----------------|---------------------|
@@ -109,7 +109,7 @@ Verificamos brillo, táctil, True Tone (si aplica), y Face ID. Entregamos con **
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Cambio de Pantalla iPhone en Bogotá
 
 **¿Perderé Face ID al cambiar la pantalla?**
 Si la instalación se hace correctamente, Face ID se preserva. En Pipod tenemos cuidado especial con los sensores del notch/Dynamic Island.

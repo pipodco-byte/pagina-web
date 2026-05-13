@@ -30,7 +30,7 @@ Este es el protocolo que seguimos con cada equipo que entra a Pipod. Paso a paso
 
 ---
 
-## 📋 Los 5 Pasos de Nuestro Diagnóstico
+## Los 5 Pasos de Nuestro Diagnóstico sobre Protocolo Diagnóstico Pipod
 
 ### Paso 1: Recepción y Registro (3 minutos)
 
@@ -127,9 +127,102 @@ Este es el protocolo que seguimos con cada equipo que entra a Pipod. Paso a paso
 - ❌ No proceder (sin costo)
 - 🤔 Pensarlo (guardamos diagnóstico 7 días)
 
+**Qué hacemos:**
+- Tomamos datos del cliente
+- Registramos IMEI/Serial del equipo
+- Documentamos condición física inicial
+- Fotografiamos estado del equipo (si aplica)
+- Entregamos ticket con número de seguimiento
+
+**Por qué importa:**
+- Trazabilidad completa
+- Protección para cliente y nosotros
+- Historial de servicios
+
+**Lo que nunca hacemos:** Recibir equipo sin identificación clara.
+
 ---
 
-## 🔧 Herramientas de Diagnóstico Que Usamos
+### Paso 2: Evaluación Técnica Visual (5 minutos)
+
+**Inspección externa:**
+- Estado de carcasa y marcos
+- Condición de pantalla
+- Puertos de carga y conectividad
+- Botones y controles
+- Indicadores de humedad (LCI)
+
+**Inspección interna (si procede):**
+- Abertura controlada del equipo
+- Estado de componentes internos
+- Señales de reparaciones previas
+- Corrosión o daño por líquidos
+- Estado de batería física
+
+**Herramientas usadas:**
+- Lámpara de aumento
+- Cámaras de inspección
+- Destornilladores de precisión
+
+---
+
+### Paso 3: Pruebas Funcionales (7 minutos)
+
+**Test de sistema:**
+- Encendido y arranque
+- Funcionamiento de pantalla táctil
+- Cámara frontal y trasera
+- Audio (altavoz, micrófono, auricular)
+- Conectividad (WiFi, Bluetooth, datos móviles)
+- Sensores (Face ID, Touch ID, brillo automático)
+- Botones de volumen y silencio
+- Puerto de carga y accesorios
+
+**Software:**
+- Versión de iOS/macOS
+- Estado de almacenamiento
+- Apps que consumen recursos
+- Errores del sistema
+
+**Batería:**
+- Salud de batería (%)
+- Ciclos de carga
+- Capacidad máxima actual
+
+---
+
+### Paso 4: Análisis del Problema Reportado (3 minutos)
+
+**Cruzamos información:**
+- ¿Qué reportó el cliente vs qué encontramos?
+- ¿Hay problemas adicionales no reportados?
+- ¿El problema es hardware, software o ambos?
+
+**Clasificación:**
+- **Nivel 1:** Software, resolución simple
+- **Nivel 2:** Hardware estándar (batería, pantalla)
+- **Nivel 3:** Hardware complejo (placa, microsoldadura)
+- **Nivel 4:** Recuperación/irreparable
+
+---
+
+### Paso 5: Reporte al Cliente y Presupuesto (2 minutos)
+
+**Comunicación clara:**
+- WhatsApp con diagnóstico completo
+- Explicación del problema en lenguaje humano
+- Opciones de solución
+- Presupuesto desglosado
+- Tiempo estimado de reparación
+
+**El cliente decide:**
+- ✅ Proceder con reparación
+- ❌ No proceder (sin costo)
+- 🤔 Pensarlo (guardamos diagnóstico 7 días)
+
+---
+
+## Herramientas de Diagnóstico sobre Protocolo Diagnóstico Pipod
 
 ### Hardware
 - **Osciloscopio:** Para análisis de señales eléctricas
@@ -146,7 +239,7 @@ Este es el protocolo que seguimos con cada equipo que entra a Pipod. Paso a paso
 
 ---
 
-## 📊 Estadísticas de Nuestro Diagnóstico
+## Estadísticas de Nuestro Diagnóstico sobre Protocolo Diagnóstico Pipod
 
 | Métrica | Valor |
 |---------|-------|
@@ -158,7 +251,7 @@ Este es el protocolo que seguimos con cada equipo que entra a Pipod. Paso a paso
 
 ---
 
-## ✅ Lo Que Garantizamos en el Diagnóstico
+## Lo Que Garantizamos en el Diagnóstico sobre Protocolo Diagnóstico Pipod
 
 ### Transparencia Total
 - Te decimos exactamente qué encontramos
@@ -177,7 +270,7 @@ Este es el protocolo que seguimos con cada equipo que entra a Pipod. Paso a paso
 
 ---
 
-## ⚠️ Casos Especiales
+## Casos Especiales sobre Protocolo Diagnóstico Pipod
 
 ### Equipos Mojados
 **Proceso adicional:**
@@ -200,7 +293,7 @@ Este es el protocolo que seguimos con cada equipo que entra a Pipod. Paso a paso
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Protocolo Diagnóstico Pipod
 
 **¿Cuánto tiempo toma el diagnóstico?**
 20 minutos en promedio. Equipos complejos pueden tomar hasta 45 minutos. Siempre te avisamos el tiempo estimado.

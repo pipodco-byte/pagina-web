@@ -39,7 +39,7 @@ Vamos.
 
 ---
 
-## 📋 Qué Cubre la Garantía Apple (1 Año)
+## Qué Cubre la Garantía Apple para iPhone sobre Garantía Apple Colombia Bogotá
 
 ### Defectos de Fabricación Cubiertos
 - **Pantalla:** Píxeles muertos, líneas, táctil errático (sin golpes)
@@ -60,7 +60,7 @@ Vamos.
 
 ---
 
-## ❌ Qué NO Cubre la Garantía Apple
+## Qué NO Cubre la Garantía Apple para iPhone sobre Garantía Apple Colombia Bogotá
 
 ### Daños por Uso
 - **Pantalla rota:** Por caída o golpe
@@ -84,7 +84,7 @@ Vamos.
 
 ---
 
-## 🔍 Cómo Verificar Tu Garantía Apple
+## Cómo Verificar Tu Garantía Apple para iPhone sobre Garantía Apple Colombia Bogotá
 
 ### Método 1: Desde el iPhone
 1. Configuración > General > Información
@@ -104,7 +104,7 @@ Vamos.
 
 ---
 
-## 📍 Dónde Reclamar Garantía en Colombia
+## Dónde Reclamar Garantía Apple para iPhone sobre Garantía Apple Colombia Bogotá
 
 ### Apple Store (No hay en Colombia)
 Colombia no tiene Apple Store oficial. Las opciones son:
@@ -133,7 +133,7 @@ Colombia no tiene Apple Store oficial. Las opciones son:
 
 ---
 
-## ⚖️ Cuándo Conviene Apple Autorizado vs Taller Especializado
+## Cuándo Conviene Apple Autorizado vs Taller Especializado sobre Garantía Apple Colombia Bogotá
 
 ### Ve a Apple Autorizado Si:
 - iPhone tiene menos de 1 año
@@ -151,7 +151,7 @@ Colombia no tiene Apple Store oficial. Las opciones son:
 
 ---
 
-## 💰 Costos de Reparación Fuera de Garantía (Bogotá 2026)
+## Costos de Reparación de iPhone Fuera de Garantía sobre Garantía Apple Colombia Bogotá
 
 | Servicio | Apple Autorizado (estimado) | Taller Especializado (Pipod) |
 |----------|---------------------------|------------------------------|
@@ -166,7 +166,7 @@ Colombia no tiene Apple Store oficial. Las opciones son:
 
 ---
 
-## 🎯 Nuestra Garantía Pipod (Cuando Apple Ya No Cubre)
+## Nuestra Garantía de Reparación iPhone sobre Garantía Apple Colombia Bogotá
 
 Cuando tu garantía Apple vence, ofrecemos:
 
@@ -189,7 +189,7 @@ Cuando tu garantía Apple vence, ofrecemos:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Garantía Apple iPhone sobre Garantía Apple Colombia Bogotá
 
 **¿Cuánto dura la garantía Apple en Colombia?**
 1 año desde la fecha de compra para defectos de fabricación. Algunos distribuidores ofrecen garantía adicional de 1-2 años.

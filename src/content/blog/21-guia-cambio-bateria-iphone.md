@@ -27,7 +27,7 @@ La batería de tu iPhone ya no dura lo que antes. Esta guía te dice todo: cuán
 
 ---
 
-## ¿Cuándo Cambiar la Batería del iPhone?
+## Cuando Cambiar la Batería del iPhone en Bogotá
 
 ### 5 Señales de Alerta
 
@@ -101,7 +101,7 @@ La batería de tu iPhone ya no dura lo que antes. Esta guía te dice todo: cuán
 
 ---
 
-## Comparativa de Precios 2026
+## Comparativa de Precios de Cambio de Batería en Bogotá 2026
 
 | Modelo | Apple Oficial | Pipod | Taller Barato |
 |--------|--------------|-------|---------------|
@@ -113,7 +113,7 @@ La batería de tu iPhone ya no dura lo que antes. Esta guía te dice todo: cuán
 
 ---
 
-## Proceso de Cambio en Pipod
+## Proceso de Cambio de Batería en Pipod Chapinero
 
 **Paso 1: Diagnóstico (10 min)**
 Verificamos salud de batería actual y confirmamos necesidad de cambio.
@@ -138,7 +138,7 @@ Verificamos salud de batería actual y confirmamos necesidad de cambio.
 
 ---
 
-## Qué Incluye una Batería de Calidad
+## Qué Incluye una Batería de Calidad en Servicio Técnico iPhone Bogotá
 
 **Especificaciones:**
 - Capacidad igual o mayor a original
@@ -154,7 +154,7 @@ Verificamos salud de batería actual y confirmamos necesidad de cambio.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Cambio de Batería iPhone en Bogotá
 
 **1. ¿Pierdo mis fotos y apps al cambiar la batería?**
 **No.** Es reparación de hardware externo. Tus datos permanecen intactos.
@@ -192,7 +192,7 @@ Técnicamente sí, pero:
 
 ---
 
-## Conclusión
+## Conclusión: Guía de Cambio de Batería iPhone en Bogotá 2026
 
 Cambiar la batería de tu iPhone en Bogotá tiene opciones para todos los presupuestos. Apple oficial para máxima tranquilidad, Pipod para mejor relación calidad-precio-velocidad, o taller barato si asumes riesgos.
 

@@ -30,7 +30,7 @@ No son promesas de marketing. Son diferencias reales que notarás desde el prime
 
 ---
 
-## 1️⃣ Especialización Exclusiva Apple (16 Años)
+## Especialización Exclusiva Apple sobre Por Qué Elegir Pipod Bogotá
 
 **La diferencia:**
 - No reparamos Android
@@ -49,7 +49,7 @@ No son promesas de marketing. Son diferencias reales que notarás desde el prime
 
 ---
 
-## 2️⃣ Diagnóstico Gratis en 20 Minutos
+## Diagnóstico Gratis en 20 Minutos sobre Por Qué Elegir Pipod Bogotá
 
 **Nuestro proceso:**
 1. Traes tu equipo
@@ -64,7 +64,7 @@ No son promesas de marketing. Son diferencias reales que notarás desde el prime
 
 ---
 
-## 3️⃣ Garantía Real de 12 Meses
+## Garantía Real de 12 Meses sobre Por Qué Elegir Pipod Bogotá
 
 **Qué cubre:**
 - Falla del repuesto instalado
@@ -81,7 +81,7 @@ No son promesas de marketing. Son diferencias reales que notarás desde el prime
 
 ---
 
-## 4️⃣ Trabajo Frente al Cliente (Si Lo Deseas)
+## Trabajo Frente al Cliente sobre Por Qué Elegir Pipod Bogotá
 
 **¿Te da miedo dejar tu iPhone?**
 
@@ -95,7 +95,7 @@ Puedes ver cómo trabajamos:
 
 ---
 
-## 5️⃣ Ubicación Real en Chapinero
+## Ubicación Real en Chapinero sobre Por Qué Elegir Pipod Bogotá
 
 **Dirección:** Cra. 13a #79-52, Chapinero, Bogotá
 
@@ -114,7 +114,7 @@ Puedes ver cómo trabajamos:
 
 ---
 
-## 6️⃣ Transparencia en Precios
+## Transparencia en Precios sobre Por Qué Elegir Pipod Bogotá
 
 **Antes de tocar tu equipo:**
 - Diagnóstico claro
@@ -135,7 +135,7 @@ Puedes ver cómo trabajamos:
 
 ---
 
-## 7️⃣ Experiencia Comprobada
+## Experiencia Comprobada sobre Por Qué Elegir Pipod Bogotá
 
 **Cifras que respaldan:**
 - 16 años de trayectoria
@@ -154,7 +154,7 @@ Puedes ver cómo trabajamos:
 
 ---
 
-## 📊 Comparativa: Pipod vs Otras Opciones
+## Comparativa: Pipod vs Otras Opciones sobre Por Qué Elegir Pipod Bogotá
 
 | Aspecto | Pipod | Taller Genérico | Apple Autorizado |
 |---------|-------|-----------------|------------------|
@@ -168,7 +168,7 @@ Puedes ver cómo trabajamos:
 
 ---
 
-## 🎯 Para Quién Es Pipod
+## Para Quién Es Pipod sobre Por Qué Elegir Pipod Bogotá
 
 **Nos eligen personas que:**
 - Valoran especialización sobre precio bajo
@@ -185,7 +185,7 @@ Puedes ver cómo trabajamos:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Por Qué Elegir Pipod Bogotá
 
 **¿Por qué son más caros que algunos técnicos callejeros?**
 Porque usamos piezas de calidad, damos garantía de 12 meses, y tenemos local real con costos. El precio bajo sin garantía sale más caro cuando falla.

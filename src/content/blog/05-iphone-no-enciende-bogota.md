@@ -138,7 +138,7 @@ Te decimos exactamente qué tiene y cuánto cuesta repararlo.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación iPhone No Enciende en Bogotá
 
 **1. ¿Pueden recuperar mis fotos si el iPhone no enciende?**
 Depende del daño. Si es batería o software, **sí**, recuperamos todo. Si es daño grave en placa de almacenamiento, hay riesgo.

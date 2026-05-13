@@ -125,7 +125,7 @@ Garantía de 12 meses en pieza y trabajo.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación Puerto de Carga iPhone en Bogotá
 
 **1. ¿Cuánto tarda reparar el puerto de carga?**
 Limpieza: 30-60 min. Reemplazo: 1-2 horas. Placa: 2-4 horas.

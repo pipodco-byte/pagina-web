@@ -114,7 +114,7 @@ Lleva tu iPhone a Pipod si:
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación de iPhone que se Calienta en Bogotá
 
 **1. ¿Es normal que mi iPhone se caliente al cargar?**
 Sí, **30-40°C es normal.** Más de 45°C no es normal y requiere revisión.

@@ -24,20 +24,20 @@ locale: "es-CO"
 
 Tu iPhone se mojó. **Los primeros minutos son críticos.** Actúa ahora o pierde tus datos.
 
-## ⚠️ NO HAGAS ESTO
+## Qué NO Hacer si tu iPhone se Mojó en Bogotá
 
 - ❌ No lo conectes a la corriente.
 - ❌ No lo enciendas para "ver si funciona".
 - ❌ No lo metas en arroz (es un mito y puede empeorar el daño).
 
-## ✅ SÍ HAZ ESTO INMEDIATAMENTE
+## Pasos Inmediatos si tu iPhone se Mojó en Bogotá
 
 1. **Apágalo:** Si está encendido, apágalo inmediatamente.
 2. **Sécalo por fuera:** Usa un paño seco para quitar el agua superficial.
 3. **No agites:** Moverlo puede esparcir el agua internamente.
 4. **Llámanos YA:** Mientras más rápido llegue a nuestro laboratorio, mayores son las posibilidades de recuperación.
 
-## Nuestro Protocolo de Recuperación en Pipod
+## Protocolo de Recuperación de iPhone Mojado en Bogotá
 
 En nuestro laboratorio en **Chapinero**, seguimos un proceso riguroso:
 
@@ -47,7 +47,7 @@ En nuestro laboratorio en **Chapinero**, seguimos un proceso riguroso:
 4. **Diagnóstico de daño:** Identificamos qué partes necesitan reemplazo.
 5. **Reparación y pruebas:** Reemplazamos componentes dañados y verificamos el funcionamiento.
 
-## Tasa de éxito
+## Tasa de Éxito en Recuperación de iPhone Mojado en Bogotá
 
 Dependiendo del tiempo de exposición y el tipo de líquido, nuestra tasa de éxito es alta. El factor más importante es la **rapidez** con la que traigas el equipo.
 

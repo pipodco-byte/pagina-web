@@ -26,7 +26,7 @@ La pantalla de tu MacBook está rota o presentando problemas. Esta guía te expl
 
 ---
 
-## Tipos de Pantallas MacBook
+## Tipos de Pantallas MacBook en Servicio Técnico MacBook Bogotá
 
 ### LCD Estándar (MacBook Air, modelos antiguos)
 
@@ -68,7 +68,7 @@ La pantalla de tu MacBook está rota o presentando problemas. Esta guía te expl
 
 ---
 
-## Problemas Comunes de Pantallas
+## Problemas Comunes de Pantallas en Servicio Técnico MacBook Bogotá
 
 ### 1. Grietas y Roturas
 
@@ -115,7 +115,7 @@ La pantalla de tu MacBook está rota o presentando problemas. Esta guía te expl
 
 ---
 
-## Reparar vs Reemplazar
+## Reparar vs Reemplazar Pantalla en Servicio Técnico MacBook Bogotá
 
 ### ¿Cuándo Reparar?
 
@@ -140,7 +140,7 @@ La pantalla de tu MacBook está rota o presentando problemas. Esta guía te expl
 
 ---
 
-## Costos de Reemplazo 2026
+## Costos de Reemplazo de Pantalla MacBook en Bogotá 2026
 
 | Modelo | Tipo Pantalla | Rango de Precio | Tiempo |
 |--------|---------------|-----------------|--------|
@@ -154,7 +154,7 @@ La pantalla de tu MacBook está rota o presentando problemas. Esta guía te expl
 
 ---
 
-## Opciones en Bogotá
+## Opciones para Reparar Pantalla MacBook en Bogotá
 
 ### Apple Oficial
 
@@ -185,7 +185,7 @@ La pantalla de tu MacBook está rota o presentando problemas. Esta guía te expl
 
 ---
 
-## Proceso de Reemplazo en Pipod
+## Proceso de Reemplazo de Pantalla MacBook en Pipod Chapinero
 
 **Paso 1: Diagnóstico**
 Confirmar tipo de daño y modelo exacto.
@@ -216,7 +216,7 @@ Confirmar tipo de daño y modelo exacto.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Pantalla MacBook en Bogotá
 
 **1. ¿Pierdo mis archivos al cambiar la pantalla?**
 **No.** La pantalla no afecta el disco SSD donde están tus datos.
@@ -248,7 +248,7 @@ Depende de tu póliza. AppleCare+ sí cubre con deducible. Seguros hogar general
 
 ---
 
-## Conclusión
+## Conclusión: Guía de Pantalla MacBook en Bogotá 2026
 
 El reemplazo de pantalla de MacBook es una inversión significativa. Evalúa:
 - Costo vs valor de tu MacBook

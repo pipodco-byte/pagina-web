@@ -30,7 +30,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 🔍 Por Qué El iPad No Enciende
+## Por Qué El iPad No Enciende en Bogotá
 
 ### 1. Batería Completamente Descargada
 **Síntomas:**
@@ -111,7 +111,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 💰 Precios Estimados Reparación iPad
+## Precios Estimados Reparación iPad en Bogotá 2026
 
 | Problema | Precio Estimado | Tiempo | Garantía |
 |----------|----------------|--------|----------|
@@ -133,7 +133,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 📱 Diferencias Por Modelo
+## Diferencias Por Modelo de iPad en Bogotá
 
 ### iPad / iPad Mini
 - Más fáciles de reparar
@@ -153,7 +153,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 🔧 El Proceso de Reparación
+## El Proceso de Reparación de iPad en Bogotá
 
 ### Paso 1: Diagnóstico
 - Evaluación visual
@@ -179,7 +179,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre iPad No Enciende en Bogotá
 
 **¿Por qué no enciende mi iPad?**
 Las causas van desde simples (batería descargada, software) hasta complejas (placa dañada). Diagnóstico gratis para determinar.

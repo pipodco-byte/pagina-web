@@ -30,7 +30,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 🔍 Por Qué La Pantalla Está Negra
+## Por Qué La Pantalla Está Negra en iPhone en Bogotá
 
 ### 1. Pantalla Dañada (Lo Más Común)
 **Síntomas:**
@@ -121,7 +121,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 💰 Precios Estimados Reparación
+## Precios Estimados Reparación Pantalla Negra iPhone en Bogotá 2026
 
 | Problema | Precio Estimado | Tiempo | Garantía |
 |----------|----------------|--------|----------|
@@ -144,7 +144,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 🔧 El Proceso de Diagnóstico
+## El Proceso de Diagnóstico de Pantalla Negra iPhone en Bogotá
 
 ### Paso 1: Verificación
 ¿Realmente está encendido?
@@ -168,7 +168,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## ⚠️ Diferenciar: ¿Es Pantalla O Placa?
+## Diferenciar: ¿Es Pantalla O Placa? en iPhone Bogotá
 
 ### Probablemente Es Pantalla Si:
 - ✅ iPhone vibra con llamadas
@@ -184,7 +184,7 @@ Aquí te explicamos las causas y soluciones.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Pantalla Negra iPhone en Bogotá
 
 **¿Mi iPhone tiene solución si la pantalla está negra?**
 En la mayoría de casos sí. Generalmente es pantalla dañada que se reemplaza. Casos de placa son menos comunes pero también tienen solución.

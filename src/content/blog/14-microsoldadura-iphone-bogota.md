@@ -151,7 +151,7 @@ Verificamos que todo opera correctamente.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Microsoldadura iPhone en Bogotá
 
 **1. ¿Qué es exactamente la microsoldadura?**
 Reparación de componentes electrónicos diminutos (menos de 1mm) en la placa lógica. Requiere microscopio y herramientas de precisión.

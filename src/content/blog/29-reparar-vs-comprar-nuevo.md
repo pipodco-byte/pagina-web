@@ -29,7 +29,7 @@ Tu iPhone se dañó. La reparación cuesta $800.000. Uno nuevo cuesta $4.000.000
 
 ---
 
-## La Fórmula de Decisión
+## La Fórmula de Decisión para Reparar vs Comprar iPhone en Bogotá sobre Decisión Reparación vs Compra Bogotá
 
 ### REPARAR cuando:
 ```
@@ -52,7 +52,7 @@ Costo Reparación está entre 40% y 60%
 
 ---
 
-## Escenarios Reales con Números
+## Escenarios Reales con Números de Reparación vs Compra en Bogotá sobre Decisión Reparación vs Compra Bogotá
 
 ### Escenario 1: iPhone 12 con Pantalla Rota
 
@@ -146,7 +146,7 @@ Por $2.200.000 compras un iPhone 13 usado que te dará 3-4 años de uso vs repar
 
 ---
 
-## Tabla de Decisión Rápida
+## Tabla de Decisión Rápida para Reparar vs Comprar iPhone en Bogotá sobre Decisión Reparación vs Compra Bogotá
 
 | Edad iPhone | Costo Reparación | % del Valor | Decisión |
 |-------------|------------------|-------------|----------|
@@ -162,7 +162,7 @@ Por $2.200.000 compras un iPhone 13 usado que te dará 3-4 años de uso vs repar
 
 ---
 
-## Factores que Inclinan la Balanza
+## Factores que Inclinan la Decisión para Reparar iPhone en Bogotá sobre Decisión Reparación vs Compra Bogotá
 
 ### Inclinan a REPARAR
 
@@ -219,7 +219,7 @@ Por $2.200.000 compras un iPhone 13 usado que te dará 3-4 años de uso vs repar
 
 ---
 
-## Cálculo de Depreciación
+## Cálculo de Depreciación de iPhone en Bogotá sobre Decisión Reparación vs Compra Bogotá
 
 ### Cuánto Pierde un iPhone por Año
 
@@ -242,7 +242,7 @@ Por $2.200.000 compras un iPhone 13 usado que te dará 3-4 años de uso vs repar
 
 ---
 
-## Alternativa Intermedia: iPhone Usado
+## Alternativa Intermedia: iPhone Usado en Bogotá
 
 Cuando reparar no vale la pena pero nuevo es muy caro:
 
@@ -260,7 +260,7 @@ Cuando reparar no vale la pena pero nuevo es muy caro:
 
 ---
 
-## Errores Comunes
+## Errores Comunes al Decidir Reparar vs Comprar iPhone en Bogotá sobre Decisión Reparación vs Compra Bogotá
 
 ### Error 1: "Lo voy a reparar y vender"
 
@@ -294,7 +294,7 @@ Cuando reparar no vale la pena pero nuevo es muy caro:
 
 ---
 
-## Checklist de Decisión
+## Checklist de Decisión para Reparar vs Comprar iPhone en Bogotá sobre Decisión Reparación vs Compra Bogotá
 
 Antes de decidir, responde:
 
@@ -309,7 +309,7 @@ Antes de decidir, responde:
 
 ---
 
-## Nuestra Recomendación Honesta
+## Nuestra Recomendación Honesta para Reparar vs Comprar iPhone en Bogotá
 
 En Pipod te asesoramos sin compromiso:
 

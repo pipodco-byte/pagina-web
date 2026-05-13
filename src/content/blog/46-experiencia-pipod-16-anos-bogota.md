@@ -30,7 +30,7 @@ Estos son 16 años de aprendizajes que aplicamos en cada reparación.
 
 ---
 
-## 📈 La Evolución en Números
+## La Evolución en Números sobre Experiencia Pipod 16 Años
 
 | Año | Equipos Reparados | Hitos |
 |-----|-------------------|-------|
@@ -45,7 +45,7 @@ Estos son 16 años de aprendizajes que aplicamos en cada reparación.
 
 ---
 
-## 🎓 Qué Hemos Aprendido en 16 Años
+## Qué Hemos Aprendido en 16 Años sobre Experiencia Pipod 16 Años
 
 ### Lección 1: No Existen Dos Fallas Iguales
 Cada iPhone, cada MacBook es diferente. La "misma falla" puede tener 3 causas distintas.
@@ -107,9 +107,9 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-## 🔧 Evolución de Nuestras Capacidades
+## Evolución de Nuestras Capacidades sobre Experiencia Pipod 16 Años
 
-### 2010-2013: Fundamentos
+### 2010-2013: Fundamentos del Servicio Técnico Apple
 **Hacíamos:**
 - Cambios de batería
 - Reemplazo de pantallas
@@ -122,7 +122,7 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-### 2014-2017: Especialización
+### 2014-2017: Especialización en Reparación Apple
 **Nuevas capacidades:**
 - Microsoldadura de componentes
 - Diagnóstico con osciloscopio
@@ -135,7 +135,7 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-### 2018-2021: Casos Complejos
+### 2018-2021: Casos Complejos de Reparación Apple
 **Especialización en:**
 - Recuperación de equipos mojados
 - Datos de equipos dañados
@@ -148,7 +148,7 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-### 2022-2026: Consolidación
+### 2022-2026: Consolidación del Servicio Técnico Apple en Bogotá
 **Procesos definidos:**
 - Protocolo de diagnóstico estandarizado
 - Sistema de garantía robusto
@@ -161,7 +161,7 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-## 📊 Estadísticas de Nuestra Experiencia
+## Estadísticas de Nuestra Experiencia sobre Experiencia Pipod 16 Años
 
 | Métrica | Valor | Significado |
 |---------|-------|-------------|
@@ -177,7 +177,7 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-## 🏆 Casos Que Nos Definieron
+## Casos Que Nos Definieron sobre Experiencia Pipod 16 Años
 
 ### Caso 1: El MacBook del Arquitecto (2018)
 **Problema:** MacBook Pro 2015 no encendía tras derrame de café.
@@ -199,7 +199,7 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-## 💬 Lo Que Dicen Quienes Nos Conocen
+## Lo Que Dicen Quienes Nos Conocen sobre Experiencia Pipod 16 Años
 
 **"He visto cómo han crecido. De un garaje a lo que son hoy. Y la calidad sigue igual o mejor."**
 — Cliente desde 2012
@@ -212,7 +212,7 @@ Los equipos que otros rechazaron nos enseñaron:
 
 ---
 
-## 🎯 Por Qué La Experiencia Importa
+## Por Qué La Experiencia Importa sobre Experiencia Pipod 16 Años
 
 ### Diagnosticar Rápido
 Un técnico experimentado identifica la causa en minutos, no en horas.
@@ -231,7 +231,7 @@ Lo que a un novato le toma 3 horas, a nosotros 1. Eso se traduce en menor costo 
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Experiencia Pipod 16 Años
 
 **¿Por qué debería importarme que tengan 16 años de experiencia?**
 Porque significa que han visto casos de todo tipo, han cometido errores y aprendido, y tienen procesos probados. Un técnico nuevo puede ser bueno, pero la experiencia acumulada reduce riesgos.

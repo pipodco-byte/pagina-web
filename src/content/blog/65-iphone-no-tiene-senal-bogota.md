@@ -30,7 +30,7 @@ Aquí te explicamos qué puede ser y cómo lo resolvemos.
 
 ---
 
-## 🔍 Causas de iPhone Sin Señal
+## Causas de iPhone Sin Señal en Bogotá
 
 ### 1. Problema de SIM
 **Síntomas:**
@@ -108,7 +108,7 @@ Aquí te explicamos qué puede ser y cómo lo resolvemos.
 
 ---
 
-## 💰 Precios Estimados Reparación Señal
+## Precios Estimados Reparación Señal iPhone en Bogotá 2026
 
 | Problema | Precio Estimado | Tiempo | Garantía |
 |----------|----------------|--------|----------|
@@ -129,7 +129,7 @@ Aquí te explicamos qué puede ser y cómo lo resolvemos.
 
 ---
 
-## 🔧 El Proceso de Reparación
+## El Proceso de Reparación de Señal iPhone en Bogotá
 
 ### Paso 1: Diagnóstico
 - Verificación de SIM
@@ -154,7 +154,7 @@ Aquí te explicamos qué puede ser y cómo lo resolvemos.
 
 ---
 
-## ⚠️ Casos Especiales
+## Casos Especiales de Señal iPhone en Bogotá
 
 ### iPhone Después de "Reparación"
 **Si otro técnico "reparó" y dejó sin señal:**
@@ -169,7 +169,7 @@ Aquí te explicamos qué puede ser y cómo lo resolvemos.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre iPhone Sin Señal en Bogotá
 
 **¿Por qué mi iPhone dice "Sin servicio"?**
 Muchas causas: SIM, antena, baseband, configuración. Diagnóstico gratis para determinar.

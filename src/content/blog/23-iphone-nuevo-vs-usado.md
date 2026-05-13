@@ -27,7 +27,7 @@ Vas a comprar un iPhone y no sabes si nuevo o usado. Esta guía compara precios,
 
 ---
 
-## Comparativa Rápida
+## Comparativa Rápida de Compra de iPhone en Bogotá
 
 | Aspecto | iPhone Nuevo | iPhone Usado |
 |---------|--------------|--------------|
@@ -40,7 +40,7 @@ Vas a comprar un iPhone y no sabes si nuevo o usado. Esta guía compara precios,
 
 ---
 
-## Precios iPhone Nuevos 2026 (Bogotá)
+## Precios de iPhone Nuevos en Bogotá 2026
 
 | Modelo | Almacenamiento | Precio Aproximado |
 |--------|----------------|-------------------|
@@ -62,7 +62,7 @@ Vas a comprar un iPhone y no sabes si nuevo o usado. Esta guía compara precios,
 
 ---
 
-## Precios iPhone Usados 2026 (Bogotá)
+## Precios de iPhone Usados en Bogotá 2026
 
 | Modelo | Estado | Precio Aproximado |
 |--------|--------|-------------------|
@@ -86,7 +86,7 @@ Vas a comprar un iPhone y no sabes si nuevo o usado. Esta guía compara precios,
 
 ---
 
-## Ventajas y Desventajas
+## Ventajas y Desventajas de Compra de iPhone en Bogotá
 
 ### iPhone Nuevo
 
@@ -122,7 +122,7 @@ Vas a comprar un iPhone y no sabes si nuevo o usado. Esta guía compara precios,
 
 ---
 
-## Cómo Evaluar un iPhone Usado
+## Cómo Evaluar un iPhone Usado Antes de Comprar en Bogotá
 
 ### Antes de Comprar
 
@@ -181,7 +181,7 @@ Vas a comprar un iPhone y no sabes si nuevo o usado. Esta guía compara precios,
 
 ---
 
-## Recomendaciones por Presupuesto
+## Recomendaciones por Presupuesto para Compra de iPhone en Bogotá
 
 ### $1,000,000 - $1,500,000
 - **Usado:** iPhone 11, XR (buen estado)
@@ -217,7 +217,7 @@ Algunas tiendas ofrecen iPhones usados con:
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Compra de iPhone en Bogotá
 
 **1. ¿Vale la pena comprar iPhone usado en 2026?**
 Sí, si sabes evaluar y compras de fuente confiable. Puedes ahorrar 40-60%.
@@ -251,7 +251,7 @@ Suma reparaciones + precio de compra y compara con nuevo.
 
 ---
 
-## Conclusión
+## Conclusión: Guía de Compra de iPhone en Bogotá 2026
 
 **iPhone nuevo:** Mejor para tranquilidad, garantía y largo plazo.
 **iPhone usado:** Mejor para ahorrar dinero si sabes evaluar.

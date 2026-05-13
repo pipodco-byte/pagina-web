@@ -39,7 +39,7 @@ Vamos.
 
 ---
 
-## 🏪 Dónde Comprar iPhone Usado en Bogotá
+## Dónde Comprar iPhone Usado sobre Compra iPhone Usado Bogotá
 
 ### Opción A: Mercado Libre / Facebook Marketplace
 **Ventajas:**
@@ -93,7 +93,7 @@ Vamos.
 
 ---
 
-## ✅ Checklist de 10 Puntos Antes de Pagar
+## Checklist de 10 Puntos Antes de Comprar iPhone Usado sobre Compra iPhone Usado Bogotá
 
 ### 1. Verificar IMEI y Bloqueos (Fundamental)
 - **Paso 1:** Pedir IMEI al vendedor (Configuración > General > Información)
@@ -171,7 +171,7 @@ Vamos.
 
 ---
 
-## ⚠️ Las 7 Señales de Alerta (No Compres)
+## Las 7 Señales de Alerta para No Comprar iPhone Usado sobre Compra iPhone Usado Bogotá
 
 | Señal | Por qué es problema | Qué hacer |
 |-------|---------------------|-----------|
@@ -185,7 +185,7 @@ Vamos.
 
 ---
 
-## 💰 Rangos de Precios Usados Bogotá 2026 (Referencia)
+## Rangos de Precios de iPhone Usado sobre Compra iPhone Usado Bogotá
 
 | Modelo | Estado A (90%+) | Estado B (80-89%) | Estado C (<80%) |
 |--------|----------------|-------------------|-----------------|
@@ -201,7 +201,7 @@ Vamos.
 
 ---
 
-## 🔧 Servicio de Verificación Profesional en Pipod
+## Servicio de Verificación Profesional de iPhone Usado sobre Compra iPhone Usado Bogotá
 
 Antes de comprar, tráelo a revisar:
 
@@ -222,7 +222,7 @@ Antes de comprar, tráelo a revisar:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Compra de iPhone Usado sobre Compra iPhone Usado Bogotá
 
 **¿Es seguro comprar iPhone usado en Mercado Libre?**
 Puede ser, pero requiere precaución. Siempre revisar físicamente antes de liberar pago. El iPhone más seguro es el que puedes probar antes de pagar.

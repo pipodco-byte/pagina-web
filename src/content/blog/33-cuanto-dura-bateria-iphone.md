@@ -38,7 +38,7 @@ Vamos.
 
 ---
 
-## 🔋 Vida Útil Real por Modelo de iPhone
+## Vida Útil Real de Batería de iPhone sobre Servicio Técnico iPhone Bogotá
 
 ### iPhone 14, 15, 16 Series
 - **Vida útil esperada:** 2.5-3 años
@@ -68,7 +68,7 @@ Vamos.
 
 ---
 
-## ⚠️ Las 5 Señales de Que Tu Batería Ya No Sirve
+## Las 5 Señales de Que Tu Batería de iPhone Ya No Sirve sobre Servicio Técnico iPhone Bogotá
 
 ### 1. Se Apaga Con 20-30% de Carga
 **Qué pasa:** La batería miente sobre su nivel real. Cuando dice 25%, en realidad está en 0%.
@@ -97,7 +97,7 @@ Vamos.
 
 ---
 
-## 🌡️ Factores Que Aceleran el Desgaste en Bogotá
+## Factores que Aceleran el Desgaste de Batería de iPhone sobre Servicio Técnico iPhone Bogotá
 
 ### 1. Calor Excesivo
 Bogotá no es tan calurosa, pero:
@@ -131,7 +131,7 @@ Bogotá a 2,600 metros y con humedad variable:
 
 ---
 
-## 💡 Cómo Extender la Vida Útil de tu Batería
+## Cómo Extender la Vida Útil de tu Batería de iPhone sobre Servicio Técnico iPhone Bogotá
 
 ### Carga Inteligente
 - **Rango ideal:** Mantener entre 20% y 80%
@@ -156,7 +156,7 @@ Bogotá a 2,600 metros y con humedad variable:
 
 ---
 
-## 📊 Comparativa: Cambiar vs Seguir Usando
+## Comparativa: Cambiar vs Seguir Usando Batería sobre Servicio Técnico iPhone Bogotá
 
 | Situación | Costo de seguir | Costo de cambiar | Recomendación |
 |-----------|----------------|------------------|---------------|
@@ -169,7 +169,7 @@ Bogotá a 2,600 metros y con humedad variable:
 
 ---
 
-## 🎯 Nuestro Servicio de Cambio de Batería
+## Nuestro Servicio de Cambio de Batería de iPhone sobre Servicio Técnico iPhone Bogotá
 
 En Pipod Chapinero:
 
@@ -189,7 +189,7 @@ En Pipod Chapinero:
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Duración de Batería iPhone sobre Servicio Técnico iPhone Bogotá
 
 **¿Cuántos años dura realmente una batería de iPhone?**
 En uso normal: 2-3 años o 500 ciclos de carga completos. Después del 80% de salud, el rendimiento cae rápidamente.

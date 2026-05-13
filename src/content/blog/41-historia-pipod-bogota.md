@@ -30,7 +30,7 @@ Esta es la historia de cómo Pipod se convirtió en referente de servicio técni
 
 ---
 
-## 🚀 2010: El Comienzo en un Garaje
+## 🚀 2010: El Comienzo en un Garaje sobre Historia Pipod Bogotá
 
 Todo arrancó en un garaje en Chapinero. Un técnico, una laptop desarmada y mucha curiosidad.
 
@@ -49,7 +49,7 @@ Todo arrancó en un garaje en Chapinero. Un técnico, una laptop desarmada y muc
 
 ---
 
-## 📈 2012-2015: Crecimiento por Recomendación
+## 📈 2012-2015: Crecimiento por Recomendación sobre Historia Pipod Bogotá
 
 Sin publicidad, sin marketing. Solo trabajo bien hecho.
 
@@ -68,7 +68,7 @@ Sin publicidad, sin marketing. Solo trabajo bien hecho.
 
 ---
 
-## 🏢 2016: Primer Local en Chapinero
+## 🏢 2016: Primer Local en Chapinero sobre Historia Pipod Bogotá
 
 Dejamos el garaje. Abrimos local físico en la Cra. 13a #79-52, Chapinero.
 
@@ -86,7 +86,7 @@ Dejamos el garaje. Abrimos local físico en la Cra. 13a #79-52, Chapinero.
 
 ---
 
-## 🔧 2018-2020: Especialización Profunda
+## 🔧 2018-2020: Especialización Profunda sobre Historia Pipod Bogotá
 
 Inversión en formación y herramientas.
 
@@ -104,7 +104,7 @@ Inversión en formación y herramientas.
 
 ---
 
-## 📱 2020-2023: Era de los Retos Complejos
+## 📱 2020-2023: Era de los Retos Complejos sobre Historia Pipod Bogotá
 
 La pandemia aumentó el uso de equipos. Y aumentaron los problemas complejos.
 
@@ -123,7 +123,7 @@ La pandemia aumentó el uso de equipos. Y aumentaron los problemas complejos.
 
 ---
 
-## 🎯 2024-2026: Consolidación y Procesos
+## 🎯 2024-2026: Consolidación y Procesos sobre Historia Pipod Bogotá
 
 Hoy somos lo que la experiencia nos hizo: técnicos de confianza.
 
@@ -147,7 +147,7 @@ Hoy somos lo que la experiencia nos hizo: técnicos de confianza.
 
 ---
 
-## 🏆 Hitos Importantes
+## 🏆 Hitos Importantes sobre Historia Pipod Bogotá
 
 | Año | Hito | Significado |
 |-----|------|-------------|
@@ -162,7 +162,7 @@ Hoy somos lo que la experiencia nos hizo: técnicos de confianza.
 
 ---
 
-## 💬 Lo Que Nos Dicen Los Clientes
+## 💬 Lo Que Nos Dicen Los Clientes sobre Historia Pipod Bogotá
 
 **"Llevo 8 años trayendo mis equipos aquí"** — Andrés, diseñador
 
@@ -174,7 +174,7 @@ Hoy somos lo que la experiencia nos hizo: técnicos de confianza.
 
 ---
 
-## 📍 Dónde Estamos Hoy
+## 📍 Dónde Estamos Hoy sobre Historia Pipod Bogotá
 
 **Ubicación:** Cra. 13a #79-52, Chapinero, Bogotá
 

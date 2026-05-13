@@ -134,7 +134,7 @@ Probamos todo antes de entregar. Te damos garantía escrita de 12 meses.
 
 ---
 
-## ¿Por Qué Elegir Pipod en Chapinero?
+## ¿Por Qué Elegir Pipod para Reparación iPhone en Bogotá?
 
 | Característica | Pipod | Otros Talleres |
 |----------------|-------|----------------|
@@ -146,7 +146,7 @@ Probamos todo antes de entregar. Te damos garantía escrita de 12 meses.
 
 ---
 
-## Preguntas Frecuentes
+## Preguntas Frecuentes sobre Reparación iPhone en Bogotá
 
 **1. ¿Cuánto cuesta el diagnóstico?**
 **Gratis.** Sin costo, sin compromiso. Si no reparas con nosotros, no pagas nada.

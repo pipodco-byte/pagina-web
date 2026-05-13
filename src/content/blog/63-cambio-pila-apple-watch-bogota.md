@@ -30,7 +30,7 @@ Aquí te explicamos todo sobre el servicio.
 
 ---
 
-## 🔋 Cuándo Cambiar la Pila
+## Cuándo Cambiar la Pila de Apple Watch en Bogotá
 
 ### Señales de Batería Agotada
 - Dura menos de medio día
@@ -46,7 +46,7 @@ Aquí te explicamos todo sobre el servicio.
 
 ---
 
-## 💰 Precios Cambio de Pila
+## Precios Cambio de Pila Apple Watch en Bogotá 2026
 
 | Modelo | Precio Estimado | Tiempo |
 |--------|----------------|--------|
@@ -67,7 +67,7 @@ Aquí te explicamos todo sobre el servicio.
 
 ---
 
-## ⚠️ Importante: Pérdida de Resistencia al Agua
+## Importante: Pérdida de Resistencia al Agua Apple Watch en Bogotá
 
 **Al abrir el Apple Watch:**
 - Se pierde el sello hermético original
@@ -80,7 +80,7 @@ Si usas tu Apple Watch para nadar, considera si vale la pena el cambio de pila v
 
 ---
 
-## 🔧 El Proceso
+## El Proceso de Cambio de Pila Apple Watch en Bogotá
 
 ### Paso 1: Diagnóstico
 - Evaluación de estado actual
@@ -104,7 +104,7 @@ Si usas tu Apple Watch para nadar, considera si vale la pena el cambio de pila v
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Cambio de Pila Apple Watch en Bogotá
 
 **¿Cuánto dura la pila nueva?**
 1.5-2 años con uso normal. Depende de tus hábitos de uso y carga.

@@ -29,7 +29,7 @@ Apple lanzó el iPhone 15 con USB-C y mejoras importantes. Pero si tienes un iPh
 
 ---
 
-## Comparativa Rápida
+## Comparativa Rápida de iPhone 15 vs 14 en Bogotá
 
 | Característica | iPhone 14 | iPhone 15 |
 |----------------|-----------|-----------|
@@ -51,7 +51,7 @@ Apple lanzó el iPhone 15 con USB-C y mejoras importantes. Pero si tienes un iPh
 
 ---
 
-## Diferencias Clave Detalladas
+## Diferencias Clave Detalladas entre iPhone 15 y 14 en Bogotá sobre Comparativa iPhone Bogotá
 
 ### 1. USB-C vs Lightning (El Cambio Más Grande)
 
@@ -144,7 +144,7 @@ Apple lanzó el iPhone 15 con USB-C y mejoras importantes. Pero si tienes un iPh
 
 ---
 
-## Precios en Bogotá (Referencia 2026)
+## Precios de iPhone 14 y 15 en Bogotá (Referencia 2026)
 
 ### iPhone 14 Nuevo
 - 128GB: $3.200.000 - $3.600.000
@@ -166,7 +166,7 @@ Apple lanzó el iPhone 15 con USB-C y mejoras importantes. Pero si tienes un iPh
 
 ---
 
-## ¿Vale la Pena Actualizar?
+## ¿Vale la Pena Actualizar? sobre Comparativa iPhone Bogotá
 
 ### SÍ Actualiza Si:
 
@@ -194,7 +194,7 @@ Apple lanzó el iPhone 15 con USB-C y mejoras importantes. Pero si tienes un iPh
 
 ---
 
-## Análisis por Tipo de Usuario
+## Análisis por Tipo de Usuario de iPhone en Bogotá sobre Comparativa iPhone Bogotá
 
 ### Usuario Básico (Redes, WhatsApp, Fotos Casuales)
 
@@ -236,7 +236,7 @@ Apple lanzó el iPhone 15 con USB-C y mejoras importantes. Pero si tienes un iPh
 
 ---
 
-## Alternativa: iPhone 14 Pro
+## Alternativa: iPhone 14 Pro sobre Comparativa iPhone Bogotá
 
 Si encuentras un 14 Pro usado (~$3.5M - $4.5M), considera:
 
@@ -252,7 +252,7 @@ Si encuentras un 14 Pro usado (~$3.5M - $4.5M), considera:
 
 ---
 
-## Conclusión
+## Conclusión: Guía de iPhone 15 vs 14 en Bogotá 2026 sobre Comparativa iPhone Bogotá
 
 **El salto de 14 a 15 es significativo pero no revolucionario.**
 
@@ -273,7 +273,7 @@ iPhone 14 usado en buen estado (~$2.5M) y cambiar batería ($300K) = $2.8M total
 
 ---
 
-## ¿Necesitas reparar tu iPhone actual?
+## Necesitas Reparar tu iPhone en Bogotá
 
 Antes de comprar nuevo, evalúa si reparar es mejor opción:
 

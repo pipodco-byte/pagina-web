@@ -30,7 +30,7 @@ Esta es la diferencia entre prometer y hacer. Nuestra garantía no es marketing,
 
 ---
 
-## 📋 Qué Dice Nuestra Garantía
+## Qué Dice Nuestra Garantía sobre Garantía Real Pipod Bogotá
 
 ### Cobertura de 12 Meses
 **Aplica a:**
@@ -43,7 +43,7 @@ Esta es la diferencia entre prometer y hacer. Nuestra garantía no es marketing,
 
 ---
 
-## ✅ Qué Cubre la Garantía
+## Qué Cubre la Garantía sobre Garantía Real Pipod Bogotá
 
 ### 1. Defectos del Repuesto
 **Ejemplos:**
@@ -67,7 +67,7 @@ Esta es la diferencia entre prometer y hacer. Nuestra garantía no es marketing,
 
 ---
 
-## ❌ Qué NO Cubre la Garantía
+## Qué NO Cubre la Garantía sobre Garantía Real Pipod Bogotá
 
 ### Daños Por Uso
 - Pantalla rota por caída
@@ -95,7 +95,7 @@ Esta es la diferencia entre prometer y hacer. Nuestra garantía no es marketing,
 
 ---
 
-## 🔄 Cómo Hacer Válida la Garantía
+## Cómo Hacer Válida la Garantía sobre Garantía Real Pipod Bogotá
 
 ### Paso 1: Contactarnos
 **Vía:**
@@ -143,7 +143,7 @@ Esta es la diferencia entre prometer y hacer. Nuestra garantía no es marketing,
 
 ---
 
-## 📊 Estadísticas de Nuestra Garantía
+## Estadísticas de Nuestra Garantía sobre Garantía Real Pipod Bogotá
 
 | Métrica | Valor |
 |---------|-------|
@@ -160,7 +160,7 @@ Esta es la diferencia entre prometer y hacer. Nuestra garantía no es marketing,
 
 ---
 
-## 💬 Casos Reales de Garantía
+## Casos Reales de Garantía sobre Garantía Real Pipod Bogotá
 
 ### Caso 1: Batería con Defecto
 **Situación:** Cliente cambió batería iPhone 12. A los 2 meses, se hinchó ligeramente.
@@ -202,20 +202,20 @@ Esta es la diferencia entre prometer y hacer. Nuestra garantía no es marketing,
 
 ---
 
-## 🆚 Garantía Pipod vs Competencia
+## Garantía Pipod vs Competencia sobre Garantía Real Pipod Bogotá
 
 | Aspecto | Pipod | Taller Genérico | Apple Autorizado |
 |---------|-------|-----------------|------------------|
 | Duración | 12 meses | 0-30 días | 90 días - 1 año |
-| Escrita | ✅ Sí | ⚠️ A veces | ✅ Sí |
-| Cumplimiento | ✅ Sí, probado | ⚠️ Variable | ✅ Sí |
+| Escrita | Sí | A veces | Sí |
+| Cumplimiento | Sí, probado | Variable | Sí |
 | Proceso | Rápido, simple | Variable | Burocrático |
 | Cobertura | Clara | Confusa | Estándar Apple |
 | Tasa de uso | <2% | ? | ~5% |
 
 ---
 
-## 🎯 Por Qué Ofrecemos 12 Meses
+## Por Qué Ofrecemos 12 Meses de Garantía sobre Garantía Real Pipod Bogotá
 
 ### Confianza en Nuestro Trabajo
 Si no confiáramos, no ofreceríamos. La garantía larga demuestra que hacemos bien las cosas.
@@ -227,11 +227,11 @@ Muchos talleres ofrecen 30 días. Nosotros 12 meses. Eso dice de nuestra calidad
 Saber que estás cubierto por un año te permite usar el equipo sin preocupación.
 
 ### Relación a Largo Plazo
-Clientes con garantía cumplida vuelven y recomiendan. Inversión en confianza.
+Clientes con garantía cumplida vuelven y recommendan. Inversión en confianza.
 
 ---
 
-## 💬 Preguntas Frecuentes
+## Preguntas Frecuentes sobre Garantía Real Pipod Bogotá
 
 **¿Realmente cumplen la garantía?**
 Sí. Nuestra reputación se basa en ello. Puedes ver reseñas de clientes que la usaron.

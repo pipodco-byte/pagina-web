@@ -30,9 +30,9 @@ Conoce al equipo que hace posible cada reparación.
 
 ---
 
-## 👥 Nuestro Equipo Técnico
+## Nuestro Equipo Técnico Apple en Bogotá
 
-### Perfil General del Equipo
+### Perfil General del Equipo de Servicio Técnico Apple en Bogotá
 
 **Experiencia promedio:** 8+ años en reparación Apple
 **Especialización:** Exclusivamente equipos Apple
@@ -41,9 +41,9 @@ Conoce al equipo que hace posible cada reparación.
 
 ---
 
-## 🎓 Formación y Especialización
+## Formación y Especialización de Nuestro Equipo Apple en Bogotá
 
-### Capacitaciones Regulares
+### Capacitaciones Regulares de Servicio Técnico Apple
 **Áreas de formación continua:**
 - Nuevos modelos Apple (lanzamientos anuales)
 - Técnicas de microsoldadura avanzada
@@ -51,7 +51,7 @@ Conoce al equipo que hace posible cada reparación.
 - Recuperación de datos
 - Casos complejos y poco comunes
 
-### Certificaciones
+### Certificaciones de Servicio Técnico Apple
 - Formación en soldadura SMD
 - Certificaciones en diagnóstico electrónico
 - Cursos especializados Apple
@@ -59,9 +59,9 @@ Conoce al equipo que hace posible cada reparación.
 
 ---
 
-## 🔧 Roles Especializados
+## Roles Especializados en Nuestro Servicio Técnico Apple Bogotá
 
-### Técnico Principal
+### Técnico Principal de Servicio Técnico Apple
 **Especialidad:**
 - Reparaciones complejas de placa
 - Microsoldadura
@@ -75,7 +75,7 @@ Conoce al equipo que hace posible cada reparación.
 
 ---
 
-### Técnicos de Campo
+### Técnicos de Campo de Servicio Técnico Apple
 **Especialidad:**
 - Cambios de batería
 - Reemplazo de pantallas
@@ -89,7 +89,7 @@ Conoce al equipo que hace posible cada reparación.
 
 ---
 
-### Atención y Logística
+### Atención y Logística de Servicio Técnico Apple
 **Especialidad:**
 - Recepción de equipos
 - Coordinación de citas

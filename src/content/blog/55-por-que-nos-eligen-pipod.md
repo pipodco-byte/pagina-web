@@ -30,9 +30,7 @@ Estos son los diferenciadores que nos hacen únicos.
 
 ---
 
-## 🎯 Los 7 Diferenciadores Pipod
-
-### 1. Especialización Exclusiva Apple (Desde 2010)
+## Especialización Exclusiva Apple en Bogotá (Desde 2010)
 
 **Lo que somos:**
 - Solo Apple. Nada más.
@@ -40,9 +38,9 @@ Estos son los diferenciadores que nos hacen únicos.
 - Desde MacBook blanco hasta M3
 
 **Lo que NO somos:**
-- ❌ Taller "de todo"
-- ❌ Reparamos Android "también"
-- ❌ Hacemos PC "si se puede"
+- Taller "de todo"
+- Reparamos Android "también"
+- Hacemos PC "si se puede"
 
 **Por qué importa:**
 - Conocemos cada modelo a fondo
@@ -54,7 +52,7 @@ Estos son los diferenciadores que nos hacen únicos.
 
 ---
 
-### 2. Diagnóstico Gratis en 20 Minutos
+## Diagnóstico Gratis en 20 Minutos en Nuestro Taller Apple Bogotá
 
 **El proceso:**
 1. Traes tu equipo
@@ -67,7 +65,7 @@ Estos son los diferenciadores que nos hacen únicos.
 
 **Por qué lo hacemos:**
 - Confiamos en nuestro servicio
-- Queremos que nos conozcas
+- queremos que nos conozcas
 - La decisión debe ser informada
 
 **Competencia:**
@@ -77,7 +75,7 @@ Estos son los diferenciadores que nos hacen únicos.
 
 ---
 
-### 3. Garantía de 12 Meses (Y La Cumplimos)
+## Garantía de 12 Meses en Nuestro Servicio Técnico Apple Bogotá (Y La Cumplimos)
 
 **Lo que prometemos:**
 - 12 meses de garantía en todo
@@ -100,7 +98,7 @@ Estos son los diferenciadores que nos hacen únicos.
 
 ---
 
-### 4. Ubicación Real en Chapinero (Desde 2016)
+## Ubicación Real en Chapinero Bogotá (Desde 2016)
 
 **Dirección:** Cra. 13a #79-52
 
@@ -120,7 +118,7 @@ Estos son los diferenciadores que nos hacen únicos.
 
 ---
 
-### 5. Transparencia Total
+## Transparencia Total en Nuestro Servicio Técnico Apple Bogotá
 
 **Trabajo frente al cliente:**
 Puedes ver cómo reparamos tu equipo (si lo deseas)
@@ -139,7 +137,7 @@ Puedes ver cómo reparamos tu equipo (si lo deseas)
 
 ---
 
-### 6. Experiencia Comprobada (16 Años)
+## Experiencia Comprobada en Nuestro Taller Apple Bogotá (16 Años)
 
 **Trayectoria:**
 - 2010: Fundación
@@ -160,7 +158,7 @@ Puedes ver cómo reparamos tu equipo (si lo deseas)
 
 ---
 
-### 7. Atención Personalizada
+## Atención Personalizada en Nuestro Servicio Técnico Apple Bogotá
 
 **No somos una fábrica:**
 - Te conoces por nombre
