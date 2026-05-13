@@ -1,7 +1,7 @@
 # ⏳ Pendientes — Pipod Ecommerce (Astro)
 
-**Última actualización:** Mayo 12, 2026
-**Versión:** 1.3
+**Última actualización:** Mayo 13, 2026
+**Versión:** 1.4
 **Proyecto:** Astro-Ecommerce (paginaweb-ecommerce / www.pipod.co)
 **Fuente de verdad:** Este archivo
 
@@ -21,6 +21,8 @@
 | B8 | CardProduct: `price.toLocaleString()` fallaba cuando price era undefined/null | ✅ Corregido | 5c2510c |
 | B9 | CardProduct: image src usaba `BASE_URL` incorrectamente (imágenes externas) | ✅ Corregido | 5c2510c |
 | B10 | CardProduct: productos sin imagen mostraban broken image | ✅ Corregido | 5c2510c |
+| B11 | Content schema `author: z.literal('kimi')` no permitía 'equipo-pipod' | ✅ Corregido | 621ab19 |
+| B12 | TableOfContents `headings` undefined en BlogPostLayout | ✅ Corregido | 621ab19 |
 
 **Lección aprendida:** El endpoint `/api/test` mínimo (sin dependencias) devolvía 500 → problema de infraestructura Vercel, no del código.
 
@@ -44,6 +46,13 @@
 | F12 | **Product API endpoints** — `/api/products/index.ts` y `/api/products/[sku].ts` | ✅ | 5c2510c |
 | F13 | **Nanostores productStore** — estado global para productos | ✅ | 5c2510c |
 | F14 | **Blog Content Collections** — 73 artículos migrados a `src/content/blog/`, layouts SEO, rutas `/blog/{slug}` | ✅ | Mayo 2026 |
+| F15 | **Blog Phanatik Visual Redesign** — 8 nuevos componentes (Text, Wrapper, SectionDivider, BlogCardHero/Split/Grid/Mini, BlogAside), grid 4 columnas, adaptadores Pipod (colores azul/negro, no púrpura) | ✅ | d9b13de |
+| F16 | **TableOfContents flotante** — TOC a la izquierda del artículo, auto-genera de H2/H3, highlight on scroll | ✅ | 621ab19 |
+| F17 | **Related Posts** — Sección al final del artículo con 3 cards relacionados por categoría/tags | ✅ | 621ab19 |
+| F18 | **Author fix** — Todos los 70 posts con `author: 'equipo-pipod'`, schema actualizado | ✅ | 621ab19 |
+| F19 | **Botones pill blog** — 100px radius, azul (#3A506B) → negro (#000) hover, solo blog | ✅ | 621ab19 |
+| F20 | **Blog Pipod header removed** — Eliminado sección "Blog Pipod" de pipod-blog.astro | ✅ | 621ab19 |
+| F21 | **LoadMoreButton** — Paginación para 70+ artículos (muestra 12, carga 12 más) | ✅ | 621ab19 |
 
 ---
 
@@ -117,6 +126,19 @@
 
 ---
 
+## 🔵 Nuevas Tareas Blog (Mayo 13, 2026)
+
+| # | Tarea | Prioridad | Status | Notas |
+|---|-------|-----------|--------|-------|
+| BN1 | **Share buttons** | Media | ⏳ Pendiente | A la izquierda del artículo (estilo Phanatik): WhatsApp, Facebook, LinkedIn, copiar link |
+| BN2 | **Newsletter mejorado** | Media | ⏳ Pendiente | Explicar mejor al usuario — necesita diseño/spec |
+| BN3 | **Schema markup extra** | SEO | 📋 Pendientes | BreadcrumbList, FAQPage para artículos con Q&A |
+| BN4 | **Open Graph dinámico** | SEO | 📋 Pendientes | Imagen OG personalizada por artículo |
+| BN5 | Progress bar | - | ❌ No | Usuario dijo NO |
+| BN6 | Dark mode blog | Baja | 📋 Pendientes | Futuro |
+
+---
+
 ## 📋 SDD Changes (Spec-Driven Development)
 
 | Change | Status | Artefactos |
@@ -126,6 +148,7 @@
 | `separar-contenido-layout` | ✅ Completado | 73 artículos migrados a Content Collections con rutas /blog |
 | `blog-editorial-redesign` | ✅ Completado | Cards editoriales (BlogCardEditorial, BlogCardFeatured), hero destacado, SCSS editorial |
 | `blog-phanatik-enhancements` | ✅ Completado | TopStoriesSection, BriefsSection, BlogSidebar, CategoriesGrid, BlogCardList, BlogCardCompact, BlogCardOverlay |
+| `blog-phanatik-visual-redesign` | ✅ Completado | 8 componentes nuevos, grid 4 columnas, colores Pipod (azul/negro), TableOfContents, Related Posts, LoadMoreButton, author fix, buttons pill |
 | `condicion-normalization` | ⏳ Pendiente | Mapping DB → UI para Nuevo/Seminuevo/Repotenciado |
 
 ---
@@ -212,4 +235,4 @@ Para detalle SEO completo, consulta `PENDIENTES_SEO.md`.
 
 ---
 
-_Ultima actualizacion: Mayo 12, 2026 (v1.2 - Blog Content Collections + separa-contenido-layout)_
+_Ultima actualizacion: Mayo 13, 2026 (v1.4 - Blog Phanatik Visual Redesign + TableOfContents + Related Posts + Share buttons pendiente)_
