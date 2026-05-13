@@ -159,8 +159,8 @@
 
 | # | Tarea | Prioridad | Estado | Impacto |
 |---|-------|-----------|--------|---------|
-| SEO1 | **Schema LocalBusiness** (JSON-LD en Layout.astro) | 🔴 Alta | ⏳ | Alto - Local SEO |
-| SEO2 | **Jerarquía Semántica H1/H2/H3** (verificar h1 único, h2 con keywords) | 🔴 Alta | ⏳ | Alto - Google entiende |
+| SEO1 | **Schema LocalBusiness** (JSON-LD en Layout.astro) | 🔴 Alta | ✅ Existente | Alto - Local SEO |
+| SEO2 | **Jerarquía Semántica H1/H2/H3** (verificar h1 único, h2 con keywords) | 🔴 Alta | ✅ Done (c00853f) | Alto - Google entiende |
 | SEO3 | **WPO: Imágenes WebP** (convertir catálogo) | 🔴 Alta | ⏳ | Medio - Core Web Vitals |
 | SEO4 | **Lazy loading** (imágenes below the fold) | 🔴 Alta | ⏳ | Medio - LCP |
 
