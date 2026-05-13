@@ -1,9 +1,9 @@
 # ⏳ Pendientes — Pipod Ecommerce (Astro)
 
 **Última actualización:** Mayo 13, 2026
-**Versión:** 1.4
+**Versión:** 1.5
 **Proyecto:** Astro-Ecommerce (paginaweb-ecommerce / www.pipod.co)
-**Fuente de verdad:** Este archivo
+**Fuente de verdad:** Este archivo + Todo.md
 
 ---
 
@@ -153,12 +153,48 @@
 
 ---
 
+## 🚀 Plan SEO Técnico (Llevar de 6.5 a 9+)
+
+### Fase 1: Quick Wins (Esta semana)
+
+| # | Tarea | Prioridad | Estado | Impacto |
+|---|-------|-----------|--------|---------|
+| SEO1 | **Schema LocalBusiness** (JSON-LD en Layout.astro) | 🔴 Alta | ⏳ | Alto - Local SEO |
+| SEO2 | **Jerarquía Semántica H1/H2/H3** (verificar h1 único, h2 con keywords) | 🔴 Alta | ⏳ | Alto - Google entiende |
+| SEO3 | **WPO: Imágenes WebP** (convertir catálogo) | 🔴 Alta | ⏳ | Medio - Core Web Vitals |
+| SEO4 | **Lazy loading** (imágenes below the fold) | 🔴 Alta | ⏳ | Medio - LCP |
+
+### Fase 2: Optimización Media
+
+| # | Tarea | Prioridad | Estado | Impacto |
+|---|-------|-----------|--------|---------|
+| SEO5 | **Meta titles dinámicos** (Producto + Estado + Ubicación) | 🟡 Media | ⏳ | Alto - CTR |
+| SEO6 | **Meta descriptions únicas** (por categoría) | 🟡 Media | ⏳ | Medio - CTR |
+| SEO7 | **HowTo Schema** (blog guides) | 🟡 Media | ⏳ | Medio - Rich snippets |
+| SEO8 | **Product Schema + AggregateRating** | 🟡 Media | ⏳ | Medio - Stars in SERP |
+
+### Fase 3: Arquitectura (Largo plazo)
+
+| # | Tarea | Prioridad | Estado | Impacto |
+|---|-------|-----------|--------|---------|
+| SEO9 | **Arquitectura Silo** (páginas de landing por servicio) | 🟢 Baja | 📋 | Alto - Keyword focus |
+| SEO10 | **Blog → Servicio links** (internal linking) | 🟢 Baja | ⏳ | Medio - Link equity |
+| SEO11 | **Citations locales** (directorios Colombia) | 🟢 Baja | 📋 | Medio - Local trust |
+| SEO12 | **Reviews con fotos** (usar fotos reales) | 🟢 Baja | 📋 | Alto - Trust signals |
+
+### Detalles Técnicos
+
+**1. Schema LocalBusiness (SEO1):** Agregar JSON-LD en Layout.astro
+**2. Jerarquía Semántica (SEO2):** H1 único con "Servicio Técnico Apple Bogotá"
+**3. Meta Titles Dinámicos (SEO5):** `Producto + Estado + Ubicación + Pipod`
+
+---
+
 ## 📊 SEO (Ver detalle en `PENDIENTES_SEO.md`)
 
-**Score actual:** ~8.2/10
-**Meta:** 10/10
+**Score actual:** ~6.5/10 | **Meta:** 9+ (sólido)
 
-### Pendientes SEO:
+### Pendientes SEO (Legacy):
 - H1: Citations locales (directorios Colombia)
 - H2: Reviews con fotos reales
 - H3: Reducir fonts (4→2)
@@ -235,4 +271,4 @@ Para detalle SEO completo, consulta `PENDIENTES_SEO.md`.
 
 ---
 
-_Ultima actualizacion: Mayo 13, 2026 (v1.4 - Blog Phanatik Visual Redesign + TableOfContents + Related Posts + Share buttons pendiente)_
+_Ultima actualizacion: Mayo 13, 2026 (v1.5 - SEO Plan 6.5→9+, Schema LocalBusiness, Jerarquía Semántica, WPO, Auto-PR workflow)_
