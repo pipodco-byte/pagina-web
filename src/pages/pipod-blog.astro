@@ -8,7 +8,14 @@ import FloatingContact from '../layouts/floatingContact';
 import BlogPostingSchema from '../components/SEO/BlogPostingSchema.astro';
 import { getCollection } from 'astro:content';
 import '../styles/_blog-editorial.scss';
+import '../styles/_blog-phanatik.scss';
 import '../../assets/scss/astro-ecommerce.scss';
+
+// New components for Phanatik enhancements
+import TopStoriesSection from '../components/blog/TopStoriesSection.astro';
+import BriefsSection from '../components/blog/BriefsSection.astro';
+import BlogSidebar from '../components/blog/BlogSidebar.astro';
+import CategoriesGrid from '../components/blog/CategoriesGrid.astro';
 
 // Enable static prerendering
 export const prerender = true;
@@ -32,6 +39,22 @@ const posts = allPosts
     readingTime: '5 min de lectura'
   }));
 
+// Derive data for new sections
+// TopStories: 5 posts (1 hero + 4 list) - most recent
+const topStories = posts.slice(0, 5);
+
+// Briefs: 3 posts - next after TopStories
+const briefs = posts.slice(5, 8);
+
+// Rest for BlogFilter grid (skip first 8 used above)
+const remainingPosts = posts.slice(8);
+
+// Sidebar: 5 posts for sidebar list
+const sidebarPosts = posts.slice(0, 5);
+
+// Categories: all posts for count derivation
+const categoriesPosts = posts;
+
 const title = "Blog Pipod - Expertos en Apple";
 const description = "Artículos, tips y guías sobre reparación, mantenimiento y optimización de equipos Apple.";
 const siteUrl = 'https://www.pipod.co';
@@ -50,10 +73,44 @@ const today = new Date().toISOString().split('T')[0];
     datePublished={today}
     url={blogUrl}
   />
-  
+
   <main style="padding-top: 120px;">
+    <!-- Hero: Featured article -->
     {posts.length > 0 && <BlogHeroFeatured post={posts[0]} />}
-    <BlogFilter client:load posts={posts} />
+
+    <!-- Top Stories: 1 overlay hero + 4 list items -->
+    {topStories.length > 0 && (
+      <div class="container" style="padding: 0 24px;">
+        <TopStoriesSection posts={topStories} />
+      </div>
+    )}
+
+    <!-- Briefs: 3 compact horizontal cards -->
+    {briefs.length > 0 && (
+      <div class="container" style="padding: 0 24px;">
+        <BriefsSection posts={briefs} />
+      </div>
+    )}
+
+    <!-- BlogFilter: search + filter + remaining post grid (posts 9-73) -->
+    <div class="container" style="padding: 0 24px;">
+      <BlogFilter client:load posts={remainingPosts} />
+    </div>
+
+    <!-- Categories Grid -->
+    {categoriesPosts.length > 0 && (
+      <div class="container" style="padding: 0 24px;">
+        <CategoriesGrid posts={categoriesPosts} />
+      </div>
+    )}
+
+    <!-- Sidebar: featured post list -->
+    {sidebarPosts.length > 0 && (
+      <div class="container" style="padding: 0 24px;">
+        <BlogSidebar posts={sidebarPosts} limit={5} />
+      </div>
+    )}
+
     <BlogCtaSection />
   </main>
 
@@ -69,5 +126,33 @@ const today = new Date().toISOString().split('T')[0];
 
   .container {
     padding: 0 24px !important;
+  }
+
+  // Layout grid for sidebar
+  .blog-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--pipod-space-2xl, 48px);
+    padding: var(--pipod-space-xl, 32px) 0;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+
+    &__main {
+      min-width: 0;
+    }
+
+    &__sidebar {
+      @media (max-width: 1024px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--pipod-space-xl, 32px);
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 </style>

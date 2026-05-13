@@ -1,7 +1,7 @@
 # ⏳ Pendientes — Pipod Ecommerce (Astro)
 
 **Última actualización:** Mayo 12, 2026
-**Versión:** 1.2
+**Versión:** 1.3
 **Proyecto:** Astro-Ecommerce (paginaweb-ecommerce / www.pipod.co)
 **Fuente de verdad:** Este archivo
 
@@ -124,6 +124,8 @@
 | `supabase-products-integration` | ✅ Completado | `openspec/changes/supabase-products-integration/` |
 | `bold-api-checkout` | ✅ Completado | `openspec/changes/bold-api-checkout/` |
 | `separar-contenido-layout` | ✅ Completado | 73 artículos migrados a Content Collections con rutas /blog |
+| `blog-editorial-redesign` | ✅ Completado | Cards editoriales (BlogCardEditorial, BlogCardFeatured), hero destacado, SCSS editorial |
+| `blog-phanatik-enhancements` | ✅ Completado | TopStoriesSection, BriefsSection, BlogSidebar, CategoriesGrid, BlogCardList, BlogCardCompact, BlogCardOverlay |
 | `condicion-normalization` | ⏳ Pendiente | Mapping DB → UI para Nuevo/Seminuevo/Repotenciado |
 
 ---

@@ -1,0 +1,95 @@
+---
+/**
+ * BlogCardList.astro — Text-only article card (Phanatik BlogCard5 pattern)
+ *
+ * Simple list-style card with title, category badge, and date.
+ * No image, no author. Border-bottom separator.
+ *
+ * Props:
+ *   slug: string       — Article URL path
+ *   title: string      — Article title
+ *   category: string   — Category badge text
+ *   publishDate: string — ISO date string
+ */
+
+interface Props {
+  slug: string;
+  title: string;
+  category: string;
+  publishDate: string;
+}
+
+const { slug, title, category, publishDate } = Astro.props;
+
+const cardHref = slug ? `/blog/${slug}` : '#';
+
+// Spanish locale date formatting: "12 may 2026"
+const formattedDate = new Date(publishDate).toLocaleDateString('es-CO', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<article class="blog-card-list">
+  <a href={cardHref} class="blog-card-list__link" aria-label={`Leer: ${title}`}>
+    <div class="blog-card-list__content">
+      <span class="blog-card-list__category">{category}</span>
+      <h3 class="blog-card-list__title">{title}</h3>
+      <time class="blog-card-list__date" datetime={publishDate}>{formattedDate}</time>
+    </div>
+  </a>
+</article>
+
+<style>
+  .blog-card-list {
+    padding: var(--pipod-space-md, 16px) 0;
+    border-bottom: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--pipod-space-xs, 4px);
+    }
+
+    &__category {
+      font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+      font-size: var(--pipod-size-label, 0.7rem);
+      font-weight: var(--pipod-weight-extrabold, 800);
+      color: var(--pipod-color-deep-blue, #3A506B);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+    }
+
+    &__title {
+      font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+      font-size: var(--pipod-size-body, 0.95rem);
+      font-weight: var(--pipod-weight-semibold, 600);
+      color: var(--pipod-color-near-black, #1F1F1F);
+      line-height: var(--pipod-leading-snug, 1.25);
+      margin: 0;
+      transition: color var(--pipod-transition-fast, 150ms ease);
+
+      .blog-card-list__link:hover & {
+        color: var(--pipod-color-deep-blue, #3A506B);
+        text-decoration: underline;
+      }
+    }
+
+    &__date {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-label, 0.7rem);
+      color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+    }
+  }
+</style>

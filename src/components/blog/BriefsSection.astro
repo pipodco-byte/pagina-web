@@ -1,0 +1,85 @@
+---
+/**
+ * BriefsSection.astro — Horizontal section with 3 BlogCardCompact (Phanatik Briefs1 pattern)
+ *
+ * Section label "Breves". Flex row of 3 compact cards.
+ * Horizontal scroll on mobile. Empty state hides section.
+ *
+ * Props:
+ *   posts: Array<{ slug: string; title: string; category: string; publishDate: string; ogImage?: string }>
+ */
+
+import BlogCardCompact from './BlogCardCompact.astro';
+
+interface Props {
+  posts: Array<{
+    slug: string;
+    title: string;
+    category: string;
+    publishDate: string;
+    ogImage?: string;
+  }>;
+}
+
+const { posts = [] } = Astro.props;
+
+const displayPosts = posts.slice(0, 3);
+---
+
+{displayPosts.length > 0 && (
+  <section class="briefs-section">
+    <h2 class="briefs-section__title">Breves</h2>
+    <div class="briefs-section__grid">
+      {displayPosts.map((post) => (
+        <BlogCardCompact
+          slug={post.slug}
+          title={post.title}
+          category={post.category}
+          publishDate={post.publishDate}
+          ogImage={post.ogImage}
+        />
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .briefs-section {
+    padding: var(--pipod-space-xl, 32px) 0;
+    border-top: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+
+    &__title {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-label, 0.7rem);
+      font-weight: var(--pipod-weight-bold, 700);
+      color: var(--pipod-color-deep-blue, #3A506B);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+      margin: 0 0 var(--pipod-space-md, 16px) 0;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--pipod-space-lg, 24px);
+
+      @media (max-width: 768px) {
+        display: flex;
+        overflow-x: auto;
+        gap: var(--pipod-space-md, 16px);
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: var(--pipod-space-md, 16px);
+
+        & > :global(.blog-card-compact) {
+          flex: 0 0 280px;
+          scroll-snap-align: start;
+        }
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+</style>

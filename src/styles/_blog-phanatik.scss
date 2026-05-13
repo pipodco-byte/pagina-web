@@ -1,0 +1,74 @@
+// ============================================
+// BLOG PHANATIK ENHANCEMENTS
+// Shared styles for new components
+// Uses --pipod-* CSS custom properties from _tokens.css
+// NO Tailwind classes — all styles in SCSS
+// ============================================
+
+// ============================================
+// 1. SHARED GRADIENT PLACEHOLDERS
+// ============================================
+%gradient-placeholder {
+  background: var(--pipod-gradient-blue, linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%));
+}
+
+// ============================================
+// 2. SHARED CARD LINK MIXIN
+// ============================================
+%card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  &:hover {
+    & .card-title {
+      color: var(--pipod-color-deep-blue, #3A506B);
+      text-decoration: underline;
+    }
+  }
+}
+
+// ============================================
+// 3. SHARED CATEGORY BADGE
+// ============================================
+%category-badge {
+  font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+  font-size: var(--pipod-size-label, 0.7rem);
+  font-weight: var(--pipod-weight-extrabold, 800);
+  color: var(--pipod-color-deep-blue, #3A506B);
+  text-transform: uppercase;
+  letter-spacing: var(--pipod-tracking-wider, 0.05em);
+}
+
+// ============================================
+// 4. SHARED SECTION LABEL
+// ============================================
+%section-label {
+  font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+  font-size: var(--pipod-size-label, 0.7rem);
+  font-weight: var(--pipod-weight-bold, 700);
+  color: var(--pipod-color-deep-blue, #3A506B);
+  text-transform: uppercase;
+  letter-spacing: var(--pipod-tracking-wider, 0.05em);
+  margin: 0 0 var(--pipod-space-md, 16px) 0;
+}
+
+// ============================================
+// 5. BORDER SEPARATOR
+// ============================================
+%border-separator {
+  border-bottom: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+}
+
+// ============================================
+// 6. OVERLAY GRADIENT
+// ============================================
+%overlay-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  z-index: 1;
+}
