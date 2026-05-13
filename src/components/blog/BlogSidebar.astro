@@ -1,0 +1,136 @@
+---
+/**
+ * BlogSidebar.astro — Text-only nav list (Phanatik Aside1 pattern)
+ *
+ * Renders up to 5 posts as a simple nav/ul/li with title links and Spanish dates.
+ * Empty state shows title only.
+ *
+ * Props:
+ *   posts: Array<{ slug: string; title: string; category: string; publishDate: string }>
+ *   limit?: number — Max posts to display (default 5)
+ */
+
+interface Post {
+  slug: string;
+  title: string;
+  category: string;
+  publishDate: string;
+}
+
+interface Props {
+  posts: Post[];
+  limit?: number;
+}
+
+const { posts = [], limit = 5 } = Astro.props;
+
+const displayPosts = posts.slice(0, limit);
+
+// Spanish locale date formatting: "12 may 2026"
+const formatDate = (dateStr: string) => {
+  return new Date(dateStr).toLocaleDateString('es-CO', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+};
+---
+
+<nav class="blog-sidebar" aria-label="Artículos recientes">
+  <h2 class="blog-sidebar__title">Artículos Recientes</h2>
+  {displayPosts.length > 0 ? (
+    <ul class="blog-sidebar__list">
+      {displayPosts.map((post) => (
+        <li class="blog-sidebar__item">
+          <a href={`/blog/${post.slug}`} class="blog-sidebar__link">
+            <span class="blog-sidebar__category">{post.category}</span>
+            <span class="blog-sidebar__item-title">{post.title}</span>
+            <time class="blog-sidebar__date" datetime={post.publishDate}>
+              {formatDate(post.publishDate)}
+            </time>
+          </a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="blog-sidebar__empty">No hay artículos disponibles</p>
+  )}
+</nav>
+
+<style>
+  .blog-sidebar {
+    padding: var(--pipod-space-lg, 24px) 0;
+
+    &__title {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-label, 0.7rem);
+      font-weight: var(--pipod-weight-bold, 700);
+      color: var(--pipod-color-deep-blue, #3A506B);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+      margin: 0 0 var(--pipod-space-md, 16px) 0;
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      border-bottom: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+      padding: var(--pipod-space-sm, 8px) 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    &__category {
+      font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+      font-size: var(--pipod-size-micro, 0.65rem);
+      font-weight: var(--pipod-weight-extrabold, 800);
+      color: var(--pipod-color-deep-blue, #3A506B);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+    }
+
+    &__item-title {
+      font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+      font-size: var(--pipod-size-small, 0.85rem);
+      font-weight: var(--pipod-weight-medium, 500);
+      color: var(--pipod-color-near-black, #1F1F1F);
+      line-height: var(--pipod-leading-snug, 1.25);
+      transition: color var(--pipod-transition-fast, 150ms ease);
+
+      .blog-sidebar__link:hover & {
+        color: var(--pipod-color-deep-blue, #3A506B);
+        text-decoration: underline;
+      }
+    }
+
+    &__date {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-micro, 0.65rem);
+      color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+    }
+
+    &__empty {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-small, 0.85rem);
+      color: var(--pipod-color-disabled, rgba(0, 0, 0, 0.24));
+      font-style: italic;
+      margin: 0;
+    }
+  }
+</style>

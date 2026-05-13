@@ -1,0 +1,53 @@
+---
+/**
+ * BlogAuthor.astro — Shared author metadata component
+ * Renders initials avatar, capitalized name, Spanish-formatted date, and reading time.
+ * Used by BlogCardEditorial, BlogCardFeatured, and BlogHeroFeatured.
+ *
+ * Props:
+ *   author?: string      — Author name (default "Pipod Team", "kimi" → "Kimi")
+ *   publishDate: string  — ISO date string (e.g. "2026-05-15")
+ *   readingTime?: string — e.g. "5 min de lectura"
+ */
+
+interface Props {
+  author?: string;
+  publishDate: string;
+  readingTime?: string;
+}
+
+const { author = 'Equipo Pipod', publishDate, readingTime } = Astro.props;
+
+// Format author: "kimi" → "Kimi", hyphenated → Title Case
+const formattedAuthor = author
+  .replace(/-/g, ' ')
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
+// Single initial for avatar
+const initial = formattedAuthor.charAt(0).toUpperCase();
+
+// Spanish locale date formatting: "15 de mayo de 2026"
+const formattedDate = new Date(publishDate).toLocaleDateString('es-CO', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<div class="blog-author">
+  <div class="blog-author__avatar" aria-hidden="true">{initial}</div>
+  <div class="blog-author__info">
+    <span class="blog-author__name">{formattedAuthor}</span>
+    <div class="blog-author__meta">
+      <time datetime={publishDate}>{formattedDate}</time>
+      {readingTime && (
+        <>
+          <span class="blog-author__separator" aria-hidden="true">·</span>
+          <span class="blog-author__reading-time">{readingTime}</span>
+        </>
+      )}
+    </div>
+  </div>
+</div>

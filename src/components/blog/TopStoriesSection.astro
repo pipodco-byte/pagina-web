@@ -1,0 +1,106 @@
+---
+/**
+ * TopStoriesSection.astro — 2-column layout: 1 overlay hero + 4 list items (Phanatik TopStories1 pattern)
+ *
+ * Section label "Historias Destacadas".
+ * Left: BlogCardOverlay (1 post). Right: stack of BlogCardList (4 posts).
+ * Responsive stack on mobile.
+ *
+ * Props:
+ *   posts: Array<{ slug: string; title: string; category: string; ogImage?: string; publishDate: string }>
+ */
+
+import BlogCardOverlay from './BlogCardOverlay.astro';
+import BlogCardList from './BlogCardList.astro';
+
+interface Props {
+  posts: Array<{
+    slug: string;
+    title: string;
+    category: string;
+    ogImage?: string;
+    publishDate: string;
+  }>;
+}
+
+const { posts = [] } = Astro.props;
+
+// First post is the hero, rest are list items
+const heroPost = posts[0];
+const listPosts = posts.slice(1, 5);
+---
+
+{posts.length > 0 && (
+  <section class="top-stories-section">
+    <h2 class="top-stories-section__title">Historias Destacadas</h2>
+    <div class="top-stories-section__grid">
+      {heroPost && (
+        <div class="top-stories-section__hero">
+          <BlogCardOverlay
+            slug={heroPost.slug}
+            title={heroPost.title}
+            category={heroPost.category}
+            ogImage={heroPost.ogImage}
+            publishDate={heroPost.publishDate}
+          />
+        </div>
+      )}
+      <div class="top-stories-section__list">
+        {listPosts.map((post) => (
+          <BlogCardList
+            slug={post.slug}
+            title={post.title}
+            category={post.category}
+            publishDate={post.publishDate}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .top-stories-section {
+    padding: var(--pipod-space-xl, 32px) 0;
+    border-top: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+
+    &__title {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-label, 0.7rem);
+      font-weight: var(--pipod-weight-bold, 700);
+      color: var(--pipod-color-deep-blue, #3A506B);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+      margin: 0 0 var(--pipod-space-md, 16px) 0;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--pipod-space-xl, 32px);
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__hero {
+      min-width: 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-left: var(--pipod-space-lg, 24px);
+      border-left: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+
+      @media (max-width: 768px) {
+        padding-left: 0;
+        border-left: none;
+        padding-top: var(--pipod-space-lg, 24px);
+        border-top: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+      }
+    }
+  }
+</style>

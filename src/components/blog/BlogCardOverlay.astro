@@ -1,0 +1,179 @@
+---
+/**
+ * BlogCardOverlay.astro — Overlay-style card for top stories (Phanatik BlogCard4 pattern)
+ *
+ * Full image with gradient overlay bottom third. 16:9 aspect. Title truncates 2 lines max.
+ * Image fallback: gradient on error.
+ *
+ * Props:
+ *   slug: string       — Article URL path
+ *   title: string      — Article title
+ *   category: string   — Category badge text
+ *   ogImage?: string   — Image path
+ *   publishDate: string — ISO date string
+ */
+
+interface Props {
+  slug: string;
+  title: string;
+  category: string;
+  ogImage?: string;
+  publishDate: string;
+}
+
+const { slug, title, category, ogImage, publishDate } = Astro.props;
+
+const hasImage = !!ogImage;
+const cardHref = slug ? `/blog/${slug}` : '#';
+
+// Spanish locale date formatting: "12 may 2026"
+const formattedDate = new Date(publishDate).toLocaleDateString('es-CO', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<article class="blog-card-overlay">
+  <a href={cardHref} class="blog-card-overlay__link" aria-label={`Leer: ${title}`}>
+    <div class="blog-card-overlay__image">
+      {hasImage ? (
+        <img
+          src={ogImage}
+          alt={title}
+          loading="eager"
+          decoding="async"
+          onerror="this.style.display='none'"
+        />
+      ) : (
+        <div class="blog-card-overlay__placeholder">
+          <span>{category}</span>
+        </div>
+      )}
+      <div class="blog-card-overlay__gradient" aria-hidden="true"></div>
+    </div>
+    <div class="blog-card-overlay__content">
+      <span class="blog-card-overlay__category">{category}</span>
+      <h3 class="blog-card-overlay__title">{title}</h3>
+      <time class="blog-card-overlay__date" datetime={publishDate}>{formattedDate}</time>
+    </div>
+  </a>
+</article>
+
+<style>
+  .blog-card-overlay {
+    position: relative;
+    border-radius: var(--pipod-radius-standard, 24px);
+    overflow: hidden;
+
+    &__link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    &__image {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--pipod-gradient-blue, linear-gradient(135deg, #3A506B 0%, #4A90E2 100%));
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform var(--pipod-transition-normal, 300ms ease);
+      }
+
+      .blog-card-overlay__link:hover & img {
+        transform: scale(1.03);
+      }
+    }
+
+    &__placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        color: var(--pipod-color-white, #ffffff);
+        font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+        font-size: var(--pipod-size-h3, 1.5rem);
+        font-weight: var(--pipod-weight-extrabold, 800);
+        text-transform: uppercase;
+        letter-spacing: var(--pipod-tracking-wider, 0.05em);
+        opacity: 0.6;
+      }
+    }
+
+    &__gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+      z-index: 1;
+    }
+
+    &__content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: var(--pipod-space-lg, 24px);
+      display: flex;
+      flex-direction: column;
+      gap: var(--pipod-space-xs, 4px);
+    }
+
+    &__category {
+      font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+      font-size: var(--pipod-size-label, 0.7rem);
+      font-weight: var(--pipod-weight-extrabold, 800);
+      color: var(--pipod-color-white, #ffffff);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+      opacity: 0.9;
+    }
+
+    &__title {
+      font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+      font-size: var(--pipod-size-h3, 1.5rem);
+      font-weight: var(--pipod-weight-bold, 700);
+      color: var(--pipod-color-white, #ffffff);
+      line-height: var(--pipod-leading-tight, 1.2);
+      margin: 0;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      .blog-card-overlay__link:hover & {
+        text-decoration: underline;
+      }
+    }
+
+    &__date {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-label, 0.7rem);
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-card-overlay {
+      &__content {
+        padding: var(--pipod-space-md, 16px);
+      }
+
+      &__title {
+        font-size: var(--pipod-size-body, 0.95rem);
+      }
+    }
+  }
+</style>

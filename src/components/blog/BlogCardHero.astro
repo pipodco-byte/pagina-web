@@ -1,0 +1,215 @@
+---
+/**
+ * BlogCardHero.astro - Full-width hero card
+ *
+ * Large featured card with 16:9 image aspect ratio.
+ * Includes category badge, title, excerpt, author, date, and reading time.
+ *
+ * Props:
+ *   post: BlogPost - The post data object
+ */
+
+import BlogAuthor from './BlogAuthor.astro';
+import type { BlogPost } from '../../types/blog';
+
+interface Props {
+  post: BlogPost;
+  class?: string;
+}
+
+const { post, class: className = '' } = Astro.props;
+
+const cardHref = post.slug ? `/blog/${post.slug}` : '#';
+const hasImage = !!post.ogImage;
+
+// Spanish locale date formatting
+const formattedDate = new Date(post.publishDate).toLocaleDateString('es-CO', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<article class={`blog-card-hero ${className}`.trim()}>
+  <a href={cardHref} class="blog-card-hero__link" aria-label={`Leer: ${post.title}`}>
+    <!-- Image section with overlay -->
+    <div class="blog-card-hero__image-wrapper">
+      {hasImage ? (
+        <>
+          <div class="blog-card-hero__overlay" aria-hidden="true"></div>
+          <img
+            src={post.ogImage}
+            alt={post.title}
+            loading="eager"
+            decoding="async"
+            onerror="this.style.display='none'"
+          />
+        </>
+      ) : (
+        <div class="blog-card-hero__placeholder">
+          <span>{post.category}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- Content section -->
+    <div class="blog-card-hero__content">
+      <span class="blog-card-hero__category-badge">{post.category}</span>
+      <h2 class="blog-card-hero__title">{post.title}</h2>
+      {post.description && (
+        <p class="blog-card-hero__excerpt">{post.description}</p>
+      )}
+
+      <!-- Author metadata -->
+      <div class="blog-card-hero__meta">
+        <BlogAuthor
+          author={post.author}
+          publishDate={post.publishDate}
+          readingTime={post.readingTime}
+        />
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  .blog-card-hero {
+    position: relative;
+    border-radius: var(--pipod-radius-standard, 24px);
+    overflow: hidden;
+    background: var(--pipod-color-white, #ffffff);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 200ms ease, transform 200ms ease;
+
+    &:hover {
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+  }
+
+  .blog-card-hero__link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .blog-card-hero__image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .blog-card-hero__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    z-index: 1;
+  }
+
+  .blog-card-hero__placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--pipod-color-deep-blue, #3A506B);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+      font-size: 14px;
+      color: var(--pipod-color-white, #ffffff);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .blog-card-hero__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px;
+    z-index: 2;
+    color: var(--pipod-color-white, #ffffff);
+  }
+
+  .blog-card-hero__category-badge {
+    font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--pipod-color-white, #ffffff);
+    background: var(--pipod-color-deep-blue, #3A506B);
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .blog-card-hero__title {
+    font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--pipod-color-white, #ffffff);
+    margin: 0 0 12px 0;
+    transition: color 200ms ease;
+
+    .blog-card-hero__link:hover & {
+      text-decoration: underline;
+    }
+  }
+
+  .blog-card-hero__excerpt {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-card-hero__meta {
+    :global(.blog-author__name) {
+      color: var(--pipod-color-white, #ffffff);
+    }
+
+    :global(.blog-author__meta) {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    :global(.blog-author__avatar) {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-card-hero__content {
+      padding: 20px;
+    }
+
+    .blog-card-hero__title {
+      font-size: 1.25rem;
+    }
+
+    .blog-card-hero__excerpt {
+      font-size: 0.9rem;
+      -webkit-line-clamp: 2;
+    }
+  }
+</style>

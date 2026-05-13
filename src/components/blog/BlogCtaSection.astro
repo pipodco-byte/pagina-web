@@ -1,35 +1,78 @@
 ---
 ---
 
-<section style="background: #000000; color: #FFFFFF; padding: 80px 0; text-align: center;">
+<section class="blog-cta">
   <div class="container">
-    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">¿Tienes una pregunta?</h2>
-    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #CCCCCC;">
+    <h2 class="blog-cta__title">¿Tienes una pregunta?</h2>
+    <p class="blog-cta__subtitle">
       Contáctanos y nuestros expertos te ayudarán
     </p>
-    <a href="https://wa.me/573124813094" target="_blank" style="background: #FFFFFF; color: #000000; padding: 14px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+    <a
+      href="https://wa.me/573124813094"
+      target="_blank"
+      class="blog-cta__btn"
+    >
       Contactar por WhatsApp
     </a>
   </div>
 </section>
 
-<style is:global>
+<style>
+  .blog-cta {
+    background: var(--pipod-color-black, #000000);
+    color: var(--pipod-color-white, #ffffff);
+    padding: var(--pipod-space-3xl, 80px) 0;
+    text-align: center;
+  }
+
+  .blog-cta__title {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-h2, 2rem);
+    font-weight: var(--pipod-weight-bold, 700);
+    color: var(--pipod-color-white, #ffffff);
+    margin: 0 0 var(--pipod-space-md, 16px) 0;
+  }
+
+  .blog-cta__subtitle {
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-ui-medium, 1rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 var(--pipod-space-xl, 32px) 0;
+    line-height: var(--pipod-leading-relaxed, 1.6);
+  }
+
+  .blog-cta__btn {
+    background: var(--pipod-color-white, #ffffff);
+    color: var(--pipod-color-black, #000000);
+    padding: var(--pipod-space-md, 16px) var(--pipod-space-xl, 32px);
+    border-radius: var(--pipod-radius-pill, 50px);
+    text-decoration: none;
+    font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+    font-size: var(--pipod-size-body, 0.95rem);
+    font-weight: var(--pipod-weight-semibold, 600);
+    display: inline-block;
+    transition:
+      transform var(--pipod-transition-fast, 150ms ease),
+      box-shadow var(--pipod-transition-fast, 150ms ease);
+  }
+
+  .blog-cta__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--pipod-shadow-elevated, 0 8px 24px rgba(0, 0, 0, 0.1));
+  }
+
   @media (max-width: 768px) {
-    section[style*="background: #000000"] {
-      padding: 40px 0 !important;
+    .blog-cta {
+      padding: var(--pipod-space-2xl, 48px) 0;
     }
 
-    section[style*="background: #000000"] h2 {
-      font-size: 1.5rem !important;
+    .blog-cta__title {
+      font-size: var(--pipod-size-h3, 1.5rem);
     }
 
-    section[style*="background: #000000"] p {
-      font-size: 1rem !important;
-    }
-
-    section[style*="background: #000000"] a {
-      width: 100% !important;
-      padding: 12px 24px !important;
+    .blog-cta__btn {
+      width: 100%;
+      padding: var(--pipod-space-md, 16px) var(--pipod-space-lg, 24px);
     }
   }
 </style>

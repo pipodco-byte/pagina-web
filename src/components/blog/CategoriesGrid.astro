@@ -1,0 +1,130 @@
+---
+/**
+ * CategoriesGrid.astro — 5-column grid of categories (Phanatik Categories1 pattern)
+ *
+ * Category name + post count. Pills with hover effects. Spanish labels.
+ * Derives counts from posts array at build time.
+ *
+ * Props:
+ *   posts: Array<{ category: string }>
+ */
+
+interface Props {
+  posts: Array<{ category: string }>;
+}
+
+const { posts = [] } = Astro.props;
+
+// Count posts per category
+const categoryCounts = posts.reduce((acc, post) => {
+  const cat = post.category;
+  acc[cat] = (acc[cat] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+// Get unique categories sorted by count
+const categories = Object.entries(categoryCounts)
+  .map(([name, count]) => ({ name, count }))
+  .sort((a, b) => b.count - a.count);
+
+// Spanish category labels
+const categoryLabels: Record<string, string> = {
+  ' Reparacion': 'Reparación',
+  ' Mantenimiento': 'Mantenimiento',
+  ' Optimizacion': 'Optimización',
+  ' Tutorial': 'Tutorial',
+  ' Noticia': 'Noticia',
+  ' Guia': 'Guía',
+  ' Opinion': 'Opinión',
+  ' Actualidad': 'Actualidad',
+};
+
+const formatCategory = (name: string) => {
+  return categoryLabels[name] || name;
+};
+---
+
+{categories.length > 0 ? (
+  <section class="categories-grid">
+    <h2 class="categories-grid__title">Categorías</h2>
+    <div class="categories-grid__grid">
+      {categories.slice(0, 5).map((cat) => (
+        <a href={`/blog?category=${encodeURIComponent(cat.name)}`} class="categories-grid__pill">
+          <span class="categories-grid__name">{formatCategory(cat.name)}</span>
+          <span class="categories-grid__count">{cat.count}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+) : null}
+
+<style>
+  .categories-grid {
+    padding: var(--pipod-space-xl, 32px) 0;
+
+    &__title {
+      font-family: var(--pipod-font-inter, 'Inter', sans-serif);
+      font-size: var(--pipod-size-label, 0.7rem);
+      font-weight: var(--pipod-weight-bold, 700);
+      color: var(--pipod-color-deep-blue, #3A506B);
+      text-transform: uppercase;
+      letter-spacing: var(--pipod-tracking-wider, 0.05em);
+      margin: 0 0 var(--pipod-space-md, 16px) 0;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--pipod-space-md, 16px);
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--pipod-space-xs, 4px);
+      padding: var(--pipod-space-md, 16px) var(--pipod-space-sm, 8px);
+      background: var(--pipod-color-white, #ffffff);
+      border: 1px solid var(--pipod-color-border-gray, #E5E5E7);
+      border-radius: var(--pipod-radius-pill, 50px);
+      text-decoration: none;
+      transition:
+        transform var(--pipod-transition-fast, 150ms ease),
+        box-shadow var(--pipod-transition-fast, 150ms ease),
+        border-color var(--pipod-transition-fast, 150ms ease);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--pipod-shadow-elevated, 0 4px 12px rgba(0, 0, 0, 0.1));
+        border-color: var(--pipod-color-deep-blue, #3A506B);
+      }
+    }
+
+    &__name {
+      font-family: var(--pipod-font-noto-sans, 'Noto Sans', sans-serif);
+      font-size: var(--pipod-size-small, 0.85rem);
+      font-weight: var(--pipod-weight-semibold, 600);
+      color: var(--pipod-color-near-black, #1F1F1F);
+      text-align: center;
+    }
+
+    &__count {
+      font-family: var(--pipod-font-pt-mono, 'PT Mono', monospace);
+      font-size: var(--pipod-size-micro, 0.65rem);
+      font-weight: var(--pipod-weight-bold, 700);
+      color: var(--pipod-color-deep-blue, #3A506B);
+      background: rgba(58, 80, 107, 0.08);
+      padding: 2px 8px;
+      border-radius: var(--pipod-radius-pill, 50px);
+    }
+  }
+</style>

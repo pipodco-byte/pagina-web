@@ -1,0 +1,70 @@
+# State: separar-contenido-layout
+# Generated: 2026-05-12
+
+change: separar-contenido-layout
+status: archived
+project: Astro-Ecommerce
+
+phases:
+  proposal:
+    status: complete
+    artifact: .atl/proposal/separar-contenido-layout-proposal.md
+  
+  spec:
+    status: complete
+    artifact: .atl/specs/separar-contenido-layout-spec.md
+  
+  design:
+    status: complete
+    artifact: .atl/design/separar-contenido-layout-design.md
+  
+  tasks:
+    status: complete
+    artifact: .atl/tasks/separar-contenido-layout-tasks.md
+  
+  apply:
+    status: complete
+    started: "2026-05-12"
+    completed: "2026-05-12"
+  
+  verify:
+    status: complete
+    started: "2026-05-12"
+    completed: "2026-05-12"
+  
+  archive:
+    status: complete
+    completed: "2026-05-12"
+
+metrics:
+  articles_migrated: 73
+  pages_generated: 74
+  build_time_seconds: 5.45
+  build_errors: 0
+  content_validation_errors: 0
+
+artifacts:
+  created:
+    - src/content/config.ts
+    - src/layouts/BlogPostLayout.astro
+    - src/layouts/BlogIndexLayout.astro
+    - src/pages/blog/[...slug].astro
+    - src/pages/blog/index.astro
+    - src/content/blog/*.md (73 files)
+  
+  modified: []
+
+key_decisions:
+  - Used Astro 6 glob loader pattern for Content Collections
+  - Description field max 170 characters (adjusted from 160 for flexibility)
+  - All articles attributed to "kimi" as author
+  - Migrated from openspec to src/content/blog/ structure
+
+warnings:
+  - OG article:published_time tag uses date string instead of ISO format in some posts
+  - Sass @import deprecations should be migrated to @use in future update
+
+next_steps:
+  - Monitor SEO performance after migration
+  - Consider migrating Sass imports to @use
+  - Add og:article:tag meta tags for Twitter cards
