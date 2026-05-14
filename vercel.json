@@ -1,5 +1,4 @@
 {
-  "project": "paginaweb-ecommerce",
   "crons": [
     {
       "path": "/api/sync-reviews",
