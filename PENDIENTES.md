@@ -137,6 +137,14 @@
 | BN5 | Progress bar | - | ❌ No | Usuario dijo NO |
 | BN6 | Dark mode blog | Baja | 📋 Pendientes | Futuro |
 
+### 📋 Indexación Google (Post-Deploy)
+
+| # | Tarea | Prioridad | Status | Notas |
+|---|-------|-----------|--------|-------|
+| INDEX1 | **Verificar indexación en Search Console** | 🟡 Media | ⏳ Pendiente | 73 artículos deployados — esperar 24-72h o usar "Inspeccionar URL" |
+| INDEX2 | **Resubmit sitemap** en Search Console | 🟡 Media | ⏳ Pendiente | Para acelerar crawl |
+| INDEX3 | **Medir tráfico orgánico blog** | 🟡 Media | ⏳ 1 semana | Ver consultas de keywords Bogotá/Chapinero en Search Console |
+
 ---
 
 ## 📋 SDD Changes (Spec-Driven Development)
