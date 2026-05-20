@@ -1,309 +1,282 @@
 export const termsData = {
-  title: "Términos y Condiciones Pipod",
+  title: "Términos y Condiciones de Uso y Servicio · Pipod",
   breadcrumb: "Home / Términos y Condiciones",
-  lastUpdate: "Enero 2025",
-  
+  lastUpdate: "Mayo 2026",
+
   sections: [
     {
       id: 'general',
-      title: 'General',
+      title: 'Disposiciones Generales y Objeto',
       subsections: [
         {
-          id: 'introduccion',
-          title: 'Introducción',
-          content: 'Bienvenido a Pipod. Estos términos y condiciones rigen el uso de nuestros servicios de venta, reparación y retoma de equipos Apple. Al utilizar nuestros servicios, aceptas estos términos en su totalidad.'
+          id: 'preambulo',
+          title: 'Preámbulo',
+          content: 'Los presentes Términos y Condiciones regulan el acceso, uso, transacciones comerciales, servicios de reparación y el programa de retoma (trade-in) provistos por Pipod dentro del territorio de la República de Colombia. Al utilizar nuestro sitio web, realizar una compra o contratar cualquiera de nuestros servicios técnicos, usted acepta obligarse de manera vinculante por el presente acuerdo.'
         },
         {
-          id: 'terminos-generales',
-          title: 'Términos Generales',
-          content: 'Pipod es una empresa especializada en la venta, reparación y retoma de equipos Apple. Todos nuestros servicios están sujetos a disponibilidad y a las políticas descritas en este documento.'
+          id: 'objeto',
+          title: 'Objeto',
+          content: 'Pipod es un centro especializado independiente enfocado en la comercialización (venta de equipos nuevos y usados), soporte técnico postgarantía, reparación y retoma de dispositivos tecnológicos, con especialidad en el ecosistema Apple. Los servicios y productos se ofrecen sujetos a la disponibilidad técnica, de inventario y a las condiciones específicas de validación descritas en este documento.'
         }
       ]
     },
     {
       id: 'privacidad',
-      title: 'Privacidad',
+      title: 'Política de Privacidad y Tratamiento de Datos (Habeas Data)',
       subsections: [
         {
-          id: 'info-recopilada',
-          title: 'Información que Recopilamos',
+          id: 'intro-privacidad',
+          title: 'Introducción',
+          content: 'De conformidad con la Ley 1581 de 2012 y sus decretos reglamentarios en Colombia, Pipod actúa como Responsable del Tratamiento de sus datos personales.'
+        },
+        {
+          id: 'datos-tratamiento',
+          title: 'Datos Objeto de Tratamiento',
           content: [
-            { label: 'Información Personal:', text: 'Nombre, email, teléfono, dirección, cédula (para retoma), información de pago.' },
-            { label: 'Información de Dispositivos:', text: 'IMEI, número de serie, modelo, estado físico y funcional, historial de reparaciones.' },
-            { label: 'Información Técnica:', text: 'Dirección IP, tipo de navegador, cookies, datos de ubicación (con consentimiento).' }
+            { label: 'Datos de Identificación y Contacto:', text: 'Nombre completo, número de documento de identidad (Cédula de Ciudadanía o Extranjería), dirección de correspondencia, correo electrónico y número telefónico.' },
+            { label: 'Datos Técnicos del Dispositivo:', text: 'Número de serie, código IMEI, modelo, estado físico, historial de reparaciones y credenciales de acceso (contraseñas de usuario del equipo), estas últimas suministradas obligatoriamente por el cliente para la validación de funciones en procesos de soporte técnico y control de calidad en laboratorio.' }
           ]
         },
         {
-          id: 'uso-informacion',
-          title: 'Uso de la Información',
-          content: 'Utilizamos tu información para procesar compras, retomas y servicios técnicos; enviar confirmaciones; verificar identidad; prevenir fraude; mejorar servicios; enviar promociones (con consentimiento); cumplir obligaciones legales dominicanas.'
-        },
-        {
-          id: 'datos-sensibles',
-          title: 'Protección de Datos Sensibles',
-          content: 'IMEI y números de serie se verifican contra bases de datos de equipos reportados. Datos de identificación se almacenan encriptados. No almacenamos contraseñas de iCloud/Google, solo verificamos estado de bloqueo.'
-        },
-        {
-          id: 'compartir-info',
-          title: 'Compartir Información',
-          content: 'No vendemos tu información. Solo compartimos con proveedores de envío, procesadores de pago, autoridades dominicanas (si lo requiere la ley), y socios técnicos bajo acuerdos de confidencialidad.'
-        },
-        {
-          id: 'seguridad-datos',
-          title: 'Seguridad de Datos',
-          content: 'Implementamos encriptación SSL/TLS, almacenamiento seguro en servidores protegidos, acceso restringido, y auditorías de seguridad regulares.'
-        },
-        {
-          id: 'tus-derechos',
-          title: 'Tus Derechos',
-          content: 'Tienes derecho a acceder, corregir, eliminar tus datos, optar por no recibir marketing, y revocar consentimientos. Contacta a privacidad@pipod.com'
-        },
-        {
-          id: 'retencion-datos',
-          title: 'Retención de Datos',
-          content: 'Retenemos información durante el tiempo necesario para cumplir obligaciones legales (mínimo 5 años), resolver disputas, y mantener registros de garantía y servicio técnico.'
+          id: 'finalidades',
+          title: 'Finalidades del Tratamiento',
+          content: 'Los datos capturados se emplearán de manera estricta y confidencial para procesar transacciones de compraventa, servicios de reparación, órdenes de retoma y validar la procedencia legal de los dispositivos mediante la verificación de IMEI en la plataforma oficial de IMEI Colombia.\n\nCláusula de Confidencialidad Absoluta: Pipod no vende, no comercializa ni comparte sus datos personales con terceros para fines de verificación de calidad, encuestas ni prospección comercial. La información permanece bajo custodia segura dentro de nuestra infraestructura local.'
         }
       ]
     },
     {
       id: 'comprar',
-      title: 'Comprar',
+      title: 'Condiciones de Compra y Garantías de Productos',
       subsections: [
         {
           id: 'equipos-nuevos',
           title: 'Equipos Nuevos',
-          content: 'Los equipos nuevos incluyen garantía oficial de Apple (1 año) + 6 meses de garantía Pipod. Garantía de batería 80% mínima durante 1 año. Verificamos autenticidad antes de venta.'
+          content: 'Los dispositivos nuevos comercializados por Pipod cuentan exclusivamente con la Garantía Oficial de Apple (1 año), sujeta a los términos, exclusiones y validaciones del fabricante.\n\nGestión de Garantía: En caso de falla de un equipo nuevo, Pipod realiza una revisión inicial en su laboratorio para verificar que el dispositivo cumpla con los parámetros exigidos por el fabricante. Si se determina que la falla es de fábrica, Pipod asiste al cliente en la gestión del trámite directamente ante la red de garantía oficial de Apple.'
         },
         {
           id: 'equipos-usados',
-          title: 'Equipos Usados',
+          title: 'Equipos Usados (iPhone, iPad, AirPods - Garantía Limitada Comercial de 3 Meses)',
           content: [
-            { label: 'Grado A:', text: 'Impecable, sin daños visibles - 6 meses garantía.' },
-            { label: 'Grado B:', text: 'Desgaste cosmético menor - 3 meses garantía.' },
-            { label: 'Grado C:', text: 'Desgaste visible, funcional - 30 días garantía.' }
+            { label: 'Periodo de Cobertura:', text: 'Tres (3) meses contados a partir de la fecha de entrega del producto al comprador final.' },
+            { label: 'Opciones de Solución:', text: 'Si surge un defecto de hardware cubierto durante este periodo, Pipod resolverá la reclamación, a su total discreción y elección, mediante: (1) la reparación sin costo del componente, (2) el cambio del dispositivo por un reemplazo del mismo modelo o un modelo equivalente de similares funciones, o (3) el reembolso si no hay stock disponible.' },
+            { label: 'Daños Preexistentes:', text: 'Esta garantía no cubre daños o defectos que hayan sido especificados previamente en la descripción o ficha técnica del producto al momento de la compra.' },
+            { label: 'Exclusión de Software:', text: 'El software distribuido en los equipos no está cubierto por esta garantía. Pipod no responde por errores derivados de actualizaciones de software o por la pérdida de compatibilidad de aplicaciones de terceros.' },
+            { label: 'Baterías y Piezas Consumibles:', text: 'Las baterías son piezas consumibles que se desgastan naturalmente. Este decremento normal en su rendimiento o retención de carga no está cubierto por la garantía. No se tramitarán garantías por degradación de batería pasados los tres (3) meses de la compra.' },
+            { label: 'Protección contra Líquidos:', text: 'Los revestimientos de protección contra salpicaduras y sellos de resistencia al agua son partes consumibles que se desgastan. Los daños por contacto con líquidos están completamente excluidos de la garantía, independientemente de las especificaciones iniciales de fábrica.' },
+            { label: 'Accesorios Incluidos:', text: 'Los accesorios complementarios de obsequio que acompañen al equipo usado no se encuentran amparados por esta garantía.' },
+            { label: 'Exclusiones Absolutas de Hardware:', text: 'La garantía quedará sin efecto inmediato si el dispositivo presenta: rastros de humedad o filtración de líquidos (validado por sensores LCI internos), daños mecánicos superficiales o estructurales causados por accidentes, líneas en el panel o roturas internas, o modificaciones físicas realizadas por personal ajeno a Pipod.' }
           ]
         },
         {
-          id: 'devoluciones-proceso',
-          title: 'Proceso de Devoluciones',
+          id: 'accesorios',
+          title: 'Accesorios Independientes (Sin Garantía Comercial)',
+          content: 'Los accesorios comerciales distribuidos o vendidos por Pipod de forma independiente (tales como cables, adaptadores de corriente, estuches, carcasas, protectores de pantalla, entre otros) no cuentan con ningún tipo de garantía comercial ni cobertura de servicio postventa posterior a su entrega o retiro de las instalaciones, debido a su naturaleza consumible y alta susceptibilidad al desgaste o daño por manipulación del usuario.'
+        },
+        {
+          id: 'facturacion-original',
+          title: 'Cláusula Especial de Documentación y Facturación Original',
+          content: 'Dada la naturaleza de segunda mano de los dispositivos comercializados, Pipod emite una factura legal que demuestra la procedencia, propiedad y legalidad de sus dispositivos según las leyes colombianas. No obstante, Pipod no posee, no es responsable de, ni está obligado a proveer la factura de compra del dispositivo emitida originalmente por el fabricante (Apple) o distribuidores autorizados primarios.'
+        },
+        {
+          id: 'responsabilidades-usuario',
+          title: 'Responsabilidades Obligatorias del Usuario de Equipos Usados',
           content: [
-            { label: 'Derecho de Retracto:', text: '7 días calendario desde recepción (ley dominicana).' },
-            { label: 'Condiciones:', text: 'Equipo en condición original, con accesorios, sin daños, caja original, comprobante de compra.' },
-            { label: 'Proceso:', text: '1) Contacta soporte@pipod.com. 2) Inspección en 3-5 días. 3) Aprobación y reembolso en 5-7 días.' }
+            { label: 'Gestión de Cuentas (Apple ID / iCloud):', text: 'Es Hits responsabilidad única del usuario memorizar y custodiar las credenciales (usuario y contraseña) de la cuenta de Apple ID activada en el dispositivo. El bloqueo total del equipo por olvido o pérdida de estas credenciales de seguridad no está cubierto por la garantía y lo dejará fuera de soporte.' },
+            { label: 'Registro de IMEI en Colombia:', text: 'Todo usuario que adquiera un dispositivo móvil o iPad con ranura celular en Pipod y haga uso de este en las redes móviles nacionales tiene la obligación legal de registrar el IMEI ante su operador de telefonía móvil y el Ministerio de las TIC. Pipod no aplica la garantía si el dispositivo es bloqueado por la omisión de este registro ante el operador o el Ministerio de las TIC.' }
           ]
         },
         {
-          id: 'reembolsos',
-          title: 'Reembolsos',
-          content: '100% si está en condición original. 80-90% si hay desgaste cosmético menor (usados). 0% si hay daños causados por cliente. Cliente cubre envío de devolución (Pipod cubre ambos si es defecto nuestro).'
+          id: 'retracto-devoluciones',
+          title: 'Derecho de Retracto y Devoluciones (Ventas Web)',
+          content: 'En cumplimiento del Artículo 47 de la Ley 1480 de 2011 (Estatuto del Consumidor), el derecho de retracto para compras realizadas a través de canales no presenciales opera bajo las siguientes condiciones restrictivas:'
         },
         {
-          id: 'excepciones-devolucion',
-          title: 'Excepciones - No Aplica Devolución',
-          content: 'Servicios técnicos completados, daño físico por cliente, productos personalizados, accesorios abiertos/usados, compras en promociones "No Retornable", equipos con iCloud/Google bloqueado (a menos que sea error nuestro).'
+          id: 'retracto-detalles',
+          title: 'Condiciones de Retracto',
+          content: [
+            { label: 'Plazo:', text: 'El consumidor dispone de un término máximo de cinco (5) días calendario contados a partir de la recepción del producto para ejercer su derecho de retracto notificando formalmente al correo soporte@pipod.com.' },
+            { label: 'Equipos Nuevos:', text: 'No se admiten devoluciones ni retractos si el producto ha sido abierto. Es condición imperativa que el dispositivo se devuelva en su caja original completamente sellada de fábrica, sin alteraciones en sus plásticos protectores y con los accesorios intactos sin usar.' },
+            { label: 'Equipos Usados:', text: 'El equipo debe devolverse en el mismo estado físico en que fue despachado y con el sello de seguridad de Pipod completamente intacto, sin rupturas, alteraciones ni intentos de remoción.' },
+            { label: 'Accesorios:', text: 'No se realizan cambios, devoluciones ni retractos sobre accesorios una vez hayan sido retirados de su empaque original o entregados en tienda bajo ninguna circunstancia.' },
+            { label: 'Política de Reembolso:', text: 'Pipod maneja una política estricta de no reembolso de dinero. Si el producto no cumple con los términos de sellado e integridad física descritos anteriormente, no procederá ningún tipo de cambio o reversión. Los costos de transporte para la devolución del bien serán asumidos en su totalidad por el consumidor.' }
+          ]
         }
       ]
     },
     {
       id: 'envios',
-      title: 'Envíos',
+      title: 'Políticas de Envío, Tarifas y Logística',
       subsections: [
         {
-          id: 'cobertura-envios',
-          title: 'Cobertura de Envíos',
+          id: 'tiempos-despacho',
+          title: 'Tiempos de Despacho y Entrega',
+          content: 'Los tiempos de entrega se computan en días hábiles a partir de la confirmación del pago en nuestra plataforma:'
+        },
+        {
+          id: 'tiempos-detalles',
+          title: 'Detalles de Tiempos',
           content: [
-            { label: 'Zona Metropolitana:', text: '24-48 horas.' },
-            { label: 'Ciudades Principales:', text: '2-3 días hábiles.' },
-            { label: 'Zonas Remotas:', text: '3-5 días hábiles.' },
-            { label: 'Islas:', text: 'Consultar disponibilidad.' }
+            { label: 'Bogotá (Zona Metropolitana):', text: '1 a 3 días hábiles.' },
+            { label: 'Ciudades Principales de Colombia:', text: '3 a 5 días hábiles.' },
+            { label: 'Zonas Remotas, Trayectos Especiales e Islas (San Andrés):', text: '5 a 10 días hábiles.' }
           ]
         },
         {
-          id: 'opciones-envio',
-          title: 'Opciones de Envío',
+          id: 'tarifas-envio',
+          title: 'Tarifas de Envío por Opciones de Compra',
+          content: 'Las tarifas estándar se fijan según el tipo de producto y la modalidad de entrega:'
+        },
+        {
+          id: 'tarifas-detalles',
+          title: 'Detalles de Tarifas',
           content: [
-            { label: 'Estándar:', text: 'RD$150-300, 2-5 días.' },
-            { label: 'Express:', text: 'RD$400-600, 24-48 horas + seguimiento en tiempo real.' },
-            { label: 'Retiro en Tienda:', text: 'Gratis, 24 horas (Santo Domingo, Santiago).' }
+            { label: 'Equipos Nuevos (Zona Metropolitana / Bogotá):', text: 'Envío gratis.' },
+            { label: 'Equipos Usados (Nacional / Local):', text: 'Tarifa plana de $20.000 COP.' },
+            { label: 'Accesorios (Nacional / Local):', text: 'Tarifa plana de $20.000 COP.' },
+            { label: 'Envío Gratis General por Web:', text: 'Aplica exclusivamente para compras totales superiores a un millón de pesos ($1.000.000 COP), abarcando tanto equipos nuevos como usados a nivel nacional a través de la empresa de mensajería aliada.' },
+            { label: 'Retiro en Tienda (Pick-up):', text: 'Completamente gratis dentro de los horarios de oficina establecidos. Al elegir esta modalidad, el cliente recibe un obsequio de cortesía por su compra.' }
           ]
         },
         {
-          id: 'domicilio',
-          title: 'Servicio de Domicilio',
-          content: 'Recepción de equipos para retoma, servicio técnico a domicilio (Zona Metropolitana), entrega con firma. Costo: RD$200-500 según zona.'
+          id: 'domicilio-soporte',
+          title: 'Servicio de Domicilio Exclusivo para Soporte Técnico',
+          content: 'Para la recolección y entrega de dispositivos destinados a reparación dentro de Bogotá, se establecen las siguientes tarifas de logística inversa:'
         },
         {
-          id: 'aseguramiento',
-          title: 'Aseguramiento de Mercancía',
-          content: 'Embalaje premium con cajas reforzadas y espuma protectora. Seguro incluido hasta 100% del valor. Rastreo con número de seguimiento. Pipod responsable por daños durante envío.'
-        },
-        {
-          id: 'seguimiento',
-          title: 'Seguimiento de Pedidos',
-          content: 'Actualizaciones por email, SMS, WhatsApp y panel de cliente en sitio web.'
-        },
-        {
-          id: 'problemas-envios',
-          title: 'Problemas con Envíos',
+          id: 'domicilio-detalles',
+          title: 'Detalles de Domicilio',
           content: [
-            { label: 'Dañado:', text: 'Reporta en 24 horas, reemplazo o reembolso.' },
-            { label: 'Perdido:', text: 'Investigación con transportista, reembolso después de 10 días.' },
-            { label: 'Dirección Incorrecta:', text: 'Notifica antes de entrega, redirigimos sin costo.' }
+            { label: 'Zona Metropolitana Norte y Centro:', text: '$30.000 COP (tarifa total que cubre el trayecto de recogida y el trayecto de entrega de vuelta).' },
+            { label: 'Zona Sur de Bogotá:', text: '$50.000 COP (tarifa total que cubre el trayecto de recogida y el trayecto de entrega de vuelta).' }
           ]
         },
         {
-          id: 'envio-gratis',
-          title: 'Envío Gratis',
-          content: 'Compras mayores a RD$5,000, retiro en tienda, devoluciones por defecto nuestro, clientes VIP.'
-        }
-      ]
-    },
-    {
-      id: 'garantia',
-      title: 'Garantía',
-      subsections: [
-        {
-          id: 'garantia-nuevos',
-          title: 'Garantía de Equipos Nuevos',
-          content: 'Garantía Oficial Apple 1 año + Garantía Pipod 6 meses adicionales + Cobertura de batería 80% mínimo durante 1 año.'
-        },
-        {
-          id: 'garantia-usados',
-          title: 'Garantía de Equipos Usados',
+          id: 'operacion-logistica',
+          title: 'Operación Logística y Gestión de Siniestros',
           content: [
-            { label: 'Grado A:', text: '6 meses.' },
-            { label: 'Grado B:', text: '3 meses.' },
-            { label: 'Grado C:', text: '30 días.' },
-            { text: 'Cubre defectos de hardware, no daño físico por usuario.' }
+            { label: 'Mensajería Personalizada (Bogotá):', text: 'Los despachos locales seleccionados se realizan mediante un mensajero personalizado utilizando embalaje de seguridad con la marca Pipod. Las notificaciones de estado y entrega se manejan directamente a través de WhatsApp.' },
+            { label: 'Mensajería Nacional:', text: 'Los envíos nacionales y aquellos a petición expresa del usuario se procesan a través de la empresa aliada Interrapidísimo, asumiendo el usuario los costos de mensajería correspondientes si no aplica a promociones de envío gratis. El cliente recibirá la guía de transporte correspondiente para su seguimiento.' },
+            { label: 'Seguro de Envío:', text: 'En los despachos realizados con mensajero personalizado de Pipod, nuestra marca asegura el 100% del valor comercial ante cualquier eventualidad. Para los envíos procesados con Interrapidísimo, la cobertura se regirá bajo las pólizas de dicha empresa de mensajería en la guía de transporte.' }
           ]
-        },
-        {
-          id: 'garantia-servicio',
-          title: 'Garantía de Servicio Técnico',
-          content: [
-            { label: 'Pantalla:', text: '3 meses.' },
-            { label: 'Batería:', text: '6 meses.' },
-            { label: 'Cámara:', text: '3 meses.' },
-            { label: 'Botones/Conectores:', text: '3 meses.' },
-            { label: 'Software:', text: '1 mes.' },
-            { label: 'Carcasa:', text: '1 mes.' }
-          ]
-        },
-        {
-          id: 'no-cubre',
-          title: 'Qué NO Cubre la Garantía',
-          content: 'Daño físico por caídas/golpes, daño por agua/líquidos, desgaste normal, reparaciones no autorizadas, pérdida de datos, cambios de software/jailbreak, daño por sobrecarga, equipos con serial alterado o reportados.'
-        },
-        {
-          id: 'reclamar-garantia',
-          title: 'Cómo Reclamar Garantía',
-          content: '1) Contacta garantia@pipod.com con foto y número de serie. 2) Diagnóstico de nuestro equipo. 3) Si es aprobado, reparamos o reemplazamos sin costo. 4) Enviamos con seguimiento.'
-        },
-        {
-          id: 'abandonos',
-          title: 'Política de Abandonos',
-          content: [
-            { label: '30 días:', text: 'Recordatorio.' },
-            { label: '60 días:', text: 'Segundo recordatorio + cargo RD$50/día.' },
-            { label: '90 días:', text: 'Equipo considerado abandonado, Pipod puede venderlo o donar.' },
-            { label: 'Después de 90 días:', text: 'Sin responsabilidad de Pipod.' }
-          ]
-        },
-        {
-          id: 'garantia-extendida',
-          title: 'Garantía Extendida (Opcional)',
-          content: [
-            { label: 'Plan Plus (1 año):', text: 'RD$500 - Cobertura hardware.' },
-            { label: 'Plan Premium (2 años):', text: 'RD$900 - Incluye accidentes y agua.' },
-            { label: 'Plan VIP (3 años):', text: 'RD$1,200 - Cobertura total + reemplazo si irreparable.' }
-          ]
-        },
-        {
-          id: 'responsabilidad-datos',
-          title: 'Responsabilidad por Datos',
-          content: 'Pipod no es responsable por pérdida de datos, acceso a información personal, o cambios en configuraciones. Realiza backup antes de enviar equipo a reparación.'
-        }
-      ]
-    },
-    {
-      id: 'vender',
-      title: 'Vender (Plan Retoma)',
-      subsections: [
-        {
-          id: 'como-funciona',
-          title: '¿Cómo Funciona?',
-          content: '1. Cotización gratuita en 30 minutos. 2. Envío asegurado a nuestras instalaciones. 3. Pago inmediato una vez verificado el equipo.'
-        },
-        {
-          id: 'criterios-aceptacion',
-          title: 'Criterios de Aceptación',
-          content: 'Aceptamos equipos sin iCloud bloqueado, no reportados y en condiciones funcionales. Rechazamos equipos con daño físico severo.'
-        },
-        {
-          id: 'borrado-datos',
-          title: 'Borrado de Datos',
-          content: 'Es responsabilidad del usuario borrar todos sus datos antes de enviar el equipo. Pipod no se responsabiliza por pérdida de información.'
         }
       ]
     },
     {
       id: 'servicio',
-      title: 'Servicio Técnico',
+      title: 'Términos de Servicio Técnico y Reparaciones',
       subsections: [
         {
-          id: 'recepcion-equipos',
-          title: 'Recepción de Equipos',
-          content: [
-            'Al dejar su equipo en nuestro centro de servicio técnico, usted, como cliente, acepta y se compromete a cumplir los siguientes términos y condiciones. Todos los procedimientos técnicos, incluso los más simples, pueden tardar al menos una hora y media.',
-            'En reparaciones complejas, Pipod.co se comunicará con el cliente para indicar tiempos adicionales o decisiones importantes. Los costos de reparación pueden variar respecto a la cotización inicial según la revisión en laboratorio. El cliente deberá aprobar cualquier incremento antes de iniciar la intervención.'
-          ]
+          id: 'aceptacion-condiciones',
+          title: 'Aceptación de Condiciones',
+          content: 'Al consignar un dispositivo en el laboratorio de Servicio Técnico de Pipod, el cliente acepta las siguientes condiciones operativas:'
         },
         {
-          id: 'diagnostico',
-          title: 'Diagnóstico',
+          id: 'tiempos-diagnostico',
+          title: 'Tiempos, Diagnóstico y Presupuestos',
           content: [
-            'Durante la revisión pueden encontrarse daños internos no visibles o no reportados por el cliente. Estos serán informados y pueden modificar el presupuesto o la viabilidad de la reparación.',
-            'Algunos diagnósticos requieren retirar sellos o bandas de seguridad del fabricante. El cliente acepta esta intervención y libera de responsabilidad a Pipod.co por la pérdida de garantías oficiales, siempre que el equipo esté aún dentro de su garantía original.'
+            { label: 'Tiempo de Observación:', text: 'Todo procedimiento técnico o diagnóstico inicial en laboratorio requiere un término mínimo de una hora y media (1.5 horas).' },
+            { label: 'Modificación de Costos:', text: 'Los costos de reparación pueden variar respecto a la cotización preliminar tras la revisión detallada en el laboratorio. Pipod comunicará cualquier incremento o hallazgo de fallas ocultas para obtener la aprobación expresa del cliente antes de proceder con la intervención.' }
           ]
         },
         {
           id: 'garantia-reparacion',
-          title: 'Garantía de Reparación',
+          title: 'Plazos de Garantía en Reparaciones',
           content: {
-            intro: 'Plazos de garantía:',
+            intro: 'La garantía técnica se aplica de manera exclusiva a la pieza reemplazada o al servicio específico contratado, bajo los siguientes plazos:',
             items: [
-              'Pantallas: 15 días de garantía. No debe presentar humedad, golpes o fracturas internas.',
-              'Baterías: 6 meses de garantía. No deben estar infladas, sobrecargadas, manipuladas ni con sellos violados.'
-            ],
-            coverage: 'La garantía se aplica únicamente a la pieza o servicio reparado. No cubre problemas de software ni desconocimiento en su uso. Está limitada a un máximo de tres incidentes por el mismo problema.',
-            invalidates: 'Causas que invalidan la garantía:',
-            invalidatesList: [
-              'Contacto con líquidos (detectado por sensores internos).',
-              'Cualquier daño físico (golpes, rayones, fracturas, etc.).',
-              'Manipulación o reparación previa por técnicos no certificados.'
+              'Módulos de Pantalla: 15 días calendario de garantía. No debe presentar rastros de humedad, golpes, microrrayones profundos o fracturas internas en el panel.',
+              'Baterías: 6 meses de garantía. No deben presentar evidencias de sobrecargas eléctricas, instalación forzada o sellos rotos.',
+              'Módulos de Cámara: 6 meses de garantía.',
+              'Botones y Conectores de Carga: 6 meses de garantía.',
+              'Microsoldaduras en Placa (Board): 3 meses de garantía.',
+              'Carcasas / Componentes Estéticos: Sin garantía.'
             ]
           }
         },
         {
-          id: 'proteccion-datos',
-          title: 'Protección de Información y Datos Personales',
+          id: 'responsabilidad-datos',
+          title: 'Responsabilidad sobre los Datos y Acceso al Equipo',
           content: [
-            { label: 'Privacidad de la información dentro del equipo:', text: 'El cliente es responsable de realizar copias de seguridad de su información antes de entregar el equipo. Pipod.co no se hace responsable por pérdida, daño o alteración de archivos, datos o programas. Durante cualquier reparación, intervención o limpieza puede perderse total o parcialmente la información y/o programas instalados en el equipo.' },
-            { label: 'Datos personales del cliente:', text: 'Pipod.co recolecta y utiliza datos personales (nombre, dirección, teléfono, correo electrónico) únicamente para la prestación del servicio técnico. En caso necesario, y solo para verificación de calidad o encuestas de satisfacción, estos datos podrán ser compartidos con terceros aliados, conforme a la Ley 1581 de 2012 de protección de datos personales en Colombia.' }
+            { label: 'Copias de Seguridad (Backup) Obligatorias:', text: 'Es responsabilidad única y exclusiva del cliente realizar un respaldo o copia de seguridad externa de toda su información antes de entregar el dispositivo a reparación. Pipod no se hace responsable por la pérdida, alteración, corrupción o borrado de datos durante el proceso de soporte o por las restauraciones del sistema necesarias para completar la intervención técnica.' },
+            { label: 'Credenciales de Acceso Obligatorias:', text: 'Para realizar las pruebas de rendimiento postreparación y el correspondiente control de calidad en el laboratorio, el cliente debe suministrar obligatoriamente la contraseña de usuario del equipo al momento de la entrega. El dispositivo debe entregarse desbloqueado y sin cuentas restrictivas que impidan el diagnóstico técnico.' }
           ]
         },
         {
-          id: 'retiro-abandono',
-          title: 'Retiro y Abandono de Equipos',
+          id: 'exclusiones-riesgo',
+          title: 'Cláusulas Especiales de Exclusión de Riesgo Técnico en Laboratorio',
           content: [
-            'Si después de 90 días desde la fecha prevista de entrega el cliente no ha retirado el equipo ni ha establecido contacto, se considerará equipo abandonado y Pipod.co podrá disponer de él sin derecho a reclamo o indemnización.',
-            'La entrega se realizará únicamente contra presentación de la orden de servicio original. En caso de pérdida de esta orden, el cliente deberá pagar una multa de $10.000 COP y presentar fotocopia de la cédula del titular registrado.'
+            { label: 'Equipos que ingresan Apagados:', text: 'Para terminales que ingresan apagados o sin dar señal de vida a las instalaciones de Pipod, no será posible brindar ningún tipo de garantía sobre componentes periféricos secundarios (cámaras, sensores biométricos, micrófonos, altavoces, etc.), dado que la ausencia de energía inicial impide diagnosticar el estado real en que dichos elementos fueron entregados por el usuario.' },
+            { label: 'Pérdida de Funciones Nativas por Actualización/Fábrica:', text: 'El cambio de módulos de pantalla (Display o LCD) no incluye ni asegura la continuidad de funciones de emparejamiento biométrico o calibración de pantalla nativas de fábrica tales como Face ID, True Tone o lectura de huella dactilar, a menos que se contrate explícitamente dicho procedimiento por separado y la integridad de la placa lo permita.' },
+            { label: 'Riesgo en Reparaciones de Alta Complejidad (Microsoldadura e integrados):', text: 'Las intervenciones a nivel de placa madre, chips de carga (U2), integrados de audio o reconstrucciones físicas complejas (Reglassing/reparación de visores) conllevan un riesgo técnico intrínseco de apagado total y daño irreversible del dispositivo debido a tensiones eléctricas previas o debilidad por fatiga térmica. Pipod no se hará responsable si el equipo sufre un colapso definitivo durante estos procesos de alto riesgo, asumiendo el cliente dicho margen técnico.' },
+            { label: 'Insumos o Repuestos Provistos por el Cliente:', text: 'Pipod no presta servicios de garantía ni asume responsabilidades bajo ninguna circunstancia sobre componentes o repuestos suministrados externamente por el cliente para su simple instalación en nuestro taller. Si el dispositivo sufre averías derivadas de la mala calidad o incompatibilidad del repuesto traído por el usuario, este asumirá el 100% de los costos concurrentes.' },
+            { label: 'Pérdida de Propiedad Hermética:', text: 'El cliente acepta que, tras cualquier apertura física o reemplazo de componentes internos en el taller, ningún dispositivo conserva sus facultades de estanqueidad o resistencia sumergible, quedando totalmente excluido cualquier daño futuro por humedad o ingreso de partículas líquidas y sólidas.' },
+            { label: 'Tarifa de Diagnóstico por Equipos sin Solución:', text: 'Si tras la inspección exhaustiva de laboratorio el dispositivo no presenta viabilidad técnica de reparación o solución, el cliente deberá abonar una tarifa fija por concepto de Mano de Obra y Diagnóstico equivalente a cincuenta mil pesos ($50.000 COP) M/CTE antes de retirar el bien de las instalaciones. El usuario tiene la obligación de revisar el estado cosmético externo de su equipo antes de salir del taller.' }
           ]
         },
         {
-          id: 'verificacion-imei',
-          title: 'Verificación de IMEI y Propiedad',
-          content: 'El IMEI del equipo será verificado en www.imeicolombia.com.co a la fecha de ingreso. Si en el futuro aparece reportado, será responsabilidad exclusiva del cliente. Para hacer efectiva una garantía, Pipod.co podrá solicitar factura de compra o documentos que acrediten la propiedad del equipo.'
+          id: 'reclamacion-garantia',
+          title: 'Proceso de Reclamación y Evaluación de Garantía Técnica',
+          content: [
+            'Toda reclamación de garantía de servicio técnico debe tramitarse directamente en la tienda física o notificarse previamente a soporte@pipod.com. El cliente asume en su totalidad los costos de transporte o envío del dispositivo hacia nuestro local.',
+            'Procedimiento y Tiempos de Respuesta: Dentro de los cinco (5) días hábiles siguientes a la recepción del producto en garantía, nuestro laboratorio realizará la evaluación técnica correspondiente:',
+            'Si procede la garantía: Se informará al consumidor el tiempo estimado de reparación, el cual no será superior a quince (15) días hábiles.',
+            'Si NO procede la garantía: Se notificará dentro del mismo lapso de cinco (5) días hábiles la razón del rechazo (daño por humedad, golpes, etc.) y el producto se devolverá a costo exclusivo del consumidor.'
+          ]
+        },
+        {
+          id: 'bodegaje-abandono',
+          title: 'Almacenamiento, Retiro y Costos de Bodegaje por Abandono',
+          content: [
+            { label: 'Entrega de Equipos:', text: 'La entrega de los equipos reparados se realizará únicamente contra la presentación física del documento de soporte de la orden de servicio original o la respectiva notificación digital recibida desde soporte@pipod.com. En caso de pérdida, el titular deberá abonar una penalización de $10.000 COP y adjuntar fotocopia de su documento de identidad para validar la entrega.' },
+            { label: 'Política de Bodegaje:', text: 'Pipod mantendrá en custodia el equipo de forma gratuita durante los primeros 90 días posteriores a la notificación de entrega. Cumplidos noventa (90) días calendario sin que el cliente retire el dispositivo, se causará un costo por concepto de bodegaje, almacenamiento y custodia de cien mil pesos ($100.000 COP) M/CTE por cada mes o fracción de mes de retraso, el cual deberá ser cancelado en su totalidad para proceder con la liberación del equipo. Pipod conservará el bien bajo su custodia cobrando dicho cargo mensual, sin derecho a que el cliente reclame indemnizaciones por la retención derivada de su mora.' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'vender',
+      title: 'Términos del Programa de Retoma (Plan Trade-In)',
+      subsections: [
+        {
+          id: 'peritaje-precios',
+          title: 'Peritaje Técnico y Ajuste de Precios',
+          content: 'El valor de retoma definitivo de cualquier dispositivo se fijará únicamente tras el peritaje técnico presencial en el laboratorio de Pipod. Las cotizaciones preliminares recibidas a través de canales digitales o a través de soporte@pipod.com son de carácter informativo; el precio final variará y se ajustará según el estado estético, el desgaste funcional, la salud de la batería y la originalidad de los componentes internos detectados durante la revisión de nuestros técnicos.'
+        },
+        {
+          id: 'validacion-remoto',
+          title: 'Validación en Remoto',
+          content: 'Si la evaluación de retoma se inicia de forma no presencial, la verificación funcional quedará sujeta a la revisión final del equipo en el local de Pipod. En este escenario, el cliente asumirá la totalidad de los costos de envío del dispositivo hacia nuestra sede principal.'
+        }
+      ]
+    },
+    {
+      id: 'limitacion',
+      title: 'Limitación de Responsabilidad Comercial General',
+      subsections: [
+        {
+          id: 'limitacion-responsabilidad',
+          title: 'Limitación de Responsabilidad',
+          content: 'Salvo lo dispuesto expresamente en este documento y en la máxima medida permitida por la legislación colombiana, Pipod no será responsable por daños directos, incidentales o indirectos resultantes de cualquier incumplimiento de garantía, incluyendo de forma enunciativa pero no limitada a: pérdida de uso del dispositivo, pérdida de ingresos o ganancias reales, pérdida de ahorros previstos, pérdida de actividad comercial u oportunidades, o el compromiso, corrupción y pérdida de datos personales almacenados en los terminales bajo servicio o comercializados.'
+        }
+      ]
+    },
+    {
+      id: 'promociones',
+      title: 'Cláusula de Promociones Especiales (Adquisición por Canales Digitales / Google)',
+      subsections: [
+        {
+          id: 'promociones-especiales',
+          title: 'Promociones Especiales',
+          content: 'Las promociones específicas impulsadas a través de campañas de pauta digital se rigen bajo condiciones de exclusividad de canal:'
+        },
+        {
+          id: 'promociones-detalles',
+          title: 'Detalles de Promociones',
+          content: [
+            { label: 'Combo MacBook:', text: 'Carcasa para MacBook + Protector de teclado/pantalla = $150.000 COP.' },
+            { label: 'Combo iPhone:', text: 'Funda/Carcasa de iPhone + Protector de pantalla = $50.000 COP.' },
+            { label: 'Condición de Redención:', text: 'Estas ofertas son válidas únicamente para redención, pago y entrega de manera física en la tienda, sujetas a disponibilidad de inventario para los modelos de dispositivos seleccionados y no se acumulan con otros descuentos vigentes en la página web.' }
+          ]
         }
       ]
     }
