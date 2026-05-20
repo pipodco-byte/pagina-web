@@ -126,6 +126,7 @@
 | B3 | Internal Linking | Blog → productos/servicios |
 | B4 | HowTo Schema | Guías "cómo cuidar tu iPhone" |
 | B5 | WebP Images | Convertir principales a WebP |
+| B6 | **Footer Términos — Info SIC** | Agregar teléfono SIC (01-8000-910-165) y enlace sic.gov.co en footer de términos cuando se tenga el registro |
 
 ### 🔧 Mantenimiento Blog (Post-separar-contenido-layout)
 
