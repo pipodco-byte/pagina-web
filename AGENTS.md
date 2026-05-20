@@ -2,6 +2,8 @@
 
 Guía de convenciones, arquitectura y contexto histórico para agentes de IA que trabajen en este proyecto.
 
+> 🔗 **Repo oficial:** [pipodco-byte/astroecoomerce](https://github.com/pipodco-byte/astroecoomerce) — Vercel deploya automáticamente desde `main` a www.pipod.co
+
 ---
 
 ## 1. Stack y Convenciones
@@ -265,13 +267,14 @@ npm run preview
 ```
 
 ### Ramas Git
-- `main` → producción (www.pipod.co)
+- `main` → producción (www.pipod.co) — deploy automático a Vercel `paginaweb-ecommerce`
 - `develop` → desarrollo activo
 - `memoria` → referencia visual (commit 241f9ce)
 
 ### CI/CD
 - Auto-PR: push a `develop` dispara creación automática de PR (`.github/workflows/auto-pr.yml`)
-- Deploy Vercel vía `main` branch
+- Deploy Vercel: `main` → `paginaweb-ecommerce` (www.pipod.co)
+- Deploy manual: `vercel deploy --token=$TOKEN --yes --prod`
 - Cron: `/api/sync-reviews` cada 3 días
 
 ### Warnings conocidos del build

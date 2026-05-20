@@ -1,8 +1,9 @@
 # ⏳ Pendientes — Pipod Ecommerce (Astro)
 
-**Última actualización:** Mayo 13, 2026
-**Versión:** 1.5
+**Última actualización:** Mayo 20, 2026
+**Versión:** 1.6
 **Proyecto:** Astro-Ecommerce (paginaweb-ecommerce / www.pipod.co)
+**Repo oficial:** [pipodco-byte/astroecoomerce](https://github.com/pipodco-byte/astroecoomerce)
 **Fuente de verdad:** Este archivo + Todo.md
 
 ---
@@ -56,6 +57,15 @@
 
 ---
 
+## 📅 Commits Recientes (Mayo 20, 2026)
+
+| Commit | Descripción |
+|--------|-------------|
+| `ea0dcc6` | **content:** actualizar términos y condiciones (Mayo 2026) |
+| `2a0b66d` | **docs:** crear AGENTS.md y README.md con historial del proyecto |
+| `ba11701` | **ci:** agregar workflow de deploy a Vercel (paginaweb-ecommerce) |
+| `75910f6` | **docs:** documentar repo oficial pipodco-byte/astroecoomerce |
+
 ## 📅 Commits de Hoy (Mayo 6, 2026)
 
 | Commit | Descripción |
@@ -86,6 +96,7 @@
 
 | # | Tarea | Descripción | Notas |
 |---|-------|-------------|-------|
+| P0 | **Remediación de seguridad** | `.env.local` con 8 credenciales expuestas, `dist/` y `.vercel/` con secrets incrustados, `GOOGLE_PLACES_API_KEY` y `INDEXNOW_KEY` hardcodeados en `sync-reviews.ts` | Propuesta en engram: `sdd/seguridad-remediacion-secretos/proposal` |
 | P1 | Reviews Google default | `/data/reviews.json` no se genera en serverless — muestra hardcoded | Revisar pipodGoogleReviews.jsx |
 | P2 | Vercel KV para reviews | Persistir datos de reviews en Redis | Requiere cuenta Vercel KV |
 | P3 | **Normalización condicion** | DB tiene `"usado"` pero filtros UI esperan `"Seminuevo"` o `"Repotenciado"` — iPhone 16 usados → Repotenciado, otros usados → Seminuevo | SDD: `condicion-normalization` |
@@ -279,4 +290,4 @@ Para detalle SEO completo, consulta `PENDIENTES_SEO.md`.
 
 ---
 
-_Ultima actualizacion: Mayo 13, 2026 (v1.5 - SEO Plan 6.5→9+, Schema LocalBusiness, Jerarquía Semántica, WPO, Auto-PR workflow)_
+_Ultima actualizacion: Mayo 20, 2026 (v1.6 - Términos actualizados, repo oficial documentado, CI/CD Vercel, seguridad pendiente)_
