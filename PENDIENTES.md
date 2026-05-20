@@ -54,6 +54,7 @@
 | F19 | **Botones pill blog** — 100px radius, azul (#3A506B) → negro (#000) hover, solo blog | ✅ | 621ab19 |
 | F20 | **Blog Pipod header removed** — Eliminado sección "Blog Pipod" de pipod-blog.astro | ✅ | 621ab19 |
 | F21 | **LoadMoreButton** — Paginación para 70+ artículos (muestra 12, carga 12 más) | ✅ | 621ab19 |
+| F22 | Agregar propiedad 'about' al schema TermsPageSchema.astro | ✅ | - |
 
 ---
 
