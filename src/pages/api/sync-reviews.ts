@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { supabaseServer } from '../../lib/supabase/server';
 
 export const prerender = false;
 
@@ -67,6 +68,11 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const { rating, user_ratings_total } = data.result;
+
+    // Actualizar en Supabase
+    await supabaseServer
+      .from('business_stats')
+      .upsert({ id: 1, rating, user_ratings_total, last_updated: new Date().toISOString() });
 
     const reviewsData = {
       rating: rating ? rating.toString() : "5.0",

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getBusinessStats } from '../../lib/supabase/reviews';
 
 export default function PipodGoogleReviews() {
   const [reviewsData, setReviewsData] = useState({
@@ -7,9 +8,11 @@ export default function PipodGoogleReviews() {
   });
 
   useEffect(() => {
-    fetch('/data/reviews.json')
-      .then(res => res.json())
-      .then(data => setReviewsData(data))
+    getBusinessStats()
+      .then(data => setReviewsData({
+        rating: data.rating.toString(),
+        totalReviews: data.user_ratings_total
+      }))
       .catch(err => console.error('Error loading reviews:', err));
   }, []);
 
