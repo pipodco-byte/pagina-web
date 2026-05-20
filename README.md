@@ -9,6 +9,18 @@ Sitio web de **Pipod** — servicio técnico Apple especializado en Bogotá con 
 
 **URL producción:** [https://www.pipod.co](https://www.pipod.co)
 
+### 🔗 Repositorio Oficial
+
+| Dato | Valor |
+|------|-------|
+| **GitHub** | [pipodco-byte/astroecoomerce](https://github.com/pipodco-byte/astroecoomerce) |
+| **Usuario/Org** | `pipodco-byte` |
+| **Vercel** | `paginaweb-ecommerce` (team: Pipod's projects) |
+| **Rama producción** | `main` → deploy automático a www.pipod.co |
+| **Rama desarrollo** | `develop` |
+
+> ⚠️ Este es el **único** repositorio oficial. El repo `pagina-web` es obsoleto y debe ignorarse.
+
 ---
 
 ## Stack Tecnológico
