@@ -2,9 +2,6 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-const GOOGLE_PLACES_API_KEY = import.meta.env.GOOGLE_PLACES_API_KEY;
-const GOOGLE_PLACE_ID = import.meta.env.GOOGLE_PLACE_ID;
-
 const INDEXNOW_ENDPOINTS = [
   'https://indexnow.org/indexnow',
   'https://www.bing.com/indexnow'
@@ -43,6 +40,9 @@ const notifyIndexNow = async (): Promise<void> => {
 };
 
 export const POST: APIRoute = async ({ request }) => {
+  const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
+  const GOOGLE_PLACE_ID = process.env.GOOGLE_PLACE_ID;
+
   try {
     if (!GOOGLE_PLACES_API_KEY || !GOOGLE_PLACE_ID) {
       console.error('Google Places credentials not configured');

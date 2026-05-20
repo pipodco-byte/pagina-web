@@ -36,7 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const payload: BoldWebhookPayload = await request.json();
-    const boldSecret = import.meta.env.BOLD_INTEGRITY_SECRET;
+    const boldSecret = process.env.BOLD_INTEGRITY_SECRET;
 
     if (!boldSecret) {
       console.error('BOLD_INTEGRITY_SECRET not configured');

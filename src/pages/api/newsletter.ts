@@ -2,14 +2,15 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-const BREVO_API_KEY = import.meta.env.BREVO_API_KEY;
-const BREVO_LIST_ID = import.meta.env.BREVO_LIST_ID;
 const BREVO_API_URL = 'https://api.brevo.com/v3/contacts';
 
-console.log('BREVO_API_KEY:', BREVO_API_KEY ? 'configurada' : 'NO configurada');
-console.log('BREVO_LIST_ID:', BREVO_LIST_ID);
-
 export const POST: APIRoute = async ({ request }) => {
+  const BREVO_API_KEY = process.env.BREVO_API_KEY;
+  const BREVO_LIST_ID = process.env.BREVO_LIST_ID;
+
+  console.log('BREVO_API_KEY:', BREVO_API_KEY ? 'configurada' : 'NO configurada');
+  console.log('BREVO_LIST_ID:', BREVO_LIST_ID);
+
   try {
     const { email } = await request.json();
     console.log('Email recibido:', email);
