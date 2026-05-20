@@ -100,20 +100,19 @@
 
 ---
 
-## ✅ Completado Recientemente
+## ✅ Completado hoy (Mayo 20, 2026)
 
-- **Términos y Condiciones** Mayo 2026 (ea0dcc6)
-- **CI/CD Vercel** — workflow deploy a paginaweb-ecommerce (ba11701)
-- **Repo oficial documentado** — README, AGENTS, PENDIENTES, Todo
-- Blog Phanatik Visual Redesign (d9b13de)
-- TableOfContents flotante (621ab19)
-- Related Posts (621ab19)
-- Author fix: "Equipo Pipod" (621ab19)
-- Botones pill blog (621ab19)
-- Auto-PR workflow (3f43216)
+- **Términos y Condiciones** Mayo 2026 (Live)
+- **Consolidación repositorio** `pipodco-byte/astroecoomerce` (oficial)
+- **Remediación Seguridad (P0)**: Limpieza Git, Refactor API (process.env), validación build
+- **Organización Documentación**: 63 archivos históricos movidos a `_revisar_para_eliminar/`
+- **SEO/Geo**: `taxID` en schema, títulos H2 optimizados, `about` en TermsPageSchema
+- **CI/CD**: Workflow Vercel configurado
 
-### ⚠️ Pendiente Crítico
-- **P0: Remediación de seguridad** — credenciales expuestas en `.env.local`, `dist/`, `.vercel/`
+### ⚠️ Pendiente Crítico (Post-Hoy)
+- **Rotación de Claves**: Generar nuevas claves (Brevo, Google, Bold, Supabase) y configurarlas en **Vercel Dashboard**. 
+- **Nuevo Clon**: Hacer un `git clone` limpio del repo oficial.
+- **Remediación**: Finalizar limpieza de secretos pendientes (si alguno persiste).
 
 ---
 

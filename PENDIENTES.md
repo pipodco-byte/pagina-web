@@ -58,14 +58,15 @@
 
 ---
 
-## 📅 Commits Recientes (Mayo 20, 2026)
+## 📅 Historial de cambios (Mayo 20, 2026)
 
-| Commit | Descripción |
-|--------|-------------|
-| `ea0dcc6` | **content:** actualizar términos y condiciones (Mayo 2026) |
-| `2a0b66d` | **docs:** crear AGENTS.md y README.md con historial del proyecto |
-| `ba11701` | **ci:** agregar workflow de deploy a Vercel (paginaweb-ecommerce) |
-| `75910f6` | **docs:** documentar repo oficial pipodco-byte/astroecoomerce |
+| Tipo | Descripción | Status |
+|------|-------------|--------|
+| **Content** | Actualización T&C (Mayo 2026) | ✅ Live |
+| **Repo** | Consolidación en `pipodco-byte/astroecoomerce` | ✅ |
+| **Security** | Remediación P0 (Limpieza Git + Refactor API) | ✅ |
+| **Docs** | Organización de archivos `.md` | ✅ |
+| **SEO** | Agregado `about` a Schema TermsPage | ✅ |
 
 ## 📅 Commits de Hoy (Mayo 6, 2026)
 
