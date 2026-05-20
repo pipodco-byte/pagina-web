@@ -1,8 +1,9 @@
 # 📋 Todo.md — Pipod Ecommerce
 
-**Última actualización:** Mayo 13, 2026
-**Versión:** 1.0
+**Última actualización:** Mayo 20, 2026
+**Versión:** 1.1
 **Referencia:** PENDIENTES.md (fuente de verdad)
+**Repo:** [pipodco-byte/astroecoomerce](https://github.com/pipodco-byte/astroecoomerce)
 
 ---
 
@@ -12,10 +13,11 @@
 
 | # | Tarea | Estimado | Estado |
 |---|-------|----------|--------|
-| **1** | **Schema LocalBusiness** (JSON-LD en Layout.astro) | 2h | ⏳ |
-| **2** | **Jerarquía Semántica H1/H2/H3** (verificar/ajustar headers) | 4h | ⏳ |
+| **1** | **Schema LocalBusiness** (JSON-LD en Layout.astro) | 2h | ✅ |
+| **2** | **Jerarquía Semántica H1/H2/H3** (verificar/ajustar headers) | 4h | ✅ |
 | **3** | **Share buttons blog** (izquierda, estilo Phanatik) | 2h | ⏳ |
-| **4** | **BN2 Newsletter mejorado** (diseño + spec) | 4h | ⏳ |
+| **4** | **Términos y Condiciones** (actualización Mayo 2026) | 1h | ✅ |
+| **5** | **BN2 Newsletter mejorado** (diseño + spec) | 4h | ⏳ |
 
 ### 🟡 Media Prioridad — Blog
 
@@ -33,8 +35,8 @@
 
 | # | Tarea | Estado |
 |---|-------|--------|
-| SEO1 | **Schema LocalBusiness** (JSON-LD) | ⏳ |
-| SEO2 | **Jerarquía Semántica** (H1/H2/H3) | ⏳ |
+| SEO1 | **Schema LocalBusiness** (JSON-LD) | ✅ |
+| SEO2 | **Jerarquía Semántica** (H1/H2/H3) | ✅ |
 | SEO3 | **WPO: Imágenes WebP** | ⏳ |
 | SEO4 | **Lazy loading** | ⏳ |
 
@@ -100,6 +102,9 @@
 
 ## ✅ Completado Recientemente
 
+- **Términos y Condiciones** Mayo 2026 (ea0dcc6)
+- **CI/CD Vercel** — workflow deploy a paginaweb-ecommerce (ba11701)
+- **Repo oficial documentado** — README, AGENTS, PENDIENTES, Todo
 - Blog Phanatik Visual Redesign (d9b13de)
 - TableOfContents flotante (621ab19)
 - Related Posts (621ab19)
@@ -107,6 +112,9 @@
 - Botones pill blog (621ab19)
 - Auto-PR workflow (3f43216)
 
+### ⚠️ Pendiente Crítico
+- **P0: Remediación de seguridad** — credenciales expuestas en `.env.local`, `dist/`, `.vercel/`
+
 ---
 
-_Last updated: Mayo 13, 2026_
+_Last updated: Mayo 20, 2026 (v1.1)_
