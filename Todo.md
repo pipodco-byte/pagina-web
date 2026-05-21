@@ -9,6 +9,15 @@
 
 ## 🎯 Prioridad Inmediata (Esta semana)
 
+### 🔴 Alta Prioridad — Blog Optimization v2
+
+| # | Tarea | Estimado | Estado |
+|---|-------|----------|--------|
+| **B1** | **Batch 1: Artículos 1-10** (iPhone, pantallas, baterías) — Corrección técnica + GEO + Trust + Conversión | 8h | ⏳ |
+| **B2** | **Auditoría Search Console** antes de modificar hooks (mitigar riesgo keywords) | 1h | ⏳ |
+| **B3** | **Crear template CSS** para Expert Tip y Trust Blocks (consistencia visual) | 2h | ⏳ |
+| **B4** | **Generar imágenes OG** Batch 1 (1200x630) o sistema OG dinámico | 3h | ⏳ |
+
 ### 🔴 Alta Prioridad — SEO Quick Wins
 
 | # | Tarea | Estimado | Estado |

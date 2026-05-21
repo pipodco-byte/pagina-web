@@ -23,6 +23,19 @@ Sitio web de **Pipod** — servicio técnico Apple especializado en Bogotá con 
 
 ---
 
+## 🚀 Proyectos Activos
+
+| Proyecto | Estado | Prioridad |
+|----------|--------|-----------|
+| **Blog Optimization v2** | ⏳ Listo para Batch 1 | 🔥🔥🔥 Alta |
+| **Google Reviews Automation** | ✅ Diseñado (Supabase `business_stats`) | 🔥🔥 Media |
+| **Seguridad P0** | ✅ Remediado | ✅ Completado |
+
+### Blog Optimization v2
+Optimización de 73 artículos mediante corrección técnica, GEO optimization, mejora de escritura y Trust Nuggets de T&C. Ver `PENDIENTES.md` para detalles.
+
+---
+
 ## Stack Tecnológico
 
 | Capa | Tecnología |
