@@ -54,17 +54,56 @@
 | F19 | **Botones pill blog** — 100px radius, azul (#3A506B) → negro (#000) hover, solo blog | ✅ | 621ab19 |
 | F20 | **Blog Pipod header removed** — Eliminado sección "Blog Pipod" de pipod-blog.astro | ✅ | 621ab19 |
 | F21 | **LoadMoreButton** — Paginación para 70+ artículos (muestra 12, carga 12 más) | ✅ | 621ab19 |
+| F22 | Agregar propiedad 'about' al schema TermsPageSchema.astro | ✅ | - |
 
 ---
 
-## 📅 Commits Recientes (Mayo 20, 2026)
+## 📅 Historial de cambios (Mayo 20, 2026)
 
-| Commit | Descripción |
-|--------|-------------|
-| `ea0dcc6` | **content:** actualizar términos y condiciones (Mayo 2026) |
-| `2a0b66d` | **docs:** crear AGENTS.md y README.md con historial del proyecto |
-| `ba11701` | **ci:** agregar workflow de deploy a Vercel (paginaweb-ecommerce) |
-| `75910f6` | **docs:** documentar repo oficial pipodco-byte/astroecoomerce |
+| Tipo | Descripción | Status |
+|------|-------------|--------|
+| **Content** | Actualización T&C (Mayo 2026) | ✅ Live |
+| **Repo** | Consolidación en `pipodco-byte/astroecoomerce` | ✅ |
+| **Security** | Remediación P0 (Limpieza Git + Refactor API) | ✅ |
+| **Docs** | Organización de archivos `.md` | ✅ |
+| **SEO** | Agregado `about` a Schema TermsPage | ✅ |
+| **Reviews** | Google Reviews Automation (Supabase `business_stats`) | ✅ Committed |
+| **SEO** | Propuesta Blog Optimization v2 (GEO + Trust + Conversion) | ✅ Propuesta creada |
+
+---
+
+## 🚀 Proyecto Activo: Blog Optimization v2
+
+### Objetivo
+Optimizar 73 artículos de blog mediante corrección técnica, GEO optimization, mejora de escritura, integración de Trust Nuggets de T&C y CRO.
+
+### Metodología: "Fórmula Pipod v2"
+1. **Corrección Técnica:** Links internos (≥3), OG images, stats footer, info baterías, precios formato completo
+2. **GEO Optimization:** Schema TechArticle/HowTo, author E-E-A-T, Expert Tips para LLMs
+3. **Mejora de Escritura:** Recortar relleno técnico, hooks agresivos, tone pragmático
+4. **Trust Nuggets (T&C):** Garantía 12 meses, protocolo backup, diagnóstico 1.5h
+5. **Conversión:** CTAs mejorados, internal linking estratégico
+
+### Batching (7 lotes)
+| Batch | Artículos | Focus | Impacto |
+|-------|-----------|-------|---------|
+| **Batch 1** | 1-10 (Fase 1) | iPhone, pantallas, baterías | 🔥🔥🔥 Máximo |
+| **Batch 2** | 11-20 (Fase 1) | iPhone, pantallas, baterías | 🔥🔥 Alto |
+| **Batch 3-4** | 21-40 (Fase 2) | Guías y autoridad | 🔥🔥 Alto |
+| **Batch 5** | 41-55 (Fase 3) | Confianza y diferenciación | 🔥 Medio |
+| **Batch 6-7** | 56-73 (Fase 4) | Nichos específicos | 🔥 Medio |
+
+### Gaps Críticos Identificados (Auditoría)
+- 🔴 **0% links internos** (plan exige ≥3)
+- 🔴 **0% imágenes OG reales**
+- 🔴 **8% info real de baterías** (plan lo exige)
+- 🟡 **30% estructura Skyscraper completa**
+- 🟡 **47% stats unificados en footer**
+- 🟡 **Garantía inconsistente** (12 meses vs 6 meses)
+- 🟢 **Palabra "dispositivo"** en 9 artículos (prohibida)
+
+### Estado
+⏳ **Listo para `sdd-spec` del Batch 1**
 
 ## 📅 Commits de Hoy (Mayo 6, 2026)
 

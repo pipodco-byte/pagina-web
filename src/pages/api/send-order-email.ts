@@ -35,7 +35,7 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    const brevoApiKey = import.meta.env.BREVO_API_KEY;
+    const brevoApiKey = process.env.BREVO_API_KEY;
     if (!brevoApiKey) {
       console.error('BREVO_API_KEY no configurada');
       return new Response(JSON.stringify({ error: 'Servicio de email no configurado' }), {

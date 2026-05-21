@@ -9,6 +9,15 @@
 
 ## 🎯 Prioridad Inmediata (Esta semana)
 
+### 🔴 Alta Prioridad — Blog Optimization v2
+
+| # | Tarea | Estimado | Estado |
+|---|-------|----------|--------|
+| **B1** | **Batch 1: Artículos 1-10** (iPhone, pantallas, baterías) — Corrección técnica + GEO + Trust + Conversión | 8h | ⏳ |
+| **B2** | **Auditoría Search Console** antes de modificar hooks (mitigar riesgo keywords) | 1h | ⏳ |
+| **B3** | **Crear template CSS** para Expert Tip y Trust Blocks (consistencia visual) | 2h | ⏳ |
+| **B4** | **Generar imágenes OG** Batch 1 (1200x630) o sistema OG dinámico | 3h | ⏳ |
+
 ### 🔴 Alta Prioridad — SEO Quick Wins
 
 | # | Tarea | Estimado | Estado |
@@ -102,18 +111,21 @@
 
 ## ✅ Completado Recientemente
 
+### Historial Reciente
 - **Términos y Condiciones** Mayo 2026 (ea0dcc6)
 - **CI/CD Vercel** — workflow deploy a paginaweb-ecommerce (ba11701)
 - **Repo oficial documentado** — README, AGENTS, PENDIENTES, Todo
-- Blog Phanatik Visual Redesign (d9b13de)
-- TableOfContents flotante (621ab19)
-- Related Posts (621ab19)
-- Author fix: "Equipo Pipod" (621ab19)
-- Botones pill blog (621ab19)
-- Auto-PR workflow (3f43216)
+- **Blog Phanatik Visual Redesign** (d9b13de)
+- **TableOfContents flotante** (621ab19)
+- **Related Posts** (621ab19)
+- **Author fix: "Equipo Pipod"** (621ab19)
+- **Botones pill blog** (621ab19)
+- **Auto-PR workflow** (3f43216)
 
-### ⚠️ Pendiente Crítico
-- **P0: Remediación de seguridad** — credenciales expuestas en `.env.local`, `dist/`, `.vercel/`
+### ⚠️ Pendiente Crítico (Post-Hoy)
+- **Rotación de Claves**: Generar nuevas claves (Brevo, Google, Bold, Supabase) y configurarlas en **Vercel Dashboard**. 
+- **Nuevo Clon**: Hacer un `git clone` limpio del repo oficial.
+- **Remediación**: Finalizar limpieza de secretos pendientes (si alguno persiste).
 
 ---
 

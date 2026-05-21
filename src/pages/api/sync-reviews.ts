@@ -1,9 +1,7 @@
 import type { APIRoute } from 'astro';
+import { supabaseServer } from '../../lib/supabase/server';
 
 export const prerender = false;
-
-const GOOGLE_PLACES_API_KEY = import.meta.env.GOOGLE_PLACES_API_KEY;
-const GOOGLE_PLACE_ID = import.meta.env.GOOGLE_PLACE_ID;
 
 const INDEXNOW_ENDPOINTS = [
   'https://indexnow.org/indexnow',
@@ -43,6 +41,9 @@ const notifyIndexNow = async (): Promise<void> => {
 };
 
 export const POST: APIRoute = async ({ request }) => {
+  const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
+  const GOOGLE_PLACE_ID = process.env.GOOGLE_PLACE_ID;
+
   try {
     if (!GOOGLE_PLACES_API_KEY || !GOOGLE_PLACE_ID) {
       console.error('Google Places credentials not configured');
@@ -67,6 +68,11 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const { rating, user_ratings_total } = data.result;
+
+    // Actualizar en Supabase
+    await supabaseServer
+      .from('business_stats')
+      .upsert({ id: 1, rating, user_ratings_total, last_updated: new Date().toISOString() });
 
     const reviewsData = {
       rating: rating ? rating.toString() : "5.0",

@@ -344,5 +344,39 @@ Ver `Arquitectura.md` para el documento completo.
 
 ---
 
-*Última actualización: Mayo 2026*
+## 10. Plan Maestro: Blog Optimization v2 (Activo)
+
+### Contexto
+Los 73 artículos del blog fueron auditados y presentan gaps críticos que deben corregirse antes de cualquier campaña de indexación.
+
+### Metodología: "Fórmula Pipod v2"
+1. **Corrección Técnica:** Links internos (≥3), OG images, stats footer, info baterías, precios formato completo
+2. **GEO Optimization:** Schema TechArticle/HowTo, author E-E-A-T, Expert Tips para LLMs
+3. **Mejora de Escritura:** Recortar relleno técnico, hooks agresivos, tone pragmático
+4. **Trust Nuggets (T&C):** Garantía 12 meses, protocolo backup, diagnóstico 1.5h
+5. **Conversión:** CTAs mejorados, internal linking estratégico
+
+### Batching
+- **Batch 1:** Artículos 1-10 (Fase 1: iPhone, pantallas, baterías) — máximo impacto comercial
+- **Batch 2-7:** Resto de fases
+
+### Gaps Críticos
+- 🔴 **0% links internos** (plan exige ≥3)
+- 🔴 **0% imágenes OG reales**
+- 🔴 **8% info real de baterías**
+- 🟡 **30% estructura Skyscraper completa**
+- 🟡 **47% stats unificados en footer**
+- 🟡 **Garantía inconsistente** (12 meses vs 6 meses)
+- 🟢 **Palabra "dispositivo"** en 9 artículos (prohibida)
+
+### Reglas de Optimización
+- **NO reescribir desde cero** — solo pulir, recortar relleno, agregar bloques
+- **Respetar keywords indexadas** — analizar Search Console antes de modificar hooks
+- **Mantener tone pragmático** — sin "dispositivo", sin "solamente", sin relleno
+- **Chapinero PRIMERO** — mínimo 2 menciones por artículo
+- **Stats unificados** — 16 años, 3,600+ equipos, 2,000+ baterías, 98% satisfacción, 5.0/90+ reviews
+
+---
+
+*Última actualización: Mayo 20, 2026*
 *Si encuentras información desactualizada, actualiza este archivo y guárdala en Engram.*
