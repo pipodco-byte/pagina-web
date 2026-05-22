@@ -215,8 +215,22 @@ const PipodNavbar = () => {
   }, [itemCount, prevItemCount]);
 
   useEffect(() => {
+    if (!isMobileMenuOpen) {
+      // Reset accordion when mobile menu closes
+      setActiveDropdown(null);
+    }
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     setIsMobileMenuOpen(false);
   }, []);
+
+  useEffect(() => {
+    // Reset accordion state when mobile menu opens
+    if (isMobileMenuOpen) {
+      // Accordion will be remounted with openSection = null
+    }
+  }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -256,7 +270,7 @@ const PipodNavbar = () => {
               onMouseEnter={() => handleMouseEnter('servicio')}
               onMouseLeave={handleMouseLeave}
             >
-              <span className="nav-item">Servicio Técnico <i className="bi bi-chevron-down"></i></span>
+              <span className="nav-item">Servicio Técnico</span>
               {activeDropdown === 'servicio' && <ServicioDropdown />}
             </li>
             <li><a href="/plan-retoma-apple" className="nav-item">Plan Retoma</a></li>
@@ -265,7 +279,7 @@ const PipodNavbar = () => {
               onMouseEnter={() => handleMouseEnter('tienda')}
               onMouseLeave={handleMouseLeave}
             >
-              <span className="nav-item">Tienda <i className="bi bi-chevron-down"></i></span>
+              <span className="nav-item">Tienda</span>
               {activeDropdown === 'tienda' && <TiendaDropdown />}
             </li>
             <li><a href="/tienda-pipod?filter=accesorios" className="nav-item">Accesorios</a></li>
@@ -275,7 +289,7 @@ const PipodNavbar = () => {
               onMouseEnter={() => handleMouseEnter('blog')}
               onMouseLeave={handleMouseLeave}
             >
-              <span className="nav-item">Blog <i className="bi bi-chevron-down"></i></span>
+              <span className="nav-item">Blog</span>
               {activeDropdown === 'blog' && <BlogDropdown />}
             </li>
           </ul>
@@ -317,7 +331,7 @@ const PipodNavbar = () => {
                 <li><a href="/pipod-blog" className="mobile-nav-item" onClick={closeMobileMenu}>Blog</a></li>
               </ul>
               
-              <MobileAccordion />
+              <MobileAccordion key="mobile-accordion" />
               
               <button 
                 className="mobile-cart-btn"

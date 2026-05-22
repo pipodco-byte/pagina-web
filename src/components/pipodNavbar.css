@@ -355,9 +355,7 @@
   transition: transform 0.2s ease;
 }
 
-.nav-item-dropdown:hover .nav-item i {
-  transform: rotate(180deg);
-}
+
 
 /* DROPDOWN MENUS */
 .dropdown-menu {
