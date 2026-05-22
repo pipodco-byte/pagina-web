@@ -369,6 +369,50 @@ Los 73 artículos del blog fueron auditados y presentan gaps críticos que deben
 - 🟡 **Garantía inconsistente** (12 meses vs 6 meses)
 - 🟢 **Palabra "dispositivo"** en 9 artículos (prohibida)
 
+### Datos de Search Console (Feb-May 2026)
+** Métricas agregadas:**
+- Clics totales: 114 (49% brand "pipod", 51% non-brand = 58 clics)
+- Impresiones: 2,630
+- CTR medio: 4.3%
+- Posición media: 8.2
+
+**Keywords Frontier (Pos. 6-11) — Prioridad máxima:**
+| Keyword | Posición | Clics | Impresiones | CTR |
+|---------|----------|-------|-------------|-----|
+| `servicio tecnico iphone bogota` | 8.29 | 0 | 7 | 0% |
+| `cambio bateria iphone` | 10 | 0 | 5 | 0% |
+| `cambio pantalla iphone bogota` | ~8-11 | 0 | ? | 0% |
+| `iphone no enciende bogota` | ~8-11 | 0 | ? | 0% |
+
+**Keyword Estrella (Oportunidad latente):**
+- `arreglo iphone bogota` — Pos. 20, CTR 50%, 1 clic / 2 impresiones
+
+**Discrepancias críticas (impresiones sin clics):**
+- `servicio tecnico apple bogota` — 19 impresiones, 0 clics, pos. 24.11
+- `apple retoma` — 13 impresiones, 0 clics, pos. 14.77
+
+**Análisis:** 0% internal linking manual verificado. El template de Related Posts automáticos es insuficiente. Contenido de buena calidad pero artículos aislados sin conectividad semántica.
+
+### Artículos Priorizados por Datos Reales (Batch 1 Real)
+
+**Frontier (Pos. 8-11) → Quick Wins:**
+1. `02-servicio-tecnico-iphone-bogota.md` → `servicio tecnico iphone bogota` (8.29)
+2. `01-cambio-bateria-iphone-chapinero.md` → `cambio bateria iphone` (10)
+3. `01-reparacion-iphone-chapinero.md` → `arreglo iphone bogota` (20, CTR 50%)
+4. `02-cambio-pantalla-iphone-bogota.md` → `cambio pantalla iphone bogota`
+5. `05-iphone-no-enciende-bogota.md` → `iphone no enciende bogota`
+
+**Página 2-3 con potencial:**
+6. `08-servicio-tecnico-apple-bogota.md` → `servicio tecnico apple bogota` (24.11)
+7. `25-donde-reparar-iphone-bogota.md` → `donde reparar iphone bogota`
+8. `64-recuperacion-datos-iphone-bogota.md` → `recuperacion datos iphone`
+
+**Apple Watch Cluster (Cross-linking urgente):**
+9. `40-reparacion-apple-watch-bogota.md`
+10. `61-apple-watch-no-enciende-bogota.md`
+11. `62-apple-watch-mojado-bogota.md`
+12. `63-cambio-pila-apple-watch-bogota.md`
+
 ### Reglas de Optimización
 - **NO reescribir desde cero** — solo pulir, recortar relleno, agregar bloques
 - **Respetar keywords indexadas** — analizar Search Console antes de modificar hooks
