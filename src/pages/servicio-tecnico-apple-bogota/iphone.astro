@@ -1,0 +1,369 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServicePageSchema from '../../components/SEO/ServicePageSchema.astro';
+import FAQPageSchema from '../../components/SEO/FAQPageSchema.astro';
+import FloatingContact from '../../layouts/floatingContact';
+import Footer from '../../components/pipodFooter';
+import Stats from '../../components/stats/pipodStats.astro';
+
+// SEO Metas
+const title = "Servicio Técnico iPhone Bogotá | Especialistas Certificados - Pipod";
+const description = "Reparación iPhone en Chapinero, Bogotá. Batería, pantalla, placa, daño por agua. Diagnóstico gratis, garantía 12 meses. 16 años de experiencia.";
+
+// iPhone Services
+const iphoneServices = [
+  {
+    title: "Batería",
+    icon: "bi-battery-full",
+    description: "Cambio de batería iPhone. Diagnóstico gratis, reparación 2-3h.",
+    keywords: "cambio bateria iphone bogota, bateria iphone no dura"
+  },
+  {
+    title: "Pantalla",
+    icon: "bi-display",
+    description: "Cambio pantalla iPhone (LCD/OLED). Todas las tallas.",
+    keywords: "cambio pantalla iphone bogota, pantalla rota iphone"
+  },
+  {
+    title: "Placa/Microsoldadura",
+    icon: "bi-cpu",
+    description: "Reparación de placa (IC carga, Face ID, datos).",
+    keywords: "reparacion placa iphone bogota, microsoldadura iphone"
+  },
+  {
+    title: "Recuperación Agua",
+    icon: "bi-droplet",
+    description: "Protocolo especializado. No conectes el equipo.",
+    keywords: "iphone mojado bogota, recuperar iphone mojado"
+  },
+  {
+    title: "Face ID",
+    icon: "bi-scan-face",
+    description: "Reparación sensor TrueDepth. Sin borrar datos.",
+    keywords: "face id no funciona iphone, reparar face id"
+  },
+  {
+    title: "Cámara",
+    icon: "bi-camera",
+    description: "Reparación OIS, lente, flash.",
+    keywords: "camara iphone no funciona, iphone camara vibra"
+  },
+  {
+    title: "Puerto de Carga",
+    icon: "bi-lightning-charge",
+    description: "Reparación Lightning/USB-C.",
+    keywords: "iphone no carga, puerto carga iphone"
+  },
+  {
+    title: "Audio",
+    icon: "bi-speaker",
+    description: "Altavoz, micrófono, auricular.",
+    keywords: "iphone sin sonido, microfono iphone"
+  },
+  {
+    title: "No Enciende",
+    icon: "bi-power",
+    description: "Diagnóstico causas: batería, placa, software.",
+    keywords: "iphone no enciende bogota"
+  },
+  {
+    title: "Software",
+    icon: "bi-gear",
+    description: "Reinstalación, recuperación datos, optimización.",
+    keywords: "iphone lento bogota, iphone se calienta"
+  }
+];
+
+// FAQs específicos para iPhone
+const iphoneFAQs = [
+  { q: '¿Cuánto cuesta cambiar la batería de un iPhone?', a: 'El costo depende del modelo. Contáctanos por WhatsApp para cotización exacta. Incluye diagnóstico gratis y garantía de 12 meses.' },
+  { q: '¿Mi iPhone mojado se puede reparar?', a: 'Sí, tenemos protocolo especializado para recuperación de equipos con daño por líquido. Importante: no conectes el equipo. Traémelo lo antes posible.' },
+  { q: '¿Face ID se puede reparar sin perder datos?', a: 'Sí, en la mayoría de los casos podemos reparar Face ID sin afectar tus datos. El éxito depende del daño en el sensor TrueDepth.' },
+  { q: '¿Cuánto tiempo tarda el cambio de pantalla?', a: '2 horas o menos con servicio Express. Reparaciones más complejas pueden tomar 24-48 horas.' },
+  { q: '¿Dan garantía en la reparación?', a: 'Sí, todas nuestras reparaciones incluyen 12 meses de garantía que cubre partes y mano de obra.' }
+];
+
+// Schema
+const schemaService = {
+  name: "Servicio Técnico iPhone Bogotá",
+  description: "Reparación especializada iPhone en Chapinero, Bogotá. Batería, pantalla, placa, daño por agua.",
+  url: "https://www.pipod.co/servicio-tecnico-apple-bogota/iphone",
+  areaServed: "Bogotá, Chapinero"
+};
+---
+
+<Layout title={title}>
+  <ServicePageSchema serviceData={schemaService} />
+  <FAQPageSchema faqData={iphoneFAQs} />
+  
+  <main style="padding-top: 120px;">
+    
+    <!-- HERO -->
+    <section class="pipod-hero-immersive">
+      <div class="hero-image-bg">
+        <img
+          src="/images/servicio-tecnico-apple-pipod.webp"
+          alt="Servicio Técnico iPhone Bogotá - Pipod"
+          class="bg-image"
+          width="1920"
+          height="1080"
+          loading="eager"
+        />
+        <div class="video-overlay-pro"></div>
+      </div>
+
+      <div class="pipod-hud-top">
+        <div class="glass-tag-impact">
+          SERVICIO TÉCNICO iPHONE • CHAPINERO BOGOTÁ
+        </div>
+        <div class="title-glass-area">
+          <h1 class="hero-title-impact">
+            Reparación iPhone<br/><span>Especialistas</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="pipod-hud-bottom">
+        <p class="hero-subtitle">
+          Soporte técnico iPhone con 16 años de trayectoria. Diagnóstico gratis. Garantía 12 meses.
+        </p>
+        <div class="hero-actions-grid">
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20iPhone%20que%20necesita%20reparación" class="btn-pipod-glass-primary">
+            Escribir por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-pipod-glass-secondary">
+            Ver servicios
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <Stats />
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3">Servicios iPhone</h2>
+          <p class="text-muted">Todas las reparaciones con garantía de 12 meses</p>
+        </div>
+        
+        <div class="row g-4">
+          {iphoneServices.map((service) => (
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                <div class="text-center mb-3">
+                  <i class={`bi ${service.icon} fs-1 text-primary`}></i>
+                </div>
+                <h5 class="fw-bold text-center mb-2">{service.title}</h5>
+                <p class="text-muted text-center small">{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA PRINCIPAL -->
+    <section class="py-5 bg-dark text-white text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-3">¿Tu iPhone necesita reparación?</h2>
+        <p class="mb-4">Escríbenos por WhatsApp — Respuesta en minutos</p>
+        <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20iPhone%20que%20necesita%20reparación" class="btn btn-primary btn-lg">
+          <i class="bi bi-whatsapp me-2"></i> Contactar por WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- CROSS-SELLING -->
+    <section class="py-4 bg-light text-center border-top">
+      <div class="container">
+        <p class="mb-2 text-muted small">¿Tu iPhone también necesita protección?</p>
+        <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+          <span class="badge bg-dark px-3 py-2">
+            🎁 Combo especial: Funda + Protector pantalla
+          </span>
+          <span class="fw-bold">Por solo $50.000 COP</span>
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20me%20interesa%20el%20Combo%20iPhone%20de%20%2450.000" class="btn btn-outline-primary btn-sm">
+            Ver combo →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-5">Preguntas Frecuentes</h2>
+        
+        <div class="accordion" id="faqAccordion">
+          {iphoneFAQs.map((faq, index) => (
+            <div class="accordion-item border mb-2 rounded-3">
+              <h3 class="accordion-header">
+                <button 
+                  class={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#faq-${index}`}
+                >
+                  {faq.q}
+                </button>
+              </h3>
+              <div 
+                id={`faq-${index}`}
+                class={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  {faq.a}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <FloatingContact client:load />
+    <Footer client:load />
+  </main>
+</Layout>
+
+<style>
+  .pipod-hero-immersive {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    background: #000;
+    z-index: 1;
+  }
+
+  .hero-image-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .video-overlay-pro {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 20%),
+                linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%),
+                radial-gradient(circle at 20% 30%, rgba(0,0,0,0.4) 0%, transparent 70%);
+    z-index: 2;
+  }
+
+  .pipod-hud-top {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    z-index: 10;
+  }
+
+  .glass-tag-impact {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 0.85px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .hero-title-impact {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    color: #FFF;
+    margin: 0;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .hero-title-impact span { color: #4A90E2; }
+
+  .pipod-hud-bottom {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    z-index: 10;
+    max-width: 520px;
+    text-align: right;
+  }
+
+  .hero-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .hero-subtitle strong { color: #FFF; font-weight: 700; }
+
+  .hero-actions-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+  }
+
+  .btn-pipod-glass-primary, .btn-pipod-glass-secondary {
+    padding: 18px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 0.85px solid rgba(255,255,255,0.25);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-pipod-glass-primary {
+    background: #4A90E2;
+    color: #FFF;
+    border: none;
+  }
+
+  .btn-pipod-glass-primary:hover {
+    background: #357ABD;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.3);
+  }
+
+  .btn-pipod-glass-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFF;
+  }
+
+  .btn-pipod-glass-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 768px) {
+    .pipod-hud-top { top: 40px; left: 20px; }
+    .pipod-hud-bottom { bottom: 50px; right: 20px; left: 20px; text-align: left; }
+    .hero-actions-grid { justify-content: flex-start; flex-direction: column; }
+    .hero-title-impact { font-size: 2.8rem; }
+  }
+</style>

@@ -240,7 +240,7 @@ const PipodNavbar = () => {
   const handleMouseLeave = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 150);
+    }, 300);
   };
 
   return (
