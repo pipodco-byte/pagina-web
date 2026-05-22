@@ -309,7 +309,7 @@ const PipodNavbar = () => {
           {isMobileMenuOpen && (
             <div className="mobile-menu">
               <ul className="mobile-nav-links">
-                <li><a href="/servicio-tecnico-apple" className="mobile-nav-item" onClick={closeMobileMenu}>Servicio Técnico</a></li>
+                <li><a href="/servicio-tecnico-apple-bogota" className="mobile-nav-item" onClick={closeMobileMenu}>Servicio Técnico</a></li>
                 <li><a href="/plan-retoma-apple" className="mobile-nav-item" onClick={closeMobileMenu}>Plan Retoma</a></li>
                 <li><a href="/tienda-pipod" className="mobile-nav-item" onClick={closeMobileMenu}>Tienda</a></li>
                 <li><a href="/tienda-pipod?filter=accesorios" className="mobile-nav-item" onClick={closeMobileMenu}>Accesorios</a></li>

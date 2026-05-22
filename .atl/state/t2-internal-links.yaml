@@ -1,0 +1,57 @@
+# SDD State: t2-internal-links
+
+**Change:** t2-internal-links
+**Date:** 2026-05-22
+**Project:** Pipod.co (Astro-Ecommerce)
+
+---
+
+## Metadata
+
+```yaml
+metadata:
+  project_name: astro-ecommerce
+  change_name: t2-internal-links
+  fase: spec + tasks (ff, no design needed)
+  status: planned
+  parent_change: seo-url-hierarchy
+  engram_ids:
+    - "#184" # Arquitectura SEO-first completa
+    - "#186" # Prioridades datos 2025
+```
+
+---
+
+## Spec
+
+| Campo | Valor |
+|-------|-------|
+| **Concept** | Actualizar ~23 links internos hardcodeados para coherencia con navbar |
+| **Decisión** | Sin rename, sin 301 — solo actualizar paths |
+| **Scope** | Componentes, APIs, schemas |
+
+---
+
+## Tasks Summary
+
+| Task | Descripción | Status |
+|------|-------------|--------|
+| T2.1 | Búsqueda exhaustiva de links | ⏳ pending |
+| T2.2 | Actualizar componentes de servicio | ⏳ pending |
+| T2.3 | Actualizar schemas y APIs | ⏳ pending |
+| T2.4 | Actualizar data y otros archivos | ⏳ pending |
+| T2.5 | Verificación (grep + build) | ⏳ pending |
+
+**Total: 9 tareas en 5 phases**
+
+---
+
+## Decisión
+
+**Sin redirect 301** — El navbar ya tiene las nuevas URLs en T1. Solo se actualizan los otros archivos para mantener coherencia.
+
+---
+
+## Next Phase
+
+**T3: Sub-páginas** — Crear las 5 sub-páginas de servicio (iphone, macbook, imac, apple-watch, mantenimiento)
