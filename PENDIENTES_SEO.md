@@ -352,41 +352,28 @@ DESCRIPCIÓN: Desde 2007. Garantía 12 meses. Diagnóstico gratis. Express 2h.
 
 📄 **Resumen completo:** `SEO-URL-HIERARCHY-RESUMEN.md` [Engram #184](#184)
 
-### Distribución Servicios 2025 (Datos Reales)
+---
 
-**Engram:** [#185](https://app.engram.ai/astro-ecommerce/observation/185) — Datos completos de distribución
-**Engram:** [#186](https://app.engram.ai/astro-ecommerce/observation/186) — Prioridades actualizadas con estrategia 2026
+## Trazabilidad Engram — Proyecto Pipod
 
-| Servicio | # | % | Prioridad SEO |
-|----------|---|---|--------------|
-| Batería/Energía | 36 | **28.3%** | 🔥 Alta |
-| Pantalla/Imagen | 33 | **26.0%** | 🔥 Alta |
-| Revisión/Otros | 19 | 15.0% | 🟡 Media |
-| Software | 9 | 7.1% | 🟡 Media |
-| Disco/RAM (Mejora) | 8 | 6.3% | 🟡 Media |
-| Mantenimiento General | 8 | 6.3% | 🔥 Alta (subió) |
-| Reparación Board/No Prende | 8 | 6.3% | 🟡 Media |
-| Equipo Mojado/Humedad | 6 | 4.7% | 🟢 Baja |
+### Arquitectura SEO-first (cambio actual)
 
-**Key insight:** Baterías + Pantallas = 54.3%. MacBook ahora tan demandante como iPhone (ratio convergencia 8:1 → 1.6:1).
+| Engram | Tema |
+|--------|------|
+| [#184](https://app.engram.ai/astro-ecommerce/observation/184) | Arquitectura SEO-first — Plan completo |
+| [#185](https://app.engram.ai/astro-ecommerce/observation/185) | Datos distribución servicios 2025 |
+| [#186](https://app.engram.ai/astro-ecommerce/observation/186) | Prioridades actualizadas + estrategia 2026 |
 
-**Estrategia 2026:**
-1. Recuperar demanda Mac con campañas específicas
-2. Acelerar programas de batería recurrente para iPhone y Mac
-3. Profesionalizar categorías "Revisión/Otros" (15% del negocio)
+### Blog Optimization v2 (cambio relacionado)
 
-**Meta 2026:** 165 servicios (+30% sobre 2025)
+| Engram | Tema |
+|--------|------|
+| [#179](https://app.engram.ai/astro-ecommerce/observation/179) | Proposal Blog Optimization v2 Refinado |
+| [#175](https://app.engram.ai/astro-ecommerce/observation/175) | Plan Maestro GEO + Trust (73 posts) |
+| [#172](https://app.engram.ai/astro-ecommerce/observation/172) | Proposal Blog Polish (GEO + Trust + Conversion) |
+| [#141](https://app.engram.ai/astro-ecommerce/observation/141) | Audit H2/H3 — SEO2 Semantic Hierarchy |
 
-### Prioridades ajustadas según datos 2025
-
-| Sub-página | Prioridad | Basado en |
-|-----------|-----------|-----------|
-| **iPhone** | 🔥🔥 Alta | 57 casos, Batería 28.3% |
-| **MacBook** | 🔥🔥 Alta | 47 casos, ahora tan demandante como iPhone |
-| **Mantenimiento** | 🔥 Alta | 6.3% + estrategia 2026 |
-| **iMac** | 🟡 Media | Mantenimiento + Disco/RAM |
-| **Apple Watch** | 🟡 Media | Bajo volumen |
-
+### Ver también: `SEO-URL-HIERARCHY-RESUMEN.md` — Trazabilidad completa
 
 ---
 

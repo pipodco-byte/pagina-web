@@ -189,5 +189,56 @@ La inversión de ~9,800 USD para marketing digital es una conversación presupue
 
 ---
 
+## 12. Trazabilidad Completa — Engram IDs del Proyecto
+
+### Arquitectura SEO-first (este cambio)
+
+| Engram | Tema | Ubicación |
+|--------|------|-----------|
+| [#184](https://app.engram.ai/astro-ecommerce/observation/184) | Arquitectura SEO-first — Plan completo (navbar, URLs, blog, tags, decisiones) | Este documento passim |
+| [#185](https://app.engram.ai/astro-ecommerce/observation/185) | Datos distribución servicios 2025 (127 servicios, -35.5%, estrategia 2026) | Secciones 2, 4 |
+| [#186](https://app.engram.ai/astro-ecommerce/observation/186) | Prioridades actualizadas con datos 2025 (MacBook = iPhone) | Secciones 3, 5 |
+
+### Blog Optimization v2 (cambio relacionado)
+
+| Engram | Tema | Estado |
+|--------|------|--------|
+| [#179](https://app.engram.ai/astro-ecommerce/observation/179) | Proposal Blog Optimization v2 Refinado (data-driven) | draft |
+| [#175](https://app.engram.ai/astro-ecommerce/observation/175) | Plan Maestro GEO + Trust (73 posts) | activo |
+| [#172](https://app.engram.ai/astro-ecommerce/observation/172) | Proposal Blog Polish (GEO + Trust + Conversion) | draft |
+| [#141](https://app.engram.ai/astro-ecommerce/observation/141) | Audit H2/H3 generic headers — SEO2 Semantic Hierarchy | completado |
+| [#127](https://app.engram.ai/astro-ecommerce/observation/127) | Exploration Blog Phanatik Fixes (70 artículos) | completado |
+| [#119](https://app.engram.ai/astro-ecommerce/observation/119) | Proposal Blog Phanatik Visual Redesign | completado |
+| [#113](https://app.engram.ai/astro-ecommerce/observation/113) | Design blog-phanatik-enhancements | completado |
+| [#107](https://app.engram.ai/astro-ecommerce/observation/107) | Design blog-editorial-redesign | completado |
+| [#105](https://app.engram.ai/astro-ecommerce/observation/105) | Proposal Blog Editorial Redesign | completado |
+| [#98](https://app.engram.ai/astro-ecommerce/observation/98) | Proposal blog-visual-upgrade (Lexington Author) | completado |
+| [#97](https://app.engram.ai/astro-ecommerce/observation/97) | Exploration blog-visual-upgrade | completado |
+| [#94](https://app.engram.ai/astro-ecommerce/observation/94) | State sdd/astro-ecommerce — blog-phanatik-enhancements | completado |
+
+### Blog Content (artículos y migración)
+
+| Engram | Tema | Estado |
+|--------|------|--------|
+| [#147](https://app.engram.ai/astro-ecommerce/observation/147) | Auditoría OPENSPEC vs CONTENT BLOG — Pérdida de contenido (artículo 41) | completado |
+| [#118](https://app.engram.ai/astro-ecommerce/observation/118) | Archive Report blog-phanatik-enhancements | archivado |
+| [#116](https://app.engram.ai/astro-ecommerce/observation/116) | Apply Progress blog-phanatik-enhancements | completado |
+
+### Otros cambios
+
+| Engram | Tema | Estado |
+|--------|------|--------|
+| [#158](https://app.engram.ai/astro-ecommerce/observation/158) | Exploration Footer de Términos (reemplazar emails) | completado |
+| [#154](https://app.engram.ai/astro-ecommerce/observation/154) | Design actualizar Términos y Condiciones | completado |
+
+### Cómo usar esta traceability
+
+1. **Para investigar un tema específico:** Buscar el Engram ID en Engram → obtener contexto completo
+2. **Para entender decisiones:** Los Engram contienen "What/Why/Where/Learned"
+3. **Para continuar un cambio:** Revisar el estado del SDD y el apply-progress en Engram
+4. **Para recuperar información perdida:** Engram tiene todo el contexto de las conversaciones
+
+---
+
 *Documento generado: 2026-05-22*
 *Última actualización: 2026-05-22*
