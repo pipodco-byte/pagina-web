@@ -29,6 +29,17 @@
 
 ---
 
+### Gaps Críticos Identificados (Auditoría)
+- 🔴 **0% links internos** (plan exige ≥3)
+- 🔴 **0% imágenes OG reales**
+- 🔴 **8% info real de baterías** (plan lo exige)
+- 🟡 **30% estructura Skyscraper completa**
+- 🟡 **47% stats unificados en footer**
+- 🟡 **Garantía inconsistente** (12 meses vs 6 meses)
+- 🟢 **Palabra "dispositivo"** en 9 artículos (prohibida)
+
+---
+
 ## ✅ Funcionalidades Completadas (Mayo 2026)
 
 | Item | Descripción | Status | Commit |
@@ -93,14 +104,26 @@ Optimizar 73 artículos de blog mediante corrección técnica, GEO optimization,
 | **Batch 5** | 41-55 (Fase 3) | Confianza y diferenciación | 🔥 Medio |
 | **Batch 6-7** | 56-73 (Fase 4) | Nichos específicos | 🔥 Medio |
 
-### Gaps Críticos Identificados (Auditoría)
-- 🔴 **0% links internos** (plan exige ≥3)
-- 🔴 **0% imágenes OG reales**
-- 🔴 **8% info real de baterías** (plan lo exige)
-- 🟡 **30% estructura Skyscraper completa**
-- 🟡 **47% stats unificados en footer**
-- 🟡 **Garantía inconsistente** (12 meses vs 6 meses)
-- 🟢 **Palabra "dispositivo"** en 9 artículos (prohibida)
+### 📋 Estrategia de Aplicación (2-Track)
+
+| Track | Artículos | Acciones |
+| :--- | :--- | :--- |
+| **Track A (Estándar)** | 66 artículos | Hook (Intro), Expert Tip, Trust Nuggets, Internal Linking |
+| **Track B (7 Joyas)** | 7 artículos | Expert Tip, Trust Nuggets, Internal Linking (Lecturas Relacionadas) |
+
+> **Regla de oro Track B:** El texto original del autor es **sagrado**. El script solo inyecta bloques técnicos al final del archivo.
+
+### 🎯 7 Joyas (Artículos Protegidos - Protocolo de Cuido)
+| Artículo | ¿Por qué es especial? |
+|----------|-----------------------|
+| `41-historia-pipod-bogota.md` | ADN Pipod - Narrativo |
+| `42-protocolo-diagnostico-pipod-bogota.md` | ADN Pipod - Estratégico |
+| `43-por-que-elegir-pipod-bogota.md` | ADN Pipod - Estratégico |
+| `45-tecnico-apple-confiable-bogota.md` | ADN Pipod - Estratégico |
+| `46-experiencia-pipod-16-anos-bogota.md` | ADN Pipod - Estratégico |
+| `47-resenas-pipod-bogota.md` | ADN Pipod - Estratégico |
+| `53-casos-exito-pipod-bogota.md` | ADN Pipod - Estratégico |
+
 
 ### Datos de Search Console Integrados (Feb-May 2026)
 **Análisis realizado:** 2026-05-20
@@ -176,6 +199,18 @@ Optimizar 73 artículos de blog mediante corrección técnica, GEO optimization,
 | P2 | Vercel KV para reviews | Persistir datos de reviews en Redis | Requiere cuenta Vercel KV |
 | P3 | **Normalización condicion** | DB tiene `"usado"` pero filtros UI esperan `"Seminuevo"` o `"Repotenciado"` — iPhone 16 usados → Repotenciado, otros usados → Seminuevo | SDD: `condicion-normalization` |
 | P4 | Badge CSS `badge-usado` | No existe la clase CSS — productos "usado" muestran sin badge correcto | Crear mapping a Seminuevo/Repotenciado |
+| P10 | **Implementación Arquitectura SEO-first** | Navbar con sub-menus, URLs servicio con sub-páginas, blog 3 categorías, tags normalizados | SDD: seo-url-hierarchy [Engram #184](#184) |
+| P10.1 | Navbar: Servicio Técnico ▼ + Tienda ▼ + Blog ▼ | Sub-menús con 9 items Tienda, 5 items Servicio, 3 Blog | SDD: seo-url-hierarchy |
+| P10.2 | Renombrar /servicio-tecnico-apple → /servicio-tecnico-apple-bogota | URL pilar con geolocalización | SDD: seo-url-hierarchy |
+| P10.3 | Crear 5 sub-páginas servicio (prioridad alta: iPhone + MacBook primero) | URLs: /servicio-tecnico-apple-bogota/{device}/ | SDD: seo-url-hierarchy |
+| P10.4 | Normalizar categorías blog: REPARACIONES (~35), GUÍAS (~25), CONFIANZA (~13) | Los 73 artículos reclasificados por tipo de contenido | SDD: seo-url-hierarchy |
+| P10.5 | Normalizar tags: dispositivos + servicios + geo + propósito | 3-5 tags por artículo, sin mezclar | SDD: seo-url-hierarchy |
+| P10.6 | Crear páginas de archivo blog por categoría | /blog/reparaciones/, /blog/guias/, /blog/confianza/ | SDD: seo-url-hierarchy |
+
+**Prioridades basadas en datos 2025:**
+- 🔥🔥 iPhone + MacBook: prioridad máxima (57+47 casos, 54.3% del negocio)
+- 🔥 Mantenimiento: prioridad alta (6.3% + estrategia 2026)
+- 🟡 iMac, Apple Watch: media
 
 ### 🟡 Media Prioridad
 
