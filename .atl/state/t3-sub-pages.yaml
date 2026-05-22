@@ -1,0 +1,91 @@
+# SDD State: t3-sub-pages
+
+**Change:** t3-sub-pages
+**Date:** 2026-05-22
+**Project:** Pipod.co (Astro-Ecommerce)
+
+---
+
+## Metadata
+
+```yaml
+metadata:
+  project_name: astro-ecommerce
+  change_name: t3-sub-pages
+  fase: spec + tasks
+  status: planned
+  parent_change: seo-url-hierarchy
+  engram_ids:
+    - "#184" # Arquitectura SEO-first completa
+    - "#186" # Prioridades datos 2025
+```
+
+---
+
+## Spec Summary
+
+| Campo | Valor |
+|-------|-------|
+| **Concept** | 5 páginas comprehensivas, una por dispositivo |
+| **Filosofía** | Servicio local = una página con todo |
+| **Servicios** | Todos los servicios del dispositivo en la misma página |
+| **Cross-selling** | Accesorios en cada página |
+
+---
+
+## Las 5 páginas
+
+| # | Dispositivo | URL | Servicios |
+|---|-------------|-----|-----------|
+| 1 | iPhone | `/servicio-tecnico-apple-bogota/iphone/` | 10 |
+| 2 | MacBook | `/servicio-tecnico-apple-bogota/macbook/` | 10 |
+| 3 | iMac | `/servicio-tecnico-apple-bogota/imac/` | 8 |
+| 4 | Apple Watch | `/servicio-tecnico-apple-bogota/apple-watch/` | 4 |
+| 5 | Mantenimiento | `/servicio-tecnico-apple-bogota/mantenimiento/` | 8 |
+
+---
+
+## Tasks Summary
+
+| Task | Descripción | Status |
+|------|-------------|--------|
+| T3.1 | iPhone (10 servicios + accesorios + FAQs + Schema) | ⏳ pending |
+| T3.2 | MacBook (10 servicios + accesorios + FAQs + Schema) | ⏳ pending |
+| T3.3 | iMac (8 servicios + accesorios + FAQs + Schema) | ⏳ pending |
+| T3.4 | Apple Watch (4 servicios + accesorios + FAQs + Schema) | ⏳ pending |
+| T3.5 | Mantenimiento (8 servicios + paquetes + accesorios + FAQs) | ⏳ pending |
+| T3.6 | Update schemas + index-now | ⏳ pending |
+| T3.7 | Verificación (build + responsive + schema) | ⏳ pending |
+
+**Total: 20+ tareas en 7 phases**
+
+---
+
+## Order de implementación
+
+| Orden | Página | Razón |
+|-------|--------|-------|
+| 1 | iPhone | 57 casos, 28.3% baterías |
+| 2 | MacBook | 47 casos, estratégico 2026 |
+| 3 | iMac | Alto margen |
+| 4 | Apple Watch | Marca |
+| 5 | Mantenimiento | Recurrente |
+
+---
+
+## Research sources
+
+| Agent | Tema |
+|-------|------|
+| wide-beige-antelope | MacBook servicios, FAQs, keywords |
+| exotic-tomato-landfowl | iMac + Mantenimiento servicios, FAQs |
+
+---
+
+## Next Phase
+
+**T4:** Blog — Normalizar categorías (~73 artículos)
+
+---
+
+*State creado: 2026-05-22*

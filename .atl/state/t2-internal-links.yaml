@@ -12,12 +12,13 @@
 metadata:
   project_name: astro-ecommerce
   change_name: t2-internal-links
-  fase: spec + tasks (ff, no design needed)
-  status: planned
+  fase: completed
+  status: completed
   parent_change: seo-url-hierarchy
   engram_ids:
     - "#184" # Arquitectura SEO-first completa
     - "#186" # Prioridades datos 2025
+  commit: 8f8625f
 ```
 
 ---
@@ -26,9 +27,9 @@ metadata:
 
 | Campo | Valor |
 |-------|-------|
-| **Concept** | Actualizar ~23 links internos hardcodeados para coherencia con navbar |
-| **Decisión** | Sin rename, sin 301 — solo actualizar paths |
-| **Scope** | Componentes, APIs, schemas |
+| **Concept** | Rename + 301 para preservar SEO authority |
+| **Decisión** | Rename /servicio-tecnico-apple → /servicio-tecnico-apple-bogota |
+| **Redirect** | 301 en vercel.json |
 
 ---
 
@@ -36,22 +37,16 @@ metadata:
 
 | Task | Descripción | Status |
 |------|-------------|--------|
-| T2.1 | Búsqueda exhaustiva de links | ⏳ pending |
-| T2.2 | Actualizar componentes de servicio | ⏳ pending |
-| T2.3 | Actualizar schemas y APIs | ⏳ pending |
-| T2.4 | Actualizar data y otros archivos | ⏳ pending |
-| T2.5 | Verificación (grep + build) | ⏳ pending |
+| T2.1 | Renombrar archivo | ✅ completed |
+| T2.2 | Crear redirect 301 | ✅ completed |
+| T2.3 | Actualizar 10 archivos | ✅ completed |
+| T2.4 | Verificar dropdowns | ✅ completed (T1) |
+| T2.5 | Verificación | ✅ completed |
 
-**Total: 9 tareas en 5 phases**
-
----
-
-## Decisión
-
-**Sin redirect 301** — El navbar ya tiene las nuevas URLs en T1. Solo se actualizan los otros archivos para mantener coherencia.
+**Build: ✅ Passed**
 
 ---
 
 ## Next Phase
 
-**T3: Sub-páginas** — Crear las 5 sub-páginas de servicio (iphone, macbook, imac, apple-watch, mantenimiento)
+**T3: Sub-páginas** — Crear las 5 sub-páginas de servicio
