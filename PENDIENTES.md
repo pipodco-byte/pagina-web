@@ -102,8 +102,44 @@ Optimizar 73 artículos de blog mediante corrección técnica, GEO optimization,
 - 🟡 **Garantía inconsistente** (12 meses vs 6 meses)
 - 🟢 **Palabra "dispositivo"** en 9 artículos (prohibida)
 
+### Datos de Search Console Integrados (Feb-May 2026)
+**Análisis realizado:** 2026-05-20
+
+**Métricas agregadas:**
+- Clics totales: 114 (49% brand "pipod", 51% non-brand = 58 clics)
+- Impresiones: 2,630
+- CTR: 4.3%
+- Posición media: 8.2
+
+**Keywords Frontier (Pos. 6-11) — Quick Wins inmediatos:**
+| Keyword | Posición | Clics | Impresiones | CTR | Artículo objetivo |
+|---------|----------|-------|-------------|-----|-------------------|
+| `servicio tecnico iphone bogota` | 8.29 | 0 | 7 | 0% | `02-servicio-tecnico-iphone-bogota.md` |
+| `cambio bateria iphone` | 10 | 0 | 5 | 0% | `01-cambio-bateria-iphone-chapinero.md` |
+| `servicio tecnico apple bogota` | 24.11 | 0 | 19 | 0% | `08-servicio-tecnico-apple-bogota.md` |
+| `arreglo iphone bogota` | 20 | 1 | 2 | **50%** | `01-reparacion-iphone-chapinero.md` |
+
+**Discrepancias críticas (impresiones sin clics):**
+- `apple retoma` — 13 impresiones, 0 clics, pos. 14.77
+- `reparacion apple` — 13 impresiones, 0 clics, pos. 42.85
+- `servicio tecnico apple` — 11 impresiones, 0 clics, pos. 32.27
+
+**Hallazgo técnico crítico:** 0% internal linking manual verificado en los 73 artículos. El template de Related Posts automáticos es insuficiente. Los artículos están aislados sin conectividad semántica.
+
+**Artículos priorizados por datos reales (Batch 1 Real):**
+1. `02-servicio-tecnico-iphone-bogota.md` → `servicio tecnico iphone bogota` (8.29)
+2. `01-cambio-bateria-iphone-chapinero.md` → `cambio bateria iphone` (10)
+3. `01-reparacion-iphone-chapinero.md` → `arreglo iphone bogota` (20, CTR 50%)
+4. `02-cambio-pantalla-iphone-bogota.md` → `cambio pantalla iphone bogota`
+5. `05-iphone-no-enciende-bogota.md` → `iphone no enciende bogota`
+6. `08-servicio-tecnico-apple-bogota.md` → `servicio tecnico apple bogota` (24.11)
+7. `25-donde-reparar-iphone-bogota.md` → `donde reparar iphone bogota`
+8. `64-recuperacion-datos-iphone-bogota.md` → `recuperacion datos iphone`
+9. `40-reparacion-apple-watch-bogota.md` → Apple Watch cluster
+10. `61-apple-watch-no-enciende-bogota.md` → Apple Watch cluster
+
 ### Estado
-⏳ **Listo para `sdd-spec` del Batch 1**
+⏳ **Listo para `sdd-spec` del Batch 1** (priorizado por datos de Search Console)
 
 ## 📅 Commits de Hoy (Mayo 6, 2026)
 
