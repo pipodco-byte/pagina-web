@@ -446,6 +446,11 @@
   color: #ffffff;
 }
 
+.blog-item .item-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .item-content {
   display: flex;
   flex-direction: column;
@@ -470,22 +475,6 @@
 .service-item .item-label {
   font-size: 15px;
   font-weight: 700;
-}
-
-/* TIENDA ITEM */
-.tienda-item {
-  padding: 16px;
-}
-
-.tienda-item .item-label {
-  font-size: 13px;
-}
-
-/* BLOG ITEM */
-.blog-item {
-  flex-direction: row;
-  gap: 12px;
-  padding: 16px;
 }
 
 .blog-item .item-icon {

@@ -71,53 +71,7 @@ const blogIcons: Record<string, string> = {
   'Confianza': 'bi-shield-check',
 };
 
-const ServicioDropdown = () => (
-  <div className="dropdown-menu dropdown-service">
-    <div className="dropdown-grid service-grid">
-      {serviceMenuItems.map((item) => (
-        <a key={item.label} href={item.href} className="dropdown-item service-item">
-          <div className="item-icon">
-            <i className={`bi ${serviceIcons[item.label] || 'bi-gear'}`}></i>
-          </div>
-          <div className="item-content">
-            <span className="item-label">{item.label}</span>
-            <span className="item-services">{item.services.join(' · ')}</span>
-          </div>
-        </a>
-      ))}
-    </div>
-  </div>
-);
 
-const TiendaDropdown = () => (
-  <div className="dropdown-menu dropdown-tienda">
-    <div className="dropdown-grid tienda-grid">
-      {tiendaMenuItems.map((item) => (
-        <a key={item.label} href={item.href} className="dropdown-item tienda-item">
-          <div className="item-icon">
-            <i className={`bi ${tiendaIcons[item.label] || 'bi-box'}`}></i>
-          </div>
-          <span className="item-label">{item.label}</span>
-        </a>
-      ))}
-    </div>
-  </div>
-);
-
-const BlogDropdown = () => (
-  <div className="dropdown-menu dropdown-blog">
-    <div className="dropdown-grid blog-grid">
-      {blogMenuItems.map((item) => (
-        <a key={item.label} href={item.href} className="dropdown-item blog-item">
-          <div className="item-icon">
-            <i className={`bi ${blogIcons[item.label] || 'bi-file-text'}`}></i>
-          </div>
-          <span className="item-label">{item.label}</span>
-        </a>
-      ))}
-    </div>
-  </div>
-);
 
 const MobileAccordion = () => {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -192,11 +146,9 @@ const PipodNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [animateCart, setAnimateCart] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { itemCount, openCart } = useCartStore();
   const [prevItemCount, setPrevItemCount] = useState(itemCount);
   const isHydrated = useHydrated();
-  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScrollEvent = () => {
@@ -244,19 +196,6 @@ const PipodNavbar = () => {
     openCart();
   };
 
-  const handleMouseEnter = (dropdown: string) => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-    }
-    setActiveDropdown(dropdown);
-  };
-
-  const handleMouseLeave = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 300);
-  };
-
   return (
     <>
       <nav className={`navbar-pipod ${isScrolled ? 'nav-scrolled' : ''}`}>
@@ -265,32 +204,17 @@ const PipodNavbar = () => {
           <a href="/" className="logo" onClick={closeMobileMenu}>PIPOD</a>
 
           <ul className="nav-links">
-            <li 
-              className="nav-item-dropdown"
-              onMouseEnter={() => handleMouseEnter('servicio')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <span className="nav-item">Servicio Técnico</span>
-              {activeDropdown === 'servicio' && <ServicioDropdown />}
+            <li className="nav-item-dropdown">
+              <a href="/servicio-tecnico-apple-bogota" className="nav-item">Servicio Técnico</a>
             </li>
             <li><a href="/plan-retoma-apple" className="nav-item">Plan Retoma</a></li>
-            <li 
-              className="nav-item-dropdown"
-              onMouseEnter={() => handleMouseEnter('tienda')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <span className="nav-item">Tienda</span>
-              {activeDropdown === 'tienda' && <TiendaDropdown />}
+            <li className="nav-item-dropdown">
+              <a href="/tienda-pipod" className="nav-item">Tienda</a>
             </li>
             <li><a href="/tienda-pipod?filter=accesorios" className="nav-item">Accesorios</a></li>
             <li><a href="/contacto-pipod" className="nav-item">Contacto</a></li>
-            <li 
-              className="nav-item-dropdown"
-              onMouseEnter={() => handleMouseEnter('blog')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <span className="nav-item">Blog</span>
-              {activeDropdown === 'blog' && <BlogDropdown />}
+            <li className="nav-item-dropdown">
+              <a href="/pipod-blog" className="nav-item">Blog</a>
             </li>
           </ul>
 
