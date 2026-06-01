@@ -443,6 +443,12 @@
   border-radius: 0;
 }
 
+.item-icon i {
+  font-size: 22px;
+  line-height: 1;
+  vertical-align: 0;
+}
+
 .blog-item .item-label {
   font-size: 13px;
   font-weight: 600;
