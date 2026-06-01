@@ -433,24 +433,20 @@
 }
 
 .item-icon {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  display: flex;
   align-items: center;
   justify-content: center;
   color: #1d1d1f;
   background: transparent !important;
   border-radius: 0;
-  flex-shrink: 0;
 }
-.item-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+
+.item-icon i {
+  font-size: 22px;
+  line-height: 1;
+  vertical-align: 0;
 }
 
 .blog-item .item-label {
