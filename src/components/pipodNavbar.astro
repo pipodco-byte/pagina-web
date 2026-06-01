@@ -1,0 +1,288 @@
+---
+import './pipodNavbar.css';
+
+const serviceMenuItems = [
+  { label: 'iPhone', href: '/servicio-tecnico-apple-bogota/iphone', services: ['Batería', 'Pantalla', 'Carga', 'Placa'] },
+  { label: 'MacBook', href: '/servicio-tecnico-apple-bogota/macbook', services: ['Batería', 'Pantalla', 'Teclado'] },
+  { label: 'iMac', href: '/servicio-tecnico-apple-bogota/imac', services: ['Mantenimiento', 'Disco'] },
+  { label: 'Apple Watch', href: '/servicio-tecnico-apple-bogota/apple-watch', services: ['Pantalla', 'Carga'] },
+  { label: 'Mantenimiento', href: '/servicio-tecnico-apple-bogota/mantenimiento', services: ['Limpieza', 'Optimización'] },
+];
+
+const tiendaMenuItems = [
+  { label: 'iPhone', href: '/tienda-pipod?filter=iphone' },
+  { label: 'MacBook', href: '/tienda-pipod?filter=macbook' },
+  { label: 'iPad', href: '/tienda-pipod?filter=ipad' },
+  { label: 'Apple Watch', href: '/tienda-pipod?filter=apple-watch' },
+  { label: 'Cargadores', href: '/tienda-pipod?filter=cargadores' },
+  { label: 'MagSafe', href: '/tienda-pipod?filter=magafe' },
+  { label: 'Fundas', href: '/tienda-pipod?filter=fundas' },
+  { label: 'Audio', href: '/tienda-pipod?filter=audio' },
+  { label: 'Accesorios', href: '/tienda-pipod?filter=accesorios' },
+];
+
+const blogMenuItems = [
+  { label: 'Reparaciones', href: '/blog/reparaciones' },
+  { label: 'Guías de Compra', href: '/blog/guias' },
+  { label: 'Confianza', href: '/blog/confianza' },
+];
+
+const serviceIcons: Record<string, string> = {
+  'iPhone': 'bi-phone',
+  'MacBook': 'bi-laptop',
+  'iMac': 'bi-display',
+  'Apple Watch': 'bi-smartwatch',
+  'Mantenimiento': 'bi-tools',
+};
+
+const tiendaIcons: Record<string, string> = {
+  'iPhone': 'bi-phone',
+  'MacBook': 'bi-laptop',
+  'iPad': 'bi-tablet',
+  'Apple Watch': 'bi-smartwatch',
+  'Cargadores': 'bi-battery-charging',
+  'MagSafe': 'bi-magnet',
+  'Fundas': 'bi-phone-fill',
+  'Audio': 'bi-headphones',
+  'Accesorios': 'bi-box-seam',
+};
+
+const blogIcons: Record<string, string> = {
+  'Reparaciones': 'bi-wrench',
+  'Guías de Compra': 'bi-book',
+  'Confianza': 'bi-shield-check',
+};
+---
+
+<nav class="navbar-pipod">
+  <div class="container nav-wrapper">
+    
+    <a href="/" class="logo">PIPOD</a>
+
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="/servicio-tecnico-apple-bogota" class="nav-item">
+          Servicio Técnico
+          <i class="bi bi-chevron-down"></i>
+        </a>
+        <div class="pipod-dropdown-menu">
+          <div class="dropdown-grid service-grid">
+            {serviceMenuItems.map((item) => (
+              <a href={item.href} class="dropdown-item service-item">
+                <div class="item-icon">
+                  <i class={`bi ${serviceIcons[item.label] || 'bi-gear'}`}></i>
+                </div>
+                <div class="item-content">
+                  <span class="item-label">{item.label}</span>
+                  <span class="item-services">{item.services.join(' · ')}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </li>
+      <li><a href="/plan-retoma-apple" class="nav-item">Plan Retoma</a></li>
+      <li class="nav-item-dropdown">
+        <a href="/tienda-pipod" class="nav-item">
+          Tienda
+          <i class="bi bi-chevron-down"></i>
+        </a>
+        <div class="pipod-dropdown-menu">
+          <div class="dropdown-grid tienda-grid">
+            {tiendaMenuItems.map((item) => (
+              <a href={item.href} class="dropdown-item tienda-item">
+                <div class="item-icon">
+                  <i class={`bi ${tiendaIcons[item.label] || 'bi-box'}`}></i>
+                </div>
+                <div class="item-content">
+                  <span class="item-label">{item.label}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </li>
+      <li><a href="/tienda-pipod?filter=accesorios" class="nav-item">Accesorios</a></li>
+      <li><a href="/contacto-pipod" class="nav-item">Contacto</a></li>
+      <li class="nav-item-dropdown">
+        <a href="/pipod-blog" class="nav-item">
+          Blog
+          <i class="bi bi-chevron-down"></i>
+        </a>
+        <div class="pipod-dropdown-menu">
+          <div class="dropdown-grid blog-grid">
+            {blogMenuItems.map((item) => (
+              <a href={item.href} class="dropdown-item blog-item">
+                <div class="item-icon">
+                  <i class={`bi ${blogIcons[item.label] || 'bi-file-text'}`}></i>
+                </div>
+                <div class="item-content">
+                  <span class="item-label">{item.label}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="cart-icon-btn" id="cart-icon-btn" title="Ver carrito">
+        <i class="bi bi-bag"></i>
+        <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+      </button>
+      <a href="https://wa.me/573124813094" target="_blank" rel="noopener noreferrer" class="btn-premium">Cotizar servicio</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="/servicio-tecnico-apple-bogota" class="mobile-nav-item">Servicio Técnico</a></li>
+        <li><a href="/plan-retoma-apple" class="mobile-nav-item">Plan Retoma</a></li>
+        <li><a href="/tienda-pipod" class="mobile-nav-item">Tienda</a></li>
+        <li><a href="/tienda-pipod?filter=accesorios" class="mobile-nav-item">Accesorios</a></li>
+        <li><a href="/contacto-pipod" class="mobile-nav-item">Contacto</a></li>
+        <li><a href="/pipod-blog" class="mobile-nav-item">Blog</a></li>
+      </ul>
+      
+      <div class="mobile-accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" data-section="servicio">
+            <span>Servicio Técnico</span>
+            <i class="bi bi-chevron-right"></i>
+          </button>
+          <div class="accordion-content" style="display: none;">
+            {serviceMenuItems.map((item) => (
+              <a href={item.href} class="accordion-link">{item.label}</a>
+            ))}
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-section="tienda">
+            <span>Tienda</span>
+            <i class="bi bi-chevron-right"></i>
+          </button>
+          <div class="accordion-content" style="display: none;">
+            {tiendaMenuItems.map((item) => (
+              <a href={item.href} class="accordion-link">{item.label}</a>
+            ))}
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-section="blog">
+            <span>Blog</span>
+            <i class="bi bi-chevron-right"></i>
+          </button>
+          <div class="accordion-content" style="display: none;">
+            {blogMenuItems.map((item) => (
+              <a href={item.href} class="accordion-link">{item.label}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <button class="mobile-cart-btn" id="mobile-cart-btn">
+        <i class="bi bi-bag"></i>
+        <span class="cart-badge" id="mobile-cart-badge" style="display: none;">0</span>
+        Ver carrito
+      </button>
+      <a href="https://wa.me/573124813094" target="_blank" rel="noopener noreferrer" class="btn-premium mobile-cta">Cotizar servicio</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { cartItems, openCart } from '../store/cartStore';
+
+  const navbar = document.querySelector('.navbar-pipod') as HTMLElement;
+  const hamburger = document.querySelector('.hamburger') as HTMLElement;
+  const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement;
+  const mobileLinks = document.querySelectorAll('.mobile-nav-item, .mobile-cta');
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  const cartIconBtn = document.getElementById('cart-icon-btn') as HTMLButtonElement;
+  const mobileCartBtn = document.getElementById('mobile-cart-btn') as HTMLButtonElement;
+  const cartBadge = document.getElementById('cart-badge') as HTMLSpanElement;
+  const mobileCartBadge = document.getElementById('mobile-cart-badge') as HTMLSpanElement;
+
+  // B1: Efecto scroll
+  const handleScroll = () => {
+    navbar.classList.toggle('nav-scrolled', window.scrollY > 15);
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // B2: Toggle menu mobile
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('active');
+    mobileMenu.style.display = isOpen ? 'block' : 'none';
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // B3: Cerrar menu al hacer click en cualquier link del menu mobile
+  const closeMobileMenu = () => {
+    hamburger.classList.remove('active');
+    mobileMenu.style.display = 'none';
+    hamburger.setAttribute('aria-expanded', 'false');
+  };
+  mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+  // B4: Mobile Accordion
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('open');
+      const content = header.nextElementSibling as HTMLElement;
+      if (content) {
+        content.style.display = isOpen ? 'flex' : 'none';
+      }
+    });
+  });
+
+  // B5: Boton carrito mobile cierra menu y abre carrito
+  mobileCartBtn.addEventListener('click', () => {
+    closeMobileMenu();
+    openCart();
+  });
+
+  // C3: Abrir carrito desde desktop
+  cartIconBtn.addEventListener('click', () => {
+    openCart();
+  });
+
+  // C1 + C2 + C4: Suscripcion a Nanostores para badge + animacion
+  let prevCount = 0;
+  const unsubscribe = cartItems.subscribe((count: number) => {
+    // Actualizar badge desktop
+    if (cartBadge) {
+      cartBadge.textContent = String(count);
+      cartBadge.style.display = count > 0 ? 'flex' : 'none';
+    }
+    // Actualizar badge mobile
+    if (mobileCartBadge) {
+      mobileCartBadge.textContent = String(count);
+      mobileCartBadge.style.display = count > 0 ? 'flex' : 'none';
+    }
+
+    // C4: Animacion bounce/pop
+    if (count > prevCount && cartIconBtn) {
+      cartIconBtn.classList.add('bounce');
+      if (cartBadge) cartBadge.classList.add('pop');
+      setTimeout(() => {
+        cartIconBtn.classList.remove('bounce');
+        if (cartBadge) cartBadge.classList.remove('pop');
+      }, 600);
+    }
+    prevCount = count;
+  });
+
+  // Cleanup on page unload
+  window.addEventListener('unload', () => {
+    unsubscribe();
+  });
+</script>

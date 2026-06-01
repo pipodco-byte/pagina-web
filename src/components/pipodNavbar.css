@@ -43,17 +43,21 @@
 /* MENÚ CENTRADO: 16px con 40px de separación */
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 32px; 
+  gap: 32px;
   margin: 0;
   padding: 0;
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   white-space: nowrap;
 }
 
 .nav-item {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #444;
   font-size: 15px;
@@ -358,7 +362,8 @@
 
 
 /* DROPDOWN MENUS */
-.dropdown-menu {
+.pipod-dropdown-menu {
+  display: block !important;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -373,11 +378,14 @@
   visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
   min-width: max-content;
+  pointer-events: none;
 }
 
-.nav-item-dropdown:hover .dropdown-menu {
+.nav-item-dropdown:hover .pipod-dropdown-menu,
+.nav-item-dropdown:focus-within .pipod-dropdown-menu {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 /* DROPDOWN GRID */

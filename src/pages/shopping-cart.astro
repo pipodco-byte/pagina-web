@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import data from '../../public/data.json';
 import '../../assets/scss/astro-ecommerce.scss';
-import Navbar from '../components/pipodNavbar';
 import UpperNavbar from '../components/store/upperNavbar';
 import CardProduct from '../components/products/cardProduct';
 import ShoppingCart from '../components/cart/shoppingCart';
@@ -16,7 +15,6 @@ data.shoppingCart.map(id =>
 
 <Layout title="Carrito de Compras - Pipod" description="Revisa los productos en tu carrito de compras antes de proceder al pago.">
 	<main>
-    <Navbar />
 
     <ShoppingCart products = {cartItems}/>
     
