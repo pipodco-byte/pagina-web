@@ -435,9 +435,10 @@
 .item-icon {
   width: 32px;
   height: 32px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   color: #1d1d1f;
   background: transparent !important;
   border-radius: 0;
