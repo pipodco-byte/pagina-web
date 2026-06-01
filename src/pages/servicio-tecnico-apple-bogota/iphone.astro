@@ -2,86 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import ServicePageSchema from '../../components/SEO/ServicePageSchema.astro';
 import FAQPageSchema from '../../components/SEO/FAQPageSchema.astro';
+import pipodServicesBanner from '../../components/service/pipodServicesBanner.astro';
+import pipodStats from '../../components/stats/pipodStats.astro';
+import ProtocoloPipod from '../../components/service/ProtocoloPipod.astro';
 import FloatingContact from '../../layouts/floatingContact';
 import Footer from '../../components/pipodFooter';
-import Stats from '../../components/stats/pipodStats.astro';
 
 // SEO Metas
-const title = "Servicio Técnico iPhone Bogotá | Especialistas Certificados - Pipod";
+const title = "Servicio Técnico iPhone Bogotá | Pipod - Especialistas Certificados";
 const description = "Reparación iPhone en Chapinero, Bogotá. Batería, pantalla, placa, daño por agua. Diagnóstico gratis, garantía 12 meses. 16 años de experiencia.";
-
-// iPhone Services
-const iphoneServices = [
-  {
-    title: "Batería",
-    icon: "bi-battery-full",
-    description: "Cambio de batería iPhone. Diagnóstico gratis, reparación 2-3h.",
-    keywords: "cambio bateria iphone bogota, bateria iphone no dura"
-  },
-  {
-    title: "Pantalla",
-    icon: "bi-display",
-    description: "Cambio pantalla iPhone (LCD/OLED). Todas las tallas.",
-    keywords: "cambio pantalla iphone bogota, pantalla rota iphone"
-  },
-  {
-    title: "Placa/Microsoldadura",
-    icon: "bi-cpu",
-    description: "Reparación de placa (IC carga, Face ID, datos).",
-    keywords: "reparacion placa iphone bogota, microsoldadura iphone"
-  },
-  {
-    title: "Recuperación Agua",
-    icon: "bi-droplet",
-    description: "Protocolo especializado. No conectes el equipo.",
-    keywords: "iphone mojado bogota, recuperar iphone mojado"
-  },
-  {
-    title: "Face ID",
-    icon: "bi-scan-face",
-    description: "Reparación sensor TrueDepth. Sin borrar datos.",
-    keywords: "face id no funciona iphone, reparar face id"
-  },
-  {
-    title: "Cámara",
-    icon: "bi-camera",
-    description: "Reparación OIS, lente, flash.",
-    keywords: "camara iphone no funciona, iphone camara vibra"
-  },
-  {
-    title: "Puerto de Carga",
-    icon: "bi-lightning-charge",
-    description: "Reparación Lightning/USB-C.",
-    keywords: "iphone no carga, puerto carga iphone"
-  },
-  {
-    title: "Audio",
-    icon: "bi-speaker",
-    description: "Altavoz, micrófono, auricular.",
-    keywords: "iphone sin sonido, microfono iphone"
-  },
-  {
-    title: "No Enciende",
-    icon: "bi-power",
-    description: "Diagnóstico causas: batería, placa, software.",
-    keywords: "iphone no enciende bogota"
-  },
-  {
-    title: "Software",
-    icon: "bi-gear",
-    description: "Reinstalación, recuperación datos, optimización.",
-    keywords: "iphone lento bogota, iphone se calienta"
-  }
-];
-
-// FAQs específicos para iPhone
-const iphoneFAQs = [
-  { q: '¿Cuánto cuesta cambiar la batería de un iPhone?', a: 'El costo depende del modelo. Contáctanos por WhatsApp para cotización exacta. Incluye diagnóstico gratis y garantía de 12 meses.' },
-  { q: '¿Mi iPhone mojado se puede reparar?', a: 'Sí, tenemos protocolo especializado para recuperación de equipos con daño por líquido. Importante: no conectes el equipo. Traémelo lo antes posible.' },
-  { q: '¿Face ID se puede reparar sin perder datos?', a: 'Sí, en la mayoría de los casos podemos reparar Face ID sin afectar tus datos. El éxito depende del daño en el sensor TrueDepth.' },
-  { q: '¿Cuánto tiempo tarda el cambio de pantalla?', a: '2 horas o menos con servicio Express. Reparaciones más complejas pueden tomar 24-48 horas.' },
-  { q: '¿Dan garantía en la reparación?', a: 'Sí, todas nuestras reparaciones incluyen 12 meses de garantía que cubre partes y mano de obra.' }
-];
 
 // Schema
 const schemaService = {
@@ -90,102 +19,228 @@ const schemaService = {
   url: "https://www.pipod.co/servicio-tecnico-apple-bogota/iphone",
   areaServed: "Bogotá, Chapinero"
 };
+
+// Servicios Core (54.3% del negocio)
+const coreServices = [
+  {
+    title: "CAMBIO DE BATERÍA",
+    tag: "Top Prioridad",
+    price: "Desde $80.000",
+    icon: "bi-battery-full",
+    color: "blue",
+    specs: ["1.5h express", "12m garantía", "Orig. certificada"],
+    link: "/blog/cambio-bateria-iphone-chapinero",
+    linkText: "Guía de Baterías en Chapinero"
+  },
+  {
+    title: "CAMBIO DE PANTALLA",
+    tag: "Alta Demanda",
+    price: "Desde $150.000",
+    icon: "bi-display",
+    color: "gray",
+    specs: ["1 hr express", "Pantalla AAA/Orig", "Calibración Color"],
+    link: "/blog/cambio-pantalla-iphone-bogota",
+    linkText: "Guía de Pantallas en Bogotá"
+  }
+];
+
+// Otros servicios (accordion)
+const otherServices = [
+  { title: "Placa / Microsoldadura", icon: "bi-cpu", desc: "Cotización express", price: "Desde $120.000", link: "/blog/microsoldadura-iphone-bogota" },
+  { title: "Recuperación Agua", icon: "bi-droplet", desc: "Protocolo especializado", price: "Consultar", link: "/blog/iphone-mojado-bogota" },
+  { title: "Face ID", icon: "bi-scan-face", desc: "Sin borrar datos", price: "Desde $110.000", link: "/blog/face-id-no-funciona-iphone" },
+  { title: "Cámara", icon: "bi-camera", desc: "OIS, lente, flash", price: "Desde $90.000", link: "/blog/camara-iphone-vibra-ois-bogota" },
+  { title: "Puerto de Carga", icon: "bi-lightning-charge", desc: "Lightning/USB-C", price: "Desde $70.000", link: "/blog/iphone-no-carga-bogota" },
+  { title: "No Enciende", icon: "bi-power", desc: "Diagnóstico causas", price: "Desde $55.000", link: "/blog/iphone-no-enciende-bogota" },
+  { title: "Software", icon: "bi-gear", desc: "Reinstalación, recuperación", price: "Desde $45.000", link: "/blog/iphone-lento-bogota" }
+];
+
+// FAQs
+const faqs = [
+  { q: "¿Cuánto tarda un cambio de batería iPhone?", a: "2 horas o menos con servicio Express. Diagnóstico gratis en 30 min. Baterías originales certificadas con 12 meses de garantía." },
+  { q: "¿Cuánto cuesta cambiar la batería de un iPhone?", a: "Desde $80.000 dependiendo del modelo. Incluye diagnóstico gratis y garantía de 12 meses. Contáctanos por WhatsApp para cotización exacta." },
+  { q: "¿Mi iPhone mojado se puede reparar?", a: "Sí, tenemos protocolo especializado para recuperación de equipos con daño por líquido. Importante: no conectes el equipo. Traémelo lo antes posible." },
+  { q: "¿Face ID se puede reparar sin perder datos?", a: "Sí, en la mayoría de los casos podemos reparar Face ID sin afectar tus datos. El éxito depende del daño en el sensor TrueDepth." },
+  { q: "¿Qué cubre la garantía de 12 meses?", a: "La garantía cubre defectos técnicos en partes y mano de obra. Si tu iPhone presenta el mismo problema dentro de los 12 meses, lo reparamos sin costo adicional." },
+  { q: "¿Mis datos están seguros durante la reparación?", a: "Sí. Nunca borramos datos a menos que sea absolutamente necesario. Hacemos backup antes de cualquier intervención. Tu información es confidencial." },
+  { q: "¿Si mi iPhone no enciende tiene solución?", a: "La mayoría de los casos sí tienen solución. Las causas más comunes son batería agotada, problema de software o daño en la placa. El diagnóstico es gratis." },
+  { q: "¿Hacen reparación express el mismo día?", a: "Sí. Para cambio de batería y pantalla, el servicio express es de 2 horas. Reparaciones más complejas (placa, microsoldadura) pueden tomar 24-48h." }
+];
+
+// Blog links internos
+const blogLinks = [
+  { title: "Cambio batería iPhone Chapinero", slug: "cambio-bateria-iphone-chapinero" },
+  { title: "Cambio pantalla iPhone Bogotá", slug: "cambio-pantalla-iphone-bogota" },
+  { title: "iPhone mojado Bogotá", slug: "iphone-mojado-bogota" },
+  { title: "iPhone no enciende Bogotá", slug: "iphone-no-enciende-bogota" }
+];
+
+// Cross-device links
+const otherDevices = [
+  { name: "MacBook", href: "/servicio-tecnico-apple-bogota/macbook" },
+  { name: "iPad", href: "/servicio-tecnico-apple-bogota/ipad" },
+  { name: "iMac", href: "/servicio-tecnico-apple-bogota/imac" },
+  { name: "Apple Watch", href: "/servicio-tecnico-apple-bogota/apple-watch" }
+];
 ---
 
 <Layout title={title}>
   <ServicePageSchema serviceData={schemaService} />
-  <FAQPageSchema faqData={iphoneFAQs} />
+  <FAQPageSchema faqData={faqs} />
   
   <main style="padding-top: 120px;">
     
     <!-- HERO -->
-    <section class="pipod-hero-immersive">
-      <div class="hero-image-bg">
-        <img
-          src="/images/servicio-tecnico-apple-pipod.webp"
+    <section class="hero-iphone">
+      <div class="hero-bg">
+        <img 
+          src="/images/servicio-tecnico-apple-pipod.webp" 
           alt="Servicio Técnico iPhone Bogotá - Pipod"
-          class="bg-image"
-          width="1920"
-          height="1080"
+          width="1920" height="1080"
           loading="eager"
         />
-        <div class="video-overlay-pro"></div>
+        <div class="hero-overlay"></div>
       </div>
-
-      <div class="pipod-hud-top">
-        <div class="glass-tag-impact">
-          SERVICIO TÉCNICO iPHONE • CHAPINERO BOGOTÁ
+      
+      <div class="hero-content">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="/">Inicio</a>
+          <span>›</span>
+          <a href="/servicio-tecnico-apple-bogota">Reparación</a>
+          <span>›</span>
+          <span>iPhone</span>
+        </nav>
+        
+        <h1 class="hero-title">
+          Servicio técnico iPhone<br/>
+          <span>Chapinero, Bogotá</span>
+        </h1>
+        
+        <div class="trust-line">
+          16 años · 3,600+ equipos · Garantía 12 meses
         </div>
-        <div class="title-glass-area">
-          <h1 class="hero-title-impact">
-            Reparación iPhone<br/><span>Especialistas</span>
-          </h1>
-        </div>
-      </div>
-
-      <div class="pipod-hud-bottom">
+        
         <p class="hero-subtitle">
-          Soporte técnico iPhone con 16 años de trayectoria. Diagnóstico gratis. Garantía 12 meses.
+          Reparación iPhone Express. Diagnóstico gratis. Respuesta en minutos.
         </p>
-        <div class="hero-actions-grid">
-          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20iPhone%20que%20necesita%20reparación" class="btn-pipod-glass-primary">
+        
+        <div class="hero-actions">
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20iPhone%20que%20necesita%20reparación" class="btn-primary-hero">
+            <i class="bi bi-whatsapp"></i>
             Escribir por WhatsApp
           </a>
-          <a href="#servicios" class="btn-pipod-glass-secondary">
-            Ver servicios
+          <a href="#servicios" class="btn-secondary-hero">
+            Ver servicios ↓
           </a>
         </div>
       </div>
     </section>
 
-    <!-- STATS -->
-    <Stats />
+    <!-- TRUST BADGES - REUSADO -->
+    <pipodServicesBanner />
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="py-5">
+    <!-- SERVICIOS CORE -->
+    <section id="servicios" class="section-core-services">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold mb-3">Servicios iPhone</h2>
-          <p class="text-muted">Todas las reparaciones con garantía de 12 meses</p>
-        </div>
+        <h2 class="section-title">Servicios Principales</h2>
         
-        <div class="row g-4">
-          {iphoneServices.map((service) => (
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
-                <div class="text-center mb-3">
-                  <i class={`bi ${service.icon} fs-1 text-primary`}></i>
-                </div>
-                <h5 class="fw-bold text-center mb-2">{service.title}</h5>
-                <p class="text-muted text-center small">{service.description}</p>
+        <div class="core-grid">
+          {coreServices.map((service) => (
+            <div class={`core-card core-card-${service.color}`}>
+              <div class="core-card-header">
+                <span class="core-tag">{service.tag}</span>
+                <i class={`bi ${service.icon} core-icon`}></i>
               </div>
+              <h3 class="core-title">{service.title}</h3>
+              <p class="core-price">{service.price}</p>
+              
+              <div class="core-specs">
+                {service.specs.map((spec) => (
+                  <span class="spec-item">{spec}</span>
+                ))}
+              </div>
+              
+              <a href={service.link} class="core-link">
+                → {service.linkText}
+              </a>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- CTA PRINCIPAL -->
-    <section class="py-5 bg-dark text-white text-center">
+    <!-- STATS - REUSADO -->
+    <pipodStats />
+
+    <!-- OTROS SERVICIOS (accordion) -->
+    <section class="section-other-services">
       <div class="container">
-        <h2 class="fw-bold mb-3">¿Tu iPhone necesita reparación?</h2>
-        <p class="mb-4">Escríbenos por WhatsApp — Respuesta en minutos</p>
-        <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20iPhone%20que%20necesita%20reparación" class="btn btn-primary btn-lg">
-          <i class="bi bi-whatsapp me-2"></i> Contactar por WhatsApp
+        <h2 class="section-title">Otros servicios técnicos</h2>
+        
+        <div class="other-services-grid">
+          {otherServices.slice(0, 3).map((service) => (
+            <div class="other-card">
+              <i class={`bi ${service.icon} other-icon`}></i>
+              <div class="other-info">
+                <h4>{service.title}</h4>
+                <p>{service.desc}</p>
+                <span class="other-price">{service.price}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <details class="accordion-others">
+          <summary class="accordion-summary">
+            <span>Ver todos los servicios de iPhone</span>
+            <i class="bi bi-chevron-down"></i>
+          </summary>
+          <div class="accordion-content">
+            <div class="other-services-grid">
+              {otherServices.slice(3).map((service) => (
+                <div class="other-card">
+                  <i class={`bi ${service.icon} other-icon`}></i>
+                  <div class="other-info">
+                    <h4>{service.title}</h4>
+                    <p>{service.desc}</p>
+                    <span class="other-price">{service.price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA - REUSADO -->
+    <ProtocoloPipod />
+
+    <!-- CTA -->
+    <section class="section-cta">
+      <div class="container">
+        <h2 class="cta-title">¿Tu iPhone necesita reparación?</h2>
+        <p class="cta-subtitle">
+          3,600+ reparados · Garantía 12 meses · 16 años Chapinero<br/>
+          Diagnóstico gratis · Respuesta en minutos
+        </p>
+        <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20iPhone%20que%20necesita%20reparación" class="btn-cta">
+          <i class="bi bi-whatsapp"></i>
+          Contactar por WhatsApp
         </a>
       </div>
     </section>
 
     <!-- CROSS-SELLING -->
-    <section class="py-4 bg-light text-center border-top">
+    <section class="section-cross">
       <div class="container">
-        <p class="mb-2 text-muted small">¿Tu iPhone también necesita protección?</p>
-        <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
-          <span class="badge bg-dark px-3 py-2">
-            🎁 Combo especial: Funda + Protector pantalla
-          </span>
-          <span class="fw-bold">Por solo $50.000 COP</span>
-          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20me%20interesa%20el%20Combo%20iPhone%20de%20%2450.000" class="btn btn-outline-primary btn-sm">
+        <div class="cross-content">
+          <span class="cross-icon">🎁</span>
+          <div class="cross-text">
+            <strong>Combo: Funda + Protector</strong> para tu iPhone recién reparado
+          </div>
+          <span class="cross-price">$50.000 COP</span>
+          <a href="/tienda-pipod?filter=fundas" class="btn-cross">
             Ver combo →
           </a>
         </div>
@@ -193,33 +248,52 @@ const schemaService = {
     </section>
 
     <!-- FAQs -->
-    <section class="py-5">
+    <section class="section-faqs">
       <div class="container">
-        <h2 class="fw-bold text-center mb-5">Preguntas Frecuentes</h2>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
         
-        <div class="accordion" id="faqAccordion">
-          {iphoneFAQs.map((faq, index) => (
-            <div class="accordion-item border mb-2 rounded-3">
-              <h3 class="accordion-header">
-                <button 
-                  class={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={`#faq-${index}`}
-                >
-                  {faq.q}
-                </button>
-              </h3>
-              <div 
-                id={`faq-${index}`}
-                class={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">
-                  {faq.a}
-                </div>
+        <div class="faqs-list">
+          {faqs.map((faq, index) => (
+            <details class="faq-item">
+              <summary class="faq-question">
+                {faq.q}
+                <i class="bi bi-chevron-down"></i>
+              </summary>
+              <div class="faq-answer">
+                {faq.a}
               </div>
-            </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG LINKS INTERNOS -->
+    <section class="section-blog">
+      <div class="container">
+        <h2 class="section-title">Artículos relacionados</h2>
+        
+        <div class="blog-grid">
+          {blogLinks.map((link) => (
+            <a href={`/blog/${link.slug}`} class="blog-card">
+              <i class="bi bi-file-text blog-icon"></i>
+              <span>{link.title}</span>
+              <i class="bi bi-arrow-right blog-arrow"></i>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- TAMBIEN REPARAMOS -->
+    <section class="section-also">
+      <div class="container">
+        <p class="also-text">También reparamos otros dispositivos Apple:</p>
+        <div class="also-links">
+          {otherDevices.map((device) => (
+            <a href={device.href} class="also-link">
+              {device.name}
+            </a>
           ))}
         </div>
       </div>
@@ -232,138 +306,584 @@ const schemaService = {
 </Layout>
 
 <style>
-  .pipod-hero-immersive {
+  /* HERO */
+  .hero-iphone {
     position: relative;
-    width: 100%;
     height: 80vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    background: #000;
-    z-index: 1;
   }
 
-  .hero-image-bg {
+  .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 1;
-    pointer-events: none;
   }
 
-  .bg-image {
+  .hero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
   }
 
-  .video-overlay-pro {
+  .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 20%),
-                linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%),
-                radial-gradient(circle at 20% 30%, rgba(0,0,0,0.4) 0%, transparent 70%);
-    z-index: 2;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.3) 0%,
+      transparent 20%,
+      transparent 40%,
+      rgba(0,0,0,0.7) 100%
+    );
   }
 
-  .pipod-hud-top {
-    position: absolute;
-    top: 60px;
-    left: 80px;
+  .hero-content {
+    position: relative;
     z-index: 10;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
   }
 
-  .glass-tag-impact {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 0.85px solid rgba(255, 255, 255, 0.25);
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+  }
+
+  .breadcrumb-nav a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb-nav a:hover {
+    color: #fff;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin: 0 0 20px 0;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .hero-title span {
+    color: #4A90E2;
+  }
+
+  .trust-line {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border: 0.85px solid rgba(255,255,255,0.2);
     border-radius: 50px;
-    padding: 12px 24px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.8);
-    letter-spacing: 3px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
     display: inline-block;
     margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-
-  .hero-title-impact {
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    font-weight: 900;
-    line-height: 0.9;
-    color: #FFF;
-    margin: 0;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  }
-
-  .hero-title-impact span { color: #4A90E2; }
-
-  .pipod-hud-bottom {
-    position: absolute;
-    bottom: 60px;
-    right: 80px;
-    z-index: 10;
-    max-width: 520px;
-    text-align: right;
+    letter-spacing: 0.5px;
   }
 
   .hero-subtitle {
+    font-size: 1.2rem;
     color: rgba(255,255,255,0.9);
-    font-size: 1.15rem;
-    line-height: 1.6;
-    margin-bottom: 32px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    margin: 0 0 30px 0;
+    max-width: 500px;
   }
 
-  .hero-subtitle strong { color: #FFF; font-weight: 700; }
-
-  .hero-actions-grid {
+  .hero-actions {
     display: flex;
     gap: 16px;
-    justify-content: flex-end;
+    flex-wrap: wrap;
   }
 
-  .btn-pipod-glass-primary, .btn-pipod-glass-secondary {
-    padding: 18px 36px;
+  .btn-primary-hero {
+    background: #4A90E2;
+    color: #fff;
+    padding: 16px 32px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-hero:hover {
+    background: #357ABD;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(74,144,226,0.3);
+  }
+
+  .btn-secondary-hero {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 0.85px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary-hero:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+  }
+
+  /* SECTION COMMON */
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 40px 0;
+    text-align: center;
+  }
+
+  /* SERVICIOS CORE */
+  .section-core-services {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .core-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .core-card {
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .core-card-blue {
+    background: #E6F1FB;
+    border: 2px solid #4A90E2;
+  }
+
+  .core-card-gray {
+    background: #F4F4F5;
+    border: 1px solid #E5E5E7;
+  }
+
+  .core-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .core-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    background: #4A90E2;
+    color: #fff;
+  }
+
+  .core-card-gray .core-tag {
+    background: #6e6e73;
+  }
+
+  .core-icon {
+    font-size: 2.5rem;
+    color: #1d1d1f;
+  }
+
+  .core-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 8px 0;
+  }
+
+  .core-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4A90E2;
+    margin: 0 0 20px 0;
+  }
+
+  .core-specs {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .spec-item {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    background: rgba(74,144,226,0.1);
+    border-radius: 8px;
+    color: #4A90E2;
+    font-weight: 500;
+  }
+
+  .core-card-gray .spec-item {
+    background: rgba(0,0,0,0.05);
+    color: #6e6e73;
+  }
+
+  .core-link {
+    font-size: 0.85rem;
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+
+  .core-link:hover {
+    gap: 10px;
+  }
+
+  /* OTROS SERVICIOS */
+  .section-other-services {
+    padding: 80px 0;
+    background: #F5F5F7;
+  }
+
+  .other-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .other-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    border: 1px solid #E5E5E7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .other-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  }
+
+  .other-icon {
+    font-size: 1.8rem;
+    color: #3A506B;
+    flex-shrink: 0;
+  }
+
+  .other-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 4px 0;
+  }
+
+  .other-info p {
+    font-size: 0.85rem;
+    color: #6e6e73;
+    margin: 0 0 8px 0;
+  }
+
+  .other-price {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4A90E2;
+  }
+
+  .accordion-others {
+    margin-top: 24px;
+    border-top: 1px solid #E5E5E7;
+    padding-top: 20px;
+  }
+
+  .accordion-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3A506B;
+    padding: 12px;
+    list-style: none;
+  }
+
+  .accordion-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-summary i {
+    transition: transform 0.3s ease;
+  }
+
+  details[open] .accordion-summary i {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    padding-top: 20px;
+  }
+
+  /* CTA */
+  .section-cta {
+    background: #000;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 16px 0;
+  }
+
+  .cta-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    margin: 0 0 32px 0;
+    line-height: 1.6;
+  }
+
+  .btn-cta {
+    background: #4A90E2;
+    color: #fff;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 0.85px solid rgba(255,255,255,0.25);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s ease;
   }
 
-  .btn-pipod-glass-primary {
-    background: #4A90E2;
-    color: #FFF;
-    border: none;
-  }
-
-  .btn-pipod-glass-primary:hover {
+  .btn-cta:hover {
     background: #357ABD;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(74,144,226,0.3);
   }
 
-  .btn-pipod-glass-secondary {
-    background: rgba(255, 255, 255, 0.08);
-    color: #FFF;
+  /* CROSS */
+  .section-cross {
+    padding: 40px 0;
+    background: #fff;
+    border-top: 1px solid #E5E5E7;
   }
 
-  .btn-pipod-glass-secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-5px);
+  .cross-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cross-icon {
+    font-size: 1.5rem;
+  }
+
+  .cross-text {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .cross-price {
+    font-weight: 700;
+    color: #000;
+  }
+
+  .btn-cross {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-cross:hover {
+    background: #4A90E2;
+  }
+
+  /* FAQs */
+  .section-faqs {
+    padding: 80px 0;
+    background: #F5F5F7;
+  }
+
+  .faqs-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid #E5E5E7;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    list-style: none;
+    gap: 16px;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question i {
+    flex-shrink: 0;
+    color: #6e6e73;
+    transition: transform 0.3s ease;
+  }
+
+  details[open] .faq-question i {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* BLOG */
+  .section-blog {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .blog-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: #F5F5F7;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .blog-card:hover {
+    background: #E5E5E7;
+    transform: translateX(4px);
+  }
+
+  .blog-icon {
+    font-size: 1.2rem;
+    color: #3A506B;
+  }
+
+  .blog-arrow {
+    margin-left: auto;
+    color: #6e6e73;
+  }
+
+  /* ALSO */
+  .section-also {
+    padding: 40px 0;
+    background: #000;
+  }
+
+  .also-text {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    margin: 0 0 20px 0;
+  }
+
+  .also-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .also-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .also-link:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero-content { padding: 0 40px; }
+    .container { padding: 0 40px; }
+    .core-grid { grid-template-columns: 1fr; }
+    .other-services-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
-    .pipod-hud-top { top: 40px; left: 20px; }
-    .pipod-hud-bottom { bottom: 50px; right: 20px; left: 20px; text-align: left; }
-    .hero-actions-grid { justify-content: flex-start; flex-direction: column; }
-    .hero-title-impact { font-size: 2.8rem; }
+    .hero-content { padding: 0 24px; }
+    .container { padding: 0 24px; }
+    .hero-title { font-size: 2.2rem; }
+    .core-card { padding: 24px; }
+    .other-services-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .also-links { gap: 16px; }
+    .cross-content { flex-direction: column; text-align: center; }
   }
 </style>
