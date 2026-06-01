@@ -367,21 +367,22 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(4px);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   background: rgba(255, 255, 255, 0.97);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 12px;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
   padding: 20px 24px;
   z-index: 1001;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   min-width: max-content;
+  max-width: calc(100vw - 80px);
   pointer-events: none;
 }
 
@@ -390,6 +391,18 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Primer dropdown (Servicio Técnico): centrado en viewport, no bajo el nav item */
+.nav-links > .nav-item-dropdown:first-child .pipod-dropdown-menu {
+  left: 50vw;
+  transform: translateX(-50%) translateY(4px);
+}
+
+.nav-links > .nav-item-dropdown:first-child:hover .pipod-dropdown-menu,
+.nav-links > .nav-item-dropdown:first-child:focus-within .pipod-dropdown-menu {
+  transform: translateX(-50%) translateY(0);
 }
 
 /* DROPDOWN GRID */
