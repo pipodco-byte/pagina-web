@@ -394,15 +394,16 @@
   transform: translateX(-50%) translateY(0);
 }
 
-/* Primer dropdown (Servicio Técnico): centrado en viewport, no bajo el nav item */
+/* Primer dropdown (Servicio Técnico): centrado bajo el nav item + shift derecha */
 .nav-links > .nav-item-dropdown:first-child .pipod-dropdown-menu {
-  left: 50vw;
-  transform: translateX(-50%) translateY(4px);
+  left: 50%;
+  transform: translateX(calc(-50% + 10vw)) translateY(4px);
+  max-width: calc(100vw - 80px);
 }
 
 .nav-links > .nav-item-dropdown:first-child:hover .pipod-dropdown-menu,
 .nav-links > .nav-item-dropdown:first-child:focus-within .pipod-dropdown-menu {
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(calc(-50% + 10vw)) translateY(0);
 }
 
 /* DROPDOWN GRID */
