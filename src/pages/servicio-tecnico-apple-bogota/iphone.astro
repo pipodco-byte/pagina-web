@@ -50,7 +50,7 @@ const mainServices = [
   { title: "Cambio Pantalla", icon: "bi-display", desc: "AAA / Original, 1h", price: "Desde $150.000", link: "/blog/cambio-pantalla-iphone-bogota" },
   { title: "Placa / Microsoldadura", icon: "bi-cpu", desc: "Cotización express", price: "Desde $120.000", link: "/blog/microsoldadura-iphone-bogota" },
   { title: "Recuperación Agua", icon: "bi-droplet", desc: "Protocolo especializado", price: "Consultar", link: "/blog/iphone-mojado-bogota" },
-  { title: "Face ID", icon: "bi-scan-face", desc: "Sin borrar datos", price: "Desde $110.000", link: "/blog/face-id-no-funciona-iphone" },
+  { title: "Face ID", icon: "bi-qr-code-scan", desc: "Sin borrar datos", price: "Desde $110.000", link: "/blog/face-id-no-funciona-iphone" },
   { title: "Cámara", icon: "bi-camera", desc: "OIS, lente, flash", price: "Desde $90.000", link: "/blog/camara-iphone-vibra-ois-bogota" },
   { title: "Puerto de Carga", icon: "bi-lightning-charge", desc: "Lightning/USB-C", price: "Desde $70.000", link: "/blog/iphone-no-carga-bogota" },
   { title: "No Enciende", icon: "bi-power", desc: "Diagnóstico causas", price: "Desde $55.000", link: "/blog/iphone-no-enciende-bogota" },
@@ -164,13 +164,10 @@ const otherDevices = [
       </div>
     </section>
 
-    <!-- STATS - REUSADO -->
-    <PipodStats />
-
-    <!-- TRUST BADGES - REUSADO -->
+    <!-- TRUST BADGES -->
     <PipodServicesBanner />
 
-    <!-- SERVICIOS CORE -->
+    <!-- SERVICIOS PRINCIPALES -->
     <section id="servicios" class="section-core-services">
       <div class="container">
         <h2 class="section-title">Servicios Principales</h2>
@@ -199,6 +196,9 @@ const otherDevices = [
         </div>
       </div>
     </section>
+
+    <!-- STATS -->
+    <PipodStats />
 
     <!-- SERVICIOS PRINCIPALES -->
     <section id="servicios" class="section-services">
@@ -562,7 +562,7 @@ const otherDevices = [
   /* SERVICIOS PRINCIPALES */
   .section-services {
     padding: 80px 0;
-    background: #F5F5F7;
+    background: #fff;
   }
 
   .services-grid {
@@ -590,7 +590,7 @@ const otherDevices = [
 
   .service-icon {
     font-size: 2.5rem;
-    color: #3A506B;
+    color: #000;
     flex-shrink: 0;
   }
 
@@ -615,12 +615,12 @@ const otherDevices = [
   .service-price {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #4A90E2;
+    color: #000;
   }
 
   .service-link {
     font-size: 1.2rem;
-    color: #4A90E2;
+    color: #000;
     font-weight: 600;
   }
 
