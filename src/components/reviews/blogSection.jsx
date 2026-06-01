@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function BlogSection({ posts = [] }) {
+export default function BlogSection({ title = "Expertos en Apple", posts = [] }) {
   return (
     <section className="blog-section-white">
       <div className="container">
         <div className="header-container mb-5" style={{textAlign: 'left'}}>
-          <h2 style={{fontFamily: "'Inter', sans-serif", fontSize: '2rem', fontWeight: '700', color: '#000000', margin: '0', letterSpacing: '-0.02em', textTransform: 'uppercase'}}>Expertos en Apple</h2>
+          <h2 style={{fontFamily: "'Inter', sans-serif", fontSize: '2rem', fontWeight: '700', color: '#000000', margin: '0', letterSpacing: '-0.02em', textTransform: 'uppercase'}}>{title}</h2>
         </div>
 
         <div className="row">
