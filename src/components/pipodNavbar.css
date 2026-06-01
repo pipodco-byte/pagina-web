@@ -433,8 +433,8 @@
 }
 
 .item-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -444,9 +444,8 @@
 }
 
 .item-icon i {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1;
-  vertical-align: 0;
 }
 
 .blog-item .item-label {
