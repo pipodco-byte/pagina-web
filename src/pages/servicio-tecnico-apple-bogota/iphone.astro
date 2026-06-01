@@ -4,7 +4,6 @@ import ServicePageSchema from '../../components/SEO/ServicePageSchema.astro';
 import FAQPageSchema from '../../components/SEO/FAQPageSchema.astro';
 import pipodServicesBanner from '../../components/service/pipodServicesBanner.astro';
 import pipodStats from '../../components/stats/pipodStats.astro';
-import ProtocoloPipod from '../../components/service/ProtocoloPipod.astro';
 import FloatingContact from '../../layouts/floatingContact';
 import Footer from '../../components/pipodFooter';
 
@@ -44,15 +43,21 @@ const coreServices = [
   }
 ];
 
-// Otros servicios (accordion)
-const otherServices = [
+// Servicios principales
+const mainServices = [
+  { title: "Cambio Batería", icon: "bi-battery-full", desc: "Express 2h, original 12m", price: "Desde $80.000", link: "/blog/cambio-bateria-iphone-chapinero" },
+  { title: "Cambio Pantalla", icon: "bi-display", desc: "AAA / Original, 1h", price: "Desde $150.000", link: "/blog/cambio-pantalla-iphone-bogota" },
   { title: "Placa / Microsoldadura", icon: "bi-cpu", desc: "Cotización express", price: "Desde $120.000", link: "/blog/microsoldadura-iphone-bogota" },
   { title: "Recuperación Agua", icon: "bi-droplet", desc: "Protocolo especializado", price: "Consultar", link: "/blog/iphone-mojado-bogota" },
   { title: "Face ID", icon: "bi-scan-face", desc: "Sin borrar datos", price: "Desde $110.000", link: "/blog/face-id-no-funciona-iphone" },
   { title: "Cámara", icon: "bi-camera", desc: "OIS, lente, flash", price: "Desde $90.000", link: "/blog/camara-iphone-vibra-ois-bogota" },
   { title: "Puerto de Carga", icon: "bi-lightning-charge", desc: "Lightning/USB-C", price: "Desde $70.000", link: "/blog/iphone-no-carga-bogota" },
   { title: "No Enciende", icon: "bi-power", desc: "Diagnóstico causas", price: "Desde $55.000", link: "/blog/iphone-no-enciende-bogota" },
-  { title: "Software", icon: "bi-gear", desc: "Reinstalación, recuperación", price: "Desde $45.000", link: "/blog/iphone-lento-bogota" }
+  { title: "Software", icon: "bi-gear", desc: "Reinstalación, recuperación", price: "Desde $45.000", link: "/blog/iphone-lento-bogota" },
+  { title: "Bocina", icon: "bi-speaker", desc: "Sonido, micrófono", price: "Desde $50.000", link: "/blog/iphone-sin-sonido-bogota" },
+  { title: "Botón Home", icon: "bi-house", desc: "Touch ID, home button", price: "Desde $60.000", link: "/blog/iphone-boton-home-bogota" },
+  { title: "Antena WiFi", icon: "bi-wifi", desc: "Conexión redes", price: "Desde $65.000", link: "/blog/iphone-wifi-no-conecta-bogota" },
+  { title: "Cristal Trasero", icon: "bi-square", desc: "Vidrio posterior", price: "Desde $85.000", link: "/blog/iphone-cristal-trasero-bogota" }
 ];
 
 // FAQs
@@ -172,49 +177,26 @@ const otherDevices = [
     <!-- STATS - REUSADO -->
     <pipodStats />
 
-    <!-- OTROS SERVICIOS (accordion) -->
-    <section class="section-other-services">
+    <!-- SERVICIOS PRINCIPALES -->
+    <section id="servicios" class="section-services">
       <div class="container">
-        <h2 class="section-title">Otros servicios técnicos</h2>
+        <h2 class="section-title">Servicios técnicos iPhone</h2>
         
-        <div class="other-services-grid">
-          {otherServices.slice(0, 3).map((service) => (
-            <div class="other-card">
-              <i class={`bi ${service.icon} other-icon`}></i>
-              <div class="other-info">
-                <h4>{service.title}</h4>
-                <p>{service.desc}</p>
-                <span class="other-price">{service.price}</span>
+        <div class="services-grid">
+          {mainServices.map((service) => (
+            <a href={service.link} class="service-card">
+              <i class={`bi ${service.icon} service-icon`}></i>
+              <div class="service-info">
+                <h5 class="service-title">{service.title}</h5>
+                <p class="service-desc">{service.desc}</p>
+                <span class="service-price">{service.price}</span>
               </div>
-            </div>
+              <span class="service-link">→</span>
+            </a>
           ))}
         </div>
-        
-        <details class="accordion-others">
-          <summary class="accordion-summary">
-            <span>Ver todos los servicios de iPhone</span>
-            <i class="bi bi-chevron-down"></i>
-          </summary>
-          <div class="accordion-content">
-            <div class="other-services-grid">
-              {otherServices.slice(3).map((service) => (
-                <div class="other-card">
-                  <i class={`bi ${service.icon} other-icon`}></i>
-                  <div class="other-info">
-                    <h4>{service.title}</h4>
-                    <p>{service.desc}</p>
-                    <span class="other-price">{service.price}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </details>
       </div>
     </section>
-
-    <!-- COMO FUNCIONA - REUSADO -->
-    <ProtocoloPipod />
 
     <!-- CTA -->
     <section class="section-cta">
@@ -565,92 +547,69 @@ const otherDevices = [
     gap: 10px;
   }
 
-  /* OTROS SERVICIOS */
-  .section-other-services {
+  /* SERVICIOS PRINCIPALES */
+  .section-services {
     padding: 80px 0;
     background: #F5F5F7;
   }
 
-  .other-services-grid {
+  .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
   }
 
-  .other-card {
+  .service-card {
     background: #fff;
-    border-radius: 16px;
-    padding: 24px;
+    border-radius: 12px;
+    padding: 1.5rem;
     display: flex;
-    gap: 16px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
     border: 1px solid #E5E5E7;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .other-card:hover {
+  .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
   }
 
-  .other-icon {
-    font-size: 1.8rem;
+  .service-icon {
+    font-size: 2.5rem;
     color: #3A506B;
     flex-shrink: 0;
   }
 
-  .other-info h4 {
+  .service-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .service-title {
     font-size: 1rem;
     font-weight: 700;
     color: #000;
     margin: 0 0 4px 0;
   }
 
-  .other-info p {
+  .service-desc {
     font-size: 0.85rem;
     color: #6e6e73;
     margin: 0 0 8px 0;
   }
 
-  .other-price {
-    font-size: 0.85rem;
+  .service-price {
+    font-size: 0.9rem;
     font-weight: 600;
     color: #4A90E2;
   }
 
-  .accordion-others {
-    margin-top: 24px;
-    border-top: 1px solid #E5E5E7;
-    padding-top: 20px;
-  }
-
-  .accordion-summary {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 0.95rem;
+  .service-link {
+    font-size: 1.2rem;
+    color: #4A90E2;
     font-weight: 600;
-    color: #3A506B;
-    padding: 12px;
-    list-style: none;
-  }
-
-  .accordion-summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .accordion-summary i {
-    transition: transform 0.3s ease;
-  }
-
-  details[open] .accordion-summary i {
-    transform: rotate(180deg);
-  }
-
-  .accordion-content {
-    padding-top: 20px;
   }
 
   /* CTA */
@@ -873,7 +832,7 @@ const otherDevices = [
     .hero-content { padding: 0 40px; }
     .container { padding: 0 40px; }
     .core-grid { grid-template-columns: 1fr; }
-    .other-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
@@ -881,7 +840,7 @@ const otherDevices = [
     .container { padding: 0 24px; }
     .hero-title { font-size: 2.2rem; }
     .core-card { padding: 24px; }
-    .other-services-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
     .blog-grid { grid-template-columns: 1fr; }
     .also-links { gap: 16px; }
     .cross-content { flex-direction: column; text-align: center; }
