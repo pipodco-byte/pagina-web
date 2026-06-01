@@ -1,0 +1,184 @@
+---
+/**
+ * PipodFAQ Component
+ * 2-column FAQ layout using native HTML accordion (no JS)
+ * Design based on RetomaFAQ.astro
+ */
+
+interface FAQ {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+}
+
+const { faqs } = Astro.props;
+
+const midPoint = Math.ceil(faqs.length / 2);
+const leftFAQs = faqs.slice(0, midPoint);
+const rightFAQs = faqs.slice(midPoint);
+
+// Icon: HelpCircle (blue)
+const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line>';
+---
+
+<section id="faq" class="faq-section">
+  <div class="container">
+    
+    <header class="faq-header">
+      <h2>PREGUNTAS FRECUENTES</h2>
+    </header>
+
+    <div class="faq-grid">
+      
+      <div class="faq-column">
+        {leftFAQs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <div class="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={helpCircleIcon}></svg>
+              </div>
+              <span class="question-text">{faq.q}</span>
+            </summary>
+            <div class="faq-content">
+              <p>{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="faq-column">
+        {rightFAQs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <div class="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={helpCircleIcon}></svg>
+              </div>
+              <span class="question-text">{faq.q}</span>
+            </summary>
+            <div class="faq-content">
+              <p>{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    background-color: #FFFFFF;
+    padding: 50px 0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  @media (min-width: 1024px) {
+    .faq-section {
+      padding: 80px 0;
+    }
+
+    .container {
+      padding: 0 80px;
+    }
+  }
+
+  .faq-header {
+    margin-bottom: 40px;
+  }
+
+  .faq-header h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1d1d1f;
+    margin: 0;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  /* GRID DE DOS COLUMNAS */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+    }
+  }
+
+  .faq-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ITEM CON BORDE INFERIOR SUBTIL */
+  .faq-item {
+    border-bottom: 1px solid #f5f5f7;
+  }
+
+  .faq-summary {
+    list-style: none;
+    padding: 24px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: opacity 0.2s ease;
+  }
+
+  .faq-summary:hover {
+    opacity: 0.7;
+  }
+
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .icon-box {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .question-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    line-height: 1.3;
+  }
+
+  /* RESPUESTA */
+  .faq-content {
+    font-family: 'Noto Sans', sans-serif;
+    padding: 0 0 24px 36px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #434345;
+  }
+
+  .faq-content p {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+  }
+
+  /* Animación al abrir */
+  .faq-item[open] .question-text {
+    color: #0066CC;
+  }
+</style>

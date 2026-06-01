@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import ServicePageSchema from '../../components/SEO/ServicePageSchema.astro';
 import FAQPageSchema from '../../components/SEO/FAQPageSchema.astro';
+import PipodFAQ from '../../components/service/PipodFAQ.astro';
 import PipodServicesBanner from '../../components/service/pipodServicesBanner.astro';
 import PipodStats from '../../components/stats/pipodStats.astro';
 import FloatingContact from '../../layouts/floatingContact';
@@ -46,8 +47,6 @@ const coreServices = [
 
 // Servicios principales
 const mainServices = [
-  { title: "Cambio Batería", icon: "bi-battery-full", desc: "Express 2h, original 12m", price: "Desde $80.000", link: "/blog/cambio-bateria-iphone-chapinero" },
-  { title: "Cambio Pantalla", icon: "bi-display", desc: "AAA / Original, 1h", price: "Desde $150.000", link: "/blog/cambio-pantalla-iphone-bogota" },
   { title: "Placa / Microsoldadura", icon: "bi-cpu", desc: "Cotización express", price: "Desde $120.000", link: "/blog/microsoldadura-iphone-bogota" },
   { title: "Recuperación Agua", icon: "bi-droplet", desc: "Protocolo especializado", price: "Consultar", link: "/blog/iphone-mojado-bogota" },
   { title: "Face ID", icon: "bi-qr-code-scan", desc: "Sin borrar datos", price: "Desde $110.000", link: "/blog/face-id-no-funciona-iphone" },
@@ -214,7 +213,6 @@ const otherDevices = [
                 <p class="service-desc">{service.desc}</p>
                 <span class="service-price">{service.price}</span>
               </div>
-              <span class="service-link">→</span>
             </a>
           ))}
         </div>
@@ -253,25 +251,7 @@ const otherDevices = [
     </section>
 
     <!-- FAQs -->
-    <section class="section-faqs">
-      <div class="container">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
-        
-        <div class="faqs-list">
-          {faqs.map((faq, index) => (
-            <details class="faq-item">
-              <summary class="faq-question">
-                {faq.q}
-                <i class="bi bi-chevron-down"></i>
-              </summary>
-              <div class="faq-answer">
-                {faq.a}
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+    <PipodFAQ faqs={faqs} />
 
     <!-- BLOG SECTION -->
     <BlogSection title="Artículos relacionados" client:load posts={blogPosts} />
