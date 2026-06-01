@@ -1,27 +1,6 @@
 import React from 'react';
 
-export default function BlogSection() {
-  const posts = [
-    {
-      title: 'Pantalla rota: Diagnóstico y reparación en 24 horas',
-      excerpt: 'Conoce nuestro proceso de reparación con garantía Pipod. Microsoldadura de precisión y componentes originales.',
-      category: 'SERVICIO TÉCNICO APPLE',
-      link: '/blog/servicio-tecnico-apple'
-    },
-    {
-      title: 'iPhone vs MacBook: ¿Cuál es la mejor inversión para ti?',
-      excerpt: 'Guía completa de compra. Comparativas de specs, presupuestos y recomendaciones según tu uso.',
-      category: 'COMPRA INTELIGENTE',
-      link: '/blog/compra-inteligente'
-    },
-    {
-      title: 'Por qué confiar en técnicos certificados Apple',
-      excerpt: 'Más de 15 años de experiencia. Certificaciones oficiales, garantía real y diagnóstico gratuito.',
-      category: 'EXPERTOS CERTIFICADOS',
-      link: '/blog/expertos-certificados'
-    }
-  ];
-
+export default function BlogSection({ posts = [] }) {
   return (
     <section className="blog-section-white">
       <div className="container">

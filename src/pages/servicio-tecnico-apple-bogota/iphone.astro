@@ -6,6 +6,7 @@ import PipodServicesBanner from '../../components/service/pipodServicesBanner.as
 import PipodStats from '../../components/stats/pipodStats.astro';
 import FloatingContact from '../../layouts/floatingContact';
 import Footer from '../../components/pipodFooter';
+import BlogSection from '../../components/reviews/blogSection';
 
 // SEO Metas
 const title = "Servicio Técnico iPhone Bogotá | Pipod - Especialistas Certificados";
@@ -72,13 +73,41 @@ const faqs = [
   { q: "¿Hacen reparación express el mismo día?", a: "Sí. Para cambio de batería y pantalla, el servicio express es de 2 horas. Reparaciones más complejas (placa, microsoldadura) pueden tomar 24-48h." }
 ];
 
-// Blog links internos
+// Blog links internos - enriched for BlogSection
 const blogLinks = [
-  { title: "Cambio batería iPhone Chapinero", slug: "cambio-bateria-iphone-chapinero" },
-  { title: "Cambio pantalla iPhone Bogotá", slug: "cambio-pantalla-iphone-bogota" },
-  { title: "iPhone mojado Bogotá", slug: "iphone-mojado-bogota" },
-  { title: "iPhone no enciende Bogotá", slug: "iphone-no-enciende-bogota" }
+  { 
+    title: "Cambio batería iPhone Chapinero", 
+    slug: "cambio-bateria-iphone-chapinero",
+    excerpt: "Diagnóstico gratis, reparación en 2-3 horas. Baterías originales certificadas con 12 meses de garantía.",
+    category: "IPHONE"
+  },
+  { 
+    title: "Cambio pantalla iPhone Bogotá", 
+    slug: "cambio-pantalla-iphone-bogota",
+    excerpt: "Pantallas AAA y originales. Calibración de color incluida. Express 1 hora con garantía.",
+    category: "IPHONE"
+  },
+  { 
+    title: "iPhone mojado Bogotá", 
+    slug: "iphone-mojado-bogota",
+    excerpt: "Protocolo especializado para recuperación de equipos con daño por líquido. No conectes el equipo.",
+    category: "IPHONE"
+  },
+  { 
+    title: "iPhone no enciende Bogotá", 
+    slug: "iphone-no-enciende-bogota",
+    excerpt: "Diagnóstico gratis en 20 minutos. Batería, placa o software. Soluciones rápidas.",
+    category: "IPHONE"
+  }
 ];
+
+// Blog posts for BlogSection component
+const blogPosts = blogLinks.map(link => ({
+  title: link.title,
+  excerpt: link.excerpt,
+  category: link.category,
+  link: `/blog/${link.slug}`
+}));
 
 // Cross-device links
 const otherDevices = [
@@ -254,7 +283,7 @@ const otherDevices = [
     <section class="section-blog">
       <div class="container">
         <h2 class="section-title">Artículos relacionados</h2>
-        
+
         <div class="blog-grid">
           {blogLinks.map((link) => (
             <a href={`/blog/${link.slug}`} class="blog-card">
@@ -266,6 +295,9 @@ const otherDevices = [
         </div>
       </div>
     </section>
+
+    <!-- BLOG SECTION -->
+    <BlogSection client:load posts={blogPosts} />
 
     <!-- TAMBIEN REPARAMOS -->
     <section class="section-also">
