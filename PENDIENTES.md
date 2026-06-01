@@ -1,7 +1,7 @@
 # ⏳ Pendientes — Pipod Ecommerce (Astro)
 
-**Última actualización:** Mayo 20, 2026
-**Versión:** 1.6
+**Última actualización:** Junio 1, 2026
+**Versión:** 1.7
 **Proyecto:** Astro-Ecommerce (paginaweb-ecommerce / www.pipod.co)
 **Repo oficial:** [pipodco-byte/astroecoomerce](https://github.com/pipodco-byte/astroecoomerce)
 **Fuente de verdad:** Este archivo + Todo.md
@@ -66,13 +66,16 @@
 | F20 | **Blog Pipod header removed** — Eliminado sección "Blog Pipod" de pipod-blog.astro | ✅ | 621ab19 |
 | F21 | **LoadMoreButton** — Paginación para 70+ artículos (muestra 12, carga 12 más) | ✅ | 621ab19 |
 | F22 | Agregar propiedad 'about' al schema TermsPageSchema.astro | ✅ | - |
+| F23 | **Navbar React → Astro Migration** — Eliminó hydration errors, 15-20KB JS removed | ✅ | ae2922a |
+| F24 | **Navbar Dropdown Visual Redesign** — Glassmorphism, iconos limpios, centrado, slide animation | ✅ | 10c7418 + bb1b35e |
 
 ---
 
-## 📅 Historial de cambios (Mayo 20, 2026)
+## 📅 Historial de cambios (Junio 1, 2026)
 
 | Tipo | Descripción | Status |
 |------|-------------|--------|
+| **Navbar** | React → Astro migration + dropdown visual redesign | ✅ Live |
 | **Content** | Actualización T&C (Mayo 2026) | ✅ Live |
 | **Repo** | Consolidación en `pipodco-byte/astroecoomerce` | ✅ |
 | **Security** | Remediación P0 (Limpieza Git + Refactor API) | ✅ |
@@ -163,6 +166,19 @@ Optimizar 73 artículos de blog mediante corrección técnica, GEO optimization,
 
 ### Estado
 ⏳ **Listo para `sdd-spec` del Batch 1** (priorizado por datos de Search Console)
+
+## 📅 Commits de Hoy (Junio 1, 2026)
+
+| Commit | Descripción |
+|--------|-------------|
+| `ae2922a` | **feat:** migrate navbar from React to Astro |
+| `10c7418` | **feat:** dropdown visual redesign — glassmorphism, clean icons, hover lift |
+| `fe914fc` | **fix:** dropdown icons — 22px font-size, centered, vertical-align reset |
+| `75764e7` | **fix:** display inline-flex on .item-icon so it centers with text-align |
+| `44034e3` | **fix:** increase selector specificity .pipod-dropdown-menu .dropdown-item to beat Bootstrap CSS |
+| `bb1b35e` | **fix:** Servicio Técnico dropdown — centered + 10vw right shift so all 5 items visible |
+| `d77fd7a` | **feat:** Servicio Técnico dropdown centered on viewport + slide-down animation |
+| `984441d` | **revert:** SVG icons commit (user preferred Bootstrap Icons) |
 
 ## 📅 Commits de Hoy (Mayo 6, 2026)
 
@@ -401,4 +417,4 @@ Para detalle SEO completo, consulta `PENDIENTES_SEO.md`.
 
 ---
 
-_Ultima actualizacion: Mayo 20, 2026 (v1.6 - Términos actualizados, repo oficial documentado, CI/CD Vercel, seguridad pendiente)_
+_Ultima actualizacion: Junio 1, 2026 (v1.7 - Navbar React→Astro + dropdown redesign completo)_

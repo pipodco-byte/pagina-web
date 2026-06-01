@@ -429,5 +429,5 @@ DESCRIPCIÓN: Desde 2007. Garantía 12 meses. Diagnóstico gratis. Express 2h.
 
 ---
 
-**Última actualización:** 2026-05-05
+**Última actualización:** Junio 1, 2026
 **Estado:** M1 + IN completados, esperando deploy

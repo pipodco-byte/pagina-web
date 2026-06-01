@@ -1,7 +1,7 @@
 # SDD State: t1-navbar-dropdowns
 
 **Change:** t1-navbar-dropdowns
-**Date:** 2026-05-22
+**Date:** 2026-06-01
 **Project:** Pipod.co (Astro-Ecommerce)
 
 ---
@@ -12,65 +12,42 @@
 metadata:
   project_name: astro-ecommerce
   change_name: t1-navbar-dropdowns
-  fase: spec + design + tasks (ff)
-  status: planned
+  fase: completed
+  status: completed
   parent_change: seo-url-hierarchy
   engram_ids:
-    - "#184" # Arquitectura SEO-first completa
-    - "#186" # Prioridades datos 2025
+    - "#214" # Navbar React→Astro migration proposal
+    - "#224" # Navbar completion memory
+  commits:
+    - ae2922a  # feat: migrate navbar from React to Astro
+    - 10c7418  # feat: dropdown visual redesign — glassmorphism, clean icons, hover lift
+    - fe914fc  # fix: dropdown icons — 22px font-size, centered, vertical-align reset
+    - 75764e7  # fix: display inline-flex on .item-icon so it centers with text-align
+    - 44034e3  # fix: increase selector specificity to beat Bootstrap CSS
+    - bb1b35e  # fix: Servicio Técnico dropdown centered + 10vw right shift
+    - d77fd7a  # feat: slide-down animation on dropdowns
 ```
 
 ---
 
-## Spec
+## Summary
 
-| Campo | Valor |
-|-------|-------|
-| **Concept** | Navbar con 3 dropdowns (Servicio Técnico, Tienda, Blog) estilo Linear/Vercel |
-| **Desktop** | Grid 5 cols servicio, 3 cols tienda, 3 cols blog — con imágenes |
-| **Mobile** | Accordion simple sin imágenes |
-| **Archivos** | pipodNavbar.tsx, pipodNavbar.css |
+Navbar migrado de React a Astro (elimina hydration errors, ~15KB JS). Dropdowns redesignados con glassmorphism, iconos limpios (Bootstrap Icons), centradoviewport para Servicio Técnico (10vw shift), slide-down animation.
 
 ---
 
-## Design
+## Implementation Details
 
-| Elemento | Especificación |
-|----------|---------------|
-| **Font** | Inter |
-| **Fondo** | #ffffff |
-| **Borde** | 0.5px #E5E5E7 |
-| **Shadow** | 0 10px 40px rgba(0,0,0,0.06) |
-| **Border-radius** | 12px |
-| **Transición** | 0.2s ease |
-| **Grid servicio** | repeat(5, 1fr) |
-| **Grid tienda** | repeat(3, 1fr) |
-| **Grid blog** | repeat(3, 1fr) |
-
----
-
-## Tasks Summary
-
-| Phase | Tasks | Status |
-|-------|-------|--------|
-| T1.1 | Analizar imágenes existentes | ⏳ pending |
-| T1.2 | Actualizar pipodNavbar.tsx | ⏳ pending |
-| T1.3 | Actualizar pipodNavbar.css | ⏳ pending |
-| T1.4 | Implementar Mobile Accordion | ⏳ pending |
-| T1.5 | Responsive Testing | ⏳ pending |
-| T1.6 | Build y Verificación | ⏳ pending |
-
-**Total: 14 tareas en 6 phases**
-
----
-
-## Dependencies
-
-- T2 (URL rename) debe completar antes de T1.2 para links correctos
-- Imágenes de dispositivos ya existen en src/assets/ o DeviceBento
+| Elemento | Antes | Después |
+|----------|-------|---------|
+| Navbar | React (pipodNavbar.tsx) + hydration client:load | Astro (pipodNavbar.astro) — SSR puro |
+| Dropdown CSS | Bootstrap override conflicts | `.pipod-dropdown-menu` renamed + specificity 0,2,0 |
+| Iconos | Cajas de colores (azul/negro) inconsistentes | Limpios, negros, 24px font-size |
+| Servicio Técnico dropdown | Pegado al borde izquierdo | Centrado + 10vw shift derecho |
+| Animación | Fade simple | Slide-down con cubic-bezier(0.16, 1, 0.3, 1) |
 
 ---
 
 ## Next Phase
 
-**T2: URL Rename** — Renombrar `/servicio-tecnico-apple` → `/servicio-tecnico-apple-bogota`
+**COMPLETED** — t1-navbar-dropdowns finished.
