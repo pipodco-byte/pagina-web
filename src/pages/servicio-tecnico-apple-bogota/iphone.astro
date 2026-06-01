@@ -73,7 +73,7 @@ const faqs = [
   { q: "¿Hacen reparación express el mismo día?", a: "Sí. Para cambio de batería y pantalla, el servicio express es de 2 horas. Reparaciones más complejas (placa, microsoldadura) pueden tomar 24-48h." }
 ];
 
-// Blog links internos - enriched for BlogSection
+// Blog links internos - only 3 for BlogSection
 const blogLinks = [
   { 
     title: "Cambio batería iPhone Chapinero", 
@@ -91,12 +91,6 @@ const blogLinks = [
     title: "iPhone mojado Bogotá", 
     slug: "iphone-mojado-bogota",
     excerpt: "Protocolo especializado para recuperación de equipos con daño por líquido. No conectes el equipo.",
-    category: "IPHONE"
-  },
-  { 
-    title: "iPhone no enciende Bogotá", 
-    slug: "iphone-no-enciende-bogota",
-    excerpt: "Diagnóstico gratis en 20 minutos. Batería, placa o software. Soluciones rápidas.",
     category: "IPHONE"
   }
 ];
@@ -274,23 +268,6 @@ const otherDevices = [
                 {faq.a}
               </div>
             </details>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG LINKS INTERNOS -->
-    <section class="section-blog">
-      <div class="container">
-        <h2 class="section-title">Artículos relacionados</h2>
-
-        <div class="blog-grid">
-          {blogLinks.map((link) => (
-            <a href={`/blog/${link.slug}`} class="blog-card">
-              <i class="bi bi-file-text blog-icon"></i>
-              <span>{link.title}</span>
-              <i class="bi bi-arrow-right blog-arrow"></i>
-            </a>
           ))}
         </div>
       </div>
