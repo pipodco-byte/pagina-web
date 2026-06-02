@@ -265,14 +265,17 @@ const otherDevices = [
           <div class="also-card macbook-also">
             <div class="card-content">
               <div class="top-content">
-                <span class="badge-pill-solid">ESPECIALIDAD</span>
-                <div class="text-group">
-                  <h3 class="highlight-title">MacBook</h3>
-                  <p class="legibilidad-max">Reparación: Batería, pantalla, teclado y microsoldadura de placa.</p>
+                <div class="header-row">
+                  <div class="header-small">
+                    <i class="bi bi-laptop"></i>
+                    <h4>MacBook</h4>
+                  </div>
+                  <span class="badge-pill-solid">ESPECIALIDAD</span>
                 </div>
+                <p class="legibilidad-max">Reparación: Batería, pantalla, teclado y microsoldadura de placa.</p>
               </div>
               <div class="button-wrapper">
-                <a href="/servicio-tecnico-apple-bogota/macbook" class="btn-pipod-white">Diagnóstico Pro</a>
+                <a href="/servicio-tecnico-apple-bogota/macbook" class="btn-pipod-outline">Ver servicios</a>
               </div>
             </div>
           </div>
@@ -303,7 +306,7 @@ const otherDevices = [
               </div>
               <div class="bottom-content">
                 <span class="price-mono">DESDE $28K</span>
-                <a href="/servicio-tecnico-apple-bogota/apple-watch" class="btn-small">Ver más</a>
+                <a href="/servicio-tecnico-apple-bogota/apple-watch" class="btn-small">Ver servicios</a>
               </div>
             </div>
           </div>
@@ -318,7 +321,7 @@ const otherDevices = [
                 <p class="desc-small">Limpieza interna, pasta térmica y optimización.</p>
               </div>
               <div class="bottom-content">
-                <a href="/servicio-tecnico-apple-bogota/mantenimiento" class="btn-small">Agendar</a>
+                <a href="/servicio-tecnico-apple-bogota/mantenimiento" class="btn-small">Ver servicios</a>
               </div>
             </div>
           </div>
@@ -892,13 +895,13 @@ const otherDevices = [
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   }
 
-  /* MacBook accent - black top border */
+  /* MacBook accent - blue #0066CC top border */
   .macbook-also::before {
-    background: #000;
+    background: #0066CC;
   }
 
   .macbook-also:hover {
-    border-color: #000;
+    border-color: #0066CC;
   }
 
   /* iMac accent - dark top border */
@@ -1053,7 +1056,14 @@ const otherDevices = [
     transform: translateY(-2px);
   }
 
-  /* Small cards (Apple Watch, Mantenimiento) */
+  /* Header row with icon left + badge right */
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
   .header-small {
     display: flex;
     align-items: center;
