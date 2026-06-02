@@ -28,7 +28,7 @@ const coreServices = [
     tag: "Top Prioridad",
     price: "Desde $80.000",
     icon: "bi-battery-full",
-    specs: ["⚡ 2h express", "🛡️ 12m garantía", "✅ Incluye diagnóstico gratis"],
+    specs: ["2h express", "12m garantía", "Incluye diagnóstico gratis"],
     link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20el%20cambio%20de%20bater%C3%ADa%20de%20mi%20iPhone",
     linkText: "Cotizar servicio"
   },
@@ -37,7 +37,7 @@ const coreServices = [
     tag: "Alta Demanda",
     price: "Desde $150.000",
     icon: "bi-display",
-    specs: ["⚡ 1h express", "🛡️ 12m garantía", "✅ Incluye diagnóstico gratis"],
+    specs: ["1h express", "12m garantía", "Incluye diagnóstico gratis"],
     link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20el%20cambio%20de%20pantalla%20de%20mi%20iPhone",
     linkText: "Cotizar servicio"
   }
@@ -180,13 +180,14 @@ const otherDevices = [
               <p class="core-price">{service.price}</p>
               
               <div class="core-specs">
-                {service.specs.map((spec) => (
-                  <span class="spec-text">{spec}</span>
-                ))}
+                <span class="spec-text"><i class="bi bi-lightning-charge"></i> {service.specs[0]}</span>
+                <span class="spec-text"><i class="bi bi-shield-check"></i> {service.specs[1]}</span>
+                <span class="spec-text"><i class="bi bi-check-circle"></i> {service.specs[2]}</span>
               </div>
 
               <div class="availability-row">
-                <span>📦 Disponibilidad hoy</span>
+                <i class="bi bi-box"></i>
+                <span>Disponibilidad hoy</span>
               </div>
               
               <div class="button-wrapper">
