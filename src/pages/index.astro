@@ -4,7 +4,6 @@ import LocalBusinessSchema from '../components/SEO/LocalBusinessSchema.astro';
 import '../../assets/scss/astro-ecommerce.scss';
 import Footer from '../components/pipodFooter';
 import FloatingContact from '../layouts/floatingContact';
-import { getCollection } from 'astro:content';
 import CardProduct from '../components/products/cardProduct';
 import ServiceBentoDark from '../components/serviceCard';
 import IncentiveShortBlackA from '../components/incentives/incentiveShortBlackA';
@@ -21,18 +20,6 @@ import { SectionTracker } from '../components/gtm';
 import { getProductos } from '../lib/contentful';
 
 const productos = await getProductos();
-
-// Get 3 recent blog posts for BlogSection
-const allPosts = await getCollection('blog');
-const recentPosts = allPosts
-  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
-  .slice(0, 3)
-  .map(post => ({
-    title: post.data.title,
-    excerpt: post.data.description,
-    category: post.data.category,
-    link: `/blog/${post.data.slug}`
-  }));
 ---
 
 <Layout title="Pipod - Servicio Técnico Apple Especializado" description="Servicio técnico Apple especializado en Bogotá. Reparación de MacBook, iPhone, iPad. Baterías, pantallas y microsoldadura con garantía de 12 meses.">
@@ -70,7 +57,7 @@ const recentPosts = allPosts
     <ServiceCardsSection />
 
     <!-- Blog/News Section -->
-    <BlogSection client:load posts={recentPosts} />
+    <BlogSection client:load />
 
 <FloatingContact client:load />
     <Footer client:load />

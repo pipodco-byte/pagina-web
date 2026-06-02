@@ -422,5 +422,5 @@ Los 73 artículos del blog fueron auditados y presentan gaps críticos que deben
 
 ---
 
-*Última actualización: Junio 1, 2026*
+*Última actualización: Mayo 20, 2026*
 *Si encuentras información desactualizada, actualiza este archivo y guárdala en Engram.*

@@ -12,7 +12,7 @@ const KEY = '6e7e2464-f98a-4108-b71c-a652b9a63a9b';
 
 const mainUrls = [
   'https://www.pipod.co/',
-  'https://www.pipod.co/servicio-tecnico-apple-bogota',
+  'https://www.pipod.co/servicio-tecnico-apple',
   'https://www.pipod.co/plan-retoma-apple',
   'https://www.pipod.co/tienda-pipod',
   'https://www.pipod.co/contacto-pipod',

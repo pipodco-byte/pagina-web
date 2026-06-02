@@ -307,7 +307,7 @@ export const termsData = {
       type: 'service',
       title: '¿Necesitas reparación?',
       description: '',
-      link: '/servicio-tecnico-apple-bogota',
+      link: '/servicio-tecnico-apple',
       cta: 'Agendar Cita'
     }
   ]

@@ -4,12 +4,5 @@
       "path": "/api/sync-reviews",
       "schedule": "0 6 */3 * *"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/servicio-tecnico-apple",
-      "destination": "/servicio-tecnico-apple-bogota",
-      "statusCode": 301
-    }
   ]
 }

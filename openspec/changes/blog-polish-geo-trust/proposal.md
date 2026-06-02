@@ -260,12 +260,3 @@ Use Git to discard changes in modified files: `git checkout src/content/blog/`.
 
 *Última actualización: 2026-05-20*
 *Basado en datos reales de Search Console (Feb-May 2026)*
-
-## 🎯 Quality Gate (Checklist por Artículo)
-Para garantizar consistencia y calidad profesional en los 73 artículos, cada uno debe pasar este gate antes de ser considerado "optimizado":
-
-- [ ] **Tono & Estilo:** Palabra "dispositivo" removida (0 ocurrencias). Precios en formato completo ($1.000.000). Garantía unificada (12 meses).
-- [ ] **SEO & GEO:** Schema TechArticle/HowTo presente. Mínimo 2 links internos estratégicos. Stats unificados en footer.
-- [ ] **Trust & Conversión:** Hook inicial <100 palabras. Bloque "Pipod Expert Tip" técnico.
-- [ ] **Imágenes:** OG image 1200x630 presente y cargando.
-- [ ] **Validación:** `npm run build` sin errores.

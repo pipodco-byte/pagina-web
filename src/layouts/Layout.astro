@@ -6,8 +6,7 @@ export interface Props {
 
 const { title, description } = Astro.props;
 import MetaSocial from '../components/SEO/MetaSocial.astro';
-import PipodNavbar from '../components/pipodNavbar.astro';
-import CartDrawer from '../components/cart/CartDrawer';
+import AppWrapper from '../components/AppWrapper';
 import '../styles/_pipod-utilities.css';
 import '../styles/_tokens.css';
 import '../styles/blog-cards.css';
@@ -63,9 +62,9 @@ import '../styles/blog-cards.css';
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="app">
-      <PipodNavbar />
-      <slot />
-      <CartDrawer client:load />
+      <AppWrapper client:load>
+        <slot />
+      </AppWrapper>
     </div>
 	</body>
 
