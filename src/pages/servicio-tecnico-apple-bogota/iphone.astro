@@ -256,13 +256,13 @@ const otherDevices = [
     <!-- BLOG SECTION -->
     <BlogSection title="Artículos relacionados" client:load posts={blogPosts} />
 
-    <!-- TAMBIEN REPARAMOS - CARD GRID (DeviceBento style) -->
+    <!-- TAMBIEN REPARAMOS - CARD GRID (white cards with accents) -->
     <section class="section-also">
       <div class="container">
         <h2 class="also-title">También reparamos otros dispositivos Apple:</h2>
         <div class="also-grid">
-          <!-- Card 1: MacBook (1.8fr) -->
-          <a href="/servicio-tecnico-apple-bogota/macbook" class="also-card macbook-also">
+          <!-- Card 1: MacBook -->
+          <div class="also-card macbook-also">
             <div class="card-content">
               <div class="top-content">
                 <span class="badge-pill-solid">ESPECIALISTAS M1 · M4</span>
@@ -275,9 +275,9 @@ const otherDevices = [
                 <a href="/servicio-tecnico-apple-bogota/macbook" class="btn-pipod-white">Diagnóstico Pro</a>
               </div>
             </div>
-          </a>
-          <!-- Card 2: iMac (1.4fr) -->
-          <a href="/servicio-tecnico-apple-bogota/imac" class="also-card imac-also">
+          </div>
+          <!-- Card 2: iMac -->
+          <div class="also-card imac-also">
             <div class="card-content">
               <div class="top-content">
                 <span class="badge-pill-solid-dark">EXPRESS 2H</span>
@@ -290,9 +290,9 @@ const otherDevices = [
                 <a href="/servicio-tecnico-apple-bogota/imac" class="btn-pipod-outline">Ver servicios</a>
               </div>
             </div>
-          </a>
-          <!-- Card 3: Apple Watch (1fr) -->
-          <a href="/servicio-tecnico-apple-bogota/apple-watch" class="also-card neutral-also">
+          </div>
+          <!-- Card 3: Apple Watch -->
+          <div class="also-card watch-also">
             <div class="card-content">
               <div class="top-content">
                 <div class="header-small">
@@ -301,11 +301,14 @@ const otherDevices = [
                 </div>
                 <p class="desc-small">Restauración de cristal Series/Ultra.</p>
               </div>
-              <span class="price-mono">DESDE $28K</span>
+              <div class="bottom-content">
+                <span class="price-mono">DESDE $28K</span>
+                <a href="/servicio-tecnico-apple-bogota/apple-watch" class="btn-small">Ver más</a>
+              </div>
             </div>
-          </a>
-          <!-- Card 4: Mantenimiento (1fr) -->
-          <a href="/servicio-tecnico-apple-bogota/mantenimiento" class="also-card neutral-also">
+          </div>
+          <!-- Card 4: Mantenimiento -->
+          <div class="also-card mantenimiento-also">
             <div class="card-content">
               <div class="top-content">
                 <div class="header-small">
@@ -314,8 +317,11 @@ const otherDevices = [
                 </div>
                 <p class="desc-small">Limpieza · Optimización · Rendimiento</p>
               </div>
+              <div class="bottom-content">
+                <a href="/servicio-tecnico-apple-bogota/mantenimiento" class="btn-small">Agendar</a>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -833,15 +839,15 @@ const otherDevices = [
     color: #6e6e73;
   }
 
-  /* ALSO - CARD GRID (DeviceBento style) */
+  /* ALSO - CARD GRID (white cards with accents) */
   .section-also {
     padding: 80px 0;
-    background: #F5F5F7;
+    background: #FFFFFF;
   }
 
   .also-title {
     font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #000;
     margin: 0 0 40px 0;
@@ -852,7 +858,7 @@ const otherDevices = [
 
   .also-grid {
     display: grid;
-    grid-template-columns: 1.8fr 1.4fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
 
@@ -862,16 +868,57 @@ const otherDevices = [
     padding: 32px;
     display: flex;
     flex-direction: column;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #E5E5E5;
     overflow: hidden;
     text-decoration: none;
     background: #fff;
+    position: relative;
+  }
+
+  .also-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: transparent;
+    transition: background 0.3s ease;
   }
 
   .also-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  /* MacBook accent - blue top border */
+  .macbook-also::before {
+    background: #3A506B;
+  }
+
+  .macbook-also:hover {
+    border-color: #3A506B;
+  }
+
+  /* iMac accent - dark top border */
+  .imac-also::before {
+    background: #1F1F1F;
+  }
+
+  .imac-also:hover {
+    border-color: #1F1F1F;
+  }
+
+  /* Watch & Mantenimiento - subtle gray accent */
+  .watch-also::before,
+  .mantenimiento-also::before {
+    background: #6e6e73;
+  }
+
+  .watch-also:hover,
+  .mantenimiento-also:hover {
+    border-color: #999;
   }
 
   /* Card content wrappers */
@@ -887,6 +934,12 @@ const otherDevices = [
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  .bottom-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .button-wrapper {
@@ -952,6 +1005,7 @@ const otherDevices = [
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
     width: fit-content;
+    display: inline-block;
   }
 
   .btn-pipod-white:hover {
@@ -972,10 +1026,30 @@ const otherDevices = [
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
     width: fit-content;
+    display: inline-block;
   }
 
   .btn-pipod-outline:hover {
     background: rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+  }
+
+  .btn-small {
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    width: fit-content;
+    display: inline-block;
+  }
+
+  .btn-small:hover {
+    background: #3A506B;
     transform: translateY(-2px);
   }
 
@@ -1047,24 +1121,5 @@ const otherDevices = [
     .imac-also .highlight-title {
       font-size: 1.3rem;
     }
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 1024px) {
-    .hero-content { padding: 0 40px; }
-    .container { padding: 0 40px; }
-    .core-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 768px) {
-    .hero-content { padding: 0 24px; }
-    .container { padding: 0 24px; }
-    .hero-title { font-size: 2.2rem; }
-    .core-card { padding: 24px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .blog-grid { grid-template-columns: 1fr; }
-    .also-links { gap: 16px; }
-    .cross-content { flex-direction: column; text-align: center; }
   }
 </style>
