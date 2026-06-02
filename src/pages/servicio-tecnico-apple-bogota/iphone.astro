@@ -28,20 +28,18 @@ const coreServices = [
     tag: "Top Prioridad",
     price: "Desde $80.000",
     icon: "bi-battery-full",
-    color: "blue",
-    specs: ["1.5h express", "12m garantía", "Orig. certificada"],
-    link: "/blog/cambio-bateria-iphone-chapinero",
-    linkText: "Guía de Baterías en Chapinero"
+    specs: ["⚡ 2h express", "🛡️ 12m garantía", "✅ Incluye diagnóstico gratis"],
+    link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20el%20cambio%20de%20bater%C3%ADa%20de%20mi%20iPhone",
+    linkText: "Cotizar servicio"
   },
   {
     title: "CAMBIO DE PANTALLA",
     tag: "Alta Demanda",
     price: "Desde $150.000",
     icon: "bi-display",
-    color: "gray",
-    specs: ["1 hr express", "Pantalla AAA/Orig", "Calibración Color"],
-    link: "/blog/cambio-pantalla-iphone-bogota",
-    linkText: "Guía de Pantallas en Bogotá"
+    specs: ["⚡ 1h express", "🛡️ 12m garantía", "✅ Incluye diagnóstico gratis"],
+    link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20el%20cambio%20de%20pantalla%20de%20mi%20iPhone",
+    linkText: "Cotizar servicio"
   }
 ];
 
@@ -172,8 +170,8 @@ const otherDevices = [
         <h2 class="section-title">Servicios Principales</h2>
         
         <div class="core-grid">
-          {coreServices.map((service) => (
-            <div class={`core-card core-card-${service.color}`}>
+          {coreServices.map((service, index) => (
+            <div class={`core-card ${index === 0 ? 'accent-blue' : 'accent-black'}`}>
               <div class="core-card-header">
                 <span class="core-tag">{service.tag}</span>
                 <i class={`bi ${service.icon} core-icon`}></i>
@@ -183,13 +181,17 @@ const otherDevices = [
               
               <div class="core-specs">
                 {service.specs.map((spec) => (
-                  <span class="spec-item">{spec}</span>
+                  <span class="spec-text">{spec}</span>
                 ))}
               </div>
+
+              <div class="availability-row">
+                <span>📦 Disponibilidad hoy</span>
+              </div>
               
-              <a href={service.link} class="core-link">
-                → {service.linkText}
-              </a>
+              <div class="button-wrapper">
+                <a href={service.link} class="btn-pipod-outline">{service.linkText}</a>
+              </div>
             </div>
           ))}
         </div>
@@ -503,19 +505,45 @@ const otherDevices = [
   }
 
   .core-card {
-    padding: 40px;
+    background: #fff;
     border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #E5E5E5;
     position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .core-card-blue {
-    background: #E6F1FB;
-    border: 2px solid #4A90E2;
+  .core-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: transparent;
+    transition: background 0.3s ease;
   }
 
-  .core-card-gray {
-    background: #F4F4F5;
-    border: 1px solid #E5E5E7;
+  .core-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  .accent-blue::before {
+    background: #0066CC;
+  }
+
+  .accent-blue:hover {
+    border-color: #0066CC;
+  }
+
+  .accent-black::before {
+    background: #000;
+  }
+
+  .accent-black:hover {
+    border-color: #000;
   }
 
   .core-card-header {
@@ -532,12 +560,12 @@ const otherDevices = [
     letter-spacing: 1px;
     padding: 6px 12px;
     border-radius: 50px;
-    background: #4A90E2;
+    background: #0066CC;
     color: #fff;
   }
 
-  .core-card-gray .core-tag {
-    background: #6e6e73;
+  .accent-black .core-tag {
+    background: #1F1F1F;
   }
 
   .core-icon {
@@ -550,34 +578,41 @@ const otherDevices = [
     font-weight: 800;
     color: #000;
     margin: 0 0 8px 0;
+    text-transform: uppercase;
   }
 
   .core-price {
     font-size: 1.1rem;
-    font-weight: 600;
-    color: #4A90E2;
+    font-weight: 700;
+    color: #000;
     margin: 0 0 20px 0;
   }
 
   .core-specs {
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .spec-text {
+    font-size: 0.9rem;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .availability-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #6e6e73;
     margin-bottom: 20px;
   }
 
-  .spec-item {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-    background: rgba(74,144,226,0.1);
-    border-radius: 8px;
-    color: #4A90E2;
-    font-weight: 500;
-  }
-
-  .core-card-gray .spec-item {
-    background: rgba(0,0,0,0.05);
-    color: #6e6e73;
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
   }
 
   .core-link {
