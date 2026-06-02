@@ -1,13 +1,13 @@
 {
   "rating": "5.0",
-  "totalReviews": 89,
-  "lastUpdated": "2026-05-04T00:00:00.000Z",
+  "totalReviews": 98,
+  "lastUpdated": "2026-06-01T00:00:00.000Z",
   "source": "manual_update",
   "googlePlaceId": "ChIJWRwOhvWaP44RGCPaRKtlM7g",
-  "apiKeyConfigured": true,
   "comments": [
-    "Actualización manual - Google Places API verificada y funcionando",
-    "vercel.json cron configurado: /api/sync-reviews diario 6AM",
-    "Para auto-sync completo: hacer deploy a Vercel"
+    "Actualización manual 2026-06-01: 98 reseñas (Google muestra 98)",
+    "NOTA: componente ahora usa /public/data/reviews.json (SSR import)",
+    "El sync-reviews.ts ya no escribe en JSON (serverless limitation)",
+    "Pending: revisar si cron job actualiza Supabase solo o también debe write JSON"
   ]
 }
