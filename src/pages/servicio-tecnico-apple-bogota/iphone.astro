@@ -256,16 +256,66 @@ const otherDevices = [
     <!-- BLOG SECTION -->
     <BlogSection title="Artículos relacionados" client:load posts={blogPosts} />
 
-    <!-- TAMBIEN REPARAMOS -->
+    <!-- TAMBIEN REPARAMOS - CARD GRID (DeviceBento style) -->
     <section class="section-also">
       <div class="container">
-        <p class="also-text">También reparamos otros dispositivos Apple:</p>
-        <div class="also-links">
-          {otherDevices.map((device) => (
-            <a href={device.href} class="also-link">
-              {device.name}
-            </a>
-          ))}
+        <h2 class="also-title">También reparamos otros dispositivos Apple:</h2>
+        <div class="also-grid">
+          <!-- Card 1: MacBook (1.8fr) -->
+          <a href="/servicio-tecnico-apple-bogota/macbook" class="also-card macbook-also">
+            <div class="card-content">
+              <div class="top-content">
+                <span class="badge-pill-solid">ESPECIALISTAS M1 · M4</span>
+                <div class="text-group">
+                  <h3 class="highlight-title">MacBook</h3>
+                  <p class="legibilidad-max">Arquitectura Logic Board y microsoldadura de precisión.</p>
+                </div>
+              </div>
+              <div class="button-wrapper">
+                <a href="/servicio-tecnico-apple-bogota/macbook" class="btn-pipod-white">Diagnóstico Pro</a>
+              </div>
+            </div>
+          </a>
+          <!-- Card 2: iMac (1.4fr) -->
+          <a href="/servicio-tecnico-apple-bogota/imac" class="also-card imac-also">
+            <div class="card-content">
+              <div class="top-content">
+                <span class="badge-pill-solid-dark">EXPRESS 2H</span>
+                <div class="text-group">
+                  <h3 class="highlight-title">iMac</h3>
+                  <p class="legibilidad-max">Rendimiento optimizado para tu flujo de trabajo.</p>
+                </div>
+              </div>
+              <div class="button-wrapper">
+                <a href="/servicio-tecnico-apple-bogota/imac" class="btn-pipod-outline">Ver servicios</a>
+              </div>
+            </div>
+          </a>
+          <!-- Card 3: Apple Watch (1fr) -->
+          <a href="/servicio-tecnico-apple-bogota/apple-watch" class="also-card neutral-also">
+            <div class="card-content">
+              <div class="top-content">
+                <div class="header-small">
+                  <i class="bi bi-watch"></i>
+                  <h4>Apple Watch</h4>
+                </div>
+                <p class="desc-small">Restauración de cristal Series/Ultra.</p>
+              </div>
+              <span class="price-mono">DESDE $28K</span>
+            </div>
+          </a>
+          <!-- Card 4: Mantenimiento (1fr) -->
+          <a href="/servicio-tecnico-apple-bogota/mantenimiento" class="also-card neutral-also">
+            <div class="card-content">
+              <div class="top-content">
+                <div class="header-small">
+                  <i class="bi bi-tools"></i>
+                  <h4>Mantenimiento</h4>
+                </div>
+                <p class="desc-small">Limpieza · Optimización · Rendimiento</p>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -783,40 +833,220 @@ const otherDevices = [
     color: #6e6e73;
   }
 
-  /* ALSO */
+  /* ALSO - CARD GRID (DeviceBento style) */
   .section-also {
-    padding: 40px 0;
-    background: #000;
+    padding: 80px 0;
+    background: #F5F5F7;
   }
 
-  .also-text {
-    text-align: center;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.9rem;
-    margin: 0 0 20px 0;
+  .also-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 40px 0;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
   }
 
-  .also-links {
+  .also-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1.4fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .also-card {
+    min-height: 380px;
+    border-radius: 28px;
+    padding: 32px;
     display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .also-link {
-    color: #fff;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 50px;
-    transition: all 0.3s ease;
+    background: #fff;
   }
 
-  .also-link:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.5);
+  .also-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  /* Card content wrappers */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+  }
+
+  .top-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Highlight title */
+  .highlight-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .macbook-also .highlight-title { font-size: 28px; }
+
+  /* Legibilidad max */
+  .legibilidad-max {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: #6e6e73;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Badges */
+  .badge-pill-solid {
+    background: #3A506B;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 50px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .badge-pill-solid-dark {
+    background: #1F1F1F;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 50px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* Buttons */
+  .btn-pipod-white {
+    background: #fff;
+    color: #000;
+    padding: 11px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .btn-pipod-white:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  .btn-pipod-outline {
+    border: 2px solid #000;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .btn-pipod-outline:hover {
+    background: rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+  }
+
+  /* Small cards (Apple Watch, Mantenimiento) */
+  .header-small {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-small i {
+    font-size: 24px;
+    color: #3A506B;
+  }
+
+  .header-small h4 {
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+  }
+
+  .desc-small {
+    font-size: 13px;
+    color: #6e6e73;
+    line-height: 1.4;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .price-mono {
+    font-family: 'PT Mono', monospace;
+    font-weight: 700;
+    color: #3A506B;
+    font-size: 12px;
+  }
+
+  /* Text group */
+  .text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .also-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-also {
+      padding: 50px 0;
+    }
+
+    .also-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .also-card {
+      min-height: auto;
+      padding: 24px;
+    }
+
+    .macbook-also .highlight-title,
+    .imac-also .highlight-title {
+      font-size: 1.3rem;
+    }
   }
 
   /* RESPONSIVE */
