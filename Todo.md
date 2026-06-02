@@ -111,30 +111,24 @@
 
 ## ✅ Completado Recientemente
 
-### Historial Reciente
-- **iPhone page redesign** (Junio 1, 2026)
-  - Image ON TOP cards (180px), 40px radius, 24px padding
-  - FAQ 2-column with icon rotation (PipodFAQ.astro)
-  - También reparamos asymmetric grid (MacBook 2fr)
-  - H2s: "Top Reparaciones iPhone", "Servicio Técnico iPhone"
-  - Navbar: iPad added, Accesorios removed, 6 columns
-- **Reviews JSON source** (Junio 1, 2026)
-  - Primary source: JSON import (SSR), NOT Supabase
-  - Updated to 98 reviews
-  - pipodGoogleReviews uses JSON, not getBusinessStats()
-- **PRs merged** (Junio 1, 2026)
-  - PR #1: iPhone redesign
-  - PR #2: reviews fix
-- **Navbar React → Astro** + dropdown redesign (glassmorphism, clean icons, centered, 10vw shift) (Junio 1, 2026)
-- **Términos y Condiciones** Mayo 2026 (ea0dcc6)
-- **CI/CD Vercel** — workflow deploy a paginaweb-ecommerce (ba11701)
-- **Repo oficial documentado** — README, AGENTS, PENDIENTES, Todo
-- **Blog Phanatik Visual Redesign** (d9b13de)
-- **TableOfContents flotante** (621ab19)
-- **Related Posts** (621ab19)
-- **Author fix: "Equipo Pipod"** (621ab19)
-- **Botones pill blog** (621ab19)
-- **Auto-PR workflow** (3f43216)
+> ⚠️ **Regla**: Los detalles viven en engram. `.md` solo tiene referencias.
+
+### Historial Reciente (engram)
+
+| Fecha | Tema | Observation ID |
+|-------|------|---------------|
+| Jun 1, 2026 | iPhone page redesign + reviews fix | `obs-dc79c9b3ab403e83` |
+| Jun 1, 2026 | PR workflow + origin warning | `obs-0d47e5c2424e75db` |
+| Jun 1, 2026 | Reviews JSON primary source | `obs-0353bb3f1cb4ae43` |
+| Jun 1, 2026 | Session June 1 completa | `obs-d0ba34c28a4966ce` |
+| Mayo 22 | Navbar React → Astro + dropdown redesign | ver `sdd/migrate-navbar-react-to-astro/*` |
+| Mayo 22 | iPhone page created | `src/pages/servicio-tecnico-apple-bogota/iphone.astro` |
+
+### Completado esta sesión (Junio 1, 2026)
+- ✅ iPhone: image ON TOP cards, FAQ 2-column, asymmetric grid, H2s naturales
+- ✅ Reviews: JSON as primary source (98 reviews)
+- ✅ PR #1 + PR #2 merged
+- ✅ Navbar: iPad added, Accesorios removed
 
 ### ⚠️ Pendiente Crítico (Post-Hoy)
 - **Rotación de Claves**: Generar nuevas claves (Brevo, Google, Bold, Supabase) y configurarlas en **Vercel Dashboard**. 
