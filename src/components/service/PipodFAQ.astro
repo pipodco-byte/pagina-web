@@ -2,7 +2,7 @@
 /**
  * PipodFAQ Component
  * 2-column FAQ layout using native HTML accordion (no JS)
- * Design based on RetomaFAQ.astro
+ * Visual style from ContactFAQ: white boxes, + icon, border-top answer
  */
 
 interface FAQ {
@@ -19,12 +19,9 @@ const { faqs } = Astro.props;
 const midPoint = Math.ceil(faqs.length / 2);
 const leftFAQs = faqs.slice(0, midPoint);
 const rightFAQs = faqs.slice(midPoint);
-
-// Icon: HelpCircle (blue)
-const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line>';
 ---
 
-<section id="faq" class="faq-section">
+<section class="faq-section">
   <div class="container">
     
     <header class="faq-header">
@@ -37,10 +34,8 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
         {leftFAQs.map((faq) => (
           <details class="faq-item">
             <summary class="faq-summary">
-              <div class="icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={helpCircleIcon}></svg>
-              </div>
               <span class="question-text">{faq.q}</span>
+              <span class="faq-icon">+</span>
             </summary>
             <div class="faq-content">
               <p>{faq.a}</p>
@@ -53,10 +48,8 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
         {rightFAQs.map((faq) => (
           <details class="faq-item">
             <summary class="faq-summary">
-              <div class="icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={helpCircleIcon}></svg>
-              </div>
               <span class="question-text">{faq.q}</span>
+              <span class="faq-icon">+</span>
             </summary>
             <div class="faq-content">
               <p>{faq.a}</p>
@@ -107,11 +100,10 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
     letter-spacing: -0.02em;
   }
 
-  /* GRID DE DOS COLUMNAS */
   .faq-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 16px;
   }
 
   @media (min-width: 1024px) {
@@ -124,61 +116,74 @@ const helpCircleIcon = '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9
   .faq-column {
     display: flex;
     flex-direction: column;
+    gap: 16px;
   }
 
-  /* ITEM CON BORDE INFERIOR SUBTIL */
   .faq-item {
-    border-bottom: 1px solid #f5f5f7;
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #E5E5E5;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    border-color: #999;
+  }
+
+  .faq-item[open] {
+    border-color: #000;
   }
 
   .faq-summary {
     list-style: none;
-    padding: 24px 0;
     cursor: pointer;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 16px;
-    transition: opacity 0.2s ease;
-  }
-
-  .faq-summary:hover {
-    opacity: 0.7;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
   }
 
   .faq-summary::-webkit-details-marker {
     display: none;
   }
 
-  .icon-box {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-  }
-
   .question-text {
     font-family: 'Inter', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #1d1d1f;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
     line-height: 1.3;
   }
 
-  /* RESPUESTA */
+  .faq-icon {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #6e6e73;
+    transition: transform 0.3s ease;
+    line-height: 1;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
   .faq-content {
     font-family: 'Noto Sans', sans-serif;
-    padding: 0 0 24px 36px;
     font-size: 1rem;
     line-height: 1.5;
-    color: #434345;
+    color: #666;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid #F5F5F7;
   }
 
   .faq-content p {
     font-family: 'Noto Sans', sans-serif;
     margin: 0;
-  }
-
-  /* Animación al abrir */
-  .faq-item[open] .question-text {
-    color: #0066CC;
   }
 </style>
