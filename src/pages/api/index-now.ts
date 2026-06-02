@@ -19,7 +19,7 @@ interface IndexNowPayload {
 
 const mainUrls = [
   'https://www.pipod.co/',
-  'https://www.pipod.co/servicio-tecnico-apple',
+  'https://www.pipod.co/servicio-tecnico-apple-bogota',
   'https://www.pipod.co/plan-retoma-apple',
   'https://www.pipod.co/tienda-pipod',
   'https://www.pipod.co/contacto-pipod',

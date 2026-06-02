@@ -48,17 +48,42 @@ Loaded from: `~/.config/opencode/skills/`
 - **API Routes**: Astro SSR endpoints in `src/pages/api/`
 - **Data Layer**: Contentful client in `src/lib/contentful.ts`
 
+## Active SDD Changes (Mayo 2026)
+
+| Change | Phase | Status | Priority |
+|--------|-------|--------|----------|
+| `t1-navbar-dropdowns` | COMPLETED ✅ | Navbar React→Astro + glassmorphism + centered dropdowns |
+| `t3-sub-pages` | TASKS | Ready to apply | 🔴 HIGH |
+| `local-seo-cro-v3` | PARTIAL | 2/6 phases done | 🟡 MEDIUM |
+| `seo-10` | PARTIAL | 2/11 modules done | 🟡 MEDIUM |
+| `fix-all-pending-bugs` | TASKS | Pending | 🟡 MEDIUM |
+| `legacy-css-cleanup` | TASKS | Pending | 🟢 LOW |
+| `tailwind-migration` | TASKS | Pending | 🟢 LOW |
+
+## New Proposals (Mayo 2026 — SEO Local Strategy) — DOCUMENTADOS, NO EJECUTADOS
+
+| Proposal | File | Priority | Status |
+|----------|------|----------|--------|
+| `gbp-y-directorios-locales` | `.atl/proposals/gbp-y-directorios-locales.md` | 🔴 HIGH | DOCUMENTED |
+| `hiperlocal-barrios` | `.atl/proposals/hiperlocal-barrios.md` | 🟡 MEDIUM | DOCUMENTED |
+| `autoridad-tecnica-eeat` | `.atl/proposals/autoridad-tecnica-eeat.md` | 🟡 MEDIUM | DOCUMENTED |
+| `seo-url-hierarchy-complete` | (existe en specs) | 🔴 HIGH | NEEDS PROPOSAL |
+
+> ⚠️ **Nota:** Estos proposals fueron documentados a partir de recomendaciones SEO pero NO fueron ejecutados. State file: `seo-local-nuevos-state.yaml`
+
 ## Recent Changes
 
 | Date | Change | Commit |
 |------|--------|--------|
+| 2026-05-22 | t2-internal-links: URL rename + 301 redirect | `8f8625f` |
+| 2026-05-20 | remediacion-seguridad: Git history cleanup | — |
+| 2026-05-20 | SEO schema + terminos updates | — |
+| 2026-05-13 | sdd-init pipeline T1,T2,T3 defined | — |
+| 2026-05-12 | blog-editorial-redesign + blog-phanatik-enhancements archived | — |
 | 2026-05-05 | restore-scss-5-pages: SCSS restored in all pages | `80c4c6b` |
 | 2026-05-05 | fix: remove Tailwind v4 (abandoned migration) | `44a3de1` |
-| 2026-05-05 | fix: AppWrapper PipodNavbar case sensitivity | `3596873` |
-| 2026-05-05 | memoria branch created from 241f9ce | Visual reference |
 | 2026-05-04 | fix-cart-hydration: Nano Stores replace React Context | `5c7b665` |
 | 2026-05-04 | local-seo-cro-v3: Hub Schema, CLS Fix | `6c8893a` |
-| 2026-05-04 | content: Contact Hero/History copy update | `01c3b38` |
 
 ## Branches
 

@@ -250,7 +250,132 @@ DESCRIPCIÓN: Desde 2007. Garantía 12 meses. Diagnóstico gratis. Express 2h.
 
 ---
 
-## ⏭️ PENDIENTES (No solicitados pero documentados)
+## 🚀 Nueva Arquitectura SEO-first (Modelo Propuesto)
+
+> ⚠️ **Disclaimer**: Modelo estratégico. Antes de crear cualquier URL nueva debe validarse demanda real (volumen + intención) en Google para Colombia/Bogotá.
+
+### 1. Principios
+- 1 URL = 1 intención de búsqueda clara
+- Separación estricta: servicios (transaccional) / tienda (producto) / contenidos (informacional)
+- URLs simples, descriptivas y escalables
+- Geolocalización solo donde aporta intención real
+
+### 2. Estructura Principal (Nivel 1)
+```
+/servicio-tecnico-apple-bogota/
+/reparacion-iphone/
+/reparacion-macbook/
+/plan-retoma/
+/tienda/
+/accesorios/
+/blog/
+/contacto/
+```
+
+### 3. Servicio Técnico (Pilar SEO Local)
+
+**3.1 Página Pilar**
+- `/servicio-tecnico-apple-bogota/`
+- Objetivo: "servicio técnico Apple Bogotá", "reparación Apple Bogotá"
+
+**3.2 Subcategorías por Dispositivo**
+- `/servicio-tecnico-apple-bogota/iphone/`
+- `/servicio-tecnico-apple-bogota/macbook/`
+- `/servicio-tecnico-apple-bogota/ipad/`
+- `/servicio-tecnico-apple-bogota/apple-watch/`
+
+**3.3 Servicios Específicos (alto potencial SEO)**
+- `/servicio-tecnico-apple-bogota/iphone/cambio-pantalla/`
+- `/servicio-tecnico-apple-bogota/iphone/cambio-bateria/`
+- `/servicio-tecnico-apple-bogota/iphone/reparacion-placa/`
+- `/servicio-tecnico-apple-bogota/iphone/iphone-mojado/`
+- `/servicio-tecnico-apple-bogota/macbook/cambio-bateria/`
+- `/servicio-tecnico-apple-bogota/macbook/reparacion-teclado/`
+- `/servicio-tecnico-apple-bogota/macbook/reparacion-placa/`
+
+⚠️ Crear solo servicios con demanda validada.
+
+### 4. Plan Retoma (Diferenciador SEO)
+- `/plan-retoma/`
+- Subpáginas si hay demanda: `/plan-retoma/vender-iphone-usado/`, `/plan-retoma/vender-macbook-usado/`
+
+### 5. Tienda (Producto)
+**5.1 Categorías**
+- `/tienda/iphone/`, `/tienda/macbook/`, `/tienda/ipad/`, `/tienda/apple-watch/`
+- Usados: `/tienda/iphone-usado/`, `/tienda/macbook-usado/`
+
+**5.2 Fichas de Producto**
+- `/tienda/iphone/iphone-13-128gb/`
+- `/tienda/macbook/macbook-air-m1-256gb/`
+
+### 6. Accesorios
+- `/accesorios/`, `/accesorios/cargadores/`, `/accesorios/fundas/`, `/accesorios/audifonos/`
+
+### 7. Blog (SEO Informacional)
+**7.1 Categorías**
+- `/blog/reparacion-iphone/`, `/blog/reparacion-macbook/`, `/blog/consejos-apple/`, `/blog/comparativas/`
+
+**7.2 Artículos**
+- `/blog/reparacion-iphone/como-saber-si-cambiar-bateria-iphone/`
+- `/blog/reparacion-macbook/macbook-no-prende-que-hacer/`
+- `/blog/comparativas/reparar-iphone-o-comprar-uno-nuevo/`
+
+👉 Todos deben enlazar a servicios, plan retoma y tienda según intención.
+
+### 8. SEO Local (Refuerzo)
+- `/contacto/` (página optimizada)
+- `/servicio-tecnico-apple-chapinero/` (solo si hay búsqueda real y sin duplicación)
+
+### 9. Estructura de Enlazado Interno
+- Home → páginas pilar
+- Páginas pilar → servicios específicos
+- Blog → servicios y plan retoma
+- Productos → servicio técnico (mantenimiento / reparación)
+
+### 10. Conclusión Estratégica
+- Atacar keywords locales de alta intención
+- Escalar sin romper la arquitectura
+- Separar claramente cada tipo de intención SEO
+- Facilitar enlazado interno y autoridad temática
+
+🎯 **Idea clave**: Pipod no debe intentar posicionar "todo desde la home", sino convertir cada servicio y producto importante en un activo SEO propio.
+
+
+### SDD: seo-url-hierarchy
+
+| Artefacto | Ubicación | Engram |
+|-----------|-----------|--------|
+| Spec | `.atl/specs/seo-url-hierarchy.md` | [#184](https://app.engram.ai/astro-ecommerce/observation/184) |
+| Design | `.atl/designs/seo-url-hierarchy.md` | [#184](https://app.engram.ai/astro-ecommerce/observation/184) |
+| Tasks | `.atl/tasks/seo-url-hierarchy.md` | [#184](https://app.engram.ai/astro-ecommerce/observation/184) |
+| State | `.atl/state/seo-url-hierarchy.yaml` | — |
+
+📄 **Resumen completo:** `SEO-URL-HIERARCHY-RESUMEN.md` [Engram #184](#184)
+
+---
+
+## Trazabilidad Engram — Proyecto Pipod
+
+### Arquitectura SEO-first (cambio actual)
+
+| Engram | Tema |
+|--------|------|
+| [#184](https://app.engram.ai/astro-ecommerce/observation/184) | Arquitectura SEO-first — Plan completo |
+| [#185](https://app.engram.ai/astro-ecommerce/observation/185) | Datos distribución servicios 2025 |
+| [#186](https://app.engram.ai/astro-ecommerce/observation/186) | Prioridades actualizadas + estrategia 2026 |
+
+### Blog Optimization v2 (cambio relacionado)
+
+| Engram | Tema |
+|--------|------|
+| [#179](https://app.engram.ai/astro-ecommerce/observation/179) | Proposal Blog Optimization v2 Refinado |
+| [#175](https://app.engram.ai/astro-ecommerce/observation/175) | Plan Maestro GEO + Trust (73 posts) |
+| [#172](https://app.engram.ai/astro-ecommerce/observation/172) | Proposal Blog Polish (GEO + Trust + Conversion) |
+| [#141](https://app.engram.ai/astro-ecommerce/observation/141) | Audit H2/H3 — SEO2 Semantic Hierarchy |
+
+### Ver también: `SEO-URL-HIERARCHY-RESUMEN.md` — Trazabilidad completa
+
+---
 
 ### 1. heroBentoCarousel image optimization
 **Estado:** PENDIENTE (riesgo alto de romper diseño)
@@ -304,5 +429,5 @@ DESCRIPCIÓN: Desde 2007. Garantía 12 meses. Diagnóstico gratis. Express 2h.
 
 ---
 
-**Última actualización:** 2026-05-05
+**Última actualización:** Junio 1, 2026
 **Estado:** M1 + IN completados, esperando deploy

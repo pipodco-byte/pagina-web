@@ -1,0 +1,53 @@
+# SDD State: t1-navbar-dropdowns
+
+**Change:** t1-navbar-dropdowns
+**Date:** 2026-06-01
+**Project:** Pipod.co (Astro-Ecommerce)
+
+---
+
+## Metadata
+
+```yaml
+metadata:
+  project_name: astro-ecommerce
+  change_name: t1-navbar-dropdowns
+  fase: completed
+  status: completed
+  parent_change: seo-url-hierarchy
+  engram_ids:
+    - "#214" # Navbar React→Astro migration proposal
+    - "#224" # Navbar completion memory
+  commits:
+    - ae2922a  # feat: migrate navbar from React to Astro
+    - 10c7418  # feat: dropdown visual redesign — glassmorphism, clean icons, hover lift
+    - fe914fc  # fix: dropdown icons — 22px font-size, centered, vertical-align reset
+    - 75764e7  # fix: display inline-flex on .item-icon so it centers with text-align
+    - 44034e3  # fix: increase selector specificity to beat Bootstrap CSS
+    - bb1b35e  # fix: Servicio Técnico dropdown centered + 10vw right shift
+    - d77fd7a  # feat: slide-down animation on dropdowns
+```
+
+---
+
+## Summary
+
+Navbar migrado de React a Astro (elimina hydration errors, ~15KB JS). Dropdowns redesignados con glassmorphism, iconos limpios (Bootstrap Icons), centradoviewport para Servicio Técnico (10vw shift), slide-down animation.
+
+---
+
+## Implementation Details
+
+| Elemento | Antes | Después |
+|----------|-------|---------|
+| Navbar | React (pipodNavbar.tsx) + hydration client:load | Astro (pipodNavbar.astro) — SSR puro |
+| Dropdown CSS | Bootstrap override conflicts | `.pipod-dropdown-menu` renamed + specificity 0,2,0 |
+| Iconos | Cajas de colores (azul/negro) inconsistentes | Limpios, negros, 24px font-size |
+| Servicio Técnico dropdown | Pegado al borde izquierdo | Centrado + 10vw shift derecho |
+| Animación | Fade simple | Slide-down con cubic-bezier(0.16, 1, 0.3, 1) |
+
+---
+
+## Next Phase
+
+**COMPLETED** — t1-navbar-dropdowns finished.

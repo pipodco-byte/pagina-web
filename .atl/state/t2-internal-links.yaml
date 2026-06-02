@@ -1,0 +1,52 @@
+# SDD State: t2-internal-links
+
+**Change:** t2-internal-links
+**Date:** 2026-05-22
+**Project:** Pipod.co (Astro-Ecommerce)
+
+---
+
+## Metadata
+
+```yaml
+metadata:
+  project_name: astro-ecommerce
+  change_name: t2-internal-links
+  fase: completed
+  status: completed
+  parent_change: seo-url-hierarchy
+  engram_ids:
+    - "#184" # Arquitectura SEO-first completa
+    - "#186" # Prioridades datos 2025
+  commit: 8f8625f
+```
+
+---
+
+## Spec
+
+| Campo | Valor |
+|-------|-------|
+| **Concept** | Rename + 301 para preservar SEO authority |
+| **Decisión** | Rename /servicio-tecnico-apple → /servicio-tecnico-apple-bogota |
+| **Redirect** | 301 en vercel.json |
+
+---
+
+## Tasks Summary
+
+| Task | Descripción | Status |
+|------|-------------|--------|
+| T2.1 | Renombrar archivo | ✅ completed |
+| T2.2 | Crear redirect 301 | ✅ completed |
+| T2.3 | Actualizar 10 archivos | ✅ completed |
+| T2.4 | Verificar dropdowns | ✅ completed (T1) |
+| T2.5 | Verificación | ✅ completed |
+
+**Build: ✅ Passed**
+
+---
+
+## Next Phase
+
+**T3: Sub-páginas** — Crear las 5 sub-páginas de servicio

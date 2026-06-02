@@ -1,7 +1,7 @@
 # 📋 Todo.md — Pipod Ecommerce
 
-**Última actualización:** Mayo 20, 2026
-**Versión:** 1.1
+**Última actualización:** Junio 1, 2026
+**Versión:** 1.2
 **Referencia:** PENDIENTES.md (fuente de verdad)
 **Repo:** [pipodco-byte/astroecoomerce](https://github.com/pipodco-byte/astroecoomerce)
 
@@ -112,6 +112,7 @@
 ## ✅ Completado Recientemente
 
 ### Historial Reciente
+- **Navbar React → Astro** + dropdown redesign (glassmorphism, clean icons, centered, 10vw shift) (Junio 1, 2026) | ✅
 - **Términos y Condiciones** Mayo 2026 (ea0dcc6)
 - **CI/CD Vercel** — workflow deploy a paginaweb-ecommerce (ba11701)
 - **Repo oficial documentado** — README, AGENTS, PENDIENTES, Todo
