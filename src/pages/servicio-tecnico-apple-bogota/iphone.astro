@@ -266,9 +266,9 @@ const otherDevices = [
             <div class="card-content">
               <div class="top-content">
                 <div class="header-row">
-                  <div class="header-small">
+                  <div class="header-icon-title">
                     <i class="bi bi-laptop"></i>
-                    <h4>MacBook</h4>
+                    <h3 class="highlight-title">MacBook</h3>
                   </div>
                   <span class="badge-pill-solid">ESPECIALIDAD</span>
                 </div>
@@ -943,6 +943,7 @@ const otherDevices = [
     display: flex;
     flex-direction: column;
     gap: 12px;
+    align-items: flex-end;
   }
 
   .button-wrapper {
@@ -1062,6 +1063,26 @@ const otherDevices = [
     justify-content: space-between;
     align-items: center;
     width: 100%;
+  }
+
+  .header-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-icon-title i {
+    font-size: 28px;
+    color: #3A506B;
+  }
+
+  .header-icon-title .highlight-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
   }
 
   .header-small {
