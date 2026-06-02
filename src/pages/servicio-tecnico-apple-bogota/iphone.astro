@@ -167,31 +167,36 @@ const otherDevices = [
     <!-- SERVICIOS PRINCIPALES -->
     <section id="servicios" class="section-core-services">
       <div class="container">
-        <h2 class="section-title">Servicios Principales</h2>
+        <h2 class="section-title">Top Reparaciones iPhone</h2>
         
         <div class="core-grid">
           {coreServices.map((service, index) => (
             <div class={`core-card ${index === 0 ? 'accent-blue' : 'accent-black'}`}>
-              <div class="core-card-header">
-                <span class="core-tag">{service.tag}</span>
-                <i class={`bi ${service.icon} core-icon`}></i>
+              <div class="core-card-image">
+                <img src="/images/imagenservicios.jpg" alt={service.title} />
               </div>
-              <h3 class="core-title">{service.title}</h3>
-              <p class="core-price">{service.price}</p>
-              
-              <div class="core-specs">
-                <span class="spec-text"><i class="bi bi-lightning-charge"></i> {service.specs[0]}</span>
-                <span class="spec-text"><i class="bi bi-shield-check"></i> {service.specs[1]}</span>
-                <span class="spec-text"><i class="bi bi-check-circle"></i> {service.specs[2]}</span>
-              </div>
+              <div class="core-card-content">
+                <div class="core-card-header">
+                  <span class="core-tag">{service.tag}</span>
+                  <i class={`bi ${service.icon} core-icon`}></i>
+                </div>
+                <h3 class="core-title">{service.title}</h3>
+                <p class="core-price">{service.price}</p>
+                
+                <div class="core-specs">
+                  <span class="spec-text"><i class="bi bi-lightning-charge"></i> {service.specs[0]}</span>
+                  <span class="spec-text"><i class="bi bi-shield-check"></i> {service.specs[1]}</span>
+                  <span class="spec-text"><i class="bi bi-check-circle"></i> {service.specs[2]}</span>
+                </div>
 
-              <div class="availability-row">
-                <i class="bi bi-box"></i>
-                <span>Disponibilidad hoy</span>
-              </div>
-              
-              <div class="button-wrapper">
-                <a href={service.link} class="btn-pipod-outline">{service.linkText}</a>
+                <div class="availability-row">
+                  <i class="bi bi-box"></i>
+                  <span>Disponibilidad hoy</span>
+                </div>
+                
+                <div class="button-wrapper">
+                  <a href={service.link} class="btn-pipod-outline">{service.linkText}</a>
+                </div>
               </div>
             </div>
           ))}
@@ -205,7 +210,7 @@ const otherDevices = [
     <!-- SERVICIOS PRINCIPALES -->
     <section id="servicios" class="section-services">
       <div class="container">
-        <h2 class="section-title">Servicios técnicos iPhone</h2>
+        <h2 class="section-title">Servicio Técnico iPhone</h2>
         
         <div class="services-grid">
           {mainServices.map((service) => (
@@ -246,8 +251,8 @@ const otherDevices = [
             <strong>Combo: Funda + Protector</strong> para tu iPhone recién reparado
           </div>
           <span class="cross-price">$50.000 COP</span>
-          <a href="/tienda-pipod?filter=fundas" class="btn-cross">
-            Ver combo →
+          <a href="/contacto-pipod#ubicacion" class="btn-cross">
+            Recoge en tienda
           </a>
         </div>
       </div>
@@ -257,7 +262,7 @@ const otherDevices = [
     <PipodFAQ faqs={faqs} />
 
     <!-- BLOG SECTION -->
-    <BlogSection title="Artículos relacionados" client:load posts={blogPosts} />
+    <BlogSection title="Artículos iPhone" client:load posts={blogPosts} />
 
     <!-- TAMBIEN REPARAMOS - CARD GRID (white cards with accents) -->
     <section class="section-also">
@@ -507,56 +512,47 @@ const otherDevices = [
 
   .core-card {
     background-color: #fff;
-    background-image: 
-      linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-      url('/images/imagenservicios.jpg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    padding: 40px;
-    border: 1px solid #E5E5E5;
-    position: relative;
+    border-radius: 40px;
+    border: 1px solid #E8E8E8;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .core-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: transparent;
-    transition: background 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   .core-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: #3A506B;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
   }
 
-  .accent-blue::before {
-    background: linear-gradient(90deg, #3A506B, #0066CC);
+  .core-card-image {
+    height: 180px;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 40px 40px 0 0;
   }
 
-  .accent-blue:hover {
-    border-color: #0066CC;
+  .core-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.6s ease;
+    border-radius: 40px 40px 0 0;
   }
 
-  .accent-black::before {
-    background: linear-gradient(90deg, #3A506B, #000);
+  .core-card:hover .core-card-image img {
+    transform: scale(1.05);
   }
 
-  .accent-black:hover {
-    border-color: #000;
+  .core-card-content {
+    padding: 24px;
   }
 
   .core-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   .core-tag {
@@ -579,35 +575,35 @@ const otherDevices = [
   }
 
   .core-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #1d1d1f;
   }
 
   .core-title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: #000;
-    margin: 0 0 8px 0;
+    margin: 0 0 6px 0;
     text-transform: uppercase;
   }
 
   .core-price {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #000;
-    margin: 0 0 20px 0;
+    margin: 0 0 12px 0;
   }
 
   .core-specs {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 6px;
+    margin-bottom: 10px;
   }
 
   .spec-text {
-    font-size: 0.9rem;
-    color: #444;
+    font-size: 0.85rem;
+    color: #1F1F1F;
     font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
@@ -615,8 +611,11 @@ const otherDevices = [
   }
 
   .spec-text i {
+    font-size: 0.9rem;
+  }
+
+  .accent-blue .spec-text i {
     color: #0066CC;
-    font-size: 1rem;
   }
 
   .accent-black .spec-text i {
@@ -627,33 +626,44 @@ const otherDevices = [
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.85rem;
-    color: #6e6e73;
-    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: #1F1F1F;
+    margin-bottom: 12px;
   }
 
   .availability-row i {
     color: #3A506B;
   }
 
-  .button-wrapper {
+.button-wrapper {
     display: flex;
     justify-content: flex-end;
   }
 
-  .core-link {
-    font-size: 0.85rem;
-    color: #4A90E2;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.2s;
+  .accent-blue .btn-pipod-outline {
+    background: #4A90E2;
+    border-color: #4A90E2;
+    color: #fff;
   }
 
-  .core-link:hover {
-    gap: 10px;
+  .accent-blue .btn-pipod-outline:hover {
+    background: #357ABD;
+    border-color: #357ABD;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74,144,226,0.25);
+  }
+
+  .accent-black .btn-pipod-outline {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+  }
+
+  .accent-black .btn-pipod-outline:hover {
+    background: #1F1F1F;
+    border-color: #1F1F1F;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 
   /* SERVICIOS PRINCIPALES */
