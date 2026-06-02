@@ -1,3 +1,112 @@
+# Session Summary - Pipod.co Development (2026-06-01)
+
+## Goal
+iPhone page visual redesign + Reviews JSON source fix + PR workflow documentation.
+
+---
+
+## Instructions (Constraints)
+- Cards: image on TOP (like ServiceBentoDark from /home), NOT as background
+- Bootstrap Icons only (no emojis)
+- Solid buttons: Batería = blue (#4A90E2), Pantalla = black (#000)
+- H2 titles: natural language, no keyword stuffing
+- Reviews: use JSON as primary source (SSR import), NOT Supabase
+- PR workflow: ALWAYS PR develop → main, NEVER direct merge
+- NEVER use `origin` remote (pagina-web is different project)
+
+---
+
+## Accomplished This Session
+
+### iPhone Page Redesign
+1. ✅ **Servicios Principales cards**: image ON TOP (180px height), compact 40px radius, padding 24px
+2. ✅ **FAQ**: 2 columns, white boxes, icon rotation on open (new `PipodFAQ.astro` component)
+3. ✅ **También reparamos**: 4-card asymmetric grid (MacBook 2fr, iMac 1.4fr)
+4. ✅ **H2 titles**: "Top Reparaciones iPhone", "Servicio Técnico iPhone" — natural language
+5. ✅ **BlogSection**: "Artículos relacionados" → "Artículos iPhone"
+6. ✅ **Cross-selling**: "Recoge en tienda" → `/contacto-pipod#ubicacion`
+7. ✅ **pipodGooglemaps**: added `id="ubicacion"`
+8. ✅ **Navbar**: iPad added, Accesorios removed, 6 columns
+
+### Reviews Fix
+9. ✅ **Reviews: JSON as primary source** (SSR import), NOT Supabase `getBusinessStats()`
+10. ✅ **reviews.json**: updated to 98 reviews, lastUpdated 2026-06-01
+
+### PRs Merged
+- ✅ **PR #1**: iPhone redesign (9ab6fa1)
+- ✅ **PR #2**: reviews fix (fe5bee5)
+
+### Documentation Updated
+- ✅ **PENDIENTES.md v1.8**: full session history
+- ✅ **AGENTS.md**: added warnings (origin remote, reviews JSON, PR workflow)
+- ✅ **SESSION_SUMMARY.md**: this update (June 1 + preserved May 22)
+- ✅ **Todo.md v1.3**: marked M5 completed, added R1/R2 pending items
+
+---
+
+## Key Decisions
+
+| Decision | Rationale |
+|----------|----------|
+| Image on TOP of cards | Matches ServiceBentoDark from /home, better UX |
+| Reviews use JSON (SSR) | Simpler, no hydration issues, JSON is source of truth |
+| 98 reviews | Google shows 98, updated manually in JSON |
+| Natural H2s | "Top Reparaciones iPhone" better than keyword-stuffed alternatives |
+| PR always | Never merge directly to main — PR always required |
+
+---
+
+## Discoveries
+
+- **Reviews JSON is source of truth**: 98 reviews, Google shows 98
+- **sync-reviews.ts limitation**: Only writes to Supabase (serverless FS limitation), NOT to JSON
+- **Reviews count**: 98 (updated manually in JSON when Google count changed)
+- **origin remote**: `pipodco-byte/pagina-web` — WRONG repo
+- **astroecoomerce remote**: `pipodco-byte/astroecoomerce` — CORRECT repo
+- **Cherry-pick conflict**: cc96f09 conflicted with develop changes — aborted
+
+---
+
+## Git Commits (June 1, 2026)
+
+| Commit | Description |
+|--------|-------------|
+| `a9eded8` | feat(iphone): background image on Servicios Principales cards |
+| `ac347af` | feat(/iphone): visual redesign - Services, FAQ, También reparamos, H2s, CTA |
+| `fe5bee5` | fix(reviews): use JSON as primary source, update to 98 reviews |
+
+---
+
+## Next Steps
+
+| # | Tarea | Prioridad |
+|---|-------|----------|
+| 1 | **PR #3 (docs)**: merge SESSION_SUMMARY + Todo updates to main | 🔴 |
+| 2 | **Supabase `business_stats`**: verify if updating or stale | 🟡 |
+| 3 | **sync-reviews improvement**: write to JSON instead of only Supabase (P1.2) | 📋 |
+
+---
+
+## Relevant Files
+
+| File | Description |
+|------|-------------|
+| `src/pages/servicio-tecnico-apple-bogota/iphone.astro` | iPhone page with all redesigns |
+| `src/components/service/PipodFAQ.astro` | 2-column FAQ component |
+| `src/components/pipodNavbar.astro` | Navbar with iPad, no Accesorios |
+| `src/components/promo/pipodGoogleReviews.jsx` | Reviews using JSON source |
+| `src/components/maps/pipodGooglemaps.astro` | Has `id="ubicacion"` |
+| `public/data/reviews.json` | 98 reviews, source of truth |
+| `PENDIENTES.md` | v1.8 - full session documented |
+| `SESSION_SUMMARY.md` | This file — June 1 + May 22 history |
+| `Todo.md` | v1.3 - marked M5 complete |
+
+---
+
+*Last updated: 2026-06-01 15:30*
+
+---
+
 # Session Summary - Pipod.co Development (2026-05-22)
 
 ## Goal

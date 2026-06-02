@@ -1,7 +1,7 @@
 # 📋 Todo.md — Pipod Ecommerce
 
 **Última actualización:** Junio 1, 2026
-**Versión:** 1.2
+**Versión:** 1.3
 **Referencia:** PENDIENTES.md (fuente de verdad)
 **Repo:** [pipodco-byte/astroecoomerce](https://github.com/pipodco-byte/astroecoomerce)
 
@@ -112,7 +112,20 @@
 ## ✅ Completado Recientemente
 
 ### Historial Reciente
-- **Navbar React → Astro** + dropdown redesign (glassmorphism, clean icons, centered, 10vw shift) (Junio 1, 2026) | ✅
+- **iPhone page redesign** (Junio 1, 2026)
+  - Image ON TOP cards (180px), 40px radius, 24px padding
+  - FAQ 2-column with icon rotation (PipodFAQ.astro)
+  - También reparamos asymmetric grid (MacBook 2fr)
+  - H2s: "Top Reparaciones iPhone", "Servicio Técnico iPhone"
+  - Navbar: iPad added, Accesorios removed, 6 columns
+- **Reviews JSON source** (Junio 1, 2026)
+  - Primary source: JSON import (SSR), NOT Supabase
+  - Updated to 98 reviews
+  - pipodGoogleReviews uses JSON, not getBusinessStats()
+- **PRs merged** (Junio 1, 2026)
+  - PR #1: iPhone redesign
+  - PR #2: reviews fix
+- **Navbar React → Astro** + dropdown redesign (glassmorphism, clean icons, centered, 10vw shift) (Junio 1, 2026)
 - **Términos y Condiciones** Mayo 2026 (ea0dcc6)
 - **CI/CD Vercel** — workflow deploy a paginaweb-ecommerce (ba11701)
 - **Repo oficial documentado** — README, AGENTS, PENDIENTES, Todo
@@ -130,4 +143,4 @@
 
 ---
 
-_Last updated: Mayo 20, 2026 (v1.1)_
+_Last updated: Junio 1, 2026 (v1.3)_
