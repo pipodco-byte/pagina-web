@@ -28,7 +28,7 @@ const coreServices = [
     tag: "Top Prioridad",
     price: "Desde $120.000",
     icon: "bi-thermometer",
-    specs: ["2-3h", "12m garantía", "MacBook / iMac"],
+    specs: ["2-3h", "3m garantía", "MacBook / iMac"],
     link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20mantenimiento%20de%20mi%20MacBook",
     linkText: "Cotizar MacBook"
   },
@@ -37,7 +37,7 @@ const coreServices = [
     tag: "Alta Demanda",
     price: "Desde $80.000",
     icon: "bi-speedometer",
-    specs: ["1-2h", "6m garantía", "iPhone / iPad"],
+    specs: ["1-2h", "3m garantía", "iPhone / iPad"],
     link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20mantenimiento%20de%20mi%20iPhone",
     linkText: "Cotizar iPhone"
   },
@@ -46,7 +46,7 @@ const coreServices = [
     tag: "Alta Demanda",
     price: "Desde $85.000",
     icon: "bi-tools",
-    specs: ["2h", "6m garantía", "iMac"],
+    specs: ["2h", "3m garantía", "iMac"],
     link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20mantenimiento%20de%20mi%20iMac",
     linkText: "Cotizar iMac"
   }
@@ -71,7 +71,7 @@ const faqs = [
   { q: "¿Cuánto tarda una limpieza completa de MacBook o iMac?", a: "El servicio express toma 2-3 horas. Incluye diagnóstico inicial, limpieza interna, cambio de pasta térmica si es necesario, y optimización del sistema operativo. Puedes esperar mientras lo hacemos." },
   { q: "¿Qué equipos hacen mantenimiento con ustedes?", a: "Hacemos mantenimiento preventivo a MacBook (Air y Pro), iMac, iPhone e iPad. El equipo más solicitado es MacBook, seguido de iPhone e iMac." },
   { q: "¿Qué incluye el cambio de pasta térmica?", a: "El servicio incluye: limpieza interna completa (ventiladores, heatpipes, dissipadores), remoción de pasta térmica vieja, aplicación de pasta térmica premium (Thermal Grizzly o similar), y prueba de temperatura post-servicio." },
-  { q: "¿Qué garantía tienen los servicios de mantenimiento?", a: "El cambio de pasta térmica tiene 12 meses de garantía. La limpieza interna tiene 6 meses de garantía. Si el equipo presenta el mismo problema, lo resolvemos sin costo adicional." },
+  { q: "¿Qué garantía tienen los servicios de mantenimiento?", a: "El cambio de pasta térmica tiene 3 meses de garantía. La limpieza interna tiene 3 meses de garantía. Si el equipo presenta el mismo problema, lo resolvemos sin costo adicional." },
   { q: "¿Mis datos están seguros durante el mantenimiento?", a: "Sí. No accedemos a tus datos personales salvo que sea necesario para el diagnóstico. Hacemos backup antes de cualquier intervención. Tu información es confidencial." },
   { q: "¿Cada cuánto debo hacer mantenimiento preventivo?", a: "Recomendamos limpieza interna cada 12-18 meses para MacBook y iMac. Para iPhone, la limpieza de puertos y revisión de batería puede ser cada 24 meses. El mantenimiento preventivo evita reparaciones más costosas." }
 ];
@@ -117,7 +117,7 @@ const otherDevices = [
 ---
 
 <Layout title={title}>
-  <ServicePageSchema serviceData={schemaService} />
+  <ServicePageSchema serviceData={schemaService} pageName="mantenimiento" pageUrl={schemaService.url} />
   <FAQPageSchema faqData={faqs} />
   
   <main style="padding-top: 120px;">
@@ -145,7 +145,7 @@ const otherDevices = [
         
         <h1 class="hero-title">
           Mantenimiento preventivo<br/>
-          <span>MacBook, iPhone, iMac — Chapinero</span>
+          <span>MacBook, iPhone, iMac — Bogotá, Chapinero</span>
         </h1>
         
         <div class="trust-line">

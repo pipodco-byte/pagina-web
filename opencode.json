@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "external_directory": { "*": "allow" },
+    "git": {
+      "push_to_main": false,
+      "push_to_main_reason": "PROHIBIDO hacer push a main a menos que el usuario lo pida explícitamente. Solo se puede hacer push a main con autorización expresa del usuario."
+    }
+  },
+  "rules": [
+    {
+      "id": "no-main-push",
+      "description": "Prohibido hacer push a main sin autorización explícita del usuario",
+      "action": "deny",
+      "target": "git.push.main",
+      "message": "No puedes hacer push a main. Solicita autorización al usuario primero."
+    },
+    {
+      "id": "warn-main-merge",
+      "description": "Warn antes de hacer merge a main",
+      "action": "warn",
+      "target": "git.merge.main",
+      "message": "Merge a main detectado. Confirma con el usuario antes de proceder."
+    }
+  ]
+}

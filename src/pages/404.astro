@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FloatingContact from '../layouts/floatingContact';
+import Footer from '../components/pipodFooter';
+---
+
+<Layout title="404 - Página no encontrada | Pipod">
+  
+  <main style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; background: #ffffff; padding: 120px 24px 80px;">
+
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h1 style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: clamp(80px, 15vw, 160px); color: #1F1F1F; line-height: 1; margin: 0;">
+        404
+      </h1>
+      <h2 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(24px, 4vw, 36px); color: #1F1F1F; margin: 16px 0 24px;">
+        Página no encontrada
+      </h2>
+      <p style="font-family: 'Noto Sans', sans-serif; font-size: 18px; color: #1F1F1F; max-width: 460px; margin: 0 auto; line-height: 1.6;">
+        Lo sentimos, esta página no existe. Pero podemos ayudarte a encontrar lo que necesitas.
+      </p>
+    </div>
+
+    <!-- 3 Cards Grid -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+        <!-- Card 1: Servicio Técnico → WhatsApp -->
+        <div style="padding: 40px; border-radius: 20px; background: #ffffff; border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; text-align: center; display: flex; flex-direction: column;">
+          <span style="font-family: 'PT Mono', monospace; font-size: 0.75rem; color: #3A506B; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Servicio Técnico</span>
+          <h3 style="font-weight: 700; font-size: 1rem; margin: 0 0 12px 0; color: #000;">¿Necesitas reparación?</h3>
+          <p style="font-size: 1.05rem; color: #666; margin: 0 0 auto 0; line-height: 1.7;">Diagnóstico gratuito en 30 minutos.</p>
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20busco%20información%20sobre%20servicio%20técnico" style="background: #000; color: #fff; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 20px; align-self: center;">
+            <i class="bi bi-whatsapp"></i> Cotizar
+          </a>
+        </div>
+
+        <!-- Card 2: Tienda → /tienda-pipod -->
+        <div style="padding: 40px; border-radius: 20px; background: #ffffff; border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; text-align: center; display: flex; flex-direction: column;">
+          <span style="font-family: 'PT Mono', monospace; font-size: 0.75rem; color: #3A506B; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Tienda</span>
+          <h3 style="font-weight: 700; font-size: 1rem; margin: 0 0 12px 0; color: #000;">¿Buscas algo?</h3>
+          <p style="font-size: 1.05rem; color: #666; margin: 0 0 auto 0; line-height: 1.7;">Equipos Apple disponibles.</p>
+          <a href="/tienda-pipod" style="border: 1.5px solid #000; color: #000; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 20px; align-self: center;">
+            Ir a Tienda <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 3: Plan Retoma → /plan-retoma-apple -->
+        <div style="padding: 40px; border-radius: 20px; border: 1px solid #E5E5E5; transition: all 0.3s ease; text-align: center; display: flex; flex-direction: column;">
+          <span style="font-family: 'PT Mono', monospace; font-size: 0.75rem; color: #3A506B; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Plan Retoma</span>
+          <h3 style="font-weight: 700; font-size: 1rem; margin: 0 0 12px 0; color: #000;">¿Vendes tu Apple?</h3>
+          <p style="font-size: 1.05rem; color: #666; margin: 0 0 auto 0; line-height: 1.7;">Cotiza en 2 minutos y recibe tu oferta.</p>
+          <a href="/plan-retoma-apple" style="border: 1.5px solid #000; color: #000; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 20px; align-self: center;">
+            Cotizar <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <FloatingContact client:load />
+  <Footer client:load />
+</Layout>
+
+<style>
+  /* Servicio Técnico - hover azul */
+  a[href*="wa.me"]:hover {
+    background: #3A506B;
+    color: #fff;
+  }
+
+  /* Tienda - hover filled negro */
+  a[href="/tienda-pipod"]:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+
+  /* Plan Retoma - hover filled negro */
+  a[href="/plan-retoma-apple"]:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns: repeat(3, 1fr)"] {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    div[style*="padding: 40px"] {
+      padding: 24px !important;
+    }
+
+    h3[style*="font-weight: 700"] {
+      font-size: 0.95rem !important;
+    }
+
+    p[style*="font-size: 1.05rem"] {
+      font-size: 0.9rem !important;
+    }
+
+    a[style*="padding: 12px 24px"] {
+      padding: 10px 20px !important;
+      font-size: 0.8rem !important;
+    }
+  }
+</style>
