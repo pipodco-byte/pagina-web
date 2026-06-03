@@ -1,0 +1,1212 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServicePageSchema from '../../components/SEO/ServicePageSchema.astro';
+import FAQPageSchema from '../../components/SEO/FAQPageSchema.astro';
+import PipodFAQ from '../../components/service/pipodFAQretoma.astro';
+import PipodServicesBanner from '../../components/service/pipodServicesBanner.astro';
+import PipodStats from '../../components/stats/pipodStats.astro';
+import FloatingContact from '../../layouts/floatingContact';
+import Footer from '../../components/pipodFooter';
+import BlogSection from '../../components/reviews/blogSection';
+
+// SEO Metas
+const title = "Servicio Técnico MacBook Bogotá | Pipod - Especialistas Certificados";
+const description = "Reparación MacBook en Chapinero, Bogotá. Batería, pantalla, teclado, placa. Diagnóstico gratis, garantía 12 meses. 16 años de experiencia.";
+
+// Schema
+const schemaService = {
+  name: "Servicio Técnico MacBook Bogotá",
+  description: "Reparación especializada MacBook en Chapinero, Bogotá. Batería, pantalla, teclado, microsoldadura.",
+  url: "https://www.pipod.co/servicio-tecnico-apple-bogota/macbook",
+  areaServed: "Bogotá, Chapinero"
+};
+
+// Servicios Core
+const coreServices = [
+  {
+    title: "CAMBIO DE BATERÍA",
+    tag: "Top Prioridad",
+    price: "$350.000 - $850.000",
+    icon: "bi-battery-full",
+    specs: ["2-5h según modelo", "12m garantía", "Incluye diagnóstico gratis"],
+    link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20el%20cambio%20de%20bater%C3%ADa%20de%20mi%20MacBook",
+    linkText: "Cotizar servicio"
+  },
+  {
+    title: "CAMBIO DE PANTALLA",
+    tag: "Alta Demanda",
+    price: "$850.000 - $2.800.000",
+    icon: "bi-display",
+    specs: ["2-5h según modelo", "12m garantía", "Incluye diagnóstico gratis"],
+    link: "https://wa.me/573124813094?text=Hola%20Pipod%2C%20quiero%20cotizar%20el%20cambio%20de%20pantalla%20de%20mi%20MacBook",
+    linkText: "Cotizar servicio"
+  }
+];
+
+// Servicios principales
+const mainServices = [
+  { title: "Batería", icon: "bi-battery-full", desc: "Reemplazo batería original", price: "$350.000 - $850.000", link: "/blog/cambio-bateria-macbook-bogota" },
+  { title: "Pantalla", icon: "bi-display", desc: "Pantalla completa con marco", price: "$850.000 - $2.800.000", link: "/blog/pantalla-macbook-bogota" },
+  { title: "No Enciende", icon: "bi-power", desc: "Diagnóstico de placa", price: "Desde $80.000", link: "/blog/macbook-no-enciende-bogota" },
+  { title: "Teclado", icon: "bi-keyboard", desc: "Teclas, mecanismo, teclado completo", price: "Desde $180.000", link: "/blog/macbook-teclado-no-funciona-bogota" },
+  { title: "Mantenimiento", icon: "bi-tools", desc: "Limpieza, pasta térmica, ventilación", price: "Desde $120.000", link: "/blog/mantenimiento-macbook-bogota" },
+  { title: "Lento / Optimización", icon: "bi-gear", desc: "SSD, RAM, limpieza de sistema", price: "Desde $90.000", link: "/blog/macbook-lento-bogota" },
+  { title: "Placa / Microsoldadura", icon: "bi-cpu", desc: "Reparación de componentes SMD", price: "Desde $200.000", link: "/blog/microsoldadura-macbook-bogota" },
+  { title: "Upgrade SSD/RAM", icon: "bi-memory", desc: "Ampliación almacenamiento y memoria", price: "Consultar", link: "/blog/upgrade-macbook-bogota" },
+  { title: "Touch Bar", icon: "bi-slash-lg", desc: "Reemplazo Touch Bar", price: "Desde $150.000", link: "/blog/touch-bar-macbook-bogota" },
+  { title: "MagSafe", icon: "bi-lightning-charge", desc: "Conector de carga MagSafe", price: "Desde $80.000", link: "/blog/magsafe-macbook-bogota" }
+];
+
+// FAQs
+const faqs = [
+  { q: "¿Cuánto tarda el cambio de batería de MacBook?", a: "2-5 horas según el modelo. El MacBook Air M1/M2 toma 2-3h. El MacBook Pro 14 y 16 puede tomar 4-5h. Incluye diagnóstico gratis." },
+  { q: "¿Cuánto cuesta cambiar la pantalla de un MacBook?", a: "Desde $850.000 para MacBook Air M1/M2 hasta $2.800.000 para MacBook Pro 14 y 16. El precio depende del modelo exacto. Contáctanos por WhatsApp." },
+  { q: "¿Mi MacBook se calienta mucho, es normal?", a: "Si tu MacBook se calienta más de lo normal, puede ser problema de pasta térmica seca o ventilación bloqueada. El mantenimiento incluye limpieza y reposición de pasta térmica." },
+  { q: "¿El teclado del MacBook se puede reparar?", a: "Sí. Reparamos teclas individuales, mecanismo completo y teclado completo. El servicio incluye entre 2-5 horas dependiendo del modelo y la gravedad." },
+  { q: "¿Qué cubre la garantía de 12 meses?", a: "La garantía cubre defectos técnicos en partes y mano de obra. Si tu MacBook presenta el mismo problema dentro de los 12 meses, lo reparamos sin costo adicional." },
+  { q: "¿Pueden hacer upgrade de SSD o RAM a mi MacBook?", a: "Sí. Hacemos upgrades de almacenamiento (SSD) y memoria (RAM) en modelos que lo permitan. Consulta el modelo específico para saber qué opciones hay." }
+];
+
+// Blog links internos - only 3 for BlogSection
+const blogLinks = [
+  { 
+    title: "Cambio batería MacBook Chapinero", 
+    slug: "cambio-bateria-macbook-bogota",
+    excerpt: "Diagnóstico gratis, reparación en 2-5 horas según modelo. Baterías originales con 12 meses de garantía.",
+    category: "MACBOOK"
+  },
+  { 
+    title: "MacBook no enciende Bogotá", 
+    slug: "macbook-no-enciende-bogota",
+    excerpt: "Diagnóstico gratis. Las causas más comunes son batería agotada, problema de software o daño en la placa.",
+    category: "MACBOOK"
+  },
+  { 
+    title: "MacBook lento Bogotá", 
+    slug: "macbook-lento-bogota",
+    excerpt: "Optimización de sistema, limpieza, upgrade SSD. Diagnóstico gratis en 30 minutos.",
+    category: "MACBOOK"
+  }
+];
+
+// Blog posts for BlogSection component
+const blogPosts = blogLinks.map(link => ({
+  title: link.title,
+  excerpt: link.excerpt,
+  category: link.category,
+  link: `/blog/${link.slug}`
+}));
+
+// Cross-device links
+const otherDevices = [
+  { name: "iPhone", href: "/servicio-tecnico-apple-bogota/iphone" },
+  { name: "MacBook", href: "/servicio-tecnico-apple-bogota/macbook" },
+  { name: "iPad", href: "/servicio-tecnico-apple-bogota/ipad" },
+  { name: "iMac", href: "/servicio-tecnico-apple-bogota/imac" },
+  { name: "Apple Watch", href: "/servicio-tecnico-apple-bogota/apple-watch" }
+];
+---
+
+<Layout title={title}>
+  <ServicePageSchema serviceData={schemaService} pageName="macbook" pageUrl={schemaService.url} />
+  <FAQPageSchema faqData={faqs} />
+  
+  <main style="padding-top: 120px;">
+    
+    <!-- HERO -->
+    <section class="hero-iphone">
+      <div class="hero-bg">
+        <img 
+          src="/images/servicio-tecnico-apple-pipod.webp" 
+          alt="Servicio Técnico MacBook Bogotá - Pipod"
+          width="1920" height="1080"
+          loading="eager"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="hero-content">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="/">Inicio</a>
+          <span>›</span>
+          <a href="/servicio-tecnico-apple-bogota">Reparación</a>
+          <span>›</span>
+          <span>MacBook</span>
+        </nav>
+        
+        <h1 class="hero-title">
+          Servicio técnico MacBook<br/>
+          <span>Chapinero, Bogotá</span>
+        </h1>
+        
+        <div class="trust-line">
+          16 años · 3,600+ equipos · Garantía 12 meses
+        </div>
+        
+        <p class="hero-subtitle">
+          Reparación MacBook Express. Diagnóstico gratis. Respuesta en minutos.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20MacBook%20que%20necesita%20reparación" class="btn-primary-hero">
+            <i class="bi bi-whatsapp"></i>
+            Escribir por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-secondary-hero">
+            Ver servicios ↓
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <PipodServicesBanner />
+
+    <!-- SERVICIOS PRINCIPALES -->
+    <section id="servicios" class="section-core-services">
+      <div class="container">
+        <h2 class="section-title">Top Reparaciones MacBook</h2>
+        
+        <div class="core-grid">
+          {coreServices.map((service, index) => (
+            <div class={`core-card ${index === 0 ? 'accent-blue' : 'accent-black'}`}>
+              <div class="core-card-image">
+                <img src="/images/imagenservicios.jpg" alt={service.title} />
+              </div>
+              <div class="core-card-content">
+                <div class="core-card-header">
+                  <span class="core-tag">{service.tag}</span>
+                  <i class={`bi ${service.icon} core-icon`}></i>
+                </div>
+                <h3 class="core-title">{service.title}</h3>
+                <p class="core-price">{service.price}</p>
+                
+                <div class="core-specs">
+                  <span class="spec-text"><i class="bi bi-lightning-charge"></i> {service.specs[0]}</span>
+                  <span class="spec-text"><i class="bi bi-shield-check"></i> {service.specs[1]}</span>
+                  <span class="spec-text"><i class="bi bi-check-circle"></i> {service.specs[2]}</span>
+                </div>
+
+                <div class="availability-row">
+                  <i class="bi bi-box"></i>
+                  <span>Disponibilidad hoy</span>
+                </div>
+                
+                <div class="button-wrapper">
+                  <a href={service.link} class="btn-pipod-outline">{service.linkText}</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <PipodStats />
+
+    <!-- SERVICIOS PRINCIPALES -->
+    <section id="servicios-main" class="section-services">
+      <div class="container">
+        <h2 class="section-title">Servicio Técnico MacBook</h2>
+        
+        <div class="services-grid">
+          {mainServices.map((service) => (
+            <a href={service.link} class="service-card">
+              <i class={`bi ${service.icon} service-icon`}></i>
+              <div class="service-info">
+                <h5 class="service-title">{service.title}</h5>
+                <p class="service-desc">{service.desc}</p>
+                <span class="service-price">{service.price}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-cta">
+      <div class="container">
+        <h2 class="cta-title">¿Tu MacBook necesita reparación?</h2>
+        <p class="cta-subtitle">
+          3,600+ reparados · Garantía 12 meses · 16 años Chapinero<br/>
+          Diagnóstico gratis · Respuesta en minutos
+        </p>
+        <a href="https://wa.me/573124813094?text=Hola%20Pipod%2C%20tengo%20un%20MacBook%20que%20necesita%20reparación" class="btn-cta">
+          <i class="bi bi-whatsapp"></i>
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- CROSS-SELLING -->
+    <section class="section-cross">
+      <div class="container">
+        <div class="cross-content">
+          <span class="cross-icon"><i class="bi bi-gift"></i></span>
+          <div class="cross-text">
+            <strong>Combo: Funda + Protector</strong> para tu MacBook recién reparado
+          </div>
+          <span class="cross-price">$150.000 COP</span>
+          <a href="/contacto-pipod#ubicacion" class="btn-cross">
+            Recoge en tienda
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <PipodFAQ faqs={faqs} />
+
+    <!-- BLOG SECTION -->
+    <BlogSection title="Artículos MacBook" client:load posts={blogPosts} />
+
+    <!-- TAMBIEN REPARAMOS - CARD GRID (white cards with accents) -->
+    <section class="section-also">
+      <div class="container">
+        <h2 class="also-title">También reparamos</h2>
+        <div class="also-grid">
+          <!-- Card 1: iPhone (featured) -->
+          <div class="also-card iphone-also">
+            <div class="card-content">
+              <div class="top-content">
+                <div class="header-row">
+                  <i class="bi bi-phone header-icon-iphone"></i>
+                  <span class="badge-pill-solid">ESPECIALIDAD</span>
+                </div>
+                <h3 class="highlight-title">iPhone</h3>
+                <p class="legibilidad-max">Reparación: Batería, pantalla, placa y daño por agua.</p>
+              </div>
+              <div class="button-wrapper">
+                <a href="/servicio-tecnico-apple-bogota/iphone" class="btn-pipod-outline">Ver servicios</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2: iMac -->
+          <div class="also-card imac-also">
+            <div class="card-content">
+              <div class="top-content">
+                <div class="header-small">
+                  <i class="bi bi-display"></i>
+                  <h4>iMac</h4>
+                </div>
+                <p class="legibilidad-max">Pantalla, disco, memoria y optimización de sistema.</p>
+              </div>
+              <div class="button-wrapper">
+                <a href="/servicio-tecnico-apple-bogota/imac" class="btn-pipod-outline">Ver servicios</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3: Apple Watch -->
+          <div class="also-card watch-also">
+            <div class="card-content">
+              <div class="top-content">
+                <div class="header-small">
+                  <i class="bi bi-watch"></i>
+                  <h4>Apple Watch</h4>
+                </div>
+                <p class="desc-small">Cambio de cristal, batería y restauración.</p>
+              </div>
+              <div class="bottom-content">
+                <a href="/servicio-tecnico-apple-bogota/apple-watch" class="btn-small">Ver servicios</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4: Mantenimiento -->
+          <div class="also-card mantenimiento-also">
+            <div class="card-content">
+              <div class="top-content">
+                <div class="header-small">
+                  <i class="bi bi-tools"></i>
+                  <h4>Mantenimiento</h4>
+                </div>
+                <p class="desc-small">Limpieza interna, pasta térmica y optimización.</p>
+              </div>
+              <div class="bottom-content">
+                <a href="/servicio-tecnico-apple-bogota/mantenimiento" class="btn-small">Ver servicios</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <FloatingContact client:load />
+    <Footer client:load />
+  </main>
+</Layout>
+
+<style>
+  /* HERO */
+  .hero-iphone {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.3) 0%,
+      transparent 20%,
+      transparent 40%,
+      rgba(0,0,0,0.7) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+  }
+
+  .breadcrumb-nav a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb-nav a:hover {
+    color: #fff;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin: 0 0 20px 0;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .hero-title span {
+    color: #4A90E2;
+  }
+
+  .trust-line {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border: 0.85px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0 0 30px 0;
+    max-width: 500px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary-hero {
+    background: #4A90E2;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-hero:hover {
+    background: #357ABD;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(74,144,226,0.3);
+  }
+
+  .btn-secondary-hero {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 0.85px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary-hero:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+  }
+
+  /* SECTION COMMON */
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 40px 0;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  /* SERVICIOS CORE */
+  .section-core-services {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .core-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .core-card {
+    background-color: #fff;
+    border-radius: 40px;
+    border: 1px solid #E8E8E8;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .core-card:hover {
+    border-color: #3A506B;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  }
+
+  .core-card-image {
+    height: 180px;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .core-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.6s ease;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .core-card:hover .core-card-image img {
+    transform: scale(1.05);
+  }
+
+  .core-card-content {
+    padding: 24px;
+  }
+
+  .core-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .core-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    background: #0066CC;
+    color: #fff;
+  }
+
+  .accent-blue .core-tag {
+    background: linear-gradient(90deg, #3A506B, #0066CC);
+  }
+
+  .accent-black .core-tag {
+    background: linear-gradient(90deg, #3A506B, #000);
+  }
+
+  .core-icon {
+    font-size: 2rem;
+    color: #1d1d1f;
+  }
+
+  .core-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+  }
+
+  .core-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 12px 0;
+  }
+
+  .core-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .spec-text {
+    font-size: 0.85rem;
+    color: #1F1F1F;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .spec-text i {
+    font-size: 0.9rem;
+  }
+
+  .accent-blue .spec-text i {
+    color: #0066CC;
+  }
+
+  .accent-black .spec-text i {
+    color: #1F1F1F;
+  }
+
+  .availability-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #1F1F1F;
+    margin-bottom: 12px;
+  }
+
+  .availability-row i {
+    color: #3A506B;
+  }
+
+.button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .accent-blue .btn-pipod-outline {
+    background: #4A90E2;
+    border-color: #4A90E2;
+    color: #fff;
+  }
+
+  .accent-blue .btn-pipod-outline:hover {
+    background: #357ABD;
+    border-color: #357ABD;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74,144,226,0.25);
+  }
+
+  .accent-black .btn-pipod-outline {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+  }
+
+  .accent-black .btn-pipod-outline:hover {
+    background: #1F1F1F;
+    border-color: #1F1F1F;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  /* SERVICIOS PRINCIPALES */
+  .section-services {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    border: 1px solid #E5E5E7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    color: #000;
+    flex-shrink: 0;
+  }
+
+  .service-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .service-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 4px 0;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: #6e6e73;
+    margin: 0 0 8px 0;
+  }
+
+  .service-price {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000;
+  }
+
+  .service-link {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* CTA */
+  .section-cta {
+    background: #000;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 16px 0;
+  }
+
+  .cta-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    margin: 0 0 32px 0;
+    line-height: 1.6;
+  }
+
+  .btn-cta {
+    background: #4A90E2;
+    color: #fff;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-cta:hover {
+    background: #357ABD;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(74,144,226,0.3);
+  }
+
+  /* CROSS */
+  .section-cross {
+    padding: 40px 0;
+    background: #fff;
+    border-top: 1px solid #E5E5E7;
+  }
+
+  .cross-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cross-icon {
+    font-size: 1.5rem;
+  }
+
+  .cross-text {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .cross-price {
+    font-weight: 700;
+    color: #000;
+  }
+
+  .btn-cross {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-cross:hover {
+    background: #4A90E2;
+  }
+
+  /* FAQs */
+  .section-faqs {
+    padding: 80px 0;
+    background: #F5F5F7;
+  }
+
+  .faqs-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid #E5E5E7;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    list-style: none;
+    gap: 16px;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question i {
+    flex-shrink: 0;
+    color: #6e6e73;
+    transition: transform 0.3s ease;
+  }
+
+  details[open] .faq-question i {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* BLOG */
+  .section-blog {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .blog-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: #F5F5F7;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .blog-card:hover {
+    background: #E5E5E7;
+    transform: translateX(4px);
+  }
+
+  .blog-icon {
+    font-size: 1.2rem;
+    color: #3A506B;
+  }
+
+  .blog-arrow {
+    margin-left: auto;
+    color: #6e6e73;
+  }
+
+  /* ALSO - CARD GRID (white cards with accents) */
+  .section-also {
+    padding: 80px 0;
+    background: #FFFFFF;
+  }
+
+  .also-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 40px 0;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  .also-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .also-card {
+    min-height: 380px;
+    border-radius: 28px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid #E5E5E5;
+    overflow: hidden;
+    text-decoration: none;
+    background: #fff;
+    position: relative;
+  }
+
+  .also-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+
+  .also-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  /* MacBook accent - blue #0066CC top border */
+  .macbook-also::before {
+    background: #0066CC;
+  }
+
+  .macbook-also:hover {
+    border-color: #0066CC;
+  }
+
+  /* iMac accent - dark top border */
+  .imac-also::before {
+    background: #1F1F1F;
+  }
+
+  .imac-also:hover {
+    border-color: #1F1F1F;
+  }
+
+  /* Watch & Mantenimiento - subtle gray accent */
+  .watch-also::before,
+  .mantenimiento-also::before {
+    background: #6e6e73;
+  }
+
+  .watch-also:hover,
+  .mantenimiento-also:hover {
+    border-color: #999;
+  }
+
+  /* Card content wrappers */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+  }
+
+  .top-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bottom-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Highlight title */
+  .highlight-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .macbook-also .highlight-title { font-size: 28px; }
+
+  /* Legibilidad max */
+  .legibilidad-max {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: #6e6e73;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Badges */
+  .badge-pill-solid {
+    background: #0066CC;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 50px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .badge-pill-solid-dark {
+    background: #1F1F1F;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 50px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* Buttons */
+  .btn-pipod-white {
+    background: #fff;
+    color: #000;
+    padding: 11px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    width: fit-content;
+    display: inline-block;
+  }
+
+  .btn-pipod-white:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  .btn-pipod-outline {
+    border: 2px solid #000;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    width: fit-content;
+    display: inline-block;
+  }
+
+  .btn-pipod-outline:hover {
+    background: rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+  }
+
+  .btn-small {
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    width: fit-content;
+    display: inline-block;
+  }
+
+  .btn-small:hover {
+    background: #3A506B;
+    transform: translateY(-2px);
+  }
+
+  /* Header row with icon left + badge right */
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header-icon-mac {
+    font-size: 28px;
+    color: #3A506B;
+  }
+
+  .header-icon-iphone {
+    font-size: 28px;
+    color: #3A506B;
+  }
+
+  .header-small {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-small i {
+    font-size: 24px;
+    color: #3A506B;
+  }
+
+  .header-small h4 {
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+  }
+
+  .desc-small {
+    font-size: 13px;
+    color: #6e6e73;
+    line-height: 1.4;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .price-mono {
+    font-family: 'PT Mono', monospace;
+    font-weight: 700;
+    color: #3A506B;
+    font-size: 12px;
+  }
+
+  /* Text group */
+  .text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .also-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-also {
+      padding: 50px 0;
+    }
+
+    .also-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .also-card {
+      min-height: auto;
+      padding: 24px;
+    }
+
+    .macbook-also .highlight-title,
+    .imac-also .highlight-title {
+      font-size: 1.3rem;
+    }
+  }
+</style>
