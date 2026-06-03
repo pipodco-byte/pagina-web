@@ -1,0 +1,12 @@
+{
+  "rating": "5.0",
+  "totalReviews": 99,
+  "lastUpdated": "2026-06-03T00:00:00.000Z",
+  "source": "manual_update",
+  "googlePlaceId": "ChIJWRwOhvWaP44RGCPaRKtlM7g",
+  "comments": [
+    "Actualización manual 2026-06-03: 99 reseñas (Google muestra 99)",
+    "NOTA: componente ahora usa src/data/reviews.json (SSR import)",
+    "El sync-reviews.ts ya no escribe en JSON (serverless limitation)"
+  ]
+}

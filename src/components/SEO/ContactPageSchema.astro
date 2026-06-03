@@ -1,9 +1,9 @@
 ---
 import JsonLdSchema from './JsonLdSchema.astro';
+import reviewsData from '../../data/reviews.json';
 
 const today = new Date().toISOString().split('T')[0];
 const publishDate = "2026-02-12";
-const reviewsData = await fetch('http://localhost:3000/data/reviews.json').then(r => r.json()).catch(() => ({ rating: "5.0", totalReviews: 63 }));
 
 const contactPageSchema = {
   "@context": "https://schema.org",
