@@ -13,12 +13,16 @@ interface Props {
   }))[];
   full_description: string;
   price: number;
+  oldPrice?: number;
   highlights: string[];
   details: string;
   rating: number;
   reviews: number;
   sizes: { [key: string]: number };
   tipo?: 'equipo' | 'accesorio';
+  condition?: string;
+  categoria?: string;
+  marca?: string;
   id?: string;
   slug?: string;
 }
@@ -29,12 +33,16 @@ export default function ProductOverview({
   images,
   full_description,
   price,
+  oldPrice,
   highlights,
   details,
   rating,
   reviews,
   sizes,
   tipo = 'accesorio',
+  condition,
+  categoria,
+  marca,
   slug,
   id = slug || title
 }: Props) {
@@ -77,8 +85,13 @@ export default function ProductOverview({
 
           <form action="" method="post">
             {(price != 0) && 
-              <div className="d-flex">
-                <h3 className="font-weight-normal">${price.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</h3>
+              <div className="d-flex align-items-center gap-3">
+                <h3 className="font-weight-normal mb-0" style={{ fontWeight: 700, color: '#1F1F1F' }}>${price.toLocaleString('es-CO', { maximumFractionDigits: 0 })}</h3>
+                {oldPrice && oldPrice > 0 && (
+                  <span style={{ textDecoration: 'line-through', color: '#86868B', fontSize: '1.1rem' }}>
+                    ${oldPrice.toLocaleString('es-CO', { maximumFractionDigits: 0 })}
+                  </span>
+                )}
                 <input className="opacity-0" defaultValue={price} />
               </div>
             }
@@ -87,7 +100,7 @@ export default function ProductOverview({
             <>
               <h3 className="sr-only">Reviews</h3>
               <div className="d-flex">
-                <ProductRating rating={4} />
+                <ProductRating rating={rating} />
                 <span className="ms-3">{reviews} reviews</span>
               </div>
             </>
@@ -120,26 +133,106 @@ export default function ProductOverview({
         </div>
       </div>
       
-      <div className="row mt-5">
-        <div className="col-12 col-lg-6">
-          <h4>Product Description</h4>
-          <p>There's nothing I really wanted to do in life that I wasn't able to get good at. That's my skill. I'm not really specifically talented at anything except for the ability to learn. That's what I do. That's what I'm here for. Don't be afraid to be wrong because you can't learn anything from a compliment.</p>
-          {(highlights.length != 0) && 
+      <div className="row mt-5 pt-4" style={{ borderTop: '1px solid #E5E5E7' }}>
+        <div className="col-12 col-lg-8">
+          {(full_description.length != 0) && 
            <>
-             <h6>Benefits</h6>
-              <ul className="text-sm">
-              {highlights.map(highlight => 
-                <li className="mb-2">{highlight}</li>
-              )}
-              </ul>
+             <h4 style={{ 
+               fontFamily: "'Inter', sans-serif", 
+               fontWeight: 700, 
+               fontSize: '1.25rem',
+               color: '#1F1F1F',
+               marginBottom: '16px'
+             }}>Descripción</h4>
+             <p style={{ 
+               fontFamily: "'Noto Sans', sans-serif", 
+               fontSize: '0.95rem',
+               lineHeight: '1.6',
+               color: '#3A3A3A',
+               marginBottom: '32px'
+             }}>{full_description}</p>
            </>
           }
-           {(details.length != 0) && 
-             <>
-               <h6>Más sobre el producto</h6>
-               <p>{details}</p>
-             </>
-            }
+          
+          {(highlights.length != 0 || condition || categoria || marca) && 
+           <div style={{ marginBottom: '32px' }}>
+             <h4 style={{ 
+               fontFamily: "'Inter', sans-serif", 
+               fontWeight: 700, 
+               fontSize: '1.25rem',
+               color: '#1F1F1F',
+               marginBottom: '16px'
+             }}>Detalles del Producto</h4>
+             <div style={{
+               display: 'grid',
+               gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+               gap: '12px'
+             }}>
+               {condition && (
+                 <div style={{
+                   background: '#F5F5F7',
+                   padding: '12px 16px',
+                   borderRadius: '8px'
+                 }}>
+                   <div style={{ fontFamily: "'PT Mono', monospace", fontSize: '0.7rem', color: '#3A506B', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>Condición</div>
+                   <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '0.9rem', color: '#1F1F1F' }}>{condition === 'usado' ? 'Seminuevo' : condition}</div>
+                 </div>
+               )}
+               {categoria && (
+                 <div style={{
+                   background: '#F5F5F7',
+                   padding: '12px 16px',
+                   borderRadius: '8px'
+                 }}>
+                   <div style={{ fontFamily: "'PT Mono', monospace", fontSize: '0.7rem', color: '#3A506B', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>Categoría</div>
+                   <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '0.9rem', color: '#1F1F1F' }}>{categoria}</div>
+                 </div>
+               )}
+               {marca && (
+                 <div style={{
+                   background: '#F5F5F7',
+                   padding: '12px 16px',
+                   borderRadius: '8px'
+                 }}>
+                   <div style={{ fontFamily: "'PT Mono', monospace", fontSize: '0.7rem', color: '#3A506B', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>Marca</div>
+                   <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '0.9rem', color: '#1F1F1F' }}>{marca}</div>
+                 </div>
+               )}
+               {highlights.map(highlight => {
+                 const [label, ...valueParts] = highlight.split(': ');
+                 const value = valueParts.join(': ');
+                 return (
+                   <div key={label} style={{
+                     background: '#F5F5F7',
+                     padding: '12px 16px',
+                     borderRadius: '8px'
+                   }}>
+                     <div style={{ fontFamily: "'PT Mono', monospace", fontSize: '0.7rem', color: '#3A506B', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>{label}</div>
+                     <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '0.9rem', color: '#1F1F1F' }}>{value}</div>
+                   </div>
+                 );
+               })}
+             </div>
+           </div>
+          }
+          
+          {(details.length != 0) && 
+           <div style={{
+             background: '#F5F5F7',
+             borderLeft: '3px solid #3A506B',
+             padding: '16px 20px',
+             borderRadius: '0 8px 8px 0',
+             marginBottom: '32px'
+           }}>
+             <p style={{ 
+               fontFamily: "'Noto Sans', sans-serif", 
+               fontSize: '0.9rem',
+               lineHeight: '1.5',
+               color: '#3A506B',
+               margin: 0
+             }}>{details}</p>
+           </div>
+          }
         </div>
       </div>
     </div>

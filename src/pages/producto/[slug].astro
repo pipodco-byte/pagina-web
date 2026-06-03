@@ -46,9 +46,6 @@ const stockBadge = getStockBadge(producto);
 const imageUrl = getImageUrl(producto);
 
 const images = [
-  { src: imageUrl, alt: producto.nombre },
-  { src: imageUrl, alt: producto.nombre },
-  { src: imageUrl, alt: producto.nombre },
   { src: imageUrl, alt: producto.nombre }
 ];
 ---
@@ -70,7 +67,26 @@ const images = [
   }} />
   
   <main style="padding-top: 120px; background: #ffffff;">
-    <div class="container mt-5">
+    <div class="container mt-4">
+      <nav aria-label="breadcrumb" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem' }}>
+        <ol style={{ 
+          listStyle: 'none', 
+          padding: 0, 
+          margin: 0, 
+          display: 'flex', 
+          gap: '8px',
+          alignItems: 'center'
+        }}>
+          <li><a href="/" style={{ color: '#86868B', textDecoration: 'none' }}>Inicio</a></li>
+          <li style={{ color: '#86868B' }}>/</li>
+          <li><a href="/tienda-pipod" style={{ color: '#86868B', textDecoration: 'none' }}>Tienda</a></li>
+          <li style={{ color: '#86868B' }}>/</li>
+          <li style={{ color: '#1F1F1F', fontWeight: 500 }}>{producto.nombre}</li>
+        </ol>
+      </nav>
+    </div>
+    
+    <div class="container mt-4">
       <ProductOverviewGrid 
         client:load
         title={producto.nombre}
@@ -78,16 +94,19 @@ const images = [
         images={images}
         full_description={producto.descripcion}
         price={producto.precio_base}
+        oldPrice={producto.precio_anterior || undefined}
         highlights={[
-          `Condición: ${producto.condicion}`,
           `SKU: ${producto.sku}`,
           `Stock: ${stockBadge.text}`
         ]}
-        details={`Producto ${producto.condicion} de alta calidad. Garantía Pipod incluida.`}
+        details={`Producto ${producto.condicion === 'usado' ? 'Seminuevo' : producto.condicion} de alta calidad. Garantía Pipod incluida.`}
         rating={4}
         reviews={117}
         sizes={{}}
         tipo={producto.tipo}
+        condition={producto.condicion}
+        categoria={producto.categoria || undefined}
+        marca={producto.marca || 'Apple'}
         id={producto.id}
         slug={producto.slug}
       />
@@ -127,10 +146,26 @@ const images = [
   body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    background: #ffffff;
+    color: #1F1F1F;
   }
 
   main .footer-pipod {
     padding-left: 15px;
     padding-right: 15px;
+  }
+  
+  .btn-dark {
+    background-color: #000000;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    padding: 14px 28px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-dark:hover {
+    background-color: #1F1F1F;
   }
 </style>
