@@ -6,6 +6,7 @@ import ProductOverviewGrid from '../../components/products/productOverviewGrid';
 import CardProduct from '../../components/products/cardProduct';
 import ProductSchema from '../../components/SEO/ProductSchema.astro';
 import { getWebProductos, getWebProductoPorSlug, getImageUrl, getStockBadge } from '../../lib/supabase/products';
+import reviewsData from '../../../public/data/reviews.json';
 import type { Producto } from '../../lib/contentful';
 
 // Re-export for backwards compatibility
@@ -62,8 +63,8 @@ const images = [
     availability: producto.cantidad > 0 ? 'InStock' : 'PreOrder',
     brand: "Apple",
     sku: producto.sku,
-    rating: 4,
-    reviewCount: 117
+    rating: parseFloat(reviewsData.rating),
+    reviewCount: reviewsData.totalReviews
   }} />
   
   <main style="padding-top: 120px; background: #ffffff;">
@@ -100,8 +101,8 @@ const images = [
           `Stock: ${stockBadge.text}`
         ]}
         details={`Producto ${producto.condicion === 'usado' ? 'Seminuevo' : producto.condicion} de alta calidad. Garantía Pipod incluida.`}
-        rating={4}
-        reviews={117}
+        rating={parseFloat(reviewsData.rating)}
+        reviews={reviewsData.totalReviews}
         sizes={{}}
         tipo={producto.tipo}
         condition={producto.condicion}

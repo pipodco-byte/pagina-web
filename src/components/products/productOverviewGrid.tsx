@@ -101,7 +101,7 @@ export default function ProductOverview({
               <h3 className="sr-only">Reviews</h3>
               <div className="d-flex">
                 <ProductRating rating={rating} />
-                <span className="ms-3">{reviews} reviews</span>
+                <span className="ms-3" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', color: '#86868B' }}>{reviews} reseñas en Google</span>
               </div>
             </>
             }
